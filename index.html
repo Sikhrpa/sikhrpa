@@ -46,50 +46,90 @@
       </div>
       
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
         <a href="#safety" class="hover:text-amber-400 transition-colors">Safety Rules</a>
         <a href="#guides" class="hover:text-amber-400 transition-colors">Educational Guides</a>
-        <a href="#donate" class="hover:text-amber-400 transition-colors">Support Us</a>
       </nav>
 
+      <!-- Mobile Menu Placeholder / Contact Button -->
       <a
-        href="#donate"
-        class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all shadow-md shadow-amber-500/10"
+        href="#about"
+        class="md:hidden px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-slate-800 border border-slate-700 text-white hover:bg-slate-700 transition-all"
       >
-        Donate
+        Menu
       </a>
     </div>
   </header>
 
   <main class="flex-grow">
-    <!-- Hero Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
+    <!-- Hero / Mission Statement Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-6">
         <i data-lucide="shield-check" class="w-4 h-4"></i> Certified Marksmanship & Safety
       </div>
       <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-        Advancing Safety, Marksmanship, & Civic Responsibility
+        Sikh Rifle and Pistol Association
       </h1>
-      <p class="text-base sm:text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
-        Empowering the community with verified training standards, visual educational resources, and legal compliance guides.
+      <p class="text-base sm:text-lg text-slate-300 mb-10 max-w-4xl mx-auto leading-relaxed">
+        <strong>Our Mission:</strong> The Sikh Rifle and Pistol Association is a nonprofit public benefit corporation organized exclusively to provide public education and training on firearm safety, proper firearm handling and maintenance, and the historical and technical variations of diverse firearm types, thereby promoting responsible ownership and community safety.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="#about"
+          class="px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition-all text-sm flex items-center gap-2 shadow-lg shadow-amber-500/20"
+        >
+          <i data-lucide="info" class="w-4 h-4"></i> Programs & Services
+        </a>
         <a
           href="#guides"
           class="px-6 py-3 rounded-xl bg-slate-800 border border-slate-700 font-semibold hover:border-slate-600 transition-all flex items-center gap-2 text-sm"
         >
           <i data-lucide="book-open" class="w-4 h-4 text-amber-400"></i> Browse Resource Library
         </a>
-        <a
-          href="#donate"
-          class="px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition-all text-sm flex items-center gap-2 shadow-lg shadow-amber-500/20"
-        >
-          <i data-lucide="heart" class="w-4 h-4"></i> Support Our Mission
-        </a>
+      </div>
+    </section>
+
+    <!-- Programs & Services -->
+    <section id="about" class="py-16 bg-slate-900 border-y border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold tracking-tight text-white">Programs & Services</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-slate-950/50 p-6 rounded-xl border border-slate-800">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="users" class="w-5 h-5 text-amber-400"></i>
+              <h3 class="text-lg font-bold text-white">Community Safety Seminars</h3>
+            </div>
+            <p class="text-sm text-slate-400 leading-relaxed">Accessible workshops educating first-time owners and families on safe handling, proper maintenance, and secure home storage.</p>
+          </div>
+          <div class="bg-slate-950/50 p-6 rounded-xl border border-slate-800">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="crosshair" class="w-5 h-5 text-amber-400"></i>
+              <h3 class="text-lg font-bold text-white">Marksmanship Fundamentals</h3>
+            </div>
+            <p class="text-sm text-slate-400 leading-relaxed">Hands-on range instruction for beginners focusing on stance, grip mechanics, and trigger control.</p>
+          </div>
+          <div class="bg-slate-950/50 p-6 rounded-xl border border-slate-800">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="book-open-check" class="w-5 h-5 text-amber-400"></i>
+              <h3 class="text-lg font-bold text-white">Educational Resources</h3>
+            </div>
+            <p class="text-sm text-slate-400 leading-relaxed">Free bilingual training materials designed to ensure safety information reaches diverse communities.</p>
+          </div>
+          <div class="bg-slate-950/50 p-6 rounded-xl border border-slate-800">
+            <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="trees" class="w-5 h-5 text-amber-400"></i>
+              <h3 class="text-lg font-bold text-white">Outdoor Sportsmanship</h3>
+            </div>
+            <p class="text-sm text-slate-400 leading-relaxed">Structured events that cultivate outdoor heritage and responsible participation.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Fundamental Safety Highlight -->
-    <section id="safety" class="py-16 bg-slate-900 border-y border-slate-800">
+    <section id="safety" class="py-16 bg-slate-950 border-b border-slate-800">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row items-center gap-8">
           <div class="w-full md:w-1/3">
@@ -108,10 +148,10 @@
               Safety is the bedrock of marksmanship. Never pull the trigger without complete visual confirmation of your target, backstop, and the surrounding environment.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
-              <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800 flex items-center gap-2">
+              <div class="p-3 bg-slate-900/50 rounded-lg border border-slate-800 flex items-center gap-2">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Positive Target ID
               </div>
-              <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800 flex items-center gap-2">
+              <div class="p-3 bg-slate-900/50 rounded-lg border border-slate-800 flex items-center gap-2">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Adequate Backstop
               </div>
             </div>
@@ -121,222 +161,106 @@
     </section>
 
     <!-- Educational Resource Library -->
-    <section id="guides" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Resource Library</h2>
-        <p class="text-slate-400 text-sm mt-2">Essential training references, diagrams, and ballistics data.</p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Handgun Guide Card -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
-          <div class="h-48 overflow-hidden bg-slate-950">
-            <img src="handgun-guide.jpg" alt="Handgun Guide" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h4 class="font-bold text-base text-white mb-1">Handgun Mechanics</h4>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Anatomy, functional operation, and safe handling guidelines.</p>
-            </div>
-            <a href="handgun-guide.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
-              View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
+    <section id="guides" class="py-20 bg-slate-900 max-w-full">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Resource Library</h2>
+          <p class="text-slate-400 text-sm mt-2">Essential training references, diagrams, and ballistics data.</p>
         </div>
 
-        <!-- Grip Guide Card -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
-          <div class="h-48 overflow-hidden bg-slate-950">
-            <img src="grip-guide.jpg" alt="Grip Mechanics" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h4 class="font-bold text-base text-white mb-1">Fundamentals of Grip</h4>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Control, recoil mitigation, and standard hand placement technique.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Handgun Guide Card -->
+          <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
+            <div class="h-48 overflow-hidden bg-slate-950">
+              <img src="handgun-guide.jpg" alt="Handgun Guide" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             </div>
-            <a href="grip-guide.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
-              View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Ammunition Chart Card -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
-          <div class="h-48 overflow-hidden bg-slate-950">
-            <img src="ammo-chart.jpg" alt="Ammunition Reference" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h4 class="font-bold text-base text-white mb-1">Ammunition Reference</h4>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Caliber comparison chart and standard ballistics overviews.</p>
-            </div>
-            <a href="ammo-chart.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
-              View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Dynamic Donation Funnel -->
-    <section id="donate" class="py-20 bg-slate-900 text-white border-t border-slate-800">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-3">
-            <i data-lucide="heart" class="w-3.5 h-3.5"></i> Empower Our Community
-          </span>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-            Support Safety & Marksmanship Education
-          </h2>
-          <p class="mt-3 text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-            Your contributions directly fund educational materials, community workshops, and range safety equipment.
-          </p>
-        </div>
-
-        <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-sm">
-          <!-- Frequency Toggle -->
-          <div class="flex justify-center mb-8">
-            <div class="bg-slate-950/80 p-1 rounded-xl border border-slate-700 inline-flex">
-              <button
-                type="button"
-                id="btn-one-time"
-                onclick="setFrequency('one-time')"
-                class="px-5 py-2 rounded-lg text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-md"
-              >
-                One-Time
-              </button>
-              <button
-                type="button"
-                id="btn-monthly"
-                onclick="setFrequency('monthly')"
-                class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-slate-400 hover:text-white"
-              >
-                Monthly Support
-              </button>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-base text-white mb-1">Handgun Mechanics</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Anatomy, functional operation, and safe handling guidelines.</p>
+              </div>
+              <a href="handgun-guide.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+                View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
             </div>
           </div>
 
-          <!-- Preset Amounts -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            <button type="button" onclick="selectPreset(25)" class="preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all" data-amount="25">$25</button>
-            <button type="button" onclick="selectPreset(50)" class="preset-btn py-3.5 rounded-xl text-lg font-bold border border-amber-400 bg-amber-500/10 text-amber-300 ring-2 ring-amber-400/30 transition-all" data-amount="50">$50</button>
-            <button type="button" onclick="selectPreset(100)" class="preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all" data-amount="100">$100</button>
-            <button type="button" onclick="selectPreset(250)" class="preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all" data-amount="250">$250</button>
-          </div>
-
-          <!-- Custom Amount Input -->
-          <div class="mb-6">
-            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-              Or Custom Amount
-            </label>
-            <div class="relative rounded-xl shadow-sm">
-              <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 text-lg font-bold">$</span>
-              <input
-                type="number"
-                id="custom-amount-input"
-                min="1"
-                placeholder="Enter custom amount"
-                oninput="handleCustomInput(this.value)"
-                class="w-full pl-9 pr-4 py-3 bg-slate-900/70 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-base"
-              />
+          <!-- Grip Guide Card -->
+          <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
+            <div class="h-48 overflow-hidden bg-slate-950">
+              <img src="grip-guide.jpg" alt="Grip Mechanics" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-base text-white mb-1">Fundamentals of Grip</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Control, recoil mitigation, and standard hand placement technique.</p>
+              </div>
+              <a href="grip-guide.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+                View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
             </div>
           </div>
 
-          <!-- Impact Message -->
-          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-700/60 flex items-start gap-3 mb-8">
-            <i data-lucide="shield-check" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              <strong class="text-amber-300">Your Impact:</strong> <span id="impact-text">Provides certified eye and ear protection sets for youth safety seminars.</span>
-            </p>
+          <!-- Ammunition Chart Card -->
+          <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
+            <div class="h-48 overflow-hidden bg-slate-950">
+              <img src="ammo-chart.jpg" alt="Ammunition Reference" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-base text-white mb-1">Ammunition Reference</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">Caliber comparison chart and standard ballistics overviews.</p>
+              </div>
+              <a href="ammo-chart.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+                View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
           </div>
-
-          <!-- Submit Button -->
-          <button
-            type="button"
-            id="donate-submit-btn"
-            class="w-full py-4 px-6 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 text-base shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2"
-          >
-            <span id="donate-btn-label">Complete Donation of $50</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-
-          <p class="text-center text-xs text-slate-500 mt-4">
-            Secure 256-bit encrypted checkout. No sensitive card details stored on site.
-          </p>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
-    <p>© <span id="current-year"></span> SikhRPA. Dedicated to community safety and marksmanship education.</p>
+  <footer class="border-t border-slate-800 bg-slate-950 py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+      
+      <!-- Footer Logo -->
+      <img 
+        src="srpa-logo.png" 
+        alt="SikhRPA Logo" 
+        class="h-12 w-auto object-contain mb-6 opacity-80"
+        onerror="this.style.display='none'"
+      />
+      
+      <!-- Tax Status -->
+      <p class="text-sm text-slate-300 max-w-2xl mx-auto mb-5 leading-relaxed font-medium">
+        We are a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code.
+      </p>
+      
+      <!-- Official Details -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-xs text-slate-400 mb-8 bg-slate-900/50 py-3 px-6 rounded-lg border border-slate-800">
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="map-pin" class="w-4 h-4 text-amber-500"></i> 
+          1075 Mohawk St, South Lake Tahoe, CA 96150
+        </span>
+        <span class="hidden sm:inline text-slate-700">•</span>
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="file-text" class="w-4 h-4 text-amber-500"></i> 
+          Federal EIN: 42-2595402
+        </span>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-xs text-slate-600">
+        © <span id="current-year"></span> Sikh Rifle and Pistol Association. All rights reserved.
+      </p>
+    </div>
   </footer>
 
-  <!-- Vanilla State Handler -->
+  <!-- Initialization Scripts -->
   <script>
-    let currentFrequency = 'one-time';
-    let currentAmount = 50;
-
-    function getImpactMessage(amount) {
-      if (amount >= 250) return "Funds an entire community range safety clinic and protective gear for 10 newcomers.";
-      if (amount >= 100) return "Sponsors comprehensive marksmanship & legal education workshop materials for 5 members.";
-      if (amount >= 50) return "Provides certified eye and ear protection sets for youth safety seminars.";
-      return "Supports educational guides, range supplies, and ongoing community safety outreach.";
-    }
-
-    function updateUI() {
-      // Update impact text
-      document.getElementById('impact-text').innerText = getImpactMessage(currentAmount);
-
-      // Update CTA text
-      const freqSuffix = currentFrequency === 'monthly' ? ' / mo' : '';
-      document.getElementById('donate-btn-label').innerText = `Complete Donation of $${currentAmount}${freqSuffix}`;
-
-      // Update preset active classes
-      document.querySelectorAll('.preset-btn').forEach(btn => {
-        const amt = parseInt(btn.getAttribute('data-amount'), 10);
-        if (amt === currentAmount) {
-          btn.className = 'preset-btn py-3.5 rounded-xl text-lg font-bold border border-amber-400 bg-amber-500/10 text-amber-300 ring-2 ring-amber-400/30 transition-all';
-        } else {
-          btn.className = 'preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all';
-        }
-      });
-    }
-
-    function setFrequency(freq) {
-      currentFrequency = freq;
-      const btnOneTime = document.getElementById('btn-one-time');
-      const btnMonthly = document.getElementById('btn-monthly');
-
-      if (freq === 'one-time') {
-        btnOneTime.className = 'px-5 py-2 rounded-lg text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-md';
-        btnMonthly.className = 'px-5 py-2 rounded-lg text-sm font-medium transition-all text-slate-400 hover:text-white';
-      } else {
-        btnMonthly.className = 'px-5 py-2 rounded-lg text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-md';
-        btnOneTime.className = 'px-5 py-2 rounded-lg text-sm font-medium transition-all text-slate-400 hover:text-white';
-      }
-      updateUI();
-    }
-
-    function selectPreset(amount) {
-      currentAmount = amount;
-      document.getElementById('custom-amount-input').value = '';
-      updateUI();
-    }
-
-    function handleCustomInput(val) {
-      const parsed = parseFloat(val);
-      currentAmount = isNaN(parsed) || parsed <= 0 ? 0 : parsed;
-      
-      // Clear preset button active states when typing custom
-      document.querySelectorAll('.preset-btn').forEach(btn => {
-        btn.className = 'preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all';
-      });
-      updateUI();
-    }
-
-    // Set current year
+    // Set current year dynamically
     document.getElementById('current-year').innerText = new Date().getFullYear();
 
     // Initialize Lucide Icons
