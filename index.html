@@ -1,355 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sikh Rifle and Pistol Association | SRPA</title>
-    
-    <!-- Import Professional Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SikhRPA - Marksmanship & Safety Education</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-        /* Premium CSS Variables */
-        :root {
-            --navy-blue: #001F3F;
-            --navy-light: #003366;
-            --metallic-gold: #D4AF37;
-            --steel-gray: #708090;
-            --pure-white: #FFFFFF;
-            --light-bg: #F8FAFC;
-            --text-dark: #1E293B;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#f59e0b',
+              blue: '#1e3a8a',
+            }
+          }
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--light-bg);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
-
-        /* Modern Navigation */
-        nav {
-            background-color: var(--pure-white);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .nav-left { display: flex; align-items: center; gap: 15px; }
-        nav img { height: 60px; object-fit: contain; }
-        nav h1 { color: var(--navy-blue); font-size: 1.5rem; font-weight: 800; letter-spacing: 0.5px; }
-        .nav-btn {
-            background-color: var(--metallic-gold);
-            color: var(--navy-blue);
-            padding: 10px 24px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-        .nav-btn:hover { background-color: var(--navy-blue); color: var(--pure-white); }
-
-        /* Premium Hero Section with Background Overlay */
-        .hero {
-            position: relative;
-            background-image: url('https://images.unsplash.com/photo-1584824388145-2AF662f3A818?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Professional range background placeholder */
-            background-size: cover;
-            background-position: center;
-            color: var(--pure-white);
-            text-align: center;
-            padding: 8rem 2rem;
-            border-bottom: 6px solid var(--metallic-gold);
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(0,31,63,0.95) 0%, rgba(0,51,102,0.85) 100%);
-            z-index: 1;
-        }
-        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
-        .hero h2 { font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-        .hero p { font-size: 1.25rem; font-weight: 400; opacity: 0.9; }
-
-        /* Section Layouts */
-        .container { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
-        .section-title {
-            text-align: center;
-            color: var(--navy-blue);
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--metallic-gold);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Modern 4 Rules Grid (Replacing the Table) */
-        .rules-wrapper { display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; margin-bottom: 5rem; }
-        .rules-text { flex: 1; min-width: 300px; }
-        .rules-image { flex: 1; min-width: 300px; text-align: center; }
-        .rules-image img { max-width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 1px solid #e2e8f0; }
-        
-        .rule-card {
-            display: flex;
-            background: var(--pure-white);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--navy-blue);
-            align-items: center;
-            gap: 1.5rem;
-            transition: transform 0.2s ease;
-        }
-        .rule-card:hover { transform: translateX(10px); border-left-color: var(--metallic-gold); }
-        .rule-number {
-            background: var(--light-bg);
-            color: var(--navy-blue);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .rule-content h4 { color: var(--navy-blue); font-size: 1.2rem; margin-bottom: 0.25rem; }
-        .rule-content p { color: var(--steel-gray); font-size: 0.95rem; margin: 0; font-weight: 600;}
-
-        /* Educational Resources Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 5rem;
-        }
-        .card {
-            background: var(--pure-white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 260px; object-fit: cover; border-bottom: 4px solid var(--metallic-gold); }
-        .card-content { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-content h3 { color: var(--navy-blue); font-size: 1.4rem; margin-bottom: 1rem; }
-        .card-content p { color: var(--steel-gray); font-size: 1rem; margin-bottom: 1.5rem; flex-grow: 1; }
-        .btn-outline {
-            display: inline-block;
-            text-align: center;
-            border: 2px solid var(--navy-blue);
-            color: var(--navy-blue);
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 700;
-            transition: all 0.3s;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-        .btn-outline:hover { background: var(--navy-blue); color: var(--pure-white); }
-
-        /* Footer */
-        footer {
-            background-color: var(--navy-blue);
-            color: var(--pure-white);
-            text-align: center;
-            padding: 4rem 2rem;
-            border-top: 6px solid var(--metallic-gold);
-        }
-        footer h3 { color: var(--metallic-gold); margin-bottom: 15px; font-size: 1.8rem; letter-spacing: 1px;}
-        .footer-tagline { font-size: 1.2rem; font-weight: 600; margin-bottom: 2rem;}
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.9rem; color: #cbd5e1; }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 1rem; text-align: center; }
-            .hero h2 { font-size: 2.5rem; }
-            .rules-wrapper { flex-direction: column; }
-        }
-    </style>
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-left">
-            <img src="srpa-logo.PNG" alt="SRPA Logo" onerror="this.src='https://via.placeholder.com/60x60?text=Logo'">
-            <h1>Sikh Rifle & Pistol Association</h1>
-        </div>
-        <a href="mailto:president@sikhrpa.org" class="nav-btn">Contact Us</a>
-    </nav>
+  <!-- Navigation Bar -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img 
+          src="srpa-logo.png" 
+          alt="SikhRPA Logo" 
+          class="h-10 w-auto object-contain"
+          onerror="this.style.display='none'"
+        />
+        <span class="font-bold text-lg tracking-tight text-white">SikhRPA</span>
+      </div>
+      
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#safety" class="hover:text-amber-400 transition-colors">Safety Rules</a>
+        <a href="#guides" class="hover:text-amber-400 transition-colors">Educational Guides</a>
+        <a href="#donate" class="hover:text-amber-400 transition-colors">Support Us</a>
+      </nav>
 
-    <!-- Hero Banner -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h2>Education • Safety • Community</h2>
-            <p>A Nonprofit organized for educational and charitable purposes, promoting responsible firearm ownership.</p>
-        </div>
-    </header>
-
-    <main class="container">
-        
-        <!-- Safety Rules Section -->
-        <h2 class="section-title">The Foundation of Safety</h2>
-        <section class="rules-wrapper">
-            <div class="rules-text">
-                <p style="font-size: 1.1rem; color: var(--steel-gray); margin-bottom: 2rem;">Education is your first line of defense. Commit these 4 Universal Rules to memory before you ever handle a firearm.</p>
-                
-                <!-- Modern Rule Cards -->
-                <div class="rule-card">
-                    <div class="rule-number">1</div>
-                    <div class="rule-content">
-                        <h4>Assume it's loaded</h4>
-                        <p>ਹਮੇਸ਼ਾ ਇਹ ਮੰਨ ਕੇ ਚੱਲੋ ਕਿ ਹਥਿਆਰ ਲੋਡ (Loaded) ਹੈ</p>
-                    </div>
-                </div>
-                <div class="rule-card">
-                    <div class="rule-number">2</div>
-                    <div class="rule-content">
-                        <h4>Safe direction</h4>
-                        <p>ਪਿਸਟਲ ਦਾ ਮੂੰਹ ਹਮੇਸ਼ਾ ਸੁਰੱਖਿਅਤ ਦਿਸ਼ਾ ਵੱਲ ਰੱਖੋ</p>
-                    </div>
-                </div>
-                <div class="rule-card">
-                    <div class="rule-number">3</div>
-                    <div class="rule-content">
-                        <h4>Trigger discipline</h4>
-                        <p>ਆਪਣੀ ਉਂਗਲ ਟਰਿੱਗਰ (Trigger) ਤੋਂ ਦੂਰ ਰੱਖੋ</p>
-                    </div>
-                </div>
-                <div class="rule-card">
-                    <div class="rule-number">4</div>
-                    <div class="rule-content">
-                        <h4>Know your target</h4>
-                        <p>ਆਪਣੇ ਨਿਸ਼ਾਨੇ ਅਤੇ ਉਸਦੇ ਪਿੱਛੇ ਦੀ ਜਗ੍ਹਾ ਨੂੰ ਜਾਣੋ</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="rules-image">
-                <!-- Using your actual uploaded image file -->
-                <img src="rule-4.jpg" alt="SRPA Rule 4 Illustration" onerror="this.src='https://via.placeholder.com/500x600?text=Safety+Graphic'">
-            </div>
-        </section>
-
-        <!-- Educational Resources Grid -->
-        <h2 class="section-title">Educational Resources</h2>
-        <section class="grid">
-            
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="handgun-guide.jpg" alt="First Handgun Buying Guide" onerror="this.src='https://images.unsplash.com/photo-1595590424283-b8f1784cb2c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                <div class="card-content">
-                    <h3>First Handgun Guide</h3>
-                    <p>Don't just guess—make an informed decision. Learn how to choose the right caliber and model for your specific defense and training needs.</p>
-                    <a href="handgun-guide.jpg" target="_blank" class="btn-outline">Read Guide</a>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="grip-guide.jpg" alt="Proper Pistol Grip Form" onerror="this.src='https://images.unsplash.com/photo-1610993302487-63fc1dd006db?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                <div class="card-content">
-                    <h3>Proper Pistol Grip</h3>
-                    <p>Master the modern "Thumbs Forward" grip. Mitigate muzzle rise, establish a rock-solid foundation, and improve your accuracy.</p>
-                    <a href="grip-guide.jpg" target="_blank" class="btn-outline">Learn Technique</a>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="ammo-chart.jpg" alt="Handgun Caliber Comparison" onerror="this.src='https://images.unsplash.com/photo-1590234050228-592ab14d877e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                <div class="card-content">
-                    <h3>Caliber Ballistics</h3>
-                    <p>Understand the science behind the tool. A comparative breakdown of standard bullet weights, dimensions, and velocities.</p>
-                    <!-- Leaving this as a placeholder until an ammo chart page is made or the image is uploaded -->
-                    <a href="ammo-chart.jpg" target="_blank" class="btn-outline">View Chart</a>
-                </div>
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- Official Organization Details for Google Workspace Compliance -->
-<section style="padding: 40px 20px; background-color: #f4f6f8; font-family: 'Open Sans', sans-serif; color: #333;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="color: #001f3f; border-bottom: 2px solid #D4AF37; padding-bottom: 10px;">About Our Organization</h2>
-        
-        <h3 style="color: #001f3f; margin-top: 20px;">Our Mission</h3>
-        <p style="line-height: 1.6;">
-            The Sikh Rifle and Pistol Association is a nonprofit public benefit corporation organized exclusively to provide public education and training on firearm safety, proper firearm handling and maintenance, and the historical and technical variations of diverse firearm types, thereby promoting responsible ownership and community safety.
-        </p>
-
-        <h3 style="color: #001f3f; margin-top: 20px;">Programs & Services</h3>
-        <ul style="line-height: 1.6;">
-            <li><strong>Community Safety Seminars:</strong> Accessible workshops educating first-time owners and families on safe handling, proper maintenance, and secure home storage.</li>
-            <li><strong>Marksmanship Fundamentals:</strong> Hands-on range instruction for beginners focusing on stance, grip mechanics, and trigger control.</li>
-            <li><strong>Educational Resources:</strong> Free bilingual training materials designed to ensure safety information reaches diverse communities.</li>
-            <li><strong>Outdoor Sportsmanship:</strong> Structured events that cultivate outdoor heritage and responsible participation.</li>
-        </ul>
-
+      <a
+        href="#donate"
+        class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all shadow-md shadow-amber-500/10"
+      >
+        Donate
+      </a>
     </div>
-</section>
+  </header>
 
-    <!-- Footer -->
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-6">
+        <i data-lucide="shield-check" class="w-4 h-4"></i> Certified Marksmanship & Safety
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+        Advancing Safety, Marksmanship, & Civic Responsibility
+      </h1>
+      <p class="text-base sm:text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+        Empowering the community with verified training standards, visual educational resources, and legal compliance guides.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="#guides"
+          class="px-6 py-3 rounded-xl bg-slate-800 border border-slate-700 font-semibold hover:border-slate-600 transition-all flex items-center gap-2 text-sm"
+        >
+          <i data-lucide="book-open" class="w-4 h-4 text-amber-400"></i> Browse Resource Library
+        </a>
+        <a
+          href="#donate"
+          class="px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition-all text-sm flex items-center gap-2 shadow-lg shadow-amber-500/20"
+        >
+          <i data-lucide="heart" class="w-4 h-4"></i> Support Our Mission
+        </a>
+      </div>
+    </section>
 
-    <footer style="background-color: #001f3f; color: white; padding: 40px 20px; text-align: center; font-family: 'Open Sans', sans-serif;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h3 style="font-family: 'Montserrat', sans-serif; color: #D4AF37; margin-bottom: 15px;">Sikh Rifle and Pistol Association</h3>
-        
-        <div style="margin-bottom: 20px; font-size: 1em; line-height: 1.6;">
-            <p style="margin: 5px 0;">
-                <strong>Based In:</strong> South Lake Tahoe, CA
+    <!-- Fundamental Safety Highlight -->
+    <section id="safety" class="py-16 bg-slate-900 border-y border-slate-800">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="w-full md:w-1/3">
+            <img 
+              src="rule-4.jpg" 
+              alt="Rule 4 of Firearm Safety" 
+              class="rounded-xl border border-slate-700 shadow-xl w-full h-auto object-cover"
+            />
+          </div>
+          <div class="w-full md:w-2/3">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">
+              Fundamental Safety
+            </span>
+            <h3 class="text-2xl font-bold mt-1 mb-3 text-white">Know Your Target & What Lies Beyond</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Safety is the bedrock of marksmanship. Never pull the trigger without complete visual confirmation of your target, backstop, and the surrounding environment.
             </p>
-            
-            <p style="margin: 5px 0;">
-                <strong>Contact:</strong> 
-                <a href="mailto:president@sikhrpa.org" style="color: #D4AF37; text-decoration: none;">president@sikhrpa.org</a>
-            </p>
-            
-            <p style="margin: 5px 0;">
-                <strong>Federal EIN:</strong> 42-2595402
-            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+              <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Positive Target ID
+              </div>
+              <div class="p-3 bg-slate-950/50 rounded-lg border border-slate-800 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Adequate Backstop
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educational Resource Library -->
+    <section id="guides" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Resource Library</h2>
+        <p class="text-slate-400 text-sm mt-2">Essential training references, diagrams, and ballistics data.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Handgun Guide Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
+          <div class="h-48 overflow-hidden bg-slate-950">
+            <img src="handgun-guide.jpg" alt="Handgun Guide" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="font-bold text-base text-white mb-1">Handgun Mechanics</h4>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Anatomy, functional operation, and safe handling guidelines.</p>
+            </div>
+            <a href="handgun-guide.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+              View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
         </div>
 
-        <hr style="border: none; border-top: 1px solid #708090; margin: 20px 0;">
+        <!-- Grip Guide Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
+          <div class="h-48 overflow-hidden bg-slate-950">
+            <img src="grip-guide.jpg" alt="Grip Mechanics" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="font-bold text-base text-white mb-1">Fundamentals of Grip</h4>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Control, recoil mitigation, and standard hand placement technique.</p>
+            </div>
+            <a href="grip-guide.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+              View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
 
-        <p style="font-size: 0.85em; color: #B0C4DE; margin: 0;">
-            We are a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code. <br>
-            ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
-            <br>
-            1075 Mohawk St, South Lake Tahoe, CA 96150
-        </p>
-    </div>
-</footer>
+        <!-- Ammunition Chart Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg flex flex-col hover:border-slate-700 transition-all">
+          <div class="h-48 overflow-hidden bg-slate-950">
+            <img src="ammo-chart.jpg" alt="Ammunition Reference" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="font-bold text-base text-white mb-1">Ammunition Reference</h4>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Caliber comparison chart and standard ballistics overviews.</p>
+            </div>
+            <a href="ammo-chart.jpg" target="_blank" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+              View Full Diagram <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Dynamic Donation Funnel -->
+    <section id="donate" class="py-20 bg-slate-900 text-white border-t border-slate-800">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-3">
+            <i data-lucide="heart" class="w-3.5 h-3.5"></i> Empower Our Community
+          </span>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Support Safety & Marksmanship Education
+          </h2>
+          <p class="mt-3 text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+            Your contributions directly fund educational materials, community workshops, and range safety equipment.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-sm">
+          <!-- Frequency Toggle -->
+          <div class="flex justify-center mb-8">
+            <div class="bg-slate-950/80 p-1 rounded-xl border border-slate-700 inline-flex">
+              <button
+                type="button"
+                id="btn-one-time"
+                onclick="setFrequency('one-time')"
+                class="px-5 py-2 rounded-lg text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-md"
+              >
+                One-Time
+              </button>
+              <button
+                type="button"
+                id="btn-monthly"
+                onclick="setFrequency('monthly')"
+                class="px-5 py-2 rounded-lg text-sm font-medium transition-all text-slate-400 hover:text-white"
+              >
+                Monthly Support
+              </button>
+            </div>
+          </div>
+
+          <!-- Preset Amounts -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <button type="button" onclick="selectPreset(25)" class="preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all" data-amount="25">$25</button>
+            <button type="button" onclick="selectPreset(50)" class="preset-btn py-3.5 rounded-xl text-lg font-bold border border-amber-400 bg-amber-500/10 text-amber-300 ring-2 ring-amber-400/30 transition-all" data-amount="50">$50</button>
+            <button type="button" onclick="selectPreset(100)" class="preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all" data-amount="100">$100</button>
+            <button type="button" onclick="selectPreset(250)" class="preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all" data-amount="250">$250</button>
+          </div>
+
+          <!-- Custom Amount Input -->
+          <div class="mb-6">
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+              Or Custom Amount
+            </label>
+            <div class="relative rounded-xl shadow-sm">
+              <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 text-lg font-bold">$</span>
+              <input
+                type="number"
+                id="custom-amount-input"
+                min="1"
+                placeholder="Enter custom amount"
+                oninput="handleCustomInput(this.value)"
+                class="w-full pl-9 pr-4 py-3 bg-slate-900/70 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-base"
+              />
+            </div>
+          </div>
+
+          <!-- Impact Message -->
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-700/60 flex items-start gap-3 mb-8">
+            <i data-lucide="shield-check" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <strong class="text-amber-300">Your Impact:</strong> <span id="impact-text">Provides certified eye and ear protection sets for youth safety seminars.</span>
+            </p>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="button"
+            id="donate-submit-btn"
+            class="w-full py-4 px-6 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 text-base shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2"
+          >
+            <span id="donate-btn-label">Complete Donation of $50</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+
+          <p class="text-center text-xs text-slate-500 mt-4">
+            Secure 256-bit encrypted checkout. No sensitive card details stored on site.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
+    <p>© <span id="current-year"></span> SikhRPA. Dedicated to community safety and marksmanship education.</p>
+  </footer>
+
+  <!-- Vanilla State Handler -->
+  <script>
+    let currentFrequency = 'one-time';
+    let currentAmount = 50;
+
+    function getImpactMessage(amount) {
+      if (amount >= 250) return "Funds an entire community range safety clinic and protective gear for 10 newcomers.";
+      if (amount >= 100) return "Sponsors comprehensive marksmanship & legal education workshop materials for 5 members.";
+      if (amount >= 50) return "Provides certified eye and ear protection sets for youth safety seminars.";
+      return "Supports educational guides, range supplies, and ongoing community safety outreach.";
+    }
+
+    function updateUI() {
+      // Update impact text
+      document.getElementById('impact-text').innerText = getImpactMessage(currentAmount);
+
+      // Update CTA text
+      const freqSuffix = currentFrequency === 'monthly' ? ' / mo' : '';
+      document.getElementById('donate-btn-label').innerText = `Complete Donation of $${currentAmount}${freqSuffix}`;
+
+      // Update preset active classes
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        const amt = parseInt(btn.getAttribute('data-amount'), 10);
+        if (amt === currentAmount) {
+          btn.className = 'preset-btn py-3.5 rounded-xl text-lg font-bold border border-amber-400 bg-amber-500/10 text-amber-300 ring-2 ring-amber-400/30 transition-all';
+        } else {
+          btn.className = 'preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all';
+        }
+      });
+    }
+
+    function setFrequency(freq) {
+      currentFrequency = freq;
+      const btnOneTime = document.getElementById('btn-one-time');
+      const btnMonthly = document.getElementById('btn-monthly');
+
+      if (freq === 'one-time') {
+        btnOneTime.className = 'px-5 py-2 rounded-lg text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-md';
+        btnMonthly.className = 'px-5 py-2 rounded-lg text-sm font-medium transition-all text-slate-400 hover:text-white';
+      } else {
+        btnMonthly.className = 'px-5 py-2 rounded-lg text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-md';
+        btnOneTime.className = 'px-5 py-2 rounded-lg text-sm font-medium transition-all text-slate-400 hover:text-white';
+      }
+      updateUI();
+    }
+
+    function selectPreset(amount) {
+      currentAmount = amount;
+      document.getElementById('custom-amount-input').value = '';
+      updateUI();
+    }
+
+    function handleCustomInput(val) {
+      const parsed = parseFloat(val);
+      currentAmount = isNaN(parsed) || parsed <= 0 ? 0 : parsed;
+      
+      // Clear preset button active states when typing custom
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.className = 'preset-btn py-3.5 rounded-xl text-lg font-bold border border-slate-700 bg-slate-900/50 text-slate-300 hover:border-slate-600 transition-all';
+      });
+      updateUI();
+    }
+
+    // Set current year
+    document.getElementById('current-year').innerText = new Date().getFullYear();
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
 </body>
 </html>
