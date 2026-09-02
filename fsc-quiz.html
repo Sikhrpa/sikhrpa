@@ -181,15 +181,28 @@
           <i data-lucide="chevron-left" class="w-4 h-4"></i> Previous
         </button>
 
-        <button 
-          id="nextBtn" 
-          onclick="nextQuestion()" 
-          class="px-6 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
-          disabled
-        >
-          <span>Next Question</span>
-          <i data-lucide="chevron-right" class="w-4 h-4"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <!-- Early Finish Button (Visible once at least 1 question is answered) -->
+          <button 
+            id="finishEarlyBtn"
+            type="button"
+            onclick="confirmFinishEarly()"
+            class="hidden px-3.5 py-2.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-bold transition-colors"
+            title="Finish the test early with current answered questions"
+          >
+            Finish Early & Score
+          </button>
+
+          <button 
+            id="nextBtn" 
+            onclick="nextQuestion()" 
+            class="px-6 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+            disabled
+          >
+            <span>Next Question</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -212,11 +225,11 @@
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto mb-6">
           <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
             <span class="block text-2xl sm:text-3xl font-extrabold text-blue-900" id="finalScorePct">0%</span>
-            <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Score</span>
+            <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide" id="scoreLabel">Accuracy</span>
           </div>
           <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
             <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-700" id="finalCorrectCount">0/30</span>
-            <span class="text-[11px] font-semibold text-emerald-800 uppercase tracking-wide">Accuracy</span>
+            <span class="text-[11px] font-semibold text-emerald-800 uppercase tracking-wide" id="correctRatioLabel">Correct / Answered</span>
           </div>
           <div class="p-4 bg-blue-50 border border-blue-200 rounded-xl">
             <span class="block text-xl sm:text-2xl font-extrabold text-blue-900 mt-0.5" id="finalTimePace">0m 00s</span>
@@ -321,6 +334,43 @@
 
     </div>
   </main>
+
+  <!-- Custom Accessible Confirmation Modal (Replaces window.confirm) -->
+  <div 
+    id="confirmModal" 
+    class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="confirmModalTitle"
+  >
+    <div class="relative max-w-md w-full bg-white border-2 border-slate-200 rounded-2xl p-6 shadow-2xl animate-in fade-in zoom-in duration-150">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="p-2.5 bg-amber-100 text-amber-800 rounded-xl">
+          <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+        </div>
+        <h3 id="confirmModalTitle" class="font-bold text-slate-900 text-base">Confirm Action</h3>
+      </div>
+      <p id="confirmModalMessage" class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed"></p>
+      <div class="flex items-center justify-end gap-2.5">
+        <button 
+          id="confirmModalCancelBtn" 
+          type="button" 
+          onclick="closeCustomConfirm()" 
+          class="px-4 py-2 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors"
+        >
+          Cancel
+        </button>
+        <button 
+          id="confirmModalOkBtn" 
+          type="button" 
+          onclick="executeCustomConfirm()" 
+          class="px-4 py-2 rounded-lg bg-blue-900 text-white text-xs font-bold hover:bg-blue-800 transition-colors shadow-sm"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
@@ -768,15 +818,23 @@
     let quizStartTime = null;
     let timerInterval = null;
     let totalSecondsElapsed = 0;
+    let quizSessionId = null;
+    let telemetryDebounceTimer = null;
+    let pendingConfirmAction = null;
+
+    // Generate a unique session identifier for every quiz attempt
+    function generateSessionId() {
+      return 'fsc_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+    }
 
     // Fisher-Yates array shuffling algorithm
-    function shuffleArray(array) {
-      const arr = [...array];
-      for (let i = arr.length - 1; i > 0; i--) {
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+        [copy[i], copy[j]] = [copy[j], copy[i]];
       }
-      return arr;
+      return copy;
     }
 
     function configureActiveQuestions() {
@@ -851,10 +909,12 @@
 
     function initQuiz() {
       lucide.createIcons();
+      quizSessionId = generateSessionId();
       quizStartTime = Date.now();
       configureActiveQuestions();
       startTimer();
       renderQuestion();
+      setupPageUnloadSync();
     }
 
     function startTimer() {
@@ -962,6 +1022,16 @@
 
       prevBtn.disabled = currentQuestionIndex === 0;
 
+      // Show "Finish Early" button once at least 1 question has been answered
+      const finishEarlyBtn = document.getElementById('finishEarlyBtn');
+      if (finishEarlyBtn) {
+        if (answeredCount >= 1 && currentQuestionIndex < activeQuestions.length - 1) {
+          finishEarlyBtn.classList.remove('hidden');
+        } else {
+          finishEarlyBtn.classList.add('hidden');
+        }
+      }
+
       if (currentQuestionIndex === activeQuestions.length - 1) {
         nextBtn.innerHTML = '<span>Generate Analytics & Results</span> <i data-lucide="check-circle-2" class="w-4 h-4"></i>';
       } else {
@@ -975,6 +1045,40 @@
       if (userAnswers[currentQuestionIndex] !== null) return;
       userAnswers[currentQuestionIndex] = optionIndex;
       renderQuestion();
+
+      // Trigger debounced session progress sync so drop-offs are saved
+      scheduleTelemetrySync();
+    }
+
+    function showCustomConfirm(title, message, onConfirm) {
+      document.getElementById('confirmModalTitle').innerText = title;
+      document.getElementById('confirmModalMessage').innerText = message;
+      pendingConfirmAction = onConfirm;
+      document.getElementById('confirmModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeCustomConfirm() {
+      document.getElementById('confirmModal').classList.add('hidden');
+      pendingConfirmAction = null;
+    }
+
+    function executeCustomConfirm() {
+      const action = pendingConfirmAction;
+      closeCustomConfirm();
+      if (typeof action === 'function') {
+        action();
+      }
+    }
+
+    function confirmFinishEarly() {
+      const answeredCount = userAnswers.filter(a => a !== null).length;
+      const unansweredCount = activeQuestions.length - answeredCount;
+      showCustomConfirm(
+        "Finish Exam Early?",
+        `You have answered ${answeredCount} of ${activeQuestions.length} questions. Unanswered questions (${unansweredCount}) will be marked as skipped. Are you sure you want to grade your diagnostic now?`,
+        () => showResultsAndAnalytics(true)
+      );
     }
 
     function prevQuestion() {
@@ -989,28 +1093,31 @@
         currentQuestionIndex++;
         renderQuestion();
       } else {
-        showResultsAndAnalytics();
+        showResultsAndAnalytics(false);
       }
     }
 
-    function showResultsAndAnalytics() {
+    function showResultsAndAnalytics(isEarlyFinish = false) {
       stopTimer();
       document.getElementById('quizContainer').classList.add('hidden');
       const results = document.getElementById('resultsContainer');
       results.classList.remove('hidden');
 
+      const answeredCount = userAnswers.filter(a => a !== null).length;
       const correctCount = userAnswers.filter((a, idx) => a === activeQuestions[idx].correctIndex).length;
       const total = activeQuestions.length;
-      const scorePct = Math.round((correctCount / total) * 100);
-      const passed = scorePct >= 75;
+      const isComplete = answeredCount === total && !isEarlyFinish;
+      
+      // Calculate score based on answered questions rather than penalizing unanswered questions with 0% accuracy
+      const scorePct = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+      const passed = scorePct >= 75 && isComplete;
 
       // Time and Pace Calculations
       const mins = Math.floor(totalSecondsElapsed / 60);
       const secs = totalSecondsElapsed % 60;
-      const avgSecsPerQ = Math.round(totalSecondsElapsed / total);
       document.getElementById('finalTimePace').innerText = `${mins}m ${secs}s`;
 
-      // Estimated Percentile
+      // Estimated Percentile based on accuracy
       let percentile = 50;
       if (scorePct >= 100) percentile = 99;
       else if (scorePct >= 93) percentile = 91;
@@ -1022,13 +1129,28 @@
       document.getElementById('communityPercentile').innerText = `Top ${100 - percentile}%`;
 
       document.getElementById('finalScorePct').innerText = `${scorePct}%`;
-      document.getElementById('finalCorrectCount').innerText = `${correctCount}/${total}`;
+      document.getElementById('finalCorrectCount').innerText = isComplete 
+        ? `${correctCount}/${total}` 
+        : `${correctCount}/${answeredCount}`;
+      
+      const correctRatioLabel = document.getElementById('correctRatioLabel');
+      if (correctRatioLabel) {
+        correctRatioLabel.innerText = isComplete ? 'Final Score' : `Answered (${answeredCount}/${total})`;
+      }
 
       const badgeWrapper = document.getElementById('resultBadgeWrapper');
       const resultStatus = document.getElementById('resultStatus');
       const passingNotice = document.getElementById('passingNotice');
 
-      if (passed) {
+      if (!isComplete) {
+        const remaining = total - answeredCount;
+        badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-amber-100 text-amber-800 border-2 border-amber-300 shadow-md';
+        resultStatus.innerText = 'Incomplete Examination — Not Passing';
+        passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 bg-amber-50 border-amber-300 text-amber-950';
+        passingNotice.innerHTML = `
+          <strong>Exam Incomplete (Not Passing):</strong> You achieved an accuracy of <strong>${scorePct}%</strong> (${correctCount} of ${answeredCount} answered correctly). However, California mandates completing all ${total} questions on the official FSC exam. Because <strong>${remaining} question${remaining > 1 ? 's were' : ''} left unanswered</strong>, this attempt cannot be scored as a pass. Complete the entire exam on your next attempt to meet the state certification standard!
+        `;
+      } else if (passed) {
         badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-emerald-100 text-emerald-700 border-2 border-emerald-300 shadow-md';
         resultStatus.innerText = 'Pass — Meeting CA State Standard!';
         passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 bg-emerald-50 border-emerald-300 text-emerald-900';
@@ -1049,25 +1171,25 @@
       renderCategoryAnalytics(categoryData);
 
       // Targeted Recommendation
-      renderTargetedRecommendation(categoryData);
+      renderTargetedRecommendation(categoryData, isComplete);
 
       // Local History Tracking
-      saveAttemptToLocalHistory(scorePct, correctCount, total, totalSecondsElapsed);
+      saveAttemptToLocalHistory(scorePct, correctCount, answeredCount, total, totalSecondsElapsed, isComplete);
       renderLocalHistory();
 
       // Render Question Review
       renderReview();
 
-      // =====================================================================
-      // TELEMETRY DISPATCH: Trigger background post to Google Sheets
-      // =====================================================================
+      // Transmit Final Telemetry (Marked as Final)
       transmitTelemetry({
         scorePct,
         correctCount,
+        answeredCount,
         total,
         passed,
+        isCompleted: isComplete,
+        status: !isComplete ? `INCOMPLETE (${answeredCount}/${total} answered, ${scorePct}%)` : (passed ? 'PASS' : 'FAIL'),
         totalSecondsElapsed,
-        avgSecsPerQ,
         categoryData
       });
 
@@ -1079,13 +1201,16 @@
       const stats = {};
       activeQuestions.forEach((q, idx) => {
         if (!stats[q.category]) {
-          stats[q.category] = { total: 0, correct: 0, questions: [] };
+          stats[q.category] = { total: 0, answered: 0, correct: 0, questions: [] };
         }
         stats[q.category].total++;
-        const isCorrect = userAnswers[idx] === q.correctIndex;
+        const isAnswered = userAnswers[idx] !== null;
+        const isCorrect = isAnswered && userAnswers[idx] === q.correctIndex;
+        if (isAnswered) stats[q.category].answered++;
         if (isCorrect) stats[q.category].correct++;
         stats[q.category].questions.push({
           id: q.id,
+          isAnswered: isAnswered,
           isCorrect: isCorrect,
           statute: q.statute
         });
@@ -1098,7 +1223,26 @@
       container.innerHTML = '';
 
       Object.entries(stats).forEach(([catName, data]) => {
-        const catPct = Math.round((data.correct / data.total) * 100);
+        if (data.answered === 0) {
+          const row = document.createElement('div');
+          row.className = 'p-3.5 bg-slate-50 border border-slate-200 rounded-xl opacity-75';
+          row.innerHTML = `
+            <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
+              <span class="text-slate-700 font-bold">${catName}</span>
+              <div class="flex items-center gap-2">
+                <span class="text-slate-400">0/${data.total} answered</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded border uppercase bg-slate-100 text-slate-600 border-slate-200">Not Attempted</span>
+              </div>
+            </div>
+            <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+              <div class="h-full bg-slate-300 w-0"></div>
+            </div>
+          `;
+          container.appendChild(row);
+          return;
+        }
+
+        const catPct = Math.round((data.correct / data.answered) * 100);
         let barColor = 'bg-emerald-500';
         let badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
         let statusLabel = 'Mastered';
@@ -1119,7 +1263,7 @@
           <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
             <span class="text-slate-900 font-bold">${catName}</span>
             <div class="flex items-center gap-2">
-              <span class="text-slate-500">${data.correct}/${data.total} (${catPct}%)</span>
+              <span class="text-slate-500">${data.correct}/${data.answered} answered (${catPct}%)</span>
               <span class="text-[10px] font-bold px-2 py-0.5 rounded border uppercase ${badgeColor}">${statusLabel}</span>
             </div>
           </div>
@@ -1131,24 +1275,31 @@
       });
     }
 
-    function renderTargetedRecommendation(stats) {
+    function renderTargetedRecommendation(stats, isComplete = true) {
       let lowestCategory = null;
       let lowestPct = 101;
 
       Object.entries(stats).forEach(([catName, data]) => {
-        const pct = (data.correct / data.total) * 100;
-        if (pct < lowestPct) {
-          lowestPct = pct;
-          lowestCategory = catName;
+        if (data.answered > 0) {
+          const pct = (data.correct / data.answered) * 100;
+          if (pct < lowestPct) {
+            lowestPct = pct;
+            lowestCategory = catName;
+          }
         }
       });
 
       const heading = document.getElementById('recHeading');
       const text = document.getElementById('recText');
 
-      if (lowestPct === 100) {
-        heading.innerText = 'Exceptional Mastery Across All Subject Areas';
-        text.innerText = 'You demonstrated complete accuracy across California Penal Code provisions, safe storage mandates, and range handling rules. You are thoroughly prepared for the live CA FSC test.';
+      if (lowestPct === 101) {
+        heading.innerText = 'No Questions Attempted';
+        text.innerText = 'Answer test questions to generate diagnostic recommendations.';
+      } else if (lowestPct === 100) {
+        heading.innerText = '100% Accuracy on Attempted Questions';
+        text.innerText = isComplete 
+          ? 'You demonstrated complete accuracy across California Penal Code provisions, safe storage mandates, and range handling rules. You are thoroughly prepared for the live CA FSC test.'
+          : 'You answered all attempted questions correctly! To officially earn a passing certificate, be sure to complete all 30 questions on your next attempt.';
       } else {
         heading.innerText = `Focus Area: ${lowestCategory} (${Math.round(lowestPct)}% accuracy)`;
         
@@ -1170,23 +1321,44 @@
 
       activeQuestions.forEach((q, idx) => {
         const userAns = userAnswers[idx];
-        const isCorrect = userAns === q.correctIndex;
+        const isAnswered = userAns !== null;
+        const isCorrect = isAnswered && userAns === q.correctIndex;
+
+        let cardClass = 'bg-rose-50/40 border-rose-200';
+        let badgeClass = 'bg-rose-100 text-rose-800';
+        let iconBg = 'bg-rose-600';
+        let iconName = 'x';
+        let statusBadge = 'Missed';
+
+        if (isCorrect) {
+          cardClass = 'bg-emerald-50/40 border-emerald-200';
+          badgeClass = 'bg-emerald-100 text-emerald-800';
+          iconBg = 'bg-emerald-600';
+          iconName = 'check';
+          statusBadge = 'Correct';
+        } else if (!isAnswered) {
+          cardClass = 'bg-slate-50 border-slate-200 opacity-80';
+          badgeClass = 'bg-slate-200 text-slate-700';
+          iconBg = 'bg-slate-400';
+          iconName = 'minus';
+          statusBadge = 'Unanswered';
+        }
 
         const card = document.createElement('div');
-        card.className = `p-4 sm:p-5 rounded-xl border-2 ${isCorrect ? 'bg-emerald-50/40 border-emerald-200' : 'bg-rose-50/40 border-rose-200'}`;
+        card.className = `p-4 sm:p-5 rounded-xl border-2 ${cardClass}`;
 
         card.innerHTML = `
           <div class="flex items-start gap-3">
-            <span class="p-1 rounded-full ${isCorrect ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'} shrink-0 mt-0.5">
-              <i data-lucide="${isCorrect ? 'check' : 'x'}" class="w-3.5 h-3.5"></i>
+            <span class="p-1 rounded-full ${iconBg} text-white shrink-0 mt-0.5">
+              <i data-lucide="${iconName}" class="w-3.5 h-3.5"></i>
             </span>
             <div class="flex-1">
               <div class="flex items-center justify-between gap-2 mb-1">
-                <span class="text-xs font-bold uppercase tracking-wider ${isCorrect ? 'text-emerald-800' : 'text-rose-800'}">
+                <span class="text-xs font-bold uppercase tracking-wider ${isCorrect ? 'text-emerald-800' : (isAnswered ? 'text-rose-800' : 'text-slate-600')}">
                   Question ${idx + 1} (Ref Q#${q.id}): ${q.category}
                 </span>
-                <span class="text-xs font-semibold px-2 py-0.5 rounded ${isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
-                  ${isCorrect ? 'Correct' : 'Missed'}
+                <span class="text-xs font-semibold px-2 py-0.5 rounded ${badgeClass}">
+                  ${statusBadge}
                 </span>
               </div>
               <p class="font-bold text-slate-900 text-sm mb-2">${q.question}</p>
@@ -1195,7 +1367,7 @@
                 <p class="text-emerald-900 font-semibold">
                   <span class="font-bold">Correct Answer:</span> ${q.options[q.correctIndex]}
                 </p>
-                ${!isCorrect && userAns !== null ? `
+                ${!isCorrect && isAnswered ? `
                   <p class="text-rose-800">
                     <span class="font-bold">Your Selection:</span> ${q.options[userAns]}
                   </p>
@@ -1214,7 +1386,7 @@
     }
 
     // Local Storage History Operations
-    function saveAttemptToLocalHistory(scorePct, correctCount, total, timeSecs) {
+    function saveAttemptToLocalHistory(scorePct, correctCount, answeredCount, total, timeSecs, isComplete) {
       try {
         const history = JSON.parse(localStorage.getItem('srpa_fsc_attempts') || '[]');
         history.unshift({
@@ -1222,7 +1394,9 @@
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
           score: scorePct,
           correct: correctCount,
+          answered: answeredCount,
           total: total,
+          isComplete: isComplete,
           timeSecs: timeSecs
         });
         // Keep last 8 attempts
@@ -1244,9 +1418,14 @@
 
         history.forEach((att, idx) => {
           const item = document.createElement('div');
-          const isPass = att.score >= 75;
+          const isPass = att.score >= 75 && (att.isComplete ?? (att.answered === att.total));
           const mins = Math.floor(att.timeSecs / 60);
           const secs = att.timeSecs % 60;
+          const statusBadgeColor = isPass ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
+          const answeredDisplay = att.answered && att.answered < att.total 
+            ? `${att.score}% (${att.correct}/${att.answered} answered)` 
+            : `${att.score}% (${att.correct}/${att.total})`;
+
           item.className = 'flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-200';
           item.innerHTML = `
             <div class="flex items-center gap-2">
@@ -1255,8 +1434,8 @@
             </div>
             <div class="flex items-center gap-3">
               <span class="font-mono text-slate-500">${mins}m ${secs}s</span>
-              <span class="font-bold font-mono px-2 py-0.5 rounded text-xs ${isPass ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
-                ${att.score}% (${att.correct}/${att.total})
+              <span class="font-bold font-mono px-2 py-0.5 rounded text-xs ${statusBadgeColor}">
+                ${answeredDisplay}
               </span>
             </div>
           `;
@@ -1268,37 +1447,94 @@
     }
 
     function clearHistory() {
-      if (confirm('Clear your local FSC practice history?')) {
-        localStorage.removeItem('srpa_fsc_attempts');
-        renderLocalHistory();
-      }
+      showCustomConfirm(
+        "Clear Local Test History?",
+        "Are you sure you want to delete your previous test scores recorded on this device? This action cannot be undone.",
+        () => {
+          localStorage.removeItem('srpa_fsc_attempts');
+          renderLocalHistory();
+        }
+      );
     }
 
     // =========================================================================
-    // TELEMETRY REPORTING FUNCTION (Google Apps Script Webhook)
+    // TELEMETRY REPORTING WITH IN-PLACE SESSION UPDATING
     // =========================================================================
-    async function transmitTelemetry(payload) {
+    function scheduleTelemetrySync() {
+      // Debounce sending to avoid rapid network calls
+      if (telemetryDebounceTimer) clearTimeout(telemetryDebounceTimer);
+      telemetryDebounceTimer = setTimeout(() => {
+        const answeredCount = userAnswers.filter(a => a !== null).length;
+        if (answeredCount === 0) return;
+
+        const correctCount = userAnswers.filter((a, idx) => a === activeQuestions[idx].correctIndex).length;
+        const total = activeQuestions.length;
+        const scorePct = Math.round((correctCount / answeredCount) * 100);
+
+        transmitTelemetry({
+          scorePct,
+          correctCount,
+          answeredCount,
+          total,
+          passed: false,
+          isCompleted: false,
+          status: `INCOMPLETE (${answeredCount}/${total} answered)`,
+          totalSecondsElapsed: Math.floor((Date.now() - quizStartTime) / 1000)
+        });
+      }, 1500);
+    }
+
+    function setupPageUnloadSync() {
+      // Send abandonment telemetry if user leaves before finishing
+      window.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+          const answeredCount = userAnswers.filter(a => a !== null).length;
+          const isFinished = document.getElementById('resultsContainer').classList.contains('hidden') === false;
+          if (answeredCount > 0 && !isFinished) {
+            const correctCount = userAnswers.filter((a, idx) => a === activeQuestions[idx].correctIndex).length;
+            const total = activeQuestions.length;
+            const scorePct = Math.round((correctCount / answeredCount) * 100);
+            
+            transmitTelemetry({
+              scorePct,
+              correctCount,
+              answeredCount,
+              total,
+              passed: false,
+              isCompleted: false,
+              status: `ABANDONED (${answeredCount}/${total} answered)`,
+              totalSecondsElapsed: Math.floor((Date.now() - quizStartTime) / 1000)
+            }, true); // keepalive = true
+          }
+        }
+      });
+    }
+
+    async function transmitTelemetry(payload, useKeepalive = false) {
       if (!GOOGLE_SHEETS_WEBHOOK_URL || !GOOGLE_SHEETS_WEBHOOK_URL.startsWith('https://script.google.com/')) {
         return;
       }
 
-      // Collect missed question IDs and categories
+      // Collect missed questions from answered set
       const missed = [];
       activeQuestions.forEach((q, idx) => {
-        if (userAnswers[idx] !== q.correctIndex) {
-          missed.push({ id: q.id, category: q.category, statute: q.statute });
+        if (userAnswers[idx] !== null && userAnswers[idx] !== q.correctIndex) {
+          missed.push(`Q${q.id} (${q.category})`);
         }
       });
 
       const body = JSON.stringify({
         event_type: 'fsc_practice_exam',
+        session_id: quizSessionId,
         score_percent: payload.scorePct,
         passed: payload.passed,
+        status: payload.status,
         correct_count: payload.correctCount,
+        answered_count: payload.answeredCount,
         total_questions: payload.total,
         duration_seconds: payload.totalSecondsElapsed,
         missed_count: missed.length,
-        missed_summary: missed.map(m => `Q${m.id} (${m.category})`).join(', ') || 'None',
+        missed_summary: missed.join(', ') || 'None',
         timestamp: new Date().toISOString()
       });
 
@@ -1306,15 +1542,17 @@
         await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
           method: 'POST',
           mode: 'no-cors',
+          keepalive: useKeepalive,
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: body
         });
       } catch (err) {
-        console.warn('Anonymous telemetry dispatch failed gracefully:', err);
+        console.warn('Telemetry update failed gracefully:', err);
       }
     }
 
     function restartQuiz() {
+      quizSessionId = generateSessionId();
       currentQuestionIndex = 0;
       totalSecondsElapsed = 0;
       quizStartTime = Date.now();
