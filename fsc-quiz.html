@@ -92,8 +92,41 @@
         California Firearm Safety Certificate (FSC) Practice Test
       </h1>
       <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto mt-2 leading-relaxed">
-        Model exam based on California Department of Justice standards. Requires <strong>75% or higher</strong> (12 of 15 questions) to pass. Complete diagnostic analytics and category breakdown are generated automatically upon completion.
+        Model exam based on California Department of Justice standards. Requires <strong>75% or higher</strong> to pass. Complete diagnostic analytics and category breakdown are generated automatically upon completion.
       </p>
+
+      <!-- Exam Mode & Randomizer Configuration Bar -->
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-3 bg-white p-2 sm:p-2.5 rounded-2xl border-2 border-slate-200 shadow-sm max-w-xl mx-auto">
+        <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl">
+          <button 
+            id="mode30Btn" 
+            type="button"
+            onclick="setExamMode(30)" 
+            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm"
+          >
+            Full CA DOJ Exam (30 Qs)
+          </button>
+          <button 
+            id="mode15Btn" 
+            type="button"
+            onclick="setExamMode(15)" 
+            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900"
+          >
+            Quick Diagnostic (15 Qs)
+          </button>
+        </div>
+
+        <button 
+          id="shuffleToggleBtn"
+          type="button"
+          onclick="toggleShuffle()"
+          class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold flex items-center gap-1.5 text-slate-700 bg-slate-50 hover:bg-slate-100 transition-colors"
+          title="Toggle question shuffling on retakes"
+        >
+          <i data-lucide="shuffle" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span id="shuffleStatusLabel">Randomize: ON</span>
+        </button>
+      </div>
     </div>
 
     <!-- Active Quiz Card -->
@@ -182,7 +215,7 @@
             <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Score</span>
           </div>
           <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
-            <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-700" id="finalCorrectCount">0/15</span>
+            <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-700" id="finalCorrectCount">0/30</span>
             <span class="text-[11px] font-semibold text-emerald-800 uppercase tracking-wide">Accuracy</span>
           </div>
           <div class="p-4 bg-blue-50 border border-blue-200 rounded-xl">
@@ -308,7 +341,7 @@
     // =========================================================================
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
 
-    const QUESTIONS = [
+    const MASTER_QUESTIONS = [
       {
         id: 1,
         category: "Universal Safety Rules",
@@ -516,18 +549,278 @@
         correctIndex: 1,
         statute: "CA Penal Code § 28050",
         explanation: "Except for narrow, specific immediate-family transfers, all private party firearm sales and transfers in California must be processed through a licensed California firearms dealer (FFL), where background checks, FSC verification, and the 10-day waiting period are legally executed."
+      },
+      {
+        id: 16,
+        category: "California Legal Requirements",
+        question: "For how many years is a California Firearm Safety Certificate (FSC) legally valid once issued?",
+        options: [
+          "1 year",
+          "3 years",
+          "5 years",
+          "Lifetime"
+        ],
+        correctIndex: 2,
+        statute: "CA Penal Code § 31655",
+        explanation: "A California Firearm Safety Certificate (FSC) is valid for 5 years from the date of issuance, after which the holder must retake the test to acquire additional firearms."
+      },
+      {
+        id: 17,
+        category: "Range Safety & Malfunctions",
+        question: "What is a 'hangfire' and what is the proper safety procedure when one is suspected?",
+        options: [
+          "The trigger spring snaps; discard the firearm immediately into a safe barrel.",
+          "A perceptible delay between the primer striking and the ignition of the powder; keep the firearm pointed downrange for at least 30 seconds before opening the action.",
+          "The bullet leaves the barrel at twice the normal speed; inspect the ejector immediately.",
+          "A cartridge fails to chamber properly; tap the forward assist with maximum force."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 3",
+        explanation: "A hangfire is a delayed ignition caused by defective powder or primer. If you pull the trigger and nothing happens, the cartridge could fire unexpectedly moments later. You must keep the muzzle pointed downrange in a safe direction for a minimum of 30 seconds before attempting to clear the firearm."
+      },
+      {
+        id: 18,
+        category: "California Safe Storage Laws",
+        question: "Under California law, what device must accompany every firearm delivered by a licensed dealer (FFL), unless an approved lockbox or safe affidavit is signed?",
+        options: [
+          "A custom leather holster.",
+          "A California DOJ-approved Firearm Safety Device (FSD) such as an approved cable lock or trigger lock.",
+          "An extra cleaning kit with solvent.",
+          "A box of target ammunition."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 23635",
+        explanation: "California law requires all firearms sold, transferred, or manufactured in the state to be accompanied by an approved California DOJ-certified Firearm Safety Device (FSD) or proof of ownership of an approved gun safe."
+      },
+      {
+        id: 19,
+        category: "Firearm Mechanics",
+        question: "In a semi-automatic handgun, does removing the ammunition magazine guarantee that the firearm is empty and incapable of firing?",
+        options: [
+          "Yes — modern semi-automatics cannot fire once the magazine is detached.",
+          "No — a live cartridge may remain seated inside the barrel chamber and can fire even if the magazine is removed."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 1",
+        explanation: "Removing the magazine only cuts off the ammunition supply. If a round was chambered, it remains inside the barrel chamber ready to fire unless the slide is retracted, the round extracted, and the chamber visually and physically inspected."
+      },
+      {
+        id: 20,
+        category: "California Legal Requirements",
+        question: "Can an individual legally purchase, own, or possess a firearm in California if they are subject to an active Domestic Violence Restraining Order?",
+        options: [
+          "Yes, provided they store the firearm in an approved lockbox at all times.",
+          "Yes, if the firearm was purchased prior to the restraining order being filed.",
+          "No, individuals subject to active domestic violence protective or restraining orders are legally prohibited under state and federal law from possessing firearms.",
+          "Yes, if they only use the firearm for recreational target practice at an authorized range."
+        ],
+        correctIndex: 2,
+        statute: "CA Penal Code § 29825 & 18 U.S.C. § 922(g)(8)",
+        explanation: "Both California state law (PC § 29825) and federal statute explicitly prohibit any individual subject to an active domestic violence restraining order or protective order from possessing, receiving, purchasing, or owning firearms or ammunition."
+      },
+      {
+        id: 21,
+        category: "Universal Safety Rules",
+        question: "When handing a firearm to another person or receiving one from someone else, what condition should the firearm be in?",
+        options: [
+          "Hammer cocked and safety switch in the fire position.",
+          "Loaded with the safety on so the recipient knows it is functional.",
+          "The action/slide locked open, magazine removed, chamber visually clear, and muzzle pointed in a safe direction.",
+          "In a closed case with the trigger pulled."
+        ],
+        correctIndex: 2,
+        statute: "CA DOJ Universal Safety Principles",
+        explanation: "Firearms must always be handed over with the action open, magazine detached, chamber verified clear, and the muzzle oriented safely away from both parties."
+      },
+      {
+        id: 22,
+        category: "Range Safety & Malfunctions",
+        question: "What must everyone on a shooting range do immediately upon hearing the command 'CEASE FIRE' called by any person?",
+        options: [
+          "Fire their remaining rounds quickly so the chamber is empty.",
+          "Immediately stop firing, remove fingers from triggers, bench/ground all firearms with actions open, and step behind the firing line.",
+          "Pack their firearms into bags while people are downrange.",
+          "Ask the range master for permission to fire one more shot."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 4",
+        explanation: "'Cease Fire' is an immediate emergency safety command. Anyone at a range can call it. All firing must instantly stop, fingers off triggers, actions benched open, and shooters step back behind the line."
+      },
+      {
+        id: 23,
+        category: "California Legal Requirements",
+        question: "Under California law, how must ammunition be purchased or transferred across the counter?",
+        options: [
+          "Ammunition may be ordered directly to a home address without any ID or check.",
+          "Ammunition must be purchased through a licensed ammunition vendor with an electronic DOJ background check.",
+          "Cash purchases require no record keeping or verification.",
+          "Only individuals over 25 with a hunting license may purchase ammunition."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 30312, § 30352",
+        explanation: "California law mandates that all retail ammunition transactions be conducted face-to-face through a California licensed ammunition vendor, requiring an electronic Department of Justice eligibility check prior to delivery."
+      },
+      {
+        id: 24,
+        category: "Ammunition Safety",
+        question: "What danger exists if modern high-pressure +P or +P+ ammunition is fired through an older firearm not rated for +P pressures?",
+        options: [
+          "The firearm will simply shoot with greater accuracy.",
+          "The firearm's barrel or chamber may fail or catastrophically rupture due to excessive chamber pressure, risking severe injury.",
+          "The ammunition will not chamber at all.",
+          "Recoil will be completely eliminated."
+        ],
+        correctIndex: 1,
+        statute: "SAAMI & CA DOJ FSC Manual § 2",
+        explanation: "+P and +P+ ammunition generates substantially higher chamber pressures than standard SAAMI specification cartridges. Firing them in unrated, older, or damaged firearms can cause chamber blowouts and severe harm."
+      },
+      {
+        id: 25,
+        category: "California Legal Requirements",
+        question: "Under California law, are firearms allowed to be openly carried in public areas of incorporated cities by individuals without a valid CCW permit?",
+        options: [
+          "Yes, open carry is legally permitted everywhere in California without a permit.",
+          "No, open carry of loaded or unloaded handguns in incorporated cities and prohibited public areas is generally illegal in California.",
+          "Yes, as long as the firearm is carried in an open holster on the hip.",
+          "Yes, provided the magazine contains less than 5 rounds."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 25850, § 26350",
+        explanation: "California generally prohibits both open carry of loaded firearms (PC § 25850) and open carry of unloaded handguns (PC § 26350) in incorporated cities, municipalities, and prohibited public areas unless specific law enforcement exemptions apply."
+      },
+      {
+        id: 26,
+        category: "Firearm Mechanics",
+        question: "What is the mechanical distinction between a 'Single-Action' and a 'Double-Action' revolver trigger mechanism?",
+        options: [
+          "Single-action can only fire blank cartridges, while double-action fires live cartridges.",
+          "Single-action requires manually cocking the hammer before pulling the trigger, while double-action can cock the hammer and release it in one continuous trigger pull.",
+          "Double-action fires two bullets with a single pull of the trigger.",
+          "There is no difference; the terms are purely marketing names."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 1",
+        explanation: "In single-action, pulling the trigger only performs one mechanical function: releasing the hammer (which must first be manually cocked). In double-action, the trigger pull performs two functions: cocking the hammer back and releasing it to strike the primer."
+      },
+      {
+        id: 27,
+        category: "California Safe Storage Laws",
+        question: "Under California Penal Code § 25140, what is the legal requirement when leaving a handgun unattended in an unattended motor vehicle?",
+        options: [
+          "It must be locked inside the glove box with the vehicle doors locked.",
+          "It must be locked in the vehicle trunk, secured inside a locked container out of plain view, or locked in an permanently affixed steel lockbox.",
+          "It can be placed under the driver floor mat if the windows are tinted.",
+          "California law allows unattended loaded handguns on car seats if the car alarm is active."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 25140",
+        explanation: "California law strictly mandates that any handgun left in an unattended vehicle must be locked in the trunk, secured in a locked container out of plain view, or locked to the vehicle frame in an approved lockbox. Unattended storage in an unlocked compartment or glove box violates state law."
+      },
+      {
+        id: 28,
+        category: "Universal Safety Rules",
+        question: "Why should alcohol or intoxicating drugs never be consumed before or during firearm handling?",
+        options: [
+          "It reduces bullet velocity downrange.",
+          "Alcohol and drugs severely impair motor coordination, reaction times, visual acuity, and critical safety judgment.",
+          "It voids the manufacturer's warranty on the firearm.",
+          "It causes ammunition primers to corrode."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 1",
+        explanation: "Firearm handling requires absolute mental clarity, disciplined motor reflexes, and sharp judgment. Intoxicants dramatically elevate the risk of catastrophic, preventable negligent discharges."
+      },
+      {
+        id: 29,
+        category: "California Legal Requirements",
+        question: "Can a firearm owner in California legally loan a firearm to a friend who does not possess a valid FSC or who is a prohibited person?",
+        options: [
+          "Yes, loans between friends are exempt from all state laws up to 90 days.",
+          "No, loaning a firearm to a prohibited person is a serious crime, and California law generally restricts lending firearms to individuals without an FSC and outside immediate family.",
+          "Yes, if the friend signs a handwritten note promising safe storage.",
+          "Yes, if the loan occurs during hunting season."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 27545, § 27880",
+        explanation: "Loaning a firearm to anyone known or reasonably suspected to be prohibited is a felony. In California, lending firearms to non-immediate family members generally requires conducting the loan through a licensed dealer (FFL)."
+      },
+      {
+        id: 30,
+        category: "Range Safety & Malfunctions",
+        question: "When clearing a firearm malfunction or stoppage on a firing line, in what direction must the barrel muzzle remain pointed at all times?",
+        options: [
+          "Pointed up towards the sky or ceiling.",
+          "Pointed directly downrange at the target backstop.",
+          "Pointed sideways towards the shooter next to you so they can assist.",
+          "Pointed down directly at your feet."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ Universal Rule 2",
+        explanation: "During any stoppage or malfunction manipulation (tap-rack-bang, stovepipe clear, or double-feed clearing), the muzzle must remain steadfastly pointed downrange toward the impact berm or backstop."
       }
     ];
 
+    let examMode = 30; // 30 (full) or 15 (diagnostic)
+    let shuffleEnabled = true;
+    let activeQuestions = [];
     let currentQuestionIndex = 0;
-    let userAnswers = new Array(QUESTIONS.length).fill(null);
+    let userAnswers = [];
     let quizStartTime = null;
     let timerInterval = null;
     let totalSecondsElapsed = 0;
 
+    // Fisher-Yates array shuffling algorithm
+    function shuffleArray(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function configureActiveQuestions() {
+      let pool = [...MASTER_QUESTIONS];
+      if (shuffleEnabled) {
+        pool = shuffleArray(pool);
+      }
+      activeQuestions = pool.slice(0, examMode);
+      userAnswers = new Array(activeQuestions.length).fill(null);
+    }
+
+    function setExamMode(count) {
+      examMode = count;
+      const btn30 = document.getElementById('mode30Btn');
+      const btn15 = document.getElementById('mode15Btn');
+
+      if (count === 30) {
+        btn30.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
+        btn15.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
+      } else {
+        btn15.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
+        btn30.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
+      }
+      restartQuiz();
+    }
+
+    function toggleShuffle() {
+      shuffleEnabled = !shuffleEnabled;
+      const label = document.getElementById('shuffleStatusLabel');
+      const btn = document.getElementById('shuffleToggleBtn');
+      if (shuffleEnabled) {
+        label.innerText = 'Randomize: ON';
+        btn.className = 'px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors';
+      } else {
+        label.innerText = 'Randomize: OFF';
+        btn.className = 'px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold flex items-center gap-1.5 text-slate-600 bg-slate-50 transition-colors';
+      }
+      restartQuiz();
+    }
+
     function initQuiz() {
       lucide.createIcons();
       quizStartTime = Date.now();
+      configureActiveQuestions();
       startTimer();
       renderQuestion();
     }
@@ -549,7 +842,7 @@
     }
 
     function renderQuestion() {
-      const q = QUESTIONS[currentQuestionIndex];
+      const q = activeQuestions[currentQuestionIndex];
       const questionCounter = document.getElementById('questionCounter');
       const scoreCounter = document.getElementById('scoreCounter');
       const progressBar = document.getElementById('progressBar');
@@ -560,13 +853,13 @@
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
 
-      questionCounter.innerText = `Question ${currentQuestionIndex + 1} of ${QUESTIONS.length}`;
+      questionCounter.innerText = `Question ${currentQuestionIndex + 1} of ${activeQuestions.length}`;
       
       const answeredCount = userAnswers.filter(a => a !== null).length;
-      const correctCount = userAnswers.filter((a, idx) => a === QUESTIONS[idx].correctIndex).length;
+      const correctCount = userAnswers.filter((a, idx) => a === activeQuestions[idx].correctIndex).length;
       scoreCounter.innerText = `Score: ${correctCount} / ${answeredCount} answered`;
       
-      const pct = ((currentQuestionIndex + 1) / QUESTIONS.length) * 100;
+      const pct = ((currentQuestionIndex + 1) / activeQuestions.length) * 100;
       progressBar.style.width = `${pct}%`;
 
       questionCategory.innerText = q.category;
@@ -637,7 +930,7 @@
 
       prevBtn.disabled = currentQuestionIndex === 0;
 
-      if (currentQuestionIndex === QUESTIONS.length - 1) {
+      if (currentQuestionIndex === activeQuestions.length - 1) {
         nextBtn.innerHTML = '<span>Generate Analytics & Results</span> <i data-lucide="check-circle-2" class="w-4 h-4"></i>';
       } else {
         nextBtn.innerHTML = '<span>Next Question</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
@@ -660,7 +953,7 @@
     }
 
     function nextQuestion() {
-      if (currentQuestionIndex < QUESTIONS.length - 1) {
+      if (currentQuestionIndex < activeQuestions.length - 1) {
         currentQuestionIndex++;
         renderQuestion();
       } else {
@@ -674,8 +967,8 @@
       const results = document.getElementById('resultsContainer');
       results.classList.remove('hidden');
 
-      const correctCount = userAnswers.filter((a, idx) => a === QUESTIONS[idx].correctIndex).length;
-      const total = QUESTIONS.length;
+      const correctCount = userAnswers.filter((a, idx) => a === activeQuestions[idx].correctIndex).length;
+      const total = activeQuestions.length;
       const scorePct = Math.round((correctCount / total) * 100);
       const passed = scorePct >= 75;
 
@@ -685,9 +978,9 @@
       const avgSecsPerQ = Math.round(totalSecondsElapsed / total);
       document.getElementById('finalTimePace').innerText = `${mins}m ${secs}s`;
 
-      // Estimated Percentile (Normal distribution modeled against CA DOJ 75% average passing standard)
+      // Estimated Percentile
       let percentile = 50;
-      if (scorePct >= 100) percentile = 98;
+      if (scorePct >= 100) percentile = 99;
       else if (scorePct >= 93) percentile = 91;
       else if (scorePct >= 86) percentile = 82;
       else if (scorePct >= 80) percentile = 74;
@@ -752,7 +1045,7 @@
 
     function computeCategoryDiagnostics() {
       const stats = {};
-      QUESTIONS.forEach((q, idx) => {
+      activeQuestions.forEach((q, idx) => {
         if (!stats[q.category]) {
           stats[q.category] = { total: 0, correct: 0, questions: [] };
         }
@@ -843,7 +1136,7 @@
       const container = document.getElementById('reviewContainer');
       container.innerHTML = '';
 
-      QUESTIONS.forEach((q, idx) => {
+      activeQuestions.forEach((q, idx) => {
         const userAns = userAnswers[idx];
         const isCorrect = userAns === q.correctIndex;
 
@@ -858,7 +1151,7 @@
             <div class="flex-1">
               <div class="flex items-center justify-between gap-2 mb-1">
                 <span class="text-xs font-bold uppercase tracking-wider ${isCorrect ? 'text-emerald-800' : 'text-rose-800'}">
-                  Question ${idx + 1}: ${q.category}
+                  Question ${idx + 1} (Ref Q#${q.id}): ${q.category}
                 </span>
                 <span class="text-xs font-semibold px-2 py-0.5 rounded ${isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
                   ${isCorrect ? 'Correct' : 'Missed'}
@@ -957,9 +1250,9 @@
         return;
       }
 
-      // Collect missed question IDs and categories to help the nonprofit curate educational seminars
+      // Collect missed question IDs and categories
       const missed = [];
-      QUESTIONS.forEach((q, idx) => {
+      activeQuestions.forEach((q, idx) => {
         if (userAnswers[idx] !== q.correctIndex) {
           missed.push({ id: q.id, category: q.category, statute: q.statute });
         }
@@ -991,9 +1284,9 @@
 
     function restartQuiz() {
       currentQuestionIndex = 0;
-      userAnswers = new Array(QUESTIONS.length).fill(null);
       totalSecondsElapsed = 0;
       quizStartTime = Date.now();
+      configureActiveQuestions();
       document.getElementById('resultsContainer').classList.add('hidden');
       document.getElementById('quizContainer').classList.remove('hidden');
       startTimer();
