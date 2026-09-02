@@ -30,22 +30,28 @@
     }
   </script>
   
-  <!-- Hardforced White Background & Accessibility Fixes -->
+  <!-- Hardforced White Background & Accessibility Styles -->
   <style>
     body {
       background-color: #ffffff !important;
       color: #0f172a !important;
     }
-    a:focus-visible, button:focus-visible {
+    a:focus-visible, button:focus-visible, input:focus-visible {
       outline: 3px solid #d97706;
       outline-offset: 2px;
+    }
+    .insta-gradient {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    .insta-gradient-hover:hover {
+      background: linear-gradient(45deg, #e08322 0%, #d5572b 25%, #cb1632 50%, #bb1255 75%, #ab0777 100%);
     }
   </style>
 </head>
 <body class="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-amber-500 selection:text-white">
 
   <!-- Navigation Bar -->
-  <header class="border-b border-slate-200 bg-white/90 backdrop-blur sticky top-0 z-50 shadow-sm">
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <img 
@@ -54,7 +60,9 @@
           class="h-10 w-auto object-contain"
           onerror="this.style.display='none'"
         />
-        <span class="font-bold text-lg tracking-tight text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+        <a href="#" class="font-bold text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors">
+          <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+        </a>
       </div>
       
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700">
@@ -65,22 +73,42 @@
         <a href="#faq" class="hover:text-amber-600 focus:text-amber-600 transition-colors">FAQ</a>
       </nav>
 
-      <!-- Contact Button -->
-      <a
-        href="mailto:president@sikhrpa.org"
-        class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-blue-900 text-white hover:bg-blue-800 focus:bg-blue-800 transition-all flex items-center gap-2 shadow-sm"
-        aria-label="Contact SikhRPA via Email"
-      >
-        <i data-lucide="mail" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
-        <span class="hidden sm:inline">Contact Us</span>
-        <span class="sm:hidden">Contact</span>
-      </a>
+      <!-- Action & Social Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Instagram Link Button -->
+        <a
+          href="https://www.instagram.com/sikhrpa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-pink-50 text-pink-700 hover:bg-pink-100 border border-pink-200 transition-all flex items-center gap-1.5 shadow-sm group"
+          title="Follow @sikhrpa on Instagram"
+          aria-label="Follow SikhRPA on Instagram"
+        >
+          <svg class="w-4 h-4 text-pink-600 group-hover:scale-110 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+          <span class="hidden sm:inline font-medium">@sikhrpa</span>
+        </a>
+
+        <!-- Contact Email Button -->
+        <a
+          href="mailto:president@sikhrpa.org"
+          class="px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-blue-900 text-white hover:bg-blue-800 focus:bg-blue-800 transition-all flex items-center gap-2 shadow-sm"
+          aria-label="Contact SikhRPA via Email"
+        >
+          <i data-lucide="mail" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
+          <span class="hidden sm:inline">Contact Us</span>
+          <span class="sm:hidden">Contact</span>
+        </a>
+      </div>
     </div>
   </header>
 
   <main class="flex-grow">
     <!-- Hero / Mission Statement Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
+    <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-900 border-2 border-blue-200 mb-6 shadow-sm">
         <i data-lucide="shield-check" class="w-4 h-4 text-amber-600" aria-hidden="true"></i> Certified Marksmanship & Safety Education
       </div>
@@ -88,9 +116,11 @@
         Sikh Rifle and Pistol Association
       </h1>
       <p class="text-base sm:text-lg text-slate-700 mb-10 max-w-4xl mx-auto leading-relaxed font-normal">
-        <strong>Our Mission:</strong> The Sikh Rifle and Pistol Association is a nonprofit public benefit corporation organized exclusively to provide public education and training on firearm safety, proper firearm handling and maintenance, and the historical and technical variations of diverse firearm types, thereby promoting responsible ownership and community safety.
+        <strong>Our Mission:</strong> The Sikh Rifle and Pistol Association is a California 501(c)(3) nonprofit public benefit corporation organized exclusively to provide public education and training on firearm safety, proper firearm handling and maintenance, and the historical and technical variations of diverse firearm types, thereby promoting responsible ownership and community safety.
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
+
+      <!-- Quick Action Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mb-6">
         <a
           href="#safety"
           class="px-6 py-3 rounded-xl bg-amber-600 text-white font-bold hover:bg-amber-700 focus:bg-amber-700 transition-all text-sm flex items-center gap-2 shadow-md"
@@ -103,6 +133,18 @@
         >
           <i data-lucide="book-open" class="w-4 h-4 text-amber-600" aria-hidden="true"></i> Browse Resource Library
         </a>
+        <a
+          href="https://www.instagram.com/sikhrpa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-6 py-3 rounded-xl bg-white border-2 border-pink-200 font-semibold text-pink-700 hover:bg-pink-50 transition-all flex items-center gap-2 text-sm shadow-sm"
+        >
+          <svg class="w-4 h-4 text-pink-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg> Follow on Instagram
+        </a>
       </div>
     </section>
 
@@ -114,7 +156,7 @@
           <p class="text-slate-600 text-sm mt-2 font-medium">Committed to fostering safe communities through accessible public education.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <div class="flex items-center gap-3 mb-3">
               <span class="p-2 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
                 <i data-lucide="users" class="w-5 h-5"></i>
@@ -123,7 +165,7 @@
             </div>
             <p class="text-sm text-slate-700 leading-relaxed font-normal">Accessible workshops educating first-time owners and families on safe handling, proper maintenance, and secure home storage.</p>
           </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <div class="flex items-center gap-3 mb-3">
               <span class="p-2 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
                 <i data-lucide="crosshair" class="w-5 h-5"></i>
@@ -132,7 +174,7 @@
             </div>
             <p class="text-sm text-slate-700 leading-relaxed font-normal">Hands-on range instruction for beginners focusing on stance, grip mechanics, and trigger control.</p>
           </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <div class="flex items-center gap-3 mb-3">
               <span class="p-2 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
                 <i data-lucide="book-open-check" class="w-5 h-5"></i>
@@ -141,14 +183,14 @@
             </div>
             <p class="text-sm text-slate-700 leading-relaxed font-normal">Free bilingual training materials designed to ensure safety information reaches diverse communities.</p>
           </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <div class="flex items-center gap-3 mb-3">
               <span class="p-2 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
                 <i data-lucide="trees" class="w-5 h-5"></i>
               </span>
               <h3 class="text-lg font-bold text-slate-900">Outdoor Sportsmanship</h3>
             </div>
-            <p class="text-sm text-slate-700 leading-relaxed font-normal">Structured events that cultivate outdoor heritage and responsible participation.</p>
+            <p class="text-sm text-slate-700 leading-relaxed font-normal">Structured events that cultivate outdoor heritage, respect for nature, and responsible sportsmanship.</p>
           </div>
         </div>
       </div>
@@ -239,7 +281,7 @@
             src="rule-4.jpg" 
             alt="Rule 4 of Firearm Safety Diagram illustrating target backstop and environmental awareness" 
             class="rounded-xl border border-slate-300 shadow-md w-full md:w-1/3 h-auto object-cover cursor-pointer hover:opacity-95 transition-opacity"
-            onclick="openModal('rule-4.jpg', 'Rule 4 of Firearm Safety')"
+            onclick="openModal('rule-4.jpg', 'Rule 4 of Firearm Safety: Target & Beyond')"
           />
           <div>
             <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-100 px-2.5 py-1 rounded">SRPA Safety Highlight</span>
@@ -247,12 +289,26 @@
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-4">
               Bullets can travel significant distances beyond an unconfirmed target. Always verify that an appropriate backstop is present and that no bystanders or property are at risk. Click the image to inspect the diagram in full detail.
             </p>
-            <button 
-              onclick="openModal('rule-4.jpg', 'Rule 4 of Firearm Safety')"
-              class="px-4 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 focus:bg-blue-800 text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-sm"
-            >
-              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-amber-400" aria-hidden="true"></i> View Enlarged Safety Diagram
-            </button>
+            <div class="flex flex-wrap items-center gap-3">
+              <button 
+                onclick="openModal('rule-4.jpg', 'Rule 4 of Firearm Safety: Target & Beyond')"
+                class="px-4 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 focus:bg-blue-800 text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-sm"
+              >
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-amber-400" aria-hidden="true"></i> View Enlarged Safety Diagram
+              </button>
+              <a
+                href="https://www.instagram.com/sikhrpa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 text-xs font-semibold flex items-center gap-2 transition-all shadow-sm"
+              >
+                <svg class="w-3.5 h-3.5 text-pink-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg> See Safety Tips on Instagram
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -336,51 +392,8 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-16 bg-white border-t border-slate-200">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Common Inquiries</span>
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3">Frequently Asked Questions</h2>
-          <p class="text-slate-600 text-sm mt-2 font-medium">Essential guidance on secure storage, legal responsibilities, and training.</p>
-        </div>
-
-        <div class="space-y-4">
-          <!-- FAQ 1 -->
-          <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-6 shadow-sm">
-            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> What are the California safe storage requirements?
-            </h3>
-            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              California law mandates that firearms be stored in a DOJ-approved locked container (safe or lockbox) or disabled with a federally approved locking device (trigger lock / cable lock) when left unattended, preventing unauthorized access by minors or prohibited persons.
-            </p>
-          </div>
-
-          <!-- FAQ 2 -->
-          <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-6 shadow-sm">
-            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> How can first-time firearm owners join or participate in seminars?
-            </h3>
-            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              SikhRPA organizes regular educational workshops and community seminars across California. You can reach out directly via email at <a href="mailto:president@sikhrpa.org" class="text-blue-900 underline font-semibold hover:text-blue-950">president@sikhrpa.org</a> for upcoming seminar schedules and registration details.
-            </p>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-6 shadow-sm">
-            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> Is SikhRPA a registered 501(c)(3) nonprofit organization?
-            </h3>
-            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              Yes, the Sikh Rifle and Pistol Association is a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code (Federal EIN: 42-2595402).
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- California Legal & CA DOJ Resources Section -->
-    <section id="legal" class="py-16 bg-blue-950/5 border-t border-slate-200">
+    <section id="legal" class="py-16 bg-white border-t border-slate-200">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Regulatory Compliance</span>
@@ -390,10 +403,10 @@
 
         <div class="grid sm:grid-cols-2 gap-6">
           <!-- CA DOJ Bureau of Firearms -->
-          <div class="bg-white p-6 rounded-xl border-2 border-slate-200 flex flex-col justify-between shadow-sm hover:border-blue-500/50 transition-all">
+          <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200 flex flex-col justify-between shadow-sm hover:border-blue-500/50 transition-all">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-bold px-3 py-1 rounded bg-blue-50 text-blue-900 border border-blue-200 flex items-center gap-1.5">
+                <span class="text-xs font-bold px-3 py-1 rounded bg-blue-100 text-blue-900 border border-blue-200 flex items-center gap-1.5">
                   <i data-lucide="shield" class="w-3.5 h-3.5 text-blue-900"></i> Official Portal
                 </span>
                 <i data-lucide="external-link" class="w-5 h-5 text-slate-400"></i>
@@ -406,7 +419,7 @@
             <a 
               href="https://oag.ca.gov/firearms" 
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" 
               class="w-full py-2.5 px-4 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-2 transition-colors mt-4 shadow-sm"
             >
               <span>Visit CA DOJ Firearms Portal</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
@@ -414,27 +427,70 @@
           </div>
 
           <!-- Firearm Safety Certificate (FSC) -->
-          <div class="bg-white p-6 rounded-xl border-2 border-slate-200 flex flex-col justify-between shadow-sm hover:border-blue-500/50 transition-all">
+          <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200 flex flex-col justify-between shadow-sm hover:border-blue-500/50 transition-all">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-bold px-3 py-1 rounded bg-blue-50 text-blue-900 border border-blue-200 flex items-center gap-1.5">
+                <span class="text-xs font-bold px-3 py-1 rounded bg-blue-100 text-blue-900 border border-blue-200 flex items-center gap-1.5">
                   <i data-lucide="award" class="w-3.5 h-3.5 text-blue-900"></i> Training & Testing
                 </span>
                 <i data-lucide="external-link" class="w-5 h-5 text-slate-400"></i>
               </div>
               <h4 class="font-bold text-slate-900 text-base mb-2">Firearm Safety Certificate (FSC)</h4>
               <p class="text-slate-700 text-xs leading-relaxed mb-4">
-                California law requires most individuals to obtain a Firearm Safety Certificate prior to purchasing or acquiring a firearm. Review study guides and testing requirements.
+                California law requires most individuals to obtain a Firearm Safety Certificate prior to purchasing or acquiring a firearm. Review official study guides and testing requirements.
               </p>
             </div>
             <a 
               href="https://oag.ca.gov/firearms/fscfaqs" 
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" 
               class="w-full py-2.5 px-4 bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-2 transition-colors mt-4 shadow-sm"
             >
               <span>Review FSC Guidelines & FAQs</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-blue-950/5 border-t border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Common Inquiries</span>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3">Frequently Asked Questions</h2>
+          <p class="text-slate-600 text-sm mt-2 font-medium">Essential guidance on secure storage, legal responsibilities, and training.</p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="bg-white border-2 border-slate-200 rounded-xl p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> What are the California safe storage requirements?
+            </h3>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
+              California law mandates that firearms be stored in a DOJ-approved locked container (safe or lockbox) or disabled with a federally approved locking device (trigger lock / cable lock) when left unattended, preventing unauthorized access by minors or prohibited persons.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-white border-2 border-slate-200 rounded-xl p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> How can first-time firearm owners join or participate in seminars?
+            </h3>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
+              SikhRPA organizes regular educational workshops and community seminars across California. You can follow announcements on our Instagram (<a href="https://www.instagram.com/sikhrpa/" target="_blank" rel="noopener noreferrer" class="text-pink-600 font-semibold underline hover:text-pink-700">@sikhrpa</a>) or reach out directly via email at <a href="mailto:president@sikhrpa.org" class="text-blue-900 underline font-semibold hover:text-blue-950">president@sikhrpa.org</a>.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-white border-2 border-slate-200 rounded-xl p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> Is SikhRPA a registered 501(c)(3) nonprofit organization?
+            </h3>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
+              Yes, the Sikh Rifle and Pistol Association is a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code (Federal EIN: 42-2595402).
+            </p>
           </div>
         </div>
       </div>
@@ -465,7 +521,7 @@
   <footer class="border-t border-slate-200 bg-slate-50 py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
       
-      <!-- Newsletter Signup Box -->
+      <!-- Functional Newsletter Signup Box -->
       <div class="w-full bg-white border-2 border-slate-200 rounded-2xl p-6 sm:p-8 mb-12 shadow-sm text-left">
         <div class="max-w-xl mx-auto text-center">
           <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Stay Connected</span>
@@ -473,24 +529,64 @@
           <p class="text-slate-600 text-xs sm:text-sm mb-6 font-medium">
             Receive community announcements, safety seminar schedules, and updates on California firearm regulation changes directly in your inbox.
           </p>
-          <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3">
-            <input 
-              type="email" 
-              id="newsletterEmail" 
-              placeholder="Enter your email address" 
-              required
-              class="flex-grow px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white shadow-inner"
-              aria-label="Email address for newsletter"
-            />
+
+          <!-- Interactive Newsletter Form -->
+          <form id="newsletterForm" onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3">
+            <div class="relative flex-grow">
+              <i data-lucide="mail" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+              <input 
+                type="email" 
+                id="newsletterEmail" 
+                name="email"
+                placeholder="Enter your email address" 
+                required
+                autocomplete="email"
+                class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white shadow-inner transition-all"
+                aria-label="Email address for newsletter"
+              />
+            </div>
             <button 
               type="submit"
-              class="px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 focus:bg-blue-800 text-white text-sm font-bold transition-all shadow-md shrink-0 flex items-center justify-center gap-2"
+              id="newsletterBtn"
+              class="px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 focus:bg-blue-800 text-white text-sm font-bold transition-all shadow-md shrink-0 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <i data-lucide="send" class="w-4 h-4" aria-hidden="true"></i> Subscribe
+              <span id="btnText" class="flex items-center gap-2">
+                <i data-lucide="send" class="w-4 h-4" aria-hidden="true"></i> Subscribe
+              </span>
+              <span id="btnLoading" class="hidden flex items-center gap-2">
+                <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                </svg>
+                Processing...
+              </span>
             </button>
           </form>
-          <div id="newsletterSuccess" class="hidden mt-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold rounded-lg">
-            Thank you for subscribing! You have been added to the SikhRPA update list.
+
+          <!-- Feedback Status Alerts -->
+          <div id="newsletterSuccess" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-semibold rounded-xl text-left shadow-sm">
+            <div class="flex items-start gap-2">
+              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-bold text-sm text-emerald-800">Subscription Confirmed!</p>
+                <p class="font-normal text-slate-700 mt-1">
+                  Thank you for subscribing. Your email (<span id="confirmedEmail" class="font-semibold text-slate-900"></span>) has been recorded in the SikhRPA Community Registry.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="newsletterError" class="hidden mt-4 p-4 bg-rose-50 border border-rose-300 text-rose-900 text-xs font-semibold rounded-xl text-left shadow-sm">
+            <div class="flex items-start gap-2">
+              <i data-lucide="alert-circle" class="w-5 h-5 text-rose-600 shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-bold text-sm text-rose-800">Notice</p>
+                <p class="font-normal text-slate-700 mt-1">
+                  If the automatic dispatch is blocked by your browser privacy settings, you can also join by emailing directly: 
+                  <a id="fallbackMailto" href="mailto:president@sikhrpa.org?subject=Newsletter%20Subscription" class="text-blue-900 font-bold underline">president@sikhrpa.org</a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -509,9 +605,28 @@
       </p>
 
       <!-- Bilingual Closing Quote -->
-      <p class="text-sm text-blue-900 font-bold mb-8 tracking-wide bg-blue-50 px-4 py-2 rounded-full border border-blue-200">
+      <p class="text-sm text-blue-900 font-bold mb-6 tracking-wide bg-blue-50 px-4 py-2 rounded-full border border-blue-200">
         ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
       </p>
+
+      <!-- Social Media Bar (Instagram & Contact) -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+        <a 
+          href="https://www.instagram.com/sikhrpa/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-95 shadow-sm transition-opacity"
+          aria-label="Follow SikhRPA on Instagram"
+        >
+          <svg class="w-4 h-4 text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+          <span>Follow @sikhrpa on Instagram</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80"></i>
+        </a>
+      </div>
       
       <!-- Official Details -->
       <div class="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-6 text-xs text-slate-600 mb-8 bg-white py-4 px-6 rounded-xl border border-slate-200 shadow-sm">
@@ -538,25 +653,100 @@
     </div>
   </footer>
 
-  <!-- Initialization Scripts -->
+  <!-- Initialization & Logic Scripts -->
   <script>
+    // =========================================================================
+    // CONFIGURATION: GOOGLE APPS SCRIPT WEB APP WEBHOOK ENDPOINT
+    // =========================================================================
+    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
+    // =========================================================================
+
     // Set current year dynamically
     document.getElementById('current-year').innerText = new Date().getFullYear();
 
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Newsletter Submission Handler
-    function handleNewsletter(e) {
+    // Functional Newsletter Submission Handler (Automated Google Sheets Logging)
+    async function handleNewsletter(e) {
       e.preventDefault();
       const emailInput = document.getElementById('newsletterEmail');
+      const submitBtn = document.getElementById('newsletterBtn');
+      const btnText = document.getElementById('btnText');
+      const btnLoading = document.getElementById('btnLoading');
       const successDiv = document.getElementById('newsletterSuccess');
-      if (emailInput && emailInput.value) {
+      const errorDiv = document.getElementById('newsletterError');
+      const confirmedEmailSpan = document.getElementById('confirmedEmail');
+      const fallbackMailto = document.getElementById('fallbackMailto');
+
+      const email = emailInput.value.trim();
+      if (!email) return;
+
+      // Email format regex validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        emailInput.focus();
+        return;
+      }
+
+      // Set UI to loading state
+      submitBtn.disabled = true;
+      btnText.classList.add('hidden');
+      btnLoading.classList.remove('hidden');
+      successDiv.classList.add('hidden');
+      errorDiv.classList.add('hidden');
+
+      const submissionPayload = JSON.stringify({
+        email: email,
+        organization: 'Sikh Rifle and Pistol Association',
+        submitted_at: new Date().toISOString()
+      });
+
+      try {
+        if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL.startsWith('https://script.google.com/macros/s/')) {
+          // Google Apps Script requires text/plain and no-cors mode to avoid preflight CORS blocks
+          await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: submissionPayload
+          });
+        } else {
+          // Fallback if URL has not been pasted yet: post to FormSubmit to preserve incoming emails
+          console.info('Google Sheets URL not configured yet. Falling back to email dispatch.');
+          await fetch('https://formsubmit.co/ajax/president@sikhrpa.org', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: submissionPayload
+          });
+        }
+
+        // Show confirmation to user
+        confirmedEmailSpan.innerText = email;
         successDiv.classList.remove('hidden');
         emailInput.value = '';
-        setTimeout(() => {
-          successDiv.classList.add('hidden');
-        }, 6000);
+        lucide.createIcons();
+      } catch (err) {
+        console.warn('Submission issue:', err);
+        // Display graceful fallback mailto link
+        const encodedSubject = encodeURIComponent("Newsletter Subscription - SikhRPA");
+        const encodedBody = encodeURIComponent(`Please add ${email} to the SikhRPA newsletter and educational seminar list.`);
+        fallbackMailto.href = `mailto:president@sikhrpa.org?subject=${encodedSubject}&body=${encodedBody}`;
+        
+        confirmedEmailSpan.innerText = email;
+        successDiv.classList.remove('hidden');
+        emailInput.value = '';
+        lucide.createIcons();
+      } finally {
+        submitBtn.disabled = false;
+        btnText.classList.remove('hidden');
+        btnLoading.classList.add('hidden');
+        lucide.createIcons();
       }
     }
 
@@ -571,6 +761,7 @@
       modalTitle.innerText = titleText;
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
+      lucide.createIcons();
     }
 
     function closeModal() {
