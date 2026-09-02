@@ -120,11 +120,11 @@
           id="shuffleToggleBtn"
           type="button"
           onclick="toggleShuffle()"
-          class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold flex items-center gap-1.5 text-slate-700 bg-slate-50 hover:bg-slate-100 transition-colors"
-          title="Toggle question shuffling on retakes"
+          class="px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors"
+          title="Toggle question and answer option shuffling on retakes"
         >
           <i data-lucide="shuffle" class="w-3.5 h-3.5 text-amber-600"></i>
-          <span id="shuffleStatusLabel">Randomize: ON</span>
+          <span id="shuffleStatusLabel">Randomize: ON (Questions & Answers)</span>
         </button>
       </div>
     </div>
@@ -135,11 +135,11 @@
       <!-- Progress Bar & Question Stats -->
       <div class="mb-6">
         <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
-          <span id="questionCounter">Question 1 of 15</span>
+          <span id="questionCounter">Question 1 of 30</span>
           <span id="scoreCounter">Current Score: 0 / 0</span>
         </div>
         <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
-          <div id="progressBar" class="h-full bg-amber-500 transition-all duration-300" style="width: 6.66%;"></div>
+          <div id="progressBar" class="h-full bg-amber-500 transition-all duration-300" style="width: 3.33%;"></div>
         </div>
       </div>
 
@@ -780,10 +780,42 @@
     }
 
     function configureActiveQuestions() {
-      let pool = [...MASTER_QUESTIONS];
+      // Deep clone each question and shuffle options if shuffleEnabled is true
+      let pool = MASTER_QUESTIONS.map(q => {
+        // If shuffling is disabled, maintain the default question options
+        if (!shuffleEnabled) {
+          return { ...q, options: [...q.options] };
+        }
+
+        // Keep True/False and Yes/No questions in conventional order (True/Yes first, False/No second)
+        const isBinaryQuestion = q.options.length === 2 && 
+          (q.options[0].toLowerCase().startsWith("true") || q.options[0].toLowerCase().startsWith("yes"));
+
+        if (isBinaryQuestion) {
+          return { ...q, options: [...q.options] };
+        }
+
+        // Pair each option with its correctness state, shuffle, and recalculate correctIndex
+        const paired = q.options.map((optText, idx) => ({
+          text: optText,
+          isCorrect: idx === q.correctIndex
+        }));
+
+        const shuffledPaired = shuffleArray(paired);
+        const newCorrectIndex = shuffledPaired.findIndex(item => item.isCorrect);
+
+        return {
+          ...q,
+          options: shuffledPaired.map(item => item.text),
+          correctIndex: newCorrectIndex
+        };
+      });
+
+      // Shuffle the order of the questions themselves
       if (shuffleEnabled) {
         pool = shuffleArray(pool);
       }
+
       activeQuestions = pool.slice(0, examMode);
       userAnswers = new Array(activeQuestions.length).fill(null);
     }
@@ -808,10 +840,10 @@
       const label = document.getElementById('shuffleStatusLabel');
       const btn = document.getElementById('shuffleToggleBtn');
       if (shuffleEnabled) {
-        label.innerText = 'Randomize: ON';
+        label.innerText = 'Randomize: ON (Questions & Answers)';
         btn.className = 'px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors';
       } else {
-        label.innerText = 'Randomize: OFF';
+        label.innerText = 'Randomize: OFF (Fixed Order)';
         btn.className = 'px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold flex items-center gap-1.5 text-slate-600 bg-slate-50 transition-colors';
       }
       restartQuiz();
