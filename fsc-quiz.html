@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>California Firearm Safety Certificate (FSC) Practice Test | SikhRPA</title>
+  
+  <meta name="description" content="Free interactive California Firearm Safety Certificate (FSC) practice examination provided by the Sikh Rifle and Pistol Association. Test your knowledge of CA safe storage, firearm handling, and state penal codes." />
+  <meta name="keywords" content="CA FSC practice test, firearm safety certificate test, California gun laws quiz, FSC study guide, SikhRPA" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
+
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-30 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Return Link -->
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600"></i>
+          <span>Back to Home</span>
+        </a>
+        <span class="text-slate-300" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2">
+          <img src="srpa-logo.png" alt="SikhRPA Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'" />
+          <span class="font-bold text-slate-900 text-sm sm:text-base tracking-tight">SikhRPA</span>
+        </div>
+      </div>
+
+      <!-- Live Header Progress Indicator -->
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1 text-xs font-bold bg-blue-50 text-blue-900 px-3 py-1 rounded-full border border-blue-200">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span>CA FSC Exam Prep</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Quiz Container -->
+  <main class="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    
+    <!-- Header Banner -->
+    <div class="text-center mb-8">
+      <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+        Free Public Safety Education
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 tracking-tight">
+        California Firearm Safety Certificate (FSC) Practice Test
+      </h1>
+      <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto mt-2 leading-relaxed">
+        This interactive simulator is modeled after the official California Department of Justice (CA DOJ) FSC examination. You need <strong>75% or higher</strong> (at least 12 of 15 questions correct) to pass.
+      </p>
+    </div>
+
+    <!-- Active Quiz Card -->
+    <div id="quizContainer" class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
+      
+      <!-- Progress Bar & Question Stats -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
+          <span id="questionCounter">Question 1 of 15</span>
+          <span id="scoreCounter">Current Score: 0 / 0</span>
+        </div>
+        <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+          <div id="progressBar" class="h-full bg-amber-500 transition-all duration-300" style="width: 6.66%;"></div>
+        </div>
+      </div>
+
+      <!-- Question Text -->
+      <div class="mb-6">
+        <span id="questionCategory" class="text-xs font-semibold text-blue-900 bg-blue-50 px-2.5 py-1 rounded border border-blue-200 uppercase tracking-wider">
+          Category
+        </span>
+        <h2 id="questionText" class="text-lg sm:text-xl font-bold text-slate-900 mt-3 leading-snug">
+          Loading question...
+        </h2>
+      </div>
+
+      <!-- Options Container -->
+      <div id="optionsContainer" class="space-y-3 mb-6" role="radiogroup" aria-labelledby="questionText">
+        <!-- Options rendered dynamically -->
+      </div>
+
+      <!-- Rationale / Explanation Box -->
+      <div id="rationaleBox" class="hidden p-4 sm:p-5 rounded-xl border mb-6 text-xs sm:text-sm leading-relaxed transition-all">
+        <div class="flex items-start gap-3">
+          <div id="rationaleIcon" class="mt-0.5 shrink-0"></div>
+          <div>
+            <h4 id="rationaleTitle" class="font-bold mb-1 text-sm">Explanation</h4>
+            <p id="rationaleText" class="text-slate-700"></p>
+            <p id="rationaleStatute" class="text-slate-500 text-xs mt-2 font-mono"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation / Action Buttons -->
+      <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+        <button 
+          id="prevBtn" 
+          onclick="prevQuestion()" 
+          class="px-4 py-2.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          disabled
+        >
+          <i data-lucide="chevron-left" class="w-4 h-4"></i> Previous
+        </button>
+
+        <button 
+          id="nextBtn" 
+          onclick="nextQuestion()" 
+          class="px-6 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+          disabled
+        >
+          <span>Next Question</span>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Final Results Card (Initially Hidden) -->
+    <div id="resultsContainer" class="hidden bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-10 text-center">
+      
+      <!-- Result Badge -->
+      <div id="resultBadgeWrapper" class="inline-flex items-center justify-center p-4 rounded-full mb-4">
+        <i id="resultIcon" data-lucide="award" class="w-12 h-12"></i>
+      </div>
+
+      <h2 id="resultStatus" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Examination Complete</h2>
+      <p id="resultSubtext" class="text-slate-600 text-sm max-w-md mx-auto mb-6">
+        Here is how you performed on the simulated California Firearm Safety Certificate examination.
+      </p>
+
+      <!-- Score Statistics Grid -->
+      <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto mb-8">
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+          <span class="block text-2xl sm:text-3xl font-extrabold text-blue-900" id="finalScorePct">0%</span>
+          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Score</span>
+        </div>
+        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+          <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-700" id="finalCorrectCount">0</span>
+          <span class="text-xs font-semibold text-emerald-800 uppercase tracking-wide">Correct</span>
+        </div>
+        <div class="p-4 bg-rose-50 border border-rose-200 rounded-xl">
+          <span class="block text-2xl sm:text-3xl font-extrabold text-rose-700" id="finalIncorrectCount">0</span>
+          <span class="text-xs font-semibold text-rose-800 uppercase tracking-wide">Incorrect</span>
+        </div>
+      </div>
+
+      <!-- Passing Status Message -->
+      <div id="passingNotice" class="p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-lg mx-auto mb-8"></div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button 
+          onclick="restartQuiz()" 
+          class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-colors"
+        >
+          <i data-lucide="rotate-ccw" class="w-4 h-4 text-amber-400"></i> Retake Practice Quiz
+        </button>
+        <a 
+          href="https://oag.ca.gov/sites/all/files/agweb/pdfs/firearms/forms/hscsg.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center gap-2 shadow-sm transition-colors"
+        >
+          <i data-lucide="file-down" class="w-4 h-4 text-amber-600"></i> Download CA DOJ Study Guide
+        </a>
+        <a 
+          href="index.html" 
+          class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition-colors"
+        >
+          <i data-lucide="home" class="w-4 h-4"></i> Back to Homepage
+        </a>
+      </div>
+
+      <!-- Detailed Question Review Section -->
+      <div class="mt-12 text-left pt-8 border-t border-slate-200">
+        <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+          <i data-lucide="list-checks" class="w-5 h-5 text-blue-900"></i> Full Answer Review & California Legal Standards
+        </h3>
+        <div id="reviewContainer" class="space-y-4"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="mb-2 font-medium text-slate-700">
+        Sikh Rifle and Pistol Association • California 501(c)(3) Nonprofit Public Benefit Corporation
+      </p>
+      <p class="text-slate-400 max-w-xl mx-auto">
+        Educational Disclaimer: This practice test is created for public safety preparation based on the California Department of Justice FSC guidelines and is not an official proctored state examination. Official testing must be completed in-person at a licensed CA firearms dealer.
+      </p>
+    </div>
+  </footer>
+
+  <!-- FSC Quiz Logic -->
+  <script>
+    const QUESTIONS = [
+      {
+        id: 1,
+        category: "Universal Safety Rules",
+        question: "Under the first universal rule of firearm safety, how must an individual treat every firearm they handle?",
+        options: [
+          "As if it is loaded, regardless of what anyone says or whether it appears clear.",
+          "As loaded only if the firearm has the safety mechanism in the FIRE position.",
+          "As unloaded once the magazine is detached from the firearm grip.",
+          "As unloaded if an experienced owner hands it to you and states it is safe."
+        ],
+        correctIndex: 0,
+        statute: "CA DOJ Universal Rule 1",
+        explanation: "Every firearm must always be treated as if it is loaded. Even if you watched someone clear the chamber or were told it is unloaded, you must personally inspect and verify that the chamber and magazine well are completely clear."
+      },
+      {
+        id: 2,
+        category: "California Safe Storage Laws",
+        question: "Under California Penal Code § 25100, what is a firearm owner legally required to do when storing a firearm where a child or prohibited person may gain access?",
+        options: [
+          "Keep the firearm stored on a high shelf out of normal reach.",
+          "Lock the firearm in a DOJ-approved container or secure it with an approved locking device.",
+          "Simply detach the magazine and store it on the opposite side of the same room.",
+          "Keep the firearm hidden under clothing in a master bedroom closet."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 25100, § 25140",
+        explanation: "California law strictly holds owners criminally liable for criminal storage if a child or prohibited person obtains an unsecured firearm. Firearm owners must keep firearms locked in a DOJ-approved lockbox/safe or properly disabled with a California-approved cable/trigger lock."
+      },
+      {
+        id: 3,
+        category: "Firearm Mechanics",
+        question: "True or False: A mechanical safety switch on a modern firearm is a foolproof device that guarantees the firearm cannot accidentally discharge.",
+        options: [
+          "True — Modern safeties physically lock the firing pin and cannot fail under any circumstances.",
+          "False — A safety is a mechanical device that can fail or be accidentally disengaged; muzzle discipline is always required."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 1",
+        explanation: "A mechanical safety is never a substitute for safe handling practices. Dirt, wear, internal breakage, or rough handling can cause mechanical safeties to fail. Never point a firearm at anything you do not intend to destroy, regardless of safety position."
+      },
+      {
+        id: 4,
+        category: "Universal Safety Rules",
+        question: "When should your index finger enter the trigger guard and touch the trigger of a firearm?",
+        options: [
+          "As soon as you draw or pick up the firearm from its storage container.",
+          "Only when the firearm is pointed safely downrange and you are prepared to shoot.",
+          "Whenever you want to verify that the hammer is cocked back.",
+          "As soon as you walk onto the designated firing line at a shooting range."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ Universal Rule 3",
+        explanation: "Rule 3 dictates that you must keep your finger off the trigger and outside the trigger guard until your sights are on target and you have made the conscious decision to shoot."
+      },
+      {
+        id: 5,
+        category: "Ammunition Safety",
+        question: "How should a firearm owner verify that ammunition matches the firearm they intend to shoot?",
+        options: [
+          "Compare the cartridge size visually with another round that fits the magazine.",
+          "Check that the caliber stamped on the ammunition box or cartridge headstamp matches the firearm barrel marking.",
+          "If the cartridge slides easily into the chamber without jamming, it is always safe to fire.",
+          "Assume that any 9mm ammunition will fire safely in any pistol labeled 9mm (such as 9x18mm Makarov in a 9x19mm Luger)."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 2",
+        explanation: "Firing the wrong caliber (such as a 9x18mm Makarov in a 9x19mm Parabellum chamber, or .300 Blackout in a 5.56 NATO barrel) can cause catastrophic barrel rupture and severe personal injury. Always verify the barrel stamp against the cartridge headstamp."
+      },
+      {
+        id: 6,
+        category: "California Legal Requirements",
+        question: "What is the minimum legal age in California to purchase a centerfire firearm or handgun (unless an active peace officer or military exemption applies)?",
+        options: [
+          "18 years old",
+          "19 years old",
+          "21 years old",
+          "25 years old"
+        ],
+        correctIndex: 2,
+        statute: "CA Penal Code § 27510",
+        explanation: "Under California law, a person must be at least 21 years of age to purchase any handgun or centerfire rifle/shotgun, unless specifically exempted by law (such as active-duty law enforcement or qualifying military service)."
+      },
+      {
+        id: 7,
+        category: "California Legal Requirements",
+        question: "What is the mandatory statutory waiting period in California between submitting a firearm purchase application (DROS) and taking delivery?",
+        options: [
+          "48 hours",
+          "10 full 24-hour days",
+          "15 business days",
+          "30 days"
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 26815",
+        explanation: "California mandates a minimum 10-day (ten consecutive 24-hour periods) waiting period from the moment the Dealer Record of Sale (DROS) is transmitted to the California DOJ before the dealer may release the firearm."
+      },
+      {
+        id: 8,
+        category: "Range Safety & Malfunctions",
+        question: "If you pull the trigger and hear a 'click' or faint 'pop' instead of a full gunshot, what hazard may have occurred and what should you do?",
+        options: [
+          "A hangfire or squib load occurred; immediately pull the trigger again to clear the round.",
+          "A squib load may have lodged a bullet in the barrel; keep the muzzle pointed downrange, wait 30 seconds, unload, and check for barrel obstruction.",
+          "The magazine simply failed to seat; slap the magazine baseplate immediately without looking.",
+          "The round failed to ignite; quickly look down the front of the barrel to see if the bullet left the chamber."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 3",
+        explanation: "A squib load occurs when a primer fires with insufficient or no powder, leaving a projectile stuck inside the barrel bore. Firing another round behind an obstructed barrel will result in catastrophic barrel explosion. Always keep the muzzle pointed downrange, wait 30 seconds (in case of a delayed hangfire), unload, and inspect the barrel from the breech."
+      },
+      {
+        id: 9,
+        category: "California Transportation Laws",
+        question: "How must handguns be transported in a motor vehicle in California by a non-CCW permit holder?",
+        options: [
+          "Loaded in an unlocked glove box within easy reach of the driver.",
+          "Unloaded, locked inside the vehicle trunk or in a fully locked container other than the glove compartment or utility box.",
+          "Unloaded and resting openly on the passenger seat covered by a jacket.",
+          "Loaded in a center console as long as the vehicle doors are locked."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 25610, § 25505",
+        explanation: "Under California law, handguns transported in a vehicle must be completely unloaded and secured inside a locked container (or locked trunk). The glove compartment or center utility console is explicitly prohibited as a qualifying locked container."
+      },
+      {
+        id: 10,
+        category: "Universal Safety Rules",
+        question: "What is the primary danger when failing to verify what lies behind and beyond your target before firing?",
+        options: [
+          "The target paper may tear unevenly.",
+          "Bullets can easily penetrate targets, walls, or barriers and strike people or property behind them.",
+          "Recoil force is doubled if the backstop is further than 25 yards away.",
+          "Gunpowder residue will build up faster in the firearm ejection port."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ Universal Rule 4",
+        explanation: "Rule 4 emphasizes knowing your target and what is beyond it. Handgun and rifle projectiles can travel several hundred yards and easily pass through drywall, car doors, or unverified backstops."
+      },
+      {
+        id: 11,
+        category: "California Safe Storage Laws",
+        question: "If an unauthorized minor obtains your unsecured firearm and causes death or great bodily injury, what California charge can the owner face?",
+        options: [
+          "A minor civil infraction punishable by a warning.",
+          "Criminal Storage of a Firearm in the First Degree (a felony).",
+          "There is no legal penalty as long as the firearm was kept inside your private residence.",
+          "A mandatory 4-hour community service fine only."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 25100(a)",
+        explanation: "Under California Penal Code § 25100(a), leaving a loaded firearm where you know or should know a child or prohibited person could gain access, and that person causes death or great bodily injury, constitutes Criminal Storage in the First Degree, punishable as a felony."
+      },
+      {
+        id: 12,
+        category: "Personal Protective Equipment",
+        question: "What protective gear is universally required when discharging firearms at any shooting range?",
+        options: [
+          "Leather work gloves and heavy steel-toe footwear.",
+          "ANSI-rated eye protection and hearing protection.",
+          "A full ballistic vest and helmet.",
+          "Only prescription eyeglasses if worn by the shooter."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 1",
+        explanation: "Gunfire produces concussive decibel levels that cause irreversible hearing loss, as well as high-velocity spent shell casings, gas blowback, and lead particulate. ANSI-rated safety eyewear and adequate hearing protection (plugs or muffs) are mandatory."
+      },
+      {
+        id: 13,
+        category: "California Legal Requirements",
+        question: "Within how many days must a firearm owner in California report the theft or loss of a firearm to local law enforcement?",
+        options: [
+          "Within 5 calendar days of the time they knew or reasonably should have known.",
+          "Within 30 calendar days.",
+          "Within 6 months upon filing annual income taxes.",
+          "There is no legal reporting requirement in California."
+        ],
+        correctIndex: 0,
+        statute: "CA Penal Code § 25250",
+        explanation: "California Penal Code § 25250 mandates that any person whose firearm was lost or stolen must report the incident to local law enforcement within 5 days of when they knew or reasonably should have known of the loss or theft."
+      },
+      {
+        id: 14,
+        category: "Universal Safety Rules",
+        question: "When cleaning, disassembling, or performing maintenance on any firearm, what is the very first step?",
+        options: [
+          "Apply cleaning solvent generously onto the slide and trigger assembly.",
+          "Point the firearm in a safe direction, drop the magazine, lock the slide/bolt back, and physically and visually inspect the chamber to ensure it is completely unloaded.",
+          "Pull the trigger several times while holding the firearm in your lap to verify spring tension.",
+          "Place a bore snake through the barrel from the muzzle end without opening the action."
+        ],
+        correctIndex: 1,
+        statute: "CA DOJ FSC Manual § 2",
+        explanation: "A significant proportion of unintentional discharges occur during routine cleaning. Always point the muzzle in a safe direction, remove the magazine, lock the action open, and perform both a visual and physical tactile check of the chamber before any disassembly or cleaning."
+      },
+      {
+        id: 15,
+        category: "California Private Party Transfers",
+        question: "Under California law, how must private party transfers (buying or selling a firearm between private citizens) be conducted?",
+        options: [
+          "Through a simple handwritten bill of sale notarized by a bank official.",
+          "Through a California licensed firearms dealer (FFL) with DROS processing and the standard 10-day waiting period.",
+          "Directly in a public parking lot during daylight hours as long as both parties are over 21.",
+          "Private firearm sales are exempted from state background checks if both parties reside in the same county."
+        ],
+        correctIndex: 1,
+        statute: "CA Penal Code § 28050",
+        explanation: "Except for narrow, specific immediate-family transfers, all private party firearm sales and transfers in California must be processed through a licensed California firearms dealer (FFL), where background checks, FSC verification, and the 10-day waiting period are legally executed."
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = new Array(QUESTIONS.length).fill(null);
+
+    // Initialize Quiz
+    function initQuiz() {
+      lucide.createIcons();
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = QUESTIONS[currentQuestionIndex];
+      const questionCounter = document.getElementById('questionCounter');
+      const scoreCounter = document.getElementById('scoreCounter');
+      const progressBar = document.getElementById('progressBar');
+      const questionCategory = document.getElementById('questionCategory');
+      const questionText = document.getElementById('questionText');
+      const optionsContainer = document.getElementById('optionsContainer');
+      const rationaleBox = document.getElementById('rationaleBox');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      // Update Header Numbers
+      questionCounter.innerText = `Question ${currentQuestionIndex + 1} of ${QUESTIONS.length}`;
+      
+      const answeredCount = userAnswers.filter(a => a !== null).length;
+      const correctCount = userAnswers.filter((a, idx) => a === QUESTIONS[idx].correctIndex).length;
+      scoreCounter.innerText = `Score: ${correctCount} / ${answeredCount} answered`;
+      
+      const pct = ((currentQuestionIndex + 1) / QUESTIONS.length) * 100;
+      progressBar.style.width = `${pct}%`;
+
+      questionCategory.innerText = q.category;
+      questionText.innerText = q.question;
+
+      // Render Options
+      optionsContainer.innerHTML = '';
+      const selectedAnswer = userAnswers[currentQuestionIndex];
+      const hasAnswered = selectedAnswer !== null;
+
+      q.options.forEach((optText, optIdx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'w-full text-left p-4 rounded-xl border-2 transition-all flex items-start gap-3.5 group relative ';
+
+        let badgeClass = 'w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ';
+
+        if (!hasAnswered) {
+          btn.className += 'bg-slate-50 border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 text-slate-800 cursor-pointer';
+          badgeClass += 'border-slate-300 text-slate-500 group-hover:border-blue-600 group-hover:text-blue-600';
+          btn.onclick = () => selectOption(optIdx);
+        } else {
+          // If already answered
+          if (optIdx === q.correctIndex) {
+            btn.className += 'bg-emerald-50 border-emerald-500 text-emerald-950 font-semibold shadow-sm';
+            badgeClass += 'border-emerald-600 bg-emerald-600 text-white';
+          } else if (optIdx === selectedAnswer) {
+            btn.className += 'bg-rose-50 border-rose-400 text-rose-950 shadow-sm';
+            badgeClass += 'border-rose-500 bg-rose-500 text-white';
+          } else {
+            btn.className += 'bg-white border-slate-200 text-slate-400 opacity-60 cursor-not-allowed';
+            badgeClass += 'border-slate-200 text-slate-300';
+          }
+        }
+
+        const letter = String.fromCharCode(65 + optIdx);
+        btn.innerHTML = `
+          <div class="${badgeClass}">
+            ${hasAnswered && optIdx === q.correctIndex ? '<i data-lucide="check" class="w-3.5 h-3.5"></i>' : (hasAnswered && optIdx === selectedAnswer ? '<i data-lucide="x" class="w-3.5 h-3.5"></i>' : letter)}
+          </div>
+          <div class="flex-1 text-xs sm:text-sm leading-relaxed">${optText}</div>
+        `;
+
+        optionsContainer.appendChild(btn);
+      });
+
+      // Show/Hide Rationale Box
+      if (hasAnswered) {
+        const isCorrect = selectedAnswer === q.correctIndex;
+        rationaleBox.classList.remove('hidden');
+
+        if (isCorrect) {
+          rationaleBox.className = 'p-4 sm:p-5 rounded-xl border mb-6 text-xs sm:text-sm leading-relaxed bg-emerald-50 border-emerald-300 text-emerald-950';
+          document.getElementById('rationaleTitle').innerText = 'Correct Answer';
+          document.getElementById('rationaleTitle').className = 'font-bold mb-1 text-sm text-emerald-800';
+          document.getElementById('rationaleIcon').innerHTML = '<i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i>';
+        } else {
+          rationaleBox.className = 'p-4 sm:p-5 rounded-xl border mb-6 text-xs sm:text-sm leading-relaxed bg-rose-50 border-rose-300 text-rose-950';
+          document.getElementById('rationaleTitle').innerText = 'Incorrect';
+          document.getElementById('rationaleTitle').className = 'font-bold mb-1 text-sm text-rose-800';
+          document.getElementById('rationaleIcon').innerHTML = '<i data-lucide="alert-circle" class="w-5 h-5 text-rose-600"></i>';
+        }
+
+        document.getElementById('rationaleText').innerText = q.explanation;
+        document.getElementById('rationaleStatute').innerText = `Official Reference: ${q.statute}`;
+        nextBtn.disabled = false;
+      } else {
+        rationaleBox.classList.add('hidden');
+        nextBtn.disabled = true;
+      }
+
+      // Prev / Next button states
+      prevBtn.disabled = currentQuestionIndex === 0;
+
+      if (currentQuestionIndex === QUESTIONS.length - 1) {
+        nextBtn.innerHTML = '<span>View Test Results</span> <i data-lucide="check-circle-2" class="w-4 h-4"></i>';
+      } else {
+        nextBtn.innerHTML = '<span>Next Question</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
+      }
+
+      lucide.createIcons();
+    }
+
+    function selectOption(optionIndex) {
+      if (userAnswers[currentQuestionIndex] !== null) return;
+      userAnswers[currentQuestionIndex] = optionIndex;
+      renderQuestion();
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < QUESTIONS.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      document.getElementById('quizContainer').classList.add('hidden');
+      const results = document.getElementById('resultsContainer');
+      results.classList.remove('hidden');
+
+      const correctCount = userAnswers.filter((a, idx) => a === QUESTIONS[idx].correctIndex).length;
+      const total = QUESTIONS.length;
+      const scorePct = Math.round((correctCount / total) * 100);
+      const passed = scorePct >= 75;
+
+      document.getElementById('finalScorePct').innerText = `${scorePct}%`;
+      document.getElementById('finalCorrectCount').innerText = correctCount;
+      document.getElementById('finalIncorrectCount').innerText = total - correctCount;
+
+      const badgeWrapper = document.getElementById('resultBadgeWrapper');
+      const resultStatus = document.getElementById('resultStatus');
+      const passingNotice = document.getElementById('passingNotice');
+
+      if (passed) {
+        badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-emerald-100 text-emerald-700 border-2 border-emerald-300 shadow-md';
+        resultStatus.innerText = 'Pass — Congratulations!';
+        passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-lg mx-auto mb-8 bg-emerald-50 border-emerald-300 text-emerald-900';
+        passingNotice.innerHTML = `
+          <strong>You Met California Passing Standards!</strong><br>
+          California requires a minimum score of 75% on the in-person 30-question test. You scored <strong>${scorePct}%</strong> (${correctCount} of ${total} correct). You have a solid grasp of CA safe storage statutes and firearm handling rules.
+        `;
+      } else {
+        badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-rose-100 text-rose-700 border-2 border-rose-300 shadow-md';
+        resultStatus.innerText = 'Needs Review (Did Not Pass)';
+        passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-lg mx-auto mb-8 bg-rose-50 border-rose-300 text-rose-900';
+        passingNotice.innerHTML = `
+          <strong>Score Below 75% Threshold</strong><br>
+          California law requires a minimum passing grade of 75% on the FSC exam. You scored <strong>${scorePct}%</strong> (${correctCount} of ${total} correct). Review the answers below or download the official CA DOJ Study Guide before re-attempting.
+        `;
+      }
+
+      renderReview();
+      lucide.createIcons();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderReview() {
+      const container = document.getElementById('reviewContainer');
+      container.innerHTML = '';
+
+      QUESTIONS.forEach((q, idx) => {
+        const userAns = userAnswers[idx];
+        const isCorrect = userAns === q.correctIndex;
+
+        const card = document.createElement('div');
+        card.className = `p-4 sm:p-5 rounded-xl border-2 ${isCorrect ? 'bg-emerald-50/40 border-emerald-200' : 'bg-rose-50/40 border-rose-200'}`;
+
+        card.innerHTML = `
+          <div class="flex items-start gap-3">
+            <span class="p-1 rounded-full ${isCorrect ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'} shrink-0 mt-0.5">
+              <i data-lucide="${isCorrect ? 'check' : 'x'}" class="w-3.5 h-3.5"></i>
+            </span>
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-xs font-bold uppercase tracking-wider ${isCorrect ? 'text-emerald-800' : 'text-rose-800'}">
+                  Question ${idx + 1}: ${q.category}
+                </span>
+                <span class="text-xs font-semibold px-2 py-0.5 rounded ${isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
+                  ${isCorrect ? 'Correct' : 'Missed'}
+                </span>
+              </div>
+              <p class="font-bold text-slate-900 text-sm mb-2">${q.question}</p>
+              
+              <div class="space-y-1 text-xs mb-3">
+                <p class="text-emerald-900 font-semibold">
+                  <span class="font-bold">Correct Answer:</span> ${q.options[q.correctIndex]}
+                </p>
+                ${!isCorrect && userAns !== null ? `
+                  <p class="text-rose-800">
+                    <span class="font-bold">Your Selection:</span> ${q.options[userAns]}
+                  </p>
+                ` : ''}
+              </div>
+
+              <p class="text-xs text-slate-600 bg-white/80 p-2.5 rounded-lg border border-slate-200 leading-relaxed">
+                <strong>Legal & Safety Note:</strong> ${q.explanation}
+              </p>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function restartQuiz() {
+      currentQuestionIndex = 0;
+      userAnswers = new Array(QUESTIONS.length).fill(null);
+      document.getElementById('resultsContainer').classList.add('hidden');
+      document.getElementById('quizContainer').classList.remove('hidden');
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Start on load
+    window.addEventListener('DOMContentLoaded', initQuiz);
+  </script>
+</body>
+</html>
