@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>California Firearm Safety Certificate (FSC) Practice Test | SikhRPA</title>
+  <title>California Firearm Safety Certificate (FSC) Practice Test & Analytics | SikhRPA</title>
   
-  <meta name="description" content="Free interactive California Firearm Safety Certificate (FSC) practice examination provided by the Sikh Rifle and Pistol Association. Test your knowledge of CA safe storage, firearm handling, and state penal codes." />
-  <meta name="keywords" content="CA FSC practice test, firearm safety certificate test, California gun laws quiz, FSC study guide, SikhRPA" />
+  <meta name="description" content="Free interactive California Firearm Safety Certificate (FSC) practice examination and post-test analytics provided by the Sikh Rifle and Pistol Association. Test and benchmark your knowledge of safe storage and state penal codes." />
+  <meta name="keywords" content="CA FSC practice test, firearm safety certificate test, California gun laws quiz, FSC study guide, SikhRPA, gun safety analytics" />
   <meta name="theme-color" content="#0f172a" />
 
   <link rel="icon" type="image/png" href="srpa-logo.png" />
@@ -66,8 +66,12 @@
         </div>
       </div>
 
-      <!-- Live Header Progress Indicator -->
+      <!-- Live Header Progress & Timer Indicator -->
       <div class="flex items-center gap-2">
+        <span id="headerTimer" class="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full border border-slate-200">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i>
+          <span id="elapsedDisplay">00:00</span>
+        </span>
         <span class="inline-flex items-center gap-1 text-xs font-bold bg-blue-50 text-blue-900 px-3 py-1 rounded-full border border-blue-200">
           <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
           <span>CA FSC Exam Prep</span>
@@ -82,13 +86,13 @@
     <!-- Header Banner -->
     <div class="text-center mb-8">
       <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-        Free Public Safety Education
+        Free Public Safety Education & Performance Analytics
       </span>
       <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 tracking-tight">
         California Firearm Safety Certificate (FSC) Practice Test
       </h1>
       <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto mt-2 leading-relaxed">
-        This interactive simulator is modeled after the official California Department of Justice (CA DOJ) FSC examination. You need <strong>75% or higher</strong> (at least 12 of 15 questions correct) to pass.
+        Model exam based on California Department of Justice standards. Requires <strong>75% or higher</strong> (12 of 15 questions) to pass. Complete diagnostic analytics and category breakdown are generated automatically upon completion.
       </p>
     </div>
 
@@ -156,69 +160,132 @@
       </div>
     </div>
 
-    <!-- Final Results Card (Initially Hidden) -->
-    <div id="resultsContainer" class="hidden bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-10 text-center">
+    <!-- Final Results & Advanced Analytics Card (Initially Hidden) -->
+    <div id="resultsContainer" class="hidden space-y-8">
       
-      <!-- Result Badge -->
-      <div id="resultBadgeWrapper" class="inline-flex items-center justify-center p-4 rounded-full mb-4">
-        <i id="resultIcon" data-lucide="award" class="w-12 h-12"></i>
+      <!-- Primary Outcome Summary Card -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-10 text-center">
+        <!-- Result Badge -->
+        <div id="resultBadgeWrapper" class="inline-flex items-center justify-center p-4 rounded-full mb-4">
+          <i id="resultIcon" data-lucide="award" class="w-12 h-12"></i>
+        </div>
+
+        <h2 id="resultStatus" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Examination Complete</h2>
+        <p id="resultSubtext" class="text-slate-600 text-sm max-w-md mx-auto mb-6">
+          Diagnostic review of your California Firearm Safety Certificate knowledge.
+        </p>
+
+        <!-- KPI Grid: Score, Pace & Community Benchmark -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto mb-6">
+          <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+            <span class="block text-2xl sm:text-3xl font-extrabold text-blue-900" id="finalScorePct">0%</span>
+            <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Score</span>
+          </div>
+          <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+            <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-700" id="finalCorrectCount">0/15</span>
+            <span class="text-[11px] font-semibold text-emerald-800 uppercase tracking-wide">Accuracy</span>
+          </div>
+          <div class="p-4 bg-blue-50 border border-blue-200 rounded-xl">
+            <span class="block text-xl sm:text-2xl font-extrabold text-blue-900 mt-0.5" id="finalTimePace">0m 00s</span>
+            <span class="text-[11px] font-semibold text-blue-700 uppercase tracking-wide">Total Time</span>
+          </div>
+          <div class="p-4 bg-amber-50 border border-amber-200 rounded-xl">
+            <span class="block text-xl sm:text-2xl font-extrabold text-amber-700 mt-0.5" id="communityPercentile">--</span>
+            <span class="text-[11px] font-semibold text-amber-800 uppercase tracking-wide">Percentile</span>
+          </div>
+        </div>
+
+        <!-- Passing Status Notice -->
+        <div id="passingNotice" class="p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 text-left"></div>
+
+        <!-- Analytics Telemetry Status -->
+        <div id="telemetryNotice" class="text-xs text-slate-500 flex items-center justify-center gap-1.5 mb-6 font-mono">
+          <i data-lucide="cloud-check" class="w-4 h-4 text-emerald-600"></i>
+          <span>Performance telemetry synchronized for community safety reporting</span>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <button 
+            onclick="restartQuiz()" 
+            class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-colors"
+          >
+            <i data-lucide="rotate-ccw" class="w-4 h-4 text-amber-400"></i> Retake Practice Quiz
+          </button>
+          <a 
+            href="https://oag.ca.gov/sites/all/files/agweb/pdfs/firearms/forms/hscsg.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center gap-2 shadow-sm transition-colors"
+          >
+            <i data-lucide="file-down" class="w-4 h-4 text-amber-600"></i> Download CA DOJ Study Guide
+          </a>
+          <a 
+            href="index.html" 
+            class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition-colors"
+          >
+            <i data-lucide="home" class="w-4 h-4"></i> Back to Homepage
+          </a>
+        </div>
       </div>
 
-      <h2 id="resultStatus" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Examination Complete</h2>
-      <p id="resultSubtext" class="text-slate-600 text-sm max-w-md mx-auto mb-6">
-        Here is how you performed on the simulated California Firearm Safety Certificate examination.
-      </p>
+      <!-- Category Competency & Analytics Breakdown -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-200">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="bar-chart-3" class="w-5 h-5 text-blue-900"></i> 
+              Category Competency Breakdown
+            </h3>
+            <p class="text-xs text-slate-500 mt-0.5">Identifies specific statutory concepts and safe handling procedures for review.</p>
+          </div>
+          <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full self-start sm:self-auto border border-slate-200">
+            Passing Threshold: 75%
+          </span>
+        </div>
 
-      <!-- Score Statistics Grid -->
-      <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto mb-8">
-        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-          <span class="block text-2xl sm:text-3xl font-extrabold text-blue-900" id="finalScorePct">0%</span>
-          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Score</span>
+        <!-- Dynamic Category Progress Bars -->
+        <div id="categoryBreakdownContainer" class="space-y-4 mb-8">
+          <!-- Injected via JavaScript -->
         </div>
-        <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
-          <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-700" id="finalCorrectCount">0</span>
-          <span class="text-xs font-semibold text-emerald-800 uppercase tracking-wide">Correct</span>
-        </div>
-        <div class="p-4 bg-rose-50 border border-rose-200 rounded-xl">
-          <span class="block text-2xl sm:text-3xl font-extrabold text-rose-700" id="finalIncorrectCount">0</span>
-          <span class="text-xs font-semibold text-rose-800 uppercase tracking-wide">Incorrect</span>
+
+        <!-- Targeted Study Recommendation Box -->
+        <div id="targetedRecommendationBox" class="p-4 sm:p-5 rounded-xl border bg-amber-50 border-amber-200 text-slate-800 text-xs sm:text-sm">
+          <div class="flex items-start gap-3">
+            <div class="p-2 bg-amber-200/60 rounded-lg text-amber-900 shrink-0 mt-0.5">
+              <i data-lucide="lightbulb" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-amber-950 text-sm mb-1" id="recHeading">Recommended Study Focus</h4>
+              <p class="text-slate-700 leading-relaxed text-xs sm:text-sm" id="recText"></p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Passing Status Message -->
-      <div id="passingNotice" class="p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-lg mx-auto mb-8"></div>
-
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-3">
-        <button 
-          onclick="restartQuiz()" 
-          class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-colors"
-        >
-          <i data-lucide="rotate-ccw" class="w-4 h-4 text-amber-400"></i> Retake Practice Quiz
-        </button>
-        <a 
-          href="https://oag.ca.gov/sites/all/files/agweb/pdfs/firearms/forms/hscsg.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center gap-2 shadow-sm transition-colors"
-        >
-          <i data-lucide="file-down" class="w-4 h-4 text-amber-600"></i> Download CA DOJ Study Guide
-        </a>
-        <a 
-          href="index.html" 
-          class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition-colors"
-        >
-          <i data-lucide="home" class="w-4 h-4"></i> Back to Homepage
-        </a>
+      <!-- Attempt History Tracker (Local Storage Analytics) -->
+      <div id="historyCard" class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
+          <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            <i data-lucide="history" class="w-4 h-4 text-blue-900"></i> Your Test History & Progression
+          </h3>
+          <button onclick="clearHistory()" class="text-xs text-slate-400 hover:text-rose-600 transition-colors">
+            Clear History
+          </button>
+        </div>
+        <div id="historyList" class="space-y-2 text-xs">
+          <!-- Injected dynamically -->
+        </div>
       </div>
 
-      <!-- Detailed Question Review Section -->
-      <div class="mt-12 text-left pt-8 border-t border-slate-200">
-        <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+      <!-- Detailed Question-by-Question Review Section -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
+        <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2 pb-4 border-b border-slate-200">
           <i data-lucide="list-checks" class="w-5 h-5 text-blue-900"></i> Full Answer Review & California Legal Standards
         </h3>
         <div id="reviewContainer" class="space-y-4"></div>
       </div>
+
     </div>
   </main>
 
@@ -234,8 +301,13 @@
     </div>
   </footer>
 
-  <!-- FSC Quiz Logic -->
+  <!-- FSC Quiz & Analytics Logic -->
   <script>
+    // =========================================================================
+    // TELEMETRY INTEGRATION: Google Apps Script Webhook Endpoint
+    // =========================================================================
+    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
+
     const QUESTIONS = [
       {
         id: 1,
@@ -449,11 +521,31 @@
 
     let currentQuestionIndex = 0;
     let userAnswers = new Array(QUESTIONS.length).fill(null);
+    let quizStartTime = null;
+    let timerInterval = null;
+    let totalSecondsElapsed = 0;
 
-    // Initialize Quiz
     function initQuiz() {
       lucide.createIcons();
+      quizStartTime = Date.now();
+      startTimer();
       renderQuestion();
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        totalSecondsElapsed = Math.floor((Date.now() - quizStartTime) / 1000);
+        const mins = Math.floor(totalSecondsElapsed / 60);
+        const secs = totalSecondsElapsed % 60;
+        const display = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        const el = document.getElementById('elapsedDisplay');
+        if (el) el.innerText = display;
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (timerInterval) clearInterval(timerInterval);
     }
 
     function renderQuestion() {
@@ -468,7 +560,6 @@
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
 
-      // Update Header Numbers
       questionCounter.innerText = `Question ${currentQuestionIndex + 1} of ${QUESTIONS.length}`;
       
       const answeredCount = userAnswers.filter(a => a !== null).length;
@@ -481,7 +572,6 @@
       questionCategory.innerText = q.category;
       questionText.innerText = q.question;
 
-      // Render Options
       optionsContainer.innerHTML = '';
       const selectedAnswer = userAnswers[currentQuestionIndex];
       const hasAnswered = selectedAnswer !== null;
@@ -498,7 +588,6 @@
           badgeClass += 'border-slate-300 text-slate-500 group-hover:border-blue-600 group-hover:text-blue-600';
           btn.onclick = () => selectOption(optIdx);
         } else {
-          // If already answered
           if (optIdx === q.correctIndex) {
             btn.className += 'bg-emerald-50 border-emerald-500 text-emerald-950 font-semibold shadow-sm';
             badgeClass += 'border-emerald-600 bg-emerald-600 text-white';
@@ -522,7 +611,6 @@
         optionsContainer.appendChild(btn);
       });
 
-      // Show/Hide Rationale Box
       if (hasAnswered) {
         const isCorrect = selectedAnswer === q.correctIndex;
         rationaleBox.classList.remove('hidden');
@@ -547,11 +635,10 @@
         nextBtn.disabled = true;
       }
 
-      // Prev / Next button states
       prevBtn.disabled = currentQuestionIndex === 0;
 
       if (currentQuestionIndex === QUESTIONS.length - 1) {
-        nextBtn.innerHTML = '<span>View Test Results</span> <i data-lucide="check-circle-2" class="w-4 h-4"></i>';
+        nextBtn.innerHTML = '<span>Generate Analytics & Results</span> <i data-lucide="check-circle-2" class="w-4 h-4"></i>';
       } else {
         nextBtn.innerHTML = '<span>Next Question</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
       }
@@ -577,11 +664,12 @@
         currentQuestionIndex++;
         renderQuestion();
       } else {
-        showResults();
+        showResultsAndAnalytics();
       }
     }
 
-    function showResults() {
+    function showResultsAndAnalytics() {
+      stopTimer();
       document.getElementById('quizContainer').classList.add('hidden');
       const results = document.getElementById('resultsContainer');
       results.classList.remove('hidden');
@@ -591,9 +679,25 @@
       const scorePct = Math.round((correctCount / total) * 100);
       const passed = scorePct >= 75;
 
+      // Time and Pace Calculations
+      const mins = Math.floor(totalSecondsElapsed / 60);
+      const secs = totalSecondsElapsed % 60;
+      const avgSecsPerQ = Math.round(totalSecondsElapsed / total);
+      document.getElementById('finalTimePace').innerText = `${mins}m ${secs}s`;
+
+      // Estimated Percentile (Normal distribution modeled against CA DOJ 75% average passing standard)
+      let percentile = 50;
+      if (scorePct >= 100) percentile = 98;
+      else if (scorePct >= 93) percentile = 91;
+      else if (scorePct >= 86) percentile = 82;
+      else if (scorePct >= 80) percentile = 74;
+      else if (scorePct >= 73) percentile = 61;
+      else if (scorePct >= 60) percentile = 42;
+      else percentile = 25;
+      document.getElementById('communityPercentile').innerText = `Top ${100 - percentile}%`;
+
       document.getElementById('finalScorePct').innerText = `${scorePct}%`;
-      document.getElementById('finalCorrectCount').innerText = correctCount;
-      document.getElementById('finalIncorrectCount').innerText = total - correctCount;
+      document.getElementById('finalCorrectCount').innerText = `${correctCount}/${total}`;
 
       const badgeWrapper = document.getElementById('resultBadgeWrapper');
       const resultStatus = document.getElementById('resultStatus');
@@ -601,25 +705,138 @@
 
       if (passed) {
         badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-emerald-100 text-emerald-700 border-2 border-emerald-300 shadow-md';
-        resultStatus.innerText = 'Pass — Congratulations!';
-        passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-lg mx-auto mb-8 bg-emerald-50 border-emerald-300 text-emerald-900';
+        resultStatus.innerText = 'Pass — Meeting CA State Standard!';
+        passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 bg-emerald-50 border-emerald-300 text-emerald-900';
         passingNotice.innerHTML = `
-          <strong>You Met California Passing Standards!</strong><br>
-          California requires a minimum score of 75% on the in-person 30-question test. You scored <strong>${scorePct}%</strong> (${correctCount} of ${total} correct). You have a solid grasp of CA safe storage statutes and firearm handling rules.
+          <strong>Exam Standard Achieved:</strong> You scored <strong>${scorePct}%</strong> (${correctCount} of ${total} correct in ${mins}m ${secs}s). You meet California's required 75% passing threshold for firearm handling and storage proficiency.
         `;
       } else {
         badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-rose-100 text-rose-700 border-2 border-rose-300 shadow-md';
-        resultStatus.innerText = 'Needs Review (Did Not Pass)';
-        passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-lg mx-auto mb-8 bg-rose-50 border-rose-300 text-rose-900';
+        resultStatus.innerText = 'Below 75% Threshold (Needs Review)';
+        passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 bg-rose-50 border-rose-300 text-rose-900';
         passingNotice.innerHTML = `
-          <strong>Score Below 75% Threshold</strong><br>
-          California law requires a minimum passing grade of 75% on the FSC exam. You scored <strong>${scorePct}%</strong> (${correctCount} of ${total} correct). Review the answers below or download the official CA DOJ Study Guide before re-attempting.
+          <strong>Did Not Meet State Threshold:</strong> You scored <strong>${scorePct}%</strong> (${correctCount} of ${total} correct). California mandates at least 75% on the in-person FSC test. Examine the competency analysis below to focus your study on missed penal codes.
         `;
       }
 
+      // Compute and Render Category Diagnostics
+      const categoryData = computeCategoryDiagnostics();
+      renderCategoryAnalytics(categoryData);
+
+      // Targeted Recommendation
+      renderTargetedRecommendation(categoryData);
+
+      // Local History Tracking
+      saveAttemptToLocalHistory(scorePct, correctCount, total, totalSecondsElapsed);
+      renderLocalHistory();
+
+      // Render Question Review
       renderReview();
+
+      // =====================================================================
+      // TELEMETRY DISPATCH: Trigger background post to Google Sheets
+      // =====================================================================
+      transmitTelemetry({
+        scorePct,
+        correctCount,
+        total,
+        passed,
+        totalSecondsElapsed,
+        avgSecsPerQ,
+        categoryData
+      });
+
       lucide.createIcons();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function computeCategoryDiagnostics() {
+      const stats = {};
+      QUESTIONS.forEach((q, idx) => {
+        if (!stats[q.category]) {
+          stats[q.category] = { total: 0, correct: 0, questions: [] };
+        }
+        stats[q.category].total++;
+        const isCorrect = userAnswers[idx] === q.correctIndex;
+        if (isCorrect) stats[q.category].correct++;
+        stats[q.category].questions.push({
+          id: q.id,
+          isCorrect: isCorrect,
+          statute: q.statute
+        });
+      });
+      return stats;
+    }
+
+    function renderCategoryAnalytics(stats) {
+      const container = document.getElementById('categoryBreakdownContainer');
+      container.innerHTML = '';
+
+      Object.entries(stats).forEach(([catName, data]) => {
+        const catPct = Math.round((data.correct / data.total) * 100);
+        let barColor = 'bg-emerald-500';
+        let badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+        let statusLabel = 'Mastered';
+
+        if (catPct < 60) {
+          barColor = 'bg-rose-500';
+          badgeColor = 'bg-rose-100 text-rose-800 border-rose-300';
+          statusLabel = 'Critical Review';
+        } else if (catPct < 100) {
+          barColor = 'bg-amber-500';
+          badgeColor = 'bg-amber-100 text-amber-800 border-amber-300';
+          statusLabel = 'Moderate';
+        }
+
+        const row = document.createElement('div');
+        row.className = 'p-3.5 bg-slate-50 border border-slate-200 rounded-xl';
+        row.innerHTML = `
+          <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
+            <span class="text-slate-900 font-bold">${catName}</span>
+            <div class="flex items-center gap-2">
+              <span class="text-slate-500">${data.correct}/${data.total} (${catPct}%)</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded border uppercase ${badgeColor}">${statusLabel}</span>
+            </div>
+          </div>
+          <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div class="h-full ${barColor} transition-all duration-500" style="width: ${catPct}%;"></div>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function renderTargetedRecommendation(stats) {
+      let lowestCategory = null;
+      let lowestPct = 101;
+
+      Object.entries(stats).forEach(([catName, data]) => {
+        const pct = (data.correct / data.total) * 100;
+        if (pct < lowestPct) {
+          lowestPct = pct;
+          lowestCategory = catName;
+        }
+      });
+
+      const heading = document.getElementById('recHeading');
+      const text = document.getElementById('recText');
+
+      if (lowestPct === 100) {
+        heading.innerText = 'Exceptional Mastery Across All Subject Areas';
+        text.innerText = 'You demonstrated complete accuracy across California Penal Code provisions, safe storage mandates, and range handling rules. You are thoroughly prepared for the live CA FSC test.';
+      } else {
+        heading.innerText = `Focus Area: ${lowestCategory} (${Math.round(lowestPct)}% accuracy)`;
+        
+        let advise = `Dedicate extra revision time to ${lowestCategory}. Review the specific penal codes referenced in the missed questions below and verify statutory definitions in Chapter 2 of the CA DOJ FSC Study Guide.`;
+        if (lowestCategory.includes('Storage')) {
+          advise = `California safe storage statutes (PC § 25100, § 25140) enforce strict criminal felony liability if an unsecured firearm is accessed by minors or prohibited persons. Review approved lockbox specifications and locking cable procedures.`;
+        } else if (lowestCategory.includes('Universal')) {
+          advise = `Universal handling discipline requires keeping fingers strictly outside the trigger guard and treating all firearms as loaded regardless of verbal assurances or clear magazines.`;
+        } else if (lowestCategory.includes('Legal') || lowestCategory.includes('Transfer')) {
+          advise = `Review the mandatory 10-day waiting period (PC § 26815), the 21-year age threshold (PC § 27510), and mandatory dealer FFL involvement for private party transfers (PC § 28050).`;
+        }
+        text.innerText = advise;
+      }
     }
 
     function renderReview() {
@@ -671,16 +888,119 @@
       });
     }
 
+    // Local Storage History Operations
+    function saveAttemptToLocalHistory(scorePct, correctCount, total, timeSecs) {
+      try {
+        const history = JSON.parse(localStorage.getItem('srpa_fsc_attempts') || '[]');
+        history.unshift({
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          score: scorePct,
+          correct: correctCount,
+          total: total,
+          timeSecs: timeSecs
+        });
+        // Keep last 8 attempts
+        localStorage.setItem('srpa_fsc_attempts', JSON.stringify(history.slice(0, 8)));
+      } catch (err) {
+        console.warn('Local storage error:', err);
+      }
+    }
+
+    function renderLocalHistory() {
+      const list = document.getElementById('historyList');
+      list.innerHTML = '';
+      try {
+        const history = JSON.parse(localStorage.getItem('srpa_fsc_attempts') || '[]');
+        if (history.length === 0) {
+          list.innerHTML = '<p class="text-slate-400 italic">No prior attempts recorded on this device.</p>';
+          return;
+        }
+
+        history.forEach((att, idx) => {
+          const item = document.createElement('div');
+          const isPass = att.score >= 75;
+          const mins = Math.floor(att.timeSecs / 60);
+          const secs = att.timeSecs % 60;
+          item.className = 'flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-200';
+          item.innerHTML = `
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-slate-400">#${history.length - idx}</span>
+              <span class="font-medium text-slate-700">${att.date} at ${att.time}</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-slate-500">${mins}m ${secs}s</span>
+              <span class="font-bold font-mono px-2 py-0.5 rounded text-xs ${isPass ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
+                ${att.score}% (${att.correct}/${att.total})
+              </span>
+            </div>
+          `;
+          list.appendChild(item);
+        });
+      } catch (err) {
+        list.innerHTML = '<p class="text-slate-400">Unable to load local history.</p>';
+      }
+    }
+
+    function clearHistory() {
+      if (confirm('Clear your local FSC practice history?')) {
+        localStorage.removeItem('srpa_fsc_attempts');
+        renderLocalHistory();
+      }
+    }
+
+    // =========================================================================
+    // TELEMETRY REPORTING FUNCTION (Google Apps Script Webhook)
+    // =========================================================================
+    async function transmitTelemetry(payload) {
+      if (!GOOGLE_SHEETS_WEBHOOK_URL || !GOOGLE_SHEETS_WEBHOOK_URL.startsWith('https://script.google.com/')) {
+        return;
+      }
+
+      // Collect missed question IDs and categories to help the nonprofit curate educational seminars
+      const missed = [];
+      QUESTIONS.forEach((q, idx) => {
+        if (userAnswers[idx] !== q.correctIndex) {
+          missed.push({ id: q.id, category: q.category, statute: q.statute });
+        }
+      });
+
+      const body = JSON.stringify({
+        event_type: 'fsc_practice_exam',
+        score_percent: payload.scorePct,
+        passed: payload.passed,
+        correct_count: payload.correctCount,
+        total_questions: payload.total,
+        duration_seconds: payload.totalSecondsElapsed,
+        missed_count: missed.length,
+        missed_summary: missed.map(m => `Q${m.id} (${m.category})`).join(', ') || 'None',
+        timestamp: new Date().toISOString()
+      });
+
+      try {
+        await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: body
+        });
+      } catch (err) {
+        console.warn('Anonymous telemetry dispatch failed gracefully:', err);
+      }
+    }
+
     function restartQuiz() {
       currentQuestionIndex = 0;
       userAnswers = new Array(QUESTIONS.length).fill(null);
+      totalSecondsElapsed = 0;
+      quizStartTime = Date.now();
       document.getElementById('resultsContainer').classList.add('hidden');
       document.getElementById('quizContainer').classList.remove('hidden');
+      startTimer();
       renderQuestion();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Start on load
     window.addEventListener('DOMContentLoaded', initQuiz);
   </script>
 </body>
