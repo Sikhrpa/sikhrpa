@@ -1,0 +1,45 @@
+{
+  "last_updated": "2026-09-03T21:06:23.804Z",
+  "updated_formatted": "September 3, 2026 • 2:06 PM PDT",
+  "items": [
+    {
+      "id": "ca-ab28-firearms-excise-tax",
+      "date": "2024-07-01",
+      "category": "Legislation",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "California 11% Firearms and Ammunition Excise Tax",
+      "statute_or_case": "Cal. Rev. & Tax. Code § 36011 (Assembly Bill 28)",
+      "summary": "California law imposes an 11% state excise tax on licensed firearm dealers, manufacturers, and ammunition vendors on gross receipts from sales of firearms, firearm precursor parts, and ammunition. The revenue generated funds gun violence prevention programs, school safety initiatives, and victim support services across the state. This state tax applies on top of standard municipal sales taxes and federal excise taxes.",
+      "community_takeaway": "Budget for an additional 11% state tax when purchasing firearms or ammunition at California retailers. First-time buyers should account for total checkout costs, including state DROS fees and local sales tax, prior to initiating transactions.",
+      "source_name": "California Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB28"
+    },
+    {
+      "id": "ca-sb2-sensitive-locations-may-v-bonta",
+      "date": "2024-09-06",
+      "category": "Court Ruling",
+      "badge_status": "Partially Enjoined",
+      "badge_color": "amber",
+      "headline": "9th Circuit Injunction Review on Concealed Carry Sensitive Locations",
+      "statute_or_case": "May v. Bonta, No. 23-4356 / Cal. Penal Code § 26230 (SB 2)",
+      "summary": "Senate Bill 2 created expansive 'sensitive places' where concealed carry weapon (CCW) permit holders are prohibited from carrying firearms, including parks, financial institutions, public gatherings, and private businesses open to the public without posted signage. Federal litigation in May v. Bonta resulted in preliminary injunctions against specific restrictions, though prohibitions in government buildings, polling places, and school grounds remain active.",
+      "community_takeaway": "CCW permit holders must verify location restrictions before carrying in public spaces, as regulations vary by property type and local enforcement interpretations. Review updated CA DOJ Bureau of Firearms guidance and your local issuing authority guidelines before carrying.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://oag.ca.gov/firearms"
+    },
+    {
+      "id": "ca-boland-v-bonta-handgun-roster",
+      "date": "2023-03-20",
+      "category": "Court Ruling",
+      "badge_status": "Injunction In Effect",
+      "badge_color": "emerald",
+      "headline": "Federal Court Injunction on Unsafe Handgun Act Mandates",
+      "statute_or_case": "Boland v. Bonta, Case No. 8:22-cv-01421 / Cal. Penal Code § 31910",
+      "summary": "A federal district court enjoined California from enforcing statutory requirements that new handgun models feature microstamping technology, chamber load indicators, and magazine disconnect mechanisms to be added to the Handgun Roster. Following this order, the CA DOJ began allowing handgun manufacturers to submit updated semi-automatic handgun models that pass standard safety drop-tests.",
+      "community_takeaway": "First-time buyers now have expanded access to modern, optic-ready handgun models that were previously unavailable in California. Always verify that the exact SKU and model number are listed on the official CA DOJ Roster of Certified Handguns prior to purchase.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms/certgun"
+    }
+  ]
+}
