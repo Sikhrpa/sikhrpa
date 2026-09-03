@@ -136,65 +136,46 @@
         <img 
           src="srpa-logo.png" 
           alt="SikhRPA Logo" 
-          class="h-10 w-auto object-contain"
+          class="h-9 sm:h-10 w-auto object-contain"
           onerror="this.style.display='none'"
         />
-        <a href="#" class="font-bold text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors">
+        <a href="./" class="font-bold text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors">
           <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
         </a>
       </div>
       
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
-        <a href="#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors">About Us</a>
+      <!-- Streamlined Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
         <a href="#safety" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Safety Rules</a>
         <a href="buyer-guide" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Buyer's Guide</a>
-        <a href="#guides" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Educational Guides</a>
-        <a href="#legal" class="hover:text-amber-600 focus:text-amber-600 transition-colors">CA Legal & DOJ</a>
         <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 hover:text-blue-950 font-bold text-xs transition-colors">
           <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
           FSC Quiz
         </a>
-        <a href="#faq" class="hover:text-amber-600 focus:text-amber-600 transition-colors">FAQ</a>
+        <a href="#guides" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Resources</a>
+        <a href="#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors">About Us</a>
       </nav>
 
-      <!-- Action, Social & Mobile Hamburger Buttons -->
+      <!-- Action & Mobile Hamburger Buttons -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Single Primary Donate CTA -->
+        <!-- Subtle Contact Link (Desktop Only) -->
+        <a
+          href="mailto:president@sikhrpa.org"
+          class="hidden lg:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-blue-900 px-2.5 py-1.5 rounded-lg hover:bg-slate-100 transition-colors"
+          title="Contact SikhRPA"
+        >
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-500"></i>
+          <span>Contact</span>
+        </a>
+
+        <!-- Single Primary Donate CTA Button -->
         <a
           href="donate"
-          class="inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 transition-colors items-center gap-1.5 shadow-sm"
+          class="inline-flex px-3.5 py-2 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors items-center gap-1.5 shadow-sm"
           title="Tax-Deductible Charitable Giving"
         >
           <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
           <span>Donate</span>
-        </a>
-
-        <!-- Instagram Link Button -->
-        <a
-          href="https://www.instagram.com/sikhrpa/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="p-2 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-pink-50 text-pink-700 hover:bg-pink-100 border border-pink-200 transition-all flex items-center gap-1.5 shadow-sm group"
-          title="Follow @sikhrpa on Instagram"
-          aria-label="Follow SikhRPA on Instagram"
-        >
-          <svg class="w-4 h-4 text-pink-600 group-hover:scale-110 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-          </svg>
-          <span class="hidden sm:inline font-medium">@sikhrpa</span>
-        </a>
-
-        <!-- Contact Email Button -->
-        <a
-          href="mailto:president@sikhrpa.org"
-          class="px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-blue-900 text-white hover:bg-blue-800 focus:bg-blue-800 transition-all flex items-center gap-2 shadow-sm"
-          aria-label="Contact SikhRPA via Email"
-        >
-          <i data-lucide="mail" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
-          <span class="hidden sm:inline">Contact</span>
         </a>
 
         <!-- Mobile Navigation Hamburger Button -->
@@ -213,6 +194,7 @@
       </div>
     </div>
 
+    <!-- Mobile Navigation Drawer (Preserves all links) -->
     <div 
       id="mobileMenuDrawer" 
       class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
@@ -309,8 +291,6 @@
         <a href="donate" class="hover:text-blue-900 p-1">501(c)(3) Donate</a>
         <span aria-hidden="true">•</span>
         <a href="https://www.instagram.com/sikhrpa/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 p-1">Instagram @sikhrpa</a>
-        <span aria-hidden="true">•</span>
-        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900 p-1">president@sikhrpa.org</a>
       </div>
     </section>
 
