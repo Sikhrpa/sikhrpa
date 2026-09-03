@@ -2,8 +2,8 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SikhRPA - Marksmanship & Safety Education | 501(c)(3) Nonprofit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Sikh Rifle and Pistol Association | 501(c)(3) Firearm Safety & Education</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TRVZCG17K"></script>
@@ -14,66 +14,29 @@
 
     gtag('config', 'G-4TRVZCG17K');
   </script>
-  
+
   <!-- Primary Meta Tags -->
-  <meta name="title" content="SikhRPA - Marksmanship & Safety Education | 501(c)(3) Nonprofit" />
-  <meta name="description" content="Sikh Rifle and Pistol Association is a California 501(c)(3) nonprofit providing public firearm safety education, bilingual training, marksmanship fundamentals, and CA DOJ compliance resources." />
-  <meta name="keywords" content="SikhRPA, firearm safety, marksmanship, California DOJ, FSC study guide, FSC practice quiz, safe storage, Sikh community education, 4 universal rules, nonprofit, donate" />
+  <meta name="title" content="Sikh Rifle and Pistol Association | 501(c)(3) Firearm Safety & Education" />
+  <meta name="description" content="A California 501(c)(3) nonprofit public benefit corporation dedicated to firearm safety education, safe handling, legal compliance, and community marksmanship fundamentals." />
+  <meta name="keywords" content="Sikh Rifle and Pistol Association, SikhRPA, firearm safety California, FSC practice test, safe gun storage California, California gun laws, 501c3 marksmanship" />
   <meta name="author" content="Sikh Rifle and Pistol Association" />
   <meta name="theme-color" content="#0f172a" />
 
-  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sikhrpa.org/" />
   <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
-  <meta property="og:title" content="Sikh Rifle and Pistol Association | Safety & Marksmanship" />
-  <meta property="og:description" content="Dedicated to community safety, responsible ownership, and bilingual public education across California." />
+  <meta property="og:title" content="Sikh Rifle and Pistol Association | 501(c)(3) Firearm Safety" />
+  <meta property="og:description" content="Dedicated exclusively to public firearm safety education, safe handling, California statutory compliance, and responsible marksmanship." />
   <meta property="og:image" content="srpa-logo.png" />
-
-  <!-- Twitter / X Cards -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sikh Rifle and Pistol Association | Safety & Marksmanship" />
-  <meta name="twitter:description" content="Dedicated to community safety, responsible ownership, and bilingual public education across California." />
-  <meta name="twitter:image" content="srpa-logo.png" />
-
-  <!-- Structured Data (JSON-LD) for 501(c)(3) Nonprofit -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Nonprofit501c3",
-    "name": "Sikh Rifle and Pistol Association",
-    "alternateName": "SikhRPA",
-    "legalName": "Sikh Rifle and Pistol Association",
-    "taxID": "42-2595402",
-    "url": "https://sikhrpa.org",
-    "logo": "https://sikhrpa.org/srpa-logo.png",
-    "description": "A California 501(c)(3) nonprofit public benefit corporation organized exclusively to provide public education and training on firearm safety, proper firearm handling and maintenance, and community safety.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "1075 Mohawk St",
-      "addressLocality": "South Lake Tahoe",
-      "addressRegion": "CA",
-      "postalCode": "96150",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "president@sikhrpa.org",
-      "contactType": "Support"
-    },
-    "sameAs": [
-      "https://www.instagram.com/sikhrpa/"
-    ]
-  }
-  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="srpa-logo.png" />
-  
-  <!-- Tailwind CSS via CDN -->
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
+
+  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
@@ -91,12 +54,14 @@
       }
     }
   </script>
+
   <style>
     body {
-      background-color: #ffffff !important;
-      color: #0f172a !important;
+      background-color: #ffffff;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
     }
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    a:focus-visible, button:focus-visible, input:focus-visible {
       outline: 3px solid #d97706;
       outline-offset: 2px;
     }
@@ -107,23 +72,17 @@
       background: #cbd5e1;
       border-radius: 4px;
     }
-
-    /* Range Pocket Card Print Layout */
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
     @media print {
-      header, footer, #newsletterForm, .no-print, #imageModal, button {
+      header, footer, .no-print, button {
         display: none !important;
       }
       body {
-        font-size: 11pt;
         background: #ffffff !important;
         color: #000000 !important;
-      }
-      .print-page {
-        page-break-inside: avoid;
-      }
-      #safety {
-        padding: 0 !important;
-        border: none !important;
       }
     }
   </style>
@@ -138,22 +97,28 @@
     Skip to main content
   </a>
 
+  <!-- Top Navigation Header -->
   <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <div class="flex items-center gap-3">
+      <!-- Brand Logo & Title -->
+      <a href="./" class="flex items-center gap-3 focus:outline-none group">
         <img 
           src="srpa-logo.png" 
-          alt="SikhRPA Logo" 
-          class="h-9 sm:h-10 w-auto object-contain"
+          alt="Sikh Rifle and Pistol Association Official Logo" 
+          class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
           onerror="this.style.display='none'"
         />
-        <a href="./" class="font-bold text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors">
-          <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
-        </a>
-      </div>
-      
+        <div class="flex flex-col">
+          <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 group-hover:text-blue-900 transition-colors">
+            SikhRPA
+          </span>
+          <span class="text-[10px] sm:text-[11px] font-semibold tracking-wider text-slate-500 uppercase -mt-1">
+            501(c)(3) Nonprofit
+          </span>
+        </div>
+      </a>
+
       <!-- Streamlined Desktop Navigation Menu -->
       <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
         <a href="#safety" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Safety Rules</a>
@@ -162,29 +127,19 @@
           <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
           FSC Quiz
         </a>
+        <a href="news" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Legal Watch</a>
         <a href="#guides" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Resources</a>
         <a href="#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors">About Us</a>
       </nav>
 
       <!-- Action & Mobile Hamburger Buttons -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Subtle Contact Link (Desktop Only) -->
-        <a
-          href="mailto:president@sikhrpa.org"
-          class="hidden lg:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-blue-900 px-2.5 py-1.5 rounded-lg hover:bg-slate-100 transition-colors"
-          title="Contact SikhRPA"
-        >
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-500"></i>
-          <span>Contact</span>
-        </a>
-
-        <!-- Single Primary Donate CTA Button -->
         <a
           href="donate"
-          class="inline-flex px-3.5 py-2 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors items-center gap-1.5 shadow-sm"
-          title="Tax-Deductible Charitable Giving"
+          class="px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all flex items-center gap-1.5 shadow-sm hover:shadow"
+          title="Tax-Deductible 501(c)(3) Giving"
         >
-          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
+          <i data-lucide="heart" class="w-4 h-4 text-rose-600 fill-rose-600"></i>
           <span>Donate</span>
         </a>
 
@@ -204,25 +159,32 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer (Preserves all links) -->
+    <!-- Mobile Navigation Drawer -->
     <div 
       id="mobileMenuDrawer" 
       class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
       aria-label="Mobile Navigation Menu"
     >
-      <a href="fsc-quiz" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-blue-50">
+      <a href="fsc-quiz" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-blue-50">
         <span class="flex items-center gap-2">
           <i data-lucide="award" class="w-5 h-5 text-amber-600"></i>
           CA FSC Practice Quiz
         </span>
         <span class="text-xs bg-amber-600 text-white px-2 py-0.5 rounded-full uppercase">Interactive</span>
       </a>
-      <a href="buyer-guide" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-blue-900 bg-blue-50 border border-blue-200">
+      <a href="buyer-guide" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-blue-900 bg-blue-50 border border-blue-200">
         <span class="flex items-center gap-2">
           <i data-lucide="compass" class="w-5 h-5 text-amber-600"></i>
           First-Time Buyer's Guide
         </span>
         <span class="text-xs bg-blue-900 text-white px-2 py-0.5 rounded-full uppercase">New</span>
+      </a>
+      <a href="news" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+        <span class="flex items-center gap-2">
+          <i data-lucide="newspaper" class="w-5 h-5 text-amber-600"></i>
+          Daily Legal & Regulatory Watch
+        </span>
+        <span class="text-xs bg-emerald-100 text-emerald-900 font-semibold px-2 py-0.5 rounded-full">Daily</span>
       </a>
       <a href="donate" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-amber-900 bg-amber-50 border border-amber-200">
         <span class="flex items-center gap-2">
@@ -251,6 +213,7 @@
 
   <!-- Main Landmark -->
   <main id="main-content" class="flex-grow">
+    <!-- Hero Section -->
     <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-900 border-2 border-blue-200 mb-6 shadow-sm">
         <i data-lucide="shield-check" class="w-4 h-4 text-amber-600" aria-hidden="true"></i> Certified Marksmanship & Safety Education • 501(c)(3) Nonprofit
@@ -298,14 +261,18 @@
         <span aria-hidden="true">•</span>
         <a href="fsc-quiz" class="hover:text-blue-900 p-1">CA FSC Practice Exam</a>
         <span aria-hidden="true">•</span>
+        <a href="news" class="hover:text-blue-900 p-1">Daily Legal Watch</a>
+        <span aria-hidden="true">•</span>
         <a href="donate" class="hover:text-blue-900 p-1">501(c)(3) Donate</a>
         <span aria-hidden="true">•</span>
         <a href="https://www.instagram.com/sikhrpa/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 p-1">Instagram @sikhrpa</a>
       </div>
     </section>
 
-    <!-- FSC Callout Banner Section -->
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 no-print">
+    <!-- Paired Core Tools: FSC Practice Quiz & Daily Legal Watch Teaser -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 no-print space-y-4">
+      
+      <!-- Tool 1: FSC Practice Test Banner -->
       <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-900 text-white rounded-2xl p-6 sm:p-8 border-2 border-blue-800/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-4">
           <div class="p-3.5 bg-amber-500/10 text-amber-400 rounded-2xl border border-amber-500/20 shrink-0">
@@ -329,253 +296,213 @@
           <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
         </a>
       </div>
+
+      <!-- Tool 2: Dynamic Daily Legal Watch CTA Teaser Widget -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border-2 border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-start gap-3.5 min-w-0">
+          <div class="p-2.5 bg-blue-50 text-blue-900 rounded-xl border border-blue-200 shrink-0 mt-0.5">
+            <i data-lucide="newspaper" class="w-5 h-5 text-amber-600"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="flex flex-wrap items-center gap-2 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
+                Daily Legal Watch
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Verified: <strong id="teaserLastUpdated" class="text-slate-700">Loading daily updates...</strong></span>
+              </span>
+            </div>
+            <h4 id="teaserHeadline" class="font-bold text-sm sm:text-base text-slate-900 truncate max-w-xl">
+              California Firearms Regulatory & Legislative Briefing
+            </h4>
+            <p id="teaserSummary" class="text-xs text-slate-600 mt-0.5 line-clamp-1 max-w-xl">
+              Automated public intelligence tracking chaptered bills, court stays, and CA DOJ compliance advisories.
+            </p>
+          </div>
+        </div>
+
+        <a 
+          href="news" 
+          class="w-full md:w-auto px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold transition-colors shadow-sm flex items-center justify-center gap-2 shrink-0"
+        >
+          <span>View Full Legal Watch Archive</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-amber-400"></i>
+        </a>
+      </div>
+
     </section>
 
+    <!-- About Section -->
     <section id="about" class="py-16 bg-blue-950/5 border-y border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900">Programs & Services</h2>
-          <p class="text-slate-600 text-sm mt-2 font-medium">Committed to fostering safe communities through accessible public education.</p>
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Public Benefit Charity</span>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3">About SikhRPA</h2>
+          <p class="text-slate-600 text-sm mt-2 font-medium">Advancing marksmanship discipline, safe storage, and community education.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="p-2 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
-                <i data-lucide="users" class="w-5 h-5"></i>
-              </span>
-              <h3 class="text-lg font-bold text-slate-900">Community Safety Seminars</h3>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-900 mb-4">
+              <i data-lucide="shield" class="w-5 h-5 text-amber-600"></i>
             </div>
-            <p class="text-sm text-slate-700 leading-relaxed font-normal">Accessible workshops educating first-time owners and families on safe handling, proper maintenance, and secure home storage.</p>
+            <h3 class="font-bold text-slate-900 text-base mb-2">Safety & Safe Storage</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              We educate families on California safe storage laws (PC § 25100), lockbox selection, and child-proofing techniques to protect households and avoid preventable harm.
+            </p>
           </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="p-2 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
-                <i data-lucide="crosshair" class="w-5 h-5"></i>
-              </span>
-              <h3 class="text-lg font-bold text-slate-900">Marksmanship Fundamentals</h3>
+
+          <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-900 mb-4">
+              <i data-lucide="book-open" class="w-5 h-5 text-amber-600"></i>
             </div>
-            <p class="text-sm text-slate-700 leading-relaxed font-normal">Hands-on range instruction for beginners focusing on stance, grip mechanics, and trigger control.</p>
+            <h3 class="font-bold text-slate-900 text-base mb-2">Marksmanship Education</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              Certified range instructors provide structured clinics covering sight alignment, trigger press, stance, and recoil management for novice to advanced participants.
+            </p>
           </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="p-2 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
-                <i data-lucide="book-open-check" class="w-5 h-5"></i>
-              </span>
-              <h3 class="text-lg font-bold text-slate-900">Educational Resources & Testing</h3>
+
+          <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-900 mb-4">
+              <i data-lucide="scale" class="w-5 h-5 text-amber-600"></i>
             </div>
-            <p class="text-sm text-slate-700 leading-relaxed font-normal">Free bilingual training materials, interactive California FSC practice exams, and safety guides designed to empower first-time owners.</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="p-2 rounded-lg bg-blue-50 border border-blue-200 text-blue-900">
-                <i data-lucide="trees" class="w-5 h-5"></i>
-              </span>
-              <h3 class="text-lg font-bold text-slate-900">Outdoor Sportsmanship</h3>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed font-normal">Structured events that cultivate outdoor heritage, respect for nature, and responsible sportsmanship.</p>
+            <h3 class="font-bold text-slate-900 text-base mb-2">Statutory Awareness</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              California firearms laws change continuously. We provide plain-English statutory updates, FSC study aids, and legal references to help owners stay fully compliant.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="safety" class="py-16 bg-white border-b border-slate-200 print-page">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">The Foundation of Safety</span>
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3">4 Universal Rules of Firearm Safety</h2>
-          <p class="text-slate-600 text-sm mt-2 font-medium">Education is your first line of defense. Commit these rules to memory before handling any firearm.</p>
-          
-          <!-- Print Pocket Reference Action Button -->
-          <div class="mt-4 no-print flex justify-center">
-            <button 
-              onclick="window.print()" 
-              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-slate-300 bg-slate-50 hover:bg-slate-100 text-xs font-semibold text-slate-700 shadow-sm transition-colors"
-              title="Print a pocket reference copy of these rules"
-            >
-              <i data-lucide="printer" class="w-4 h-4 text-blue-900"></i> Print Bilingual Pocket Reference
-            </button>
-          </div>
-        </div>
-        <div class="grid sm:grid-cols-2 gap-6 mb-12">
-          <!-- Rule 1 -->
-          <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200 flex flex-col justify-between shadow-sm">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-bold px-3 py-1 rounded bg-blue-100 text-blue-950 border border-blue-300 flex items-center gap-1.5">
-                  <span aria-hidden="true">■</span> Rule 1 of 4
-                </span>
-                <i data-lucide="shield-alert" class="w-5 h-5 text-amber-600" aria-hidden="true"></i>
-              </div>
-              <h4 class="font-bold text-slate-900 text-base mb-2">Assume Every Firearm is Loaded</h4>
-              <p class="text-slate-700 text-xs leading-relaxed mb-4">Treat every firearm as if it is loaded, even if you believe it is cleared or empty.</p>
-            </div>
-            <p class="text-xs text-blue-950 font-bold pt-3 border-t border-slate-200 flex items-center gap-1">
-              <span class="text-blue-900" aria-hidden="true">ਪੰਜਾਬੀ:</span> ਹਮੇਸ਼ਾ ਇਹ ਮੰਨ ਕੇ ਚੱਲੋ ਕਿ ਹਥਿਆਰ ਲੋਡ (Loaded) ਹੈ
-            </p>
-          </div>
-
-          <!-- Rule 2 -->
-          <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200 flex flex-col justify-between shadow-sm">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-bold px-3 py-1 rounded bg-blue-100 text-blue-950 border border-blue-300 flex items-center gap-1.5">
-                  <span aria-hidden="true">■</span> Rule 2 of 4
-                </span>
-                <i data-lucide="compass" class="w-5 h-5 text-amber-600" aria-hidden="true"></i>
-              </div>
-              <h4 class="font-bold text-slate-900 text-base mb-2">Never Point at Anything You Do Not Want to Destroy</h4>
-              <p class="text-slate-700 text-xs leading-relaxed mb-4">Keep the muzzle pointed in a safe direction at all times during handling and transport.</p>
-            </div>
-            <p class="text-xs text-blue-950 font-bold pt-3 border-t border-slate-200 flex items-center gap-1">
-              <span class="text-blue-900" aria-hidden="true">ਪੰਜਾਬੀ:</span> ਪਿਸਟਲ ਦਾ ਮੂੰਹ ਹਮੇਸ਼ਾ ਸੁਰੱਖਿਅਤ ਦਿਸ਼ਾ ਵੱਲ ਰੱਖੋ
-            </p>
-          </div>
-
-          <!-- Rule 3 -->
-          <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200 flex flex-col justify-between shadow-sm">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-bold px-3 py-1 rounded bg-blue-100 text-blue-950 border border-blue-300 flex items-center gap-1.5">
-                  <span aria-hidden="true">■</span> Rule 3 of 4
-                </span>
-                <i data-lucide="hand" class="w-5 h-5 text-amber-600" aria-hidden="true"></i>
-              </div>
-              <h4 class="font-bold text-slate-900 text-base mb-2">Keep Your Finger Off the Trigger</h4>
-              <p class="text-slate-700 text-xs leading-relaxed mb-4">Keep your finger outside the trigger guard until your sights are aligned on the target and you are ready to shoot.</p>
-            </div>
-            <p class="text-xs text-blue-950 font-bold pt-3 border-t border-slate-200 flex items-center gap-1">
-              <span class="text-blue-900" aria-hidden="true">ਪੰਜਾਬੀ:</span> ਆਪਣੀ ਉਂਗਲ ਟਰਿੱਗਰ (Trigger) ਤੋਂ ਦੂਰ ਰੱਖੋ
-            </p>
-          </div>
-
-          <!-- Rule 4 -->
-          <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200 flex flex-col justify-between shadow-sm">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-bold px-3 py-1 rounded bg-blue-100 text-blue-950 border border-blue-300 flex items-center gap-1.5">
-                  <span aria-hidden="true">■</span> Rule 4 of 4
-                </span>
-                <i data-lucide="target" class="w-5 h-5 text-amber-600" aria-hidden="true"></i>
-              </div>
-              <h4 class="font-bold text-slate-900 text-base mb-2">Know Your Target & What Lies Beyond</h4>
-              <p class="text-slate-700 text-xs leading-relaxed mb-4">Be completely certain of your target and what is located behind it before pulling the trigger.</p>
-            </div>
-            <p class="text-xs text-blue-950 font-bold pt-3 border-t border-slate-200 flex items-center gap-1">
-              <span class="text-blue-900" aria-hidden="true">ਪੰਜਾਬੀ:</span> ਆਪਣੇ ਨਿਸ਼ਾਨੇ ਅਤੇ ਉਸਦੇ ਪਿੱਛੇ ਦੀ ਜਗ੍ਹਾ ਨੂੰ ਜਾਣੋ
-            </p>
-          </div>
-        </div>
-
-        <!-- Rule 4 Feature Banner -->
-        <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm no-print">
-          <img 
-            src="rule-4.jpg" 
-            alt="Rule 4 of Firearm Safety Diagram illustrating target backstop and environmental awareness" 
-            class="rounded-xl border border-slate-300 shadow-md w-full md:w-1/3 h-auto object-cover cursor-pointer hover:opacity-95 transition-opacity"
-            onclick="openModal('rule-4.jpg', 'Rule 4 of Firearm Safety: Target & Beyond', this)"
-          />
-          <div>
-            <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-100 px-2.5 py-1 rounded">SRPA Safety Highlight</span>
-            <h3 class="text-xl font-bold mt-2 mb-2 text-slate-900">Environmental Awareness & Backstops</h3>
-            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-4">
-              Bullets can travel significant distances beyond an unconfirmed target. Always verify that an appropriate backstop is present and that no bystanders or property are at risk. Click the image to inspect the diagram in full detail.
-            </p>
-            <div class="flex flex-wrap items-center gap-3">
-              <button 
-                onclick="openModal('rule-4.jpg', 'Rule 4 of Firearm Safety: Target & Beyond', this)"
-                class="px-4 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 focus:bg-blue-800 text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-sm"
-              >
-                <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-amber-400" aria-hidden="true"></i> View Enlarged Safety Diagram
-              </button>
-              <a
-                href="fsc-quiz"
-                class="px-3.5 py-2.5 rounded-lg bg-white border border-blue-300 hover:bg-blue-50 text-blue-900 text-xs font-bold flex items-center gap-2 transition-all shadow-sm"
-              >
-                <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i> Practice Quiz
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="guides" class="py-20 bg-blue-950/5 max-w-full">
+    <!-- Universal Safety Rules Section -->
+    <section id="safety" class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Educational Resource Library</h2>
-          <p class="text-slate-600 text-sm mt-2 font-medium">Essential training references, diagrams, and ballistics data.</p>
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">The 4 Universal Tenets</span>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3">Universal Firearm Safety Rules</h2>
+          <p class="text-slate-600 text-sm mt-2 font-medium">Standard safety rules taught worldwide in English and Gurmukhi.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Handgun Guide Card -->
-          <div class="bg-white border-2 border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-blue-500/50 transition-all">
-            <div class="h-48 overflow-hidden bg-slate-100 cursor-pointer relative" onclick="openModal('handgun-guide.jpg', 'Handgun Mechanics & Anatomy', this)">
-              <img src="handgun-guide.jpg" alt="Handgun Mechanics Anatomy Guide" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/600x400/f1f5f9/d97706?text=Handgun+Guide'" />
-              <div class="absolute bottom-2 right-2 bg-blue-950/90 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded border border-slate-700 flex items-center gap-1">
-                <i data-lucide="zoom-in" class="w-3 h-3"></i> Click to Zoom
-              </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 rounded-lg bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-sm">1</span>
+              <h3 class="font-bold text-slate-900 text-base">Always Treat Every Firearm as Loaded</h3>
             </div>
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 mb-1">Handgun Mechanics</h4>
-                <p class="text-slate-600 text-xs leading-relaxed mb-4">Anatomy, functional operation, and safe handling guidelines for first-time owners.</p>
-              </div>
-              <button 
-                onclick="openModal('handgun-guide.jpg', 'Handgun Mechanics & Anatomy', this)"
-                class="text-xs font-bold text-blue-900 hover:text-blue-950 flex items-center gap-1.5 text-left bg-slate-50 p-2.5 rounded-lg border border-slate-200 justify-between transition-colors"
-              >
-                <span>View Full Diagram</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-3">
+              Never accept someone's word that a firearm is unloaded. Personally check the chamber and magazine well every time you pick up or handle any firearm.
+            </p>
+            <p class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
+              ਹਮੇਸ਼ਾ ਇਹ ਮੰਨ ਕੇ ਚੱਲੋ ਕਿ ਹਥਿਆਰ ਲੋਡ ਹੈ।
+            </p>
           </div>
 
-          <!-- Grip Guide Card -->
-          <div class="bg-white border-2 border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-blue-500/50 transition-all">
-            <div class="h-48 overflow-hidden bg-slate-100 cursor-pointer relative" onclick="openModal('grip-guide.jpg', 'Fundamentals of Grip & Recoil Control', this)">
-              <img src="grip-guide.jpg" alt="Grip Mechanics and Recoil Control Guide" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/600x400/f1f5f9/d97706?text=Grip+Guide'" />
-              <div class="absolute bottom-2 right-2 bg-blue-950/90 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded border border-slate-700 flex items-center gap-1">
-                <i data-lucide="zoom-in" class="w-3 h-3"></i> Click to Zoom
-              </div>
+          <div class="bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 rounded-lg bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-sm">2</span>
+              <h3 class="font-bold text-slate-900 text-base">Never Point at Anything You Do Not Wish to Destroy</h3>
             </div>
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 mb-1">Fundamentals of Grip</h4>
-                <p class="text-slate-600 text-xs leading-relaxed mb-4">Control, recoil mitigation, and standard hand placement technique.</p>
-              </div>
-              <button 
-                onclick="openModal('grip-guide.jpg', 'Fundamentals of Grip & Recoil Control', this)"
-                class="text-xs font-bold text-blue-900 hover:text-blue-950 flex items-center gap-1.5 text-left bg-slate-50 p-2.5 rounded-lg border border-slate-200 justify-between transition-colors"
-              >
-                <span>View Full Diagram</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-3">
+              Maintain strict muzzle discipline at all times. Keep the barrel pointed downrange or in an indisputably safe direction.
+            </p>
+            <p class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
+              ਬੈਰਲ ਦਾ ਮੂੰਹ ਹਮੇਸ਼ਾ ਸੁਰੱਖਿਅਤ ਦਿਸ਼ਾ ਵੱਲ ਰੱਖੋ।
+            </p>
           </div>
 
-          <!-- Ammunition Chart Card -->
-          <div class="bg-white border-2 border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col hover:border-blue-500/50 transition-all">
-            <div class="h-48 overflow-hidden bg-slate-100 cursor-pointer relative" onclick="openModal('ammo-chart.jpg', 'Ammunition Reference & Ballistics', this)">
-              <img src="ammo-chart.jpg" alt="Ammunition Reference Chart and Ballistics" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/600x400/f1f5f9/d97706?text=Ammo+Chart'" />
-              <div class="absolute bottom-2 right-2 bg-blue-950/90 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded border border-slate-700 flex items-center gap-1">
-                <i data-lucide="zoom-in" class="w-3 h-3"></i> Click to Zoom
-              </div>
+          <div class="bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 rounded-lg bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-sm">3</span>
+              <h3 class="font-bold text-slate-900 text-base">Keep Your Finger Off the Trigger Until Ready to Shoot</h3>
             </div>
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 mb-1">Ammunition Reference</h4>
-                <p class="text-slate-600 text-xs leading-relaxed mb-4">Caliber comparison chart and standard ballistics overviews.</p>
-              </div>
-              <button 
-                onclick="openModal('ammo-chart.jpg', 'Ammunition Reference & Ballistics', this)"
-                class="text-xs font-bold text-blue-900 hover:text-blue-950 flex items-center gap-1.5 text-left bg-slate-50 p-2.5 rounded-lg border border-slate-200 justify-between transition-colors"
-              >
-                <span>View Full Diagram</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-              </button>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-3">
+              Rest your index finger along the frame outside the trigger guard until your sights are on target and you have made the conscious decision to shoot.
+            </p>
+            <p class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
+              ਟਰਿੱਗਰ 'ਤੇ ਉਂਗਲ ਉਦੋਂ ਹੀ ਰੱਖੋ ਜਦੋਂ ਨਿਸ਼ਾਨਾ ਪੂਰਾ ਹੋਵੇ।
+            </p>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-8 h-8 rounded-lg bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-sm">4</span>
+              <h3 class="font-bold text-slate-900 text-base">Know Your Target and What Is Beyond It</h3>
             </div>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-3">
+              Projectiles penetrate walls and barriers. Always confirm a solid, reliable backstop before initiating fire.
+            </p>
+            <p class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
+              ਆਪਣੇ ਨਿਸ਼ਾਨੇ ਅਤੇ ਉਸਦੇ ਪਿੱਛੇ ਦੀ ਜਗ੍ਹਾ ਦਾ ਧਿਆਨ ਰੱਖੋ।
+            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Educational Guides Section -->
+    <section id="guides" class="py-16 bg-slate-50 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Technical Curriculum</span>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3">Educational Resource Library</h2>
+          <p class="text-slate-600 text-sm mt-2 font-medium">Foundational knowledge and procedural guides designed for new owners.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="p-3 bg-amber-50 text-amber-800 rounded-xl w-fit mb-4">
+                <i data-lucide="crosshair" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-2">First-Time Firearm Buyer Roadmap</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                Avoid counter rejections in California. Complete documentation guide: Real ID requirements, secondary proof of residency, and DROS timelines.
+              </p>
+            </div>
+            <a href="buyer-guide" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 hover:text-blue-950 underline mt-2">
+              <span>Read Step-by-Step Buyer's Guide</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="p-3 bg-blue-50 text-blue-900 rounded-xl w-fit mb-4">
+                <i data-lucide="award" class="w-6 h-6 text-amber-600"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-2">CA FSC Practice Exam & Study Aid</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                Master all 30 California Department of Justice Firearm Safety Certificate questions with our instant-feedback practice exam.
+              </p>
+            </div>
+            <a href="fsc-quiz" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 hover:text-blue-950 underline mt-2">
+              <span>Launch Practice Quiz</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="p-3 bg-slate-100 text-slate-800 rounded-xl w-fit mb-4">
+                <i data-lucide="lock" class="w-6 h-6 text-amber-600"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Safe Storage & Child Safety (PC § 25100)</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                California Penal Code strictly defines criminal liability for leaving accessible firearms near minors. Review lockbox standards and cable lock rules.
+              </p>
+            </div>
+            <a href="#legal" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 hover:text-blue-950 underline mt-2">
+              <span>View California Storage Statutes</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- California Legal Resources Section -->
     <section id="legal" class="py-16 bg-white border-t border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -657,251 +584,146 @@
       </div>
     </section>
 
-    <section id="faq" class="py-16 bg-blue-950/5 border-t border-slate-200">
+    <!-- Dedicated News Archive Teaser Strip -->
+    <section class="py-10 bg-slate-100 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="flex items-center gap-3 text-center sm:text-left">
+            <div class="p-2.5 bg-blue-50 text-blue-900 rounded-xl border border-blue-200 shrink-0">
+              <i data-lucide="shield-alert" class="w-5 h-5 text-amber-600"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">California Statutory & Legal Intelligence Watch</h4>
+              <p class="text-xs text-slate-600 mt-0.5">
+                Automated daily digest covering chaptered bills, court stays, and compliance notices.
+              </p>
+            </div>
+          </div>
+          <a href="news" class="px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-xl text-xs font-bold transition-colors shadow-sm shrink-0 flex items-center gap-1.5">
+            <span>Explore Legal Watch Archive</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white border-t border-slate-200">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Common Inquiries</span>
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Common Questions</span>
           <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3">Frequently Asked Questions</h2>
-          <p class="text-slate-600 text-sm mt-2 font-medium">Essential guidance on secure storage, legal responsibilities, and training.</p>
         </div>
 
         <div class="space-y-4">
-          <!-- FAQ 1 -->
-          <div class="bg-white border-2 border-slate-200 rounded-xl p-6 shadow-sm">
-            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> Are donations to SikhRPA tax-deductible?
+          <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-5">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> What is SikhRPA's nonprofit tax status?
             </h3>
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              Yes. The Sikh Rifle and Pistol Association is an officially recognized California Nonprofit Public Benefit Corporation with tax-exempt 501(c)(3) public charity status under the Internal Revenue Code (Federal EIN: 42-2595402). Contributions are tax-deductible to the fullest extent permissible by law. You can review details on our <a href="donate" class="text-blue-900 underline font-semibold hover:text-blue-950">Donations Portal</a>.
+              The Sikh Rifle and Pistol Association is an IRS-recognized 501(c)(3) nonprofit public benefit corporation organized in California. Contributions are tax-deductible to the extent permitted by law (EIN: 42-2595402).
             </p>
           </div>
 
-          <!-- FAQ 2 -->
-          <div class="bg-white border-2 border-slate-200 rounded-xl p-6 shadow-sm">
-            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> What are the California safe storage requirements?
+          <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-5">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> Is the Firearm Safety Certificate (FSC) practice test free?
             </h3>
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              California law mandates that firearms be stored in a DOJ-approved locked container (safe or lockbox) or disabled with a federally approved locking device (trigger lock / cable lock) when left unattended, preventing unauthorized access by minors or prohibited persons.
+              Yes, 100% free with no registration required. The interactive test provides detailed explanations referencing official California Penal Codes.
             </p>
           </div>
 
-          <!-- FAQ 3 -->
-          <div class="bg-white border-2 border-slate-200 rounded-xl p-6 shadow-sm">
-            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> How can first-time firearm owners join or participate in seminars?
+          <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-5">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> How do I request a clinic for my local community or Gurdwara?
             </h3>
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              SikhRPA organizes regular educational workshops and community seminars across California. You can follow announcements on our Instagram (<a href="https://www.instagram.com/sikhrpa/" target="_blank" rel="noopener noreferrer" class="text-pink-600 font-semibold underline hover:text-pink-700">@sikhrpa</a>) or reach out directly via email at <a href="mailto:president@sikhrpa.org" class="text-blue-900 underline font-semibold hover:text-blue-950">president@sikhrpa.org</a>.
-            </p>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div class="bg-white border-2 border-slate-200 rounded-xl p-6 shadow-sm">
-            <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> What is required to pass the California Firearm Safety Certificate (FSC) test?
-            </h3>
-            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              The official CA DOJ FSC test consists of 30 multiple choice and true/false questions. A minimum passing score of 75% (23 correct answers) is required. You can practice free of charge anytime with our <a href="fsc-quiz" class="text-blue-900 underline font-semibold hover:text-blue-950">interactive practice test</a>.
+              Contact us at <a href="mailto:president@sikhrpa.org" class="text-blue-900 font-bold underline">president@sikhrpa.org</a>. We coordinate with local certified instructors and community centers to deliver safe handling and storage workshops.
             </p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-14 bg-slate-900 text-white">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+          Educational Dispatch
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold mt-3">Stay Informed on Safety & CA Law</h3>
+        <p class="text-slate-300 text-xs sm:text-sm mt-2 max-w-lg mx-auto">
+          Subscribe to receive occasional alerts on newly chaptered California firearm laws, safe storage seminars, and educational clinics.
+        </p>
+
+        <form id="newsletter-form" onsubmit="handleNewsletter(event)" class="mt-6 max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+          <input 
+            type="email" 
+            id="newsletter-email" 
+            placeholder="Enter your email address" 
+            required 
+            class="flex-1 px-4 py-2.5 rounded-xl text-slate-900 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"
+          />
+          <button 
+            type="submit" 
+            id="newsletter-submit-btn"
+            class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition-all shadow-md shrink-0"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p id="newsletter-message" class="text-xs mt-2 text-center"></p>
+      </div>
+    </section>
   </main>
 
-  <div 
-    id="imageModal" 
-    class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 no-print" 
-    role="dialog" 
-    aria-modal="true" 
-    aria-labelledby="modalTitle"
-  >
-    <div class="relative max-w-4xl w-full bg-white border-2 border-slate-300 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
-      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
-        <h3 id="modalTitle" class="font-bold text-slate-900 text-sm sm:text-base">Resource Diagram</h3>
-        <button 
-          id="modalCloseBtn" 
-          onclick="closeModal()" 
-          class="text-slate-700 hover:text-slate-900 p-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 transition-colors focus:outline-none" 
-          aria-label="Close image viewer"
-        >
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-      <div class="p-4 sm:p-6 flex-1 overflow-auto flex items-center justify-center bg-slate-100">
-        <img id="modalImage" src="" alt="Enlarged Diagram View" class="max-h-[70vh] w-auto object-contain rounded-lg border border-slate-300 shadow-md bg-white" onerror="this.src='https://placehold.co/800x600/f1f5f9/d97706?text=Diagram+Unavailable'" />
-      </div>
-      <div class="px-6 py-3 border-t border-slate-200 bg-slate-50 text-right">
-        <button 
-          id="modalBottomCloseBtn"
-          onclick="closeModal()" 
-          class="px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-semibold rounded-lg transition-colors shadow-sm focus:outline-none"
-        >
-          Close Viewer
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <footer class="border-t border-slate-200 bg-slate-50 py-16 no-print">
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10 sm:py-12">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-      
-      <!-- Functional Newsletter Signup Box -->
-      <div class="w-full bg-white border-2 border-slate-200 rounded-2xl p-6 sm:p-8 mb-12 shadow-sm text-left">
-        <div class="max-w-xl mx-auto text-center">
-          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Stay Connected</span>
-          <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2">Legislative Updates & Safety Dispatches</h3>
-          <p class="text-slate-600 text-xs sm:text-sm mb-6 font-medium">
-            Receive community announcements, safety seminar schedules, and updates on California firearm regulation changes directly in your inbox.
-          </p>
-
-          <!-- Interactive Newsletter Form -->
-          <form id="newsletterForm" onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3">
-            <div class="relative flex-grow">
-              <i data-lucide="mail" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
-              <input 
-                type="email" 
-                id="newsletterEmail" 
-                name="email"
-                placeholder="Enter your email address" 
-                required
-                autocomplete="email"
-                class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white shadow-inner transition-all"
-                aria-label="Email address for newsletter"
-              />
-            </div>
-            <button 
-              type="submit"
-              id="newsletterBtn"
-              class="px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 focus:bg-blue-800 text-white text-sm font-bold transition-all shadow-md shrink-0 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              <span id="btnText" class="flex items-center gap-2">
-                <i data-lucide="send" class="w-4 h-4" aria-hidden="true"></i> Subscribe
-              </span>
-              <span id="btnLoading" class="hidden flex items-center gap-2">
-                <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-                </svg>
-                Processing...
-              </span>
-            </button>
-          </form>
-
-          <!-- Feedback Status Alerts -->
-          <div id="newsletterSuccess" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-semibold rounded-xl text-left shadow-sm">
-            <div class="flex items-start gap-2">
-              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
-              <div>
-                <p class="font-bold text-sm text-emerald-800">Subscription Confirmed!</p>
-                <p class="font-normal text-slate-700 mt-1">
-                  Thank you for subscribing. Your email (<span id="confirmedEmail" class="font-semibold text-slate-900"></span>) has been recorded in the SikhRPA Community Registry.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="newsletterError" class="hidden mt-4 p-4 bg-rose-50 border border-rose-300 text-rose-900 text-xs font-semibold rounded-xl text-left shadow-sm">
-            <div class="flex items-start gap-2">
-              <i data-lucide="alert-circle" class="w-5 h-5 text-rose-600 shrink-0 mt-0.5"></i>
-              <div>
-                <p class="font-bold text-sm text-rose-800">Notice</p>
-                <p class="font-normal text-slate-700 mt-1">
-                  If the automated dispatch is blocked by your browser privacy settings, you can also join by emailing directly: 
-                  <a id="fallbackMailto" href="mailto:president@sikhrpa.org?subject=Newsletter%20Subscription" class="text-blue-900 font-bold underline">president@sikhrpa.org</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer Logo -->
       <img 
         src="srpa-logo.png" 
         alt="SikhRPA Logo" 
-        class="h-12 w-auto object-contain mb-6 opacity-90"
+        class="h-9 sm:h-10 w-auto object-contain mb-4 opacity-90"
         onerror="this.style.display='none'"
       />
-      
-      <!-- Tax Status -->
-      <p class="text-sm text-slate-700 max-w-2xl mx-auto mb-4 leading-relaxed font-medium">
-        We are a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code.
+      <p class="text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto mb-3 leading-relaxed font-medium">
+        Sikh Rifle and Pistol Association is a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code.
       </p>
 
-      <!-- Bilingual Closing Quote -->
-      <p class="text-sm text-blue-900 font-bold mb-6 tracking-wide bg-blue-50 px-4 py-2 rounded-full border border-blue-200">
+      <p class="text-xs sm:text-sm text-blue-900 font-bold mb-6 tracking-wide bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200">
         ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
       </p>
 
-      <!-- Social & Educational Links Bar -->
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
-        <a 
-          href="donate"
-          class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl text-xs font-bold shadow-sm transition-colors"
-        >
-          <i data-lucide="heart" class="w-4 h-4 text-rose-600 fill-rose-600"></i>
-          <span>Tax-Deductible Donation</span>
-        </a>
-        <a 
-          href="fsc-quiz"
-          class="inline-flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-xl text-xs font-bold hover:bg-blue-800 shadow-sm transition-colors"
-        >
-          <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
-          <span>Take CA FSC Practice Exam</span>
-        </a>
-        <a 
-          href="https://www.instagram.com/sikhrpa/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 text-white rounded-xl text-xs font-bold hover:opacity-95 shadow-sm transition-opacity"
-          aria-label="Follow SikhRPA on Instagram"
-        >
-          <svg class="w-4 h-4 text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-          </svg>
-          <span>Follow @sikhrpa on Instagram</span>
-          <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80"></i>
-        </a>
-      </div>
-      
-      <!-- Official Details -->
-      <div class="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-6 text-xs text-slate-600 mb-8 bg-white py-4 px-6 rounded-xl border border-slate-200 shadow-sm">
-        <span class="flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-4 h-4 text-blue-900" aria-hidden="true"></i> 
-          1075 Mohawk St, South Lake Tahoe, CA 96150
-        </span>
-        <span class="hidden md:inline text-slate-300" aria-hidden="true">•</span>
-        <span class="flex items-center gap-2">
-          <i data-lucide="file-text" class="w-4 h-4 text-blue-900" aria-hidden="true"></i> 
-          Federal EIN: 42-2595402
-        </span>
-        <span class="hidden md:inline text-slate-300" aria-hidden="true">•</span>
-        <a href="mailto:president@sikhrpa.org" class="flex items-center gap-2 text-blue-900 hover:text-blue-950 transition-colors font-medium">
-          <i data-lucide="mail" class="w-4 h-4 text-blue-900" aria-hidden="true"></i> 
-          president@sikhrpa.org
-        </a>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-semibold text-slate-600 mb-6">
+        <a href="./" class="hover:text-blue-900 p-1">Homepage</a>
+        <span aria-hidden="true">•</span>
+        <a href="buyer-guide" class="hover:text-blue-900 p-1">First-Time Buyer's Guide</a>
+        <span aria-hidden="true">•</span>
+        <a href="fsc-quiz" class="hover:text-blue-900 p-1">CA FSC Practice Exam</a>
+        <span aria-hidden="true">•</span>
+        <a href="news" class="hover:text-blue-900 p-1">Daily Legal Watch</a>
+        <span aria-hidden="true">•</span>
+        <a href="donate" class="hover:text-blue-900 p-1">501(c)(3) Donate</a>
+        <span aria-hidden="true">•</span>
+        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900 p-1">president@sikhrpa.org</a>
       </div>
 
-      <!-- Copyright -->
-      <p class="text-xs text-slate-500">
+      <p class="text-xs text-slate-500 leading-relaxed">
+        Federal EIN: 42-2595402 • 1075 Mohawk St, South Lake Tahoe, CA 96150<br>
         © <span id="current-year"></span> Sikh Rifle and Pistol Association. All rights reserved.
       </p>
     </div>
   </footer>
 
+  <!-- Client JavaScript Logic -->
   <script>
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
-
-    let lastActiveElement = null;
 
     document.getElementById('current-year').innerText = new Date().getFullYear();
     lucide.createIcons();
 
-    // Mobile Drawer Navigation
+    // Mobile Drawer Navigation Functions
     function toggleMobileMenu() {
       const drawer = document.getElementById('mobileMenuDrawer');
       const menuBtn = document.getElementById('mobileMenuBtn');
@@ -927,121 +749,82 @@
       closeIcon.classList.add('hidden');
     }
 
+    // Lightweight News Teaser Fetcher for Homepage Banner
+    async function loadNewsTeaser() {
+      const updatedSpan = document.getElementById('teaserLastUpdated');
+      const headlineEl = document.getElementById('teaserHeadline');
+      const summaryEl = document.getElementById('teaserSummary');
+
+      try {
+        const res = await fetch('data/news.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Teaser unavailable');
+        
+        const data = await res.json();
+        if (updatedSpan && data.updated_formatted) {
+          updatedSpan.innerText = data.updated_formatted;
+        }
+
+        if (data.items && data.items.length > 0) {
+          const latest = data.items[0];
+          if (headlineEl && latest.headline) headlineEl.innerText = latest.headline;
+          if (summaryEl && latest.summary) summaryEl.innerText = latest.summary;
+        }
+      } catch (err) {
+        if (updatedSpan) updatedSpan.innerText = 'Daily Digest Active';
+      }
+    }
+
+    // Newsletter Webhook Submission Handler
     async function handleNewsletter(e) {
       e.preventDefault();
-      const emailInput = document.getElementById('newsletterEmail');
-      const submitBtn = document.getElementById('newsletterBtn');
-      const btnText = document.getElementById('btnText');
-      const btnLoading = document.getElementById('btnLoading');
-      const successDiv = document.getElementById('newsletterSuccess');
-      const errorDiv = document.getElementById('newsletterError');
-      const confirmedEmailSpan = document.getElementById('confirmedEmail');
-      const fallbackMailto = document.getElementById('fallbackMailto');
+      const input = document.getElementById('newsletter-email');
+      const msg = document.getElementById('newsletter-message');
+      const submitBtn = document.getElementById('newsletter-submit-btn');
+      const email = (input && input.value) ? input.value.trim() : '';
 
-      const email = emailInput.value.trim();
-      if (!email) return;
-
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        emailInput.focus();
+      if (!email || !email.includes('@')) {
+        if (msg) {
+          msg.className = 'text-xs text-rose-400 font-semibold mt-2 text-center';
+          msg.innerText = 'Please enter a valid email address.';
+        }
         return;
       }
 
-      submitBtn.disabled = true;
-      btnText.classList.add('hidden');
-      btnLoading.classList.remove('hidden');
-      successDiv.classList.add('hidden');
-      errorDiv.classList.add('hidden');
-
-      const submissionPayload = JSON.stringify({
-        email: email,
-        organization: 'Sikh Rifle and Pistol Association',
-        submitted_at: new Date().toISOString()
-      });
-
       try {
-        if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL.startsWith('https://script.google.com/macros/s/')) {
-          await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-              'Content-Type': 'text/plain;charset=utf-8'
-            },
-            body: submissionPayload
-          });
-        } else {
-          await fetch('https://formsubmit.co/ajax/president@sikhrpa.org', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: submissionPayload
-          });
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Subscribing...';
         }
-
-        confirmedEmailSpan.innerText = email;
-        successDiv.classList.remove('hidden');
-        emailInput.value = '';
-        lucide.createIcons();
+        await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            email: email,
+            organization: 'SikhRPA Website Newsletter',
+            timestamp: new Date().toISOString()
+          })
+        });
+        if (msg) {
+          msg.className = 'text-xs text-emerald-400 font-semibold mt-2 text-center';
+          msg.innerText = 'Thank you for subscribing to SikhRPA educational updates!';
+        }
+        if (input) input.value = '';
       } catch (err) {
-        console.warn('Submission issue:', err);
-        const encodedSubject = encodeURIComponent("Newsletter Subscription - SikhRPA");
-        const encodedBody = encodeURIComponent(`Please add ${email} to the SikhRPA newsletter and educational seminar list.`);
-        fallbackMailto.href = `mailto:president@sikhrpa.org?subject=${encodedSubject}&body=${encodedBody}`;
-        
-        confirmedEmailSpan.innerText = email;
-        successDiv.classList.remove('hidden');
-        emailInput.value = '';
-        lucide.createIcons();
+        if (msg) {
+          msg.className = 'text-xs text-emerald-400 font-semibold mt-2 text-center';
+          msg.innerText = 'Thank you for subscribing to SikhRPA educational updates!';
+        }
       } finally {
-        submitBtn.disabled = false;
-        btnText.classList.remove('hidden');
-        btnLoading.classList.add('hidden');
-        lucide.createIcons();
-      }
-    }
-
-    function openModal(imageSrc, titleText, triggerElement) {
-      lastActiveElement = triggerElement || document.activeElement;
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
-      const modalTitle = document.getElementById('modalTitle');
-      const closeBtn = document.getElementById('modalCloseBtn');
-      
-      modalImg.src = imageSrc;
-      modalImg.alt = titleText + " Enlarged View";
-      modalTitle.innerText = titleText;
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      
-      if (closeBtn) {
-        setTimeout(() => closeBtn.focus(), 50);
-      }
-      lucide.createIcons();
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('imageModal');
-      modal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-
-      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
-        lastActiveElement.focus();
-      }
-    }
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        const modal = document.getElementById('imageModal');
-        if (!modal.classList.contains('hidden')) {
-          closeModal();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Subscribe';
         }
       }
-    });
+    }
 
-    document.getElementById('imageModal').addEventListener('click', (e) => {
-      if (e.target.id === 'imageModal') closeModal();
+    window.addEventListener('DOMContentLoaded', () => {
+      loadNewsTeaser();
     });
   </script>
 </body>
