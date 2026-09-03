@@ -9,7 +9,7 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-// Updated to the current Flash model endpoint recommended by Google API
+// Flash model endpoint recommended by Google GenAI API
 const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 async function fetchDailyNews() {
@@ -19,7 +19,7 @@ async function fetchDailyNews() {
 You are an authoritative legal research editor for the Sikh Rifle and Pistol Association (SikhRPA), a California 501(c)(3) nonprofit public charity.
 
 Task:
-Perform a targeted search for verified California firearm legislation, California Department of Justice (CA DOJ) Bureau of Firearms regulatory bulletins, and federal 9th Circuit or district court rulings affecting California firearm owners (e.g., safe storage mandates under PC § 25100, vehicle transport laws under PC § 25610, DROS waiting periods, sensitive locations, handgun roster, or ammunition excise taxes).
+Perform a targeted search for verified, recent California firearm legislation, California Department of Justice (CA DOJ) Bureau of Firearms regulatory bulletins, and federal 9th Circuit or district court rulings affecting California firearm owners (e.g., safe storage mandates under PC § 25100, vehicle transport laws under PC § 25610, DROS waiting periods, sensitive locations, handgun roster, or ammunition excise taxes).
 
 Identify 3 distinct, verified public legal updates.
 
@@ -84,11 +84,54 @@ Requirements:
       cleanJson = cleanJson.substring(firstBracket, lastBracket + 1);
     }
 
-    const newsItems = JSON.parse(cleanJson);
+    const incomingItems = JSON.parse(cleanJson);
 
-    if (!Array.isArray(newsItems) || newsItems.length === 0) {
+    if (!Array.isArray(incomingItems) || incomingItems.length === 0) {
       throw new Error("Parsed response was not a non-empty array of items.");
     }
+
+    const dataDir = path.join(__dirname, '..', 'data');
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+
+    const outputPath = path.join(dataDir, 'news.json');
+
+    // Load existing items to maintain permanent, indefinite historical archive
+    let existingItems = [];
+    if (fs.existsSync(outputPath)) {
+      try {
+        const rawExisting = fs.readFileSync(outputPath, 'utf-8');
+        const parsedExisting = JSON.parse(rawExisting);
+        if (Array.isArray(parsedExisting.items)) {
+          existingItems = parsedExisting.items;
+        }
+      } catch (readErr) {
+        console.warn("Notice: Could not parse existing news.json, initializing fresh archive.");
+      }
+    }
+
+    // Merge incoming with existing by ID / Headline to prevent duplicate entries
+    const seenIds = new Set();
+    const mergedList = [];
+
+    // Prepend fresh incoming items first (newest at the top)
+    incomingItems.forEach(item => {
+      const key = (item.id || item.headline || '').trim().toLowerCase();
+      if (key && !seenIds.has(key)) {
+        seenIds.add(key);
+        mergedList.push(item);
+      }
+    });
+
+    // Retain ALL existing historical entries indefinitely (no truncation slice)
+    existingItems.forEach(item => {
+      const key = (item.id || item.headline || '').trim().toLowerCase();
+      if (key && !seenIds.has(key)) {
+        seenIds.add(key);
+        mergedList.push(item);
+      }
+    });
 
     const now = new Date();
     const formattedDate = now.toLocaleDateString('en-US', { 
@@ -107,17 +150,11 @@ Requirements:
     const outputData = {
       last_updated: now.toISOString(),
       updated_formatted: `${formattedDate} • ${formattedTime}`,
-      items: newsItems
+      items: mergedList // Indefinite archive retention
     };
 
-    const dataDir = path.join(__dirname, '..', 'data');
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-
-    const outputPath = path.join(dataDir, 'news.json');
     fs.writeFileSync(outputPath, JSON.stringify(outputData, null, 2), 'utf-8');
-    console.log(`✓ Success: Wrote ${newsItems.length} verified news items to ${outputPath}`);
+    console.log(`✓ Success: Saved ${mergedList.length} items indefinitely (including ${incomingItems.length} fresh dispatches) to ${outputPath}`);
 
   } catch (error) {
     console.error("Execution failed:", error.message);
