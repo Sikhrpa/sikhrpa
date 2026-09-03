@@ -86,7 +86,7 @@
       background-color: #ffffff !important;
       color: #0f172a !important;
     }
-    a:focus-visible, button:focus-visible, input:focus-visible {
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: 3px solid #d97706;
       outline-offset: 2px;
     }
@@ -100,7 +100,7 @@
 
     /* Range Pocket Card Print Layout */
     @media print {
-      header, footer, #newsletterForm, .no-print, #imageModal, button, #donate {
+      header, footer, #newsletterForm, .no-print, #imageModal, button {
         display: none !important;
       }
       body {
@@ -146,7 +146,7 @@
       </div>
       
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
         <a href="#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors">About Us</a>
         <a href="#safety" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Safety Rules</a>
         <a href="#guides" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Educational Guides</a>
@@ -155,22 +155,19 @@
           <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
           FSC Quiz
         </a>
-        <a href="donate.html" class="inline-flex items-center gap-1 text-amber-700 hover:text-amber-800 font-bold transition-colors">
-          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500 fill-rose-500"></i>
-          Donate
-        </a>
         <a href="#faq" class="hover:text-amber-600 focus:text-amber-600 transition-colors">FAQ</a>
       </nav>
 
       <!-- Action, Social & Mobile Hamburger Buttons -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Quick Donate CTA (Desktop) -->
+        <!-- Single Primary Donate CTA (Desktop) -->
         <a
           href="donate.html"
           class="hidden sm:inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 transition-colors items-center gap-1.5 shadow-sm"
+          title="Tax-Deductible Charitable Giving"
         >
-          <i data-lucide="heart-handshake" class="w-3.5 h-3.5 text-slate-950"></i>
-          <span>Support Us</span>
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
+          <span>Donate</span>
         </a>
 
         <!-- Instagram Link Button -->
@@ -215,13 +212,14 @@
         </button>
       </div>
     </div>
+
     <!-- Mobile Slide-Down Navigation Drawer -->
     <div 
       id="mobileMenuDrawer" 
       class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
       aria-label="Mobile Navigation Menu"
     >
-      <a href="fsc-quiz.html" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-blue-900 bg-blue-50 border border-blue-200">
+      <a href="fsc-quiz.html" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-blue-50">
         <span class="flex items-center gap-2">
           <i data-lucide="award" class="w-5 h-5 text-amber-600"></i>
           CA FSC Practice Quiz
@@ -316,6 +314,7 @@
         </a>
       </div>
     </section>
+
     <!-- Programs & Services -->
     <section id="about" class="py-16 bg-blue-950/5 border-y border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -372,7 +371,7 @@
           <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3">4 Universal Rules of Firearm Safety</h2>
           <p class="text-slate-600 text-sm mt-2 font-medium">Education is your first line of defense. Commit these rules to memory before handling any firearm.</p>
           
-          <!-- Print / Range Card Action Button -->
+          <!-- Print Pocket Reference Action Button -->
           <div class="mt-4 no-print flex justify-center">
             <button 
               onclick="window.print()" 
@@ -485,6 +484,7 @@
         </div>
       </div>
     </section>
+
     <!-- Educational Resource Library -->
     <section id="guides" class="py-20 bg-blue-950/5 max-w-full">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -562,6 +562,7 @@
         </div>
       </div>
     </section>
+
     <!-- California Legal & CA DOJ Resources Section -->
     <section id="legal" class="py-16 bg-white border-t border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -643,6 +644,7 @@
         </div>
       </div>
     </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="py-16 bg-blue-950/5 border-t border-slate-200">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -731,6 +733,7 @@
       </div>
     </div>
   </div>
+
   <!-- Footer -->
   <footer class="border-t border-slate-200 bg-slate-50 py-16 no-print">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
@@ -880,14 +883,17 @@
       </p>
     </div>
   </footer>
-  <!-- Initialization & Logic Scripts -->
+
+  <!-- Initialization Logic & Handlers -->
   <script>
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
 
     let lastActiveElement = null;
+
     document.getElementById('current-year').innerText = new Date().getFullYear();
     lucide.createIcons();
 
+    // Mobile Drawer Navigation
     function toggleMobileMenu() {
       const drawer = document.getElementById('mobileMenuDrawer');
       const menuBtn = document.getElementById('mobileMenuBtn');
@@ -913,6 +919,7 @@
       closeIcon.classList.add('hidden');
     }
 
+    // Newsletter Form Submission to Google Sheet
     async function handleNewsletter(e) {
       e.preventDefault();
       const emailInput = document.getElementById('newsletterEmail');
@@ -988,6 +995,7 @@
       }
     }
 
+    // Modal Lightbox Functions
     function openModal(imageSrc, titleText, triggerElement) {
       lastActiveElement = triggerElement || document.activeElement;
       const modal = document.getElementById('imageModal');
