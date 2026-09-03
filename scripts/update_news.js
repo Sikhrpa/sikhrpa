@@ -9,11 +9,11 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-// Standard v1beta Flash endpoint with Google Search grounding
-const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+// Updated to the current Flash model endpoint recommended by Google API
+const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 async function fetchDailyNews() {
-  console.log("Starting daily California legal & safety update sweep...");
+  console.log("Starting daily California legal & safety update sweep with Gemini 3.6 Flash...");
 
   const prompt = `
 You are an authoritative legal research editor for the Sikh Rifle and Pistol Association (SikhRPA), a California 501(c)(3) nonprofit public charity.
@@ -75,7 +75,7 @@ Requirements:
       throw new Error("Empty text response received from Gemini.");
     }
 
-    // Robust JSON extraction without fragile backtick regex
+    // Robust JSON extraction
     let cleanJson = rawContent.trim();
     const firstBracket = cleanJson.indexOf('[');
     const lastBracket = cleanJson.lastIndexOf(']');
