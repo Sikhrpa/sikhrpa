@@ -17,7 +17,7 @@
   
   <!-- Primary Meta Tags -->
   <meta name="title" content="California Firearms Legal Watch & Daily Regulatory News | SikhRPA 501(c)(3)" />
-  <meta name="description" content="Permanent, searchable public intelligence archive tracking California firearm legislation, CA DOJ regulatory bulletins, and 9th Circuit court rulings for community firearm owners and families." />
+  <meta name="description" content="Permanent, searchable public intelligence archive tracking California firearm legislation, CA DOJ regulatory bulletins, news reports, and 9th Circuit rulings for community firearm owners and families." />
   <meta name="keywords" content="California gun laws news, CA DOJ firearms bulletins, 9th circuit gun cases, California 2A legal watch, AB 28 tax, PC 25100 storage, SikhRPA legal watch" />
   <meta name="author" content="Sikh Rifle and Pistol Association" />
   <meta name="theme-color" content="#0f172a" />
@@ -27,7 +27,7 @@
   <meta property="og:url" content="https://sikhrpa.org/news" />
   <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
   <meta property="og:title" content="California Firearms Legal Watch & Regulatory News Archive | SikhRPA" />
-  <meta property="og:description" content="Searchable, permanent public intelligence archive covering California firearm legislation, DOJ notices, and court rulings." />
+  <meta property="og:description" content="Searchable, permanent public intelligence archive covering California firearm legislation, DOJ notices, state news reports, and court rulings." />
   <meta property="og:image" content="srpa-logo.png" />
 
   <!-- Favicon -->
@@ -199,7 +199,7 @@
       </h1>
       
       <p class="text-xs sm:text-base text-slate-600 leading-relaxed font-normal">
-        A cumulative, searchable public intelligence archive tracking California firearm legislation, California Department of Justice (CA DOJ) Bureau of Firearms regulatory bulletins, and federal 9th Circuit rulings.
+        A cumulative, searchable public intelligence archive tracking California firearm legislation, California Department of Justice (CA DOJ) Bureau of Firearms regulatory bulletins, federal 9th Circuit rulings, and authoritative state reporting.
       </p>
 
       <!-- Live Last Verified Status Pill -->
@@ -221,7 +221,7 @@
             <span class="text-[10px] font-extrabold uppercase bg-amber-200 text-amber-900 px-2 py-0.5 rounded">Not Legal Counsel</span>
           </h2>
           <p class="text-slate-700">
-            <strong>Sikh Rifle and Pistol Association (SikhRPA)</strong> is an IRS-recognized 501(c)(3) nonprofit public benefit corporation organized exclusively for educational purposes. This automated news archive is an educational aggregation compiled daily from public state legislative databases, court dockets, and California Department of Justice bulletins.
+            <strong>Sikh Rifle and Pistol Association (SikhRPA)</strong> is an IRS-recognized 501(c)(3) nonprofit public benefit corporation organized exclusively for educational purposes. This automated archive aggregates public legislative databases, court dockets, CA DOJ bulletins, and verified news publications.
           </p>
           <p class="text-slate-600 text-xs">
             <strong>Disclaimer:</strong> This content does <em>not</em> constitute formal legal representation, binding legal advice, or attorney-client communication. California firearm statutes are subject to administrative stays, emergency judicial injunctions, and local municipal ordinances. Always consult a qualified California firearm attorney or verify statutes directly with the <a href="https://oag.ca.gov/firearms" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-bold underline hover:text-blue-950">California DOJ Bureau of Firearms</a> prior to taking legal action.
@@ -234,12 +234,12 @@
     <div class="bg-white rounded-2xl border-2 border-slate-200 p-4 sm:p-5 shadow-sm mb-8">
       <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         
-        <!-- Category Filter Pills -->
+        <!-- Category Filter Pills (Now includes State News) -->
         <div class="flex flex-wrap items-center gap-1.5" id="categoryFilterContainer" role="tablist" aria-label="News Categories">
           <button 
             type="button" 
             onclick="setCategoryFilter('all')" 
-            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm"
+            class="filter-btn px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm"
             data-category="all"
           >
             All Updates
@@ -247,7 +247,7 @@
           <button 
             type="button" 
             onclick="setCategoryFilter('Legislation')" 
-            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
             data-category="Legislation"
           >
             Legislation
@@ -255,7 +255,7 @@
           <button 
             type="button" 
             onclick="setCategoryFilter('Court Ruling')" 
-            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
             data-category="Court Ruling"
           >
             Court Rulings
@@ -263,15 +263,23 @@
           <button 
             type="button" 
             onclick="setCategoryFilter('CA DOJ Notice')" 
-            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
             data-category="CA DOJ Notice"
           >
             DOJ Bulletins
           </button>
           <button 
             type="button" 
+            onclick="setCategoryFilter('State News')" 
+            class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            data-category="State News"
+          >
+            State News
+          </button>
+          <button 
+            type="button" 
             onclick="setCategoryFilter('Community Safety')" 
-            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
             data-category="Community Safety"
           >
             Community Safety
@@ -285,7 +293,7 @@
             type="text" 
             id="searchInput" 
             oninput="handleSearch(this.value)"
-            placeholder="Search statute, bill, or topic..."
+            placeholder="Search statute, outlet, or topic..."
             class="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-300 text-xs font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
             aria-label="Search legal news updates"
           />
@@ -486,9 +494,9 @@
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(btn => {
         if (btn.dataset.category === category) {
-          btn.className = 'filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
+          btn.className = 'filter-btn px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
         } else {
-          btn.className = 'filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200';
+          btn.className = 'filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200';
         }
       });
 
