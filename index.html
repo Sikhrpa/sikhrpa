@@ -128,7 +128,6 @@
     Skip to main content
   </a>
 
-  <!-- Navigation Bar -->
   <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
@@ -151,7 +150,7 @@
         <a href="#safety" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Safety Rules</a>
         <a href="#guides" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Educational Guides</a>
         <a href="#legal" class="hover:text-amber-600 focus:text-amber-600 transition-colors">CA Legal & DOJ</a>
-        <a href="fsc-quiz.html" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 hover:text-blue-950 font-bold text-xs transition-colors">
+        <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 hover:text-blue-950 font-bold text-xs transition-colors">
           <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
           FSC Quiz
         </a>
@@ -160,10 +159,10 @@
 
       <!-- Action, Social & Mobile Hamburger Buttons -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Single Primary Donate CTA (Desktop) -->
+        <!-- Single Primary Donate CTA -->
         <a
-          href="donate.html"
-          class="hidden sm:inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 transition-colors items-center gap-1.5 shadow-sm"
+          href="donate"
+          class="inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 transition-colors items-center gap-1.5 shadow-sm"
           title="Tax-Deductible Charitable Giving"
         >
           <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
@@ -213,20 +212,19 @@
       </div>
     </div>
 
-    <!-- Mobile Slide-Down Navigation Drawer -->
     <div 
       id="mobileMenuDrawer" 
       class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
       aria-label="Mobile Navigation Menu"
     >
-      <a href="fsc-quiz.html" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-blue-50">
+      <a href="fsc-quiz" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-blue-50">
         <span class="flex items-center gap-2">
           <i data-lucide="award" class="w-5 h-5 text-amber-600"></i>
           CA FSC Practice Quiz
         </span>
         <span class="text-xs bg-amber-600 text-white px-2 py-0.5 rounded-full uppercase">Interactive</span>
       </a>
-      <a href="donate.html" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-amber-900 bg-amber-50 border border-amber-200">
+      <a href="donate" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-amber-900 bg-amber-50 border border-amber-200">
         <span class="flex items-center gap-2">
           <i data-lucide="heart" class="w-5 h-5 text-rose-500 fill-rose-500"></i>
           Support Our Mission (Tax-Deductible)
@@ -253,7 +251,6 @@
 
   <!-- Main Landmark -->
   <main id="main-content" class="flex-grow">
-    <!-- Hero / Mission Statement Section -->
     <section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-900 border-2 border-blue-200 mb-6 shadow-sm">
         <i data-lucide="shield-check" class="w-4 h-4 text-amber-600" aria-hidden="true"></i> Certified Marksmanship & Safety Education • 501(c)(3) Nonprofit
@@ -268,13 +265,13 @@
       <!-- Quick Action Buttons -->
       <div class="flex flex-wrap justify-center gap-3.5 mb-6 no-print">
         <a
-          href="fsc-quiz.html"
+          href="fsc-quiz"
           class="px-5 py-3 rounded-xl bg-blue-900 text-white font-bold hover:bg-blue-800 focus:bg-blue-800 transition-all text-sm flex items-center gap-2 shadow-md hover:shadow-lg"
         >
           <i data-lucide="award" class="w-4 h-4 text-amber-400" aria-hidden="true"></i> Take CA FSC Practice Quiz
         </a>
         <a
-          href="donate.html"
+          href="donate"
           class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition-all text-sm flex items-center gap-2 shadow-md"
         >
           <i data-lucide="heart-handshake" class="w-4 h-4 text-slate-950" aria-hidden="true"></i> Support Our Mission
@@ -288,7 +285,6 @@
       </div>
     </section>
 
-    <!-- FSC Quiz Interactive Banner Callout -->
     <section class="py-4 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto no-print">
       <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-900 rounded-2xl p-6 sm:p-8 text-white shadow-lg border border-blue-800 flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-start gap-4">
@@ -306,7 +302,7 @@
           </div>
         </div>
         <a
-          href="fsc-quiz.html"
+          href="fsc-quiz"
           class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition-all shadow-md shrink-0 flex items-center gap-2 group"
         >
           <span>Start Practice Test</span>
@@ -315,7 +311,6 @@
       </div>
     </section>
 
-    <!-- Programs & Services -->
     <section id="about" class="py-16 bg-blue-950/5 border-y border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -363,7 +358,6 @@
       </div>
     </section>
 
-    <!-- Fundamental Safety Section with Bilingual Rules & Print Option -->
     <section id="safety" class="py-16 bg-white border-b border-slate-200 print-page">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
@@ -474,7 +468,7 @@
                 <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-amber-400" aria-hidden="true"></i> View Enlarged Safety Diagram
               </button>
               <a
-                href="fsc-quiz.html"
+                href="fsc-quiz"
                 class="px-3.5 py-2.5 rounded-lg bg-white border border-blue-300 hover:bg-blue-50 text-blue-900 text-xs font-bold flex items-center gap-2 transition-all shadow-sm"
               >
                 <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i> Practice Quiz
@@ -485,7 +479,6 @@
       </div>
     </section>
 
-    <!-- Educational Resource Library -->
     <section id="guides" class="py-20 bg-blue-950/5 max-w-full">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -563,7 +556,6 @@
       </div>
     </section>
 
-    <!-- California Legal & CA DOJ Resources Section -->
     <section id="legal" class="py-16 bg-white border-t border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -613,7 +605,7 @@
             </div>
             <div class="space-y-2 mt-4">
               <a 
-                href="fsc-quiz.html" 
+                href="fsc-quiz" 
                 class="w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
                 <i data-lucide="award" class="w-4 h-4"></i>
@@ -645,7 +637,6 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
     <section id="faq" class="py-16 bg-blue-950/5 border-t border-slate-200">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -661,7 +652,7 @@
               <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> Are donations to SikhRPA tax-deductible?
             </h3>
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              Yes. The Sikh Rifle and Pistol Association is an officially recognized California Nonprofit Public Benefit Corporation with tax-exempt 501(c)(3) public charity status under the Internal Revenue Code (Federal EIN: 42-2595402). Contributions are tax-deductible to the fullest extent permissible by law. You can review details on our <a href="donate.html" class="text-blue-900 underline font-semibold hover:text-blue-950">Donations Portal</a>.
+              Yes. The Sikh Rifle and Pistol Association is an officially recognized California Nonprofit Public Benefit Corporation with tax-exempt 501(c)(3) public charity status under the Internal Revenue Code (Federal EIN: 42-2595402). Contributions are tax-deductible to the fullest extent permissible by law. You can review details on our <a href="donate" class="text-blue-900 underline font-semibold hover:text-blue-950">Donations Portal</a>.
             </p>
           </div>
 
@@ -691,7 +682,7 @@
               <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0" aria-hidden="true"></i> What is required to pass the California Firearm Safety Certificate (FSC) test?
             </h3>
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              The official CA DOJ FSC test consists of 30 multiple choice and true/false questions. A minimum passing score of 75% (23 correct answers) is required. You can practice free of charge anytime with our <a href="fsc-quiz.html" class="text-blue-900 underline font-semibold hover:text-blue-950">interactive practice test</a>.
+              The official CA DOJ FSC test consists of 30 multiple choice and true/false questions. A minimum passing score of 75% (23 correct answers) is required. You can practice free of charge anytime with our <a href="fsc-quiz" class="text-blue-900 underline font-semibold hover:text-blue-950">interactive practice test</a>.
             </p>
           </div>
         </div>
@@ -699,7 +690,6 @@
     </section>
   </main>
 
-  <!-- Image Lightbox Modal with Accessible Focus Trap -->
   <div 
     id="imageModal" 
     class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 no-print" 
@@ -734,7 +724,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="border-t border-slate-200 bg-slate-50 py-16 no-print">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
       
@@ -829,14 +818,14 @@
       <!-- Social & Educational Links Bar -->
       <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
         <a 
-          href="donate.html"
+          href="donate"
           class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl text-xs font-bold shadow-sm transition-colors"
         >
           <i data-lucide="heart" class="w-4 h-4 text-rose-600 fill-rose-600"></i>
           <span>Tax-Deductible Donation</span>
         </a>
         <a 
-          href="fsc-quiz.html"
+          href="fsc-quiz"
           class="inline-flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-xl text-xs font-bold hover:bg-blue-800 shadow-sm transition-colors"
         >
           <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
@@ -884,7 +873,6 @@
     </div>
   </footer>
 
-  <!-- Initialization Logic & Handlers -->
   <script>
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
 
@@ -919,7 +907,6 @@
       closeIcon.classList.add('hidden');
     }
 
-    // Newsletter Form Submission to Google Sheet
     async function handleNewsletter(e) {
       e.preventDefault();
       const emailInput = document.getElementById('newsletterEmail');
@@ -995,7 +982,6 @@
       }
     }
 
-    // Modal Lightbox Functions
     function openModal(imageSrc, titleText, triggerElement) {
       lastActiveElement = triggerElement || document.activeElement;
       const modal = document.getElementById('imageModal');
