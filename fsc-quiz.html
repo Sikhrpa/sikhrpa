@@ -2,11 +2,11 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>California Firearm Safety Certificate (FSC) Practice Test & Analytics | SikhRPA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>California Firearm Safety Certificate (FSC) Practice Test | SikhRPA</title>
   
-  <meta name="description" content="Free interactive California Firearm Safety Certificate (FSC) practice examination and post-test analytics provided by the Sikh Rifle and Pistol Association. Test and benchmark your knowledge of safe storage and state penal codes." />
-  <meta name="keywords" content="CA FSC practice test, firearm safety certificate test, California gun laws quiz, FSC study guide, SikhRPA, gun safety analytics" />
+  <meta name="description" content="Free interactive California Firearm Safety Certificate (FSC) practice exam, statutory references, and diagnostic analytics provided by SikhRPA." />
+  <meta name="keywords" content="CA FSC practice test, firearm safety certificate test, California gun laws quiz, FSC study guide, SikhRPA, CA penal codes" />
   <meta name="theme-color" content="#0f172a" />
 
   <link rel="icon" type="image/png" href="srpa-logo.png" />
@@ -33,6 +33,7 @@
     body {
       background-color: #f8fafc;
       color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
     }
     a:focus-visible, button:focus-visible {
       outline: 3px solid #d97706;
@@ -45,6 +46,10 @@
       background: #cbd5e1;
       border-radius: 4px;
     }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
@@ -54,64 +59,64 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
       <!-- Brand & Return Link -->
-      <div class="flex items-center gap-3">
-        <a href="./" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100">
-          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600"></i>
-          <span>Back to Home</span>
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
+          <span>Home</span>
         </a>
         <span class="text-slate-300" aria-hidden="true">|</span>
-        <div class="flex items-center gap-2">
-          <img src="srpa-logo.png" alt="SikhRPA Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'" />
-          <span class="font-bold text-slate-900 text-sm sm:text-base tracking-tight">SikhRPA</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <img src="srpa-logo.png" alt="SikhRPA Logo" class="h-8 w-auto object-contain shrink-0" onerror="this.style.display='none'" />
+          <span class="font-bold text-slate-900 text-sm sm:text-base tracking-tight truncate">SikhRPA</span>
         </div>
       </div>
 
-      <!-- Live Header Progress & Timer Indicator -->
-      <div class="flex items-center gap-2">
-        <span id="headerTimer" class="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full border border-slate-200">
+      <!-- Live Header Progress & Timer -->
+      <div class="flex items-center gap-2 shrink-0">
+        <span id="headerTimer" class="inline-flex items-center gap-1 text-xs font-mono font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full border border-slate-200">
           <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i>
           <span id="elapsedDisplay">00:00</span>
         </span>
-        <span class="inline-flex items-center gap-1 text-xs font-bold bg-blue-50 text-blue-900 px-3 py-1 rounded-full border border-blue-200">
-          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
-          <span>CA FSC Exam Prep</span>
-        </span>
+        <a href="donate" class="hidden xs:inline-flex items-center gap-1.5 text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 px-3 py-1.5 rounded-full shadow-sm transition-colors">
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
+          <span>Donate</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
+  <main class="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10">
     
     <!-- Header Banner -->
-    <div class="text-center mb-8">
-      <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-        Free Public Safety Education & Performance Analytics
+    <div class="text-center mb-6 sm:mb-8">
+      <span class="text-[11px] sm:text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+        Free Public Safety Education • CA DOJ Standard Model
       </span>
-      <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 tracking-tight">
+      <h1 class="text-xl sm:text-3xl font-extrabold text-slate-900 mt-2 sm:mt-3 tracking-tight">
         California Firearm Safety Certificate (FSC) Practice Test
       </h1>
-      <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto mt-2 leading-relaxed">
-        Model exam based on California Department of Justice standards. Requires <strong>75% or higher</strong> to pass. Complete diagnostic analytics and category breakdown are generated automatically upon completion.
+      <p class="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto mt-1.5 sm:mt-2 leading-relaxed font-normal">
+        Model examination aligned with California Department of Justice guidelines. Requires <strong>75% or higher</strong> to pass.
       </p>
 
-      <!-- Exam Mode & Randomizer Configuration Bar -->
-      <div class="mt-6 flex flex-wrap items-center justify-center gap-3 bg-white p-2 sm:p-2.5 rounded-2xl border-2 border-slate-200 shadow-sm max-w-xl mx-auto">
-        <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl">
+      <!-- Exam Mode & Shuffling Bar (Fully Responsive) -->
+      <div class="mt-5 flex flex-wrap items-center justify-center gap-2 bg-white p-2 rounded-2xl border-2 border-slate-200 shadow-sm max-w-xl mx-auto">
+        <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
           <button 
             id="mode30Btn" 
             type="button"
             onclick="setExamMode(30)" 
-            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm"
+            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer"
           >
-            Full CA DOJ Exam (30 Qs)
+            Full CA Exam (30 Qs)
           </button>
           <button 
             id="mode15Btn" 
             type="button"
             onclick="setExamMode(15)" 
-            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900"
+            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer"
           >
-            Quick Diagnostic (15 Qs)
+            Quick (15 Qs)
           </button>
         </div>
 
@@ -119,19 +124,20 @@
           id="shuffleToggleBtn"
           type="button"
           onclick="toggleShuffle()"
-          class="px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors"
+          class="px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors cursor-pointer"
           title="Toggle question and answer option shuffling on retakes"
         >
           <i data-lucide="shuffle" class="w-3.5 h-3.5 text-amber-600"></i>
-          <span id="shuffleStatusLabel">Randomize: ON (Questions & Answers)</span>
+          <span id="shuffleStatusLabel">Randomize: ON</span>
         </button>
       </div>
     </div>
 
-    <div id="quizContainer" class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
+    <!-- VIEW 1: Main Quiz Container -->
+    <div id="quizContainer" class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-8">
       
       <!-- Progress Bar & Question Stats -->
-      <div class="mb-6">
+      <div class="mb-5 sm:mb-6">
         <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
           <span id="questionCounter">Question 1 of 30</span>
           <span id="scoreCounter">Current Score: 0 / 0</span>
@@ -142,41 +148,42 @@
       </div>
 
       <!-- Question Text -->
-      <div class="mb-6">
-        <span id="questionCategory" class="text-xs font-semibold text-blue-900 bg-blue-50 px-2.5 py-1 rounded border border-blue-200 uppercase tracking-wider">
+      <div class="mb-5 sm:mb-6">
+        <span id="questionCategory" class="text-[11px] font-semibold text-blue-900 bg-blue-50 px-2.5 py-1 rounded border border-blue-200 uppercase tracking-wider inline-block">
           Category
         </span>
-        <h2 id="questionText" class="text-lg sm:text-xl font-bold text-slate-900 mt-3 leading-snug">
+        <h2 id="questionText" class="text-base sm:text-xl font-bold text-slate-900 mt-2.5 leading-snug">
           Loading question...
         </h2>
       </div>
 
-      <!-- Options Container -->
-      <div id="optionsContainer" class="space-y-3 mb-6" role="radiogroup" aria-labelledby="questionText">
+      <!-- Options Container (Dynamic) -->
+      <div id="optionsContainer" class="space-y-2.5 sm:space-y-3 mb-5 sm:mb-6" role="radiogroup" aria-labelledby="questionText">
         <!-- Options rendered dynamically -->
       </div>
 
-      <!-- Rationale / Explanation Box -->
-      <div id="rationaleBox" class="hidden p-4 sm:p-5 rounded-xl border mb-6 text-xs sm:text-sm leading-relaxed transition-all">
+      <!-- Statutory Rationale / Explanation Box -->
+      <div id="rationaleBox" class="hidden p-4 sm:p-5 rounded-xl border mb-5 sm:mb-6 text-xs sm:text-sm leading-relaxed transition-all">
         <div class="flex items-start gap-3">
           <div id="rationaleIcon" class="mt-0.5 shrink-0"></div>
-          <div>
-            <h4 id="rationaleTitle" class="font-bold mb-1 text-sm">Explanation</h4>
+          <div class="flex-1">
+            <h4 id="rationaleTitle" class="font-bold text-sm mb-1">Explanation</h4>
             <p id="rationaleText" class="text-slate-700"></p>
             <p id="rationaleStatute" class="text-slate-500 text-xs mt-2 font-mono"></p>
           </div>
         </div>
       </div>
 
-      <!-- Navigation / Action Buttons -->
-      <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+      <!-- Navigation Action Buttons -->
+      <div class="flex items-center justify-between pt-4 border-t border-slate-200 gap-2">
         <button 
           id="prevBtn" 
           onclick="prevQuestion()" 
-          class="px-4 py-2.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          class="px-3.5 sm:px-4 py-2.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed touch-target cursor-pointer"
           disabled
         >
-          <i data-lucide="chevron-left" class="w-4 h-4"></i> Previous
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          <span>Prev</span>
         </button>
 
         <div class="flex items-center gap-2">
@@ -185,16 +192,16 @@
             id="finishEarlyBtn"
             type="button"
             onclick="confirmFinishEarly()"
-            class="hidden px-3.5 py-2.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-bold transition-colors"
+            class="hidden px-3 sm:px-3.5 py-2.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-bold transition-colors touch-target cursor-pointer"
             title="Finish the test early with current answered questions"
           >
-            Finish Early & Score
+            Finish Early
           </button>
 
           <button 
             id="nextBtn" 
             onclick="nextQuestion()" 
-            class="px-6 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+            class="px-4 sm:px-6 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm touch-target cursor-pointer"
             disabled
           >
             <span>Next Question</span>
@@ -204,54 +211,51 @@
       </div>
     </div>
 
-    <div id="resultsContainer" class="hidden space-y-8">
+    <!-- VIEW 2: Results & Analytics Container -->
+    <div id="resultsContainer" class="hidden space-y-6 sm:space-y-8">
       
       <!-- Primary Outcome Summary Card -->
-      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-10 text-center">
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-8 text-center">
         <!-- Result Badge -->
-        <div id="resultBadgeWrapper" class="inline-flex items-center justify-center p-4 rounded-full mb-4">
-          <i id="resultIcon" data-lucide="award" class="w-12 h-12"></i>
+        <div id="resultBadgeWrapper" class="inline-flex items-center justify-center p-3.5 sm:p-4 rounded-full mb-3 sm:mb-4">
+          <i id="resultIcon" data-lucide="award" class="w-10 h-10 sm:w-12 sm:h-12"></i>
         </div>
 
-        <h2 id="resultStatus" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Examination Complete</h2>
-        <p id="resultSubtext" class="text-slate-600 text-sm max-w-md mx-auto mb-6">
+        <h2 id="resultStatus" class="text-xl sm:text-3xl font-extrabold text-slate-900 mb-1.5 sm:mb-2">
+          Examination Complete
+        </h2>
+        <p id="resultSubtext" class="text-slate-600 text-xs sm:text-sm max-w-md mx-auto mb-5 sm:mb-6">
           Diagnostic review of your California Firearm Safety Certificate knowledge.
         </p>
 
         <!-- KPI Grid: Score, Pace & Community Benchmark -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto mb-6">
-          <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-            <span class="block text-2xl sm:text-3xl font-extrabold text-blue-900" id="finalScorePct">0%</span>
-            <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide" id="scoreLabel">Accuracy</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 max-w-2xl mx-auto mb-5 sm:mb-6">
+          <div class="p-3 sm:p-4 bg-slate-50 border border-slate-200 rounded-xl">
+            <span class="block text-xl sm:text-3xl font-extrabold text-blue-900" id="finalScorePct">0%</span>
+            <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wide" id="scoreLabel">Accuracy</span>
           </div>
-          <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
-            <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-700" id="finalCorrectCount">0/30</span>
-            <span class="text-[11px] font-semibold text-emerald-800 uppercase tracking-wide" id="correctRatioLabel">Correct / Answered</span>
+          <div class="p-3 sm:p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+            <span class="block text-xl sm:text-3xl font-extrabold text-emerald-700" id="finalCorrectCount">0/30</span>
+            <span class="text-[10px] sm:text-[11px] font-semibold text-emerald-800 uppercase tracking-wide" id="correctRatioLabel">Correct</span>
           </div>
-          <div class="p-4 bg-blue-50 border border-blue-200 rounded-xl">
-            <span class="block text-xl sm:text-2xl font-extrabold text-blue-900 mt-0.5" id="finalTimePace">0m 00s</span>
-            <span class="text-[11px] font-semibold text-blue-700 uppercase tracking-wide">Total Time</span>
+          <div class="p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-xl">
+            <span class="block text-lg sm:text-2xl font-extrabold text-blue-900 mt-0.5" id="finalTimePace">0m 00s</span>
+            <span class="text-[10px] sm:text-[11px] font-semibold text-blue-700 uppercase tracking-wide">Total Time</span>
           </div>
-          <div class="p-4 bg-amber-50 border border-amber-200 rounded-xl">
-            <span class="block text-xl sm:text-2xl font-extrabold text-amber-700 mt-0.5" id="communityPercentile">--</span>
-            <span class="text-[11px] font-semibold text-amber-800 uppercase tracking-wide">Percentile</span>
+          <div class="p-3 sm:p-4 bg-amber-50 border border-amber-200 rounded-xl">
+            <span class="block text-lg sm:text-2xl font-extrabold text-amber-700 mt-0.5" id="communityPercentile">--</span>
+            <span class="text-[10px] sm:text-[11px] font-semibold text-amber-800 uppercase tracking-wide">Percentile</span>
           </div>
         </div>
 
         <!-- Passing Status Notice -->
-        <div id="passingNotice" class="p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 text-left"></div>
-
-        <!-- Analytics Telemetry Status -->
-        <div id="telemetryNotice" class="text-xs text-slate-500 flex items-center justify-center gap-1.5 mb-6 font-mono">
-          <i data-lucide="cloud-check" class="w-4 h-4 text-emerald-600"></i>
-          <span>Performance telemetry synchronized for community safety reporting</span>
-        </div>
+        <div id="passingNotice" class="p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 text-left leading-relaxed"></div>
 
         <!-- Action Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-3">
+        <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
           <button 
             onclick="restartQuiz()" 
-            class="px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-colors"
+            class="px-4 sm:px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-colors cursor-pointer touch-target"
           >
             <i data-lucide="rotate-ccw" class="w-4 h-4 text-amber-400"></i> Retake Practice Quiz
           </button>
@@ -259,23 +263,24 @@
             href="https://oag.ca.gov/sites/all/files/agweb/pdfs/firearms/forms/hscsg.pdf" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center gap-2 shadow-sm transition-colors"
+            class="px-4 sm:px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center gap-2 shadow-sm transition-colors touch-target"
           >
-            <i data-lucide="file-down" class="w-4 h-4 text-amber-600"></i> Download CA DOJ Study Guide
+            <i data-lucide="file-down" class="w-4 h-4 text-amber-600"></i> CA DOJ Study Guide PDF
           </a>
           <a 
             href="./" 
-            class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition-colors"
+            class="px-4 sm:px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition-colors touch-target"
           >
-            <i data-lucide="home" class="w-4 h-4"></i> Back to Homepage
+            <i data-lucide="home" class="w-4 h-4"></i> Return Home
           </a>
         </div>
       </div>
 
-      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-200">
+      <!-- Category Competency Card -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 pb-3 border-b border-slate-200">
           <div>
-            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
               <i data-lucide="bar-chart-3" class="w-5 h-5 text-blue-900"></i> 
               Category Competency Breakdown
             </h3>
@@ -286,12 +291,8 @@
           </span>
         </div>
 
-        <!-- Dynamic Category Progress Bars -->
-        <div id="categoryBreakdownContainer" class="space-y-4 mb-8">
-          <!-- Injected via JavaScript -->
-        </div>
+        <div id="categoryBreakdownContainer" class="space-y-3 mb-6"></div>
 
-        <!-- Targeted Study Recommendation Box -->
         <div id="targetedRecommendationBox" class="p-4 sm:p-5 rounded-xl border bg-amber-50 border-amber-200 text-slate-800 text-xs sm:text-sm">
           <div class="flex items-start gap-3">
             <div class="p-2 bg-amber-200/60 rounded-lg text-amber-900 shrink-0 mt-0.5">
@@ -305,31 +306,31 @@
         </div>
       </div>
 
-      <div id="historyCard" class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
+      <!-- Question Review Section -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-8">
+        <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-5 flex items-center gap-2 pb-3 border-b border-slate-200">
+          <i data-lucide="list-checks" class="w-5 h-5 text-blue-900"></i> Full Answer Review & Legal Standards
+        </h3>
+        <div id="reviewContainer" class="space-y-3.5"></div>
+      </div>
+
+      <!-- History Card -->
+      <div id="historyCard" class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-8">
         <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
-          <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
-            <i data-lucide="history" class="w-4 h-4 text-blue-900"></i> Your Test History & Progression
+          <h3 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
+            <i data-lucide="history" class="w-4 h-4 text-blue-900"></i> Your Local Test History
           </h3>
-          <button onclick="clearHistory()" class="text-xs text-slate-400 hover:text-rose-600 transition-colors">
+          <button onclick="clearHistory()" class="text-xs text-slate-400 hover:text-rose-600 transition-colors cursor-pointer">
             Clear History
           </button>
         </div>
-        <div id="historyList" class="space-y-2 text-xs">
-          <!-- Injected dynamically -->
-        </div>
-      </div>
-
-      <!-- Detailed Question-by-Question Review Section -->
-      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
-        <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2 pb-4 border-b border-slate-200">
-          <i data-lucide="list-checks" class="w-5 h-5 text-blue-900"></i> Full Answer Review & California Legal Standards
-        </h3>
-        <div id="reviewContainer" class="space-y-4"></div>
+        <div id="historyList" class="space-y-2 text-xs"></div>
       </div>
 
     </div>
   </main>
 
+  <!-- Custom In-Page Confirmation Modal (Accessible, No Browser Alert/Confirm) -->
   <div 
     id="confirmModal" 
     class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4" 
@@ -339,7 +340,7 @@
   >
     <div class="relative max-w-md w-full bg-white border-2 border-slate-200 rounded-2xl p-6 shadow-2xl animate-in fade-in zoom-in duration-150">
       <div class="flex items-center gap-3 mb-3">
-        <div class="p-2.5 bg-amber-100 text-amber-800 rounded-xl">
+        <div class="p-2 bg-amber-100 text-amber-800 rounded-xl shrink-0">
           <i data-lucide="alert-triangle" class="w-5 h-5"></i>
         </div>
         <h3 id="confirmModalTitle" class="font-bold text-slate-900 text-base">Confirm Action</h3>
@@ -350,7 +351,7 @@
           id="confirmModalCancelBtn" 
           type="button" 
           onclick="closeCustomConfirm()" 
-          class="px-4 py-2 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors"
+          class="px-4 py-2 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors touch-target"
         >
           Cancel
         </button>
@@ -358,7 +359,7 @@
           id="confirmModalOkBtn" 
           type="button" 
           onclick="executeCustomConfirm()" 
-          class="px-4 py-2 rounded-lg bg-blue-900 text-white text-xs font-bold hover:bg-blue-800 transition-colors shadow-sm"
+          class="px-4 py-2 rounded-lg bg-blue-900 text-white text-xs font-bold hover:bg-blue-800 transition-colors shadow-sm touch-target"
         >
           Confirm
         </button>
@@ -369,11 +370,11 @@
   <!-- Footer -->
   <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
     <div class="max-w-4xl mx-auto px-4">
-      <p class="mb-2 font-medium text-slate-700">
+      <p class="mb-1.5 font-medium text-slate-700">
         Sikh Rifle and Pistol Association • California 501(c)(3) Nonprofit Public Benefit Corporation
       </p>
-      <p class="text-slate-400 max-w-xl mx-auto">
-        Educational Disclaimer: This practice test is created for public safety preparation based on the California Department of Justice FSC guidelines and is not an official proctored state examination. Official testing must be completed in-person at a licensed CA firearms dealer.
+      <p class="text-slate-400 max-w-xl mx-auto leading-relaxed">
+        Educational Disclaimer: This practice examination is provided exclusively for public safety education. Official California certification must be administered in-person at a CA DOJ-licensed firearms dealership.
       </p>
     </div>
   </footer>
@@ -381,6 +382,7 @@
   <script>
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
 
+    // Master 30 CA DOJ Questions
     const MASTER_QUESTIONS = [
       {
         id: 1,
@@ -448,7 +450,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 2",
-        explanation: "Firing the wrong caliber (such as a 9x18mm Makarov in a 9x19mm Parabellum chamber, or .300 Blackout in a 5.56 NATO barrel) can cause catastrophic barrel rupture and severe personal injury. Always verify the barrel stamp against the cartridge headstamp."
+        explanation: "Firing the wrong caliber can cause catastrophic barrel rupture and severe personal injury. Always verify the barrel stamp against the cartridge headstamp."
       },
       {
         id: 6,
@@ -462,7 +464,7 @@
         ],
         correctIndex: 2,
         statute: "CA Penal Code § 27510",
-        explanation: "Under California law, a person must be at least 21 years of age to purchase any handgun or centerfire rifle/shotgun, unless specifically exempted by law (such as active-duty law enforcement or qualifying military service)."
+        explanation: "Under California law, a person must be at least 21 years of age to purchase any handgun or centerfire rifle/shotgun, unless specifically exempted by law."
       },
       {
         id: 7,
@@ -476,7 +478,7 @@
         ],
         correctIndex: 1,
         statute: "CA Penal Code § 26815",
-        explanation: "California mandates a minimum 10-day (ten consecutive 24-hour periods) waiting period from the moment the Dealer Record of Sale (DROS) is transmitted to the California DOJ before the dealer may release the firearm."
+        explanation: "California mandates a minimum 10-day waiting period from the moment the Dealer Record of Sale (DROS) is transmitted to the California DOJ before the dealer may release the firearm."
       },
       {
         id: 8,
@@ -490,7 +492,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 3",
-        explanation: "A squib load occurs when a primer fires with insufficient or no powder, leaving a projectile stuck inside the barrel bore. Firing another round behind an obstructed barrel will result in catastrophic barrel explosion. Always keep the muzzle pointed downrange, wait 30 seconds (in case of a delayed hangfire), unload, and inspect the barrel from the breech."
+        explanation: "A squib load occurs when a primer fires with insufficient or no powder, leaving a projectile stuck inside the barrel bore. Firing another round behind an obstructed barrel will cause a catastrophic explosion. Always keep the muzzle pointed downrange, wait 30 seconds, unload, and inspect the barrel from the breech."
       },
       {
         id: 9,
@@ -504,7 +506,7 @@
         ],
         correctIndex: 1,
         statute: "CA Penal Code § 25610, § 25505",
-        explanation: "Under California law, handguns transported in a vehicle must be completely unloaded and secured inside a locked container (or locked trunk). The glove compartment or center utility console is explicitly prohibited as a qualifying locked container."
+        explanation: "Under California law, handguns transported in a vehicle must be completely unloaded and secured inside a locked container (or locked trunk). The glove compartment or center utility console is explicitly prohibited."
       },
       {
         id: 10,
@@ -546,7 +548,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 1",
-        explanation: "Gunfire produces concussive decibel levels that cause irreversible hearing loss, as well as high-velocity spent shell casings, gas blowback, and lead particulate. ANSI-rated safety eyewear and adequate hearing protection (plugs or muffs) are mandatory."
+        explanation: "Gunfire produces concussive decibel levels that cause permanent hearing loss, as well as high-velocity spent shell casings and particulate. ANSI-rated safety eyewear and hearing protection are mandatory."
       },
       {
         id: 13,
@@ -560,7 +562,7 @@
         ],
         correctIndex: 0,
         statute: "CA Penal Code § 25250",
-        explanation: "California Penal Code § 25250 mandates that any person whose firearm was lost or stolen must report the incident to local law enforcement within 5 days of when they knew or reasonably should have known of the loss or theft."
+        explanation: "California Penal Code § 25250 mandates that any person whose firearm was lost or stolen must report the incident to local law enforcement within 5 days of when they knew or reasonably should have known."
       },
       {
         id: 14,
@@ -574,7 +576,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 2",
-        explanation: "A significant proportion of unintentional discharges occur during routine cleaning. Always point the muzzle in a safe direction, remove the magazine, lock the action open, and perform both a visual and physical tactile check of the chamber before any disassembly or cleaning."
+        explanation: "Always point the muzzle in a safe direction, remove the magazine, lock the action open, and perform both a visual and physical tactile check of the chamber before disassembly or cleaning."
       },
       {
         id: 15,
@@ -588,7 +590,7 @@
         ],
         correctIndex: 1,
         statute: "CA Penal Code § 28050",
-        explanation: "Except for narrow, specific immediate-family transfers, all private party firearm sales and transfers in California must be processed through a licensed California firearms dealer (FFL), where background checks, FSC verification, and the 10-day waiting period are legally executed."
+        explanation: "Except for narrow, specific immediate-family transfers, all private party firearm sales and transfers in California must be processed through a licensed California firearms dealer (FFL)."
       },
       {
         id: 16,
@@ -602,7 +604,7 @@
         ],
         correctIndex: 2,
         statute: "CA Penal Code § 31655",
-        explanation: "A California Firearm Safety Certificate (FSC) is valid for 5 years from the date of issuance, after which the holder must retake the test to acquire additional firearms."
+        explanation: "A California Firearm Safety Certificate (FSC) is valid for 5 years from the date of issuance."
       },
       {
         id: 17,
@@ -616,7 +618,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 3",
-        explanation: "A hangfire is a delayed ignition caused by defective powder or primer. If you pull the trigger and nothing happens, the cartridge could fire unexpectedly moments later. You must keep the muzzle pointed downrange in a safe direction for a minimum of 30 seconds before attempting to clear the firearm."
+        explanation: "A hangfire is a delayed ignition. Keep the muzzle pointed downrange in a safe direction for a minimum of 30 seconds before attempting to clear the firearm."
       },
       {
         id: 18,
@@ -630,7 +632,7 @@
         ],
         correctIndex: 1,
         statute: "CA Penal Code § 23635",
-        explanation: "California law requires all firearms sold, transferred, or manufactured in the state to be accompanied by an approved California DOJ-certified Firearm Safety Device (FSD) or proof of ownership of an approved gun safe."
+        explanation: "California law requires all firearms sold, transferred, or manufactured in the state to be accompanied by an approved California DOJ-certified Firearm Safety Device (FSD)."
       },
       {
         id: 19,
@@ -642,7 +644,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 1",
-        explanation: "Removing the magazine only cuts off the ammunition supply. If a round was chambered, it remains inside the barrel chamber ready to fire unless the slide is retracted, the round extracted, and the chamber visually and physically inspected."
+        explanation: "Removing the magazine only cuts off the ammunition supply. If a round was chambered, it remains inside the barrel chamber ready to fire."
       },
       {
         id: 20,
@@ -656,7 +658,7 @@
         ],
         correctIndex: 2,
         statute: "CA Penal Code § 29825 & 18 U.S.C. § 922(g)(8)",
-        explanation: "Both California state law (PC § 29825) and federal statute explicitly prohibit any individual subject to an active domestic violence restraining order or protective order from possessing, receiving, purchasing, or owning firearms or ammunition."
+        explanation: "Both California state law (PC § 29825) and federal statute explicitly prohibit any individual subject to an active domestic violence restraining order from possessing or owning firearms."
       },
       {
         id: 21,
@@ -670,7 +672,7 @@
         ],
         correctIndex: 2,
         statute: "CA DOJ Universal Safety Principles",
-        explanation: "Firearms must always be handed over with the action open, magazine detached, chamber verified clear, and the muzzle oriented safely away from both parties."
+        explanation: "Firearms must always be handed over with the action open, magazine detached, chamber verified clear, and the muzzle oriented safely away."
       },
       {
         id: 22,
@@ -684,7 +686,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 4",
-        explanation: "'Cease Fire' is an immediate emergency safety command. Anyone at a range can call it. All firing must instantly stop, fingers off triggers, actions benched open, and shooters step back behind the line."
+        explanation: "'Cease Fire' is an immediate emergency safety command. Anyone at a range can call it. All firing must instantly stop, fingers off triggers, actions open, and shooters step back."
       },
       {
         id: 23,
@@ -698,7 +700,7 @@
         ],
         correctIndex: 1,
         statute: "CA Penal Code § 30312, § 30352",
-        explanation: "California law mandates that all retail ammunition transactions be conducted face-to-face through a California licensed ammunition vendor, requiring an electronic Department of Justice eligibility check prior to delivery."
+        explanation: "California law mandates that retail ammunition transactions be conducted face-to-face through a California licensed ammunition vendor with an electronic DOJ eligibility check."
       },
       {
         id: 24,
@@ -712,7 +714,7 @@
         ],
         correctIndex: 1,
         statute: "SAAMI & CA DOJ FSC Manual § 2",
-        explanation: "+P and +P+ ammunition generates substantially higher chamber pressures than standard SAAMI specification cartridges. Firing them in unrated, older, or damaged firearms can cause chamber blowouts and severe harm."
+        explanation: "+P and +P+ ammunition generates substantially higher chamber pressures. Firing them in unrated or older firearms can cause chamber blowouts and severe harm."
       },
       {
         id: 25,
@@ -726,7 +728,7 @@
         ],
         correctIndex: 1,
         statute: "CA Penal Code § 25850, § 26350",
-        explanation: "California generally prohibits both open carry of loaded firearms (PC § 25850) and open carry of unloaded handguns (PC § 26350) in incorporated cities, municipalities, and prohibited public areas unless specific law enforcement exemptions apply."
+        explanation: "California generally prohibits both open carry of loaded firearms (PC § 25850) and open carry of unloaded handguns (PC § 26350) in incorporated cities and public places."
       },
       {
         id: 26,
@@ -740,7 +742,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 1",
-        explanation: "In single-action, pulling the trigger only performs one mechanical function: releasing the hammer (which must first be manually cocked). In double-action, the trigger pull performs two functions: cocking the hammer back and releasing it to strike the primer."
+        explanation: "In single-action, pulling the trigger only releases the pre-cocked hammer. In double-action, pulling the trigger cocks the hammer back and releases it in one continuous motion."
       },
       {
         id: 27,
@@ -748,13 +750,13 @@
         question: "Under California Penal Code § 25140, what is the legal requirement when leaving a handgun unattended in an unattended motor vehicle?",
         options: [
           "It must be locked inside the glove box with the vehicle doors locked.",
-          "It must be locked in the vehicle trunk, secured inside a locked container out of plain view, or locked in an permanently affixed steel lockbox.",
+          "It must be locked in the vehicle trunk, secured inside a locked container out of plain view, or locked in a permanently affixed steel lockbox.",
           "It can be placed under the driver floor mat if the windows are tinted.",
           "California law allows unattended loaded handguns on car seats if the car alarm is active."
         ],
         correctIndex: 1,
         statute: "CA Penal Code § 25140",
-        explanation: "California law strictly mandates that any handgun left in an unattended vehicle must be locked in the trunk, secured in a locked container out of plain view, or locked to the vehicle frame in an approved lockbox. Unattended storage in an unlocked compartment or glove box violates state law."
+        explanation: "Any handgun left in an unattended vehicle must be locked in the trunk, secured in a locked container out of plain view, or locked to the vehicle frame in an approved lockbox."
       },
       {
         id: 28,
@@ -768,7 +770,7 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ FSC Manual § 1",
-        explanation: "Firearm handling requires absolute mental clarity, disciplined motor reflexes, and sharp judgment. Intoxicants dramatically elevate the risk of catastrophic, preventable negligent discharges."
+        explanation: "Firearm handling requires absolute mental clarity, disciplined motor reflexes, and sharp judgment. Intoxicants dramatically elevate the risk of preventable negligent discharges."
       },
       {
         id: 29,
@@ -782,7 +784,7 @@
         ],
         correctIndex: 1,
         statute: "CA Penal Code § 27545, § 27880",
-        explanation: "Loaning a firearm to anyone known or reasonably suspected to be prohibited is a felony. In California, lending firearms to non-immediate family members generally requires conducting the loan through a licensed dealer (FFL)."
+        explanation: "Loaning a firearm to anyone known or suspected to be prohibited is a felony. In California, lending firearms to non-immediate family members generally requires conducting the transfer through a licensed dealer (FFL)."
       },
       {
         id: 30,
@@ -796,11 +798,12 @@
         ],
         correctIndex: 1,
         statute: "CA DOJ Universal Rule 2",
-        explanation: "During any stoppage or malfunction manipulation (tap-rack-bang, stovepipe clear, or double-feed clearing), the muzzle must remain steadfastly pointed downrange toward the impact berm or backstop."
+        explanation: "During any stoppage or malfunction manipulation, the muzzle must remain steadfastly pointed downrange toward the impact berm or backstop."
       }
     ];
 
-    let examMode = 30; // 30 (full) or 15 (diagnostic)
+    // Quiz State Variables
+    let examMode = 30;
     let shuffleEnabled = true;
     let activeQuestions = [];
     let currentQuestionIndex = 0;
@@ -812,12 +815,10 @@
     let telemetryDebounceTimer = null;
     let pendingConfirmAction = null;
 
-    // Generate a unique session identifier for every quiz attempt
     function generateSessionId() {
       return 'fsc_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
     }
 
-    // Fisher-Yates array shuffling algorithm
     function shuffleArray(arr) {
       const copy = [...arr];
       for (let i = copy.length - 1; i > 0; i--) {
@@ -832,7 +833,6 @@
         if (!shuffleEnabled) {
           return { ...q, options: [...q.options] };
         }
-
         const isBinaryQuestion = q.options.length === 2 && 
           (q.options[0].toLowerCase().startsWith("true") || q.options[0].toLowerCase().startsWith("yes"));
 
@@ -867,13 +867,12 @@
       examMode = count;
       const btn30 = document.getElementById('mode30Btn');
       const btn15 = document.getElementById('mode15Btn');
-
       if (count === 30) {
-        btn30.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
-        btn15.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
+        btn30.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer';
+        btn15.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer';
       } else {
-        btn15.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
-        btn30.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
+        btn15.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer';
+        btn30.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer';
       }
       restartQuiz();
     }
@@ -883,11 +882,11 @@
       const label = document.getElementById('shuffleStatusLabel');
       const btn = document.getElementById('shuffleToggleBtn');
       if (shuffleEnabled) {
-        label.innerText = 'Randomize: ON (Questions & Answers)';
-        btn.className = 'px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors';
+        label.innerText = 'Randomize: ON';
+        btn.className = 'px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors cursor-pointer';
       } else {
-        label.innerText = 'Randomize: OFF (Fixed Order)';
-        btn.className = 'px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold flex items-center gap-1.5 text-slate-600 bg-slate-50 transition-colors';
+        label.innerText = 'Randomize: OFF';
+        btn.className = 'px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold flex items-center gap-1.5 text-slate-600 bg-slate-50 transition-colors cursor-pointer';
       }
       restartQuiz();
     }
@@ -949,12 +948,12 @@
       q.options.forEach((optText, optIdx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'w-full text-left p-4 rounded-xl border-2 transition-all flex items-start gap-3.5 group relative ';
+        btn.className = 'w-full text-left p-3.5 sm:p-4 rounded-xl border-2 transition-all flex items-start gap-3 group relative ';
 
         let badgeClass = 'w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ';
 
         if (!hasAnswered) {
-          btn.className += 'bg-slate-50 border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 text-slate-800 cursor-pointer';
+          btn.className += 'bg-slate-50 border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 text-slate-800 cursor-pointer touch-target';
           badgeClass += 'border-slate-300 text-slate-500 group-hover:border-blue-600 group-hover:text-blue-600';
           btn.onclick = () => selectOption(optIdx);
         } else {
@@ -986,12 +985,12 @@
         rationaleBox.classList.remove('hidden');
 
         if (isCorrect) {
-          rationaleBox.className = 'p-4 sm:p-5 rounded-xl border mb-6 text-xs sm:text-sm leading-relaxed bg-emerald-50 border-emerald-300 text-emerald-950';
+          rationaleBox.className = 'p-4 sm:p-5 rounded-xl border mb-5 sm:mb-6 text-xs sm:text-sm leading-relaxed bg-emerald-50 border-emerald-300 text-emerald-950';
           document.getElementById('rationaleTitle').innerText = 'Correct Answer';
           document.getElementById('rationaleTitle').className = 'font-bold mb-1 text-sm text-emerald-800';
           document.getElementById('rationaleIcon').innerHTML = '<i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i>';
         } else {
-          rationaleBox.className = 'p-4 sm:p-5 rounded-xl border mb-6 text-xs sm:text-sm leading-relaxed bg-rose-50 border-rose-300 text-rose-950';
+          rationaleBox.className = 'p-4 sm:p-5 rounded-xl border mb-5 sm:mb-6 text-xs sm:text-sm leading-relaxed bg-rose-50 border-rose-300 text-rose-950';
           document.getElementById('rationaleTitle').innerText = 'Incorrect';
           document.getElementById('rationaleTitle').className = 'font-bold mb-1 text-sm text-rose-800';
           document.getElementById('rationaleIcon').innerHTML = '<i data-lucide="alert-circle" class="w-5 h-5 text-rose-600"></i>';
@@ -1007,7 +1006,6 @@
 
       prevBtn.disabled = currentQuestionIndex === 0;
 
-      // Show "Finish Early" button once at least 1 question has been answered
       const finishEarlyBtn = document.getElementById('finishEarlyBtn');
       if (finishEarlyBtn) {
         if (answeredCount >= 1 && currentQuestionIndex < activeQuestions.length - 1) {
@@ -1018,9 +1016,9 @@
       }
 
       if (currentQuestionIndex === activeQuestions.length - 1) {
-        nextBtn.innerHTML = '<span>Generate Analytics & Results</span> <i data-lucide="check-circle-2" class="w-4 h-4"></i>';
+        nextBtn.innerHTML = '<span>Results</span> <i data-lucide="check-circle-2" class="w-4 h-4"></i>';
       } else {
-        nextBtn.innerHTML = '<span>Next Question</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
+        nextBtn.innerHTML = '<span>Next</span> <i data-lucide="chevron-right" class="w-4 h-4"></i>';
       }
 
       lucide.createIcons();
@@ -1030,8 +1028,6 @@
       if (userAnswers[currentQuestionIndex] !== null) return;
       userAnswers[currentQuestionIndex] = optionIndex;
       renderQuestion();
-
-      // Trigger debounced session progress sync so drop-offs are saved
       scheduleTelemetrySync();
     }
 
@@ -1093,16 +1089,13 @@
       const total = activeQuestions.length;
       const isComplete = answeredCount === total && !isEarlyFinish;
       
-      // Calculate score based on answered questions rather than penalizing unanswered questions with 0% accuracy
       const scorePct = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
       const passed = scorePct >= 75 && isComplete;
 
-      // Time and Pace Calculations
       const mins = Math.floor(totalSecondsElapsed / 60);
       const secs = totalSecondsElapsed % 60;
       document.getElementById('finalTimePace').innerText = `${mins}m ${secs}s`;
 
-      // Estimated Percentile based on accuracy
       let percentile = 50;
       if (scorePct >= 100) percentile = 99;
       else if (scorePct >= 93) percentile = 91;
@@ -1129,21 +1122,21 @@
 
       if (!isComplete) {
         const remaining = total - answeredCount;
-        badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-amber-100 text-amber-800 border-2 border-amber-300 shadow-md';
+        badgeWrapper.className = 'inline-flex items-center justify-center p-3.5 sm:p-4 rounded-full mb-3 sm:mb-4 bg-amber-100 text-amber-800 border-2 border-amber-300 shadow-md';
         resultStatus.innerText = 'Incomplete Examination — Not Passing';
         passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 bg-amber-50 border-amber-300 text-amber-950';
         passingNotice.innerHTML = `
           <strong>Exam Incomplete (Not Passing):</strong> You achieved an accuracy of <strong>${scorePct}%</strong> (${correctCount} of ${answeredCount} answered correctly). However, California mandates completing all ${total} questions on the official FSC exam. Because <strong>${remaining} question${remaining > 1 ? 's were' : ''} left unanswered</strong>, this attempt cannot be scored as a pass. Complete the entire exam on your next attempt to meet the state certification standard!
         `;
       } else if (passed) {
-        badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-emerald-100 text-emerald-700 border-2 border-emerald-300 shadow-md';
+        badgeWrapper.className = 'inline-flex items-center justify-center p-3.5 sm:p-4 rounded-full mb-3 sm:mb-4 bg-emerald-100 text-emerald-700 border-2 border-emerald-300 shadow-md';
         resultStatus.innerText = 'Pass — Meeting CA State Standard!';
         passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 bg-emerald-50 border-emerald-300 text-emerald-900';
         passingNotice.innerHTML = `
           <strong>Exam Standard Achieved:</strong> You scored <strong>${scorePct}%</strong> (${correctCount} of ${total} correct in ${mins}m ${secs}s). You meet California's required 75% passing threshold for firearm handling and storage proficiency.
         `;
       } else {
-        badgeWrapper.className = 'inline-flex items-center justify-center p-4 rounded-full mb-4 bg-rose-100 text-rose-700 border-2 border-rose-300 shadow-md';
+        badgeWrapper.className = 'inline-flex items-center justify-center p-3.5 sm:p-4 rounded-full mb-3 sm:mb-4 bg-rose-100 text-rose-700 border-2 border-rose-300 shadow-md';
         resultStatus.innerText = 'Below 75% Threshold (Needs Review)';
         passingNotice.className = 'p-4 rounded-xl border text-xs sm:text-sm font-medium max-w-2xl mx-auto mb-6 bg-rose-50 border-rose-300 text-rose-900';
         passingNotice.innerHTML = `
@@ -1151,21 +1144,13 @@
         `;
       }
 
-      // Compute and Render Category Diagnostics
       const categoryData = computeCategoryDiagnostics();
       renderCategoryAnalytics(categoryData);
-
-      // Targeted Recommendation
       renderTargetedRecommendation(categoryData, isComplete);
-
-      // Local History Tracking
       saveAttemptToLocalHistory(scorePct, correctCount, answeredCount, total, totalSecondsElapsed, isComplete);
       renderLocalHistory();
-
-      // Render Question Review
       renderReview();
 
-      // Transmit Final Telemetry (Marked as Final)
       transmitTelemetry({
         scorePct,
         correctCount,
@@ -1210,12 +1195,12 @@
       Object.entries(stats).forEach(([catName, data]) => {
         if (data.answered === 0) {
           const row = document.createElement('div');
-          row.className = 'p-3.5 bg-slate-50 border border-slate-200 rounded-xl opacity-75';
+          row.className = 'p-3 bg-slate-50 border border-slate-200 rounded-xl opacity-75';
           row.innerHTML = `
             <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
               <span class="text-slate-700 font-bold">${catName}</span>
               <div class="flex items-center gap-2">
-                <span class="text-slate-400">0/${data.total} answered</span>
+                <span class="text-slate-400">0/${data.total}</span>
                 <span class="text-[10px] font-bold px-2 py-0.5 rounded border uppercase bg-slate-100 text-slate-600 border-slate-200">Not Attempted</span>
               </div>
             </div>
@@ -1243,12 +1228,12 @@
         }
 
         const row = document.createElement('div');
-        row.className = 'p-3.5 bg-slate-50 border border-slate-200 rounded-xl';
+        row.className = 'p-3 bg-slate-50 border border-slate-200 rounded-xl';
         row.innerHTML = `
           <div class="flex items-center justify-between text-xs font-semibold mb-1.5">
             <span class="text-slate-900 font-bold">${catName}</span>
             <div class="flex items-center gap-2">
-              <span class="text-slate-500">${data.correct}/${data.answered} answered (${catPct}%)</span>
+              <span class="text-slate-500">${data.correct}/${data.answered} (${catPct}%)</span>
               <span class="text-[10px] font-bold px-2 py-0.5 rounded border uppercase ${badgeColor}">${statusLabel}</span>
             </div>
           </div>
@@ -1330,25 +1315,25 @@
         }
 
         const card = document.createElement('div');
-        card.className = `p-4 sm:p-5 rounded-xl border-2 ${cardClass}`;
+        card.className = `p-3.5 sm:p-4 rounded-xl border-2 ${cardClass}`;
 
         card.innerHTML = `
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-2.5 sm:gap-3">
             <span class="p-1 rounded-full ${iconBg} text-white shrink-0 mt-0.5">
               <i data-lucide="${iconName}" class="w-3.5 h-3.5"></i>
             </span>
-            <div class="flex-1">
+            <div class="flex-1 min-w-0">
               <div class="flex items-center justify-between gap-2 mb-1">
-                <span class="text-xs font-bold uppercase tracking-wider ${isCorrect ? 'text-emerald-800' : (isAnswered ? 'text-rose-800' : 'text-slate-600')}">
-                  Question ${idx + 1} (Ref Q#${q.id}): ${q.category}
+                <span class="text-xs font-bold uppercase tracking-wider ${isCorrect ? 'text-emerald-800' : (isAnswered ? 'text-rose-800' : 'text-slate-600')} truncate">
+                  Question ${idx + 1}: ${q.category}
                 </span>
-                <span class="text-xs font-semibold px-2 py-0.5 rounded ${badgeClass}">
+                <span class="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded ${badgeClass} shrink-0">
                   ${statusBadge}
                 </span>
               </div>
-              <p class="font-bold text-slate-900 text-sm mb-2">${q.question}</p>
+              <p class="font-bold text-slate-900 text-xs sm:text-sm mb-2 leading-snug">${q.question}</p>
               
-              <div class="space-y-1 text-xs mb-3">
+              <div class="space-y-1 text-xs mb-2.5">
                 <p class="text-emerald-900 font-semibold">
                   <span class="font-bold">Correct Answer:</span> ${q.options[q.correctIndex]}
                 </p>
@@ -1359,8 +1344,8 @@
                 ` : ''}
               </div>
 
-              <p class="text-xs text-slate-600 bg-white/80 p-2.5 rounded-lg border border-slate-200 leading-relaxed">
-                <strong>Legal & Safety Note:</strong> ${q.explanation}
+              <p class="text-xs text-slate-600 bg-white/80 p-2 rounded-lg border border-slate-200 leading-relaxed">
+                <strong>Legal Note:</strong> ${q.explanation} (${q.statute})
               </p>
             </div>
           </div>
@@ -1384,7 +1369,6 @@
           isComplete: isComplete,
           timeSecs: timeSecs
         });
-        // Keep last 8 attempts
         localStorage.setItem('srpa_fsc_attempts', JSON.stringify(history.slice(0, 8)));
       } catch (err) {
         console.warn('Local storage error:', err);
@@ -1408,16 +1392,16 @@
           const secs = att.timeSecs % 60;
           const statusBadgeColor = isPass ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
           const answeredDisplay = att.answered && att.answered < att.total 
-            ? `${att.score}% (${att.correct}/${att.answered} answered)` 
+            ? `${att.score}% (${att.correct}/${att.answered})` 
             : `${att.score}% (${att.correct}/${att.total})`;
 
           item.className = 'flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-200';
           item.innerHTML = `
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 min-w-0 truncate">
               <span class="font-mono text-slate-400">#${history.length - idx}</span>
-              <span class="font-medium text-slate-700">${att.date} at ${att.time}</span>
+              <span class="font-medium text-slate-700 truncate">${att.date} ${att.time}</span>
             </div>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
               <span class="font-mono text-slate-500">${mins}m ${secs}s</span>
               <span class="font-bold font-mono px-2 py-0.5 rounded text-xs ${statusBadgeColor}">
                 ${answeredDisplay}
@@ -1443,7 +1427,6 @@
     }
 
     function scheduleTelemetrySync() {
-      // Debounce sending to avoid rapid network calls
       if (telemetryDebounceTimer) clearTimeout(telemetryDebounceTimer);
       telemetryDebounceTimer = setTimeout(() => {
         const answeredCount = userAnswers.filter(a => a !== null).length;
@@ -1467,7 +1450,6 @@
     }
 
     function setupPageUnloadSync() {
-      // Send abandonment telemetry if user leaves before finishing
       window.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'hidden') {
           const answeredCount = userAnswers.filter(a => a !== null).length;
@@ -1486,7 +1468,7 @@
               isCompleted: false,
               status: `ABANDONED (${answeredCount}/${total} answered)`,
               totalSecondsElapsed: Math.floor((Date.now() - quizStartTime) / 1000)
-            }, true); // keepalive = true
+            }, true);
           }
         }
       });
@@ -1497,7 +1479,6 @@
         return;
       }
 
-      // Collect missed questions from answered set
       const missed = [];
       activeQuestions.forEach((q, idx) => {
         if (userAnswers[idx] !== null && userAnswers[idx] !== q.correctIndex) {

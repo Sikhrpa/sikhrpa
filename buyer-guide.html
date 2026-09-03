@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>First-Time California Gun Buyer's Guide | SikhRPA 501(c)(3)</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="First-Time California Gun Buyer's Guide | SikhRPA 501(c)(3)" />
+  <meta name="description" content="Step-by-step roadmap for first-time firearm buyers in California. Master REAL ID requirements, handgun proof of residency, FSC testing, and the 10-day DROS waiting period without getting turned away." />
+  <meta name="keywords" content="California gun buyer guide, first time gun buyer CA, CA proof of residency handgun, Real ID federal limits apply gun CA, DROS 10 day wait, FSC test California, SikhRPA safety" />
+  <meta name="author" content="Sikh Rifle and Pistol Association" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sikhrpa.org/buyer-guide" />
+  <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
+  <meta property="og:title" content="First-Time California Gun Buyer's Guide | SikhRPA" />
+  <meta property="og:description" content="Don't get turned away at the gun counter. Avoid common paperwork pitfalls, verify accepted residency documents, and prepare for the 10-day DROS process." />
+  <meta property="og:image" content="srpa-logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    @media print {
+      header, footer, .no-print, button {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+      .print-section {
+        page-break-inside: avoid;
+        border: 1px solid #cbd5e1 !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
+
+  <!-- Accessibility Skip Navigation Link -->
+  <a 
+    href="#main-content" 
+    class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-600 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:outline-none"
+  >
+    Skip to main content
+  </a>
+
+  <!-- Top Navigation Header -->
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Return Link -->
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
+          <span class="hidden xs:inline">Home</span>
+        </a>
+        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <img 
+            src="srpa-logo.png" 
+            alt="SikhRPA Logo" 
+            class="h-8 sm:h-9 w-auto object-contain shrink-0"
+            onerror="this.style.display='none'"
+          />
+          <a href="./" class="font-bold text-sm sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors truncate">
+            <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+        <a href="./#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors">About Us</a>
+        <a href="./#safety" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Safety Rules</a>
+        <span class="inline-flex items-center gap-1.5 text-blue-950 font-bold bg-blue-50 px-3 py-1 rounded-full border border-blue-200 text-xs shadow-sm">
+          <i data-lucide="compass" class="w-3.5 h-3.5 text-amber-600"></i>
+          Buyer's Guide
+        </span>
+        <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-950 font-bold text-xs transition-colors">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
+          FSC Quiz
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <a
+          href="donate"
+          class="inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors items-center gap-1.5 shadow-sm touch-target"
+          title="Tax-Deductible 501(c)(3) Giving"
+        >
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
+          <span>Donate</span>
+        </a>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button
+          type="button"
+          id="mobileMenuBtn"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors touch-target flex items-center justify-center"
+          aria-label="Toggle Navigation Menu"
+          aria-expanded="false"
+        >
+          <i id="menuIcon" data-lucide="menu" class="w-5 h-5"></i>
+          <i id="closeIcon" data-lucide="x" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div 
+      id="mobileMenuDrawer" 
+      class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+    >
+      <a href="./" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        Return to Homepage
+      </a>
+      <a href="fsc-quiz" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-bold text-blue-900 bg-blue-50 border border-blue-200">
+        <span class="flex items-center gap-2">
+          <i data-lucide="award" class="w-4 h-4 text-amber-600"></i>
+          CA FSC Practice Quiz
+        </span>
+        <span class="text-[10px] bg-amber-600 text-white px-2 py-0.5 rounded-full uppercase">Free</span>
+      </a>
+      <a href="./#safety" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        4 Universal Safety Rules
+      </a>
+      <a href="donate" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-bold text-amber-950 bg-amber-50 border border-amber-200">
+        <span class="flex items-center gap-2">
+          <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500"></i>
+          Support Our Mission
+        </span>
+        <span class="text-[10px] bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded-full uppercase">501(c)(3)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Landmark -->
+  <main id="main-content" class="flex-grow">
+    
+    <!-- Hero Banner with Cultural & Educational Heritage -->
+    <section class="py-10 sm:py-16 bg-white border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-950 border border-blue-200 mb-4 shadow-sm">
+              <i data-lucide="shield-check" class="w-4 h-4 text-amber-600 shrink-0"></i>
+              <span>California DOJ Statutory Compliance • First-Time Owner Roadmap</span>
+            </div>
+            
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+              California First-Time Firearm Buyer's Guide
+            </h1>
+            
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mb-6">
+              Over <strong>30% of first-time firearm buyers in California get turned away</strong> on their initial visit due to state paperwork technicalities. This guide outlines the exact documents, state tests, and waiting period timelines you need to legally take delivery without delay.
+            </p>
+
+            <!-- Quick Stat Badges -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-3 max-w-lg mx-auto lg:mx-0 mb-6 text-center">
+              <div class="p-2.5 sm:p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                <span class="block font-mono font-extrabold text-base sm:text-xl text-blue-900">21+</span>
+                <span class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wider">Min. Age</span>
+              </div>
+              <div class="p-2.5 sm:p-3 bg-amber-50 border border-amber-200 rounded-xl">
+                <span class="block font-mono font-extrabold text-base sm:text-xl text-amber-800">10 Days</span>
+                <span class="text-[10px] sm:text-xs font-semibold text-amber-900 uppercase tracking-wider">DROS Wait</span>
+              </div>
+              <div class="p-2.5 sm:p-3 bg-emerald-50 border border-emerald-200 rounded-xl">
+                <span class="block font-mono font-extrabold text-base sm:text-xl text-emerald-800">75%</span>
+                <span class="text-[10px] sm:text-xs font-semibold text-emerald-900 uppercase tracking-wider">FSC Pass</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 no-print">
+              <a 
+                href="#stepper-guide" 
+                class="px-5 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-colors touch-target"
+              >
+                <span>Explore 5-Step Process</span>
+                <i data-lucide="arrow-down" class="w-4 h-4 text-amber-400"></i>
+              </a>
+              <a 
+                href="#checklist-section" 
+                class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-colors touch-target"
+              >
+                <i data-lucide="check-square" class="w-4 h-4"></i>
+                <span>Counter Checklist</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sikh Community Cultural & Educational Spotlight Card -->
+          <div class="lg:col-span-5">
+            <div class="relative bg-white rounded-2xl border-2 border-slate-200 p-3 sm:p-4 shadow-xl overflow-hidden">
+              <div class="relative rounded-xl overflow-hidden h-64 sm:h-72 bg-slate-100 mb-3.5 border border-slate-200">
+                <!-- Primary Image: Sikh Community Member with Dastar / Turban representing safety & dignity -->
+                <img 
+                  src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" 
+                  alt="Sikh gentleman in traditional turban representing responsible community marksmanship and safety education"
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                  onerror="this.src='https://placehold.co/800x600/0f172a/d97706?text=SikhRPA+Safety+Education'"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-slate-950 px-2 py-0.5 rounded-full inline-block mb-1">
+                    Heritage & Responsibility
+                  </span>
+                  <p class="text-xs font-semibold text-slate-100 leading-snug">
+                    "Miri & Piri: Upholding the sacred duty of self-defense, community protection, and unwavering legal discipline."
+                  </p>
+                </div>
+              </div>
+
+              <!-- Cultural & Legal Bridge Banner -->
+              <div class="p-3 bg-blue-50/70 border border-blue-200 rounded-xl text-xs text-slate-700">
+                <div class="flex items-start gap-2.5">
+                  <div class="p-1.5 bg-blue-900 text-amber-400 rounded-lg shrink-0 mt-0.5">
+                    <i data-lucide="book-open" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-slate-900 mb-0.5 text-xs">A Tradition of Disciplined Defense</h4>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                      Sikh heritage carries a deep historical respect for marksmanship (*Shastar Vidya*) founded on righteousness (*Dharma*). In modern California, that tradition begins with total mastery of firearm safety and compliance with state law.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5-Step Visual Stepper Roadmap -->
+    <section id="stepper-guide" class="py-12 sm:py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Statutory Progression
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 tracking-tight">
+          The 5 Steps of Purchasing in California
+        </h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+          Follow these sequential requirements before you head to your local California licensed firearms dealer (FFL).
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        
+        <!-- STEP 1: Primary Identity & The REAL ID "Federal Limits Apply" Trap -->
+        <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 relative overflow-hidden print-section">
+          <div class="flex flex-col sm:flex-row items-start justify-between gap-4 mb-4 pb-4 border-b border-slate-200">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-blue-900 text-amber-400 font-extrabold font-mono flex items-center justify-center text-lg shadow-sm shrink-0">
+                1
+              </span>
+              <div>
+                <span class="text-[10px] font-bold text-amber-600 uppercase tracking-widest block">Step 1: Primary Identity</span>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900">California Driver's License & The "Federal Limits" Trap</h3>
+              </div>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full border border-slate-200 shrink-0">
+              CA Penal Code § 26845
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
+            Under California law, you must present a valid, unexpired government photo identification issued by the California Department of Motor Vehicles (DMV).
+          </p>
+
+          <!-- Warning Box: Federal Limits Apply -->
+          <div class="p-4 rounded-xl bg-amber-50 border-2 border-amber-300 mb-5 text-xs sm:text-sm">
+            <div class="flex items-start gap-3">
+              <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-700 shrink-0 mt-0.5"></i>
+              <div>
+                <h4 class="font-bold text-amber-950 mb-1 text-sm">Critical Trap: Does your CA Driver's License say "FEDERAL LIMITS APPLY"?</h4>
+                <p class="text-slate-700 leading-relaxed mb-2">
+                  Look at the top right corner of your California Driver's License or ID card. If it displays <strong>"FEDERAL LIMITS APPLY"</strong> (non-REAL ID), the California DOJ will <strong>immediately reject your application</strong> unless you also provide certified secondary proof of legal presence.
+                </p>
+                <div class="bg-white p-3 rounded-lg border border-amber-200">
+                  <p class="font-bold text-slate-900 text-xs mb-1">If your license says "Federal Limits Apply", you MUST bring ONE of the following:</p>
+                  <ul class="list-disc list-inside space-y-1 text-slate-600 text-xs">
+                    <li>Valid, unexpired <strong>United States Passport</strong> or U.S. Passport Card</li>
+                    <li>Original or certified copy of a <strong>U.S. Birth Certificate</strong></li>
+                    <li>Valid, unexpired <strong>Permanent Resident Card (Green Card)</strong></li>
+                    <li>Certificate of Naturalization or U.S. Citizenship</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bilingual Punjabi Note -->
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs text-blue-950 font-medium">
+            <span class="font-bold text-blue-900">ਪੰਜਾਬੀ ਨੋਟ:</span> ਜੇ ਤੁਹਾਡੇ ਕੈਲੀਫੋਰਨੀਆ ਡਰਾਈਵਿੰਗ ਲਾਇਸੈਂਸ 'ਤੇ "Federal Limits Apply" ਲਿਖਿਆ ਹੈ, ਤਾਂ ਗੰਨ ਡੀਲਰ ਤੁਹਾਨੂੰ ਉਦੋਂ ਤੱਕ ਹਥਿਆਰ ਨਹੀਂ ਦੇ ਸਕਦਾ ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਆਪਣਾ ਅਮਰੀਕੀ ਪਾਸਪੋਰਟ ਜਾਂ ਗ੍ਰੀਨ ਕਾਰਡ ਨਾਲ ਨਾ ਲੈ ਕੇ ਜਾਓ।
+          </div>
+        </div>
+
+        <!-- STEP 2: Proof of California Residency (Handgun Specific Mandate) -->
+        <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 relative overflow-hidden print-section">
+          <div class="flex flex-col sm:flex-row items-start justify-between gap-4 mb-4 pb-4 border-b border-slate-200">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-blue-900 text-amber-400 font-extrabold font-mono flex items-center justify-center text-lg shadow-sm shrink-0">
+                2
+              </span>
+              <div>
+                <span class="text-[10px] font-bold text-amber-600 uppercase tracking-widest block">Step 2: Handgun Mandatory Proof</span>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900">Proof of California Residency (Handguns Only)</h3>
+              </div>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full border border-slate-200 shrink-0">
+              CA Penal Code § 26845 & 11 CCR § 4045.1
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
+            If purchasing a <strong>handgun</strong>, California state law strictly mandates that the buyer provide a <strong>second document</strong> verifying their legal California residence. The name and residential address on this document <strong>must match the address on your driver's license exactly</strong>.
+          </p>
+
+          <!-- Accepted vs Rejected Table -->
+          <div class="grid md:grid-cols-2 gap-4 mb-4 text-xs sm:text-sm">
+            
+            <!-- Accepted Documents Card -->
+            <div class="bg-emerald-50/60 border-2 border-emerald-300 rounded-xl p-4">
+              <h4 class="font-bold text-emerald-950 flex items-center gap-2 mb-2.5 text-sm">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                ACCEPTED Documents (Must Be Current)
+              </h4>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-700 font-bold">✓</span>
+                  <span><strong>Current DMV Vehicle Registration:</strong> The most common, fool-proof document. Must bear your current address.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-700 font-bold">✓</span>
+                  <span><strong>Municipal Utility Bill:</strong> From a government municipality (City Water, Trash, SMUD, LADWP, PG&E). Must be within the last 90 days.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-700 font-bold">✓</span>
+                  <span><strong>Residential Lease Agreement:</strong> Formally signed and dated by both tenant and landlord/property manager.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-700 font-bold">✓</span>
+                  <span><strong>Government-Issued Property Deed:</strong> Official property tax bill or county deed.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Rejected Documents Card -->
+            <div class="bg-rose-50/60 border-2 border-rose-300 rounded-xl p-4">
+              <h4 class="font-bold text-rose-950 flex items-center gap-2 mb-2.5 text-sm">
+                <i data-lucide="x-circle" class="w-4 h-4 text-rose-600"></i>
+                STRICTLY REJECTED by CA DOJ
+              </h4>
+              <ul class="space-y-2 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-600 font-bold">✗</span>
+                  <span><strong>Cell Phone Bills:</strong> (Verizon, T-Mobile, AT&T) — strictly prohibited by statute.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-600 font-bold">✗</span>
+                  <span><strong>Credit Card or Bank Statements:</strong> Even if stamped by the bank.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-600 font-bold">✗</span>
+                  <span><strong>Cable TV / Home Internet Bills:</strong> (Comcast, Spectrum) are private utility bills and generally rejected.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-600 font-bold">✗</span>
+                  <span><strong>Pay Stubs / W-2s:</strong> Not recognized as residency documents under CA CCR § 4045.1.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-600">
+            <strong>Address Mismatch Note:</strong> If you recently moved and your driver's license displays your old address, you must update your address in the DMV system and bring a current DMV printout or valid vehicle registration showing your updated home.
+          </div>
+        </div>
+
+        <!-- STEP 3: The Firearm Safety Certificate (FSC) -->
+        <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 relative overflow-hidden print-section">
+          <div class="flex flex-col sm:flex-row items-start justify-between gap-4 mb-4 pb-4 border-b border-slate-200">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-blue-900 text-amber-400 font-extrabold font-mono flex items-center justify-center text-lg shadow-sm shrink-0">
+                3
+              </span>
+              <div>
+                <span class="text-[10px] font-bold text-amber-600 uppercase tracking-widest block">Step 3: State Safety Exam</span>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900">Acquire a Firearm Safety Certificate (FSC)</h3>
+              </div>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full border border-slate-200 shrink-0">
+              CA Penal Code § 31615
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
+            Unless you hold a qualifying California statutory exemption (such as an active peace officer, valid CCW permit holder, or active military with ID), you must possess a valid <strong>California Firearm Safety Certificate (FSC)</strong> before purchasing any firearm.
+          </p>
+
+          <div class="grid sm:grid-cols-3 gap-3 mb-5 text-center">
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+              <span class="block font-bold text-blue-900 text-sm sm:text-base">$25 State Fee</span>
+              <span class="text-xs text-slate-500">Paid directly to dealer</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+              <span class="block font-bold text-blue-900 text-sm sm:text-base">30 Questions</span>
+              <span class="text-xs text-slate-500">Multiple choice & True/False</span>
+            </div>
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+              <span class="block font-bold text-blue-900 text-sm sm:text-base">Valid 5 Years</span>
+              <span class="text-xs text-slate-500">Covers all future purchases</span>
+            </div>
+          </div>
+
+          <!-- Free SikhRPA Practice Banner -->
+          <div class="bg-blue-950 p-4 sm:p-5 rounded-xl text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <h4 class="font-bold text-sm sm:text-base text-amber-400">Master the 30 Questions Ahead of Time</h4>
+              <p class="text-xs text-slate-300 mt-0.5 max-w-md">
+                Don't risk failing at the counter. Our free, interactive practice test replicates the official CA DOJ testing format with real statutory explanations.
+              </p>
+            </div>
+            <a 
+              href="fsc-quiz" 
+              class="px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs transition-colors shrink-0 flex items-center gap-2 shadow-sm"
+            >
+              <i data-lucide="award" class="w-4 h-4"></i>
+              <span>Take Free FSC Practice Quiz</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- STEP 4: The DROS Background Check & The 10-Day Waiting Period -->
+        <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 relative overflow-hidden print-section">
+          <div class="flex flex-col sm:flex-row items-start justify-between gap-4 mb-4 pb-4 border-b border-slate-200">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-blue-900 text-amber-400 font-extrabold font-mono flex items-center justify-center text-lg shadow-sm shrink-0">
+                4
+              </span>
+              <div>
+                <span class="text-[10px] font-bold text-amber-600 uppercase tracking-widest block">Step 4: Background Screening</span>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900">DROS Application & The 10-Day Waiting Period</h3>
+              </div>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full border border-slate-200 shrink-0">
+              CA Penal Code § 26815 & § 28220
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
+            Once you select your firearm and verify your documents, the dealer will electronically submit your <strong>Dealer's Record of Sale (DROS)</strong> application to the California Department of Justice Bureau of Firearms.
+          </p>
+
+          <div class="space-y-3 mb-5 text-xs sm:text-sm">
+            <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+              <i data-lucide="clock" class="w-5 h-5 text-blue-900 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900 block text-xs sm:text-sm">Exact 240-Hour Mandatory Wait (10 Full Days):</strong>
+                <span class="text-slate-600 text-xs leading-relaxed">
+                  California law mandates a mandatory waiting period of <strong>ten 24-hour periods down to the exact second</strong> from the timestamp on your DROS paperwork. If your DROS is submitted on June 1st at 2:15 PM, the dealer cannot legally release the firearm to you until June 11th at 2:15:01 PM.
+                </span>
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+              <i data-lucide="calendar-x" class="w-5 h-5 text-rose-600 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900 block text-xs sm:text-sm">The 30-Day Expiration Window:</strong>
+                <span class="text-slate-600 text-xs leading-relaxed">
+                  You must pick up your firearm <strong>within 30 calendar days</strong> of submitting the DROS. If you fail to pick it up by Day 30, the DROS cancels by operation of law, and you must restart the entire background check and waiting period process from scratch.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DROS Fee Note -->
+          <p class="text-xs text-slate-500 italic">
+            *Note: The California state DROS background check fee is standard across the state (approximately $37.19), collected by the dealer on Day 1.
+          </p>
+        </div>
+
+        <!-- STEP 5: Delivery, Safe Storage Device, & Safe Handling Demonstration -->
+        <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 relative overflow-hidden print-section">
+          <div class="flex flex-col sm:flex-row items-start justify-between gap-4 mb-4 pb-4 border-b border-slate-200">
+            <div class="flex items-center gap-3.5">
+              <span class="w-10 h-10 rounded-xl bg-blue-900 text-amber-400 font-extrabold font-mono flex items-center justify-center text-lg shadow-sm shrink-0">
+                5
+              </span>
+              <div>
+                <span class="text-[10px] font-bold text-amber-600 uppercase tracking-widest block">Step 5: Delivery & Safe Transport</span>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900">Safe Handling Demonstration & Transport Home</h3>
+              </div>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full border border-slate-200 shrink-0">
+              CA Penal Code § 26850 & § 25610
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
+            When your 10-day waiting period has elapsed and your background check is approved, you will return to the shop for final delivery. Two final requirements must be completed:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-5 text-xs sm:text-sm">
+            
+            <!-- Requirement A: Safe Handling Demonstration -->
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+              <h4 class="font-bold text-blue-950 flex items-center gap-2 mb-2 text-sm">
+                <i data-lucide="hand" class="w-4 h-4 text-amber-600"></i>
+                The Safe Handling Demonstration (SHD)
+              </h4>
+              <p class="text-slate-600 leading-relaxed mb-2 text-xs">
+                In the presence of the certified DOJ instructor, you must personally perform a physical safe handling demonstration using inert dummy rounds:
+              </p>
+              <ul class="list-disc list-inside space-y-1 text-slate-700 text-xs">
+                <li>Check that the firearm is clear and unloaded</li>
+                <li>Lock the action open and visually inspect the chamber</li>
+                <li>Load a dummy round into the magazine/cylinder</li>
+                <li>Chamber and safely eject the dummy round</li>
+                <li>Apply the firearm safety device (cable lock)</li>
+              </ul>
+            </div>
+
+            <!-- Requirement B: Firearm Safety Device (FSD) -->
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+              <h4 class="font-bold text-blue-950 flex items-center gap-2 mb-2 text-sm">
+                <i data-lucide="lock" class="w-4 h-4 text-amber-600"></i>
+                Firearm Safety Device (FSD)
+              </h4>
+              <p class="text-slate-600 leading-relaxed mb-2 text-xs">
+                California mandates that every firearm leaving a dealer must be accompanied by an approved California DOJ-certified lock or safe affidavit (PC § 23635):
+              </p>
+              <ul class="list-disc list-inside space-y-1 text-slate-700 text-xs">
+                <li>Most new firearms come from the manufacturer with a certified cable lock inside the box.</li>
+                <li>If the lock is absent, you must purchase a DOJ-certified lock (~$10) or sign an approved Safe Affidavit verifying you own an approved gun safe at home.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Transporting Home Warning -->
+          <div class="p-4 bg-blue-900 text-white rounded-xl text-xs sm:text-sm">
+            <h4 class="font-bold text-amber-400 mb-1 flex items-center gap-2">
+              <i data-lucide="car" class="w-4 h-4"></i> Legal Transport to Your Home (PC § 25610)
+            </h4>
+            <p class="text-slate-200 leading-relaxed">
+              When leaving the gun store, your firearm must be <strong>completely unloaded</strong> and secured inside the <strong>trunk of your vehicle</strong> or locked inside a <strong>fully locked container</strong> (other than the glove compartment or center console). Ammunition should be kept separate.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Interactive "Counter-Readiness" Checklist Widget -->
+    <section id="checklist-section" class="py-12 bg-white border-y border-slate-200 print-section">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-950 border border-amber-300 mb-3">
+            <i data-lucide="check-square" class="w-3.5 h-3.5 text-amber-600"></i>
+            <span>Interactive Self-Audit Tool</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            Your Gun Counter Readiness Checklist
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1.5 leading-relaxed">
+            Check off your paperwork before you leave home to ensure you are 100% compliant with California Department of Justice requirements.
+          </p>
+        </div>
+
+        <!-- Checklist Card Container -->
+        <div class="bg-slate-50 rounded-2xl border-2 border-slate-200 p-6 sm:p-8 shadow-sm">
+          
+          <!-- Live Status Bar -->
+          <div class="mb-6 p-4 rounded-xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-inner">
+            <div class="flex items-center gap-3">
+              <div id="readinessScoreBadge" class="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 font-extrabold font-mono flex items-center justify-center text-base shrink-0">
+                0/5
+              </div>
+              <div>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Compliance Status:</span>
+                <h4 id="readinessStatusLabel" class="font-bold text-sm text-slate-800">
+                  Documents Needed (0% Ready)
+                </h4>
+              </div>
+            </div>
+            
+            <button 
+              type="button" 
+              onclick="window.print()" 
+              class="w-full sm:w-auto px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors no-print"
+              title="Print checklist for your records"
+            >
+              <i data-lucide="printer" class="w-3.5 h-3.5 text-blue-900"></i>
+              <span>Print Checklist</span>
+            </button>
+          </div>
+
+          <!-- The 5 Checkbox Items -->
+          <div class="space-y-3" id="checklistContainer">
+            
+            <!-- Item 1 -->
+            <label class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 hover:border-amber-400 transition-colors cursor-pointer group select-none">
+              <input 
+                type="checkbox" 
+                class="checklist-item mt-1 w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300"
+                onchange="updateChecklistProgress()"
+              />
+              <div class="flex-1 text-xs sm:text-sm">
+                <span class="font-bold text-slate-900 block group-hover:text-blue-950">
+                  1. California Driver's License or ID Card
+                </span>
+                <span class="text-slate-600 text-xs">
+                  Valid and unexpired. If it says <em>"Federal Limits Apply"</em>, I have my unexpired U.S. Passport, original Birth Certificate, or Green Card ready.
+                </span>
+              </div>
+            </label>
+
+            <!-- Item 2 -->
+            <label class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 hover:border-amber-400 transition-colors cursor-pointer group select-none">
+              <input 
+                type="checkbox" 
+                class="checklist-item mt-1 w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300"
+                onchange="updateChecklistProgress()"
+              />
+              <div class="flex-1 text-xs sm:text-sm">
+                <span class="font-bold text-slate-900 block group-hover:text-blue-950">
+                  2. Handgun Proof of Residency (Matches License Address)
+                </span>
+                <span class="text-slate-600 text-xs">
+                  Current DMV vehicle registration, signed residential lease, or municipal city utility bill (water/trash/PGE). No cell phone bills.
+                </span>
+              </div>
+            </label>
+
+            <!-- Item 3 -->
+            <label class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 hover:border-amber-400 transition-colors cursor-pointer group select-none">
+              <input 
+                type="checkbox" 
+                class="checklist-item mt-1 w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300"
+                onchange="updateChecklistProgress()"
+              />
+              <div class="flex-1 text-xs sm:text-sm">
+                <span class="font-bold text-slate-900 block group-hover:text-blue-950">
+                  3. Firearm Safety Certificate (FSC)
+                </span>
+                <span class="text-slate-600 text-xs">
+                  I either hold an active FSC card, a valid state exemption (CCW / Peace Officer), or I am prepared to take the 30-question test at the gun shop ($25).
+                </span>
+              </div>
+            </label>
+
+            <!-- Item 4 -->
+            <label class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 hover:border-amber-400 transition-colors cursor-pointer group select-none">
+              <input 
+                type="checkbox" 
+                class="checklist-item mt-1 w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300"
+                onchange="updateChecklistProgress()"
+              />
+              <div class="flex-1 text-xs sm:text-sm">
+                <span class="font-bold text-slate-900 block group-hover:text-blue-950">
+                  4. DROS & State Fee Payment Method
+                </span>
+                <span class="text-slate-600 text-xs">
+                  Prepared to pay the state DROS screening fee (~$37.19) plus the cost of the firearm to start the 10-day timer.
+                </span>
+              </div>
+            </label>
+
+            <!-- Item 5 -->
+            <label class="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-slate-200 hover:border-amber-400 transition-colors cursor-pointer group select-none">
+              <input 
+                type="checkbox" 
+                class="checklist-item mt-1 w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300"
+                onchange="updateChecklistProgress()"
+              />
+              <div class="flex-1 text-xs sm:text-sm">
+                <span class="font-bold text-slate-900 block group-hover:text-blue-950">
+                  5. Locked Container Ready in Vehicle Trunk
+                </span>
+                <span class="text-slate-600 text-xs">
+                  A locked transport case or clear vehicle trunk ready to transport the unloaded firearm home after the 10-day wait.
+                </span>
+              </div>
+            </label>
+
+          </div>
+
+          <!-- Dynamic Success Banner (Revealed when 5/5 completed) -->
+          <div id="checklistCompleteBanner" class="hidden mt-6 p-4 rounded-xl bg-emerald-100 border-2 border-emerald-400 text-emerald-950 text-xs sm:text-sm flex items-center gap-3">
+            <div class="p-2 bg-emerald-600 text-white rounded-lg shrink-0">
+              <i data-lucide="check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-emerald-900">100% Counter-Ready!</h4>
+              <p class="text-emerald-800 leading-snug">
+                You possess all statutory documentation required by California law. You are ready to visit your licensed firearms dealer and initiate your DROS application.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions Accordion -->
+    <section class="py-12 sm:py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Clarity & Compliance
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
+          First-Time Buyer FAQs
+        </h2>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm">
+        
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> Can non-U.S. citizens purchase a firearm in California?
+          </h3>
+          <p class="text-slate-700 leading-relaxed pl-6">
+            Yes. Lawful Permanent Residents (Green Card holders) can legally purchase firearms in California by presenting their valid CA driver's license, proof of residency, and their unexpired Permanent Resident Card (Form I-551). Non-immigrant visa holders generally face strict federal prohibitions unless qualifying under narrow exceptions (such as possessing a valid California hunting license).
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> Can I purchase ammunition on the same day as my firearm?
+          </h3>
+          <p class="text-slate-700 leading-relaxed pl-6">
+            Under California law, you can purchase ammunition through the licensed dealer, but it requires an electronic DOJ background check ($1 standard check if you have an active firearm record in the state system, or $19 basic check). Many buyers purchase target ammunition on the day they pick up their firearm at the conclusion of the 10-day waiting period.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> What happens if I make a typo on the 4473 / DROS form?
+          </h3>
+          <p class="text-slate-700 leading-relaxed pl-6">
+            Dealers are required by law to have you carefully review every line of the DROS summary before submitting. If a name or address is misspelled, it will cause a DROS rejection or delay from the state DOJ. Take your time at the counter to verify that your street name, apartment number, and spelling match your documents letter-for-letter.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10 sm:py-12 no-print">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+      
+      <img 
+        src="srpa-logo.png" 
+        alt="SikhRPA Logo" 
+        class="h-9 sm:h-10 w-auto object-contain mb-4 opacity-90"
+        onerror="this.style.display='none'"
+      />
+      
+      <p class="text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto mb-3 leading-relaxed font-medium">
+        Sikh Rifle and Pistol Association is a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code.
+      </p>
+
+      <p class="text-xs sm:text-sm text-blue-900 font-bold mb-6 tracking-wide bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200">
+        ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-semibold text-slate-600 mb-6">
+        <a href="./" class="hover:text-blue-900 p-1">Homepage</a>
+        <span aria-hidden="true">•</span>
+        <a href="fsc-quiz" class="hover:text-blue-900 p-1">CA FSC Practice Exam</a>
+        <span aria-hidden="true">•</span>
+        <a href="donate" class="hover:text-blue-900 p-1">501(c)(3) Donate</a>
+        <span aria-hidden="true">•</span>
+        <a href="https://www.instagram.com/sikhrpa/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 p-1">Instagram @sikhrpa</a>
+        <span aria-hidden="true">•</span>
+        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900 p-1">president@sikhrpa.org</a>
+      </div>
+
+      <p class="text-xs text-slate-500 leading-relaxed">
+        Federal EIN: 42-2595402 • 1075 Mohawk St, South Lake Tahoe, CA 96150<br>
+        © <span id="current-year"></span> Sikh Rifle and Pistol Association. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    document.getElementById('current-year').innerText = new Date().getFullYear();
+    lucide.createIcons();
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      drawer.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    // Counter Readiness Checklist Evaluator
+    function updateChecklistProgress() {
+      const items = document.querySelectorAll('.checklist-item');
+      const checkedCount = Array.from(items).filter(i => i.checked).length;
+      const total = items.length;
+      const badge = document.getElementById('readinessScoreBadge');
+      const statusLabel = document.getElementById('readinessStatusLabel');
+      const banner = document.getElementById('checklistCompleteBanner');
+
+      badge.innerText = `${checkedCount}/${total}`;
+
+      if (checkedCount === 0) {
+        badge.className = 'w-10 h-10 rounded-xl bg-slate-100 text-slate-600 font-extrabold font-mono flex items-center justify-center text-base shrink-0';
+        statusLabel.innerText = 'Documents Needed (0% Ready)';
+        banner.classList.add('hidden');
+      } else if (checkedCount < total) {
+        badge.className = 'w-10 h-10 rounded-xl bg-amber-100 text-amber-900 font-extrabold font-mono flex items-center justify-center text-base shrink-0';
+        const pct = Math.round((checkedCount / total) * 100);
+        statusLabel.innerText = `In Progress (${pct}% Ready — ${total - checkedCount} item${total - checkedCount > 1 ? 's' : ''} remaining)`;
+        banner.classList.add('hidden');
+      } else {
+        badge.className = 'w-10 h-10 rounded-xl bg-emerald-600 text-white font-extrabold font-mono flex items-center justify-center text-base shrink-0 shadow-md';
+        statusLabel.innerText = '100% Counter-Ready! Safe to Visit Dealer';
+        banner.classList.remove('hidden');
+        lucide.createIcons();
+      }
+    }
+  </script>
+</body>
+</html>

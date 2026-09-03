@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Donate & Support Community Safety Education | SikhRPA 501(c)(3)</title>
   
   <!-- Primary Meta Tags -->
@@ -82,6 +82,7 @@
     body {
       background-color: #ffffff !important;
       color: #0f172a !important;
+      -webkit-tap-highlight-color: transparent;
     }
     a:focus-visible, button:focus-visible, input:focus-visible {
       outline: 3px solid #d97706;
@@ -93,6 +94,11 @@
     .custom-scrollbar::-webkit-scrollbar-thumb {
       background: #cbd5e1;
       border-radius: 4px;
+    }
+    /* Touch-friendly active states */
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
     }
   </style>
 </head>
@@ -106,24 +112,25 @@
     Skip to main content
   </a>
 
+  <!-- Header Navigation -->
   <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand & Return Home Link -->
-      <div class="flex items-center gap-3">
-        <a href="./" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100" title="Return to SikhRPA Homepage">
-          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600"></i>
-          <span>Home</span>
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
+          <span class="hidden xs:inline">Home</span>
         </a>
-        <span class="text-slate-300" aria-hidden="true">|</span>
-        <div class="flex items-center gap-2.5">
+        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2 min-w-0">
           <img 
             src="srpa-logo.png" 
             alt="SikhRPA Logo" 
-            class="h-9 w-auto object-contain"
+            class="h-8 sm:h-9 w-auto object-contain shrink-0"
             onerror="this.style.display='none'"
           />
-          <a href="./" class="font-bold text-base sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors">
+          <a href="./" class="font-bold text-sm sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors truncate">
             <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
           </a>
         </div>
@@ -144,14 +151,14 @@
         </span>
       </nav>
 
-      <!-- Action & Contact Buttons -->
-      <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Action & Mobile Hamburger Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <!-- Instagram Link -->
         <a
           href="https://www.instagram.com/sikhrpa/"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-2 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-pink-50 text-pink-700 hover:bg-pink-100 border border-pink-200 transition-all flex items-center gap-1.5 shadow-sm group"
+          class="p-2 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-pink-50 text-pink-700 hover:bg-pink-100 border border-pink-200 transition-all flex items-center gap-1.5 shadow-sm group touch-target justify-center"
           title="Follow @sikhrpa on Instagram"
           aria-label="Follow SikhRPA on Instagram"
         >
@@ -166,11 +173,11 @@
         <!-- Contact Button -->
         <a
           href="mailto:president@sikhrpa.org?subject=Donation%20Inquiry%20/%20Sponsorship"
-          class="px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-blue-900 text-white hover:bg-blue-800 focus:bg-blue-800 transition-all flex items-center gap-2 shadow-sm"
+          class="px-3 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-blue-900 text-white hover:bg-blue-800 focus:bg-blue-800 transition-all flex items-center gap-1.5 shadow-sm touch-target justify-center"
           aria-label="Contact SikhRPA via Email"
         >
           <i data-lucide="mail" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
-          <span class="hidden sm:inline">Contact</span>
+          <span class="hidden xs:inline">Contact</span>
         </a>
 
         <!-- Mobile Navigation Hamburger -->
@@ -178,7 +185,7 @@
           type="button"
           id="mobileMenuBtn"
           onclick="toggleMobileMenu()"
-          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors"
+          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors touch-target flex items-center justify-center"
           aria-label="Toggle Navigation Menu"
           aria-expanded="false"
           aria-controls="mobileMenuDrawer"
@@ -188,95 +195,105 @@
         </button>
       </div>
     </div>
+
     <!-- Mobile Slide-Down Drawer -->
     <div 
       id="mobileMenuDrawer" 
       class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
       aria-label="Mobile Navigation Menu"
     >
-      <a href="./" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+      <a href="./" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
         Return to Homepage
       </a>
-      <a href="fsc-quiz" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-blue-900 bg-blue-50 border border-blue-200">
+      <a href="fsc-quiz" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-bold text-blue-900 bg-blue-50 border border-blue-200">
         <span class="flex items-center gap-2">
-          <i data-lucide="award" class="w-5 h-5 text-amber-600"></i>
+          <i data-lucide="award" class="w-4 h-4 text-amber-600"></i>
           CA FSC Practice Quiz
         </span>
-        <span class="text-xs bg-amber-600 text-white px-2 py-0.5 rounded-full uppercase">Interactive</span>
+        <span class="text-[10px] bg-amber-600 text-white px-2 py-0.5 rounded-full uppercase">Practice</span>
       </a>
-      <a href="./#safety" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+      <a href="./#safety" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
         4 Universal Safety Rules
       </a>
-      <a href="./#guides" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+      <a href="./#guides" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
         Educational Resource Library
       </a>
-      <a href="./#legal" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+      <a href="./#legal" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
         California Legal & CA DOJ Resources
       </a>
     </div>
   </header>
 
-  <!-- Main Landmark -->
+  <!-- Main Content Landmark -->
   <main id="main-content" class="flex-grow">
     
-    <section class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-950 border border-amber-300 mb-6 shadow-sm">
-        <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500" aria-hidden="true"></i> 
-        IRS 501(c)(3) Recognized Public Charity • Tax-Deductible Giving
+    <!-- Hero Banner Section -->
+    <section class="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
+      <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-amber-100 text-amber-950 border border-amber-300 mb-5 shadow-sm max-w-full">
+        <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500 fill-rose-500 shrink-0" aria-hidden="true"></i> 
+        <span class="truncate">IRS 501(c)(3) Recognized Public Charity • Tax-Deductible</span>
       </div>
-      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-4 sm:mb-6 leading-tight">
         Support Community Safety & Firearm Education
       </h1>
-      <p class="text-base sm:text-lg text-slate-700 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
+      <p class="text-sm sm:text-base lg:text-lg text-slate-700 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
         Your contributions empower first-time owners, families, and youth through free bilingual safety manuals, California safe storage equipment, and certified beginner marksmanship seminars.
       </p>
 
       <!-- Verified 501(c)(3) Trust Badge -->
-      <div class="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-5 bg-slate-50 px-6 py-3.5 rounded-2xl border-2 border-slate-200 shadow-sm text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto">
+      <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 bg-slate-50 px-4 sm:px-6 py-3 sm:py-3.5 rounded-2xl border-2 border-slate-200 shadow-sm text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto w-full">
         <span class="font-bold flex items-center gap-1.5 text-blue-950">
-          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
           IRS Recognized 501(c)(3) Public Charity
         </span>
         <span class="text-slate-300 hidden sm:inline">•</span>
-        <span class="font-mono font-semibold">Federal EIN: <strong class="text-slate-900">42-2595402</strong></span>
+        <span class="font-mono text-xs sm:text-sm">Federal EIN: <strong class="text-slate-900">42-2595402</strong></span>
         <span class="text-slate-300 hidden sm:inline">•</span>
         <span class="text-emerald-700 font-semibold flex items-center gap-1">
-          <i data-lucide="check" class="w-3.5 h-3.5"></i> IRC § 170 Deductible
+          <i data-lucide="check" class="w-3.5 h-3.5 shrink-0"></i> IRC § 170 Deductible
         </span>
       </div>
     </section>
 
-    <section class="py-12 bg-blue-950/5 border-y border-slate-200">
+    <!-- Donation Impact Tiers -->
+    <section class="py-10 sm:py-12 bg-blue-950/5 border-y border-slate-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Where Your Support Goes</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 mt-3">Select a Community Impact Tier</h2>
-          <p class="text-slate-600 text-xs sm:text-sm mt-2 font-medium">Choose a sponsorship tier below to automatically configure your gift amount in PayPal or Zelle.</p>
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+          <span class="text-[11px] sm:text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+            Where Your Support Goes
+          </span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-slate-900 mt-3">
+            Select a Community Impact Tier
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1.5 font-medium">
+            Choose a tier below to automatically configure your gift amount in PayPal or Zelle.
+          </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="tierCardsContainer">
+        <!-- 4 Tiers Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5" id="tierCardsContainer">
           
           <!-- Tier 1: $20 -->
           <button 
             type="button"
             onclick="selectTier(20, '1 Child-Safe Cable Lock', this)"
-            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none"
+            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-5 sm:p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none cursor-pointer"
             data-amount="20"
             data-tier="1 Child-Safe Cable Lock"
             aria-pressed="false"
           >
             <div>
-              <div class="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-blue-50 text-blue-900 border border-blue-200 font-extrabold text-base mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
+              <div class="inline-flex items-center justify-center min-w-[54px] h-11 px-3 rounded-xl bg-blue-50 text-blue-900 border border-blue-200 font-extrabold text-base mb-3.5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
                 $20
               </div>
-              <h3 class="font-bold text-slate-900 text-base mb-1.5">Child-Safe Cable Lock</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-1">Child-Safe Cable Lock</h3>
               <p class="text-slate-600 text-xs leading-relaxed">
                 Provides <strong>1 California DOJ-approved cable gun lock</strong> gifted free to first-time firearm owners and young families to guarantee secure home storage.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
-              <span>Impact: Safe Storage</span>
+            <div class="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Safe Storage</span>
               <i data-lucide="lock" class="w-4 h-4 text-amber-600"></i>
             </div>
           </button>
@@ -285,7 +302,7 @@
           <button 
             type="button"
             onclick="selectTier(50, '100 Bilingual Safety Guides', this)"
-            class="tier-card text-left bg-white rounded-2xl border-2 border-amber-500 ring-2 ring-amber-400/50 p-6 flex flex-col justify-between shadow-md transition-all relative group bg-gradient-to-b from-amber-50/50 to-white focus:outline-none"
+            class="tier-card text-left bg-white rounded-2xl border-2 border-amber-500 ring-2 ring-amber-400/50 p-5 sm:p-6 flex flex-col justify-between shadow-md transition-all relative group bg-gradient-to-b from-amber-50/50 to-white focus:outline-none cursor-pointer"
             data-amount="50"
             data-tier="100 Bilingual Safety Guides"
             aria-pressed="true"
@@ -294,16 +311,16 @@
               Popular Impact
             </span>
             <div>
-              <div class="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-amber-500 text-slate-950 border border-amber-400 font-extrabold text-base mb-4 transition-colors tier-badge">
+              <div class="inline-flex items-center justify-center min-w-[54px] h-11 px-3 rounded-xl bg-amber-500 text-slate-950 border border-amber-400 font-extrabold text-base mb-3.5 transition-colors tier-badge">
                 $50
               </div>
-              <h3 class="font-bold text-slate-900 text-base mb-1.5">100 Bilingual Guides</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-1">100 Bilingual Guides</h3>
               <p class="text-slate-600 text-xs leading-relaxed">
                 Funds professional printing and statewide distribution of <strong>100 pocket-sized English & Punjabi</strong> firearm safety reference manuals.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-amber-100 flex items-center justify-between text-xs text-amber-800 font-medium">
-              <span>Impact: Public Education</span>
+            <div class="mt-5 pt-3.5 border-t border-amber-100 flex items-center justify-between text-xs text-amber-800 font-medium">
+              <span>Public Education</span>
               <i data-lucide="book-open" class="w-4 h-4 text-amber-600"></i>
             </div>
           </button>
@@ -312,65 +329,68 @@
           <button 
             type="button"
             onclick="selectTier(150, 'Student Safety & Range Gear Kit', this)"
-            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none"
+            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-5 sm:p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none cursor-pointer"
             data-amount="150"
             data-tier="Student Safety & Range Gear Kit"
             aria-pressed="false"
           >
             <div>
-              <div class="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-blue-50 text-blue-900 border border-blue-200 font-extrabold text-base mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
+              <div class="inline-flex items-center justify-center min-w-[54px] h-11 px-3 rounded-xl bg-blue-50 text-blue-900 border border-blue-200 font-extrabold text-base mb-3.5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
                 $150
               </div>
-              <h3 class="font-bold text-slate-900 text-base mb-1.5">Student Range Safety Gear</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-1">Student Safety Gear</h3>
               <p class="text-slate-600 text-xs leading-relaxed">
-                Supplies <strong>10 beginner students</strong> with certified ANSI Z87.1 eye protection, 30+ dB hearing protection, and instructional target kits for marksmanship clinics.
+                Supplies <strong>10 beginner students</strong> with certified ANSI Z87.1 eye protection, 30+ dB hearing protection, and instructional target kits for clinics.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
-              <span>Impact: Range Safety</span>
+            <div class="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Range Safety</span>
               <i data-lucide="shield-check" class="w-4 h-4 text-amber-600"></i>
             </div>
           </button>
 
-          <!-- Tier 4: $1,000 (Dynamic Badge Sizing) -->
+          <!-- Tier 4: $1,000 -->
           <button 
             type="button"
             onclick="selectTier(1000, 'Full Community Safety Workshop', this)"
-            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none"
+            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-5 sm:p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none cursor-pointer"
             data-amount="1000"
             data-tier="Full Community Safety Workshop"
             aria-pressed="false"
           >
             <div>
-              <div class="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-blue-950 text-amber-400 border border-slate-700 font-extrabold text-base mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
+              <div class="inline-flex items-center justify-center min-w-[64px] h-11 px-3 rounded-xl bg-blue-950 text-amber-400 border border-slate-700 font-extrabold text-sm sm:text-base mb-3.5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
                 $1,000
               </div>
-              <h3 class="font-bold text-slate-900 text-base mb-1.5">Community Workshop</h3>
+              <h3 class="font-bold text-slate-900 text-base mb-1">Community Workshop</h3>
               <p class="text-slate-600 text-xs leading-relaxed">
                 Full sponsorship to deliver an in-person, certified safe handling clinic at a local <strong>Gurdwara, youth center, or community space</strong>.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
-              <span>Impact: Community Outreach</span>
+            <div class="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Community Outreach</span>
               <i data-lucide="users" class="w-4 h-4 text-amber-600"></i>
             </div>
           </button>
 
         </div>
 
-        <!-- Custom Donation Amount Option -->
-        <div class="mt-8 max-w-md mx-auto bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
-          <label for="customAmountInput" class="text-xs font-bold text-slate-700 whitespace-nowrap">Or Custom Amount:</label>
+        <!-- Custom Donation Amount Option (Fully Mobile Responsive) -->
+        <div class="mt-6 sm:mt-8 max-w-lg mx-auto bg-white p-4 sm:p-4.5 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <label for="customAmountInput" class="text-xs font-bold text-slate-700 text-center sm:text-left shrink-0">
+            Or Custom Dollar Amount:
+          </label>
           <div class="relative flex-1">
-            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-bold text-slate-500 text-sm">$</span>
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-bold text-slate-500 text-sm" aria-hidden="true">$</span>
             <input 
               type="number" 
               id="customAmountInput" 
               min="1" 
               step="1" 
-              placeholder="Other amount" 
+              placeholder="e.g. 75" 
               oninput="handleCustomAmount(this.value)"
-              class="w-full pl-8 pr-3 py-2 text-sm font-semibold rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-900"
+              class="w-full pl-8 pr-3 py-2.5 text-sm font-semibold rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-900"
+              aria-label="Custom donation dollar amount"
             />
           </div>
         </div>
@@ -378,58 +398,70 @@
       </div>
     </section>
 
-    <section class="py-16 bg-white" id="payment-methods">
+    <!-- Payment Methods Section -->
+    <section class="py-12 sm:py-16 bg-white" id="payment-methods">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Live Selected Amount Synchronizer Banner -->
-        <div class="mb-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-950 to-slate-900 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="flex items-center gap-3.5 text-center sm:text-left">
-            <div class="p-3 bg-amber-500 text-slate-950 rounded-xl font-extrabold text-xl shadow-inner shrink-0" id="syncDisplayBadge">
+        <div class="mb-8 sm:mb-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-950 to-slate-900 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5 text-center sm:text-left w-full sm:w-auto justify-center sm:justify-start">
+            <div class="p-2.5 sm:p-3 bg-amber-500 text-slate-950 rounded-xl font-extrabold text-lg sm:text-xl shadow-inner shrink-0" id="syncDisplayBadge">
               $50
             </div>
-            <div>
-              <span class="text-[11px] font-bold text-amber-300 uppercase tracking-wider block">Selected Contribution</span>
-              <h3 class="text-base sm:text-lg font-bold text-white leading-tight" id="syncTierName">100 Bilingual Safety Guides</h3>
+            <div class="min-w-0">
+              <span class="text-[10px] sm:text-[11px] font-bold text-amber-300 uppercase tracking-wider block">
+                Selected Contribution
+              </span>
+              <h3 class="text-sm sm:text-base font-bold text-white leading-snug truncate" id="syncTierName">
+                100 Bilingual Safety Guides
+              </h3>
             </div>
           </div>
-          <span class="text-xs text-slate-300 bg-white/10 px-3 py-1.5 rounded-full border border-white/15">
+          <span class="text-[11px] sm:text-xs text-slate-300 bg-white/10 px-3 py-1.5 rounded-full border border-white/15 text-center shrink-0">
             Auto-propagated to PayPal & Zelle below
           </span>
         </div>
 
         <div class="text-center mb-8">
-          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Payment Channels</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 mt-2">Complete Your Contribution</h2>
-          <p class="text-slate-600 text-xs sm:text-sm mt-1">PayPal is pre-filled with your chosen amount. For Zelle, use your bank's app with the pre-formatted memo.</p>
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+            Payment Channels
+          </span>
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-slate-900 mt-2">
+            Complete Your Contribution
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-md mx-auto">
+            PayPal is pre-filled with your chosen amount. For Zelle, use your bank app with the pre-formatted memo below.
+          </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <!-- 2 Payment Gateways -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           
           <!-- Method 1: Zelle Direct Giving (Tag: sikhrpa) -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 border-2 border-purple-200 hover:border-purple-400 transition-colors flex flex-col justify-between shadow-sm">
+          <div class="p-5 sm:p-7 rounded-2xl bg-slate-50 border-2 border-purple-200 hover:border-purple-300 transition-colors flex flex-col justify-between shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-900 border border-purple-300">
-                  <i data-lucide="zap" class="w-3.5 h-3.5 text-purple-700"></i> 100% Goes to Mission (0% Fees)
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-900 border border-purple-300">
+                  <i data-lucide="zap" class="w-3.5 h-3.5 text-purple-700"></i> 100% to Mission (0% Fees)
                 </span>
                 <span class="text-xs font-semibold text-slate-500">Bank App</span>
               </div>
-              <h3 class="font-bold text-slate-900 text-lg sm:text-xl mb-2">Zelle® Bank Transfer</h3>
+              <h3 class="font-bold text-slate-900 text-lg sm:text-xl mb-1.5">Zelle® Bank Transfer</h3>
               <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
                 Send <strong class="text-purple-900 font-bold" id="zelleSelectedAmountDisplay">$50</strong> directly with zero transaction fee deductions via your bank app (Chase, BofA, Wells Fargo, etc.).
               </p>
 
-              <!-- Copyable Zelle Tag Card -->
-              <div class="bg-white p-3 rounded-xl border border-slate-300 flex items-center justify-between gap-2 shadow-inner mb-2.5">
+              <!-- Copyable Zelle Tag Card (Mobile-hardened flex) -->
+              <div class="bg-white p-3 rounded-xl border border-slate-300 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5 shadow-inner mb-2.5">
                 <div class="min-w-0">
                   <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">Official Zelle® Tag:</span>
-                  <span id="zelleRecipient" class="font-mono font-bold text-sm text-purple-900 truncate select-all">sikhrpa</span>
+                  <span id="zelleRecipient" class="font-mono font-bold text-sm text-purple-900 truncate select-all block">sikhrpa</span>
                 </div>
                 <button 
                   type="button"
                   onclick="copyZelleRecipient()" 
                   id="zelleCopyBtn"
-                  class="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 shadow-sm"
+                  class="px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center justify-center gap-1.5 shadow-sm touch-target"
                   title="Copy Zelle tag to clipboard"
                   aria-label="Copy Zelle tag"
                 >
@@ -438,17 +470,19 @@
                 </button>
               </div>
 
-              <!-- Synchronized Suggested Memo with Copy Button -->
-              <div class="bg-purple-50/70 p-3 rounded-xl border border-purple-200 flex items-center justify-between gap-2 shadow-inner mb-2.5">
+              <!-- Synchronized Suggested Memo with Copy Button (Mobile-hardened flex) -->
+              <div class="bg-purple-50/70 p-3 rounded-xl border border-purple-200 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5 shadow-inner mb-2.5">
                 <div class="min-w-0">
                   <span class="text-[10px] font-semibold text-purple-800 uppercase tracking-wider block">Suggested Memo / Note:</span>
-                  <span id="zelleMemoDisplay" class="font-mono font-bold text-xs text-purple-950 truncate block select-all">SikhRPA Donation - $50 (100 Bilingual Safety Guides)</span>
+                  <span id="zelleMemoDisplay" class="font-mono font-bold text-xs text-purple-950 break-words block select-all">
+                    SikhRPA Donation - $50 (100 Bilingual Safety Guides)
+                  </span>
                 </div>
                 <button 
                   type="button"
                   onclick="copyZelleMemo()" 
                   id="zelleMemoCopyBtn"
-                  class="px-3 py-1.5 bg-white border border-purple-300 hover:bg-purple-100 text-purple-900 rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 shadow-sm"
+                  class="px-3 py-2 bg-white border border-purple-300 hover:bg-purple-100 text-purple-900 rounded-lg text-xs font-bold transition-all shrink-0 flex items-center justify-center gap-1.5 shadow-sm touch-target"
                   title="Copy suggested memo to clipboard"
                   aria-label="Copy suggested memo"
                 >
@@ -462,21 +496,21 @@
               </p>
             </div>
 
-            <div class="mt-5 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+            <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
               <strong class="text-slate-900">Tax Receipt:</strong> Formal IRS donation receipts are emailed for all contributions by our treasurer.
             </div>
           </div>
 
           <!-- Method 2: PayPal & Debit / Credit Card (ID: S5PAN9B85U28J) -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 border-2 border-blue-200 hover:border-blue-400 transition-colors flex flex-col justify-between shadow-sm">
+          <div class="p-5 sm:p-7 rounded-2xl bg-slate-50 border-2 border-blue-200 hover:border-blue-300 transition-colors flex flex-col justify-between shadow-sm">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-300">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-300">
                   <i data-lucide="credit-card" class="w-3.5 h-3.5 text-blue-700"></i> Cards • Venmo • PayPal
                 </span>
                 <span class="text-xs font-semibold text-slate-500">Instant Online</span>
               </div>
-              <h3 class="font-bold text-slate-900 text-lg sm:text-xl mb-2">PayPal® & Card Giving</h3>
+              <h3 class="font-bold text-slate-900 text-lg sm:text-xl mb-1.5">PayPal® & Card Giving</h3>
               <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
                 Donate securely online via card, Venmo, or PayPal balance. Your chosen gift amount is pre-filled automatically:
               </p>
@@ -488,26 +522,27 @@
                   href="https://www.paypal.com/donate?business=S5PAN9B85U28J&currency_code=USD&amount=50"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-full py-3 px-4 bg-[#0070ba] hover:bg-[#005ea6] text-white font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow group"
+                  class="w-full py-3.5 px-4 bg-[#0070ba] hover:bg-[#005ea6] text-white font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow group touch-target text-center"
                   title="Open secure pre-filled PayPal donation portal"
                 >
                   <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.78.78 0 0 1 .77-.648h6.914c3.085 0 5.484.777 6.386 2.625.59 1.208.57 2.68-.057 4.375-.972 2.628-3.084 4.14-6.278 4.497l-.608 3.86a.78.78 0 0 1-.772.648H7.72l-.644 2.26z"/>
                   </svg>
                   <span id="paypalBtnText">Donate $50 via PayPal Checkout</span>
-                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-200 group-hover:translate-x-0.5 transition-transform"></i>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-200 group-hover:translate-x-0.5 transition-transform shrink-0"></i>
                 </a>
 
-                <div class="bg-white p-3 rounded-xl border border-slate-300 flex items-center justify-between gap-2 shadow-inner">
+                <!-- PayPal ID Copy Card -->
+                <div class="bg-white p-3 rounded-xl border border-slate-300 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5 shadow-inner">
                   <div class="min-w-0">
                     <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">Official PayPal ID:</span>
-                    <span id="paypalRecipient" class="font-mono font-bold text-xs sm:text-sm text-blue-950 truncate select-all">S5PAN9B85U28J</span>
+                    <span id="paypalRecipient" class="font-mono font-bold text-xs sm:text-sm text-blue-950 truncate select-all block">S5PAN9B85U28J</span>
                   </div>
                   <button 
                     type="button"
                     onclick="copyPayPalRecipient()" 
                     id="paypalCopyBtn"
-                    class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 shadow-sm"
+                    class="px-3.5 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center justify-center gap-1.5 shadow-sm touch-target"
                     title="Copy PayPal ID to clipboard"
                     aria-label="Copy PayPal ID"
                   >
@@ -522,29 +557,29 @@
               </p>
             </div>
 
-            <div class="mt-5 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
-              <strong class="text-slate-900">Instant Documentation:</strong> PayPal provides immediate electronic donation receipts for your tax files.
+            <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+              <strong class="text-slate-900">Instant Documentation:</strong> PayPal provides immediate electronic donation receipts for your tax records.
             </div>
           </div>
 
         </div>
 
-        <!-- Alternate Check Donation & Corporate Matching Information -->
+        <!-- Check Donation & Corporate Matching Information -->
         <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 mb-6 text-xs sm:text-sm text-slate-700 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
-          <div class="flex items-center gap-3">
-            <div class="p-2.5 bg-blue-100 text-blue-900 rounded-xl shrink-0">
+          <div class="flex items-start sm:items-center gap-3">
+            <div class="p-2.5 bg-blue-100 text-blue-900 rounded-xl shrink-0 mt-0.5 sm:mt-0">
               <i data-lucide="mail" class="w-5 h-5"></i>
             </div>
             <div>
               <p class="font-bold text-slate-900">Prefer to donate by check or corporate employer match?</p>
               <p class="text-slate-600 text-xs mt-0.5">
-                Please contact our leadership directly to receive our current check mailing instructions, organization invoice, or corporate employer matching portal IDs (Benevity / CyberGrants).
+                Contact our leadership directly to receive our check instructions, organization invoice, or employer matching portal IDs (Benevity / CyberGrants).
               </p>
             </div>
           </div>
           <a 
             href="mailto:president@sikhrpa.org?subject=Check%20Donation%20/%20Corporate%20Matching%20Inquiry"
-            class="px-4 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl shrink-0 transition-colors shadow-sm flex items-center gap-2 text-xs"
+            class="w-full sm:w-auto px-4 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl shrink-0 transition-colors shadow-sm flex items-center justify-center gap-2 text-xs touch-target"
           >
             <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
             <span>Email president@sikhrpa.org</span>
@@ -552,19 +587,21 @@
         </div>
 
         <!-- Tax Receipt & W-9 Assistance Banner -->
-        <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-700 shadow-sm">
-          <div class="flex items-center gap-3">
-            <div class="p-2.5 bg-blue-100 text-blue-900 rounded-xl shrink-0">
-              <i data-lucide="file-check" class="w-6 h-6"></i>
+        <div class="p-4 sm:p-5 rounded-2xl bg-blue-50 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-slate-700 shadow-sm">
+          <div class="flex items-start sm:items-center gap-3">
+            <div class="p-2.5 bg-blue-100 text-blue-900 rounded-xl shrink-0 mt-0.5 sm:mt-0">
+              <i data-lucide="file-check" class="w-5 h-5"></i>
             </div>
             <div>
-              <p class="font-bold text-slate-900">Need our IRS Form W-9 or a custom donation acknowledgment?</p>
-              <p class="text-slate-600 text-xs mt-0.5">We provide formal substantiation letters compliant with IRS Section 170(f)(8) for all charitable contributions.</p>
+              <p class="font-bold text-slate-900">Need our IRS Form W-9 or a formal donation receipt?</p>
+              <p class="text-slate-600 text-xs mt-0.5">
+                We provide formal substantiation letters compliant with IRS Section 170(f)(8) for all charitable contributions.
+              </p>
             </div>
           </div>
           <a 
             href="mailto:president@sikhrpa.org?subject=Donation%20Receipt%20/%20W9%20Request"
-            class="px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl shrink-0 transition-colors shadow-sm flex items-center gap-2 text-xs"
+            class="w-full sm:w-auto px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl shrink-0 transition-colors shadow-sm flex items-center justify-center gap-2 text-xs touch-target"
           >
             <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
             <span>Request W-9 / Receipt</span>
@@ -574,11 +611,16 @@
       </div>
     </section>
 
-    <section class="py-14 bg-slate-50 border-t border-slate-200">
+    <!-- Charitable Giving FAQs -->
+    <section class="py-12 sm:py-14 bg-slate-50 border-t border-slate-200">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Giving Guidance</span>
-          <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-2">Charitable Contribution FAQs</h2>
+        <div class="text-center mb-8 sm:mb-10">
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+            Giving Guidance
+          </span>
+          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 mt-2">
+            Charitable Contribution FAQs
+          </h2>
         </div>
 
         <div class="space-y-4">
@@ -596,7 +638,7 @@
               <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> Can my company match my charitable gift?
             </h3>
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
-              Yes. Many employers match charitable donations made by their staff, doubling or tripling your impact. Contact your human resources or corporate social responsibility department and submit our EIN (<strong class="text-slate-900">42-2595402</strong>) through your company's matching gift portal.
+              Yes. Many employers match charitable donations made by their staff, doubling or tripling your impact. Contact your human resources department and submit our EIN (<strong class="text-slate-900">42-2595402</strong>) through your company's matching portal.
             </p>
           </div>
 
@@ -614,14 +656,15 @@
 
   </main>
 
-  <footer class="border-t border-slate-200 bg-white py-12">
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10 sm:py-12">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
       
       <!-- Footer Logo -->
       <img 
         src="srpa-logo.png" 
         alt="SikhRPA Logo" 
-        class="h-10 w-auto object-contain mb-4 opacity-90"
+        class="h-9 sm:h-10 w-auto object-contain mb-4 opacity-90"
         onerror="this.style.display='none'"
       />
       
@@ -636,18 +679,18 @@
       </p>
 
       <!-- Quick Nav Links -->
-      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-600 mb-6">
-        <a href="./" class="hover:text-blue-900">Homepage</a>
-        <span>•</span>
-        <a href="fsc-quiz" class="hover:text-blue-900">CA FSC Practice Exam</a>
-        <span>•</span>
-        <a href="https://www.instagram.com/sikhrpa/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600">Instagram @sikhrpa</a>
-        <span>•</span>
-        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900">president@sikhrpa.org</a>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-semibold text-slate-600 mb-6">
+        <a href="./" class="hover:text-blue-900 p-1">Homepage</a>
+        <span aria-hidden="true">•</span>
+        <a href="fsc-quiz" class="hover:text-blue-900 p-1">CA FSC Practice Exam</a>
+        <span aria-hidden="true">•</span>
+        <a href="https://www.instagram.com/sikhrpa/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 p-1">Instagram @sikhrpa</a>
+        <span aria-hidden="true">•</span>
+        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900 p-1">president@sikhrpa.org</a>
       </div>
 
       <!-- Copyright & EIN -->
-      <p class="text-xs text-slate-500">
+      <p class="text-xs text-slate-500 leading-relaxed">
         Federal EIN: 42-2595402 • 1075 Mohawk St, South Lake Tahoe, CA 96150<br>
         © <span id="current-year"></span> Sikh Rifle and Pistol Association. All rights reserved.
       </p>
@@ -756,30 +799,31 @@
       closeIcon.classList.toggle('hidden');
     }
 
-    async function copyToClipboard(text, btnTextEl, btnIconEl, defaultLabel = 'Copy') {
+    // Security & mobile-hardened clipboard helper (with fallback for restricted iFrames)
+    function copyToClipboard(text, btnTextEl, btnIconEl, defaultLabel = 'Copy') {
       try {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(text);
-        } else {
-          const ta = document.createElement('textarea');
-          ta.value = text;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-        }
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+
         btnTextEl.innerText = 'Copied!';
         if (btnIconEl) btnIconEl.setAttribute('data-lucide', 'check');
         lucide.createIcons();
+
         setTimeout(() => {
           btnTextEl.innerText = defaultLabel;
           if (btnIconEl) btnIconEl.setAttribute('data-lucide', 'copy');
           lucide.createIcons();
-        }, 2500);
+        }, 2200);
       } catch (err) {
-        window.prompt(`Copy ${defaultLabel}:`, text);
+        if (btnTextEl) btnTextEl.innerText = 'Copied!';
       }
     }
 
@@ -788,7 +832,7 @@
     }
 
     function copyZelleMemo() {
-      const memoText = document.getElementById('zelleMemoDisplay').innerText;
+      const memoText = document.getElementById('zelleMemoDisplay').innerText.trim();
       copyToClipboard(memoText, document.getElementById('zelleMemoCopyText'), document.getElementById('zelleMemoCopyIcon'), 'Copy Memo');
     }
 
