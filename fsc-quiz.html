@@ -55,7 +55,7 @@
       
       <!-- Brand & Return Link -->
       <div class="flex items-center gap-3">
-        <a href="index.html" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100">
+        <a href="./" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100">
           <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600"></i>
           <span>Back to Home</span>
         </a>
@@ -80,7 +80,6 @@
     </div>
   </header>
 
-  <!-- Main Quiz Container -->
   <main class="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
     
     <!-- Header Banner -->
@@ -129,7 +128,6 @@
       </div>
     </div>
 
-    <!-- Active Quiz Card -->
     <div id="quizContainer" class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
       
       <!-- Progress Bar & Question Stats -->
@@ -182,7 +180,7 @@
         </button>
 
         <div class="flex items-center gap-2">
-          <!-- Early Finish Button (Visible once at least 1 question is answered) -->
+          <!-- Early Finish Button -->
           <button 
             id="finishEarlyBtn"
             type="button"
@@ -206,7 +204,6 @@
       </div>
     </div>
 
-    <!-- Final Results & Advanced Analytics Card (Initially Hidden) -->
     <div id="resultsContainer" class="hidden space-y-8">
       
       <!-- Primary Outcome Summary Card -->
@@ -267,7 +264,7 @@
             <i data-lucide="file-down" class="w-4 h-4 text-amber-600"></i> Download CA DOJ Study Guide
           </a>
           <a 
-            href="index.html" 
+            href="./" 
             class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition-colors"
           >
             <i data-lucide="home" class="w-4 h-4"></i> Back to Homepage
@@ -275,7 +272,6 @@
         </div>
       </div>
 
-      <!-- Category Competency & Analytics Breakdown -->
       <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-200">
           <div>
@@ -309,7 +305,6 @@
         </div>
       </div>
 
-      <!-- Attempt History Tracker (Local Storage Analytics) -->
       <div id="historyCard" class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8">
         <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
           <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
@@ -335,7 +330,6 @@
     </div>
   </main>
 
-  <!-- Custom Accessible Confirmation Modal (Replaces window.confirm) -->
   <div 
     id="confirmModal" 
     class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4" 
@@ -384,11 +378,7 @@
     </div>
   </footer>
 
-  <!-- FSC Quiz & Analytics Logic -->
   <script>
-    // =========================================================================
-    // TELEMETRY INTEGRATION: Google Apps Script Webhook Endpoint
-    // =========================================================================
     const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
 
     const MASTER_QUESTIONS = [
@@ -838,14 +828,11 @@
     }
 
     function configureActiveQuestions() {
-      // Deep clone each question and shuffle options if shuffleEnabled is true
       let pool = MASTER_QUESTIONS.map(q => {
-        // If shuffling is disabled, maintain the default question options
         if (!shuffleEnabled) {
           return { ...q, options: [...q.options] };
         }
 
-        // Keep True/False and Yes/No questions in conventional order (True/Yes first, False/No second)
         const isBinaryQuestion = q.options.length === 2 && 
           (q.options[0].toLowerCase().startsWith("true") || q.options[0].toLowerCase().startsWith("yes"));
 
@@ -853,7 +840,6 @@
           return { ...q, options: [...q.options] };
         }
 
-        // Pair each option with its correctness state, shuffle, and recalculate correctIndex
         const paired = q.options.map((optText, idx) => ({
           text: optText,
           isCorrect: idx === q.correctIndex
@@ -869,7 +855,6 @@
         };
       });
 
-      // Shuffle the order of the questions themselves
       if (shuffleEnabled) {
         pool = shuffleArray(pool);
       }
@@ -1457,9 +1442,6 @@
       );
     }
 
-    // =========================================================================
-    // TELEMETRY REPORTING WITH IN-PLACE SESSION UPDATING
-    // =========================================================================
     function scheduleTelemetrySync() {
       // Debounce sending to avoid rapid network calls
       if (telemetryDebounceTimer) clearTimeout(telemetryDebounceTimer);
