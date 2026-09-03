@@ -1,21 +1,802 @@
-<section style="padding: 50px 20px; font-family: 'Open Sans', sans-serif;">
-    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <h1 style="color: #001f3f;">Support the SRPA Mission</h1>
-        <p style="font-size: 1.1em; color: #555; line-height: 1.6;">
-            The Sikh Rifle and Pistol Association is a California Nonprofit Public Benefit Corporation. We rely on the generosity of our community and industry partners to provide range time, educational materials, and safety training to beginners.
-        </p>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate & Support Community Safety Education | SikhRPA 501(c)(3)</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Donate & Support Community Safety Education | SikhRPA 501(c)(3)" />
+  <meta name="description" content="Support the Sikh Rifle and Pistol Association with a tax-deductible charitable gift. Your contribution directly funds free bilingual firearm safety manuals, California DOJ-certified lockbox distribution, and subsidizes community safety seminars." />
+  <meta name="keywords" content="SikhRPA donate, firearm safety charity, 501c3 gun safety, California gun safety donation, tax deductible donation, Sikh nonprofit, community marksmanship education" />
+  <meta name="author" content="Sikh Rifle and Pistol Association" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sikhrpa.org/donate.html" />
+  <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
+  <meta property="og:title" content="Support Community Safety Education | SikhRPA 501(c)(3)" />
+  <meta property="og:description" content="100% of your tax-deductible contribution funds free bilingual safety manuals, youth lockbox distribution, and safe firearm handling clinics across California." />
+  <meta property="og:image" content="srpa-logo.png" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Support Community Safety Education | SikhRPA 501(c)(3)" />
+  <meta name="twitter:description" content="Tax-deductible charitable giving supporting public firearm education and safe storage." />
+  <meta name="twitter:image" content="srpa-logo.png" />
+
+  <!-- Structured Data (JSON-LD) for 501(c)(3) Nonprofit Donation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Nonprofit501c3",
+    "name": "Sikh Rifle and Pistol Association",
+    "alternateName": "SikhRPA",
+    "legalName": "Sikh Rifle and Pistol Association",
+    "taxID": "42-2595402",
+    "url": "https://sikhrpa.org",
+    "logo": "https://sikhrpa.org/srpa-logo.png",
+    "description": "California 501(c)(3) nonprofit public benefit corporation dedicated to firearm safety education, marksmanship fundamentals, and community storage compliance.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1075 Mohawk St",
+      "addressLocality": "South Lake Tahoe",
+      "addressRegion": "CA",
+      "postalCode": "96150",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "president@sikhrpa.org",
+      "contactType": "Donations & Corporate Matching"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-amber-500 selection:text-white">
+
+  <!-- Accessibility Skip Navigation Link -->
+  <a 
+    href="#main-content" 
+    class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-600 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:outline-none"
+  >
+    Skip to main content
+  </a>
+
+  <!-- Navigation Bar -->
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Return Home Link -->
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100" title="Return to SikhRPA Homepage">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600"></i>
+          <span>Home</span>
+        </a>
+        <span class="text-slate-300" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2.5">
+          <img 
+            src="srpa-logo.png" 
+            alt="SikhRPA Logo" 
+            class="h-9 w-auto object-contain"
+            onerror="this.style.display='none'"
+          />
+          <a href="index.html" class="font-bold text-base sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors">
+            <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+        <a href="index.html#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Programs</a>
+        <a href="index.html#safety" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Safety Rules</a>
+        <a href="index.html#guides" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Guides</a>
+        <a href="fsc-quiz.html" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 hover:text-blue-950 font-bold text-xs transition-colors">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
+          FSC Quiz
+        </a>
+        <span class="inline-flex items-center gap-1 text-amber-900 font-bold bg-amber-50 px-3 py-1 rounded-full border border-amber-300 text-xs shadow-sm">
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500 fill-rose-500"></i>
+          Donate Portal
+        </span>
+      </nav>
+
+      <!-- Action & Contact Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Instagram Link -->
+        <a
+          href="https://www.instagram.com/sikhrpa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg bg-pink-50 text-pink-700 hover:bg-pink-100 border border-pink-200 transition-all flex items-center gap-1.5 shadow-sm group"
+          title="Follow @sikhrpa on Instagram"
+          aria-label="Follow SikhRPA on Instagram"
+        >
+          <svg class="w-4 h-4 text-pink-600 group-hover:scale-110 transition-transform shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+          <span class="hidden sm:inline font-medium">@sikhrpa</span>
+        </a>
+
+        <!-- Contact Button -->
+        <a
+          href="mailto:president@sikhrpa.org?subject=Donation%20Inquiry%20/%20Sponsorship"
+          class="px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-blue-900 text-white hover:bg-blue-800 focus:bg-blue-800 transition-all flex items-center gap-2 shadow-sm"
+          aria-label="Contact SikhRPA via Email"
+        >
+          <i data-lucide="mail" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
+          <span class="hidden sm:inline">Contact</span>
+        </a>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button
+          type="button"
+          id="mobileMenuBtn"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors"
+          aria-label="Toggle Navigation Menu"
+          aria-expanded="false"
+          aria-controls="mobileMenuDrawer"
+        >
+          <i id="menuIcon" data-lucide="menu" class="w-5 h-5"></i>
+          <i id="closeIcon" data-lucide="x" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Slide-Down Drawer -->
+    <div 
+      id="mobileMenuDrawer" 
+      class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+      aria-label="Mobile Navigation Menu"
+    >
+      <a href="index.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+        Return to Homepage
+      </a>
+      <a href="fsc-quiz.html" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-blue-900 bg-blue-50 border border-blue-200">
+        <span class="flex items-center gap-2">
+          <i data-lucide="award" class="w-5 h-5 text-amber-600"></i>
+          CA FSC Practice Quiz
+        </span>
+        <span class="text-xs bg-amber-600 text-white px-2 py-0.5 rounded-full uppercase">Interactive</span>
+      </a>
+      <a href="index.html#safety" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+        4 Universal Safety Rules
+      </a>
+      <a href="index.html#guides" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+        Educational Resource Library
+      </a>
+      <a href="index.html#legal" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
+        California Legal & CA DOJ Resources
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Landmark -->
+  <main id="main-content" class="flex-grow">
+    
+    <!-- Hero Header & Trust Verification Banner -->
+    <section class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-950 border border-amber-300 mb-6 shadow-sm">
+        <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500" aria-hidden="true"></i> 
+        IRS 501(c)(3) Recognized Public Charity • Tax-Deductible Giving
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+        Support Community Safety & Firearm Education
+      </h1>
+      <p class="text-base sm:text-lg text-slate-700 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
+        Your contributions empower first-time owners, families, and youth through free bilingual safety manuals, California safe storage equipment, and certified beginner marksmanship seminars.
+      </p>
+
+      <!-- Verified 501(c)(3) Trust Badge -->
+      <div class="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-5 bg-slate-50 px-6 py-3.5 rounded-2xl border-2 border-slate-200 shadow-sm text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto">
+        <span class="font-bold flex items-center gap-1.5 text-blue-950">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+          IRS Recognized 501(c)(3) Public Charity
+        </span>
+        <span class="text-slate-300 hidden sm:inline">•</span>
+        <span class="font-mono font-semibold">Federal EIN: <strong class="text-slate-900">42-2595402</strong></span>
+        <span class="text-slate-300 hidden sm:inline">•</span>
+        <span class="text-emerald-700 font-semibold flex items-center gap-1">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i> IRC § 170 Deductible
+        </span>
+      </div>
+    </section>
+    <!-- Transparent Impact Giving Tiers -->
+    <section class="py-12 bg-blue-950/5 border-y border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div style="background-color: #f9f9f9; border-left: 5px solid #D4AF37; padding: 20px; margin: 30px 0; text-align: left;">
-            <h4 style="margin-top: 0; color: #001f3f;">Official Non-Profit Status</h4>
-            <p style="margin: 5px 0; font-size: 0.9em;"><strong>Organization:</strong> Sikh Rifle and Pistol Association</p>
-            <p style="margin: 5px 0; font-size: 0.9em;"><strong>Status:</strong> 501(c)(3) Tax-Exempt</p>
-            <p style="margin: 5px 0; font-size: 0.9em;"><strong>Federal EIN:</strong> 42-2595402</p>
-            <p style="margin: 5px 0; font-size: 0.85em; color: #708090;"><em>All donations are tax-deductible to the fullest extent permitted by law.</em></p>
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Where Your Support Goes</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 mt-3">Select a Community Impact Tier</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2 font-medium">Choose a sponsorship tier below to automatically configure your gift amount in PayPal or Zelle.</p>
         </div>
 
-        <div style="display: flex; justify-content: center; gap: 20px;">
-            <a href="mailto:president@srpa.org?subject=Financial Donation Inquiry" style="background-color: #001f3f; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">Donate Funds</a>
-            <a href="mailto:president@srpa.org?subject=In-Kind Equipment Donation" style="background-color: white; color: #001f3f; border: 2px solid #001f3f; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">Donate Equipment</a>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="tierCardsContainer">
+          
+          <!-- Tier 1: $20 -->
+          <button 
+            type="button"
+            onclick="selectTier(20, '1 Child-Safe Cable Lock', this)"
+            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none"
+            data-amount="20"
+            data-tier="1 Child-Safe Cable Lock"
+            aria-pressed="false"
+          >
+            <div>
+              <div class="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-blue-50 text-blue-900 border border-blue-200 font-extrabold text-base mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
+                $20
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1.5">Child-Safe Cable Lock</h3>
+              <p class="text-slate-600 text-xs leading-relaxed">
+                Provides <strong>1 California DOJ-approved cable gun lock</strong> gifted free to first-time firearm owners and young families to guarantee secure home storage.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Impact: Safe Storage</span>
+              <i data-lucide="lock" class="w-4 h-4 text-amber-600"></i>
+            </div>
+          </button>
+
+          <!-- Tier 2: $50 (Featured / Default Selected) -->
+          <button 
+            type="button"
+            onclick="selectTier(50, '100 Bilingual Safety Guides', this)"
+            class="tier-card text-left bg-white rounded-2xl border-2 border-amber-500 ring-2 ring-amber-400/50 p-6 flex flex-col justify-between shadow-md transition-all relative group bg-gradient-to-b from-amber-50/50 to-white focus:outline-none"
+            data-amount="50"
+            data-tier="100 Bilingual Safety Guides"
+            aria-pressed="true"
+          >
+            <span class="absolute -top-3 right-4 bg-amber-500 text-slate-950 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm tracking-wider">
+              Popular Impact
+            </span>
+            <div>
+              <div class="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-amber-500 text-slate-950 border border-amber-400 font-extrabold text-base mb-4 transition-colors tier-badge">
+                $50
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1.5">100 Bilingual Guides</h3>
+              <p class="text-slate-600 text-xs leading-relaxed">
+                Funds professional printing and statewide distribution of <strong>100 pocket-sized English & Punjabi</strong> firearm safety reference manuals.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-amber-100 flex items-center justify-between text-xs text-amber-800 font-medium">
+              <span>Impact: Public Education</span>
+              <i data-lucide="book-open" class="w-4 h-4 text-amber-600"></i>
+            </div>
+          </button>
+
+          <!-- Tier 3: $150 -->
+          <button 
+            type="button"
+            onclick="selectTier(150, 'Student Safety & Range Gear Kit', this)"
+            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none"
+            data-amount="150"
+            data-tier="Student Safety & Range Gear Kit"
+            aria-pressed="false"
+          >
+            <div>
+              <div class="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-blue-50 text-blue-900 border border-blue-200 font-extrabold text-base mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
+                $150
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1.5">Student Range Safety Gear</h3>
+              <p class="text-slate-600 text-xs leading-relaxed">
+                Supplies <strong>10 beginner students</strong> with certified ANSI Z87.1 eye protection, 30+ dB hearing protection, and instructional target kits for marksmanship clinics.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Impact: Range Safety</span>
+              <i data-lucide="shield-check" class="w-4 h-4 text-amber-600"></i>
+            </div>
+          </button>
+          <!-- Tier 4: $1,000 (Adjusted badge box sizing) -->
+          <button 
+            type="button"
+            onclick="selectTier(1000, 'Full Community Safety Workshop', this)"
+            class="tier-card text-left bg-white rounded-2xl border-2 border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:border-amber-400 hover:shadow-md transition-all group focus:outline-none"
+            data-amount="1000"
+            data-tier="Full Community Safety Workshop"
+            aria-pressed="false"
+          >
+            <div>
+              <div class="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-blue-950 text-amber-400 border border-slate-700 font-extrabold text-base mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors tier-badge">
+                $1,000
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1.5">Community Workshop</h3>
+              <p class="text-slate-600 text-xs leading-relaxed">
+                Full sponsorship to deliver an in-person, certified safe handling clinic at a local <strong>Gurdwara, youth center, or community space</strong>.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Impact: Community Outreach</span>
+              <i data-lucide="users" class="w-4 h-4 text-amber-600"></i>
+            </div>
+          </button>
+
         </div>
+
+        <!-- Custom Donation Amount Option -->
+        <div class="mt-8 max-w-md mx-auto bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3">
+          <label for="customAmountInput" class="text-xs font-bold text-slate-700 whitespace-nowrap">Or Custom Amount:</label>
+          <div class="relative flex-1">
+            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-bold text-slate-500 text-sm">$</span>
+            <input 
+              type="number" 
+              id="customAmountInput" 
+              min="1" 
+              step="1" 
+              placeholder="Other amount" 
+              oninput="handleCustomAmount(this.value)"
+              class="w-full pl-8 pr-3 py-2 text-sm font-semibold rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-900"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contribution Methods: Zelle, PayPal, Check by Email, Corporate Matching -->
+    <section class="py-16 bg-white" id="payment-methods">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Live Selected Amount Synchronizer Banner -->
+        <div class="mb-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-950 to-slate-900 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5 text-center sm:text-left">
+            <div class="p-3 bg-amber-500 text-slate-950 rounded-xl font-extrabold text-xl shadow-inner shrink-0" id="syncDisplayBadge">
+              $50
+            </div>
+            <div>
+              <span class="text-[11px] font-bold text-amber-300 uppercase tracking-wider block">Selected Contribution</span>
+              <h3 class="text-base sm:text-lg font-bold text-white leading-tight" id="syncTierName">100 Bilingual Safety Guides</h3>
+            </div>
+          </div>
+          <span class="text-xs text-slate-300 bg-white/10 px-3 py-1.5 rounded-full border border-white/15">
+            Auto-propagated to PayPal & Zelle below
+          </span>
+        </div>
+
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Payment Channels</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 mt-2">Complete Your Contribution</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1">PayPal is pre-filled with your chosen amount. For Zelle, use your bank's app with the pre-formatted memo.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          
+          <!-- Method 1: Zelle Direct Giving (Tag: sikhrpa) -->
+          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 border-2 border-purple-200 hover:border-purple-400 transition-colors flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-900 border border-purple-300">
+                  <i data-lucide="zap" class="w-3.5 h-3.5 text-purple-700"></i> 100% Goes to Mission (0% Fees)
+                </span>
+                <span class="text-xs font-semibold text-slate-500">Bank App</span>
+              </div>
+              <h3 class="font-bold text-slate-900 text-lg sm:text-xl mb-2">Zelle® Bank Transfer</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                Send <strong class="text-purple-900 font-bold" id="zelleSelectedAmountDisplay">$50</strong> directly with zero transaction fee deductions via your bank app (Chase, BofA, Wells Fargo, etc.).
+              </p>
+
+              <!-- Copyable Zelle Tag Card -->
+              <div class="bg-white p-3 rounded-xl border border-slate-300 flex items-center justify-between gap-2 shadow-inner mb-2.5">
+                <div class="min-w-0">
+                  <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">Official Zelle® Tag:</span>
+                  <span id="zelleRecipient" class="font-mono font-bold text-sm text-purple-900 truncate select-all">sikhrpa</span>
+                </div>
+                <button 
+                  type="button"
+                  onclick="copyZelleRecipient()" 
+                  id="zelleCopyBtn"
+                  class="px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 shadow-sm"
+                  title="Copy Zelle tag to clipboard"
+                  aria-label="Copy Zelle tag"
+                >
+                  <i data-lucide="copy" class="w-3.5 h-3.5" id="zelleCopyIcon"></i>
+                  <span id="zelleCopyText">Copy Tag</span>
+                </button>
+              </div>
+
+              <!-- Synchronized Suggested Memo with Copy Button -->
+              <div class="bg-purple-50/70 p-3 rounded-xl border border-purple-200 flex items-center justify-between gap-2 shadow-inner mb-2.5">
+                <div class="min-w-0">
+                  <span class="text-[10px] font-semibold text-purple-800 uppercase tracking-wider block">Suggested Memo / Note:</span>
+                  <span id="zelleMemoDisplay" class="font-mono font-bold text-xs text-purple-950 truncate block select-all">SikhRPA Donation - $50 (100 Bilingual Safety Guides)</span>
+                </div>
+                <button 
+                  type="button"
+                  onclick="copyZelleMemo()" 
+                  id="zelleMemoCopyBtn"
+                  class="px-3 py-1.5 bg-white border border-purple-300 hover:bg-purple-100 text-purple-900 rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 shadow-sm"
+                  title="Copy suggested memo to clipboard"
+                  aria-label="Copy suggested memo"
+                >
+                  <i data-lucide="copy" class="w-3.5 h-3.5" id="zelleMemoCopyIcon"></i>
+                  <span id="zelleMemoCopyText">Copy Memo</span>
+                </button>
+              </div>
+
+              <p class="text-[11px] text-slate-500 italic leading-snug">
+                *Verified Entity: <strong>Sikh Rifle and Pistol Association</strong>. Include your email in the memo for an official IRS tax acknowledgment.
+              </p>
+            </div>
+
+            <div class="mt-5 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+              <strong class="text-slate-900">Tax Receipt:</strong> Formal IRS donation receipts are emailed for all contributions by our treasurer.
+            </div>
+          </div>
+          <!-- Method 2: PayPal & Debit / Credit Card (ID: S5PAN9B85U28J) -->
+          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 border-2 border-blue-200 hover:border-blue-400 transition-colors flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-300">
+                  <i data-lucide="credit-card" class="w-3.5 h-3.5 text-blue-700"></i> Cards • Venmo • PayPal
+                </span>
+                <span class="text-xs font-semibold text-slate-500">Instant Online</span>
+              </div>
+              <h3 class="font-bold text-slate-900 text-lg sm:text-xl mb-2">PayPal® & Card Giving</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                Donate securely online via card, Venmo, or PayPal balance. Your chosen gift amount is pre-filled automatically:
+              </p>
+
+              <!-- Direct Pre-Filled PayPal Action Link & Copyable ID -->
+              <div class="space-y-2.5 mb-2.5">
+                <a
+                  id="paypalDonateLink"
+                  href="https://www.paypal.com/donate?business=S5PAN9B85U28J&currency_code=USD&amount=50"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full py-3 px-4 bg-[#0070ba] hover:bg-[#005ea6] text-white font-bold rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow group"
+                  title="Open secure pre-filled PayPal donation portal"
+                >
+                  <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.78.78 0 0 1 .77-.648h6.914c3.085 0 5.484.777 6.386 2.625.59 1.208.57 2.68-.057 4.375-.972 2.628-3.084 4.14-6.278 4.497l-.608 3.86a.78.78 0 0 1-.772.648H7.72l-.644 2.26z"/>
+                  </svg>
+                  <span id="paypalBtnText">Donate $50 via PayPal Checkout</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-200 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+
+                <div class="bg-white p-3 rounded-xl border border-slate-300 flex items-center justify-between gap-2 shadow-inner">
+                  <div class="min-w-0">
+                    <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">Official PayPal ID:</span>
+                    <span id="paypalRecipient" class="font-mono font-bold text-xs sm:text-sm text-blue-950 truncate select-all">S5PAN9B85U28J</span>
+                  </div>
+                  <button 
+                    type="button"
+                    onclick="copyPayPalRecipient()" 
+                    id="paypalCopyBtn"
+                    class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 shadow-sm"
+                    title="Copy PayPal ID to clipboard"
+                    aria-label="Copy PayPal ID"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5" id="paypalCopyIcon"></i>
+                    <span id="paypalCopyText">Copy ID</span>
+                  </button>
+                </div>
+              </div>
+
+              <p class="text-[11px] text-slate-500 italic leading-snug">
+                *PayPal recipient verified as: <strong>Sikh Rifle and Pistol Association</strong> (#S5PAN9B85U28J).
+              </p>
+            </div>
+
+            <div class="mt-5 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+              <strong class="text-slate-900">Instant Documentation:</strong> PayPal provides immediate electronic donation receipts for your tax files.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Alternate Check Donation & Corporate Matching Information -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 mb-6 text-xs sm:text-sm text-slate-700 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-blue-100 text-blue-900 rounded-xl shrink-0">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="font-bold text-slate-900">Prefer to donate by check or corporate employer match?</p>
+              <p class="text-slate-600 text-xs mt-0.5">
+                Please contact our leadership directly to receive our current check mailing instructions, organization invoice, or corporate employer matching portal IDs (Benevity / CyberGrants).
+              </p>
+            </div>
+          </div>
+          <a 
+            href="mailto:president@sikhrpa.org?subject=Check%20Donation%20/%20Corporate%20Matching%20Inquiry"
+            class="px-4 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl shrink-0 transition-colors shadow-sm flex items-center gap-2 text-xs"
+          >
+            <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+            <span>Email president@sikhrpa.org</span>
+          </a>
+        </div>
+        <!-- Tax Receipt & W-9 Assistance Banner -->
+        <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-700 shadow-sm">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-blue-100 text-blue-900 rounded-xl shrink-0">
+              <i data-lucide="file-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="font-bold text-slate-900">Need our IRS Form W-9 or a custom donation acknowledgment?</p>
+              <p class="text-slate-600 text-xs mt-0.5">We provide formal substantiation letters compliant with IRS Section 170(f)(8) for all charitable contributions.</p>
+            </div>
+          </div>
+          <a 
+            href="mailto:president@sikhrpa.org?subject=Donation%20Receipt%20/%20W9%20Request"
+            class="px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl shrink-0 transition-colors shadow-sm flex items-center gap-2 text-xs"
+          >
+            <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+            <span>Request W-9 / Receipt</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Donation Frequently Asked Questions -->
+    <section class="py-14 bg-slate-50 border-t border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Giving Guidance</span>
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-2">Charitable Contribution FAQs</h2>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-white border-2 border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> Are contributions 100% tax-deductible?
+            </h3>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
+              Yes. The Sikh Rifle and Pistol Association is recognized by the Internal Revenue Service as a tax-exempt organization under Section 501(c)(3) of the Internal Revenue Code (Federal EIN: 42-2595402). Contributions are tax-deductible to the fullest extent permitted by federal and California state law.
+            </p>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> Can my company match my charitable gift?
+            </h3>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
+              Yes. Many employers match charitable donations made by their staff, doubling or tripling your impact. Contact your human resources or corporate social responsibility department and submit our EIN (<strong class="text-slate-900">42-2595402</strong>) through your company's matching gift portal.
+            </p>
+          </div>
+
+          <div class="bg-white border-2 border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base mb-1.5 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-blue-900 shrink-0"></i> How are donation funds audited and allocated?
+            </h3>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed pl-6">
+              As a California nonprofit public benefit corporation, all disbursements are strictly governed by our board of directors and allocated exclusively to our exempt educational mission: creating public safety literature, distributing safety cable locks, and hosting community safe-handling clinics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+      
+      <!-- Footer Logo -->
+      <img 
+        src="srpa-logo.png" 
+        alt="SikhRPA Logo" 
+        class="h-10 w-auto object-contain mb-4 opacity-90"
+        onerror="this.style.display='none'"
+      />
+      
+      <!-- Tax Status -->
+      <p class="text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto mb-3 leading-relaxed font-medium">
+        We are a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code.
+      </p>
+
+      <!-- Bilingual Closing Quote -->
+      <p class="text-xs sm:text-sm text-blue-900 font-bold mb-6 tracking-wide bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200">
+        ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
+      </p>
+
+      <!-- Quick Nav Links -->
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-600 mb-6">
+        <a href="index.html" class="hover:text-blue-900">Homepage</a>
+        <span>•</span>
+        <a href="fsc-quiz.html" class="hover:text-blue-900">CA FSC Practice Exam</a>
+        <span>•</span>
+        <a href="https://www.instagram.com/sikhrpa/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600">Instagram @sikhrpa</a>
+        <span>•</span>
+        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900">president@sikhrpa.org</a>
+      </div>
+
+      <!-- Copyright & EIN -->
+      <p class="text-xs text-slate-500">
+        Federal EIN: 42-2595402 • 1075 Mohawk St, South Lake Tahoe, CA 96150<br>
+        © <span id="current-year"></span> Sikh Rifle and Pistol Association. All rights reserved.
+      </p>
     </div>
-</section>
+  </footer>
+  <!-- Scripts -->
+  <script>
+    document.getElementById('current-year').innerText = new Date().getFullYear();
+    lucide.createIcons();
+
+    let currentSelectedAmount = 50;
+    let currentSelectedTierName = '100 Bilingual Safety Guides';
+
+    // Propagate chosen tier to PayPal URL, Zelle memo, and UI displays
+    function selectTier(amount, tierName, element) {
+      currentSelectedAmount = amount;
+      currentSelectedTierName = tierName;
+
+      // Update active styling across cards
+      const allCards = document.querySelectorAll('.tier-card');
+      allCards.forEach(card => {
+        card.setAttribute('aria-pressed', 'false');
+        card.classList.remove('border-amber-500', 'ring-2', 'ring-amber-400/50', 'bg-gradient-to-b', 'from-amber-50/50', 'to-white');
+        card.classList.add('border-slate-200');
+        const badge = card.querySelector('.tier-badge');
+        if (badge && !card.dataset.tier.includes('Full Community')) {
+          badge.classList.remove('bg-amber-500', 'text-slate-950');
+          badge.classList.add('bg-blue-50', 'text-blue-900');
+        }
+      });
+
+      if (element) {
+        element.setAttribute('aria-pressed', 'true');
+        element.classList.remove('border-slate-200');
+        element.classList.add('border-amber-500', 'ring-2', 'ring-amber-400/50', 'bg-gradient-to-b', 'from-amber-50/50', 'to-white');
+        const badge = element.querySelector('.tier-badge');
+        if (badge) {
+          badge.classList.add('bg-amber-500', 'text-slate-950');
+        }
+      }
+
+      // Reset custom input value if a standard card was clicked
+      const customInput = document.getElementById('customAmountInput');
+      if (customInput && (!element || !element.id || element.id !== 'customAmountInput')) {
+        customInput.value = '';
+      }
+
+      updatePropagatedValues();
+    }
+
+    function handleCustomAmount(val) {
+      const num = parseInt(val, 10);
+      if (num && num > 0) {
+        currentSelectedAmount = num;
+        currentSelectedTierName = `Custom Community Gift ($${num})`;
+
+        // Remove highlight from predefined cards
+        document.querySelectorAll('.tier-card').forEach(c => {
+          c.setAttribute('aria-pressed', 'false');
+          c.classList.remove('border-amber-500', 'ring-2', 'ring-amber-400/50', 'bg-gradient-to-b', 'from-amber-50/50', 'to-white');
+          c.classList.add('border-slate-200');
+        });
+
+        updatePropagatedValues();
+      }
+    }
+
+    function updatePropagatedValues() {
+      // 1. Update Sync Display Banner
+      const syncBadge = document.getElementById('syncDisplayBadge');
+      const syncName = document.getElementById('syncTierName');
+      if (syncBadge) syncBadge.innerText = `$${currentSelectedAmount}`;
+      if (syncName) syncName.innerText = currentSelectedTierName;
+
+      // 2. Propagate to PayPal (link query & button label)
+      const paypalLink = document.getElementById('paypalDonateLink');
+      const paypalText = document.getElementById('paypalBtnText');
+      if (paypalLink) {
+        paypalLink.href = `https://www.paypal.com/donate?business=S5PAN9B85U28J&currency_code=USD&amount=${currentSelectedAmount}`;
+      }
+      if (paypalText) {
+        paypalText.innerText = `Donate $${currentSelectedAmount} via PayPal Checkout`;
+      }
+
+      // 3. Propagate to Zelle (amount display & suggested memo)
+      const zelleAmount = document.getElementById('zelleSelectedAmountDisplay');
+      const zelleMemo = document.getElementById('zelleMemoDisplay');
+      if (zelleAmount) {
+        zelleAmount.innerText = `$${currentSelectedAmount}`;
+      }
+      if (zelleMemo) {
+        zelleMemo.innerText = `SikhRPA Donation - $${currentSelectedAmount} (${currentSelectedTierName})`;
+      }
+    }
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      drawer.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    // Generic clipboard copy with graceful fallback
+    async function copyToClipboard(text, btnTextEl, btnIconEl, defaultLabel = 'Copy') {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btnTextEl.innerText = 'Copied!';
+        if (btnIconEl) btnIconEl.setAttribute('data-lucide', 'check');
+        lucide.createIcons();
+        setTimeout(() => {
+          btnTextEl.innerText = defaultLabel;
+          if (btnIconEl) btnIconEl.setAttribute('data-lucide', 'copy');
+          lucide.createIcons();
+        }, 2500);
+      } catch (err) {
+        window.prompt(`Copy ${defaultLabel}:`, text);
+      }
+    }
+
+    function copyZelleRecipient() {
+      copyToClipboard('sikhrpa', document.getElementById('zelleCopyText'), document.getElementById('zelleCopyIcon'), 'Copy Tag');
+    }
+
+    function copyZelleMemo() {
+      const memoText = document.getElementById('zelleMemoDisplay').innerText;
+      copyToClipboard(memoText, document.getElementById('zelleMemoCopyText'), document.getElementById('zelleMemoCopyIcon'), 'Copy Memo');
+    }
+
+    function copyPayPalRecipient() {
+      copyToClipboard('S5PAN9B85U28J', document.getElementById('paypalCopyText'), document.getElementById('paypalCopyIcon'), 'Copy ID');
+    }
+  </script>
+</body>
+</html>
