@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>California Firearms Legal Watch & Daily Regulatory News | SikhRPA 501(c)(3)</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TRVZCG17K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4TRVZCG17K');
+  </script>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="California Firearms Legal Watch & Daily Regulatory News | SikhRPA 501(c)(3)" />
+  <meta name="description" content="Permanent, searchable public intelligence archive tracking California firearm legislation, CA DOJ regulatory bulletins, and 9th Circuit court rulings for community firearm owners and families." />
+  <meta name="keywords" content="California gun laws news, CA DOJ firearms bulletins, 9th circuit gun cases, California 2A legal watch, AB 28 tax, PC 25100 storage, SikhRPA legal watch" />
+  <meta name="author" content="Sikh Rifle and Pistol Association" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sikhrpa.org/news" />
+  <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
+  <meta property="og:title" content="California Firearms Legal Watch & Regulatory News Archive | SikhRPA" />
+  <meta property="og:description" content="Searchable, permanent public intelligence archive covering California firearm legislation, DOJ notices, and court rulings." />
+  <meta property="og:image" content="srpa-logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
+
+  <!-- Accessibility Skip Navigation Link -->
+  <a 
+    href="#main-content" 
+    class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-600 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:outline-none"
+  >
+    Skip to main content
+  </a>
+
+  <!-- Top Navigation Header -->
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Return Link -->
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
+          <span class="hidden xs:inline">Home</span>
+        </a>
+        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <img 
+            src="srpa-logo.png" 
+            alt="SikhRPA Logo" 
+            class="h-8 sm:h-9 w-auto object-contain shrink-0"
+            onerror="this.style.display='none'"
+          />
+          <a href="./" class="font-bold text-sm sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors truncate">
+            <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+        <a href="./#safety" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Safety Rules</a>
+        <a href="buyer-guide" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Buyer's Guide</a>
+        <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-950 font-bold text-xs transition-colors">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
+          FSC Quiz
+        </a>
+        <span class="inline-flex items-center gap-1.5 text-blue-950 font-bold bg-blue-50 px-3 py-1 rounded-full border border-blue-200 text-xs shadow-sm">
+          <i data-lucide="newspaper" class="w-3.5 h-3.5 text-amber-600"></i>
+          Legal Watch
+        </span>
+        <a href="./#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors">About</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <a
+          href="donate"
+          class="inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors items-center gap-1.5 shadow-sm touch-target"
+          title="Tax-Deductible 501(c)(3) Giving"
+        >
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
+          <span>Donate</span>
+        </a>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button
+          type="button"
+          id="mobileMenuBtn"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors touch-target flex items-center justify-center"
+          aria-label="Toggle Navigation Menu"
+          aria-expanded="false"
+        >
+          <i id="menuIcon" data-lucide="menu" class="w-5 h-5"></i>
+          <i id="closeIcon" data-lucide="x" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div 
+      id="mobileMenuDrawer" 
+      class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+    >
+      <a href="./" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        Return to Homepage
+      </a>
+      <a href="fsc-quiz" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-bold text-blue-900 bg-blue-50 border border-blue-200">
+        <span class="flex items-center gap-2">
+          <i data-lucide="award" class="w-4 h-4 text-amber-600"></i>
+          CA FSC Practice Quiz
+        </span>
+        <span class="text-[10px] bg-amber-600 text-white px-2 py-0.5 rounded-full uppercase">Practice</span>
+      </a>
+      <a href="buyer-guide" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        First-Time Buyer's Guide
+      </a>
+      <a href="./#safety" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        4 Universal Safety Rules
+      </a>
+      <a href="donate" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-bold text-amber-950 bg-amber-50 border border-amber-200">
+        <span class="flex items-center gap-2">
+          <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500"></i>
+          Support Our Mission
+        </span>
+        <span class="text-[10px] bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded-full uppercase">501(c)(3)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Landmark -->
+  <main id="main-content" class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- Hero Banner -->
+    <div class="mb-8 sm:mb-10 text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-950 border border-blue-200 mb-4 shadow-sm">
+        <i data-lucide="newspaper" class="w-4 h-4 text-amber-600 shrink-0"></i>
+        <span>Automated Public Intelligence • Permanent Archive</span>
+      </div>
+      
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3">
+        California Firearms Legal Watch & Regulatory Archive
+      </h1>
+      
+      <p class="text-xs sm:text-base text-slate-600 leading-relaxed font-normal">
+        A cumulative, searchable public intelligence archive tracking California firearm legislation, California Department of Justice (CA DOJ) Bureau of Firearms regulatory bulletins, and federal 9th Circuit rulings.
+      </p>
+
+      <!-- Live Last Verified Status Pill -->
+      <div class="mt-4 inline-flex items-center gap-2.5 bg-white border border-slate-200 px-4 py-2 rounded-full text-xs text-slate-600 shadow-sm">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Latest Daily Sweep: <strong id="newsLastUpdated" class="text-slate-900">Loading daily archive...</strong></span>
+      </div>
+    </div>
+
+    <!-- Mandatory Legal Aggregation Disclaimer Banner -->
+    <div class="mb-8 bg-amber-50/80 border-2 border-amber-300/90 rounded-2xl p-5 sm:p-6 shadow-sm text-slate-800">
+      <div class="flex items-start gap-3.5">
+        <div class="p-2 bg-amber-500/20 text-amber-800 rounded-xl shrink-0 mt-0.5">
+          <i data-lucide="shield-alert" class="w-5 h-5"></i>
+        </div>
+        <div class="space-y-1.5 text-xs sm:text-sm leading-relaxed">
+          <h2 class="font-bold text-slate-950 text-sm sm:text-base flex items-center gap-2">
+            <span>Educational News Aggregation Disclaimer</span>
+            <span class="text-[10px] font-extrabold uppercase bg-amber-200 text-amber-900 px-2 py-0.5 rounded">Not Legal Counsel</span>
+          </h2>
+          <p class="text-slate-700">
+            <strong>Sikh Rifle and Pistol Association (SikhRPA)</strong> is an IRS-recognized 501(c)(3) nonprofit public benefit corporation organized exclusively for educational purposes. This automated news archive is an educational aggregation compiled daily from public state legislative databases, court dockets, and California Department of Justice bulletins.
+          </p>
+          <p class="text-slate-600 text-xs">
+            <strong>Disclaimer:</strong> This content does <em>not</em> constitute formal legal representation, binding legal advice, or attorney-client communication. California firearm statutes are subject to administrative stays, emergency judicial injunctions, and local municipal ordinances. Always consult a qualified California firearm attorney or verify statutes directly with the <a href="https://oag.ca.gov/firearms" target="_blank" rel="noopener noreferrer" class="text-blue-900 font-bold underline hover:text-blue-950">California DOJ Bureau of Firearms</a> prior to taking legal action.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search & Filter Controls Bar -->
+    <div class="bg-white rounded-2xl border-2 border-slate-200 p-4 sm:p-5 shadow-sm mb-8">
+      <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+        
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap items-center gap-1.5" id="categoryFilterContainer" role="tablist" aria-label="News Categories">
+          <button 
+            type="button" 
+            onclick="setCategoryFilter('all')" 
+            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm"
+            data-category="all"
+          >
+            All Updates
+          </button>
+          <button 
+            type="button" 
+            onclick="setCategoryFilter('Legislation')" 
+            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            data-category="Legislation"
+          >
+            Legislation
+          </button>
+          <button 
+            type="button" 
+            onclick="setCategoryFilter('Court Ruling')" 
+            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            data-category="Court Ruling"
+          >
+            Court Rulings
+          </button>
+          <button 
+            type="button" 
+            onclick="setCategoryFilter('CA DOJ Notice')" 
+            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            data-category="CA DOJ Notice"
+          >
+            DOJ Bulletins
+          </button>
+          <button 
+            type="button" 
+            onclick="setCategoryFilter('Community Safety')" 
+            class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+            data-category="Community Safety"
+          >
+            Community Safety
+          </button>
+        </div>
+
+        <!-- Keyword Search Input -->
+        <div class="relative w-full md:w-72">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <input 
+            type="text" 
+            id="searchInput" 
+            oninput="handleSearch(this.value)"
+            placeholder="Search statute, bill, or topic..."
+            class="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-300 text-xs font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+            aria-label="Search legal news updates"
+          />
+        </div>
+
+      </div>
+
+      <!-- Result Counter & Sort Label -->
+      <div class="mt-3 pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500">
+        <span id="resultCountLabel">Loading archive entries...</span>
+        <div class="flex items-center gap-3">
+          <span class="text-slate-400 font-medium">Sorted chronologically (newest first)</span>
+          <a href="https://oag.ca.gov/firearms" target="_blank" rel="noopener noreferrer" class="text-blue-900 hover:underline inline-flex items-center gap-1 font-semibold">
+            <span>CA DOJ Portal</span>
+            <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- News Grid Container -->
+    <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      <!-- Loading Skeletons -->
+      <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 animate-pulse space-y-4">
+        <div class="h-4 bg-slate-200 rounded w-1/3"></div>
+        <div class="h-6 bg-slate-200 rounded w-3/4"></div>
+        <div class="h-16 bg-slate-200 rounded"></div>
+      </div>
+      <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 animate-pulse space-y-4">
+        <div class="h-4 bg-slate-200 rounded w-1/3"></div>
+        <div class="h-6 bg-slate-200 rounded w-3/4"></div>
+        <div class="h-16 bg-slate-200 rounded"></div>
+      </div>
+      <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 animate-pulse space-y-4">
+        <div class="h-4 bg-slate-200 rounded w-1/3"></div>
+        <div class="h-6 bg-slate-200 rounded w-3/4"></div>
+        <div class="h-16 bg-slate-200 rounded"></div>
+      </div>
+    </div>
+
+    <!-- Progressive Pagination / Load More Button -->
+    <div id="loadMoreContainer" class="hidden text-center mb-12">
+      <button 
+        type="button" 
+        id="loadMoreBtn" 
+        onclick="loadMoreItems()"
+        class="px-6 py-3 rounded-xl bg-white border-2 border-slate-300 hover:border-blue-900 text-slate-800 font-bold text-xs transition-all shadow-sm inline-flex items-center gap-2 touch-target cursor-pointer"
+      >
+        <i data-lucide="chevrons-down" class="w-4 h-4 text-amber-600"></i>
+        <span id="loadMoreLabel">Load Older Dispatches</span>
+      </button>
+    </div>
+
+    <!-- Cross-Link Action Callouts (Buyer's Guide + Quiz) -->
+    <div class="grid md:grid-cols-2 gap-6 bg-white p-6 sm:p-8 rounded-2xl border-2 border-slate-200 shadow-sm">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-amber-500/10 text-amber-600 rounded-xl shrink-0 border border-amber-500/20">
+          <i data-lucide="award" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-base mb-1">Testing Your Knowledge?</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            Review California safe storage rules and legal penalties with our free, instant-feedback practice exam.
+          </p>
+          <a href="fsc-quiz" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 hover:text-blue-950 underline">
+            <span>Launch CA FSC Practice Quiz</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-blue-50 text-blue-900 rounded-xl shrink-0 border border-blue-200">
+          <i data-lucide="compass" class="w-6 h-6 text-amber-600"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-base mb-1">First-Time Firearm Buyer?</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            Master the REAL ID requirements, handgun proof of residency, and avoid counter rejections with our roadmap.
+          </p>
+          <a href="buyer-guide" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 hover:text-blue-950 underline">
+            <span>Read First-Time Buyer's Guide</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10 sm:py-12 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+      
+      <img 
+        src="srpa-logo.png" 
+        alt="SikhRPA Logo" 
+        class="h-9 sm:h-10 w-auto object-contain mb-4 opacity-90"
+        onerror="this.style.display='none'"
+      />
+      
+      <p class="text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto mb-3 leading-relaxed font-medium">
+        Sikh Rifle and Pistol Association is a California Nonprofit Public Benefit Corporation organized exclusively for educational and charitable purposes under Section 501(c)(3) of the Internal Revenue Code.
+      </p>
+
+      <p class="text-xs sm:text-sm text-blue-900 font-bold mb-6 tracking-wide bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200">
+        ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-semibold text-slate-600 mb-6">
+        <a href="./" class="hover:text-blue-900 p-1">Homepage</a>
+        <span aria-hidden="true">•</span>
+        <a href="buyer-guide" class="hover:text-blue-900 p-1">Buyer's Guide</a>
+        <span aria-hidden="true">•</span>
+        <a href="fsc-quiz" class="hover:text-blue-900 p-1">CA FSC Practice Exam</a>
+        <span aria-hidden="true">•</span>
+        <a href="donate" class="hover:text-blue-900 p-1">501(c)(3) Donate</a>
+        <span aria-hidden="true">•</span>
+        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900 p-1">president@sikhrpa.org</a>
+      </div>
+
+      <p class="text-xs text-slate-500 leading-relaxed">
+        Federal EIN: 42-2595402 • 1075 Mohawk St, South Lake Tahoe, CA 96150<br>
+        © <span id="current-year"></span> Sikh Rifle and Pistol Association. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Client-Side News Fetch & Progressive Filter Logic -->
+  <script>
+    document.getElementById('current-year').innerText = new Date().getFullYear();
+    lucide.createIcons();
+
+    let allNewsItems = [];
+    let filteredItems = [];
+    let activeCategory = 'all';
+    let searchQuery = '';
+    
+    // Progressive rendering: shows 12 cards at a time so infinite entries render instantly
+    const ITEMS_PER_PAGE = 12;
+    let visibleCount = ITEMS_PER_PAGE;
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      drawer.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    async function loadNewsData() {
+      const container = document.getElementById('newsGrid');
+      const updatedSpan = document.getElementById('newsLastUpdated');
+      const countLabel = document.getElementById('resultCountLabel');
+
+      try {
+        const res = await fetch('data/news.json?t=' + Date.now());
+        if (!res.ok) throw new Error('News feed currently unavailable');
+
+        const data = await res.json();
+        if (updatedSpan && data.updated_formatted) {
+          updatedSpan.innerText = data.updated_formatted;
+        }
+
+        allNewsItems = Array.isArray(data.items) ? data.items : [];
+        applyFilterAndRender(true);
+
+      } catch (err) {
+        console.warn('News loading issue:', err);
+        if (updatedSpan) updatedSpan.innerText = 'Automated Daily Sweep Active';
+        if (countLabel) countLabel.innerText = 'Displaying regulatory summary';
+        container.innerHTML = `
+          <div class="col-span-full p-6 bg-white rounded-2xl border-2 border-slate-200 text-center">
+            <i data-lucide="info" class="w-8 h-8 text-blue-900 mx-auto mb-2"></i>
+            <h3 class="font-bold text-slate-900 text-base mb-1">Archive Synchronizing</h3>
+            <p class="text-xs text-slate-600 max-w-md mx-auto mb-4">
+              The automated daily sweep is currently compiling newly chaptered bills and notices. In the meantime, please refer directly to the official California Department of Justice portal.
+            </p>
+            <a href="https://oag.ca.gov/firearms" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-900 text-white rounded-xl text-xs font-bold hover:bg-blue-800 transition-colors">
+              <span>Open CA DOJ Firearms Bureau</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        `;
+        lucide.createIcons();
+      }
+    }
+
+    function setCategoryFilter(category) {
+      activeCategory = category;
+
+      // Update button styling
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        if (btn.dataset.category === category) {
+          btn.className = 'filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
+        } else {
+          btn.className = 'filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200';
+        }
+      });
+
+      applyFilterAndRender(true);
+    }
+
+    function handleSearch(query) {
+      searchQuery = (query || '').trim().toLowerCase();
+      applyFilterAndRender(true);
+    }
+
+    function applyFilterAndRender(resetPagination = false) {
+      if (resetPagination) {
+        visibleCount = ITEMS_PER_PAGE;
+      }
+
+      filteredItems = allNewsItems.filter(item => {
+        const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+        const matchesSearch = !searchQuery || 
+          (item.headline && item.headline.toLowerCase().includes(searchQuery)) ||
+          (item.summary && item.summary.toLowerCase().includes(searchQuery)) ||
+          (item.statute_or_case && item.statute_or_case.toLowerCase().includes(searchQuery)) ||
+          (item.community_takeaway && item.community_takeaway.toLowerCase().includes(searchQuery)) ||
+          (item.source_name && item.source_name.toLowerCase().includes(searchQuery));
+
+        return matchesCategory && matchesSearch;
+      });
+
+      const countLabel = document.getElementById('resultCountLabel');
+      countLabel.innerText = `Showing ${Math.min(visibleCount, filteredItems.length)} of ${filteredItems.length} documented dispatches (${allNewsItems.length} total in permanent archive)`;
+
+      renderVisibleCards();
+    }
+
+    function renderVisibleCards() {
+      const container = document.getElementById('newsGrid');
+      const loadMoreContainer = document.getElementById('loadMoreContainer');
+      const loadMoreLabel = document.getElementById('loadMoreLabel');
+
+      if (filteredItems.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full p-8 bg-white rounded-2xl border-2 border-slate-200 text-center">
+            <i data-lucide="file-question" class="w-8 h-8 text-slate-400 mx-auto mb-2"></i>
+            <p class="text-sm font-bold text-slate-800 mb-1">No matching dispatches found</p>
+            <p class="text-xs text-slate-500">Try adjusting your search terms or selecting 'All Updates'.</p>
+          </div>
+        `;
+        loadMoreContainer.classList.add('hidden');
+        lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = '';
+      const itemsToRender = filteredItems.slice(0, visibleCount);
+
+      itemsToRender.forEach(item => {
+        let badgeColorClass = 'bg-blue-100 text-blue-900 border-blue-200';
+        if (item.badge_color === 'emerald') badgeColorClass = 'bg-emerald-100 text-emerald-900 border-emerald-300';
+        if (item.badge_color === 'amber') badgeColorClass = 'bg-amber-100 text-amber-900 border-amber-300';
+        if (item.badge_color === 'purple') badgeColorClass = 'bg-purple-100 text-purple-900 border-purple-300';
+
+        const card = document.createElement('article');
+        card.className = 'bg-white rounded-2xl border-2 border-slate-200 p-5 sm:p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-slate-300 transition-all';
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600 bg-slate-100 px-2.5 py-1 rounded">
+                ${item.category || 'Legal Update'}
+              </span>
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${badgeColorClass}">
+                ${item.badge_status || 'Active'}
+              </span>
+            </div>
+
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-1.5">
+              ${item.headline}
+            </h2>
+
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-mono font-semibold text-blue-900 truncate">
+                ${item.statute_or_case}
+              </span>
+              ${item.date ? `<span class="text-[10px] text-slate-400 shrink-0 font-medium">• ${item.date}</span>` : ''}
+            </div>
+
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              ${item.summary}
+            </p>
+          </div>
+
+          <div>
+            <div class="bg-amber-50/80 border border-amber-200/90 rounded-xl p-3 text-xs text-slate-800 mb-4">
+              <span class="font-bold text-amber-950 block mb-1 flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-700 shrink-0"></i>
+                Community Action Takeaway:
+              </span>
+              <p class="text-[11px] text-slate-700 leading-relaxed">
+                ${item.community_takeaway}
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+              <span class="truncate max-w-[170px]" title="${item.source_name}">${item.source_name}</span>
+              ${item.source_url ? `
+                <a 
+                  href="${item.source_url}" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="font-semibold text-blue-900 hover:text-blue-950 inline-flex items-center gap-1 hover:underline"
+                >
+                  <span>Official Source</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              ` : ''}
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      // Handle progressive Load More visibility
+      if (visibleCount < filteredItems.length) {
+        loadMoreContainer.classList.remove('hidden');
+        const remaining = filteredItems.length - visibleCount;
+        loadMoreLabel.innerText = `Load More Dispatches (${remaining} remaining)`;
+      } else {
+        loadMoreContainer.classList.add('hidden');
+      }
+
+      lucide.createIcons();
+    }
+
+    function loadMoreItems() {
+      visibleCount += ITEMS_PER_PAGE;
+      applyFilterAndRender(false);
+    }
+
+    window.addEventListener('DOMContentLoaded', loadNewsData);
+  </script>
+</body>
+</html>
