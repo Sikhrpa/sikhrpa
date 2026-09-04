@@ -9,8 +9,8 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-// Flash model endpoint
-const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+// Active Flash model endpoint with Google Search grounding
+const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 // Helper: Normalize URL to prevent tracking query duplicate bypass
 function cleanUrl(rawUrl) {
@@ -120,9 +120,9 @@ async function fetchDailyNews() {
     }
   }
 
-  // Pass only the top 8 most recent headlines to keep search grounding fast & avoid deadline timeouts
+  // Pass up to 25 recent headlines to prevent reporting duplicate stories
   const recentHeadlines = existingItems
-    .slice(0, 8)
+    .slice(0, 25)
     .map((item, idx) => `${idx + 1}. "${item.headline}"`)
     .join('\n');
 
