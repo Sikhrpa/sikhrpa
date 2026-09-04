@@ -140,7 +140,7 @@ ${recentHeadlines || 'None'}
 Requirements:
 - Factual & Nonpartisan: No editorializing or political campaign commentary.
 - Use publication or agency name as "source_name" and the verified article link as "source_url".
-- Return ONLY valid JSON array with this schema:
+- Return ONLY a valid JSON array matching this schema (do not wrap in markdown or prose):
 [
   {
     "id": "unique-slug-id",
@@ -162,8 +162,7 @@ Requirements:
     contents: [{ parts: [{ text: prompt }] }],
     tools: [{ googleSearch: {} }],
     generationConfig: { 
-      temperature: 0.2,
-      responseMimeType: "application/json"
+      temperature: 0.2
     }
   };
 
@@ -174,14 +173,18 @@ Requirements:
       body: JSON.stringify(payload)
     }, 3);
 
-    const rawContent = result.candidates?.[0]?.content?.parts?.[0]?.text;
+    // Extract text across all candidate parts (handles thinking blocks and multi-part tool results)
+    const parts = result.candidates?.[0]?.content?.parts || [];
+    const textParts = parts.map(p => p.text).filter(Boolean);
+    const rawContent = textParts.join('\n').trim();
 
     if (!rawContent) {
+      console.error("Debug candidate dump:", JSON.stringify(result.candidates, null, 2));
       throw new Error("Empty text response received from Gemini.");
     }
 
     // Extract JSON array
-    let cleanJson = rawContent.trim();
+    let cleanJson = rawContent;
     const firstBracket = cleanJson.indexOf('[');
     const lastBracket = cleanJson.lastIndexOf(']');
 
