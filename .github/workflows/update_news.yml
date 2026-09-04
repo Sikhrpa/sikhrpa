@@ -2,8 +2,11 @@ name: Daily California Legal & News Update
 
 on:
   schedule:
-    - cron: '23 14 * * *'
-  workflow_dispatch:
+    # 1. Tuesday at 7:30 AM PDT / 6:30 AM PST (covers weekend + Monday)
+    - cron: '30 14 * * 2'
+    # 2. Friday at 5:30 PM PDT / 4:30 PM PST (catches Friday afternoon court/DOJ dumps before the weekend)
+    - cron: '30 0 * * 6'
+  workflow_dispatch: # Allows manual trigger anytime from GitHub Actions tab
 
 jobs:
   update-news:
@@ -34,6 +37,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes detected in news archive."
           else
-            git commit -m "Automated Daily Legal & News Update [skip ci]"
+            git commit -m "Automated Bi-Weekly Legal & News Update [skip ci]"
             git push
           fi
