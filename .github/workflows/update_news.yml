@@ -1,40 +1,40 @@
 name: Daily California Legal & News Update
 
 on:
-  schedule:
-    # Runs every day at 14:00 UTC (06:00 AM PST / 07:00 AM PDT)
-    - cron: '0 14 * * *'
-  workflow_dispatch: # Allows manual trigger anytime from the Actions tab
+schedule:
+# Runs daily at 14:23 UTC (07:23 AM PDT / 06:23 AM PST) to bypass top-of-the-hour queue backlogs
+- cron: '23 14 * * *'
+workflow_dispatch: # Allows manual trigger anytime from the Actions tab
 
 jobs:
-  update-news:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: write
+update-news:
+runs-on: ubuntu-latest
+timeout-minutes: 5
+permissions:
+contents: write
 
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+steps:
+  - name: Check out repository
+    uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+  - name: Set up Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 24
 
-      - name: Run Gemini News Generator
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/update_news.js
+  - name: Run Gemini News Generator
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    run: node scripts/update_news.js
 
-      - name: Commit and push changes if updated
-        run: |
-          git config --global user.name "SikhRPA News Bot"
-          git config --global user.email "bot@sikhrpa.org"
-          git add data/news.json
-          if git diff --staged --quiet; then
-            echo "No new legislative changes or news updates detected today."
-          else
-            git commit -m "Automated Daily Legal & News Update [skip ci]"
-            git push
-          fi
+  - name: Commit and push changes if updated
+    run: |
+      git config --global user.name "SikhRPA News Bot"
+      git config --global user.email "bot@sikhrpa.org"
+      git add data/news.json
+      if git diff --staged --quiet; then
+        echo "No changes detected in news archive."
+      else
+        git commit -m "Automated Daily Legal & News Update [skip ci]"
+        git push
+      fi
