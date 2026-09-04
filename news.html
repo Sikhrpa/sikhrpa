@@ -61,7 +61,7 @@
       color: #0f172a;
       -webkit-tap-highlight-color: transparent;
     }
-    a:focus-visible, button:focus-visible, input:focus-visible {
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
       outline: 3px solid #d97706;
       outline-offset: 2px;
     }
@@ -88,7 +88,6 @@
     Skip to main content
   </a>
 
-  <!-- Top Navigation Header -->
   <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
@@ -184,7 +183,6 @@
     </div>
   </header>
 
-  <!-- Main Landmark -->
   <main id="main-content" class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
     
     <!-- Hero Banner -->
@@ -202,7 +200,7 @@
         A cumulative, searchable public intelligence archive tracking California firearm legislation, California Department of Justice (CA DOJ) Bureau of Firearms regulatory bulletins, federal 9th Circuit rulings, and authoritative state reporting.
       </p>
 
-      <!-- Live Last Verified Status Pill (Mobile-Hardened) -->
+      <!-- Live Last Verified Status Pill -->
       <div class="mt-4 inline-flex items-center gap-2 bg-white border border-slate-200 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs text-slate-600 shadow-sm max-w-full">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
         <span class="truncate">Latest Daily Sweep: <strong id="newsLastUpdated" class="text-slate-900">Loading daily archive...</strong></span>
@@ -230,11 +228,10 @@
       </div>
     </div>
 
-    <!-- Search & Filter Controls Bar -->
     <div class="bg-white rounded-2xl border-2 border-slate-200 p-4 sm:p-5 shadow-sm mb-8">
       <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         
-        <!-- Category Filter Pills (Now includes State News) -->
+        <!-- Category Filter Pills -->
         <div class="flex flex-wrap items-center gap-1.5" id="categoryFilterContainer" role="tablist" aria-label="News Categories">
           <button 
             type="button" 
@@ -301,11 +298,25 @@
 
       </div>
 
-      <!-- Result Counter & Sort Label -->
-      <div class="mt-3 pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500">
+      <!-- Result Counter & User Sort Controls -->
+      <div class="mt-3 pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-500">
         <span id="resultCountLabel">Loading archive entries...</span>
-        <div class="flex items-center gap-3">
-          <span class="text-slate-400 font-medium">Sorted chronologically (newest first)</span>
+        <div class="flex flex-wrap items-center gap-3">
+          <!-- Interactive Sort Selector -->
+          <div class="flex items-center gap-1.5">
+            <label for="sortSelect" class="text-slate-500 font-medium whitespace-nowrap">Sort by:</label>
+            <select 
+              id="sortSelect" 
+              onchange="handleSortChange(this.value)" 
+              class="bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold rounded-lg px-2.5 py-1 focus:ring-2 focus:ring-blue-900 focus:outline-none cursor-pointer"
+              aria-label="Sort legal news dispatches"
+            >
+              <option value="date-desc">Article Date (Newest first)</option>
+              <option value="date-asc">Article Date (Oldest first)</option>
+              <option value="headline-az">Headline (A–Z)</option>
+            </select>
+          </div>
+          <span class="text-slate-300 hidden sm:inline" aria-hidden="true">|</span>
           <a href="https://oag.ca.gov/firearms" target="_blank" rel="noopener noreferrer" class="text-blue-900 hover:underline inline-flex items-center gap-1 font-semibold">
             <span>CA DOJ Portal</span>
             <i data-lucide="external-link" class="w-3 h-3"></i>
@@ -314,7 +325,6 @@
       </div>
     </div>
 
-    <!-- News Grid Container -->
     <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
       <!-- Loading Skeletons -->
       <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 animate-pulse space-y-4">
@@ -384,7 +394,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="border-t border-slate-200 bg-white py-10 sm:py-12 mt-12">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
       
@@ -422,7 +431,6 @@
     </div>
   </footer>
 
-  <!-- Client-Side News Fetch & Progressive Filter Logic -->
   <script>
     document.getElementById('current-year').innerText = new Date().getFullYear();
     lucide.createIcons();
@@ -431,6 +439,7 @@
     let filteredItems = [];
     let activeCategory = 'all';
     let searchQuery = '';
+    let sortOrder = 'date-desc';
     
     // Progressive rendering: shows 12 cards at a time so infinite entries render instantly
     const ITEMS_PER_PAGE = 12;
@@ -508,6 +517,11 @@
       applyFilterAndRender(true);
     }
 
+    function handleSortChange(newSortOrder) {
+      sortOrder = newSortOrder;
+      applyFilterAndRender(true);
+    }
+
     function applyFilterAndRender(resetPagination = false) {
       if (resetPagination) {
         visibleCount = ITEMS_PER_PAGE;
@@ -523,6 +537,22 @@
           (item.source_name && item.source_name.toLowerCase().includes(searchQuery));
 
         return matchesCategory && matchesSearch;
+      });
+
+      // Sort items based on user selection
+      filteredItems.sort((a, b) => {
+        if (sortOrder === 'date-desc') {
+          const dateA = a.date ? new Date(a.date).getTime() : 0;
+          const dateB = b.date ? new Date(b.date).getTime() : 0;
+          return dateB - dateA;
+        } else if (sortOrder === 'date-asc') {
+          const dateA = a.date ? new Date(a.date).getTime() : 0;
+          const dateB = b.date ? new Date(b.date).getTime() : 0;
+          return dateA - dateB;
+        } else if (sortOrder === 'headline-az') {
+          return (a.headline || '').localeCompare(b.headline || '');
+        }
+        return 0;
       });
 
       const countLabel = document.getElementById('resultCountLabel');
