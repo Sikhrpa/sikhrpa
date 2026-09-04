@@ -5,10 +5,11 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 if (!GEMINI_API_KEY) {
   console.error("CRITICAL ERROR: GEMINI_API_KEY environment variable is missing or empty.");
+  console.error("Please verify GEMINI_API_KEY in Repository Settings > Secrets and variables > Actions.");
   process.exit(1);
 }
 
-// Flash model endpoint recommended by Google GenAI API
+// Flash model endpoint
 const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 // Helper: Normalize URL to prevent tracking query duplicate bypass
@@ -16,11 +17,9 @@ function cleanUrl(rawUrl) {
   if (!rawUrl) return '';
   try {
     const u = new URL(rawUrl);
-    // Strip common tracking and session parameters
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid'].forEach(param => {
       u.searchParams.delete(param);
     });
-    // Remove trailing slash
     return (u.origin + u.pathname + u.search).replace(/\/$/, '').toLowerCase();
   } catch (e) {
     return rawUrl.trim().toLowerCase().replace(/\/$/, '');
@@ -79,7 +78,7 @@ async function fetchDailyNews() {
     }
   }
 
-  // Build exclusion list from the last 25 entries to give Gemini prompt-level memory
+  // Build exclusion list from the last 25 entries to provide prompt-level memory
   const recentHeadlines = existingItems
     .slice(0, 25)
     .map((item, idx) => `${idx + 1}. "${item.headline}" (Docket/Statute: ${item.statute_or_case || 'N/A'})`)
@@ -185,7 +184,7 @@ Strict Requirements:
         continue;
       }
 
-      // Check 3: Fuzzy headline comparison against existing items
+      // Check 3: Fuzzy headline comparison against existing archive
       const isFuzzyDupe = existingItems.some(existing => isFuzzyDuplicate(newItem.headline, existing.headline));
       if (isFuzzyDupe) {
         console.log(`[Duplicate skipped by Fuzzy Headline Match]: ${newItem.headline}`);
@@ -205,11 +204,6 @@ Strict Requirements:
       novelItems.push(newItem);
     }
 
-    if (novelItems.length === 0) {
-      console.log("No new unique stories detected today. Existing archive remains intact.");
-      return;
-    }
-
     // Prepend novel items ahead of the existing archive
     const mergedList = [...novelItems, ...existingItems];
 
@@ -227,6 +221,7 @@ Strict Requirements:
       timeZone: 'America/Los_Angeles'
     });
 
+    // Always update verification timestamp so the live badge updates even on quiet news days
     const outputData = {
       last_updated: now.toISOString(),
       updated_formatted: `${formattedDate} • ${formattedTime}`,
@@ -234,7 +229,12 @@ Strict Requirements:
     };
 
     fs.writeFileSync(outputPath, JSON.stringify(outputData, null, 2), 'utf-8');
-    console.log(`✓ Success: Added ${novelItems.length} novel dispatches. Archive now contains ${mergedList.length} total historical records.`);
+
+    if (novelItems.length > 0) {
+      console.log(`✓ Success: Added ${novelItems.length} novel dispatches. Archive now contains ${mergedList.length} total historical records.`);
+    } else {
+      console.log(`✓ Daily sweep completed: No new novel stories detected today. Verified timestamp updated (${outputData.updated_formatted}).`);
+    }
 
   } catch (error) {
     console.error("Execution failed:", error.message);
