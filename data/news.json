@@ -1,7 +1,59 @@
 {
-  "last_updated": "2026-09-03T21:44:15.911Z",
-  "updated_formatted": "September 3, 2026 • 2:44 PM PDT",
+  "last_updated": "2026-09-04T17:16:23.375Z",
+  "updated_formatted": "September 4, 2026 • 10:16 AM PDT",
   "items": [
+    {
+      "id": "ninth-circuit-upholds-gun-store-surveillance-mandate",
+      "date": "2026-08-28",
+      "category": "Court Ruling",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit Upholds California Law Mandating Continuous Video and Audio Surveillance at Gun Stores",
+      "statute_or_case": "Richards v. Newsom, No. 24-558; Cal. Penal Code § 26806",
+      "summary": "A three-judge panel of the U.S. Court of Appeals for the Ninth Circuit affirmed the dismissal of a constitutional challenge to California Penal Code section 26806, which requires licensed firearms retailers to maintain 24-hour audiovisual recording systems covering entrances, exits, display counters, and transaction registers. The court rejected claims by firearm retailers and Second Amendment groups that the surveillance mandate violates the Fourth Amendment as a continuous warrantless search or chills free speech under the First Amendment. The decision keeps in place California's comprehensive store recording mandate for licensed firearms dealers across the state.",
+      "community_takeaway": "Californians conducting business or purchasing equipment at licensed gun dealerships should remain aware that all interior areas, discussions, and transactions are actively recorded by state-mandated video and audio surveillance.",
+      "source_name": "California Department of Justice",
+      "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-ninth-circuit-victory-defending-californias"
+    },
+    {
+      "id": "ca-doj-bulletin-ccw-rapback-enrollment",
+      "date": "2026-08-31",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "blue",
+      "headline": "CA DOJ Issues Advisory on Renewal CCW Licenses and Mandatory FBI Rap Back Service Enrollment",
+      "statute_or_case": "Cal. DOJ Information Bulletin 2026-DLE-14; Cal. Penal Code §§ 26165, 11105",
+      "summary": "The California Department of Justice Division of Law Enforcement issued Information Bulletin 2026-DLE-14 informing local licensing authorities of statutory changes taking effect September 1, 2026, governing CCW renewals. The directive details standardized operational instructions for enrolling CCW renewal applicants into the Federal Bureau of Investigation's Rap Back service. The integration ensures issuing sheriffs and police chiefs receive ongoing, real-time electronic notifications regarding any subsequent arrests, citations, or disqualifying court orders incurred by permit holders.",
+      "community_takeaway": "Concealed carry weapon permit holders undergoing license renewals will be enrolled in continuous national background monitoring, which alerts issuing authorities immediately if any disqualifying legal event occurs.",
+      "source_name": "California Department of Justice",
+      "source_url": "https://oag.ca.gov/law-enforcement/bulletins"
+    },
+    {
+      "id": "calmatters-sb948-mandatory-live-fire-training",
+      "date": "2026-05-19",
+      "category": "State News",
+      "badge_status": "News Report",
+      "badge_color": "purple",
+      "headline": "CalMatters Reports on SB 948 Requiring Live-Fire Range Qualification and Registration for New Arrivals",
+      "statute_or_case": "California Senate Bill 948; Cal. Penal Code § 31640 et seq.",
+      "summary": "CalMatters reported on legislative advancements for Senate Bill 948, an initiative authored by Berkeley Democratic Sen. Jesse Arreguín to replace the state's traditional written Firearm Safety Certificate test with a mandatory four-hour curriculum including live-fire shooting range qualification. The measure also introduces a requirement that new California residents obtain an FSC and register all brought-in firearms within 180 days of moving to the state. While bill supporters argue the structured training will decrease unintentional shootings, firearms groups argue the mandate creates significant financial and logistical hurdles for everyday gun buyers.",
+      "community_takeaway": "Gun owners and new residents planning to bring firearms into California should monitor the progress of SB 948, as it significantly raises the procedural requirements, costs, and compliance deadlines associated with legal ownership.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/politics/2026/05/california-gun-safety-training-bill/"
+    },
+    {
+      "id": "latimes-doj-challenge-machinegun-convertible-pistol-ban",
+      "date": "2026-07-01",
+      "category": "State News",
+      "badge_status": "News Report",
+      "badge_color": "purple",
+      "headline": "Los Angeles Times Reports on Legal Clash Over California's Semiautomatic 'Convertible Pistol' Ban",
+      "statute_or_case": "AB 1127; Cal. Penal Code § 27595",
+      "summary": "The Los Angeles Times covered the launch of federal litigation challenging Assembly Bill 1127, a California statute that took effect July 1, 2026, prohibiting licensed dealers from selling or transferring semiautomatic handguns deemed readily convertible into automatic weapons via modifications such as switches. The legislation places strict limitations on popular handguns utilizing cruciform trigger bar configurations, prompting legal challenges questioning the constitutionality of targeting standard commercial handgun models. State officials continue to defend the measure as a critical public safety policy designed to curtail rapid illegal conversions on the street.",
+      "community_takeaway": "Californians looking to purchase common striker-fired handgun models may encounter retail inventory constraints and dealer hesitancy while the federal courts evaluate the scope and legality of AB 1127.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com"
+    },
     {
       "id": "ca-ab2047-3d-printer-firearm-blocking-bill",
       "date": "2026-08-31",
