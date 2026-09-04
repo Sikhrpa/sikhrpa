@@ -1,39 +1,39 @@
 name: Daily California Legal & News Update
 
 on:
-schedule:
-- cron: '23 14 * * *'
-workflow_dispatch:
+  schedule:
+    - cron: '23 14 * * *'
+  workflow_dispatch:
 
 jobs:
-update-news:
-runs-on: ubuntu-latest
-timeout-minutes: 5
-permissions:
-contents: write
+  update-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
 
-steps:
-  - name: Check out repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-  - name: Set up Node.js
-    uses: actions/setup-node@v4
-    with:
-      node-version: 24
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
-  - name: Run Gemini News Generator
-    env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-    run: node scripts/update_news.js
+      - name: Run Gemini News Generator
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/update_news.js
 
-  - name: Commit and push changes if updated
-    run: |
-      git config --global user.name "SikhRPA News Bot"
-      git config --global user.email "bot@sikhrpa.org"
-      git add data/news.json
-      if git diff --staged --quiet; then
-        echo "No changes detected in news archive."
-      else
-        git commit -m "Automated Daily Legal & News Update [skip ci]"
-        git push
-      fi
+      - name: Commit and push changes if updated
+        run: |
+          git config --global user.name "SikhRPA News Bot"
+          git config --global user.email "bot@sikhrpa.org"
+          git add data/news.json
+          if git diff --staged --quiet; then
+            echo "No changes detected in news archive."
+          else
+            git commit -m "Automated Daily Legal & News Update [skip ci]"
+            git push
+          fi
