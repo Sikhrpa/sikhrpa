@@ -10,7 +10,7 @@ if (!GEMINI_API_KEY) {
 }
 
 // Flash model endpoint
-const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${GEMINI_API_KEY}`;
+const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 // Helper: Normalize URL to prevent tracking query duplicate bypass
 function cleanUrl(rawUrl) {
@@ -54,6 +54,48 @@ function isFuzzyDuplicate(headlineA, headlineB) {
   return overlapA >= 0.60 || overlapB >= 0.60;
 }
 
+// Helper: Sleep function for exponential backoff retries
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fetchWithRetry(url, options, maxRetries = 3) {
+  let attempt = 0;
+  let delay = 3000; // start with 3 seconds
+
+  while (attempt < maxRetries) {
+    attempt++;
+    try {
+      console.log(`Querying Gemini API (Attempt ${attempt} of ${maxRetries})...`);
+      const response = await fetch(url, options);
+
+      if (response.ok) {
+        return await response.json();
+      }
+
+      const errText = await response.text();
+      // Retry on 503 (Unavailable / Deadline Expired), 429 (Rate Limit), or 500
+      if ([500, 502, 503, 504, 429].includes(response.status) && attempt < maxRetries) {
+        console.warn(`[HTTP ${response.status}] Temporary server delay: ${errText.slice(0, 120)}...`);
+        console.log(`Retrying in ${delay / 1000}s...`);
+        await sleep(delay);
+        delay *= 2; // exponential backoff (3s -> 6s -> 12s)
+        continue;
+      }
+
+      throw new Error(`Google API returned HTTP ${response.status}: ${errText}`);
+    } catch (err) {
+      if (attempt < maxRetries && (err.message.includes('503') || err.message.includes('fetch failed'))) {
+        console.warn(`Network/timeout warning: ${err.message}. Retrying in ${delay / 1000}s...`);
+        await sleep(delay);
+        delay *= 2;
+        continue;
+      }
+      throw err;
+    }
+  }
+}
+
 async function fetchDailyNews() {
   console.log("Starting intelligent balanced daily sweep (Legal & News) with anti-duplication...");
 
@@ -78,46 +120,40 @@ async function fetchDailyNews() {
     }
   }
 
-  // Build exclusion list from the last 25 entries to provide prompt-level memory
+  // Pass only the top 8 most recent headlines to keep search grounding fast & avoid deadline timeouts
   const recentHeadlines = existingItems
-    .slice(0, 25)
-    .map((item, idx) => `${idx + 1}. "${item.headline}" (Docket/Statute: ${item.statute_or_case || 'N/A'})`)
+    .slice(0, 8)
+    .map((item, idx) => `${idx + 1}. "${item.headline}"`)
     .join('\n');
 
   const prompt = `
-You are an authoritative legal research editor and public safety analyst for the Sikh Rifle and Pistol Association (SikhRPA), a California 501(c)(3) nonprofit public educational charity.
+You are an authoritative legal research editor for the Sikh Rifle and Pistol Association (SikhRPA), a California 501(c)(3) public charity.
 
 Task:
-Perform a fresh search for California firearm-related developments and return a balanced collection of 4 to 6 total items:
-1. Exactly 2 to 3 Primary Legal / Regulatory updates:
-   - Newly chaptered legislation or active legislative movement (California Legislature / LegInfo)
-   - Federal 9th Circuit or District Court orders, stays, or rulings affecting CA gun owners
-   - Official California Department of Justice (CA DOJ) Bureau of Firearms regulatory notices, DROS alerts, or safe storage bulletins
-2. Exactly 2 to 3 Authoritative News / Investigative reports:
-   - Reputable reporting from major news outlets: Associated Press (AP), Reuters, Los Angeles Times, San Francisco Chronicle, Sacramento Bee, or CalMatters
-   - Articles covering retail impacts, community safety, safe storage initiatives, enforcement trends, or legal challenges
+Perform a fresh search for California firearm developments and return 3 to 4 total items:
+- 1 to 2 Legal/Regulatory updates (Legislation, 9th Circuit rulings, or CA DOJ bulletins)
+- 1 to 2 Authoritative news articles (AP, Reuters, LA Times, SF Chronicle, or CalMatters)
 
-CRITICAL ANTI-DUPLICATION RULE:
-We already have the following stories in our archive. Do NOT select, rewrite, or repeat these stories unless there has been a major, new verified development today:
-${recentHeadlines || 'None yet (first run)'}
+Do NOT select or repeat stories covering these recently archived headlines:
+${recentHeadlines || 'None'}
 
-Strict Requirements:
-- Strictly Nonpartisan & Educational: No op-eds, endorsements, political campaign commentary, or editorial rants. Focus purely on factual developments affecting firearm owners, families, and community safety.
-- For news articles, use the publication name as "source_name" (e.g., "Los Angeles Times", "CalMatters", "Associated Press") and the specific article link as "source_url".
-- Return ONLY a valid JSON array of objects following this exact schema:
+Requirements:
+- Factual & Nonpartisan: No editorializing or political campaign commentary.
+- Use publication or agency name as "source_name" and the verified article link as "source_url".
+- Return ONLY valid JSON array with this schema:
 [
   {
     "id": "unique-slug-id",
     "date": "YYYY-MM-DD",
     "category": "Legislation" | "Court Ruling" | "CA DOJ Notice" | "State News" | "Community Safety",
-    "badge_status": "In Effect" | "Court Injunction" | "Regulatory Notice" | "News Report" | "Statutory Update",
+    "badge_status": "In Effect" | "Court Injunction" | "Regulatory Notice" | "News Report",
     "badge_color": "emerald" | "amber" | "blue" | "purple",
-    "headline": "Clear, objective, informative headline",
-    "statute_or_case": "Associated CA Penal Code, court docket, or reporting agency",
-    "summary": "2-3 sentences in plain English summarizing the factual event or findings.",
-    "community_takeaway": "Actionable takeaway or practical context for California owners, buyers, and families.",
-    "source_name": "Entity or news outlet name",
-    "source_url": "Direct verified URL to official docket or news article"
+    "headline": "Informative headline",
+    "statute_or_case": "Penal code, docket, or agency",
+    "summary": "2-3 sentences explaining the development.",
+    "community_takeaway": "Practical context for California gun owners and families.",
+    "source_name": "Source name",
+    "source_url": "https://..."
   }
 ]
 `;
@@ -125,22 +161,19 @@ Strict Requirements:
   const payload = {
     contents: [{ parts: [{ text: prompt }] }],
     tools: [{ googleSearch: {} }],
-    generationConfig: { temperature: 0.2 }
+    generationConfig: { 
+      temperature: 0.2,
+      responseMimeType: "application/json"
+    }
   };
 
   try {
-    const response = await fetch(API_ENDPOINT, {
+    const result = await fetchWithRetry(API_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
-    });
+    }, 3);
 
-    if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`Google API returned HTTP ${response.status}: ${errText}`);
-    }
-
-    const result = await response.json();
     const rawContent = result.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!rawContent) {
@@ -198,7 +231,7 @@ Strict Requirements:
         continue;
       }
 
-      // Passed all checks!
+      // Passed all checks
       if (newCleanUrl) existingUrls.add(newCleanUrl);
       if (newId) existingIds.add(newId);
       novelItems.push(newItem);
@@ -221,7 +254,7 @@ Strict Requirements:
       timeZone: 'America/Los_Angeles'
     });
 
-    // Always update verification timestamp so the live badge updates even on quiet news days
+    // Always update verification timestamp so the live badge updates
     const outputData = {
       last_updated: now.toISOString(),
       updated_formatted: `${formattedDate} • ${formattedTime}`,
