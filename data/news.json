@@ -1,7 +1,46 @@
 {
-  "last_updated": "2026-09-05T01:47:54.919Z",
-  "updated_formatted": "September 4, 2026 • 6:47 PM PDT",
+  "last_updated": "2026-09-05T04:48:09.090Z",
+  "updated_formatted": "September 4, 2026 • 9:48 PM PDT",
   "items": [
+    {
+      "id": "california-sb-704-barrel-transfer-mandate",
+      "date": "2026-01-01",
+      "category": "Legislation",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "California SB 704 Takes Effect, Requiring Firearm Barrels to Be Transferred In Person via Licensed Dealers",
+      "statute_or_case": "Cal. Penal Code § 33700 (Senate Bill 704)",
+      "summary": "Codified under California Penal Code Section 33700, Senate Bill 704 now prohibits the direct-to-consumer shipment and unmediated private transfer of standalone firearm barrels across the state. Under the statute, any commercial sale, delivery, or transfer of a firearm barrel—defined broadly to include partially completed barrels that can be readily finished—must be executed in person through a licensed firearms dealer. The legislation also establishes a second phase scheduled for July 2027 that will mandate electronic eligibility background checks prior to delivery.",
+      "community_takeaway": "California gun owners, hobbyists, and competitive shooters can no longer order replacement barrels, caliber conversions, or complete upper assemblies directly to their homes, requiring all standalone barrel shipments to be processed through a local FFL.",
+      "source_name": "California State Legislature",
+      "source_url": "https://oag.ca.gov/firearms/regs"
+    },
+    {
+      "id": "latimes-lasd-ccw-delays-federal-settlement",
+      "date": "2026-08-13",
+      "category": "State News",
+      "badge_status": "News Report",
+      "badge_color": "blue",
+      "headline": "Los Angeles Times Details Federal Settlement Over Concealed Carry Permit Processing Delays in L.A. County",
+      "statute_or_case": "Cal. Penal Code § 26150; United States v. County of Los Angeles (C.D. Cal.)",
+      "summary": "The Los Angeles Times reported that the U.S. Department of Justice entered into a formal settlement with the Los Angeles County Sheriff's Department resolving a federal civil rights lawsuit over extreme CCW permit backlogs. Federal prosecutors had asserted that processing delays averaging nearly 300 days, paired with issuing just two permits out of nearly 4,000 applications in a 15-month period, systematically infringed upon Second Amendment rights. Under the agreed terms, the department established a dedicated 16-person Carry Conceal Unit and adopted automated processing workflows to process pending applications without excessive delay.",
+      "community_takeaway": "Concealed carry applicants residing in Los Angeles County can anticipate significantly reduced processing times and improved procedural transparency for both initial licenses and biennial renewals as a result of the mandated staffing expansion.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com/california/story/2026-08-13/feds-settle-lawsuit-with-l-a-county-sheriffs-department-over-concealed-firearm-permits"
+    },
+    {
+      "id": "calmatters-state-lawsuit-3d-print-blueprints",
+      "date": "2026-02-07",
+      "category": "Community Safety",
+      "badge_status": "News Report",
+      "badge_color": "amber",
+      "headline": "CalMatters Reports on State Lawsuit Against Digital Repositories Distributing 3D-Printed Firearm Blueprints",
+      "statute_or_case": "Cal. Civ. Code § 3273.51; People v. The Gatalog Foundation Inc. (S.F. Super. Ct.)",
+      "summary": "CalMatters reported that the California Attorney General and San Francisco City Attorney filed a major civil lawsuit against online platforms that distribute computer-aided design files and schematics for 3D-printable firearms. The state contends that making digital manufacturing code available to California residents constitutes a public nuisance and violates laws against aiding and abetting the unlawful manufacture of ghost guns and rapid-fire conversion components. The enforcement action marks the state's initial civil prosecution focusing on out-of-state entities hosting downloadable blueprints.",
+      "community_takeaway": "The enforcement initiative highlights California's heightened legal scrutiny of digital firearm schematics, signaling expanded regulatory risk and potential civil liability for individuals downloading, distributing, or hosting digital CAD/CAM gun designs within the state.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/02/california-sues-websites-that-publish-blueprints-for-3d-printer-ghost-guns/"
+    },
     {
       "id": "la-times-goleta-gun-store-daycare-zoning",
       "date": "2026-09-04",
