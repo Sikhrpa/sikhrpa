@@ -1,7 +1,33 @@
 {
-  "last_updated": "2026-09-04T17:16:23.375Z",
-  "updated_formatted": "September 4, 2026 • 10:16 AM PDT",
+  "last_updated": "2026-09-05T01:47:54.919Z",
+  "updated_formatted": "September 4, 2026 • 6:47 PM PDT",
   "items": [
+    {
+      "id": "la-times-goleta-gun-store-daycare-zoning",
+      "date": "2026-09-04",
+      "category": "State News",
+      "badge_status": "News Report",
+      "badge_color": "blue",
+      "headline": "Los Angeles Times Examines Municipal Battles Over Gun Retailers Operating Near Daycare Centers",
+      "statute_or_case": "Goleta Municipal Code; Cal. Penal Code § 26800 et seq.",
+      "summary": "The Los Angeles Times reported on escalating municipal controversies in Goleta, California, after a long-standing firearm retailer legally moved to a location directly adjoining a childcare playground. Because California statutes enforce strict retailer background checks and safe storage but lack statewide mandatory distance buffers between gun stores and daycare centers, local officials are drafting emergency moratoriums and zoning buffer rules. The clash highlights how municipal authorities across California are leveraging local land-use and planning regulations to restrict firearm commerce where state statute remains silent.",
+      "community_takeaway": "Firearm retailers and customers must monitor local city council and planning commission agendas, as municipalities are increasingly implementing local zoning setbacks and conditional-use restrictions independent of state licensing rules.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com/california/story/2026-09-04/goleta-gun-store-daycare-zoning-controversy"
+    },
+    {
+      "id": "calmatters-colleges-military-weapons-ab481-compliance",
+      "date": "2026-07-08",
+      "category": "Community Safety",
+      "badge_status": "News Report",
+      "badge_color": "blue",
+      "headline": "CalMatters Investigation Details Transparency Deficits in Higher Education Police Weapon Stockpiles",
+      "statute_or_case": "Cal. Gov. Code § 7070 et seq. (Assembly Bill 481)",
+      "summary": "A statewide investigation by CalMatters documented that multiple public colleges and universities across the UC, CSU, and community college systems failed to maintain full public compliance with state military equipment transparency laws. Under Assembly Bill 481, public agency law enforcement departments holding specialized gear—including semi-automatic patrol rifles and tactical munitions—must publish annual inventories, secure governing board approvals, and hold open public hearings. The findings led several educational institutions to quickly update their weapon registries and initiate overdue public policy reviews.",
+      "community_takeaway": "California residents and campus communities can exercise their statutory rights under AB 481 to examine annual equipment reports and attend public forums regarding the specialized firearms and patrol weaponry possessed by campus police departments.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/education/higher-education/college-beat/2026/07/military-weapons-california-colleges/"
+    },
     {
       "id": "ninth-circuit-upholds-gun-store-surveillance-mandate",
       "date": "2026-08-28",
