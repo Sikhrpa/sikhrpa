@@ -16,12 +16,24 @@ async function fetchDailyNews() {
 
   const currentDateIso = new Date().toISOString().split('T')[0];
 
-  // Prompt engineered to prioritize recency and reject future/annual statutory roundups
+  // Prompt engineered for balanced official regulatory notices and verified media reports
   const prompt = `
 You are an authoritative legal research editor for the Sikh Rifle and Pistol Association (SikhRPA), a California 501(c)(3) nonprofit public charity.
 
 Task:
-Perform a targeted search for RECENT California firearm legal developments, 9th Circuit Court of Appeals rulings, federal district court orders, CA Department of Justice (CA DOJ) Bureau of Firearms bulletins, or state legislative developments.
+Perform a targeted search for RECENT California firearm developments and return two balanced categories of verified updates (4 to 6 items in total):
+
+1. Official Government & Judicial Dispatches (2 to 3 items):
+   - Federal court orders, 9th Circuit rulings, or District Court preliminary injunctions/stays.
+   - California Department of Justice (CA DOJ) Bureau of Firearms bulletins, regulatory advisories, or information notices.
+   - Official California State Legislature chaptered bill developments.
+   - "source_name" must be the official government body or court docket (e.g., "U.S. Court of Appeals for the Ninth Circuit", "CA DOJ Bureau of Firearms", "California State Legislature").
+   - "category" should be "Court Ruling", "CA DOJ Notice", or "Legislation".
+
+2. Reputable News & Investigative Media Coverage (2 to 3 items):
+   - In-depth news reports, investigative reporting, or local California coverage of firearm regulations, retail impacts, community safe storage initiatives, or municipal legal disputes.
+   - "source_name" must be a verified news organization (e.g., "CalMatters", "Los Angeles Times", "Associated Press", "San Francisco Chronicle", "The Reload", "CBS News Bay Area / Sacramento").
+   - "category" should be "State News" or "Community Safety".
 
 CRITICAL DATE & RECENCY RULES:
 - Focus on recent news and legal actions from the LAST 30 TO 60 DAYS relative to ${currentDateIso}.
@@ -29,8 +41,6 @@ CRITICAL DATE & RECENCY RULES:
 - NEVER use a future statutory effective date (e.g., DO NOT use "January 1" or "July 1" when a law goes into effect). The date must represent when the news or decision occurred.
 - DO NOT return generic annual roundups (e.g. "Laws taking effect Jan 1").
 - The date MUST NOT be in the future (it cannot be later than ${currentDateIso}).
-
-Identify 2 to 3 distinct, verified public legal updates.
 
 Output Format:
 Return ONLY valid JSON (no markdown ticks, no surrounding codeblock markers, no conversation text).
