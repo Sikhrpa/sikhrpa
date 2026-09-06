@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SikhRPA Bilingual Tri-Fold Leaflet | California Firearm Safety & Buyer's Guide</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Mahee:wght@500;600;700;800&display=swap');
+
+    :root {
+      --navy: #0f172a;
+      --gold: #d97706;
+      --blue: #1e3a8a;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #334155;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+    }
+
+    .gurmukhi {
+      font-family: 'Mukta Mahee', 'Raavi', 'Gurmukhi MN', sans-serif;
+      line-height: 1.3;
+    }
+
+    /* Tri-Fold Sheet Container (11in wide x 8.5in tall landscape) */
+    .trifold-sheet {
+      width: 11in;
+      height: 8.5in;
+      background: #ffffff;
+      margin: 24px auto;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 3.666in 3.666in 3.666in;
+    }
+
+    /* Panels with fold clearance and vertical balance */
+    .panel {
+      height: 8.5in;
+      box-sizing: border-box;
+      padding: 0.28in 0.24in;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Visual on-screen fold guides */
+    .fold-border-right {
+      border-right: 1px dashed #cbd5e1;
+    }
+
+    /* Print Specific Rules for Double-Sided Brochure Printing */
+    @media print {
+      @page {
+        size: letter landscape;
+        margin: 0;
+      }
+      body {
+        background: transparent !important;
+        padding: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .trifold-sheet {
+        margin: 0 !important;
+        box-shadow: none !important;
+        width: 11in !important;
+        height: 8.5in !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .fold-border-right {
+        border-right: 1px dotted rgba(148, 163, 184, 0.4) !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-white pb-12">
+
+  <!-- Floating Action Bar (Hidden during Print / PDF Export) -->
+  <aside class="no-print sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800 text-white py-2.5 px-4 shadow-2xl">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="p-1.5 bg-amber-500 text-slate-950 rounded-lg">
+          <i data-lucide="printer" class="w-4 h-4"></i>
+        </span>
+        <div>
+          <h1 class="text-xs sm:text-sm font-extrabold tracking-tight text-white flex items-center gap-1.5">
+            <span>SikhRPA Event Tri-Fold Brochure (11" × 8.5" Landscape)</span>
+          </h1>
+          <p class="text-[10px] text-slate-400">
+            Print Double-Sided: Sheet 1 = Outside Panels • Sheet 2 = Inside 3-Panel Spread
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          onclick="window.print()"
+          class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-extrabold text-xs flex items-center gap-1.5 shadow-lg transition-all cursor-pointer"
+          title="Print double-sided or save as PDF"
+        >
+          <i data-lucide="printer" class="w-4 h-4"></i>
+          <span>Print / Save Double-Sided PDF</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Print Setup Callout -->
+  <div class="no-print max-w-[11in] mx-auto mt-3 px-4">
+    <div class="bg-amber-50 border border-amber-300 rounded-xl p-2.5 text-xs text-amber-950 flex items-center justify-between gap-3 shadow-sm">
+      <div class="flex items-center gap-2">
+        <i data-lucide="info" class="w-4 h-4 text-amber-700 shrink-0"></i>
+        <span><strong>Printer Settings:</strong> Select <strong>Landscape</strong>, Paper: <strong>Letter (8.5 × 11 in)</strong>, Margins: <strong>None (0)</strong>, and <strong>Two-Sided: Flip on Short Edge</strong>.</span>
+      </div>
+      <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-200 text-amber-900 px-2 py-0.5 rounded shrink-0">High-Density Print Ready</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SHEET 1: OUTSIDE / EXTERIOR (When laid flat facing exterior)
+       [ Panel 1: Inside Flap ]  [ Panel 2: Back Cover ]  [ Panel 3: Front Cover ]
+       ========================================================================= -->
+  <div class="trifold-sheet">
+    
+    <!-- -----------------------------------------------------------------------
+         PANEL 1 (OUTSIDE): INSIDE FLAP (Folds inward first)
+         Focus: Mission, 3-Tier Storage Hierarchy, PC § 25100, Free Locks & Child Safety
+         ----------------------------------------------------------------------- -->
+    <div class="panel fold-border-right bg-white">
+      <div class="space-y-2">
+        
+        <!-- Header Strip -->
+        <div class="flex items-center justify-between pb-1 border-b border-slate-200">
+          <span class="text-[8.5px] font-extrabold text-amber-800 uppercase tracking-wider flex items-center gap-1">
+            <i data-lucide="shield-check" class="w-3 h-3 text-amber-600"></i>
+            501(c)(3) Public Safety Mission
+          </span>
+          <span class="text-[8px] font-mono text-slate-500 font-bold">EIN: 42-2595402</span>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-black text-slate-900 leading-tight">
+            Community Safety & Safe Storage
+          </h2>
+          <p class="gurmukhi text-[10px] font-bold text-blue-950 leading-tight">
+            ਸੁਰੱਖਿਆ ਸਿੱਖਿਆ, ਕਾਨੂੰਨੀ ਪਾਲਣਾ ਅਤੇ ਪਰਿਵਾਰਕ ਸੁਰੱਖਿਆ
+          </p>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 space-y-1">
+          <p class="text-[8px] text-slate-700 leading-snug">
+            <strong>Sikh Rifle & Pistol Association</strong> is an IRS-recognized 501(c)(3) public charity dedicated to preventing firearm accidents through education, safe home storage compliance, and marksmanship discipline.
+          </p>
+          <p class="gurmukhi text-[8.5px] text-blue-950 font-semibold leading-snug border-t border-slate-200 pt-1">
+            ਸਾਡੀ ਸੰਸਥਾ ਦਾ ਮਕਸਦ ਘਰਾਂ ਵਿੱਚ ਹਾਦਸਿਆਂ ਨੂੰ ਰੋਕਣਾ, ਬੱਚਿਆਂ ਦੀ ਸੁਰੱਖਿਆ ਯਕੀਨੀ ਬਣਾਉਣਾ, ਅਤੇ ਨਵੇਂ ਖਰੀਦਦਾਰਾਂ ਨੂੰ ਕੈਲੀਫੋਰਨੀਆ ਦੇ ਸਖ਼ਤ ਕਾਨੂੰਨਾਂ ਦੀ ਪਾਲਣਾ ਕਰਵਾਉਣਾ ਹੈ।
+          </p>
+        </div>
+
+        <!-- Safe Storage Mandate (PC § 25100) with Felony Warning -->
+        <div class="bg-amber-50/90 border-2 border-amber-300 rounded-xl p-2 space-y-1 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-[9px] font-black uppercase text-amber-950 flex items-center gap-1 tracking-wide">
+              <i data-lucide="alert-octagon" class="w-3.5 h-3.5 text-rose-600"></i>
+              CA Safe Storage Law (PC § 25100)
+            </span>
+            <span class="text-[7.5px] font-extrabold bg-rose-600 text-white px-1.5 py-0.2 rounded uppercase">Felony Offense</span>
+          </div>
+          <p class="text-[8px] text-slate-700 leading-snug">
+            It is a <strong>criminal felony</strong> to store an unsecured firearm where a child under 18 or prohibited person accesses it and causes death or bodily injury.
+          </p>
+          <div class="gurmukhi text-[8.5px] text-amber-950 bg-white p-1 rounded border border-amber-200 leading-snug font-semibold">
+            ਜੇਕਰ ਘਰ ਵਿੱਚ ਖੁੱਲ੍ਹਾ ਰੱਖਿਆ ਹਥਿਆਰ ਕਿਸੇ ਬੱਚੇ ਦੇ ਹੱਥ ਲੱਗ ਜਾਵੇ ਅਤੇ ਹਾਦਸਾ ਵਾਪਰੇ, ਤਾਂ ਮਾਲਕ ਵਿਰੁੱਧ <strong>ਸੰਗੀਨ ਅਪਰਾਧ (ਫੈਲੋਨੀ)</strong> ਦਰਜ ਹੁੰਦਾ ਹੈ। ਹਥਿਆਰ ਨੂੰ ਸਿਰਫ਼ ਉੱਚੀ ਥਾਂ ਜਾਂ ਅਲਮਾਰੀ ਵਿੱਚ ਲੁਕਾਉਣਾ ਕਾਨੂੰਨੀ ਬਚਾਅ ਨਹੀਂ ਹੈ।
+          </div>
+        </div>
+
+        <!-- VISUAL INFOGRAPHIC: 3-Tier Safe Home Storage Hierarchy -->
+        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+          <div class="flex items-center justify-between text-[8px] font-bold text-slate-900 uppercase">
+            <span class="flex items-center gap-1 text-blue-900">
+              <i data-lucide="layers" class="w-3 h-3 text-amber-600"></i>
+              3 Levels of Safe Home Storage • ਸਟੋਰੇਜ ਦੇ ੩ ਪੱਧਰ
+            </span>
+            <span class="text-emerald-700">CA DOJ Approved</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-1 text-center text-[7.5px]">
+            <div class="p-1 rounded bg-white border border-slate-200 shadow-2xs">
+              <i data-lucide="shield" class="w-3.5 h-3.5 mx-auto text-amber-600 mb-0.5"></i>
+              <span class="font-extrabold text-slate-900 block">Level 1: Cable Lock</span>
+              <span class="text-slate-500 block leading-tight">Loops through action. Free from SikhRPA.</span>
+              <span class="gurmukhi text-[7.5px] text-blue-900 font-bold block mt-0.5">ਕੇਬਲ ਲਾਕ</span>
+            </div>
+            <div class="p-1 rounded bg-white border border-slate-200 shadow-2xs">
+              <i data-lucide="lock" class="w-3.5 h-3.5 mx-auto text-blue-900 mb-0.5"></i>
+              <span class="font-extrabold text-slate-900 block">Level 2: Lockbox</span>
+              <span class="text-slate-500 block leading-tight">Quick biometric or button bedside access.</span>
+              <span class="gurmukhi text-[7.5px] text-blue-900 font-bold block mt-0.5">ਤਾਲਾਬੰਦ ਬਕਸਾ</span>
+            </div>
+            <div class="p-1 rounded bg-white border border-slate-200 shadow-2xs">
+              <i data-lucide="vault" class="w-3.5 h-3.5 mx-auto text-purple-800 mb-0.5"></i>
+              <span class="font-extrabold text-slate-900 block">Level 3: Steel Safe</span>
+              <span class="text-slate-500 block leading-tight">Heavy fire-rated steel safe for collection.</span>
+              <span class="gurmukhi text-[7.5px] text-blue-900 font-bold block mt-0.5">ਲੋਹੇ ਦੀ ਸੇਫ਼</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Child Safety Action Box: "If a Child Sees a Firearm" -->
+        <div class="bg-blue-50/80 border border-blue-200 rounded-xl p-2 space-y-1">
+          <div class="flex items-center justify-between text-blue-950 font-bold text-[8.5px]">
+            <span class="flex items-center gap-1">
+              <i data-lucide="users" class="w-3 h-3 text-amber-600"></i>
+              Child Safety Protocol | ਬੱਚਿਆਂ ਲਈ ੪ ਜ਼ਰੂਰੀ ਨਿਯਮ
+            </span>
+          </div>
+          <div class="grid grid-cols-4 gap-1 text-center text-[7.5px]">
+            <div class="bg-white p-1 rounded border border-blue-100 font-bold text-rose-700">
+              ੧. ਰੁਕੋ<br><span class="text-slate-500 font-normal">1. STOP</span>
+            </div>
+            <div class="bg-white p-1 rounded border border-blue-100 font-bold text-rose-700">
+              ੨. ਹੱਥ ਨਾ ਲਾਓ<br><span class="text-slate-500 font-normal">2. Don't Touch</span>
+            </div>
+            <div class="bg-white p-1 rounded border border-blue-100 font-bold text-amber-700">
+              ੩. ਦੂਰ ਹਟੋ<br><span class="text-slate-500 font-normal">3. Leave Area</span>
+            </div>
+            <div class="bg-white p-1 rounded border border-blue-100 font-bold text-blue-900">
+              ੪. ਵੱਡਿਆਂ ਨੂੰ ਦੱਸੋ<br><span class="text-slate-500 font-normal">4. Tell Adult</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Free Cable Lock Program Card -->
+        <div class="p-1.5 rounded-lg bg-emerald-50/80 border border-emerald-300 flex items-center justify-between gap-2">
+          <div class="flex items-center gap-1.5">
+            <i data-lucide="gift" class="w-4 h-4 text-emerald-700 shrink-0"></i>
+            <div>
+              <span class="text-[8px] font-extrabold text-emerald-950 block">Free Cable Locks For Every Family</span>
+              <span class="gurmukhi text-[8px] text-emerald-900 font-semibold block">ਸਾਡੇ ਹਰ ਸੈਮੀਨਾਰ ਵਿੱਚ ਮੁਫ਼ਤ ਕੈਲੀਫੋਰਨੀਆ DOJ ਲਾਕ ਵੰਡੇ ਜਾਂਦੇ ਹਨ।</span>
+            </div>
+          </div>
+          <span class="text-[7.5px] bg-emerald-700 text-white font-bold px-1.5 py-0.5 rounded uppercase shrink-0">100% Free</span>
+        </div>
+
+      </div>
+
+      <!-- Bottom Panel Strip -->
+      <div class="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[7.5px] text-slate-500">
+        <span>ਜਨਤਕ ਸੁਰੱਖਿਆ ਸਿੱਖਿਆ • Public Charity</span>
+        <span class="font-mono">PC § 25100 & § 25140</span>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 2 (OUTSIDE): BACK COVER (Middle panel when folded)
+         Focus: Gurdwara Seminars, FAQ, Tax-Deductible Giving, Dual QR Codes & Contacts
+         ----------------------------------------------------------------------- -->
+    <div class="panel fold-border-right bg-white text-slate-900">
+      <div class="space-y-2">
+        
+        <!-- Header -->
+        <div class="text-center pb-1 border-b border-slate-200">
+          <span class="text-[8.5px] font-extrabold uppercase tracking-widest text-amber-700">
+            Connect & Support • ਸੇਵਾ ਅਤੇ ਸੰਪਰਕ
+          </span>
+          <h2 class="text-xs font-black text-slate-900 leading-tight mt-0.5">
+            Sikh Rifle and Pistol Association
+          </h2>
+          <p class="gurmukhi text-[9px] text-blue-950 font-bold">
+            ਸਿੱਖ ਰਾਈਫਲ ਅਤੇ ਪਿਸਤੌਲ ਐਸੋਸੀਏਸ਼ਨ (California 501c3)
+          </p>
+        </div>
+
+        <!-- Host a Gurdwara Seminar Box -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-2 space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="text-[9px] font-bold text-blue-900 flex items-center gap-1">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-amber-600"></i>
+              Host a Free Gurdwara Workshop
+            </span>
+            <span class="text-[7.5px] bg-blue-100 text-blue-900 font-extrabold px-1.5 py-0.2 rounded">Free Service</span>
+          </div>
+          <p class="text-[8px] text-slate-600 leading-snug">
+            Our certified bilingual instructors deliver structured safety clinics, safe storage workshops, and live demonstrations at your Gurdwara or community hall.
+          </p>
+          <div class="gurmukhi text-[8.5px] text-blue-950 font-semibold bg-white p-1 rounded border border-slate-200 leading-snug">
+            <strong>ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ ਵਿਖੇ ਕੈਂਪ:</strong> ਆਪਣੇ ਸਥਾਨਕ ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ ਵਿੱਚ ਪੰਜਾਬੀ ਵਿੱਚ ਮੁਫ਼ਤ ਸੁਰੱਖਿਆ ਸੈਮੀਨਾਰ ਕਰਵਾਉਣ ਲਈ ਸਾਨੂੰ ਈਮੇਲ ਕਰੋ: <span class="font-mono text-blue-900 font-bold">president@sikhrpa.org</span>
+          </div>
+        </div>
+
+        <!-- Frequently Asked Questions Mini Card -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-2 space-y-1 text-[8px]">
+          <span class="text-[8.5px] font-bold text-slate-900 flex items-center gap-1">
+            <i data-lucide="help-circle" class="w-3 h-3 text-blue-900"></i>
+            Common Questions • ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ
+          </span>
+          <div class="space-y-1">
+            <div class="bg-white p-1 rounded border border-slate-200">
+              <p class="font-bold text-slate-900 text-[7.5px]">Q: Are clinics open to women and absolute beginners?</p>
+              <p class="gurmukhi text-[8px] text-blue-950 font-medium">ਹਾਂਜੀ! ਸਾਡੇ ਸਾਰੇ ਸੈਮੀਨਾਰ ਪਰਿਵਾਰਾਂ, ਬੀਬੀਆਂ ਅਤੇ ਨਵੇਂ ਸਿੱਖਣ ਵਾਲਿਆਂ ਲਈ ਖੁੱਲ੍ਹੇ ਹਨ। ਸਾਰਾ ਸੁਰੱਖਿਆ ਸਾਮਾਨ ਮੁਫ਼ਤ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।</p>
+            </div>
+            <div class="bg-white p-1 rounded border border-slate-200">
+              <p class="font-bold text-slate-900 text-[7.5px]">Q: Can Green Card (Permanent Resident) holders buy firearms?</p>
+              <p class="gurmukhi text-[8px] text-blue-950 font-medium">ਹਾਂਜੀ! ਗ੍ਰੀਨ ਕਾਰਡ ਧਾਰਕ ਕਾਨੂੰਨੀ ਤੌਰ 'ਤੇ ਹਥਿਆਰ ਖਰੀਦਣ ਦੇ ਹੱਕਦਾਰ ਹਨ (ਡਰਾਈਵਿੰਗ ਲਾਇਸੈਂਸ ਤੇ ਰਿਹਾਇਸ਼ੀ ਸਬੂਤ ਦੇ ਨਾਲ)।</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 501(c)(3) Tax-Deductible Donation Card -->
+        <div class="bg-amber-50/70 border-2 border-amber-300 rounded-xl p-2 space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-black text-amber-950 flex items-center gap-1 text-[9px]">
+              <i data-lucide="heart" class="w-3 h-3 text-rose-600 fill-rose-600"></i>
+              Tax-Deductible Dasvandh • ਟੈਕਸ-ਮੁਕਤ ਦਾਨ
+            </span>
+            <span class="text-[7.5px] bg-amber-500 text-slate-950 px-1 py-0.2 rounded font-extrabold">IRC § 170</span>
+          </div>
+
+          <p class="gurmukhi text-[8px] text-amber-950 leading-snug">
+            ਤੁਹਾਡਾ ਦਸਵੰਧ ਸਿੱਧੇ ਤੌਰ 'ਤੇ ਮੁਫ਼ਤ ਪੰਜਾਬੀ ਗਾਈਡਾਂ ਦੀ ਛਪਾਈ ਅਤੇ ਪਰਿਵਾਰਾਂ ਨੂੰ ਮੁਫ਼ਤ ਕੇਬਲ ਲਾਕ ਵੰਡਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ:
+          </p>
+
+          <div class="grid grid-cols-2 gap-1.5 text-left">
+            <div class="bg-white p-1.5 rounded border border-slate-200 shadow-2xs">
+              <span class="text-[7.5px] uppercase font-bold text-purple-800 block">Zelle® (0% Fees):</span>
+              <span class="font-mono font-bold text-[9.5px] text-slate-900 select-all block">sikhrpa</span>
+              <span class="text-[7px] text-slate-500 block">Use your bank mobile app</span>
+            </div>
+            <div class="bg-white p-1.5 rounded border border-slate-200 shadow-2xs">
+              <span class="text-[7.5px] uppercase font-bold text-sky-800 block">PayPal ID:</span>
+              <span class="font-mono font-bold text-[8.5px] text-slate-900 truncate block">#S5PAN9B85U28J</span>
+              <span class="text-[7px] text-slate-500 block">Cards / Venmo / PayPal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dual QR Codes & Web Links -->
+        <div class="p-1.5 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between gap-2">
+          <div class="space-y-0.5 text-[7.5px] flex-1">
+            <p><strong class="text-slate-900">Website:</strong> <span class="font-mono text-blue-900 font-bold">sikhrpa.org</span></p>
+            <p><strong class="text-slate-900">Practice Test:</strong> <span class="font-mono text-blue-900 font-bold">sikhrpa.org/fsc-quiz</span></p>
+            <p><strong class="text-slate-900">Instagram:</strong> <span class="text-pink-700 font-bold">@sikhrpa</span></p>
+          </div>
+
+          <!-- Crisp Vector QR Code -->
+          <div class="p-1 bg-white border border-slate-300 rounded-lg shadow-2xs text-center shrink-0">
+            <svg class="w-8 h-8 text-slate-900 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+              <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"></path>
+            </svg>
+            <span class="block text-[6px] font-bold text-slate-700 -mt-0.5">Visit Portal</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Info -->
+      <div class="pt-1.5 border-t border-slate-200 text-center">
+        <p class="text-[7px] text-slate-500 leading-tight">
+          Sikh Rifle and Pistol Association • 1075 Mohawk St, South Lake Tahoe, CA 96150<br>
+          Federal EIN: 42-2595402 • IRS 501(c)(3) Nonprofit Public Benefit Corporation
+        </p>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 3 (OUTSIDE): FRONT COVER (Rightmost panel when laid flat)
+         Focus: Bold Official Emblem, Bilingual Title, Feature Grid, Badges & QR Code
+         ----------------------------------------------------------------------- -->
+    <div class="panel bg-white text-slate-900 relative">
+      
+      <!-- Top Badging Header -->
+      <div class="flex items-center justify-between pb-1 border-b border-slate-200">
+        <span class="inline-flex items-center gap-1 text-[7.5px] font-extrabold uppercase tracking-wider bg-blue-900 text-white px-2 py-0.5 rounded-full shadow-2xs">
+          <i data-lucide="award" class="w-3 h-3 text-amber-400"></i>
+          Official Safety Handbook
+        </span>
+        <span class="gurmukhi text-[8px] font-extrabold text-amber-900 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded">
+          ਦੋਭਾਸ਼ੀ ਕਾਨੂੰਨੀ ਗਾਈਡ
+        </span>
+      </div>
+
+      <!-- Main Visual Centerpiece -->
+      <div class="my-auto text-center flex flex-col items-center py-1">
+        
+        <!-- Logo Display -->
+        <div class="w-20 h-20 bg-slate-50 rounded-2xl p-2 border-2 border-slate-200 mb-2 shadow-sm flex items-center justify-center">
+          <img 
+            src="srpa-logo.png" 
+            alt="Sikh Rifle and Pistol Association Logo" 
+            class="w-full h-full object-contain"
+            onerror="this.src='https://placehold.co/160x160/0f172a/d97706?text=SikhRPA'"
+          />
+        </div>
+
+        <span class="text-[8px] font-extrabold text-amber-700 uppercase tracking-widest block mb-0.5">
+          Sikh Rifle & Pistol Association
+        </span>
+        <p class="gurmukhi text-[10.5px] font-black text-blue-900 mb-1">
+          ਸਿੱਖ ਰਾਈਫਲ ਅਤੇ ਪਿਸਤੌਲ ਐਸੋਸੀਏਸ਼ਨ
+        </p>
+
+        <h1 class="text-[13px] font-black tracking-tight leading-tight uppercase text-slate-900 mb-0.5">
+          California Firearm Safety & Buyer's Compliance Guide
+        </h1>
+
+        <div class="w-14 h-0.5 bg-amber-500 mx-auto my-1 rounded-full"></div>
+
+        <p class="gurmukhi text-[13.5px] font-black text-blue-950 leading-tight">
+          ਕੈਲੀਫੋਰਨੀਆ ਹਥਿਆਰ ਖਰੀਦ ਅਤੇ ਸੁਰੱਖਿਆ ਗਾਈਡ
+        </p>
+
+        <p class="text-[7.5px] font-semibold text-slate-500 uppercase tracking-wider mt-0.5 mb-2">
+          First-Time Owners • Family Safe Storage • CA DOJ Compliance
+        </p>
+
+        <!-- What's Inside 4-Item Visual Feature Grid -->
+        <div class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-left space-y-1 shadow-2xs">
+          <span class="text-[7.5px] font-extrabold uppercase tracking-wider text-slate-500 block mb-1">
+            Inside This Handbook • ਗਾਈਡ ਵਿੱਚ ਕੀ ਸ਼ਾਮਲ ਹੈ:
+          </span>
+          <div class="grid grid-cols-2 gap-1 text-[7.5px]">
+            <div class="bg-white p-1 rounded border border-slate-200 flex items-center gap-1 font-semibold text-slate-800">
+              <i data-lucide="shield-alert" class="w-3 h-3 text-amber-600 shrink-0"></i>
+              <span>4 Safety Rules (੪ ਮੂਲ ਨਿਯਮ)</span>
+            </div>
+            <div class="bg-white p-1 rounded border border-slate-200 flex items-center gap-1 font-semibold text-slate-800">
+              <i data-lucide="file-check" class="w-3 h-3 text-blue-900 shrink-0"></i>
+              <span>REAL ID Trap (ਰੀਅਲ ਆਈ.ਡੀ)</span>
+            </div>
+            <div class="bg-white p-1 rounded border border-slate-200 flex items-center gap-1 font-semibold text-slate-800">
+              <i data-lucide="award" class="w-3 h-3 text-amber-600 shrink-0"></i>
+              <span>FSC 30-Q Test (ਸੁਰੱਖਿਆ ਪ੍ਰੀਖਿਆ)</span>
+            </div>
+            <div class="bg-white p-1 rounded border border-slate-200 flex items-center gap-1 font-semibold text-slate-800">
+              <i data-lucide="lock" class="w-3 h-3 text-blue-900 shrink-0"></i>
+              <span>Safe Storage (ਸੁਰੱਖਿਅਤ ਸਟੋਰੇਜ)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Front Cover Footer Strip -->
+      <div class="pt-2 border-t border-slate-200 flex items-center justify-between gap-2">
+        <div class="text-left">
+          <p class="gurmukhi text-[11px] font-black text-blue-950 leading-tight">
+            ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ!
+          </p>
+          <p class="text-[7.5px] font-extrabold tracking-wider uppercase text-slate-700">
+            STAY SAFE, BE RESPONSIBLE!
+          </p>
+          <p class="text-[7px] text-amber-800 font-mono font-bold">sikhrpa.org/buyer-guide</p>
+        </div>
+
+        <!-- High-DPI Vector QR Code -->
+        <div class="p-1 bg-white border border-slate-300 rounded-lg shadow-2xs shrink-0 text-center" title="Scan to open digital guide">
+          <svg class="w-9 h-9 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"></path>
+          </svg>
+          <span class="block text-[6px] font-bold text-slate-900 -mt-0.5">ਸਕੈਨ ਕਰੋ (Scan)</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =========================================================================
+       SHEET 2: INSIDE SPREAD (Revealed when completely opened)
+       [ Panel 4: 4 Rules & Myths ]  [ Panel 5: Steps 1 & 2 Table ]  [ Panel 6: Steps 3, 4 & 5 Timeline ]
+       ========================================================================= -->
+  <div class="trifold-sheet">
+    
+    <!-- -----------------------------------------------------------------------
+         PANEL 4 (INSIDE LEFT): THE 4 UNIVERSAL SAFETY RULES & COMMON MYTHS
+         Focus: Strict muzzle discipline, trigger control, chamber verification & myths
+         ----------------------------------------------------------------------- -->
+    <div class="panel fold-border-right bg-white">
+      <div class="space-y-1.5">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-1 border-b border-slate-200">
+          <h2 class="text-[11px] font-black uppercase text-slate-900 tracking-wide flex items-center gap-1">
+            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+            4 Universal Safety Rules
+          </h2>
+          <span class="gurmukhi text-[8.5px] font-bold text-blue-900 bg-blue-50 px-1.5 py-0.2 rounded">੪ ਮੂਲ ਸੁਰੱਖਿਆ ਨਿਯਮ</span>
+        </div>
+
+        <p class="gurmukhi text-[9px] font-bold text-blue-950 leading-tight">
+          ਹਰ ਸਮੇਂ ਪਾਲਣਾ ਕਰਨ ਯੋਗ ਚਾਰ ਅਟੱਲ ਸਰਵਵਿਆਪਕ ਨਿਯਮ:
+        </p>
+
+        <!-- The 4 Rules -->
+        <div class="space-y-1 text-[8px]">
+          
+          <!-- Rule 1 -->
+          <div class="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 flex items-center gap-1">
+                <span class="w-3.5 h-3.5 rounded bg-blue-900 text-amber-400 flex items-center justify-center text-[7.5px] shrink-0 font-black">1</span>
+                Treat Every Firearm as Loaded
+              </span>
+              <span class="gurmukhi text-[8px] font-black text-blue-950">੧. ਹਮੇਸ਼ਾ ਲੋਡ ਮੰਨੋ</span>
+            </div>
+            <p class="gurmukhi text-[7.5px] text-slate-700 leading-snug mt-0.5">
+              ਕਿਸੇ ਦੇ ਕਹਿਣ 'ਤੇ ਭਰੋਸਾ ਨਾ ਕਰੋ। ਮੈਗਜ਼ੀਨ ਕੱਢ ਕੇ ਚੈਂਬਰ ਦੀ ਖੁਦ ਅੱਖੀਂ ਜਾਂਚ ਕਰੋ।
+            </p>
+          </div>
+
+          <!-- Rule 2 -->
+          <div class="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 flex items-center gap-1">
+                <span class="w-3.5 h-3.5 rounded bg-blue-900 text-amber-400 flex items-center justify-center text-[7.5px] shrink-0 font-black">2</span>
+                Muzzle in a Safe Direction Always
+              </span>
+              <span class="gurmukhi text-[8px] font-black text-blue-950">੨. ਸੁਰੱਖਿਅਤ ਦਿਸ਼ਾ</span>
+            </div>
+            <p class="gurmukhi text-[7.5px] text-slate-700 leading-snug mt-0.5">
+              ਬੈਰਲ ਦਾ ਮੂੰਹ ਕਦੇ ਕਿਸੇ ਵਿਅਕਤੀ ਜਾਂ ਅਣਚਾਹੀ ਚੀਜ਼ ਵੱਲ ਨਾ ਕਰੋ। ਮੂੰਹ ਹਮੇਸ਼ਾ ਜ਼ਮੀਨ ਜਾਂ ਬੈਕਸਟਾਪ ਵੱਲ ਰੱਖੋ।
+            </p>
+          </div>
+
+          <!-- Rule 3 -->
+          <div class="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 flex items-center gap-1">
+                <span class="w-3.5 h-3.5 rounded bg-blue-900 text-amber-400 flex items-center justify-center text-[7.5px] shrink-0 font-black">3</span>
+                Finger Off Trigger Until Sights on Target
+              </span>
+              <span class="gurmukhi text-[8px] font-black text-blue-950">੩. ਟਰਿੱਗਰ ਅਨੁਸ਼ਾਸਨ</span>
+            </div>
+            <p class="gurmukhi text-[7.5px] text-slate-700 leading-snug mt-0.5">
+              ਜਦੋਂ ਤੱਕ ਗੋਲੀ ਚਲਾਉਣ ਦਾ ਫੈਸਲਾ ਨਾ ਹੋਵੇ, ਉਂਗਲ ਨੂੰ ਟਰਿੱਗਰ ਗਾਰਡ ਤੋਂ ਬਾਹਰ ਫਰੇਮ 'ਤੇ ਸਿੱਧੀ ਰੱਖੋ।
+            </p>
+          </div>
+
+          <!-- Rule 4 -->
+          <div class="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 flex items-center gap-1">
+                <span class="w-3.5 h-3.5 rounded bg-blue-900 text-amber-400 flex items-center justify-center text-[7.5px] shrink-0 font-black">4</span>
+                Know Your Target & What Lies Beyond
+              </span>
+              <span class="gurmukhi text-[8px] font-black text-blue-950">੪. ਨਿਸ਼ਾਨੇ ਦੀ ਓਟ</span>
+            </div>
+            <p class="gurmukhi text-[7.5px] text-slate-700 leading-snug mt-0.5">
+              ਗੋਲੀਆਂ ਕੰਧਾਂ, ਕਾਰਾਂ ਅਤੇ ਦਰਵਾਜ਼ਿਆਂ ਦੇ ਆਰ-ਪਾਰ ਜਾ ਸਕਦੀਆਂ ਹਨ। ਪੱਕੀ ਓਟ (ਬੈਕਸਟਾਪ) ਤੋਂ ਬਿਨਾਂ ਫਾਇਰ ਨਾ ਕਰੋ।
+            </p>
+          </div>
+
+        </div>
+
+        <!-- DANGEROUS MYTHS VS FACTS BOX -->
+        <div class="p-2 rounded-xl bg-amber-50/80 border border-amber-300 space-y-1">
+          <span class="text-[8.5px] font-black uppercase text-amber-950 flex items-center gap-1">
+            <i data-lucide="alert-triangle" class="w-3 h-3 text-amber-700"></i>
+            Dangerous Myths vs. Reality • ਗਲਤ ਧਾਰਨਾਵਾਂ ਅਤੇ ਸੱਚਾਈ
+          </span>
+          <div class="space-y-1 text-[7.5px]">
+            <div class="bg-white p-1 rounded border border-amber-200">
+              <span class="text-rose-700 font-bold block">✗ Myth: "ਮੈਗਜ਼ੀਨ ਕੱਢ ਦਿੱਤੀ ਹੈ ਤਾਂ ਬੰਦੂਕ ਖਾਲੀ ਹੈ।"</span>
+              <span class="text-slate-700 block">✓ <strong>Reality:</strong> ਮੈਗਜ਼ੀਨ ਕੱਢਣ ਤੋਂ ਬਾਅਦ ਵੀ ਚੈਂਬਰ ਵਿੱਚ ਇੱਕ ਜਿੰਦਾ ਗੋਲੀ ਰਹਿ ਸਕਦੀ ਹੈ ਜੋ ਫਾਇਰ ਹੋ ਸਕਦੀ ਹੈ। ਚੈਂਬਰ ਖੋਲ੍ਹ ਕੇ ਦੇਖੋ!</span>
+            </div>
+            <div class="bg-white p-1 rounded border border-amber-200">
+              <span class="text-rose-700 font-bold block">✗ Myth: "ਮਕੈਨੀਕਲ ਸੇਫਟੀ ਲੱਗੀ ਹੈ ਤਾਂ ਗੋਲੀ ਨਹੀਂ ਚੱਲ ਸਕਦੀ।"</span>
+              <span class="text-slate-700 block">✓ <strong>Reality:</strong> ਸੇਫਟੀ ਸਿਰਫ਼ ਇੱਕ ਪੁਰਜ਼ਾ ਹੈ ਜੋ ਟੁੱਟ ਜਾਂ ਫੇਲ੍ਹ ਹੋ ਸਕਦਾ ਹੈ। ਮੂੰਹ ਹਮੇਸ਼ਾ ਸੁਰੱਖਿਅਤ ਦਿਸ਼ਾ ਵੱਲ ਰੱਖੋ।</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Cease Fire Command Box -->
+        <div class="p-1.5 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-between text-[7.5px]">
+          <div>
+            <strong class="text-rose-900 block">Range Rule: "CEASE FIRE"</strong>
+            <span class="gurmukhi text-rose-950">ਰੇਂਜ 'ਤੇ ਕੋਈ ਵੀ "Cease Fire" ਬੋਲੇ ਤਾਂ ਤੁਰੰਤ ਉਂਗਲ ਹਟਾਓ ਅਤੇ ਹਥਿਆਰ ਟੇਬਲ 'ਤੇ ਰੱਖੋ।</span>
+          </div>
+          <i data-lucide="slash" class="w-4 h-4 text-rose-600 shrink-0"></i>
+        </div>
+
+      </div>
+
+      <!-- Bottom Panel Strip -->
+      <div class="pt-1 border-t border-slate-200 text-center text-[7.5px] text-slate-500 font-mono">
+        ਸੁਰੱਖਿਆ ਦੇ ਅਟੱਲ ਨਿਯਮ • Universal Marksmanship Ethics
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 5 (INSIDE CENTER): STEPS 1 & 2
+         Focus: REAL ID Trap, Handgun Proof of Residency Accepted vs Rejected Table
+         ----------------------------------------------------------------------- -->
+    <div class="panel fold-border-right bg-white">
+      <div class="space-y-1.5">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-1 border-b border-slate-200">
+          <h2 class="text-[11px] font-black uppercase text-slate-900 tracking-wide flex items-center gap-1">
+            <i data-lucide="file-check" class="w-3.5 h-3.5 text-blue-900 shrink-0"></i>
+            Steps 1 & 2: ID & Residency
+          </h2>
+          <span class="gurmukhi text-[8.5px] font-bold text-blue-900 bg-blue-50 px-1.5 py-0.2 rounded">ਪਛਾਣ ਤੇ ਰਿਹਾਇਸ਼</span>
+        </div>
+
+        <!-- STEP 1: IDENTITY & THE REAL ID TRAP -->
+        <div class="p-1.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="text-[7.5px] font-extrabold bg-blue-900 text-white px-1.5 py-0.2 rounded">STEP 1</span>
+            <span class="text-[7px] font-mono text-slate-500 font-bold">CA PC § 26845</span>
+          </div>
+          <div>
+            <h3 class="text-[9px] font-black text-slate-900 leading-tight">
+              CA Driver's License & "Federal Limits Apply"
+            </h3>
+            <p class="gurmukhi text-[8.5px] font-bold text-blue-950 leading-tight">
+              ਕਦਮ ੧: ਲਾਇਸੈਂਸ ਅਤੇ "Federal Limits Apply" ਦਾ ਨਿਯਮ
+            </p>
+          </div>
+          <p class="text-[7.5px] text-slate-700 leading-snug">
+            If license has <strong>"FEDERAL LIMITS APPLY"</strong> in the top corner, dealers <strong>must reject</strong> the sale without original proof of legal presence:
+          </p>
+          <div class="gurmukhi text-[7.5px] text-amber-950 bg-amber-50 p-1.5 rounded border border-amber-200 space-y-0.5">
+            <p class="font-bold">ਜੇ ਲਾਇਸੈਂਸ 'ਤੇ ਇਹ ਲਿਖਿਆ ਹੈ, ਤਾਂ ਇਹ ਅਸਲ ਦਸਤਾਵੇਜ਼ ਲਿਜਾਣਾ ਲਾਜ਼ਮੀ ਹੈ:</p>
+            <p>• <strong>ਅਮਰੀਕੀ ਪਾਸਪੋਰਟ</strong> (Valid U.S. Passport)</p>
+            <p>• <strong>ਅਸਲ ਜਨਮ ਸਰਟੀਫਿਕੇਟ</strong> (Certified Birth Certificate)</p>
+            <p>• <strong>ਗ੍ਰੀਨ ਕਾਰਡ</strong> (Permanent Resident Card / Form I-551)</p>
+          </div>
+        </div>
+
+        <!-- STEP 2: HANDGUN RESIDENCY COMPLIANCE TABLE -->
+        <div class="p-1.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="text-[7.5px] font-extrabold bg-blue-900 text-white px-1.5 py-0.2 rounded">STEP 2</span>
+            <span class="text-[7px] font-mono text-slate-500 font-bold">11 CCR § 4045.1</span>
+          </div>
+          <div>
+            <h3 class="text-[9px] font-black text-slate-900 leading-tight">
+              Handgun Proof of California Residency
+            </h3>
+            <p class="gurmukhi text-[8.5px] font-bold text-blue-950 leading-tight">
+              ਕਦਮ ੨: ਪਿਸਤੌਲ (Handgun) ਲਈ ਰਿਹਾਇਸ਼ ਦਾ ਦੂਜਾ ਸਬੂਤ
+            </p>
+          </div>
+          
+          <p class="text-[7.5px] text-slate-600 leading-snug">
+            Address and full legal name must match your driver's license <strong>letter-for-letter</strong>:
+          </p>
+
+          <!-- Side-by-Side Accepted vs Rejected Table -->
+          <div class="grid grid-cols-2 gap-1 text-[7.5px]">
+            <!-- Accepted -->
+            <div class="p-1 bg-emerald-50 border border-emerald-300 rounded space-y-0.5">
+              <span class="font-extrabold text-emerald-950 block text-[7.5px] flex items-center gap-0.5">
+                <i data-lucide="check" class="w-3 h-3 text-emerald-700"></i> ਮਨਜ਼ੂਰ (ACCEPTED)
+              </span>
+              <p class="text-emerald-900 leading-tight">✓ <strong>DMV ਰਜਿਸਟ੍ਰੇਸ਼ਨ:</strong> ਚਾਲੂ ਗੱਡੀ ਦੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ (Best document)</p>
+              <p class="text-emerald-900 leading-tight">✓ <strong>ਸਰਕਾਰੀ ਬਿੱਲ:</strong> ਪਾਣੀ/ਬਿਜਲੀ ਦਾ ਬਿੱਲ (SMUD, PGE, Water - 90 ਦਿਨ)</p>
+              <p class="text-emerald-900 leading-tight">✓ <strong>ਲੀਜ਼:</strong> ਦਸਤਖਤ ਕੀਤਾ ਰਿਹਾਇਸ਼ੀ ਐਗਰੀਮੈਂਟ</p>
+            </div>
+
+            <!-- Rejected -->
+            <div class="p-1 bg-rose-50 border border-rose-300 rounded space-y-0.5">
+              <span class="font-extrabold text-rose-950 block text-[7.5px] flex items-center gap-0.5">
+                <i data-lucide="x" class="w-3 h-3 text-rose-700"></i> ਰੱਦ (REJECTED)
+              </span>
+              <p class="text-rose-900 leading-tight">✗ <strong>ਮੋਬਾਈਲ ਫੋਨ ਬਿੱਲ:</strong> (Cell phone bills strictly prohibited)</p>
+              <p class="text-rose-900 leading-tight">✗ <strong>ਬੈਂਕ ਸਟੇਟਮੈਂਟ:</strong> (Bank statements not accepted)</p>
+              <p class="text-rose-900 leading-tight">✗ <strong>ਇੰਟਰਨੈੱਟ / ਕੇਬਲ:</strong> (Internet bills)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address Mismatch Callout -->
+        <div class="p-1 rounded-lg bg-blue-50/70 border border-blue-200 text-[7.5px] text-blue-950 leading-tight">
+          <strong>ਪਤੇ ਦਾ ਬਦਲਾਅ:</strong> ਜੇਕਰ ਤੁਸੀਂ ਹਾਲ ਹੀ ਵਿੱਚ ਘਰ ਬਦਲਿਆ ਹੈ ਅਤੇ ਲਾਇਸੈਂਸ 'ਤੇ ਪੁਰਾਣਾ ਪਤਾ ਹੈ, ਤਾਂ ਪਹਿਲਾਂ DMV ਵਿੱਚ ਪਤਾ ਬਦਲੋ ਅਤੇ ਚਾਲੂ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਨਾਲ ਲਿਜਾਓ।
+        </div>
+
+      </div>
+
+      <!-- Bottom Panel Strip -->
+      <div class="pt-1 border-t border-slate-200 text-center text-[7.5px] text-slate-500 font-mono">
+        ਦਸਤਾਵੇਜ਼ਾਂ ਦੀ ਪੁਸ਼ਟੀ • Check Paperwork Before Leaving Home
+      </div>
+    </div>
+
+    <!-- -----------------------------------------------------------------------
+         PANEL 6 (INSIDE RIGHT): STEPS 3, 4 & 5
+         Focus: FSC Test, 10-Day (240-Hr) Wait Timeline, Vehicle Transport Schematic
+         ----------------------------------------------------------------------- -->
+    <div class="panel bg-white">
+      <div class="space-y-1.5">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-1 border-b border-slate-200">
+          <h2 class="text-[11px] font-black uppercase text-slate-900 tracking-wide flex items-center gap-1">
+            <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-900 shrink-0"></i>
+            Steps 3, 4 & 5: FSC & Transport
+          </h2>
+          <span class="gurmukhi text-[8.5px] font-bold text-blue-900 bg-blue-50 px-1.5 py-0.2 rounded">ਪ੍ਰੀਖਿਆ ਤੇ ਲਿਜਾਣਾ</span>
+        </div>
+
+        <!-- STEP 3: FSC EXAM -->
+        <div class="p-1.5 bg-slate-50 border border-slate-200 rounded-xl text-[7.5px] space-y-0.5">
+          <div class="flex items-center justify-between">
+            <span class="font-extrabold text-[7.5px] bg-blue-900 text-white px-1.5 py-0.2 rounded">STEP 3</span>
+            <span class="font-bold text-amber-800">$25 State Fee • Valid 5 Yrs</span>
+          </div>
+          <p class="gurmukhi text-[8.5px] font-black text-slate-900 leading-tight">
+            ਕਦਮ ੩: ਫਾਇਰਆਰਮ ਸੁਰੱਖਿਆ ਸਰਟੀਫਿਕੇਟ (FSC Exam)
+          </p>
+          <p class="text-slate-600 leading-tight">
+            30-question test at the gun counter (75% to pass). Covers safe storage & handling laws.
+          </p>
+          <p class="gurmukhi text-[7.5px] text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+            ਮੁਫ਼ਤ ਅਭਿਆਸ ਟੈਸਟ ਦਿਓ: <span class="font-mono text-blue-900 underline">sikhrpa.org/fsc-quiz</span>
+          </p>
+        </div>
+
+        <!-- STEP 4: 10-DAY / 240-HOUR WAIT TIMELINE INFOGRAPHIC -->
+        <div class="p-1.5 bg-slate-50 border border-slate-200 rounded-xl text-[7.5px] space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-extrabold text-[7.5px] bg-blue-900 text-white px-1.5 py-0.2 rounded">STEP 4</span>
+            <span class="font-black text-rose-700">Exact 240-Hour Wait (PC § 26815)</span>
+          </div>
+          <p class="gurmukhi text-[8.5px] font-black text-slate-900 leading-tight">
+            ਕਦਮ ੪: ੧੦ ਦਿਨਾਂ (੨੪੦ ਘੰਟੇ) ਦੀ ਲਾਜ਼ਮੀ ਉਡੀਕ
+          </p>
+          
+          <!-- Timeline visual bar -->
+          <div class="bg-white p-1 rounded border border-slate-200 space-y-0.5">
+            <div class="flex items-center justify-between text-[7px] font-mono font-bold text-slate-500">
+              <span>Day 1: DROS</span>
+              <span class="text-blue-900">240 Hours Exact</span>
+              <span class="text-emerald-700">Day 10: Pickup</span>
+              <span class="text-rose-700">Day 30: Expiry</span>
+            </div>
+            <div class="w-full h-1.5 bg-slate-200 rounded-full flex overflow-hidden">
+              <div class="h-full bg-blue-900 w-1/3"></div>
+              <div class="h-full bg-amber-500 w-1/3"></div>
+              <div class="h-full bg-emerald-500 w-1/3"></div>
+            </div>
+          </div>
+          <p class="gurmukhi text-[7.5px] text-slate-700 leading-snug">
+            ਡੀਲਰ ਵੱਲੋਂ ਕਾਗਜ਼ ਜਮ੍ਹਾਂ ਕਰਨ ਤੋਂ ਬਾਅਦ ਪੂਰੇ 240 ਘੰਟੇ ਲੰਘਣ ਤੋਂ ਪਹਿਲਾਂ ਹਥਿਆਰ ਨਹੀਂ ਮਿਲੇਗਾ। 30 ਦਿਨਾਂ ਦੇ ਅੰਦਰ ਚੁੱਕਣਾ ਲਾਜ਼ਮੀ ਹੈ, ਨਹੀਂ ਤਾਂ ਅਰਜ਼ੀ ਰੱਦ ਹੋ ਜਾਵੇਗੀ।
+          </p>
+        </div>
+
+        <!-- STEP 5: VEHICLE TRANSPORT COMPLIANCE (PC § 25610) -->
+        <div class="p-1.5 bg-slate-50 border-2 border-blue-900/30 rounded-xl text-[7.5px] space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-extrabold text-[7.5px] bg-blue-900 text-white px-1.5 py-0.2 rounded">STEP 5</span>
+            <span class="font-bold text-blue-900">Vehicle Transport (PC § 25610)</span>
+          </div>
+          <p class="gurmukhi text-[8.5px] font-black text-blue-950 leading-tight">
+            ਕਦਮ ੫: ਗੱਡੀ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਲਿਜਾਣਾ (Legal Transport)
+          </p>
+          
+          <!-- Visual Transport Schematic -->
+          <div class="grid grid-cols-2 gap-1 text-[7px]">
+            <div class="p-1 bg-emerald-50 border border-emerald-300 rounded">
+              <span class="font-extrabold text-emerald-950 block">✓ ਕਾਨੂੰਨੀ (LEGAL):</span>
+              <p class="text-emerald-900 leading-tight">• ਗੱਡੀ ਦੀ ਡਿੱਗੀ (Trunk)</p>
+              <p class="text-emerald-900 leading-tight">• ਤਾਲਾਬੰਦ ਬਕਸਾ (Locked Case)</p>
+              <p class="text-emerald-900 leading-tight">• ਪੂਰੀ ਤਰ੍ਹਾਂ ਅਨਲੋਡ (Unloaded)</p>
+            </div>
+            <div class="p-1 bg-rose-50 border border-rose-300 rounded">
+              <span class="font-extrabold text-rose-950 block">✗ ਗੈਰ-ਕਾਨੂੰਨੀ (ILLEGAL):</span>
+              <p class="text-rose-900 leading-tight">• ਗਲੋਵ ਬਾਕਸ (Glove Box)</p>
+              <p class="text-rose-900 leading-tight">• ਸੈਂਟਰ ਕੰਸੋਲ (Center Console)</p>
+              <p class="text-rose-900 leading-tight">• ਸੀਟ ਦੇ ਹੇਠਾਂ (Under Seat)</p>
+            </div>
+          </div>
+
+          <div class="gurmukhi text-[7.5px] text-blue-950 font-bold bg-white p-1 rounded border border-blue-100 leading-snug">
+            ਹਥਿਆਰ ਪੂਰੀ ਤਰ੍ਹਾਂ <strong>ਅਨਲੋਡ (ਖਾਲੀ)</strong> ਅਤੇ ਗੱਡੀ ਦੀ <strong>ਡਿੱਗੀ (ਟਰੰਕ) ਜਾਂ ਤਾਲਾਬੰਦ ਡੱਬੇ</strong> ਵਿੱਚ ਬੰਦ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਕਾਰਤੂਸ (Ammunition) ਵੱਖਰੇ ਬੈਗ ਵਿੱਚ ਰੱਖੋ।
+          </div>
+        </div>
+
+        <!-- Pre-Counter Checklist Ribbon -->
+        <div class="p-1 bg-amber-50 border border-amber-300 rounded-lg text-center text-[7.5px] text-amber-950 font-bold">
+          ✓ ਲਾਇਸੈਂਸ &nbsp;•&nbsp; ✓ ਰਿਹਾਇਸ਼ੀ ਸਬੂਤ (DMV) &nbsp;•&nbsp; ✓ FSC ਕਾਰਡ &nbsp;•&nbsp; ✓ ਤਾਲਾਬੰਦ ਡੱਬਾ
+        </div>
+
+      </div>
+
+      <!-- Bottom Panel Strip -->
+      <div class="pt-1 border-t border-slate-200 text-center text-[7.5px] text-slate-500 font-mono">
+        ਸਿੱਖ ਰਾਈਫਲ ਅਤੇ ਪਿਸਤੌਲ ਐਸੋਸੀਏਸ਼ਨ • sikhrpa.org
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
