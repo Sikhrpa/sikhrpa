@@ -4,244 +4,155 @@ const path = require('path');
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 if (!GEMINI_API_KEY) {
-  console.error("CRITICAL ERROR: GEMINI_API_KEY environment variable is missing or empty.");
-  console.error("Please verify GEMINI_API_KEY in Repository Settings > Secrets and variables > Actions.");
+  console.error("Error: GEMINI_API_KEY environment variable is missing.");
   process.exit(1);
 }
 
-// Active Flash model endpoint with Google Search grounding
-const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${GEMINI_API_KEY}`;
-
-// Helper: Normalize URL to prevent tracking query duplicate bypass
-function cleanUrl(rawUrl) {
-  if (!rawUrl) return '';
-  try {
-    const u = new URL(rawUrl);
-    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid'].forEach(param => {
-      u.searchParams.delete(param);
-    });
-    return (u.origin + u.pathname + u.search).replace(/\/$/, '').toLowerCase();
-  } catch (e) {
-    return rawUrl.trim().toLowerCase().replace(/\/$/, '');
-  }
-}
-
-// Helper: Extract significant words for fuzzy comparison
-function getSignificantWords(text) {
-  if (!text) return new Set();
-  const stopWords = new Set(['the', 'and', 'for', 'with', 'that', 'this', 'from', 'california', 'state', 'bill', 'court', 'news', 'update']);
-  const words = text
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, '')
-    .split(/\s+/)
-    .filter(w => w.length > 2 && !stopWords.has(w));
-  return new Set(words);
-}
-
-// Helper: Check if two headlines are essentially the same story (>60% word overlap)
-function isFuzzyDuplicate(headlineA, headlineB) {
-  const setA = getSignificantWords(headlineA);
-  const setB = getSignificantWords(headlineB);
-  if (setA.size === 0 || setB.size === 0) return false;
-
-  let intersection = 0;
-  setA.forEach(w => {
-    if (setB.has(w)) intersection++;
-  });
-
-  const overlapA = intersection / setA.size;
-  const overlapB = intersection / setB.size;
-  return overlapA >= 0.60 || overlapB >= 0.60;
-}
-
-// Helper: Sleep function for exponential backoff retries
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function fetchWithRetry(url, options, maxRetries = 3) {
-  let attempt = 0;
-  let delay = 3000; // start with 3 seconds
-
-  while (attempt < maxRetries) {
-    attempt++;
-    try {
-      console.log(`Querying Gemini API (Attempt ${attempt} of ${maxRetries})...`);
-      const response = await fetch(url, options);
-
-      if (response.ok) {
-        return await response.json();
-      }
-
-      const errText = await response.text();
-      // Retry on 503 (Unavailable / Deadline Expired), 429 (Rate Limit), or 500
-      if ([500, 502, 503, 504, 429].includes(response.status) && attempt < maxRetries) {
-        console.warn(`[HTTP ${response.status}] Temporary server delay: ${errText.slice(0, 120)}...`);
-        console.log(`Retrying in ${delay / 1000}s...`);
-        await sleep(delay);
-        delay *= 2; // exponential backoff (3s -> 6s -> 12s)
-        continue;
-      }
-
-      throw new Error(`Google API returned HTTP ${response.status}: ${errText}`);
-    } catch (err) {
-      if (attempt < maxRetries && (err.message.includes('503') || err.message.includes('fetch failed'))) {
-        console.warn(`Network/timeout warning: ${err.message}. Retrying in ${delay / 1000}s...`);
-        await sleep(delay);
-        delay *= 2;
-        continue;
-      }
-      throw err;
-    }
-  }
-}
+// Generative Language API endpoint (Gemini 2.5 Flash)
+const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 async function fetchDailyNews() {
-  console.log("Starting intelligent balanced daily sweep (Legal & News) with anti-duplication...");
+  console.log("Querying Gemini with Google Search Grounding for recent California firearms legal updates...");
 
-  const dataDir = path.join(__dirname, '..', 'data');
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
+  const currentDateIso = new Date().toISOString().split('T')[0];
 
-  const outputPath = path.join(dataDir, 'news.json');
-
-  // Load existing archive
-  let existingItems = [];
-  if (fs.existsSync(outputPath)) {
-    try {
-      const rawExisting = fs.readFileSync(outputPath, 'utf-8');
-      const parsedExisting = JSON.parse(rawExisting);
-      if (Array.isArray(parsedExisting.items)) {
-        existingItems = parsedExisting.items;
-      }
-    } catch (readErr) {
-      console.warn("Notice: Initializing fresh archive.");
-    }
-  }
-
-  // Pass up to 25 recent headlines to prevent reporting duplicate stories
-  const recentHeadlines = existingItems
-    .slice(0, 25)
-    .map((item, idx) => `${idx + 1}. "${item.headline}"`)
-    .join('\n');
-
+  // Prompt engineered to prioritize recency and reject future/annual statutory roundups
   const prompt = `
-You are an authoritative legal research editor for the Sikh Rifle and Pistol Association (SikhRPA), a California 501(c)(3) public charity.
+You are an authoritative legal research editor for the Sikh Rifle and Pistol Association (SikhRPA), a California 501(c)(3) nonprofit public charity.
 
 Task:
-Perform a fresh search for California firearm developments and return 3 to 4 total items:
-- 1 to 2 Legal/Regulatory updates (Legislation, 9th Circuit rulings, or CA DOJ bulletins)
-- 1 to 2 Authoritative news articles (AP, Reuters, LA Times, SF Chronicle, or CalMatters)
+Perform a targeted search for RECENT California firearm legal developments, 9th Circuit Court of Appeals rulings, federal district court orders, CA Department of Justice (CA DOJ) Bureau of Firearms bulletins, or state legislative developments.
 
-Do NOT select or repeat stories covering these recently archived headlines:
-${recentHeadlines || 'None'}
+CRITICAL DATE & RECENCY RULES:
+- Focus on recent news and legal actions from the LAST 30 TO 60 DAYS relative to ${currentDateIso}.
+- The "date" field MUST reflect the ACTUAL DATE OF PUBLICATION OR COURT FILING (format: YYYY-MM-DD).
+- NEVER use a future statutory effective date (e.g., DO NOT use "January 1" or "July 1" when a law goes into effect). The date must represent when the news or decision occurred.
+- DO NOT return generic annual roundups (e.g. "Laws taking effect Jan 1").
+- The date MUST NOT be in the future (it cannot be later than ${currentDateIso}).
 
-Requirements:
-- Factual & Nonpartisan: No editorializing or political campaign commentary.
-- Use publication or agency name as "source_name" and the verified article link as "source_url".
-- Return ONLY a valid JSON array matching this schema (do not wrap in markdown or prose):
+Identify 2 to 3 distinct, verified public legal updates.
+
+Output Format:
+Return ONLY valid JSON (no markdown ticks, no surrounding codeblock markers, no conversation text).
+Follow this exact schema:
 [
   {
-    "id": "unique-slug-id",
+    "id": "unique-kebab-slug",
     "date": "YYYY-MM-DD",
     "category": "Legislation" | "Court Ruling" | "CA DOJ Notice" | "State News" | "Community Safety",
-    "badge_status": "In Effect" | "Court Injunction" | "Regulatory Notice" | "News Report",
+    "badge_status": "Active" | "Stayed / Enjoined" | "Pending Review" | "In Effect" | "Regulatory Notice",
     "badge_color": "emerald" | "amber" | "blue" | "purple",
-    "headline": "Informative headline",
-    "statute_or_case": "Penal code, docket, or agency",
-    "summary": "2-3 sentences explaining the development.",
-    "community_takeaway": "Practical context for California gun owners and families.",
-    "source_name": "Source name",
-    "source_url": "https://..."
+    "headline": "Concise, factual headline describing the recent event",
+    "statute_or_case": "e.g., Boland v. Bonta, SB 2, or CA Penal Code § 25100",
+    "summary": "2 concise sentences explaining what happened and what the legal requirement or status is.",
+    "community_takeaway": "Actionable advice for first-time owners and families (what to do or verify).",
+    "source_name": "Official entity or major news outlet (e.g., 9th Circuit, CA DOJ, CalMatters)",
+    "source_url": "Direct URL to official court docket, CA legislature site, or verified article"
   }
 ]
 `;
 
   const payload = {
-    contents: [{ parts: [{ text: prompt }] }],
-    tools: [{ googleSearch: {} }],
-    generationConfig: { 
-      temperature: 0.2
+    contents: [{
+      parts: [{ text: prompt }]
+    }],
+    tools: [{
+      googleSearch: {} // Live Google Search Grounding
+    }],
+    generationConfig: {
+      temperature: 0.1, // Low temperature for high factual precision
+      responseMimeType: "application/json"
     }
   };
 
   try {
-    const result = await fetchWithRetry(API_ENDPOINT, {
+    const response = await fetch(API_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
-    }, 3);
+    });
 
-    // Extract text across all candidate parts (handles thinking blocks and multi-part tool results)
-    const parts = result.candidates?.[0]?.content?.parts || [];
-    const textParts = parts.map(p => p.text).filter(Boolean);
-    const rawContent = textParts.join('\n').trim();
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(`API Error HTTP ${response.status}: ${errText}`);
+    }
+
+    const result = await response.json();
+    const rawContent = result.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!rawContent) {
-      console.error("Debug candidate dump:", JSON.stringify(result.candidates, null, 2));
-      throw new Error("Empty text response received from Gemini.");
+      throw new Error("Empty response received from Gemini.");
     }
 
-    // Extract JSON array
-    let cleanJson = rawContent;
-    const firstBracket = cleanJson.indexOf('[');
-    const lastBracket = cleanJson.lastIndexOf(']');
+    const cleanJsonText = rawContent
+      .replace(/^```json\s*/i, '')
+      .replace(/^```\s*/i, '')
+      .replace(/\s*```$/, '')
+      .trim();
 
-    if (firstBracket !== -1 && lastBracket !== -1 && lastBracket > firstBracket) {
-      cleanJson = cleanJson.substring(firstBracket, lastBracket + 1);
-    }
-
-    const incomingItems = JSON.parse(cleanJson);
+    const incomingItems = JSON.parse(cleanJsonText);
 
     if (!Array.isArray(incomingItems) || incomingItems.length === 0) {
-      throw new Error("Parsed response was not a non-empty array of items.");
+      throw new Error("Response was not a valid non-empty array of news items.");
     }
 
-    // Build index of existing items for code-level deduplication
-    const existingUrls = new Set(existingItems.map(i => cleanUrl(i.source_url)).filter(Boolean));
-    const existingIds = new Set(existingItems.map(i => (i.id || '').toLowerCase()).filter(Boolean));
+    const dataDir = path.join(__dirname, '..', 'data');
+    const newsFilePath = path.join(dataDir, 'news.json');
 
-    const novelItems = [];
-
-    for (const newItem of incomingItems) {
-      const newCleanUrl = cleanUrl(newItem.source_url);
-      const newId = (newItem.id || '').toLowerCase();
-
-      // Check 1: Exact URL match
-      if (newCleanUrl && existingUrls.has(newCleanUrl)) {
-        console.log(`[Duplicate skipped by URL]: ${newItem.headline}`);
-        continue;
+    let existingArchive = { items: [] };
+    if (fs.existsSync(newsFilePath)) {
+      try {
+        existingArchive = JSON.parse(fs.readFileSync(newsFilePath, 'utf-8'));
+      } catch (e) {
+        console.warn("Existing news.json could not be parsed. Starting fresh.");
+        existingArchive = { items: [] };
       }
-
-      // Check 2: Exact ID match
-      if (newId && existingIds.has(newId)) {
-        console.log(`[Duplicate skipped by ID]: ${newItem.headline}`);
-        continue;
-      }
-
-      // Check 3: Fuzzy headline comparison against existing archive
-      const isFuzzyDupe = existingItems.some(existing => isFuzzyDuplicate(newItem.headline, existing.headline));
-      if (isFuzzyDupe) {
-        console.log(`[Duplicate skipped by Fuzzy Headline Match]: ${newItem.headline}`);
-        continue;
-      }
-
-      // Check 4: Fuzzy comparison against items within this same batch
-      const isBatchDupe = novelItems.some(accepted => isFuzzyDuplicate(newItem.headline, accepted.headline));
-      if (isBatchDupe) {
-        console.log(`[Duplicate skipped within current batch]: ${newItem.headline}`);
-        continue;
-      }
-
-      // Passed all checks
-      if (newCleanUrl) existingUrls.add(newCleanUrl);
-      if (newId) existingIds.add(newId);
-      novelItems.push(newItem);
     }
 
-    // Prepend novel items ahead of the existing archive
+    const existingItems = Array.isArray(existingArchive.items) ? existingArchive.items : [];
+    const nowMs = Date.now();
+    const todayStr = new Date().toISOString().split('T')[0];
+
+    // Sanitize incoming dates: reject or clamp future dates
+    const sanitizedIncoming = incomingItems.map(item => {
+      let itemDate = item.date || todayStr;
+      const itemTime = new Date(itemDate).getTime();
+      // If the model generated a future date, clamp it to today
+      if (itemTime > nowMs) {
+        console.warn(`Clamping future date "${itemDate}" for "${item.headline}" to today: ${todayStr}`);
+        itemDate = todayStr;
+      }
+      return {
+        ...item,
+        date: itemDate
+      };
+    });
+
+    // Filter out duplicates based on id or close headline match
+    const novelItems = sanitizedIncoming.filter(newItem => {
+      const isDuplicate = existingItems.some(oldItem => {
+        if (oldItem.id && newItem.id && oldItem.id === newItem.id) return true;
+        if (oldItem.headline && newItem.headline) {
+          const normOld = oldItem.headline.toLowerCase().replace(/[^a-z0-9]/g, '');
+          const normNew = newItem.headline.toLowerCase().replace(/[^a-z0-9]/g, '');
+          if (normOld === normNew) return true;
+        }
+        return false;
+      });
+      return !isDuplicate;
+    });
+
+    console.log(`Found ${novelItems.length} novel legal dispatches.`);
+
+    // Merge novel items ahead of the archive
     const mergedList = [...novelItems, ...existingItems];
+
+    // Sort descending by publication date. Clamp any older item with a future date so it can't hijack index 0.
+    mergedList.sort((a, b) => {
+      const timeA = Math.min(a.date ? new Date(a.date).getTime() : 0, nowMs);
+      const timeB = Math.min(b.date ? new Date(b.date).getTime() : 0, nowMs);
+      return timeB - timeA;
+    });
 
     const now = new Date();
     const formattedDate = now.toLocaleDateString('en-US', { 
@@ -257,23 +168,21 @@ Requirements:
       timeZone: 'America/Los_Angeles'
     });
 
-    // Always update verification timestamp so the live badge updates
     const outputData = {
       last_updated: now.toISOString(),
       updated_formatted: `${formattedDate} • ${formattedTime}`,
       items: mergedList
     };
 
-    fs.writeFileSync(outputPath, JSON.stringify(outputData, null, 2), 'utf-8');
-
-    if (novelItems.length > 0) {
-      console.log(`✓ Success: Added ${novelItems.length} novel dispatches. Archive now contains ${mergedList.length} total historical records.`);
-    } else {
-      console.log(`✓ Daily sweep completed: No new novel stories detected today. Verified timestamp updated (${outputData.updated_formatted}).`);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
     }
 
+    fs.writeFileSync(newsFilePath, JSON.stringify(outputData, null, 2), 'utf-8');
+    console.log(`Successfully updated ${newsFilePath} with ${mergedList.length} total entries.`);
+
   } catch (error) {
-    console.error("Execution failed:", error.message);
+    console.error("Failed to fetch or process news updates:", error);
     process.exit(1);
   }
 }
