@@ -60,8 +60,7 @@ Follow this exact schema:
       googleSearch: {} // Live Google Search Grounding
     }],
     generationConfig: {
-      temperature: 0.1, // Low temperature for high factual precision
-      responseMimeType: "application/json"
+      temperature: 0.1 // Low temperature for factual precision (no responseMimeType tool conflict)
     }
   };
 
@@ -78,17 +77,33 @@ Follow this exact schema:
     }
 
     const result = await response.json();
-    const rawContent = result.candidates?.[0]?.content?.parts?.[0]?.text;
+    const candidate = result.candidates?.[0];
 
-    if (!rawContent) {
-      throw new Error("Empty response received from Gemini.");
+    if (!candidate) {
+      console.error("Full Gemini API response:", JSON.stringify(result, null, 2));
+      throw new Error("No candidate returned from Gemini API.");
     }
 
-    const cleanJsonText = rawContent
-      .replace(/^```json\s*/i, '')
-      .replace(/^```\s*/i, '')
-      .replace(/\s*```$/, '')
-      .trim();
+    // Concatenate all text parts (grounding sometimes spans multiple parts)
+    const parts = candidate.content?.parts || [];
+    const rawContent = parts.map(p => p.text || '').join('').trim();
+
+    if (!rawContent) {
+      console.error("Empty candidate received:", JSON.stringify(candidate, null, 2));
+      throw new Error(`Empty response received from Gemini (finishReason: ${candidate.finishReason || 'UNKNOWN'}).`);
+    }
+
+    // Extract JSON array cleanly (handles markdown codeblocks or surrounding commentary)
+    let cleanJsonText = rawContent;
+    const jsonMatch = rawContent.match(/\[\s*\{[\s\S]*\}\s*\]/);
+    if (jsonMatch) {
+      cleanJsonText = jsonMatch[0];
+    } else {
+      cleanJsonText = cleanJsonText
+        .replace(/^```(?:json)?\s*/i, '')
+        .replace(/\s*```$/i, '')
+        .trim();
+    }
 
     const incomingItems = JSON.parse(cleanJsonText);
 
