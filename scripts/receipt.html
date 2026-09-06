@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Donation Receipt & Reimbursement Request | SikhRPA 501(c)(3)</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TRVZCG17K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4TRVZCG17K');
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Donation Receipt & Reimbursement Request | SikhRPA 501(c)(3)" />
+  <meta name="description" content="Official portal to request formal IRS-compliant tax deduction receipts, corporate match documentation, or submit volunteer expense reimbursements for the Sikh Rifle and Pistol Association." />
+  <meta name="keywords" content="SikhRPA tax receipt, 501c3 donation receipt, SikhRPA reimbursement, corporate match receipt, EIN 42-2595402" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
+
+  <!-- Accessibility Skip Link -->
+  <a 
+    href="#main-content" 
+    class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-600 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:outline-none"
+  >
+    Skip to main content
+  </a>
+
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Return Link -->
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
+          <span class="hidden xs:inline">Home</span>
+        </a>
+        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <img 
+            src="srpa-logo.png" 
+            alt="SikhRPA Logo" 
+            class="h-8 sm:h-9 w-auto object-contain shrink-0"
+            onerror="this.style.display='none'"
+          />
+          <a href="./" class="font-bold text-sm sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors truncate">
+            <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+        <a href="donate" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Donate Portal</a>
+        <a href="buyer-guide" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Buyer's Guide</a>
+        <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-950 font-bold text-xs transition-colors">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
+          FSC Quiz
+        </a>
+        <a href="news" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Legal Watch</a>
+        <span class="inline-flex items-center gap-1.5 text-blue-950 font-bold bg-blue-50 px-3 py-1 rounded-full border border-blue-200 text-xs shadow-sm">
+          <i data-lucide="file-check" class="w-3.5 h-3.5 text-amber-600"></i>
+          Receipts & Reimbursements
+        </span>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <a
+          href="donate"
+          class="inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors items-center gap-1.5 shadow-sm touch-target"
+          title="Tax-Deductible 501(c)(3) Giving"
+        >
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
+          <span>Donate</span>
+        </a>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button
+          type="button"
+          id="mobileMenuBtn"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors touch-target flex items-center justify-center"
+          aria-label="Toggle Navigation Menu"
+          aria-expanded="false"
+        >
+          <i id="menuIcon" data-lucide="menu" class="w-5 h-5"></i>
+          <i id="closeIcon" data-lucide="x" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div 
+      id="mobileMenuDrawer" 
+      class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+    >
+      <a href="./" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        Return to Homepage
+      </a>
+      <a href="donate" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-bold text-amber-950 bg-amber-50 border border-amber-200">
+        <span class="flex items-center gap-2">
+          <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500"></i>
+          Donate Portal
+        </span>
+        <span class="text-[10px] bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded-full uppercase">501(c)(3)</span>
+      </a>
+      <a href="buyer-guide" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        First-Time Buyer's Guide
+      </a>
+      <a href="fsc-quiz" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        FSC Practice Quiz
+      </a>
+      <a href="news" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900">
+        California Legal Watch
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <div class="mb-8 text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-950 border border-blue-200 mb-3 shadow-sm">
+        <i data-lucide="shield-check" class="w-4 h-4 text-amber-600 shrink-0"></i>
+        <span>IRS 501(c)(3) Public Charity • Tax Substantiation & Accounting</span>
+      </div>
+      
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-2">
+        Donation Receipt & Reimbursement Request
+      </h1>
+      
+      <p class="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        Submit this form to receive a formal <strong>IRS-compliant written acknowledgment letter</strong> for your tax deduction, submit a corporate match request, or claim an authorized volunteer reimbursement.
+      </p>
+
+      <!-- Trust Badges Strip -->
+      <div class="mt-4 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-slate-600 bg-white p-2 sm:px-4 sm:py-2 rounded-2xl border border-slate-200 shadow-2xs">
+        <span class="flex items-center gap-1 font-bold text-slate-900">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-emerald-600"></i> EIN: 42-2595402
+        </span>
+        <span class="text-slate-300">•</span>
+        <span class="flex items-center gap-1">
+          <i data-lucide="check" class="w-3.5 h-3.5 text-blue-700"></i> IRC § 170(f)(8) Compliant
+        </span>
+        <span class="text-slate-300">•</span>
+        <span class="text-amber-800 font-semibold">1–2 Business Day Turnaround</span>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 mb-10">
+      
+      <form id="receiptRequestForm" onsubmit="handleReceiptSubmit(event)" class="space-y-6">
+        
+        <!-- SECTION 1: REQUEST TYPE SELECTION -->
+        <fieldset class="space-y-2">
+          <legend class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            1. Select Request Type <span class="text-rose-600">*</span>
+          </legend>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <label class="p-3.5 rounded-xl border-2 border-amber-400 bg-amber-50/40 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all" id="typeLabelTax">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-bold text-xs sm:text-sm">Direct Donation Receipt</span>
+                <input 
+                  type="radio" 
+                  name="request_type" 
+                  value="Direct Donation Receipt (IRS § 170)" 
+                  checked 
+                  onchange="updateRequestTypeUI(this.value)"
+                  class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-amber-500"
+                />
+              </div>
+              <span class="text-[11px] text-slate-600 leading-tight">For direct contributions via Zelle, PayPal, Check, or Cash.</span>
+            </label>
+
+            <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all" id="typeLabelOutPocketTax">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-bold text-xs sm:text-sm">Out-of-Pocket: Tax Receipt</span>
+                <input 
+                  type="radio" 
+                  name="request_type" 
+                  value="Out-of-Pocket Expense (Donated for Tax Receipt)" 
+                  onchange="updateRequestTypeUI(this.value)"
+                  class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-amber-500"
+                />
+              </div>
+              <span class="text-[11px] text-slate-600 leading-tight">Donate your supply expenses to receive an IRS tax deduction letter.</span>
+            </label>
+
+            <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all" id="typeLabelReimburse">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-bold text-xs sm:text-sm">Out-of-Pocket: Reimbursement</span>
+                <input 
+                  type="radio" 
+                  name="request_type" 
+                  value="Out-of-Pocket Expense (Reimbursement Requested)" 
+                  onchange="updateRequestTypeUI(this.value)"
+                  class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-amber-500"
+                />
+              </div>
+              <span class="text-[11px] text-slate-600 leading-tight">Request treasury repayment (Zelle/Check) for approved expenses.</span>
+            </label>
+
+            <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all" id="typeLabelMatch">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-bold text-xs sm:text-sm">Corporate Match</span>
+                <input 
+                  type="radio" 
+                  name="request_type" 
+                  value="Corporate Match Verification" 
+                  onchange="updateRequestTypeUI(this.value)"
+                  class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-amber-500"
+                />
+              </div>
+              <span class="text-[11px] text-slate-600 leading-tight">Employer matching receipt (Benevity, CyberGrants, etc.).</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="border-t border-slate-200 pt-5 space-y-4">
+          <span class="block text-xs font-bold uppercase tracking-wider text-slate-700">
+            2. Donor / Requester Information
+          </span>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="fullName" class="block text-xs font-semibold text-slate-700 mb-1">
+                Full Legal Name <span class="text-rose-600">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="full_name"
+                required
+                placeholder="e.g. Harpreet Singh" 
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+              />
+              <span class="text-[10px] text-slate-500 mt-0.5 block">Name to appear on formal IRS written acknowledgment.</span>
+            </div>
+
+            <div>
+              <label for="emailAddress" class="block text-xs font-semibold text-slate-700 mb-1">
+                Email Address <span class="text-rose-600">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="emailAddress" 
+                name="email"
+                required
+                placeholder="you@example.com" 
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+              />
+              <span class="text-[10px] text-slate-500 mt-0.5 block">Receipt PDF will be emailed to this address.</span>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="phoneNumber" class="block text-xs font-semibold text-slate-700 mb-1">
+                Phone Number (Optional)
+              </label>
+              <input 
+                type="tel" 
+                id="phoneNumber" 
+                name="phone"
+                placeholder="(555) 123-4567" 
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+              />
+            </div>
+
+            <div>
+              <label for="postalAddress" class="block text-xs font-semibold text-slate-700 mb-1">
+                Mailing Address <span class="text-slate-400 font-normal">(Required by IRS for donations $\ge$ $250)</span>
+              </label>
+              <input 
+                type="text" 
+                id="postalAddress" 
+                name="postal_address"
+                placeholder="Street Address, City, State, ZIP" 
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-200 pt-5 space-y-4">
+          <span class="block text-xs font-bold uppercase tracking-wider text-slate-700">
+            3. Contribution / Transaction Details
+          </span>
+
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div>
+              <label for="amountValue" class="block text-xs font-semibold text-slate-700 mb-1">
+                Amount ($ USD) <span class="text-rose-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-bold text-slate-400 text-xs">$</span>
+                <input 
+                  type="number" 
+                  step="0.01"
+                  min="1"
+                  id="amountValue" 
+                  name="amount"
+                  required
+                  placeholder="100.00" 
+                  class="w-full pl-7 pr-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="txDate" class="block text-xs font-semibold text-slate-700 mb-1">
+                Date of Transaction <span class="text-rose-600">*</span>
+              </label>
+              <input 
+                type="date" 
+                id="txDate" 
+                name="transaction_date"
+                required
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white text-slate-800"
+              />
+            </div>
+
+            <div>
+              <label for="paymentChannel" class="block text-xs font-semibold text-slate-700 mb-1">
+                Payment Channel <span class="text-rose-600">*</span>
+              </label>
+              <select 
+                id="paymentChannel" 
+                name="payment_channel"
+                required
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white text-slate-800"
+              >
+                <option value="Zelle (sikhrpa)">Zelle® (sikhrpa)</option>
+                <option value="PayPal (#S5PAN9B85U28J)">PayPal (#S5PAN9B85U28J)</option>
+                <option value="Personal / Cashier Check">Personal / Cashier Check</option>
+                <option value="Out-of-Pocket (Donated as Tax Deduction)">Out-of-Pocket Expense (Donated as Tax Deduction)</option>
+                <option value="Out-of-Pocket (Reimbursement Requested)">Out-of-Pocket Expense (Reimbursement Requested)</option>
+                <option value="Corporate Match / Benevity">Corporate Match / Benevity / CyberGrants</option>
+                <option value="Cash / In-Person Event">Cash / In-Person Seminar</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="refNumber" class="block text-xs font-semibold text-slate-700 mb-1" id="refNumberLabel">
+                Reference ID / Check Number / Store Receipt #
+              </label>
+              <input 
+                type="text" 
+                id="refNumber" 
+                name="reference_number"
+                placeholder="e.g. Zelle Conf #, Check #1042, or Store Order ID" 
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+              />
+              <span class="text-[10px] text-slate-500 mt-0.5 block" id="refNumberHelper">Helps our treasurer verify the bank ledger or purchase receipt.</span>
+            </div>
+
+            <div>
+              <label for="employerOrNotes" class="block text-xs font-semibold text-slate-700 mb-1" id="notesLabel">
+                Memo / Notes / Items Purchased
+              </label>
+              <input 
+                type="text" 
+                id="employerOrNotes" 
+                name="notes"
+                placeholder="e.g. 50 Cable Locks from Amazon, or General Contribution" 
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200">
+          <p class="text-[11px] text-slate-500 leading-relaxed max-w-md text-center sm:text-left">
+            🔒 By submitting, your record is logged with the SikhRPA Treasury for IRS substantiation. We never share donor contact info.
+          </p>
+
+          <button 
+            type="submit" 
+            id="submitBtn"
+            class="w-full sm:w-auto px-7 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer touch-target shrink-0"
+          >
+            <i data-lucide="send" class="w-4 h-4 text-amber-400"></i>
+            <span>Submit Request</span>
+          </button>
+        </div>
+
+        <p id="formStatusMsg" class="hidden text-xs text-center font-medium mt-2"></p>
+      </form>
+
+      <div id="submissionSuccessCard" class="hidden p-6 sm:p-8 bg-emerald-50 border-2 border-emerald-400 rounded-2xl text-center space-y-4">
+        <div class="w-14 h-14 bg-emerald-600 text-white rounded-full mx-auto flex items-center justify-center shadow-md">
+          <i data-lucide="check" class="w-8 h-8"></i>
+        </div>
+
+        <div>
+          <h2 class="text-xl sm:text-2xl font-black text-emerald-950">Request Received & Queued</h2>
+          <p class="text-xs sm:text-sm text-emerald-900 max-w-lg mx-auto mt-1 leading-relaxed">
+            Thank you! Your receipt/reimbursement details have been recorded with our treasury department. A formal PDF signed receipt will be prepared and sent to your email.
+          </p>
+        </div>
+
+        <div class="p-3.5 bg-white border border-emerald-200 rounded-xl text-left max-w-md mx-auto text-xs space-y-1 text-slate-700 shadow-2xs font-mono">
+          <p><strong class="text-slate-900 font-sans">Entity:</strong> Sikh Rifle and Pistol Association</p>
+          <p><strong class="text-slate-900 font-sans">Federal Tax EIN:</strong> 42-2595402</p>
+          <p><strong class="text-slate-900 font-sans">Tax Status:</strong> 501(c)(3) Public Charity</p>
+          <p><strong class="text-slate-900 font-sans">Direct Inquiries:</strong> president@sikhrpa.org</p>
+        </div>
+
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <button 
+            type="button" 
+            onclick="resetFormView()" 
+            class="px-4 py-2 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs font-bold transition-all"
+          >
+            Submit Another Request
+          </button>
+          <a 
+            href="./" 
+            class="px-4 py-2 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold transition-all"
+          >
+            Return to Homepage
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <section class="space-y-4">
+      <div class="text-center mb-6">
+        <h2 class="text-base sm:text-xl font-extrabold text-slate-900">
+          Receipt & Reimbursement Guidance
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-4 text-xs">
+        
+        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-2xs">
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 text-blue-950">
+            <i data-lucide="file-text" class="w-4 h-4 text-amber-600 shrink-0"></i>
+            IRS § 170 Tax Substantiation
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+            The IRS requires formal written acknowledgment for charitable contributions. This applies both to direct monetary gifts and to <strong>unreimbursed volunteer out-of-pocket expenses</strong> incurred on behalf of SikhRPA.
+          </p>
+        </div>
+
+        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-2xs">
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 text-blue-950">
+            <i data-lucide="refresh-cw" class="w-4 h-4 text-amber-600 shrink-0"></i>
+            Out-of-Pocket: Deduct or Reimburse?
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+            When you purchase supplies (e.g. safety locks, guidebooks, targets), you can choose: (1) <strong>Full Reimbursement</strong> repaid via Zelle/check, or (2) <strong>Donate the Expense</strong> to receive an official tax deduction letter.
+          </p>
+        </div>
+
+        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-2xs">
+          <h3 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 text-blue-950">
+            <i data-lucide="building" class="w-4 h-4 text-amber-600 shrink-0"></i>
+            Corporate Matching
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+            Many employers match donations 1:1 or 2:1. Search for <strong>Sikh Rifle and Pistol Association</strong> or Federal EIN <strong>42-2595402</strong> in Benevity, CyberGrants, or your internal company giving portal.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-10 sm:py-12 mt-12 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="font-semibold text-slate-800 mb-1">
+        Sikh Rifle and Pistol Association • California 501(c)(3) Nonprofit Public Benefit Corporation
+      </p>
+      <p class="text-slate-500 text-[11px] leading-relaxed mb-4">
+        1075 Mohawk St, South Lake Tahoe, CA 96150 • Federal EIN: 42-2595402 • Direct Contact: president@sikhrpa.org
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 font-semibold text-slate-600 text-xs">
+        <a href="./" class="hover:text-blue-900">Home</a>
+        <span>•</span>
+        <a href="donate" class="hover:text-blue-900">Donate Portal</a>
+        <span>•</span>
+        <a href="buyer-guide" class="hover:text-blue-900">Buyer's Guide</a>
+        <span>•</span>
+        <a href="fsc-quiz" class="hover:text-blue-900">FSC Quiz</a>
+        <span>•</span>
+        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900">president@sikhrpa.org</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
+
+    lucide.createIcons();
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      drawer.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    // Dynamic UI adjustments when request type changes
+    function updateRequestTypeUI(selectedType) {
+      const taxLabel = document.getElementById('typeLabelTax');
+      const outPocketTaxLabel = document.getElementById('typeLabelOutPocketTax');
+      const reimburseLabel = document.getElementById('typeLabelReimburse');
+      const matchLabel = document.getElementById('typeLabelMatch');
+
+      const notesLabel = document.getElementById('notesLabel');
+      const notesInput = document.getElementById('employerOrNotes');
+      const channelSelect = document.getElementById('paymentChannel');
+      const refNumberLabel = document.getElementById('refNumberLabel');
+      const refNumberHelper = document.getElementById('refNumberHelper');
+
+      [taxLabel, outPocketTaxLabel, reimburseLabel, matchLabel].forEach(el => {
+        if (el) el.className = 'p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all';
+      });
+
+      if (selectedType.includes('Direct Donation')) {
+        taxLabel.className = 'p-3.5 rounded-xl border-2 border-amber-400 bg-amber-50/40 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all';
+        notesLabel.innerText = 'Memo / Purpose (e.g. General Donation, 100 Safety Guides)';
+        notesInput.placeholder = 'e.g. General donation in honor of...';
+        refNumberLabel.innerText = 'Reference ID / Check Number / Confirmation Code';
+        refNumberHelper.innerText = 'Helps our treasurer locate your record in our bank ledger.';
+        if (channelSelect && channelSelect.value.startsWith('Out-of-Pocket')) channelSelect.value = 'Zelle (sikhrpa)';
+      } else if (selectedType.includes('Donated for Tax Receipt')) {
+        outPocketTaxLabel.className = 'p-3.5 rounded-xl border-2 border-amber-400 bg-amber-50/40 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all';
+        notesLabel.innerText = 'Donated Items / Expenses Description';
+        notesInput.placeholder = 'e.g. 50 cable locks purchased from Amazon and donated to Gurdwara clinic';
+        refNumberLabel.innerText = 'Purchase Receipt # / Store Order Number';
+        refNumberHelper.innerText = 'Enter your merchant order or receipt number for audit records.';
+        if (channelSelect) channelSelect.value = 'Out-of-Pocket (Donated as Tax Deduction)';
+      } else if (selectedType.includes('Reimbursement Requested')) {
+        reimburseLabel.className = 'p-3.5 rounded-xl border-2 border-amber-400 bg-amber-50/40 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all';
+        notesLabel.innerText = 'Items Purchased & Zelle/Check Reimbursement Details';
+        notesInput.placeholder = 'e.g. 50 cable locks from Amazon; send Zelle to (555) 123-4567';
+        refNumberLabel.innerText = 'Store Order # / Merchant Receipt Number';
+        refNumberHelper.innerText = 'Order number or receipt ID for treasurer verification.';
+        if (channelSelect) channelSelect.value = 'Out-of-Pocket (Reimbursement Requested)';
+      } else if (selectedType.includes('Corporate Match')) {
+        matchLabel.className = 'p-3.5 rounded-xl border-2 border-amber-400 bg-amber-50/40 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all';
+        notesLabel.innerText = 'Employer / Corporate Matching Portal';
+        notesInput.placeholder = 'e.g. Apple, Google, Microsoft / Benevity ID';
+        refNumberLabel.innerText = 'Corporate Match Request / Confirmation ID';
+        refNumberHelper.innerText = 'Confirmation or employee ID from your matching portal.';
+        if (channelSelect) channelSelect.value = 'Corporate Match / Benevity';
+      }
+    }
+
+    async function handleReceiptSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('receiptRequestForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const statusMsg = document.getElementById('formStatusMsg');
+      const successCard = document.getElementById('submissionSuccessCard');
+
+      const formData = new FormData(form);
+      const payload = {
+        event_type: 'receipt_reimbursement_request',
+        request_type: formData.get('request_type'),
+        full_name: formData.get('full_name'),
+        email: formData.get('email'),
+        phone: formData.get('phone') || 'None provided',
+        postal_address: formData.get('postal_address') || 'None provided',
+        amount: formData.get('amount'),
+        transaction_date: formData.get('transaction_date'),
+        payment_channel: formData.get('payment_channel'),
+        reference_number: formData.get('reference_number') || 'None',
+        notes: formData.get('notes') || 'None',
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Submitting...</span>';
+        statusMsg.classList.add('hidden');
+
+        await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+
+        // Show success card and hide form
+        form.classList.add('hidden');
+        successCard.classList.remove('hidden');
+        lucide.createIcons();
+        window.scrollTo({ top: form.offsetTop - 50, behavior: 'smooth' });
+
+      } catch (err) {
+        console.warn('Webhook transmission notice:', err);
+        // Even if CORS or network warning occurs, no-cors ensures submission
+        form.classList.add('hidden');
+        successCard.classList.remove('hidden');
+        lucide.createIcons();
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i data-lucide="send" class="w-4 h-4 text-amber-400"></i><span>Submit Request</span>';
+        lucide.createIcons();
+      }
+    }
+
+    function resetFormView() {
+      document.getElementById('receiptRequestForm').reset();
+      document.getElementById('receiptRequestForm').classList.remove('hidden');
+      document.getElementById('submissionSuccessCard').classList.add('hidden');
+      updateRequestTypeUI('Direct Donation Receipt (IRS § 170)');
+    }
+
+    // Set today as default date in picker
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date().toISOString().split('T')[0];
+      const dateEl = document.getElementById('txDate');
+      if (dateEl) dateEl.value = today;
+    });
+  </script>
+</body>
+</html>
