@@ -8,8 +8,8 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-// Generative Language API endpoint (Gemini 2.5 Flash)
-const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+// Generative Language API endpoint (Gemini 3.8 Flash)
+const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 async function fetchDailyNews() {
   console.log("Querying Gemini with Google Search Grounding for recent California firearms legal updates...");
