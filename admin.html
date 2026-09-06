@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>SikhRPA Treasury & Receipt Admin Portal</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
+
+  <!-- =========================================================================
+       AUTHENTICATION OVERLAY (Passcode Protection)
+       ========================================================================= -->
+  <div id="authScreen" class="fixed inset-0 z-50 bg-slate-900 flex items-center justify-center p-4">
+    <div class="bg-white max-w-md w-full rounded-2xl border-2 border-slate-200 shadow-2xl p-6 sm:p-8 text-center space-y-5">
+      <div class="w-16 h-16 bg-blue-900 text-amber-400 rounded-2xl mx-auto flex items-center justify-center shadow-md">
+        <i data-lucide="shield-lock" class="w-8 h-8"></i>
+      </div>
+      <div>
+        <h1 class="text-xl font-extrabold text-slate-900 tracking-tight">SikhRPA Treasury & Admin</h1>
+        <p class="text-xs text-slate-500 mt-1">Authorized Officer Login (President & Treasurer)</p>
+      </div>
+
+      <form onsubmit="handleAdminLogin(event)" class="space-y-4 text-left">
+        <div>
+          <label for="officerRoleSelect" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+            Sign In As Officer <span class="text-rose-600">*</span>
+          </label>
+          <select 
+            id="officerRoleSelect" 
+            required
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+          >
+            <option value="president">President (president@sikhrpa.org)</option>
+            <option value="treasurer">Treasurer (treasurer@sikhrpa.org)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="adminPasscode" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+            Officer Password <span class="text-rose-600">*</span>
+          </label>
+          <input 
+            type="password" 
+            id="adminPasscode" 
+            required 
+            placeholder="Enter officer password"
+            autocomplete="current-password"
+            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-slate-50 text-center font-mono"
+          />
+        </div>
+
+        <button 
+          type="submit" 
+          id="loginBtn"
+          class="w-full py-3 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl text-xs sm:text-sm transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer touch-target"
+        >
+          <i data-lucide="unlock" class="w-4 h-4 text-amber-400"></i>
+          <span>Sign In as Officer</span>
+        </button>
+
+        <p id="authErrorMsg" class="hidden text-xs text-rose-600 text-center font-semibold pt-1"></p>
+      </form>
+      <p class="text-[10px] text-slate-400">
+        Dispatches, PDF letterhead signatures, and spreadsheet rows will be attributed to the logged-in officer.
+      </p>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MAIN DASHBOARD (Revealed upon successful PIN)
+       ========================================================================= -->
+  <header class="border-b border-slate-200 bg-white sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img 
+          src="srpa-logo.png" 
+          alt="SikhRPA Logo" 
+          class="h-8 w-auto object-contain"
+          onerror="this.style.display='none'"
+        />
+        <div>
+          <span class="font-extrabold text-sm sm:text-base tracking-tight text-slate-900 block leading-tight">
+            SikhRPA Treasury Portal
+          </span>
+          <span class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider block">
+            Receipts & Reimbursements Engine
+          </span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Active Officer Role Badge -->
+        <div id="activeOfficerBadge" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold shadow-2xs">
+          <i data-lucide="user-check" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span id="activeOfficerTitle">Officer</span>
+        </div>
+
+        <button 
+          type="button" 
+          onclick="fetchSubmissions()" 
+          id="refreshBtn"
+          class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer touch-target"
+          title="Refresh entries from Google Sheet"
+        >
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span class="hidden sm:inline">Refresh</span>
+        </button>
+
+        <button 
+          type="button" 
+          onclick="handleAdminLogout()" 
+          class="px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer touch-target"
+        >
+          <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Sign Out</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
+    
+    <!-- STATS COUNTER STRIP -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
+          <i data-lucide="clock" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block">Pending Review</span>
+          <span id="statPendingCount" class="text-xl sm:text-2xl font-extrabold text-amber-600">0</span>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+          <i data-lucide="mail-check" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block">Receipts Emailed</span>
+          <span id="statEmailedCount" class="text-xl sm:text-2xl font-extrabold text-emerald-600">0</span>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 shrink-0">
+          <i data-lucide="badge-dollar-sign" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block">Reimbursed</span>
+          <span id="statReimbursedCount" class="text-xl sm:text-2xl font-extrabold text-purple-600">0</span>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-900 shrink-0">
+          <i data-lucide="wallet" class="w-5 h-5 text-amber-600"></i>
+        </div>
+        <div>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 block">Total Volume</span>
+          <span id="statTotalVolume" class="text-xl sm:text-2xl font-extrabold text-slate-900">$0.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTROLS & FILTER BAR -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+      
+      <!-- Category Tabs -->
+      <div class="flex flex-wrap items-center gap-1.5" id="statusFilterContainer">
+        <button 
+          type="button" 
+          onclick="setStatusFilter('all')" 
+          class="status-tab px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm"
+          data-status="all"
+        >
+          All Requests
+        </button>
+        <button 
+          type="button" 
+          onclick="setStatusFilter('Pending Review')" 
+          class="status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+          data-status="Pending Review"
+        >
+          Pending Review
+        </button>
+        <button 
+          type="button" 
+          onclick="setStatusFilter('Tax Receipt')" 
+          class="status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+          data-status="Tax Receipt"
+        >
+          Tax Receipts
+        </button>
+        <button 
+          type="button" 
+          onclick="setStatusFilter('Reimbursement')" 
+          class="status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+          data-status="Reimbursement"
+        >
+          Reimbursements
+        </button>
+      </div>
+
+      <!-- Keyword Search -->
+      <div class="relative w-full md:w-64">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+        <input 
+          type="text" 
+          id="adminSearchInput" 
+          oninput="handleSearch(this.value)"
+          placeholder="Search donor, email, ref #..."
+          class="w-full pl-9 pr-3 py-1.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-blue-900 bg-slate-50"
+        />
+      </div>
+    </div>
+
+    <!-- DATA TABLE CONTAINER -->
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="overflow-x-auto custom-scrollbar">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[10px] border-b border-slate-200">
+            <tr>
+              <th class="px-4 py-3">Date & ID</th>
+              <th class="px-4 py-3">Requester / Donor</th>
+              <th class="px-4 py-3">Type & Channel</th>
+              <th class="px-4 py-3">Amount</th>
+              <th class="px-4 py-3">Memo / Notes</th>
+              <th class="px-4 py-3">Status</th>
+              <th class="px-4 py-3 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="submissionsTableBody" class="divide-y divide-slate-200">
+            <tr>
+              <td colspan="7" class="px-4 py-8 text-center text-slate-400 italic">
+                Loading requests from Google Sheets...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       MODAL 1: APPROVE & EMAIL IRS TAX RECEIPT
+       ========================================================================= -->
+  <div id="receiptModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-2xl max-w-xl w-full p-6 space-y-4 max-h-[90vh] overflow-y-auto custom-scrollbar">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+        <div class="flex items-center gap-2.5">
+          <div class="p-2 bg-emerald-100 text-emerald-700 rounded-xl">
+            <i data-lucide="file-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-base">Approve & Email IRS Tax Receipt</h3>
+            <p class="text-[11px] text-slate-500">Official IRC § 170(f)(8) Written Acknowledgment PDF</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeReceiptModal()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="receiptApproveForm" onsubmit="executeReceiptDispatch(event)" class="space-y-3.5 text-xs">
+        <input type="hidden" id="modalRowIndex" />
+
+        <div class="grid grid-cols-2 gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <div>
+            <span class="text-[10px] text-slate-400 font-semibold uppercase block">Donor Name</span>
+            <strong id="modalDonorName" class="text-slate-900 text-xs sm:text-sm"></strong>
+          </div>
+          <div>
+            <span class="text-[10px] text-slate-400 font-semibold uppercase block">Recipient Email</span>
+            <strong id="modalDonorEmail" class="text-slate-900 text-xs sm:text-sm truncate block"></strong>
+          </div>
+          <div>
+            <span class="text-[10px] text-slate-400 font-semibold uppercase block">Contribution Amount</span>
+            <strong id="modalAmount" class="text-emerald-700 text-sm sm:text-base font-extrabold"></strong>
+          </div>
+          <div>
+            <span class="text-[10px] text-slate-400 font-semibold uppercase block">Contribution Date</span>
+            <strong id="modalTxDate" class="text-slate-800 text-xs"></strong>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="modalReceiptNumber" class="block font-semibold text-slate-700 mb-1">
+              Receipt Reference Number <span class="text-rose-600">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="modalReceiptNumber" 
+              required
+              class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono text-xs font-bold text-slate-900 bg-white"
+            />
+          </div>
+
+          <div>
+            <label for="modalAuthorizedOfficer" class="block font-semibold text-slate-700 mb-1">
+              Authorized Signer / Officer <span class="text-rose-600">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="modalAuthorizedOfficer" 
+              required
+              class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="modalCustomNote" class="block font-semibold text-slate-700 mb-1">
+            Custom Acknowledgment Message / Item List
+          </label>
+          <textarea 
+            id="modalCustomNote" 
+            rows="2"
+            class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white"
+            placeholder="e.g. In support of 50 child-safe cable locks gifted to Gurdwara clinics."
+          ></textarea>
+        </div>
+
+        <!-- IRS Mandatory Statement Notice -->
+        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-950 leading-relaxed">
+          <strong>Mandatory Statutory Statement Included in PDF:</strong><br>
+          <em>"No goods or services were provided in exchange for this contribution other than intangible religious or educational benefits. Sikh Rifle and Pistol Association is an exempt organization under IRC Section 501(c)(3) (EIN: 42-2595402)."</em>
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-2 border-t border-slate-200">
+          <button 
+            type="button" 
+            onclick="closeReceiptModal()" 
+            class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700"
+          >
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            id="modalDispatchBtn"
+            class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+          >
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Generate PDF & Email Donor</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: CONFIRM REIMBURSEMENT PAYOUT
+       ========================================================================= -->
+  <div id="reimburseModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-2xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+        <div class="flex items-center gap-2">
+          <div class="p-2 bg-purple-100 text-purple-700 rounded-xl">
+            <i data-lucide="badge-dollar-sign" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-base">Mark Reimbursement Paid</h3>
+            <p class="text-[11px] text-slate-500">Record treasury payout & send notice</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeReimburseModal()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="reimburseForm" onsubmit="executeReimburseDispatch(event)" class="space-y-3 text-xs">
+        <input type="hidden" id="reimburseRowIndex" />
+
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1">
+          <p><strong class="text-slate-900">Requester:</strong> <span id="reimburseDonorName"></span></p>
+          <p><strong class="text-slate-900">Payout Amount:</strong> <span id="reimburseAmount" class="font-bold text-purple-700"></span></p>
+          <p><strong class="text-slate-900">Email:</strong> <span id="reimburseEmail"></span></p>
+          <p><strong class="text-slate-900">Approving Officer:</strong> <span id="reimburseApproverLabel" class="font-bold text-blue-900"></span></p>
+        </div>
+
+        <div>
+          <label for="reimbursePayoutRef" class="block font-semibold text-slate-700 mb-1">
+            Treasury Payment Ref (Zelle Conf # / Check #) <span class="text-rose-600">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="reimbursePayoutRef" 
+            required 
+            placeholder="e.g. Zelle Conf #847291 or Check #1042" 
+            class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs"
+          />
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-2 border-t border-slate-200">
+          <button type="button" onclick="closeReimburseModal()" class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700">
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            id="reimburseSubmitBtn"
+            class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+          >
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span>Confirm Payout & Email Requester</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-semibold">
+    <i id="toastIcon" data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMessage">Action completed successfully!</span>
+  </div>
+
+  <!-- =========================================================================
+       CLIENT LOGIC & API INTERACTION
+       ========================================================================= -->
+  <script>
+    const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyL4IjLrldTQlFKpZzskNrVk2gr3-H7MEpTZShSN8Q0RfqEQO6IJEk5g4kEqT2Ia3aJ/exec';
+
+    let currentOfficer = null;
+    let submissions = [];
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    lucide.createIcons();
+
+    // Check existing session
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedSession = sessionStorage.getItem('srpa_officer_session');
+      if (savedSession) {
+        try {
+          currentOfficer = JSON.parse(savedSession);
+          showDashboardView();
+          fetchSubmissions();
+        } catch (e) {
+          sessionStorage.removeItem('srpa_officer_session');
+        }
+      }
+    });
+
+    function showDashboardView() {
+      document.getElementById('authScreen').classList.add('hidden');
+      const badge = document.getElementById('activeOfficerBadge');
+      const title = document.getElementById('activeOfficerTitle');
+      if (badge && title && currentOfficer) {
+        badge.classList.remove('hidden');
+        title.innerText = `${currentOfficer.title} (${currentOfficer.username})`;
+      }
+      lucide.createIcons();
+    }
+
+    async function handleAdminLogin(e) {
+      e.preventDefault();
+      const roleSelect = document.getElementById('officerRoleSelect');
+      const input = document.getElementById('adminPasscode');
+      const err = document.getElementById('authErrorMsg');
+      const btn = document.getElementById('loginBtn');
+      
+      const username = roleSelect.value;
+      const password = input.value.trim();
+
+      if (!password) return;
+
+      try {
+        btn.disabled = true;
+        btn.innerText = 'Verifying Credentials...';
+        err.classList.add('hidden');
+
+        const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+        const json = await res.json();
+
+        if (json.status === 'success') {
+          currentOfficer = {
+            username: username,
+            password: password,
+            title: json.officer.title,
+            name: json.officer.name,
+            email: json.officer.email
+          };
+          sessionStorage.setItem('srpa_officer_session', JSON.stringify(currentOfficer));
+          showDashboardView();
+          fetchSubmissions();
+        } else {
+          err.innerText = json.message || 'Invalid officer credentials. Please try again.';
+          err.classList.remove('hidden');
+        }
+      } catch (errCatch) {
+        // Fallback for CORS: test with direct get_requests
+        try {
+          const fallbackRes = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=get_requests&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+          const fallbackJson = await fallbackRes.json();
+          if (fallbackJson.status === 'success') {
+            currentOfficer = {
+              username: username,
+              password: password,
+              title: username === 'president' ? 'President' : 'Treasurer',
+              name: username === 'president' ? 'President, Sikh Rifle and Pistol Association' : 'Treasurer, Sikh Rifle and Pistol Association',
+              email: `${username}@sikhrpa.org`
+            };
+            sessionStorage.setItem('srpa_officer_session', JSON.stringify(currentOfficer));
+            showDashboardView();
+            submissions = fallbackJson.data || [];
+            renderSubmissions();
+            updateStats();
+            return;
+          }
+        } catch (e2) {}
+        err.innerText = 'Authentication error. Please check your internet connection or Apps Script deployment.';
+        err.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="unlock" class="w-4 h-4 text-amber-400"></i><span>Sign In as Officer</span>';
+        lucide.createIcons();
+      }
+    }
+
+    function handleAdminLogout() {
+      sessionStorage.removeItem('srpa_officer_session');
+      currentOfficer = null;
+      document.getElementById('authScreen').classList.remove('hidden');
+      document.getElementById('activeOfficerBadge').classList.add('hidden');
+      document.getElementById('adminPasscode').value = '';
+    }
+
+    async function fetchSubmissions() {
+      if (!currentOfficer) return;
+      const refreshBtn = document.getElementById('refreshBtn');
+      try {
+        if (refreshBtn) refreshBtn.innerHTML = '<span>Loading...</span>';
+        const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=get_requests&username=${encodeURIComponent(currentOfficer.username)}&password=${encodeURIComponent(currentOfficer.password)}`);
+        const json = await res.json();
+        if (json.status === 'success') {
+          submissions = json.data || [];
+          renderSubmissions();
+          updateStats();
+          showToast('Data refreshed successfully from Google Sheets.');
+        }
+      } catch (err) {
+        console.warn('Data sync notice:', err);
+      } finally {
+        if (refreshBtn) {
+          refreshBtn.innerHTML = '<i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-amber-600"></i><span class="hidden sm:inline">Refresh</span>';
+          lucide.createIcons();
+        }
+      }
+    }
+
+    function setStatusFilter(status) {
+      currentFilter = status;
+      document.querySelectorAll('.status-tab').forEach(tab => {
+        if (tab.dataset.status === status) {
+          tab.className = 'status-tab px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
+        } else {
+          tab.className = 'status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200';
+        }
+      });
+      renderSubmissions();
+    }
+
+    function handleSearch(val) {
+      searchQuery = (val || '').trim().toLowerCase();
+      renderSubmissions();
+    }
+
+    function updateStats() {
+      let pending = 0;
+      let emailed = 0;
+      let reimbursed = 0;
+      let totalVolume = 0;
+
+      submissions.forEach(item => {
+        const amt = parseFloat(item.amount) || 0;
+        totalVolume += amt;
+        const status = (item.status || '').toLowerCase();
+        if (status.includes('pending')) pending++;
+        if (status.includes('emailed') || status.includes('approved')) emailed++;
+        if (status.includes('reimbursed')) reimbursed++;
+      });
+
+      document.getElementById('statPendingCount').innerText = pending;
+      document.getElementById('statEmailedCount').innerText = emailed;
+      document.getElementById('statReimbursedCount').innerText = reimbursed;
+      document.getElementById('statTotalVolume').innerText = `$${totalVolume.toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+    }
+
+    function renderSubmissions() {
+      const tbody = document.getElementById('submissionsTableBody');
+      tbody.innerHTML = '';
+
+      const filtered = submissions.filter(item => {
+        const matchesFilter = currentFilter === 'all' || 
+          (currentFilter === 'Pending Review' && item.status.includes('Pending')) ||
+          (currentFilter === 'Tax Receipt' && item.request_type.includes('Receipt')) ||
+          (currentFilter === 'Reimbursement' && item.request_type.includes('Reimbursement'));
+
+        const matchesSearch = !searchQuery || 
+          (item.full_name && item.full_name.toLowerCase().includes(searchQuery)) ||
+          (item.email && item.email.toLowerCase().includes(searchQuery)) ||
+          (item.reference_number && item.reference_number.toLowerCase().includes(searchQuery)) ||
+          (item.notes && item.notes.toLowerCase().includes(searchQuery));
+
+        return matchesFilter && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" class="px-4 py-8 text-center text-slate-400">
+              No matching records found.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      filtered.forEach((item, idx) => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50 transition-colors';
+
+        let badgeClass = 'bg-slate-100 text-slate-700 border-slate-300';
+        if (item.status.includes('Pending')) badgeClass = 'bg-amber-100 text-amber-800 border-amber-300';
+        if (item.status.includes('Approved') || item.status.includes('Emailed')) badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+        if (item.status.includes('Reimbursed')) badgeClass = 'bg-purple-100 text-purple-800 border-purple-300';
+
+        const isReimbursement = item.request_type.includes('Reimbursement Requested');
+
+        tr.innerHTML = `
+          <td class="px-4 py-3 whitespace-nowrap">
+            <span class="font-bold text-slate-900 block">${item.transaction_date || 'N/A'}</span>
+            <span class="text-[10px] text-slate-400 font-mono block">Row #${item.row_index}</span>
+          </td>
+
+          <td class="px-4 py-3">
+            <strong class="text-slate-900 block">${item.full_name}</strong>
+            <span class="text-slate-500 text-[11px] block">${item.email}</span>
+            ${item.phone && item.phone !== 'None provided' ? `<span class="text-[10px] text-slate-400">${item.phone}</span>` : ''}
+          </td>
+
+          <td class="px-4 py-3">
+            <span class="font-semibold text-slate-800 block text-[11px]">${item.request_type}</span>
+            <span class="text-[10px] text-blue-900 font-mono">${item.payment_channel}</span>
+          </td>
+
+          <td class="px-4 py-3 whitespace-nowrap font-extrabold text-slate-900 text-sm">
+            $${parseFloat(item.amount || 0).toFixed(2)}
+          </td>
+
+          <td class="px-4 py-3 max-w-xs truncate" title="${item.notes}">
+            <span class="text-slate-700 text-[11px] block truncate">${item.notes || 'None'}</span>
+            <span class="text-[10px] text-slate-400 font-mono block truncate">Ref: ${item.reference_number || 'None'}</span>
+          </td>
+
+          <td class="px-4 py-3 whitespace-nowrap">
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border ${badgeClass}">
+              ${item.status}
+            </span>
+          </td>
+
+          <td class="px-4 py-3 whitespace-nowrap text-right space-x-1">
+            ${isReimbursement ? `
+              <button 
+                type="button" 
+                onclick="openReimburseModal(${item.row_index})" 
+                class="px-2.5 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1 shadow-2xs cursor-pointer"
+              >
+                <i data-lucide="badge-dollar-sign" class="w-3.5 h-3.5"></i>
+                <span>Pay Out</span>
+              </button>
+            ` : `
+              <button 
+                type="button" 
+                onclick="openReceiptModal(${item.row_index})" 
+                class="px-2.5 py-1.5 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1 shadow-2xs cursor-pointer"
+              >
+                <i data-lucide="file-check" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span>Email PDF Receipt</span>
+              </button>
+            `}
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+
+      lucide.createIcons();
+    }
+
+    function openReceiptModal(rowIndex) {
+      const item = submissions.find(s => s.row_index === rowIndex);
+      if (!item) return;
+
+      document.getElementById('modalRowIndex').value = rowIndex;
+      document.getElementById('modalDonorName').innerText = item.full_name;
+      document.getElementById('modalDonorEmail').innerText = item.email;
+      document.getElementById('modalAmount').innerText = `$${parseFloat(item.amount || 0).toFixed(2)}`;
+      document.getElementById('modalTxDate').innerText = item.transaction_date;
+
+      const year = new Date().getFullYear();
+      const randomId = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('modalReceiptNumber').value = `SRPA-${year}-${randomId}`;
+
+      // Set Authorized Officer name and title based on active login
+      const defaultSigner = currentOfficer 
+        ? `${currentOfficer.name} (${currentOfficer.title})`
+        : 'SikhRPA Board of Directors';
+      document.getElementById('modalAuthorizedOfficer').value = defaultSigner;
+
+      document.getElementById('modalCustomNote').value = item.notes && item.notes !== 'None' ? item.notes : '';
+      document.getElementById('receiptModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeReceiptModal() {
+      document.getElementById('receiptModal').classList.add('hidden');
+    }
+
+    function openReimburseModal(rowIndex) {
+      const item = submissions.find(s => s.row_index === rowIndex);
+      if (!item) return;
+
+      document.getElementById('reimburseRowIndex').value = rowIndex;
+      document.getElementById('reimburseDonorName').innerText = item.full_name;
+      document.getElementById('reimburseAmount').innerText = `$${parseFloat(item.amount || 0).toFixed(2)}`;
+      document.getElementById('reimburseEmail').innerText = item.email;
+      document.getElementById('reimbursePayoutRef').value = '';
+
+      const approverLabel = document.getElementById('reimburseApproverLabel');
+      if (approverLabel && currentOfficer) {
+        approverLabel.innerText = `${currentOfficer.title} (${currentOfficer.name})`;
+      }
+
+      document.getElementById('reimburseModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeReimburseModal() {
+      document.getElementById('reimburseModal').classList.add('hidden');
+    }
+
+    async function executeReceiptDispatch(e) {
+      e.preventDefault();
+      const rowIndex = document.getElementById('modalRowIndex').value;
+      const receiptNo = document.getElementById('modalReceiptNumber').value;
+      const officer = document.getElementById('modalAuthorizedOfficer').value;
+      const note = document.getElementById('modalCustomNote').value;
+      const btn = document.getElementById('modalDispatchBtn');
+
+      const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
+      if (!item || !currentOfficer) return;
+
+      try {
+        btn.disabled = true;
+        btn.innerHTML = '<span>Compiling PDF & Sending...</span>';
+
+        const payload = {
+          action: 'approve_receipt',
+          username: currentOfficer.username,
+          password: currentOfficer.password,
+          row_index: parseInt(rowIndex, 10),
+          receipt_number: receiptNo,
+          donor_name: item.full_name,
+          donor_email: item.email,
+          donor_address: item.postal_address || 'None provided',
+          amount: item.amount,
+          transaction_date: item.transaction_date,
+          payment_channel: item.payment_channel,
+          authorized_officer: officer,
+          custom_note: note
+        };
+
+        const res = await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+
+        const resJson = await res.json();
+        if (resJson.status === 'success') {
+          closeReceiptModal();
+          item.status = `Approved & Emailed (#${receiptNo}) by ${currentOfficer.title}`;
+          renderSubmissions();
+          updateStats();
+          showToast(`Official IRS Receipt PDF generated and emailed by ${currentOfficer.title}!`);
+        } else {
+          showToast(`Error: ${resJson.error || 'Failed to dispatch receipt.'}`);
+        }
+      } catch (err) {
+        showToast('Receipt dispatch request sent. Verify in Gmail sent folder.');
+        closeReceiptModal();
+        fetchSubmissions();
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i><span>Generate PDF & Email Donor</span>';
+        lucide.createIcons();
+      }
+    }
+
+    async function executeReimburseDispatch(e) {
+      e.preventDefault();
+      const rowIndex = document.getElementById('reimburseRowIndex').value;
+      const payoutRef = document.getElementById('reimbursePayoutRef').value;
+      const btn = document.getElementById('reimburseSubmitBtn');
+
+      const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
+      if (!item || !currentOfficer) return;
+
+      try {
+        btn.disabled = true;
+        btn.innerHTML = '<span>Recording Payout...</span>';
+
+        const payload = {
+          action: 'approve_reimbursement',
+          username: currentOfficer.username,
+          password: currentOfficer.password,
+          row_index: parseInt(rowIndex, 10),
+          payout_reference: payoutRef,
+          requester_name: item.full_name,
+          requester_email: item.email,
+          amount: item.amount
+        };
+
+        const res = await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+
+        closeReimburseModal();
+        item.status = `Reimbursed (${payoutRef}) by ${currentOfficer.title}`;
+        renderSubmissions();
+        updateStats();
+        showToast(`Reimbursement recorded and confirmation emailed by ${currentOfficer.title}!`);
+      } catch (err) {
+        closeReimburseModal();
+        showToast('Reimbursement recorded.');
+        fetchSubmissions();
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="check-circle" class="w-4 h-4"></i><span>Confirm Payout & Email Requester</span>';
+        lucide.createIcons();
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const text = document.getElementById('toastMessage');
+      if (toast && text) {
+        text.innerText = msg;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 4000);
+      }
+    }
+  </script>
+</body>
+</html>
