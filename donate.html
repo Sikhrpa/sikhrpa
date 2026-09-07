@@ -432,34 +432,6 @@
           </span>
         </div>
 
-        <!-- Dedicated "Already Donated? Need a Receipt?" Hero Callout Banner -->
-        <div class="mb-8 p-4 sm:p-5 rounded-2xl bg-amber-50 border-2 border-amber-300 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div class="flex items-start sm:items-center gap-3.5">
-            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-black flex items-center justify-center shrink-0 shadow-sm">
-              <i data-lucide="file-check-2" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-900 bg-amber-200/70 px-2 py-0.5 rounded-full inline-block mb-1">
-                Already Donated via Zelle, PayPal, or Check?
-              </span>
-              <h4 class="font-extrabold text-slate-950 text-sm sm:text-base leading-snug">
-                Need an Official IRS Tax Deduction Receipt or Expense Reimbursement?
-              </h4>
-              <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
-                Submit your transaction details to receive a signed, formal IRS § 170(f)(8) acknowledgment letter PDF emailed directly to your inbox.
-              </p>
-            </div>
-          </div>
-          <a 
-            href="receipt"
-            class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-extrabold text-xs transition-all shadow-md flex items-center justify-center gap-2 shrink-0 touch-target"
-            title="Request official IRS tax receipt or submit reimbursement"
-          >
-            <span>Request a Receipt</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
-          </a>
-        </div>
-
         <div class="text-center mb-8">
           <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             Payment Channels
@@ -624,25 +596,37 @@
           </a>
         </div>
 
-        <!-- Tax Receipt & W-9 Assistance Banner -->
-        <div class="p-4 sm:p-5 rounded-2xl bg-blue-50 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-slate-700 shadow-sm">
-          <div class="flex items-start sm:items-center gap-3">
-            <div class="p-2.5 bg-blue-100 text-blue-900 rounded-xl shrink-0 mt-0.5 sm:mt-0">
-              <i data-lucide="file-check" class="w-5 h-5"></i>
+        <!-- Dedicated Post-Donation Receipt & W-9 Assistance Callout Banner -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-amber-50 via-orange-50/50 to-amber-50 border-2 border-amber-300 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 font-black flex items-center justify-center shrink-0 shadow-sm mt-0.5 md:mt-0">
+              <i data-lucide="file-check-2" class="w-6 h-6"></i>
             </div>
-            <div>
-              <p class="font-bold text-slate-900">Need our IRS Form W-9 or a formal donation receipt?</p>
-              <p class="text-slate-600 text-xs mt-0.5">
-                We provide formal substantiation letters compliant with IRS Section 170(f)(8) for all charitable contributions.
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-900 bg-amber-200/80 px-2.5 py-0.5 rounded-full inline-block">
+                  Already Completed Your Contribution?
+                </span>
+                <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">
+                  IRC § 170(f)(8) Compliant
+                </span>
+              </div>
+              <h4 class="font-extrabold text-slate-950 text-base sm:text-lg leading-snug">
+                Need an Official IRS Tax Deduction Receipt, Form W-9, or Reimbursement?
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+                If you already sent a contribution via Zelle, PayPal, or Check—or purchased supplies out-of-pocket—submit your transaction details to receive a signed, formal IRS tax acknowledgment letter PDF delivered directly to your inbox.
               </p>
             </div>
           </div>
           <a 
             href="receipt"
-            class="w-full sm:w-auto px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl shrink-0 transition-colors shadow-sm flex items-center justify-center gap-2 text-xs touch-target"
+            class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-extrabold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 shrink-0 touch-target"
+            title="Request official IRS tax receipt or submit reimbursement"
           >
             <i data-lucide="file-text" class="w-4 h-4 text-amber-400"></i>
             <span>Request Receipt / W-9</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
           </a>
         </div>
 
