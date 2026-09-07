@@ -417,6 +417,65 @@
           </div>
         </div>
 
+        <!-- SECTION 4: FILE ATTACHMENT UPLOAD (RECEIPT / INVOICE) -->
+        <div class="border-t border-slate-200 pt-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="block text-xs font-bold uppercase tracking-wider text-slate-700">
+              4. Receipt / Invoice Attachment <span class="text-slate-400 font-normal">(Optional for Donations, Recommended for Reimbursements)</span>
+            </span>
+            <span class="text-[10px] font-semibold text-slate-500">Max 10MB (PDF, PNG, JPG)</span>
+          </div>
+
+          <div class="relative">
+            <input 
+              type="file" 
+              id="receiptAttachment" 
+              accept="image/png, image/jpeg, image/webp, application/pdf"
+              onchange="handleFileSelection(event)"
+              class="hidden"
+            />
+            
+            <div 
+              id="uploadDropzone"
+              onclick="document.getElementById('receiptAttachment').click()"
+              class="border-2 border-dashed border-slate-300 hover:border-amber-400 bg-slate-50 hover:bg-amber-50/30 rounded-2xl p-5 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-2 group"
+            >
+              <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:text-amber-600 flex items-center justify-center shadow-2xs transition-colors">
+                <i data-lucide="upload-cloud" class="w-5 h-5"></i>
+              </div>
+              <div class="space-y-0.5">
+                <p class="text-xs font-bold text-slate-800">
+                  <span class="text-blue-900 underline group-hover:text-amber-600">Click to browse</span> or drag store receipt / invoice here
+                </p>
+                <p class="text-[11px] text-slate-500">
+                  Upload photos of paper receipts, Amazon order confirmation, or bank confirmation
+                </p>
+              </div>
+            </div>
+
+            <!-- Selected File Preview Badge -->
+            <div id="selectedFileInfo" class="hidden mt-2.5 p-3 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-between gap-3 text-xs">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <div class="p-1.5 bg-blue-900 text-amber-400 rounded-lg shrink-0">
+                  <i data-lucide="paperclip" class="w-4 h-4"></i>
+                </div>
+                <div class="min-w-0">
+                  <span id="selectedFileName" class="font-bold text-slate-900 truncate block"></span>
+                  <span id="selectedFileSize" class="text-[10px] text-slate-500 font-mono"></span>
+                </div>
+              </div>
+              <button 
+                type="button" 
+                onclick="clearSelectedFile(event)" 
+                class="p-1.5 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-white transition-colors"
+                title="Remove attachment"
+              >
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200">
           <p class="text-[11px] text-slate-500 leading-relaxed max-w-md text-center sm:text-left">
             🔒 By submitting, your record is logged with the SikhRPA Treasury for IRS substantiation. We never share donor contact info.
@@ -557,6 +616,45 @@
       closeIcon.classList.toggle('hidden');
     }
 
+    let attachedFilePayload = null;
+
+    function handleFileSelection(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      // 10MB maximum limit
+      if (file.size > 10 * 1024 * 1024) {
+        alert("File exceeds maximum allowed size of 10MB. Please select a smaller file or compressed PDF.");
+        e.target.value = '';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        attachedFilePayload = {
+          file_name: file.name,
+          file_type: file.type || 'application/octet-stream',
+          file_data: evt.target.result // Base64 Data URL
+        };
+
+        document.getElementById('uploadDropzone').classList.add('hidden');
+        document.getElementById('selectedFileInfo').classList.remove('hidden');
+        document.getElementById('selectedFileName').innerText = file.name;
+        document.getElementById('selectedFileSize').innerText = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+        lucide.createIcons();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearSelectedFile(e) {
+      if (e) e.stopPropagation();
+      attachedFilePayload = null;
+      document.getElementById('receiptAttachment').value = '';
+      document.getElementById('selectedFileInfo').classList.add('hidden');
+      document.getElementById('uploadDropzone').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
     // Dynamic UI adjustments when request type changes
     function updateRequestTypeUI(selectedType) {
       const taxLabel = document.getElementById('typeLabelTax');
@@ -625,12 +723,15 @@
         payment_channel: formData.get('payment_channel'),
         reference_number: formData.get('reference_number') || 'None',
         notes: formData.get('notes') || 'None',
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        file_name: attachedFilePayload ? attachedFilePayload.file_name : null,
+        file_type: attachedFilePayload ? attachedFilePayload.file_type : null,
+        file_data: attachedFilePayload ? attachedFilePayload.file_data : null
       };
 
       try {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>Submitting...</span>';
+        submitBtn.innerHTML = '<span>Submitting & Uploading...</span>';
         statusMsg.classList.add('hidden');
 
         await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
@@ -648,7 +749,6 @@
 
       } catch (err) {
         console.warn('Webhook transmission notice:', err);
-        // Even if CORS or network warning occurs, no-cors ensures submission
         form.classList.add('hidden');
         successCard.classList.remove('hidden');
         lucide.createIcons();
@@ -661,6 +761,7 @@
 
     function resetFormView() {
       document.getElementById('receiptRequestForm').reset();
+      clearSelectedFile();
       document.getElementById('receiptRequestForm').classList.remove('hidden');
       document.getElementById('submissionSuccessCard').classList.add('hidden');
       updateRequestTypeUI('Direct Donation Receipt (IRS § 170)');
