@@ -245,6 +245,14 @@
         >
           Reimbursements
         </button>
+        <button 
+          type="button" 
+          onclick="setStatusFilter('Rejected')" 
+          class="status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+          data-status="Rejected"
+        >
+          Rejected
+        </button>
       </div>
 
       <!-- Keyword Search -->
@@ -456,6 +464,70 @@
     </div>
   </div>
 
+  <!-- =========================================================================
+       MODAL 3: REJECT REQUEST
+       ========================================================================= -->
+  <div id="rejectModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-2xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+        <div class="flex items-center gap-2">
+          <div class="p-2 bg-rose-100 text-rose-700 rounded-xl">
+            <i data-lucide="x-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-base">Reject Request</h3>
+            <p class="text-[11px] text-slate-500">Log rejection and optionally notify requester</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeRejectModal()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="rejectForm" onsubmit="executeRejectDispatch(event)" class="space-y-3 text-xs">
+        <input type="hidden" id="rejectRowIndex" />
+
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1">
+          <p><strong class="text-slate-900">Requester:</strong> <span id="rejectDonorName"></span></p>
+          <p><strong class="text-slate-900">Amount:</strong> <span id="rejectAmount" class="font-bold text-slate-900"></span></p>
+          <p><strong class="text-slate-900">Type:</strong> <span id="rejectType"></span></p>
+        </div>
+
+        <div>
+          <label for="rejectReason" class="block font-semibold text-slate-700 mb-1">
+            Reason for Rejection <span class="text-rose-600">*</span>
+          </label>
+          <textarea 
+            id="rejectReason" 
+            rows="3" 
+            required
+            placeholder="e.g. Transaction could not be located in bank records, duplicate request, or invalid receipt attached."
+            class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs"
+          ></textarea>
+        </div>
+
+        <label class="flex items-center gap-2 cursor-pointer select-none text-slate-700 font-medium">
+          <input type="checkbox" id="rejectNotifyCheckbox" checked class="w-4 h-4 rounded text-blue-900 border-slate-300 focus:ring-amber-500" />
+          <span>Send explanation email to requester from receipts@sikhrpa.org</span>
+        </label>
+
+        <div class="pt-2 flex items-center justify-end gap-2 border-t border-slate-200">
+          <button type="button" onclick="closeRejectModal()" class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700">
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            id="rejectSubmitBtn"
+            class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+          >
+            <i data-lucide="x-circle" class="w-4 h-4"></i>
+            <span>Confirm Rejection</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- TOAST NOTIFICATION CONTAINER -->
   <div id="toastNotification" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-semibold">
     <i id="toastIcon" data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
@@ -642,7 +714,8 @@
         const matchesFilter = currentFilter === 'all' || 
           (currentFilter === 'Pending Review' && item.status.includes('Pending')) ||
           (currentFilter === 'Tax Receipt' && item.request_type.includes('Receipt')) ||
-          (currentFilter === 'Reimbursement' && item.request_type.includes('Reimbursement'));
+          (currentFilter === 'Reimbursement' && item.request_type.includes('Reimbursement')) ||
+          (currentFilter === 'Rejected' && item.status.includes('Rejected'));
 
         const matchesSearch = !searchQuery || 
           (item.full_name && item.full_name.toLowerCase().includes(searchQuery)) ||
@@ -672,8 +745,10 @@
         if (item.status.includes('Pending')) badgeClass = 'bg-amber-100 text-amber-800 border-amber-300';
         if (item.status.includes('Approved') || item.status.includes('Emailed')) badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
         if (item.status.includes('Reimbursed')) badgeClass = 'bg-purple-100 text-purple-800 border-purple-300';
+        if (item.status.includes('Rejected')) badgeClass = 'bg-rose-100 text-rose-800 border-rose-300';
 
         const isReimbursement = item.request_type.includes('Reimbursement Requested');
+        const isRejected = item.status.includes('Rejected');
 
         tr.innerHTML = `
           <td class="px-4 py-3 whitespace-nowrap">
@@ -708,23 +783,36 @@
           </td>
 
           <td class="px-4 py-3 whitespace-nowrap text-right space-x-1">
-            ${isReimbursement ? `
-              <button 
-                type="button" 
-                onclick="openReimburseModal(${item.row_index})" 
-                class="px-2.5 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1 shadow-2xs cursor-pointer"
-              >
-                <i data-lucide="badge-dollar-sign" class="w-3.5 h-3.5"></i>
-                <span>Pay Out</span>
-              </button>
+            ${isRejected ? `
+              <span class="text-slate-400 italic text-[11px]">Rejected</span>
             ` : `
+              ${isReimbursement ? `
+                <button 
+                  type="button" 
+                  onclick="openReimburseModal(${item.row_index})" 
+                  class="px-2.5 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1 shadow-2xs cursor-pointer"
+                >
+                  <i data-lucide="badge-dollar-sign" class="w-3.5 h-3.5"></i>
+                  <span>Pay Out</span>
+                </button>
+              ` : `
+                <button 
+                  type="button" 
+                  onclick="openReceiptModal(${item.row_index})" 
+                  class="px-2.5 py-1.5 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1 shadow-2xs cursor-pointer"
+                >
+                  <i data-lucide="file-check" class="w-3.5 h-3.5 text-amber-400"></i>
+                  <span>Email PDF Receipt</span>
+                </button>
+              `}
               <button 
                 type="button" 
-                onclick="openReceiptModal(${item.row_index})" 
-                class="px-2.5 py-1.5 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1 shadow-2xs cursor-pointer"
+                onclick="openRejectModal(${item.row_index})" 
+                class="px-2 py-1.5 bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-700 border border-slate-300 hover:border-rose-300 rounded-lg font-bold text-[11px] inline-flex items-center gap-1 transition-colors cursor-pointer"
+                title="Reject Request"
               >
-                <i data-lucide="file-check" class="w-3.5 h-3.5 text-amber-400"></i>
-                <span>Email PDF Receipt</span>
+                <i data-lucide="x" class="w-3.5 h-3.5 text-rose-500"></i>
+                <span class="hidden sm:inline">Reject</span>
               </button>
             `}
           </td>
@@ -786,6 +874,74 @@
 
     function closeReimburseModal() {
       document.getElementById('reimburseModal').classList.add('hidden');
+    }
+
+    function openRejectModal(rowIndex) {
+      const item = submissions.find(s => s.row_index === rowIndex);
+      if (!item) return;
+
+      document.getElementById('rejectRowIndex').value = rowIndex;
+      document.getElementById('rejectDonorName').innerText = item.full_name;
+      document.getElementById('rejectAmount').innerText = `$${parseFloat(item.amount || 0).toFixed(2)}`;
+      document.getElementById('rejectType').innerText = item.request_type;
+      document.getElementById('rejectReason').value = '';
+      document.getElementById('rejectNotifyCheckbox').checked = true;
+
+      document.getElementById('rejectModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeRejectModal() {
+      document.getElementById('rejectModal').classList.add('hidden');
+    }
+
+    async function executeRejectDispatch(e) {
+      e.preventDefault();
+      const rowIndex = document.getElementById('rejectRowIndex').value;
+      const reason = document.getElementById('rejectReason').value;
+      const notify = document.getElementById('rejectNotifyCheckbox').checked;
+      const btn = document.getElementById('rejectSubmitBtn');
+
+      const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
+      if (!item || !currentOfficer) return;
+
+      try {
+        btn.disabled = true;
+        btn.innerHTML = '<span>Rejecting...</span>';
+
+        const payload = {
+          action: 'reject_request',
+          username: currentOfficer.username,
+          password: currentOfficer.password,
+          row_index: parseInt(rowIndex, 10),
+          reason: reason,
+          notify_requester: notify,
+          requester_name: item.full_name,
+          requester_email: item.email,
+          request_type: item.request_type,
+          amount: item.amount
+        };
+
+        const res = await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+
+        closeRejectModal();
+        item.status = `Rejected by ${currentOfficer.title} - ${reason}`;
+        renderSubmissions();
+        updateStats();
+        showToast(`Request rejected by ${currentOfficer.title}.`);
+      } catch (err) {
+        closeRejectModal();
+        showToast('Rejection recorded.');
+        fetchSubmissions();
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="x-circle" class="w-4 h-4"></i><span>Confirm Rejection</span>';
+        lucide.createIcons();
+      }
     }
 
     async function executeReceiptDispatch(e) {
