@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Stop the Bleed & Range Emergency Trauma Guide | SikhRPA 501(c)(3)</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TRVZCG17K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4TRVZCG17K');
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Stop the Bleed & Range Emergency Trauma Guide | SikhRPA 501(c)(3)" />
+  <meta name="description" content="Official bilingual (English & Gurmukhi) emergency trauma and Stop the Bleed guide by SikhRPA. Master tourniquet application, wound packing, IFAK kit packing, and remote 911 range dispatch." />
+  <meta name="keywords" content="Stop the bleed Punjabi, SikhRPA trauma safety, range IFAK checklist, tourniquet instructions Punjabi, California gun range first aid, bleeding control" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Mahee:wght@500;600;700;800&display=swap');
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .gurmukhi {
+      font-family: 'Mukta Mahee', 'Raavi', 'Gurmukhi MN', sans-serif;
+      line-height: 1.35;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    @media print {
+      header, footer, .no-print, button {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .print-card {
+        border: 2px solid #000000 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-rose-600 selection:text-white bg-slate-50">
+
+  <!-- Accessibility Skip Link -->
+  <a 
+    href="#main-content" 
+    class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-rose-600 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:outline-none"
+  >
+    Skip to main content
+  </a>
+
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Return Link -->
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
+          <span class="hidden xs:inline">Home</span>
+        </a>
+        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <img 
+            src="srpa-logo.png" 
+            alt="SikhRPA Logo" 
+            class="h-8 sm:h-9 w-auto object-contain shrink-0"
+            onerror="this.style.display='none'"
+          />
+          <a href="./" class="font-bold text-sm sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors truncate">
+            <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+        <a href="buyer-guide" class="hover:text-amber-600 transition-colors">Buyer's Guide</a>
+        <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-950 font-bold text-xs transition-colors">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
+          FSC Quiz
+        </a>
+        <span class="inline-flex items-center gap-1.5 text-rose-950 font-bold bg-rose-50 px-3 py-1 rounded-full border border-rose-200 text-xs shadow-sm">
+          <i data-lucide="heart-pulse" class="w-3.5 h-3.5 text-rose-600"></i>
+          Trauma & Stop the Bleed
+        </span>
+        <a href="news" class="hover:text-amber-600 transition-colors">Legal Watch</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button
+          type="button"
+          onclick="window.print()"
+          class="hidden sm:inline-flex px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 bg-white hover:bg-slate-100 text-slate-800 transition-colors items-center gap-1.5 shadow-2xs touch-target"
+          title="Print 1-Page Range Emergency Guide"
+        >
+          <i data-lucide="printer" class="w-3.5 h-3.5 text-slate-600"></i>
+          <span>Print Card</span>
+        </button>
+
+        <a
+          href="donate"
+          class="inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors items-center gap-1.5 shadow-sm touch-target"
+          title="Support Free Safety Supplies & Lockbox Programs"
+        >
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
+          <span>Donate</span>
+        </a>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button
+          type="button"
+          id="mobileMenuBtn"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors touch-target flex items-center justify-center"
+          aria-label="Toggle Navigation Menu"
+          aria-expanded="false"
+        >
+          <i id="menuIcon" data-lucide="menu" class="w-5 h-5"></i>
+          <i id="closeIcon" data-lucide="x" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <div 
+      id="mobileMenuDrawer" 
+      class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+    >
+      <a href="./" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        Return to Homepage
+      </a>
+      <a href="buyer-guide" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        First-Time Buyer's Guide
+      </a>
+      <a href="fsc-quiz" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        FSC Practice Quiz
+      </a>
+      <a href="news" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        California Legal Watch
+      </a>
+      <a href="donate" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-bold text-amber-950 bg-amber-50 border border-amber-200">
+        <span class="flex items-center gap-2">
+          <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500"></i>
+          Donate Portal
+        </span>
+        <span class="text-[10px] bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded-full uppercase">501(c)(3)</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <div class="mb-10 text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-rose-100 text-rose-950 border border-rose-300 mb-3.5 shadow-sm">
+        <i data-lucide="shield-alert" class="w-4 h-4 text-rose-600 shrink-0"></i>
+        <span>Life-Safety Education • Stop the Bleed® & Range Preparedness</span>
+      </div>
+      
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-2">
+        Range Emergency Trauma & Stop the Bleed Guide
+      </h1>
+      
+      <p class="gurmukhi text-base sm:text-xl font-bold text-blue-950 mb-3">
+        ਰੇਂਜ ਸੁਰੱਖਿਆ, ਐਮਰਜੈਂਸੀ ਮੁੱਢਲੀ ਸਹਾਇਤਾ ਅਤੇ ਜਾਨ ਬਚਾਉਣ ਦੇ ਨਿਯਮ
+      </p>
+
+      <p class="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        A person can bleed to death from an arterial wound in less than <strong>3 minutes</strong>—long before emergency services arrive. True marksmanship responsibility demands the skills and equipment to preserve life.
+      </p>
+
+      <!-- Trust Badges Strip -->
+      <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs text-slate-700 bg-white p-2.5 sm:px-5 sm:py-2.5 rounded-2xl border border-slate-200 shadow-2xs">
+        <span class="flex items-center gap-1 font-bold text-slate-900">
+          <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> CoTCCC Guidelines
+        </span>
+        <span class="text-slate-300">•</span>
+        <span class="flex items-center gap-1">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-rose-600"></i> Under 3-Min Intervention
+        </span>
+        <span class="text-slate-300">•</span>
+        <span class="text-amber-800 font-semibold">Bilingual (English & ਪੰਜਾਬੀ)</span>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mb-10">
+      
+      <div class="bg-gradient-to-br from-rose-50 to-white border-2 border-rose-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-rose-600 text-white font-black flex items-center justify-center text-lg mb-3 shadow-sm">
+            1
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base mb-1">Ensure Safety & Call 911</h3>
+          <p class="gurmukhi text-xs font-bold text-rose-950 mb-2">ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਰੇਂਜ ਖਾਲੀ ਕਰੋ ਅਤੇ ੯੧੧ ਮਿਲਾਓ</p>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Call a loud <strong>"CEASE FIRE!"</strong>. Unload all firearms. Ensure the shooter and surroundings are safe before approaching the patient.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-rose-100 flex items-center gap-1 text-[11px] font-bold text-rose-800">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+          <span>Activate 911 Immediately</span>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-amber-50 to-white border-2 border-amber-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-black flex items-center justify-center text-lg mb-3 shadow-sm">
+            2
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base mb-1">Find the Source of Bleeding</h3>
+          <p class="gurmukhi text-xs font-bold text-amber-950 mb-2">ਖੂਨ ਵਹਿਣ ਵਾਲੀ ਥਾਂ ਦੀ ਜਾਂਚ ਕਰੋ</p>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Expose the wound. Cut or tear clothing. Identify arterial spurting, pooling blood, or clothing soaked in blood.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-amber-100 flex items-center gap-1 text-[11px] font-bold text-amber-900">
+          <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+          <span>Look for Pooling & Spurting</span>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-blue-900 text-amber-400 font-black flex items-center justify-center text-lg mb-3 shadow-sm">
+            3
+          </div>
+          <h3 class="font-extrabold text-slate-900 text-base mb-1">Compress: Pressure or Tourniquet</h3>
+          <p class="gurmukhi text-xs font-bold text-blue-950 mb-2">ਦਬਾਓ: ਟੂਰਨੀਕੇਟ ਜਾਂ ਗੌਜ਼ ਨਾਲ ਪੈਕਿੰਗ</p>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Arms & legs: Apply a tourniquet <strong>2-3 inches above</strong> the wound. Neck, groin, armpit: Pack firmly with gauze and hold continuous bodyweight pressure.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-blue-100 flex items-center gap-1 text-[11px] font-bold text-blue-900">
+          <i data-lucide="bandage" class="w-3.5 h-3.5"></i>
+          <span>Maintain Continuous Pressure</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 mb-10">
+      
+      <!-- Action Category Tabs -->
+      <div class="flex flex-wrap items-center gap-2 mb-6 border-b border-slate-200 pb-4" role="tablist">
+        <button
+          type="button"
+          onclick="switchTraumaTab('tourniquet')"
+          id="tabBtnTourniquet"
+          class="trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-rose-600 text-white shadow-sm flex items-center gap-1.5 transition-all"
+        >
+          <i data-lucide="shield" class="w-4 h-4"></i>
+          <span>1. Tourniquet (Arms & Legs)</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchTraumaTab('packing')"
+          id="tabBtnPacking"
+          class="trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5 transition-all"
+        >
+          <i data-lucide="layers" class="w-4 h-4"></i>
+          <span>2. Wound Packing (Junctional)</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchTraumaTab('chest')"
+          id="tabBtnChest"
+          class="trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5 transition-all"
+        >
+          <i data-lucide="activity" class="w-4 h-4"></i>
+          <span>3. Chest Seals (Torso)</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="switchTraumaTab('hypothermia')"
+          id="tabBtnHypo"
+          class="trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5 transition-all"
+        >
+          <i data-lucide="thermometer-snowflake" class="w-4 h-4"></i>
+          <span>4. Hypothermia Prevention</span>
+        </button>
+      </div>
+
+      <div id="tabContentTourniquet" class="trauma-tab-content space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
+              Tourniquet Application (CAT Gen 7 / SOFTT-W)
+            </h2>
+            <p class="gurmukhi text-sm font-bold text-rose-700">
+              ਟੂਰਨੀਕੇਟ ਲਗਾਉਣ ਦੇ ੪ ਲਾਜ਼ਮੀ ਨਿਯਮ
+            </p>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-900 px-3 py-1 rounded-full border border-rose-200 self-start sm:self-auto">
+            Extremity Trauma Only
+          </span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-3.5 text-xs sm:text-sm">
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">Step 1: Placement (High & Tight)</strong>
+              <p class="text-slate-600 leading-snug">
+                Place <strong>2–3 inches above the bleeding site</strong>. If in doubt or under extreme duress, place it "high and tight" on the limb (highest point on the arm or thigh).
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200">
+                ਜ਼ਖ਼ਮ ਤੋਂ ੨-੩ ਇੰਚ ਉੱਪਰ ਲਗਾਓ। ਜੇ ਸ਼ੱਕ ਹੋਵੇ, ਤਾਂ ਪੱਟ ਜਾਂ ਬਾਂਹ ਦੇ ਸਭ ਤੋਂ ਉੱਚੇ ਹਿੱਸੇ 'ਤੇ ਲਗਾਓ। ਕਦੇ ਵੀ ਗੋਡੇ ਜਾਂ ਕੂਹਣੀ ਦੇ ਜੋੜ ਉੱਤੇ ਨਾ ਲਗਾਓ।
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">Step 2: Pull Band Fully Tight Before Twisting</strong>
+              <p class="text-slate-600 leading-snug">
+                Pull the strap as tight as humanly possible before engaging the windlass rod. There should not be room to slide three fingers underneath.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200">
+                ਰੌਡ ਘੁਮਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਬੈਲਟ ਨੂੰ ਪੂਰੀ ਤਾਕਤ ਨਾਲ ਖਿੱਚ ਕੇ ਕੱਸੋ। ਢਿੱਲੀ ਬੈਲਟ ਕੰਮ ਨਹੀਂ ਕਰੇਗੀ।
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">Step 3: Twist the Windlass Until Bleeding Stops</strong>
+              <p class="text-slate-600 leading-snug">
+                Twist until the bright red spurting completely stops and the distal pulse disappears. Lock the windlass in the clip. It will be painful; reassure the patient.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200">
+                ਰੌਡ ਨੂੰ ਉਦੋਂ ਤੱਕ ਘੁਮਾਓ ਜਦੋਂ ਤੱਕ ਖੂਨ ਵਹਿਣਾ ਬਿਲਕੁਲ ਬੰਦ ਨਾ ਹੋ ਜਾਵੇ। ਫਿਰ ਰੌਡ ਨੂੰ ਲਾਕ ਕਰੋ।
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">Step 4: Record Time on Time-Strap (NEVER Loosen)</strong>
+              <p class="text-slate-600 leading-snug">
+                Write the exact time (e.g. <code>T: 14:15</code>) on the white Velcro strap. <strong>NEVER loosen or take off a tourniquet</strong> once placed; only emergency physicians can safely remove it.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200">
+                ਟੂਰਨੀਕੇਟ ਉੱਤੇ ਸਮਾਂ ਜ਼ਰੂਰ ਲਿਖੋ (ਜਿਵੇਂ 2:15 PM)। ਇਸਨੂੰ ਕਦੇ ਵੀ ਖੁਦ ਢਿੱਲਾ ਨਾ ਕਰੋ। ਸਿਰਫ਼ ਹਸਪਤਾਲ ਵਿੱਚ ਡਾਕਟਰ ਹੀ ਇਸਨੂੰ ਖੋਲ੍ਹਣਗੇ।
+              </p>
+            </div>
+          </div>
+
+          <!-- Visual Tourniquet Schematic Display -->
+          <div class="bg-slate-900 text-white rounded-2xl p-5 flex flex-col justify-between border-2 border-slate-800">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                  <i data-lucide="alert-circle" class="w-4 h-4"></i> Instructional Tourniquet Diagram
+                </span>
+                <span class="text-[10px] font-mono text-slate-400">CoTCCC Approved</span>
+              </div>
+
+              <!-- Vector Graphic: Tourniquet Anatomy & Placement Anatomy -->
+              <div class="bg-slate-950/90 rounded-xl p-3 mb-4 border border-slate-700">
+                <svg viewBox="0 0 520 250" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomical Tourniquet Application Diagram">
+                  <defs>
+                    <!-- Lighting & Drop Shadows -->
+                    <filter id="tqDropShadow" x="-10%" y="-10%" width="130%" height="130%">
+                      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#020617" flood-opacity="0.7"/>
+                    </filter>
+                    <filter id="woundGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="4" result="blur"/>
+                      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                    </filter>
+
+                    <!-- Limb Gradient (Tactical Fabric / Muscle Contour) -->
+                    <linearGradient id="limbGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#1e293b"/>
+                      <stop offset="25%" stop-color="#334155"/>
+                      <stop offset="60%" stop-color="#1e293b"/>
+                      <stop offset="100%" stop-color="#0f172a"/>
+                    </linearGradient>
+
+                    <!-- Flesh & Deep Tissue Gradients -->
+                    <radialGradient id="woundDepth" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#4c0519"/>
+                      <stop offset="60%" stop-color="#9f1239"/>
+                      <stop offset="90%" stop-color="#e11d48"/>
+                      <stop offset="100%" stop-color="#be123c" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="bloodSpurt" cx="30%" cy="30%" r="70%">
+                      <stop offset="0%" stop-color="#fb7185"/>
+                      <stop offset="40%" stop-color="#e11d48"/>
+                      <stop offset="100%" stop-color="#881337"/>
+                    </radialGradient>
+
+                    <!-- Tourniquet Webbing Texture Gradient -->
+                    <linearGradient id="tqStrapGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#0284c7"/>
+                      <stop offset="35%" stop-color="#38bdf8"/>
+                      <stop offset="70%" stop-color="#0369a1"/>
+                      <stop offset="100%" stop-color="#075985"/>
+                    </linearGradient>
+
+                    <!-- Windlass Rod Polymer 3D Gradient -->
+                    <linearGradient id="windlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#fef08a"/>
+                      <stop offset="25%" stop-color="#f59e0b"/>
+                      <stop offset="70%" stop-color="#d97706"/>
+                      <stop offset="100%" stop-color="#78350f"/>
+                    </linearGradient>
+
+                    <!-- Markers -->
+                    <marker id="tqArrowGold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+                    </marker>
+                    <marker id="tqArrowEmerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+                    </marker>
+                  </defs>
+
+                  <!-- Backdrop Grid & Ground Plane -->
+                  <rect x="5" y="5" width="510" height="240" rx="14" fill="#090d16" stroke="#1e293b" stroke-width="1.5"/>
+                  <path d="M 5 185 Q 260 215 515 185" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+
+                  <!-- Realistic Anatomical Limb Contour (Thigh to Knee) -->
+                  <g filter="url(#tqDropShadow)">
+                    <path d="M 20 120 C 70 100, 150 95, 260 95 C 370 95, 430 102, 500 115 L 500 185 C 440 195, 360 200, 260 200 C 150 200, 70 185, 20 170 Z" fill="url(#limbGrad)" stroke="#475569" stroke-width="1.5"/>
+                    <!-- Muscle Highlight Sheen -->
+                    <path d="M 25 125 C 100 108, 200 103, 320 105 C 410 107, 460 112, 495 122" stroke="#64748b" stroke-width="2" stroke-linecap="round" opacity="0.4" fill="none"/>
+                  </g>
+
+                  <!-- Cinch Compression Indentation (Tissue squeezed by tight band) -->
+                  <path d="M 285 95 C 290 108, 290 112, 287 122" stroke="#0f172a" stroke-width="3" fill="none"/>
+                  <path d="M 285 200 C 290 188, 290 182, 287 172" stroke="#0f172a" stroke-width="3" fill="none"/>
+
+                  <!-- Penetrating Wound Cavity & Bleeding Site -->
+                  <g filter="url(#woundGlow)">
+                    <!-- Outer Blood Spatter/Stain -->
+                    <ellipse cx="110" cy="148" rx="28" ry="18" fill="url(#woundDepth)" opacity="0.9"/>
+                    <ellipse cx="118" cy="154" rx="14" ry="9" fill="#9f1239"/>
+                    <!-- Bullet Entry Cavity -->
+                    <path d="M 102 144 C 98 136, 114 132, 122 140 C 128 146, 120 156, 110 156 C 102 156, 98 148, 102 144 Z" fill="#4c0519"/>
+                    <!-- Pulsatile Arterial Spurting -->
+                    <path d="M 112 140 C 95 120, 85 95, 92 84 C 98 74, 110 88, 108 102 C 114 90, 128 78, 134 88 C 138 96, 125 122, 116 138 Z" fill="url(#bloodSpurt)"/>
+                    <circle cx="88" cy="76" r="3" fill="#fb7185"/>
+                    <circle cx="138" cy="74" r="2.5" fill="#f43f5e"/>
+                    <circle cx="102" cy="62" r="3.5" fill="#e11d48"/>
+                  </g>
+
+                  <!-- Distance Indicator (2–3 Inches Above Wound) -->
+                  <g>
+                    <line x1="140" y1="62" x2="272" y2="62" stroke="#f59e0b" stroke-width="1.8"/>
+                    <line x1="140" y1="56" x2="140" y2="68" stroke="#f59e0b" stroke-width="2"/>
+                    <line x1="272" y1="56" x2="272" y2="68" stroke="#f59e0b" stroke-width="2"/>
+                    <!-- Arrowheads -->
+                    <polygon points="140,62 148,58 148,66" fill="#f59e0b"/>
+                    <polygon points="272,62 264,58 264,66" fill="#f59e0b"/>
+                    <!-- Measurement Badge -->
+                    <rect x="156" y="44" width="102" height="22" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+                    <text x="207" y="58" fill="#fef08a" font-size="9" font-weight="900" font-family="sans-serif" text-anchor="middle">2–3 INCHES ABOVE</text>
+                    <text x="207" y="74" fill="#94a3b8" font-size="7" font-weight="700" font-family="sans-serif" text-anchor="middle">(NEVER directly on joint)</text>
+                  </g>
+
+                  <!-- TOURNIQUET APPARATUS (CAT GEN 7 STYLE) -->
+                  <g filter="url(#tqDropShadow)">
+                    <!-- Base Compressive Nylon Band -->
+                    <rect x="272" y="88" width="46" height="118" rx="6" fill="url(#tqStrapGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+                    <!-- Webbing Seams -->
+                    <line x1="276" y1="92" x2="276" y2="202" stroke="#0369a1" stroke-width="1.5" stroke-dasharray="3 2"/>
+                    <line x1="314" y1="92" x2="314" y2="202" stroke="#0369a1" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+                    <!-- Internal Constricting Band Window -->
+                    <rect x="282" y="96" width="26" height="102" rx="3" fill="#082f49" opacity="0.8"/>
+
+                    <!-- Windlass Clip (C-Clamp Retainer Base) -->
+                    <path d="M 276 96 L 314 96 L 314 122 L 302 122 L 302 108 L 288 108 L 288 122 L 276 122 Z" fill="#334155" stroke="#94a3b8" stroke-width="1.2"/>
+                    <text x="322" y="112" fill="#cbd5e1" font-size="7.5" font-weight="800" font-family="sans-serif">Retention Clip</text>
+
+                    <!-- Windlass Rod (Molded Polymer with Ribs in Active Twist Angle) -->
+                    <g transform="rotate(-34 295 125)">
+                      <rect x="240" y="118" width="112" height="15" rx="7.5" fill="url(#windlassGrad)" stroke="#fbbf24" stroke-width="1.5"/>
+                      <!-- Textured Ribs on Windlass Grip -->
+                      <line x1="255" y1="120" x2="255" y2="131" stroke="#78350f" stroke-width="1.5"/>
+                      <line x1="265" y1="120" x2="265" y2="131" stroke="#78350f" stroke-width="1.5"/>
+                      <line x1="275" y1="120" x2="275" y2="131" stroke="#78350f" stroke-width="1.5"/>
+                      <line x1="315" y1="120" x2="315" y2="131" stroke="#78350f" stroke-width="1.5"/>
+                      <line x1="325" y1="120" x2="325" y2="131" stroke="#78350f" stroke-width="1.5"/>
+                      <line x1="335" y1="120" x2="335" y2="131" stroke="#78350f" stroke-width="1.5"/>
+                    </g>
+
+                    <!-- Rotation Momentum Arrow -->
+                    <path d="M 370 78 A 24 24 0 1 1 386 112" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 2" marker-end="url(#tqArrowGold)"/>
+                    <text x="415" y="86" fill="#fcd34d" font-size="8.5" font-weight="900" font-family="sans-serif">TWIST 2–3 TURNS</text>
+                    <text x="415" y="98" fill="#e2e8f0" font-size="7.5" font-family="sans-serif">Until bleeding completely stops</text>
+
+                    <!-- Time-Recording Strap (White Velcro Tab Locked Over Windlass) -->
+                    <rect x="270" y="174" width="50" height="24" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <text x="295" y="188" fill="#0f172a" font-family="monospace" font-size="8.5" font-weight="900" text-anchor="middle">T: 14:15</text>
+                    <text x="295" y="196" fill="#64748b" font-family="sans-serif" font-size="5.5" font-weight="800" text-anchor="middle">RECORD TIME</text>
+                  </g>
+
+                  <!-- Direction to Heart & Distal Pulse Status -->
+                  <g>
+                    <!-- Proximal Arrow (To Heart) -->
+                    <line x1="435" y1="150" x2="495" y2="150" stroke="#10b981" stroke-width="2.5" marker-end="url(#tqArrowEmerald)"/>
+                    <rect x="425" y="132" width="78" height="14" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                    <text x="464" y="142" fill="#a7f3d0" font-size="7" font-weight="900" font-family="sans-serif" text-anchor="middle">TO HEART (PROXIMAL)</text>
+
+                    <!-- Distal Pulse Vanishes Indicator -->
+                    <path d="M 35 145 Q 45 135 55 145 T 75 145" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+                    <text x="50" y="162" fill="#fda4af" font-size="7.5" font-weight="700" font-family="sans-serif" text-anchor="middle">Pulse Stops</text>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Vector Diagram of Tourniquet Anatomy -->
+              <div class="bg-slate-800/80 rounded-xl p-3.5 mb-3.5 border border-slate-700 space-y-2.5">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-slate-300">1. Placement Gap</span>
+                  <span class="text-amber-400 font-bold">2–3" Above Wound (Not on Joint)</span>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-slate-300">2. Initial Velcro Pull</span>
+                  <span class="text-emerald-400 font-bold">PULL MAX TIGHT before twisting</span>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-slate-300">3. Windlass Twist</span>
+                  <span class="text-amber-400 font-bold">2–3 full turns until pulse stops</span>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-slate-300">4. Time Strap</span>
+                  <span class="text-rose-400 font-mono font-bold">Write "T - HH:MM" (Never loosen)</span>
+                </div>
+              </div>
+
+              <div class="p-3 bg-rose-950/60 border border-rose-800 rounded-xl text-xs space-y-1">
+                <strong class="text-rose-300 flex items-center gap-1">
+                  <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-400"></i> Second Tourniquet Rule:
+                </strong>
+                <p class="text-slate-300 text-[11px] leading-relaxed">
+                  If the first tourniquet does not completely stop the bleeding, apply a <strong>second tourniquet directly above</strong> the first one (closer to the torso).
+                </p>
+              </div>
+            </div>
+
+            <p class="text-[10px] text-slate-400 mt-4 italic">
+              Warning: Counterfeit tourniquets from generic online sellers break under stress. Only use authentic CoTCCC-approved brands (CAT, SOFTT-W, SAM XT).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabContentPacking" class="trauma-tab-content hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
+              Wound Packing (Groin, Armpits, & Neck Junctions)
+            </h2>
+            <p class="gurmukhi text-sm font-bold text-rose-700">
+              ਗਰਦਨ, ਬਗਲ ਅਤੇ ਪੱਟ ਦੇ ਜੋੜਾਂ ਵਿੱਚ ਗੌਜ਼ ਪੈਕਿੰਗ
+            </p>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-3 py-1 rounded-full border border-amber-200 self-start sm:self-auto">
+            Junctional Wounds
+          </span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 text-xs sm:text-sm">
+          <div class="space-y-3">
+            <p class="text-slate-600 leading-relaxed">
+              Tourniquets cannot be placed on the groin, armpit, or neck. For severe arterial bleeding in these areas, you must physically pack the wound with hemostatic or standard sterile gauze.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">1. Pack Deeply to the Bleeding Vessel</strong>
+              <p class="text-slate-600 leading-snug">
+                Use your finger to push gauze into the cavity directly against the ruptured artery. Do not just cover the top; fill the entire wound cavity tightly.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+                ਗੌਜ਼ ਨੂੰ ਸਿਰਫ਼ ਜ਼ਖ਼ਮ ਦੇ ਉੱਪਰ ਨਾ ਰੱਖੋ। ਉਂਗਲਾਂ ਨਾਲ ਜ਼ਖ਼ਮ ਦੇ ਅੰਦਰ ਤੱਕ ਗੌਜ਼ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਭਰੋ ਤਾਂ ਜੋ ਨਾੜੀ 'ਤੇ ਸਿੱਧਾ ਦਬਾਅ ਪਵੇ।
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">2. Continuous Pressure with Bodyweight</strong>
+              <p class="text-slate-600 leading-snug">
+                Once packed, lean your full bodyweight with both hands onto the wound. Hold continuous pressure for at least <strong>3 minutes</strong> for hemostatic gauze (QuikClot) or <strong>10 minutes</strong> for standard plain gauze.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+                ਪੈਕ ਕਰਨ ਤੋਂ ਬਾਅਦ ਦੋਵਾਂ ਹੱਥਾਂ ਨਾਲ ਆਪਣੇ ਸਰੀਰ ਦਾ ਪੂਰਾ ਭਾਰ ਪਾ ਕੇ ਘੱਟੋ-ਘੱਟ ੩ ਤੋਂ ੫ ਮਿੰਟ ਤੱਕ ਬਿਨਾਂ ਹਿਲਾਏ ਦਬਾ ਕੇ ਰੱਖੋ।
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 bg-amber-50/70 border-2 border-amber-300 rounded-2xl space-y-3 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-extrabold uppercase text-amber-950 block mb-2">
+                Illustrated Packing & Compression Mechanics
+              </span>
+
+              <!-- Vector Graphic: Wound Packing Cross Section & Downward Bodyweight -->
+              <div class="bg-white rounded-xl p-3 mb-3 border border-amber-200 shadow-2xs">
+                <svg viewBox="0 0 520 250" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomical Deep Wound Packing and Direct Bodyweight Pressure Cross Section">
+                  <defs>
+                    <!-- Skin & Soft Tissue Gradients -->
+                    <linearGradient id="epidermisGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#fdba74"/>
+                      <stop offset="100%" stop-color="#fb923c"/>
+                    </linearGradient>
+
+                    <!-- Subcutaneous Adipose (Fat) Layer Pattern -->
+                    <radialGradient id="fatCell" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#fef08a"/>
+                      <stop offset="80%" stop-color="#fde047"/>
+                      <stop offset="100%" stop-color="#eab308"/>
+                    </radialGradient>
+
+                    <!-- Skeletal Muscle Striation Gradient -->
+                    <linearGradient id="muscleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#b91c1c"/>
+                      <stop offset="50%" stop-color="#dc2626"/>
+                      <stop offset="100%" stop-color="#991b1b"/>
+                    </linearGradient>
+
+                    <!-- Gloved Hands Nitrile Gradient -->
+                    <linearGradient id="nitrileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#38bdf8"/>
+                      <stop offset="40%" stop-color="#0284c7"/>
+                      <stop offset="100%" stop-color="#0369a1"/>
+                    </linearGradient>
+
+                    <!-- Shadow filter for 3D depth -->
+                    <filter id="packShadow" x="-10%" y="-10%" width="130%" height="130%">
+                      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#451a03" flood-opacity="0.25"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Background Anatomy Envelope -->
+                  <rect x="5" y="5" width="510" height="240" rx="12" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+
+                  <!-- TISSUE CROSS SECTION LAYERS -->
+                  <!-- 1. Deep Muscle Base -->
+                  <rect x="15" y="145" width="490" height="90" rx="4" fill="url(#muscleGrad)"/>
+                  <!-- Muscle Striations -->
+                  <g stroke="#7f1d1d" stroke-width="1" opacity="0.4">
+                    <line x1="20" y1="165" x2="180" y2="165"/><line x1="20" y1="185" x2="180" y2="185"/><line x1="20" y1="205" x2="180" y2="205"/>
+                    <line x1="340" y1="165" x2="500" y2="165"/><line x1="340" y1="185" x2="500" y2="185"/><line x1="340" y1="205" x2="500" y2="205"/>
+                  </g>
+                  <text x="40" y="215" fill="#fecaca" font-size="8" font-weight="800" font-family="sans-serif">DEEP MUSCLE FASCIA</text>
+
+                  <!-- 2. Subcutaneous Adipose Fat Layer -->
+                  <rect x="15" y="100" width="490" height="48" fill="#fef9c3"/>
+                  <!-- Fat Lobule Orbs for anatomical realism -->
+                  <g opacity="0.6">
+                    <circle cx="35" cy="120" r="10" fill="url(#fatCell)"/><circle cx="55" cy="122" r="11" fill="url(#fatCell)"/><circle cx="75" cy="118" r="9" fill="url(#fatCell)"/>
+                    <circle cx="95" cy="124" r="12" fill="url(#fatCell)"/><circle cx="120" cy="119" r="11" fill="url(#fatCell)"/><circle cx="145" cy="123" r="10" fill="url(#fatCell)"/>
+                    <circle cx="375" cy="120" r="10" fill="url(#fatCell)"/><circle cx="400" cy="124" r="12" fill="url(#fatCell)"/><circle cx="425" cy="118" r="11" fill="url(#fatCell)"/>
+                    <circle cx="450" cy="122" r="10" fill="url(#fatCell)"/><circle cx="475" cy="119" r="11" fill="url(#fatCell)"/>
+                  </g>
+                  <text x="40" y="132" fill="#ca8a04" font-size="7.5" font-weight="800" font-family="sans-serif">SUBCUTANEOUS FAT</text>
+
+                  <!-- 3. Skin Surface (Epidermis) with Junctional Crater -->
+                  <path d="M 15 80 L 195 80 C 205 80, 215 110, 225 155 C 235 200, 285 200, 295 155 C 305 110, 315 80, 325 80 L 505 80" stroke="#ea580c" stroke-width="5" fill="none" stroke-linecap="round"/>
+                  <path d="M 15 76 L 195 76 L 195 90 L 15 90 Z" fill="url(#epidermisGrad)"/>
+                  <path d="M 325 76 L 505 76 L 505 90 L 325 90 Z" fill="url(#epidermisGrad)"/>
+                  <text x="40" y="72" fill="#c2410c" font-size="8" font-weight="900" font-family="sans-serif">SKIN SURFACE</text>
+
+                  <!-- RUPTURED FEMORAL / AXILLARY ARTERY AT BASE -->
+                  <g>
+                    <!-- Arterial Tube (Left to Right) -->
+                    <path d="M 170 205 Q 260 215 350 205" stroke="#991b1b" stroke-width="12" fill="none" stroke-linecap="round"/>
+                    <path d="M 170 205 Q 260 215 350 205" stroke="#ef4444" stroke-width="8" fill="none" stroke-linecap="round"/>
+                    <!-- Ruptured Tear Point -->
+                    <ellipse cx="260" cy="208" rx="10" ry="6" fill="#7f1d1d"/>
+                    <ellipse cx="260" cy="208" rx="6" ry="3.5" fill="#450a0a"/>
+                    <text x="260" y="228" fill="#991b1b" font-size="8" font-weight="900" font-family="sans-serif" text-anchor="middle">RUPTURED ARTERIAL VESSEL</text>
+                  </g>
+
+                  <!-- PACKED Z-FOLD HEMOSTATIC GAUZE (Continuous Undulating Packing Stack) -->
+                  <g filter="url(#packShadow)">
+                    <!-- Gauze Folds Filling Cavity Pocket from vessel to surface -->
+                    <path d="M 235 202 C 255 194, 265 194, 285 202
+                             C 288 188, 240 185, 240 174
+                             C 240 162, 282 165, 282 152
+                             C 282 140, 236 142, 236 128
+                             C 236 114, 284 116, 284 102
+                             C 284 90, 242 92, 252 82
+                             C 260 74, 275 75, 268 64"
+                          stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <!-- Radiopaque Blue Tracking Ribbon Striped through Hemostatic Gauze -->
+                    <path d="M 235 202 C 255 194, 265 194, 285 202
+                             C 288 188, 240 185, 240 174
+                             C 240 162, 282 165, 282 152
+                             C 282 140, 236 142, 236 128
+                             C 236 114, 284 116, 284 102
+                             C 284 90, 242 92, 252 82
+                             C 260 74, 275 75, 268 64"
+                          stroke="#0284c7" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="4 3"/>
+                    
+                    <!-- Gauze Tail Coming from Package -->
+                    <path d="M 268 64 Q 295 50 345 55" stroke="#f1f5f9" stroke-width="6" fill="none" stroke-linecap="round"/>
+                    <path d="M 268 64 Q 295 50 345 55" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="4 2" fill="none"/>
+                  </g>
+
+                  <!-- RESCUER GLOVED COMPRESSING HANDS (LOCKED ELBOW DOWNWARD PRESSURE) -->
+                  <g filter="url(#packShadow)">
+                    <!-- Left Palm Silhouette -->
+                    <path d="M 215 28 C 220 12, 245 10, 255 24 L 260 55 C 255 60, 235 62, 225 55 Z" fill="url(#nitrileGrad)" stroke="#0369a1" stroke-width="1.5"/>
+                    <!-- Right Palm Reinforcing on Top -->
+                    <path d="M 245 22 C 255 8, 285 8, 292 20 L 295 48 C 285 56, 268 56, 258 48 Z" fill="url(#nitrileGrad)" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="260" y="38" fill="#ffffff" font-size="7" font-weight="900" font-family="sans-serif" text-anchor="middle">BOTH HANDS</text>
+                  </g>
+
+                  <!-- Downward Bodyweight Dynamic Force Arrows -->
+                  <g>
+                    <!-- Left Force Vector -->
+                    <path d="M 235 5 L 243 5 L 243 20 L 249 20 L 239 30 L 229 20 L 235 20 Z" fill="#b45309"/>
+                    <!-- Center Force Vector -->
+                    <path d="M 256 2 L 264 2 L 264 18 L 270 18 L 260 28 L 250 18 L 256 18 Z" fill="#b45309"/>
+                    <!-- Right Force Vector -->
+                    <path d="M 277 5 L 285 5 L 285 20 L 291 20 L 281 30 L 271 20 L 277 20 Z" fill="#b45309"/>
+                    
+                    <rect x="180" y="0" width="160" height="15" rx="4" fill="#78350f"/>
+                    <text x="260" y="11" fill="#fef08a" font-size="8" font-weight="900" font-family="sans-serif" text-anchor="middle">FULL BODYWEIGHT FORCE (LOCKED ELBOWS)</text>
+                  </g>
+
+                  <!-- Informative Callout Labels -->
+                  <g>
+                    <!-- Gauze Callout -->
+                    <line x1="140" y1="160" x2="225" y2="160" stroke="#0284c7" stroke-width="1.5"/>
+                    <circle cx="225" cy="160" r="3" fill="#0284c7"/>
+                    <rect x="50" y="150" width="90" height="24" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="1"/>
+                    <text x="95" y="161" fill="#0369a1" font-size="7.5" font-weight="800" font-family="sans-serif" text-anchor="middle">Z-Fold Hemostatic Gauze</text>
+                    <text x="95" y="170" fill="#64748b" font-size="6.5" font-family="sans-serif" text-anchor="middle">Pack cavity tight to bone</text>
+
+                    <!-- Compression Callout -->
+                    <line x1="380" y1="52" x2="310" y2="52" stroke="#92400e" stroke-width="1.5"/>
+                    <circle cx="310" cy="52" r="3" fill="#92400e"/>
+                    <rect x="380" y="40" width="118" height="26" rx="4" fill="#ffffff" stroke="#f59e0b" stroke-width="1"/>
+                    <text x="439" y="52" fill="#92400e" font-size="7.5" font-weight="800" font-family="sans-serif" text-anchor="middle">Hold 3 Min (Hemostatic)</text>
+                    <text x="439" y="62" fill="#b45309" font-size="6.5" font-weight="700" font-family="sans-serif" text-anchor="middle">Hold 10 Min (Plain Gauze)</text>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="bg-white p-3 rounded-xl border border-amber-200 space-y-2 text-xs">
+                <div class="flex items-center gap-2 text-emerald-800 font-bold">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                  <span>Accelerates blood clotting x 5 (Kaolin mineral)</span>
+                </div>
+                <div class="flex items-center gap-2 text-emerald-800 font-bold">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                  <span>Does not generate thermal heat / burns</span>
+                </div>
+                <div class="flex items-center gap-2 text-rose-800 font-bold">
+                  <i data-lucide="alert-octagon" class="w-4 h-4"></i>
+                  <span>DO NOT pack inside the chest or abdomen</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-[11px] text-amber-900 font-semibold italic">
+              Note: Never pack gauze into abdominal or chest bullet wounds—pack only arms, legs, armpits, and groin.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabContentChest" class="trauma-tab-content hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
+              Chest Seals for Torso Trauma
+            </h2>
+            <p class="gurmukhi text-sm font-bold text-rose-700">
+              ਛਾਤੀ ਦੇ ਜ਼ਖ਼ਮ ਅਤੇ ਚੈਸਟ ਸੀਲ (Tension Pneumothorax)
+            </p>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-900 px-3 py-1 rounded-full border border-blue-200 self-start sm:self-auto">
+            Chest & Back Wounds
+          </span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 text-xs sm:text-sm">
+          <div class="space-y-3">
+            <p class="text-slate-600 leading-relaxed">
+              Bullet wounds to the chest (between the neck and naval) can suck air into the pleural space, collapsing the lung and putting pressure on the heart (Tension Pneumothorax).
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">1. Wipe & Apply Vented Chest Seal</strong>
+              <p class="text-slate-600 leading-snug">
+                Wipe away blood and sweat. Place a vented chest seal (HyFin or Halo) directly over the entry hole while the patient exhales. The one-way vent allows trapped air and blood to escape without letting air back in.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+                ਖੂਨ ਪੂੰਝ ਕੇ ਜ਼ਖ਼ਮ 'ਤੇ ਵੈਂਟਡ ਚੈਸਟ ਸੀਲ ਲਗਾਓ। ਇਹ ਹਵਾ ਨੂੰ ਬਾਹਰ ਕੱਢਦੀ ਹੈ ਪਰ ਅੰਦਰ ਨਹੀਂ ਜਾਣ ਦਿੰਦੀ।
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">2. Always Check the Back for an Exit Wound!</strong>
+              <p class="text-slate-600 leading-snug">
+                Roll the patient onto their side and physically feel their back. If there is an exit wound, seal it with a second chest seal.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+                ਮਰੀਜ਼ ਦੀ ਪਿੱਠ ਜ਼ਰੂਰ ਚੈੱਕ ਕਰੋ! ਜੇ ਗੋਲੀ ਪਾਰ ਹੋਈ ਹੈ, ਤਾਂ ਪਿੱਛੇ ਵੀ ਦੂਜੀ ਚੈਸਟ ਸੀਲ ਲਗਾਓ।
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 bg-blue-50/80 border-2 border-blue-200 rounded-2xl space-y-3 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-extrabold uppercase text-blue-950 block mb-2">
+                One-Way Vented Chest Seal Action
+              </span>
+
+              <!-- Vector Graphic: Vented Chest Seal Operation & Exit Wound Scan -->
+              <div class="bg-white rounded-xl p-3 mb-3 border border-blue-200 shadow-2xs">
+                <svg viewBox="0 0 520 250" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One-Way Vented Chest Seal and Thoracic Cavity Valve Mechanism Diagram">
+                  <defs>
+                    <!-- Lung Tissue Shading -->
+                    <linearGradient id="lungGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#fda4af"/>
+                      <stop offset="60%" stop-color="#f43f5e"/>
+                      <stop offset="100%" stop-color="#be123c"/>
+                    </linearGradient>
+
+                    <!-- Bone Cortex Gradient for Ribs -->
+                    <linearGradient id="ribGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#f8fafc"/>
+                      <stop offset="40%" stop-color="#e2e8f0"/>
+                      <stop offset="100%" stop-color="#94a3b8"/>
+                    </linearGradient>
+
+                    <!-- Chest Seal Hydrogel Adhesive Layer -->
+                    <linearGradient id="sealGel" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.85"/>
+                      <stop offset="50%" stop-color="#e0f2fe" stop-opacity="0.95"/>
+                      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.85"/>
+                    </linearGradient>
+
+                    <marker id="greenExhale" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+                    </marker>
+                  </defs>
+
+                  <!-- Thoracic Chamber Backdrop -->
+                  <rect x="5" y="5" width="510" height="240" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+
+                  <!-- THORACIC CHEST WALL CROSS SECTION (RIBS & INTERCOSTAL MUSCLES) -->
+                  <!-- Pectoral Muscle Layer -->
+                  <path d="M 20 85 Q 160 88 230 115 L 290 115 Q 360 88 500 85" stroke="#dc2626" stroke-width="14" fill="none" stroke-linecap="round"/>
+                  
+                  <!-- Rib Cross Sections (Oval bones with bone marrow center) -->
+                  <g>
+                    <!-- Left Rib 1 -->
+                    <ellipse cx="65" cy="85" rx="14" ry="9" fill="url(#ribGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <ellipse cx="65" cy="85" rx="7" ry="4" fill="#fca5a5"/>
+                    <!-- Left Rib 2 -->
+                    <ellipse cx="145" cy="90" rx="15" ry="9" fill="url(#ribGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <ellipse cx="145" cy="90" rx="7" ry="4" fill="#fca5a5"/>
+                    <!-- Right Rib 3 -->
+                    <ellipse cx="375" cy="90" rx="15" ry="9" fill="url(#ribGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <ellipse cx="375" cy="90" rx="7" ry="4" fill="#fca5a5"/>
+                    <!-- Right Rib 4 -->
+                    <ellipse cx="455" cy="85" rx="14" ry="9" fill="url(#ribGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <ellipse cx="455" cy="85" rx="7" ry="4" fill="#fca5a5"/>
+                  </g>
+                  <text x="65" y="65" fill="#94a3b8" font-size="7.5" font-weight="800" font-family="sans-serif" text-anchor="middle">RIB CAGE</text>
+
+                  <!-- Bullet Entry Wound Channel into Pleural Space -->
+                  <path d="M 245 80 L 245 125 L 275 125 L 275 80 Z" fill="#450a0a"/>
+                  <path d="M 240 120 Q 260 135 280 120" stroke="#ef4444" stroke-width="3" fill="none"/>
+
+                  <!-- PLEURAL CAVITY (Intrapleural Air Pressure Building Up) -->
+                  <path d="M 30 115 Q 260 145 490 115 L 490 225 L 30 225 Z" fill="#1e293b" opacity="0.7"/>
+                  
+                  <!-- Collapsed / Compressed Lung (Tension Pneumothorax) -->
+                  <g>
+                    <!-- Deflating Lung Silhouette -->
+                    <path d="M 90 150 C 130 145, 170 160, 200 190 C 200 220, 120 225, 85 210 C 60 195, 65 160, 90 150 Z" fill="url(#lungGrad)" stroke="#f43f5e" stroke-width="1.5"/>
+                    <!-- Bronchial Tree Fine Lines -->
+                    <path d="M 120 165 Q 140 180 155 195 M 140 180 Q 155 175 170 182 M 120 185 Q 110 195 105 205" stroke="#ffe4e6" stroke-width="1.2" fill="none" opacity="0.6"/>
+                    <text x="135" y="200" fill="#ffffff" font-size="8" font-weight="900" font-family="sans-serif" text-anchor="middle">COMPRESSED LUNG</text>
+                  </g>
+
+                  <!-- Trapped Pressurized Air & Hemothorax Blood Pooling -->
+                  <ellipse cx="360" cy="180" rx="75" ry="30" fill="#0284c7" opacity="0.25"/>
+                  <text x="360" y="175" fill="#38bdf8" font-size="8.5" font-weight="800" font-family="sans-serif" text-anchor="middle">PLEURAL AIR POCKET</text>
+                  <text x="360" y="187" fill="#93c5fd" font-size="7" font-family="sans-serif" text-anchor="middle">(Trapped air crushes heart & lung)</text>
+                  
+                  <!-- Pressurized Blood Pool at bottom -->
+                  <path d="M 230 225 C 245 210, 275 210, 290 225 Z" fill="#881337"/>
+                  <text x="260" y="222" fill="#fda4af" font-size="6.5" font-weight="700" font-family="sans-serif" text-anchor="middle">Blood Pool</text>
+
+                  <!-- THE ONE-WAY VENTED CHEST SEAL APPARATUS (HYFIN / HALO) -->
+                  <g filter="url(#tqDropShadow)">
+                    <!-- Clear Occlusive Adhesive Hydrogel Flange adhering to chest -->
+                    <rect x="180" y="58" width="160" height="42" rx="10" fill="url(#sealGel)" stroke="#0284c7" stroke-width="2"/>
+                    
+                    <!-- Red/Blue Peel Tab on Corner for "Burping" -->
+                    <path d="M 330 58 L 340 58 L 340 72 Z" fill="#ef4444"/>
+                    <text x="382" y="66" fill="#fca5a5" font-size="7" font-weight="800" font-family="sans-serif">Pull Tab ("Burp Seal")</text>
+
+                    <!-- Central One-Way Dome Valve (3-Vent Channel System) -->
+                    <circle cx="260" cy="79" r="16" fill="#0369a1" stroke="#38bdf8" stroke-width="2"/>
+                    <circle cx="260" cy="79" r="10" fill="#0c4a6e"/>
+
+                    <!-- One-Way Valve Rubber Flap (Lifts on Exhalation) -->
+                    <circle cx="260" cy="79" r="5" fill="#38bdf8"/>
+                    <line x1="250" y1="79" x2="270" y2="79" stroke="#ffffff" stroke-width="1.5"/>
+                    <line x1="260" y1="69" x2="260" y2="89" stroke="#ffffff" stroke-width="1.5"/>
+
+                    <!-- Exhalation Vent Air Streams Outward (Green Escape Vectors) -->
+                    <path d="M 260 62 L 260 22" stroke="#10b981" stroke-width="3" stroke-linecap="round" marker-end="url(#greenExhale)"/>
+                    <path d="M 248 66 L 226 32" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" marker-end="url(#greenExhale)"/>
+                    <path d="M 272 66 L 294 32" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" marker-end="url(#greenExhale)"/>
+                    
+                    <rect x="185" y="8" width="150" height="15" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+                    <text x="260" y="19" fill="#a7f3d0" font-size="7.5" font-weight="900" font-family="sans-serif" text-anchor="middle">AIR & BLOOD VENT OUT ON EXHALE</text>
+                  </g>
+
+                  <!-- DUAL EXIT WOUND SCAN INSET BOX (Front Entry + Back Exit) -->
+                  <g>
+                    <rect x="400" y="12" width="105" height="52" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+                    <text x="452" y="24" fill="#fde047" font-size="7.5" font-weight="900" font-family="sans-serif" text-anchor="middle">ALWAYS CHECK BACK!</text>
+                    <line x1="410" y1="28" x2="495" y2="28" stroke="#334155" stroke-width="1"/>
+                    <circle cx="425" cy="42" r="5" fill="#ef4444"/>
+                    <text x="435" y="45" fill="#e2e8f0" font-size="7" font-weight="700" font-family="sans-serif">Entry = Seal 1</text>
+                    <circle cx="425" cy="56" r="5" fill="#b91c1c"/>
+                    <text x="435" y="59" fill="#fca5a5" font-size="7" font-weight="700" font-family="sans-serif">Exit = Seal 2</text>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="bg-white p-3 rounded-xl border border-blue-200 text-xs space-y-1.5">
+                <strong class="text-slate-900 block">Action: "Burp the Seal"</strong>
+                <p class="text-slate-600 leading-snug">
+                  Gently peel back one corner of the chest seal for 3 seconds to allow trapped air and pressurized blood to escape, then reseal it.
+                </p>
+                <p class="gurmukhi text-[11px] text-blue-950 font-bold pt-1 border-t border-slate-100">
+                  ਜੇ ਸਾਹ ਲੈਣਾ ਔਖਾ ਹੋਵੇ, ਤਾਂ ਸੀਲ ਦਾ ਇੱਕ ਕੋਨਾ ੨-੩ ਸਕਿੰਟ ਲਈ ਚੁੱਕ ਕੇ ਹਵਾ ਬਾਹਰ ਕੱਢੋ ਅਤੇ ਦੁਬਾਰਾ ਚਿਪਕਾ ਦਿਓ।
+                </p>
+              </div>
+            </div>
+
+            <div class="p-2.5 bg-white/70 rounded-xl border border-blue-200 text-[11px] text-blue-950 font-medium">
+              Keep the patient in a position of comfort (typically sitting up or leaning slightly toward the injured side).
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabContentHypo" class="trauma-tab-content hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
+              Hypothermia Prevention (The Lethal Triad)
+            </h2>
+            <p class="gurmukhi text-sm font-bold text-rose-700">
+              ਮਰੀਜ਼ ਦੇ ਸਰੀਰ ਦਾ ਤਾਪਮਾਨ ਬਣਾਈ ਰੱਖਣਾ (ਗਰਮੀ ਦੇਣਾ)
+            </p>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-900 px-3 py-1 rounded-full border border-purple-200 self-start sm:self-auto">
+            Critical Survival Factor
+          </span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 text-xs sm:text-sm">
+          <div class="space-y-3">
+            <p class="text-slate-600 leading-relaxed">
+              When a patient loses blood, their body rapidly loses the ability to regulate heat. A drop of even <strong>2°F in core body temperature</strong> severely impairs the blood's chemical ability to clot, leading to irreversible trauma shock.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">1. Insulate from the Ground Immediately</strong>
+              <p class="text-slate-600 leading-snug">
+                Cold range concrete, dirt, or gravel leeches body heat through conduction. Slide a shooting mat, jacket, or blanket underneath the patient.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+                ਮਰੀਜ਼ ਨੂੰ ਠੰਢੀ ਜ਼ਮੀਨ 'ਤੇ ਨਾ ਪਿਆ ਰਹਿਣ ਦਿਓ। ਹੇਠਾਂ ਕੋਈ ਜੈਕਟ, ਮੈਟ ਜਾਂ ਕੰਬਲ ਵਿਛਾਓ।
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <strong class="text-slate-900 block font-bold">2. Wrap in Mylar Emergency Blanket</strong>
+              <p class="text-slate-600 leading-snug">
+                Wrap the entire patient like a burrito in an emergency reflective foil blanket, even on hot 90°F summer range days.
+              </p>
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+                ਭਾਵੇਂ ਗਰਮੀਆਂ ਦਾ ਮੌਸਮ ਹੋਵੇ, ਖੂਨ ਵਹਿਣ ਕਾਰਨ ਸਰੀਰ ਠੰਢਾ ਪੈ ਜਾਂਦਾ ਹੈ। ਮਰੀਜ਼ ਨੂੰ ਐਮਰਜੈਂਸੀ ਸ਼ੀਟ ਨਾਲ ਪੂਰੀ ਤਰ੍ਹਾਂ ਲਪੇਟੋ।
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 bg-purple-50 border-2 border-purple-200 rounded-2xl flex flex-col justify-between space-y-3">
+            <div>
+              <span class="text-xs font-extrabold uppercase text-purple-950 block mb-2">
+                The Trauma Triad of Death (Lethal Cycle)
+              </span>
+
+              <!-- Vector Graphic: The Lethal Triad & Thermal Insulation -->
+              <div class="bg-white rounded-xl p-3 mb-3 border border-purple-200 shadow-2xs">
+                <svg viewBox="0 0 520 250" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trauma Triad of Death Cycle and Ground Barrier Insulation Diagram">
+                  <defs>
+                    <!-- Mylar Foil Reflective Gradient -->
+                    <linearGradient id="mylarFoil" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#fef08a"/>
+                      <stop offset="25%" stop-color="#e2e8f0"/>
+                      <stop offset="50%" stop-color="#f8fafc"/>
+                      <stop offset="75%" stop-color="#fde047"/>
+                      <stop offset="100%" stop-color="#cbd5e1"/>
+                    </linearGradient>
+
+                    <!-- Cycle Arrows Gradient -->
+                    <linearGradient id="cycleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#9333ea"/>
+                      <stop offset="50%" stop-color="#e11d48"/>
+                      <stop offset="100%" stop-color="#2563eb"/>
+                    </linearGradient>
+
+                    <marker id="triadArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7e22ce"/>
+                    </marker>
+                  </defs>
+
+                  <!-- Backdrop Envelope -->
+                  <rect x="5" y="5" width="510" height="240" rx="12" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5"/>
+
+                  <!-- PART 1: THE TRIAD INTERCONNECTED TRIANGLE CYCLE (LEFT HALF) -->
+                  <g>
+                    <!-- Interconnecting Kinetic Energy Arcs -->
+                    <!-- Top (Hypothermia) to Right (Coagulopathy) -->
+                    <path d="M 175 48 C 215 75, 225 110, 215 135" fill="none" stroke="#7e22ce" stroke-width="2.5" stroke-dasharray="4 2" marker-end="url(#triadArrow)"/>
+                    <!-- Right (Coagulopathy) to Left (Acidosis) -->
+                    <path d="M 190 178 C 145 195, 100 195, 55 178" fill="none" stroke="#7e22ce" stroke-width="2.5" stroke-dasharray="4 2" marker-end="url(#triadArrow)"/>
+                    <!-- Left (Acidosis) to Top (Hypothermia) -->
+                    <path d="M 35 135 C 25 105, 45 72, 85 48" fill="none" stroke="#7e22ce" stroke-width="2.5" stroke-dasharray="4 2" marker-end="url(#triadArrow)"/>
+
+                    <!-- Central Death Vortex Badge -->
+                    <circle cx="130" cy="118" r="28" fill="#581c87" stroke="#a855f7" stroke-width="2"/>
+                    <circle cx="130" cy="118" r="22" fill="#3b0764"/>
+                    <!-- Danger Icon -->
+                    <path d="M 130 102 L 138 117 L 122 117 Z" fill="#facc15"/>
+                    <rect x="129" y="108" width="2" height="5" fill="#000000"/>
+                    <circle cx="130" cy="115" r="1" fill="#000000"/>
+                    <text x="130" y="127" fill="#f3e8ff" font-size="6" font-weight="900" font-family="sans-serif" text-anchor="middle">LETHAL</text>
+                    <text x="130" y="134" fill="#ffffff" font-size="7" font-weight="900" font-family="sans-serif" text-anchor="middle">TRIAD</text>
+
+                    <!-- Node 1: HYPOTHERMIA (Core Temp Drops < 95°F) -->
+                    <g>
+                      <rect x="65" y="12" width="130" height="34" rx="8" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.5"/>
+                      <circle cx="80" cy="29" r="8" fill="#3b82f6"/>
+                      <path d="M 80 23 L 80 35 M 74 29 L 86 29" stroke="#ffffff" stroke-width="1.5"/>
+                      <text x="132" y="24" fill="#ffffff" font-size="8" font-weight="900" font-family="sans-serif" text-anchor="middle">1. HYPOTHERMIA</text>
+                      <text x="132" y="36" fill="#bfdbfe" font-size="7" font-weight="700" font-family="sans-serif" text-anchor="middle">Body Temp &lt; 95°F (35°C)</text>
+                    </g>
+
+                    <!-- Node 2: COAGULOPATHY (Clotting Cascade Shuts Down) -->
+                    <g>
+                      <rect x="155" y="145" width="130" height="34" rx="8" fill="#881337" stroke="#f43f5e" stroke-width="1.5"/>
+                      <circle cx="170" cy="162" r="8" fill="#e11d48"/>
+                      <ellipse cx="170" cy="162" rx="4" ry="4" fill="#ffffff"/>
+                      <text x="222" y="157" fill="#ffffff" font-size="8" font-weight="900" font-family="sans-serif" text-anchor="middle">2. COAGULOPATHY</text>
+                      <text x="222" y="169" fill="#fecdd3" font-size="7" font-weight="700" font-family="sans-serif" text-anchor="middle">Blood Enzymes Fail to Clot</text>
+                    </g>
+
+                    <!-- Node 3: ACIDOSIS (Lactic Acid Accumulation in Shock) -->
+                    <g>
+                      <rect x="5" y="145" width="125" height="34" rx="8" fill="#4c1d95" stroke="#a78bfa" stroke-width="1.5"/>
+                      <circle cx="20" cy="162" r="8" fill="#7c3aed"/>
+                      <text x="20" y="165" fill="#ffffff" font-size="8" font-weight="900" font-family="sans-serif" text-anchor="middle">pH</text>
+                      <text x="68" y="157" fill="#ffffff" font-size="8" font-weight="900" font-family="sans-serif" text-anchor="middle">3. ACIDOSIS</text>
+                      <text x="68" y="169" fill="#ddd6fe" font-size="7" font-weight="700" font-family="sans-serif" text-anchor="middle">Tissue pH Drops (&lt; 7.35)</text>
+                    </g>
+                  </g>
+
+                  <!-- PART 2: THE LIFE-SAVING SOLUTION (PATIENT PACKAGING SCHEMATIC - RIGHT HALF) -->
+                  <g>
+                    <!-- Header Box -->
+                    <rect x="305" y="12" width="200" height="22" rx="6" fill="#065f46" stroke="#10b981" stroke-width="1.2"/>
+                    <text x="405" y="26" fill="#ecfdf5" font-size="8.5" font-weight="900" font-family="sans-serif" text-anchor="middle">✓ HYPOTHERMIA PREVENTION KIT</text>
+
+                    <!-- Ground Cold Conduction Barrier (Shooting Mat / Foam / Jacket) -->
+                    <rect x="305" y="160" width="200" height="14" rx="4" fill="#334155" stroke="#475569" stroke-width="1"/>
+                    <text x="405" y="170" fill="#94a3b8" font-size="7" font-weight="800" font-family="sans-serif" text-anchor="middle">GROUND BARRIER (Mat / Jacket stops cold conduction)</text>
+
+                    <!-- Cold Ground Dirt/Concrete Leeching Heat Vector Arrows -->
+                    <g stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="2 2">
+                      <line x1="330" y1="190" x2="330" y2="175"/>
+                      <line x1="380" y1="190" x2="380" y2="175"/>
+                      <line x1="430" y1="190" x2="430" y2="175"/>
+                      <line x1="480" y1="190" x2="480" y2="175"/>
+                    </g>
+                    <text x="405" y="202" fill="#1e3a8a" font-size="7" font-weight="800" font-family="sans-serif" text-anchor="middle">Frozen Concrete / Soil drains core heat 25x faster than air</text>
+
+                    <!-- Patient Wrapped in Reflective Mylar Space Blanket ("Burrito Wrap") -->
+                    <g>
+                      <!-- Wrapped Body Silhouette -->
+                      <path d="M 330 148 C 340 120, 470 120, 480 148 C 475 160, 335 160, 330 148 Z" fill="url(#mylarFoil)" stroke="#f59e0b" stroke-width="2"/>
+                      
+                      <!-- Metallic Crinkle Sheen Lines -->
+                      <path d="M 350 140 L 370 155 L 390 135 L 420 155 L 450 138" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.8"/>
+                      <path d="M 365 130 L 385 145 L 410 128 L 435 148" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.7"/>
+
+                      <!-- Patient Head with Hooded Insulation -->
+                      <circle cx="325" cy="142" r="12" fill="#fdba74"/>
+                      <path d="M 315 142 C 315 130, 335 130, 335 142 Z" fill="url(#mylarFoil)" stroke="#f59e0b" stroke-width="1.5"/>
+
+                      <!-- Heat Reflection Vectors Radiating Inward -->
+                      <g fill="#d97706">
+                        <polygon points="370,120 375,128 365,128"/>
+                        <polygon points="410,120 415,128 405,128"/>
+                        <polygon points="450,120 455,128 445,128"/>
+                      </g>
+                      <text x="410" y="112" fill="#92400e" font-size="7.5" font-weight="900" font-family="sans-serif" text-anchor="middle">TRAPS 90% RADIANT BODY HEAT</text>
+                    </g>
+
+                    <!-- Callout Note -->
+                    <rect x="305" y="212" width="200" height="24" rx="5" fill="#fef3c7" stroke="#fde047" stroke-width="1"/>
+                    <text x="405" y="223" fill="#78350f" font-size="7" font-weight="800" font-family="sans-serif" text-anchor="middle">CRITICAL: Wrap even in 90°F summer weather.</text>
+                    <text x="405" y="232" fill="#92400e" font-size="6.5" font-family="sans-serif" text-anchor="middle">Blood loss instantly destroys internal temperature control.</text>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="space-y-2 text-xs">
+                <div class="p-2 bg-white rounded-lg border border-purple-200 flex items-center justify-between">
+                  <span class="font-bold text-slate-900">1. Hypothermia (ਠੰਢ)</span>
+                  <span class="text-rose-700 font-bold">Body temp &lt; 95°F</span>
+                </div>
+                <div class="p-2 bg-white rounded-lg border border-purple-200 flex items-center justify-between">
+                  <span class="font-bold text-slate-900">2. Coagulopathy</span>
+                  <span class="text-rose-700 font-bold">Blood stops clotting</span>
+                </div>
+                <div class="p-2 bg-white rounded-lg border border-purple-200 flex items-center justify-between">
+                  <span class="font-bold text-slate-900">3. Acidosis</span>
+                  <span class="text-rose-700 font-bold">pH drops from shock</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-[11px] text-purple-900 font-semibold italic">
+              Keeping a patient warm is just as important as putting on the tourniquet.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 mb-10 print-card" id="ifakChecklistSection">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-xs font-bold text-amber-800 uppercase tracking-wider block">Equipment Readiness</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+            Interactive Range Bag IFAK Auditor
+          </h2>
+          <p class="gurmukhi text-sm font-bold text-blue-950">
+            ਰੇਂਜ ਬੈਗ ਟਰਾਮਾ ਕਿੱਟ ਚੈੱਕਲਿਸਟ (IFAK Checklist)
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="text-right">
+            <span class="text-[10px] uppercase font-bold text-slate-400 block">Kit Score</span>
+            <span id="ifakScoreText" class="font-mono text-lg font-black text-rose-600">0 / 6 (0%)</span>
+          </div>
+          <button
+            type="button"
+            onclick="resetIfakChecklist()"
+            class="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+        An Individual First Aid Kit (IFAK) must be mounted on the <strong>outside</strong> of your range bag or kept within arm's reach. Check off what you have packed today:
+      </p>
+
+      <!-- Checklist Items Grid -->
+      <div class="grid sm:grid-cols-2 gap-3 mb-6" id="ifakItemsGrid">
+        
+        <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50/60 hover:border-amber-400 flex items-start gap-3 cursor-pointer group transition-all select-none">
+          <input 
+            type="checkbox" 
+            class="ifak-checkbox w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300 mt-0.5"
+            onchange="updateIfakProgress()"
+          />
+          <div class="min-w-0">
+            <strong class="text-xs sm:text-sm font-bold text-slate-900 block group-hover:text-blue-950">
+              1. CoTCCC-Approved Tourniquet (CAT Gen 7 or SOFTT-W)
+            </strong>
+            <span class="text-[11px] text-slate-500 block leading-tight">Must be authentic and staged out of plastic wrapping for 1-handed deployment.</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਅਸਲੀ ਟੂਰਨੀਕੇਟ (ਪਲਾਸਟਿਕ ਤੋਂ ਬਾਹਰ ਕੱਢ ਕੇ ਰੱਖੋ)</span>
+          </div>
+        </label>
+
+        <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50/60 hover:border-amber-400 flex items-start gap-3 cursor-pointer group transition-all select-none">
+          <input 
+            type="checkbox" 
+            class="ifak-checkbox w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300 mt-0.5"
+            onchange="updateIfakProgress()"
+          />
+          <div class="min-w-0">
+            <strong class="text-xs sm:text-sm font-bold text-slate-900 block group-hover:text-blue-950">
+              2. Hemostatic Gauze (QuikClot or Combat Gauze)
+            </strong>
+            <span class="text-[11px] text-slate-500 block leading-tight">Z-folded kaolin-impregnated gauze for deep wound packing in groin or armpits.</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਖੂਨ ਜਮਾਉਣ ਵਾਲੀ ਗੌਜ਼ (Z-Folded Gauze)</span>
+          </div>
+        </label>
+
+        <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50/60 hover:border-amber-400 flex items-start gap-3 cursor-pointer group transition-all select-none">
+          <input 
+            type="checkbox" 
+            class="ifak-checkbox w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300 mt-0.5"
+            onchange="updateIfakProgress()"
+          />
+          <div class="min-w-0">
+            <strong class="text-xs sm:text-sm font-bold text-slate-900 block group-hover:text-blue-950">
+              3. Vented Chest Seals (Twin Pack for Entry & Exit)
+            </strong>
+            <span class="text-[11px] text-slate-500 block leading-tight">HyFin or Halo twin-pack with one-way vents to prevent lung collapse.</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਚੈਸਟ ਸੀਲ ਜੋੜਾ (ਅੱਗੇ ਅਤੇ ਪਿੱਛੇ ਲਈ ੨ ਸੀਲਾਂ)</span>
+          </div>
+        </label>
+
+        <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50/60 hover:border-amber-400 flex items-start gap-3 cursor-pointer group transition-all select-none">
+          <input 
+            type="checkbox" 
+            class="ifak-checkbox w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300 mt-0.5"
+            onchange="updateIfakProgress()"
+          />
+          <div class="min-w-0">
+            <strong class="text-xs sm:text-sm font-bold text-slate-900 block group-hover:text-blue-950">
+              4. Pressure Dressing (Israeli Bandage / Emergency Bandage)
+            </strong>
+            <span class="text-[11px] text-slate-500 block leading-tight">4" or 6" elastic wrap with pressure bar to maintain 30+ lbs of direct pressure.</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਪ੍ਰੈਸ਼ਰ ਪੱਟੀ (ਇਜ਼ਰਾਈਲੀ ਬੈਂਡੇਜ)</span>
+          </div>
+        </label>
+
+        <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50/60 hover:border-amber-400 flex items-start gap-3 cursor-pointer group transition-all select-none">
+          <input 
+            type="checkbox" 
+            class="ifak-checkbox w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300 mt-0.5"
+            onchange="updateIfakProgress()"
+          />
+          <div class="min-w-0">
+            <strong class="text-xs sm:text-sm font-bold text-slate-900 block group-hover:text-blue-950">
+              5. Heavy-Duty Trauma Shears (7.25")
+            </strong>
+            <span class="text-[11px] text-slate-500 block leading-tight">To rapidly cut through heavy canvas, tactical denim, boots, and winter jackets.</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਮੋਟੇ ਕੱਪੜੇ ਕੱਟਣ ਵਾਲੀ ਮੈਡੀਕਲ ਕੈਂਚੀ</span>
+          </div>
+        </label>
+
+        <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50/60 hover:border-amber-400 flex items-start gap-3 cursor-pointer group transition-all select-none">
+          <input 
+            type="checkbox" 
+            class="ifak-checkbox w-4 h-4 rounded text-blue-900 focus:ring-amber-500 border-slate-300 mt-0.5"
+            onchange="updateIfakProgress()"
+          />
+          <div class="min-w-0">
+            <strong class="text-xs sm:text-sm font-bold text-slate-900 block group-hover:text-blue-950">
+              6. Mylar Foil Space Blanket & Nitrile Gloves (2 Pairs)
+            </strong>
+            <span class="text-[11px] text-slate-500 block leading-tight">Retains 90% body heat to prevent shock, and heavy-duty nitrile gloves for bloodborne protection.</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਸਿਲਵਰ ਐਮਰਜੈਂਸੀ ਸ਼ੀਟ ਅਤੇ ਸੁਰੱਖਿਅਤ ਦਸਤਾਨੇ</span>
+          </div>
+        </label>
+
+      </div>
+
+      <!-- Live Readiness Alert Banner -->
+      <div id="ifakStatusBanner" class="p-4 rounded-xl bg-slate-100 border border-slate-300 text-xs text-slate-700 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <i data-lucide="info" class="w-4 h-4 text-slate-500 shrink-0"></i>
+          <span id="ifakStatusMessage">Check off the items packed in your shooting range bag to evaluate your kit.</span>
+        </div>
+        <span class="text-[10px] font-mono text-slate-500 uppercase shrink-0">IFAK Status</span>
+      </div>
+
+    </div>
+
+    <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl mb-10 border-2 border-slate-800">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
+        <div>
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block">Remote Range Safety Tool</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-white">
+            Emergency 911 Remote Range Script Generator
+          </h2>
+          <p class="gurmukhi text-sm font-bold text-amber-300">
+            ਦੂਰ-ਦੁਰਾਡੇ ਰੇਂਜਾਂ 'ਤੇ ਐਮਰਜੈਂਸੀ ੯੧੧ ਕਾਲ ਕਰਨ ਦਾ ਤਰੀਕਾ
+          </p>
+        </div>
+
+        <button
+          type="button"
+          onclick="fetchLiveCoordinates()"
+          id="fetchGpsBtn"
+          class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-2 self-start sm:self-auto cursor-pointer"
+        >
+          <i data-lucide="navigation" class="w-4 h-4"></i>
+          <span>Get My GPS Coordinates</span>
+        </button>
+      </div>
+
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+        Many Northern and Central California outdoor ranges or BLM public lands have no physical street address or gate sign. Emergency dispatchers need exact <strong>GPS coordinates</strong> and <strong>landing zone details</strong> for life-flight helicopters:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Editable Script Inputs -->
+        <div class="space-y-3.5 text-xs">
+          <div>
+            <label for="rangeNameInput" class="block font-semibold text-slate-300 mb-1">
+              Range Name or Forest Area:
+            </label>
+            <input 
+              type="text" 
+              id="rangeNameInput" 
+              placeholder="e.g. Sacramento Valley Shooting Center or El Dorado NF" 
+              oninput="update911Script()"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/90 border border-slate-700 text-white text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label for="gpsCoordsInput" class="block font-semibold text-slate-300 mb-1">
+                GPS Latitude, Longitude:
+              </label>
+              <input 
+                type="text" 
+                id="gpsCoordsInput" 
+                placeholder="e.g. 38.4521° N, 120.9123° W" 
+                oninput="update911Script()"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/90 border border-slate-700 font-mono text-amber-400 text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label for="gateCodeInput" class="block font-semibold text-slate-300 mb-1">
+                Access Gate Code / Road:
+              </label>
+              <input 
+                type="text" 
+                id="gateCodeInput" 
+                placeholder="e.g. Gate Code #1042, Fire Rd 3N" 
+                oninput="update911Script()"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/90 border border-slate-700 text-white text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="victimConditionInput" class="block font-semibold text-slate-300 mb-1">
+              Nature of Injury & Interventions Applied:
+            </label>
+            <input 
+              type="text" 
+              id="victimConditionInput" 
+              value="1 gunshot wound to right leg; 1 CAT tourniquet applied at 14:15; bleeding controlled; conscious" 
+              oninput="update911Script()"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/90 border border-slate-700 text-white text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none"
+            />
+          </div>
+        </div>
+
+        <!-- Generated Verbatim 911 Script Box -->
+        <div class="bg-black/50 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400">Verbatim 911 Dispatch Script:</span>
+              <button 
+                type="button" 
+                onclick="copy911Script()" 
+                id="copyScriptBtn"
+                class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] font-semibold rounded-lg transition-colors flex items-center gap-1"
+              >
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span id="copyScriptText">Copy Script</span>
+              </button>
+            </div>
+            <div id="verbatimScriptDisplay" class="font-mono text-xs text-slate-200 bg-slate-900/90 p-3 rounded-lg border border-slate-800 leading-relaxed break-words select-all">
+              "This is an emergency. We have a firearm trauma injury at [Range Name]. Our exact GPS coordinates are [GPS]. Gate access code is [Gate Code]. Patient has [Condition]. Firearm is unloaded and secured. We need an ambulance and medevac on standby."
+            </div>
+          </div>
+
+          <p class="text-[10px] text-slate-400 mt-3">
+            💡 Pro-tip: Assign one person to meet the ambulance at the main highway entrance gate to guide emergency crews directly to the firing lane.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="p-6 rounded-2xl bg-amber-50/70 border-2 border-amber-300 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 font-black flex items-center justify-center shrink-0 shadow-sm mt-0.5 md:mt-0">
+          <i data-lucide="package-plus" class="w-6 h-6"></i>
+        </div>
+        <div class="space-y-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-900 bg-amber-200 px-2.5 py-0.5 rounded-full inline-block">
+              Community Health & Temple Safety
+            </span>
+          </div>
+          <h4 class="font-extrabold text-slate-950 text-base sm:text-lg leading-snug">
+            Does Your Gurdwara or Community Center Have a Wall-Mounted Bleeding Control Kit?
+          </h4>
+          <p class="gurmukhi text-xs sm:text-sm font-bold text-blue-950">
+            ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ ਵਿੱਚ ਐਮਰਜੈਂਸੀ ਬਲੀਡਿੰਗ ਕੰਟਰੋਲ ਕਿੱਟ ਲਗਾਉਣ ਲਈ ਸਹਾਇਤਾ
+          </p>
+          <p class="text-xs text-slate-600 max-w-2xl leading-relaxed">
+            SikhRPA assists temple management committees across California with installing public-access trauma cabinets, training Sevadaars on tourniquets and CPR, and providing free bilingual guides.
+          </p>
+        </div>
+      </div>
+      <a 
+        href="mailto:president@sikhrpa.org?subject=Gurdwara%20Trauma%20Kit%20%26%20Clinic%20Request"
+        class="w-full md:w-auto px-5 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-extrabold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 shrink-0 touch-target"
+      >
+        <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+        <span>Request Gurdwara Training</span>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-10 sm:py-12 mt-12 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="font-semibold text-slate-800 mb-1">
+        Sikh Rifle and Pistol Association • California 501(c)(3) Nonprofit Public Benefit Corporation
+      </p>
+      <p class="text-slate-500 text-[11px] leading-relaxed mb-4">
+        1075 Mohawk St, South Lake Tahoe, CA 96150 • Federal EIN: 42-2595402 • Direct Contact: president@sikhrpa.org
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 font-semibold text-slate-600 text-xs">
+        <a href="./" class="hover:text-blue-900">Home</a>
+        <span>•</span>
+        <a href="buyer-guide" class="hover:text-blue-900">Buyer's Guide</a>
+        <span>•</span>
+        <a href="fsc-quiz" class="hover:text-blue-900">FSC Quiz</a>
+        <span>•</span>
+        <a href="news" class="hover:text-blue-900">Legal Watch</a>
+        <span>•</span>
+        <a href="donate" class="hover:text-blue-900">Donate</a>
+        <span>•</span>
+        <a href="mailto:president@sikhrpa.org" class="hover:text-blue-900">president@sikhrpa.org</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      drawer.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    // Tab Switching Logic
+    function switchTraumaTab(tabKey) {
+      const contents = document.querySelectorAll('.trauma-tab-content');
+      contents.forEach(el => el.classList.add('hidden'));
+
+      const buttons = document.querySelectorAll('.trauma-tab-btn');
+      buttons.forEach(btn => {
+        btn.className = 'trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 flex items-center gap-1.5 transition-all';
+      });
+
+      if (tabKey === 'tourniquet') {
+        document.getElementById('tabContentTourniquet').classList.remove('hidden');
+        document.getElementById('tabBtnTourniquet').className = 'trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-rose-600 text-white shadow-sm flex items-center gap-1.5 transition-all';
+      } else if (tabKey === 'packing') {
+        document.getElementById('tabContentPacking').classList.remove('hidden');
+        document.getElementById('tabBtnPacking').className = 'trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-600 text-white shadow-sm flex items-center gap-1.5 transition-all';
+      } else if (tabKey === 'chest') {
+        document.getElementById('tabContentChest').classList.remove('hidden');
+        document.getElementById('tabBtnChest').className = 'trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-900 text-white shadow-sm flex items-center gap-1.5 transition-all';
+      } else if (tabKey === 'hypothermia') {
+        document.getElementById('tabContentHypo').classList.remove('hidden');
+        document.getElementById('tabBtnHypo').className = 'trauma-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-purple-600 text-white shadow-sm flex items-center gap-1.5 transition-all';
+      }
+      lucide.createIcons();
+    }
+
+    // IFAK Interactive Auditor Logic
+    function updateIfakProgress() {
+      const checkboxes = document.querySelectorAll('.ifak-checkbox');
+      const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+      const total = checkboxes.length;
+      const percent = Math.round((checkedCount / total) * 100);
+
+      const scoreText = document.getElementById('ifakScoreText');
+      const banner = document.getElementById('ifakStatusBanner');
+      const message = document.getElementById('ifakStatusMessage');
+
+      scoreText.innerText = `${checkedCount} / ${total} (${percent}%)`;
+
+      if (checkedCount === total) {
+        scoreText.className = 'font-mono text-lg font-black text-emerald-600';
+        banner.className = 'p-4 rounded-xl bg-emerald-100 border-2 border-emerald-400 text-xs text-emerald-950 flex items-center justify-between gap-3 shadow-2xs';
+        message.innerHTML = '<strong>CoTCCC Grade: Fully Combat-Ready Range IFAK!</strong> You have all 6 core components to control massive hemorrhage and prevent tension pneumothorax.';
+      } else if (checkedCount >= 4) {
+        scoreText.className = 'font-mono text-lg font-black text-amber-600';
+        banner.className = 'p-4 rounded-xl bg-amber-100 border-2 border-amber-300 text-xs text-amber-950 flex items-center justify-between gap-3';
+        message.innerHTML = `<strong>Moderate Readiness (${percent}%).</strong> You have basic life-saving tools, but missing crucial items like chest seals or hypothermia blankets.`;
+      } else {
+        scoreText.className = 'font-mono text-lg font-black text-rose-600';
+        banner.className = 'p-4 rounded-xl bg-rose-100 border border-rose-300 text-xs text-rose-950 flex items-center justify-between gap-3';
+        message.innerHTML = `<strong>Critical Gaps (${percent}%).</strong> Packing a firearm without a CoTCCC tourniquet and hemostatic gauze leaves you unprepared for a range emergency.`;
+      }
+    }
+
+    function resetIfakChecklist() {
+      document.querySelectorAll('.ifak-checkbox').forEach(cb => cb.checked = false);
+      updateIfakProgress();
+    }
+
+    // Live GPS Fetching with Geolocation API
+    function fetchLiveCoordinates() {
+      const btn = document.getElementById('fetchGpsBtn');
+      const coordsInput = document.getElementById('gpsCoordsInput');
+
+      if (!navigator.geolocation) {
+        coordsInput.value = 'Geolocation not supported by browser';
+        update911Script();
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>Acquiring Satellites...</span>';
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude.toFixed(5);
+          const lng = position.coords.longitude.toFixed(5);
+          coordsInput.value = `${lat}° N, ${lng}° W (±${Math.round(position.coords.accuracy)}m)`;
+          btn.disabled = false;
+          btn.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Coordinates Acquired</span>';
+          lucide.createIcons();
+          update911Script();
+        },
+        (error) => {
+          btn.disabled = false;
+          btn.innerHTML = '<i data-lucide="navigation" class="w-4 h-4"></i><span>Enter Manually</span>';
+          coordsInput.value = 'Location permission denied / unavailable';
+          lucide.createIcons();
+          update911Script();
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    }
+
+    function update911Script() {
+      const range = document.getElementById('rangeNameInput').value.trim() || '[Range / Forest Area]';
+      const gps = document.getElementById('gpsCoordsInput').value.trim() || '[GPS Coordinates]';
+      const gate = document.getElementById('gateCodeInput').value.trim() || '[Access Gate Code]';
+      const condition = document.getElementById('victimConditionInput').value.trim() || '[Patient Condition]';
+
+      const scriptText = `"This is an emergency. We have a gunshot trauma injury at ${range}. Our exact GPS coordinates are ${gps}. Gate access code is ${gate}. Patient status: ${condition}. All firearms on the range are unloaded, cleared, and locked. We request an advanced life support ambulance and an air medevac helicopter on standby."`;
+
+      document.getElementById('verbatimScriptDisplay').innerText = scriptText;
+    }
+
+    function copy911Script() {
+      const text = document.getElementById('verbatimScriptDisplay').innerText;
+      const copyBtnText = document.getElementById('copyScriptText');
+
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+
+        copyBtnText.innerText = 'Copied to Clipboard!';
+        setTimeout(() => { copyBtnText.innerText = 'Copy Script'; }, 2500);
+      } catch (e) {
+        copyBtnText.innerText = 'Copied!';
+      }
+    }
+  </script>
+</body>
+</html>
