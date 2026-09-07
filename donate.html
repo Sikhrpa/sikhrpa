@@ -432,6 +432,34 @@
           </span>
         </div>
 
+        <!-- Dedicated "Already Donated? Need a Receipt?" Hero Callout Banner -->
+        <div class="mb-8 p-4 sm:p-5 rounded-2xl bg-amber-50 border-2 border-amber-300 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex items-start sm:items-center gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-black flex items-center justify-center shrink-0 shadow-sm">
+              <i data-lucide="file-check-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-900 bg-amber-200/70 px-2 py-0.5 rounded-full inline-block mb-1">
+                Already Donated via Zelle, PayPal, or Check?
+              </span>
+              <h4 class="font-extrabold text-slate-950 text-sm sm:text-base leading-snug">
+                Need an Official IRS Tax Deduction Receipt or Expense Reimbursement?
+              </h4>
+              <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                Submit your transaction details to receive a signed, formal IRS § 170(f)(8) acknowledgment letter PDF emailed directly to your inbox.
+              </p>
+            </div>
+          </div>
+          <a 
+            href="receipt"
+            class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-extrabold text-xs transition-all shadow-md flex items-center justify-center gap-2 shrink-0 touch-target"
+            title="Request official IRS tax receipt or submit reimbursement"
+          >
+            <span>Request a Receipt</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+          </a>
+        </div>
+
         <div class="text-center mb-8">
           <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             Payment Channels
@@ -610,11 +638,11 @@
             </div>
           </div>
           <a 
-            href="mailto:president@sikhrpa.org?subject=Donation%20Receipt%20/%20W9%20Request"
+            href="receipt"
             class="w-full sm:w-auto px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl shrink-0 transition-colors shadow-sm flex items-center justify-center gap-2 text-xs touch-target"
           >
-            <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
-            <span>Request W-9 / Receipt</span>
+            <i data-lucide="file-text" class="w-4 h-4 text-amber-400"></i>
+            <span>Request Receipt / W-9</span>
           </a>
         </div>
 
