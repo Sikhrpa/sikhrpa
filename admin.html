@@ -586,18 +586,9 @@
 
     lucide.createIcons();
 
-    // Check existing session
+    // Authenticated state is maintained in volatile memory; credentials are never written to sessionStorage or localStorage
     document.addEventListener('DOMContentLoaded', () => {
-      const savedSession = sessionStorage.getItem('srpa_officer_session');
-      if (savedSession) {
-        try {
-          currentOfficer = JSON.parse(savedSession);
-          showDashboardView();
-          fetchSubmissions();
-        } catch (e) {
-          sessionStorage.removeItem('srpa_officer_session');
-        }
-      }
+      // Shows authentication overlay on initial load / reload
     });
 
     function showDashboardView() {
@@ -639,7 +630,6 @@
             name: json.officer.name,
             email: json.officer.email
           };
-          sessionStorage.setItem('srpa_officer_session', JSON.stringify(currentOfficer));
           showDashboardView();
           fetchSubmissions();
         } else {
@@ -659,7 +649,6 @@
               name: username === 'president' ? 'President, Sikh Rifle and Pistol Association' : 'Treasurer, Sikh Rifle and Pistol Association',
               email: `${username}@sikhrpa.org`
             };
-            sessionStorage.setItem('srpa_officer_session', JSON.stringify(currentOfficer));
             showDashboardView();
             submissions = fallbackJson.data || [];
             renderSubmissions();
@@ -677,7 +666,6 @@
     }
 
     function handleAdminLogout() {
-      sessionStorage.removeItem('srpa_officer_session');
       currentOfficer = null;
       document.getElementById('authScreen').classList.remove('hidden');
       document.getElementById('activeOfficerBadge').classList.add('hidden');
