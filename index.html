@@ -120,16 +120,78 @@
       </a>
 
       <!-- Streamlined Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
-        <a href="#safety" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Safety Rules</a>
-        <a href="buyer-guide" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Buyer's Guide</a>
-        <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 hover:text-blue-950 font-bold text-xs transition-colors">
+      <nav class="hidden md:flex items-center gap-5 lg:gap-6 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+        
+        <a 
+          href="fsc-quiz" 
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 hover:text-blue-950 font-bold text-xs transition-colors"
+          title="California Firearm Safety Certificate Practice Test"
+        >
           <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
-          FSC Quiz
+          <span>FSC Quiz</span>
         </a>
-        <a href="news" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Legal Watch</a>
-        <a href="heritage" class="hover:text-amber-600 focus:text-amber-600 transition-colors">Heritage</a>
-        <a href="#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors">About Us</a>
+
+        <a 
+          href="buyer-guide" 
+          class="hover:text-amber-600 focus:text-amber-600 transition-colors text-xs sm:text-sm font-bold flex items-center gap-1.5"
+        >
+          <i data-lucide="compass" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span>Buyer's Guide</span>
+        </a>
+
+        <!-- Specialty Guides Dropdown Menu -->
+        <div class="relative group" id="guidesDropdownContainer">
+          <button 
+            type="button" 
+            id="guidesDropdownBtn"
+            class="flex items-center gap-1 hover:text-amber-600 focus:text-amber-600 transition-colors py-2 focus:outline-none cursor-pointer text-xs sm:text-sm font-semibold"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span>Guides</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180 text-slate-400"></i>
+          </button>
+          
+          <!-- Dropdown Panel -->
+          <div 
+            id="guidesDropdownMenu"
+            class="absolute left-0 top-full mt-1 w-72 bg-white rounded-2xl border border-slate-200 shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50 space-y-1"
+          >
+            <a href="trauma-safety" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-rose-50/70 transition-colors group/item">
+              <div class="p-2 bg-rose-50 text-rose-800 rounded-lg group-hover/item:bg-rose-100 shrink-0 mt-0.5">
+                <i data-lucide="heart-pulse" class="w-4 h-4 text-rose-600"></i>
+              </div>
+              <div>
+                <span class="font-bold text-slate-900 text-xs block group-hover/item:text-rose-900">Range Trauma & Stop the Bleed</span>
+                <span class="text-[11px] text-slate-500 block leading-tight">Bilingual tourniquets, wound packing & 911 tool</span>
+              </div>
+            </a>
+
+            <a href="#safety" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-100 transition-colors group/item border-t border-slate-100 pt-2">
+              <div class="p-2 bg-slate-100 text-slate-800 rounded-lg group-hover/item:bg-slate-200 shrink-0 mt-0.5">
+                <i data-lucide="shield" class="w-4 h-4 text-amber-600"></i>
+              </div>
+              <div>
+                <span class="font-bold text-slate-900 text-xs block group-hover/item:text-blue-900">4 Universal Safety Rules</span>
+                <span class="text-[11px] text-slate-500 block leading-tight">Standard safety tenets in English & Gurmukhi</span>
+              </div>
+            </a>
+
+            <a href="#about" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-100 transition-colors group/item">
+              <div class="p-2 bg-slate-100 text-slate-800 rounded-lg group-hover/item:bg-slate-200 shrink-0 mt-0.5">
+                <i data-lucide="lock" class="w-4 h-4 text-amber-600"></i>
+              </div>
+              <div>
+                <span class="font-bold text-slate-900 text-xs block group-hover/item:text-blue-900">Safe Storage Standards (PC § 25100)</span>
+                <span class="text-[11px] text-slate-500 block leading-tight">Child liability rules & lockbox guidance</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="news" class="hover:text-amber-600 focus:text-amber-600 transition-colors text-xs sm:text-sm">Legal Watch</a>
+        <a href="heritage" class="hover:text-amber-600 focus:text-amber-600 transition-colors text-xs sm:text-sm">Heritage</a>
+        <a href="#about" class="hover:text-amber-600 focus:text-amber-600 transition-colors text-xs sm:text-sm">About Us</a>
       </nav>
 
       <!-- Action & Mobile Hamburger Buttons -->
@@ -392,7 +454,7 @@
             class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-blue-900 hover:text-amber-600 transition-colors bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm"
           >
             <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
-            <span>Explore our theological roots: <strong>Sikh Martial Heritage & The Miri-Piri Doctrine</strong></span>
+            <span>Explore our historical & philosophical roots: <strong>Sikh Martial Heritage & The Miri-Piri Doctrine</strong></span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
         </div>
@@ -725,6 +787,8 @@
         <span aria-hidden="true">•</span>
         <a href="fsc-quiz" class="hover:text-blue-900 p-1">CA FSC Practice Exam</a>
         <span aria-hidden="true">•</span>
+        <a href="trauma-safety" class="hover:text-rose-700 p-1">Trauma & Stop the Bleed</a>
+        <span aria-hidden="true">•</span>
         <a href="news" class="hover:text-blue-900 p-1">Daily Legal Watch</a>
         <span aria-hidden="true">•</span>
         <a href="heritage" class="hover:text-blue-900 p-1">Martial Heritage</a>
@@ -735,7 +799,7 @@
       </div>
 
       <p class="text-xs text-slate-500 leading-relaxed">
-        Federal EIN: 42-2595402 • 1075 Mohawk St, South Lake Tahoe, CA 96150<br>
+        Federal EIN: 42-2595402<br>
         © <span id="current-year"></span> Sikh Rifle and Pistol Association. All rights reserved.
       </p>
     </div>
