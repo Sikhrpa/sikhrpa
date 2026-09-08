@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-06T21:35:52.984Z",
-  "updated_formatted": "September 6, 2026 • 2:35 PM PDT",
+  "last_updated": "2026-09-08T18:02:13.558Z",
+  "updated_formatted": "September 8, 2026 • 11:02 AM PDT",
   "items": [
     {
       "id": "ca-legislature-ab-2047-3d-printer-restrictions",
@@ -14,6 +14,19 @@
       "community_takeaway": "Hobbyists and families utilizing 3D printers should track the enactment status of AB 2047, as future retail equipment sold in California will incorporate firmware-level component restrictions.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov"
+    },
+    {
+      "id": "latimes-goleta-gun-store-zoning-dispute",
+      "date": "2026-09-04",
+      "category": "Community Safety",
+      "badge_status": "Pending Review",
+      "badge_color": "amber",
+      "headline": "Municipalities Consider Stricter Retail Buffer Zones Following Daycare Proximity Dispute",
+      "statute_or_case": "Municipal Zoning Ordinances",
+      "summary": "The Los Angeles Times reported on municipal efforts in Goleta, California, to enact strict commercial buffer zones and licensing moratoriums prohibiting firearms retailers from operating within proximity to schools and child care centers. The dispute illustrates how local California governments increasingly utilize zoning power and land-use restrictions to regulate retail firearm operations independently of state firearms statutes.",
+      "community_takeaway": "Families and gun owners should monitor their local municipal city council agendas, as municipal land-use changes can rapidly alter local access to retail stores, ammunition transfer points, and certified safety instructors.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com"
     },
     {
       "id": "la-times-goleta-gun-store-daycare-zoning",
@@ -40,6 +53,19 @@
       "community_takeaway": "First-time buyers should account for the 11% surcharge added at checkout alongside standard local sales taxes when budgeting for ammunition and home storage hardware.",
       "source_name": "California Department of Tax and Fee Administration (CDTFA)",
       "source_url": "https://www.cdtfa.ca.gov/taxes-and-fees/firearms-and-ammunition-excise-tax.htm"
+    },
+    {
+      "id": "cadoj-ccw-renewal-live-scan-bulletin",
+      "date": "2026-08-31",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Mandates Live Scan Fingerprints and Federal Rap Back Enrollment for CCW Renewals",
+      "statute_or_case": "Penal Code § 26165 / Bulletin 2026-DLE-14",
+      "summary": "The California Department of Justice issued Information Bulletin 2026-DLE-14 to law enforcement and licensing authorities, implementing new renewal protocols taking effect September 1, 2026. The guidance instructs that all CCW renewal applicants must submit fresh Live Scan electronic fingerprints and enroll in the Federal Rap Back service prior to license issuance.",
+      "community_takeaway": "Current permit holders preparing to renew their CCW licenses should schedule a Live Scan appointment well ahead of expiration and budget for the additional background processing fees.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "ca-doj-bulletin-2026-dle-14-ccw-rap-back",
@@ -79,6 +105,19 @@
       "community_takeaway": "California firearm owners and 3D printing enthusiasts should monitor state DOJ regulatory releases regarding hardware certification standards and compliance timelines.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB2047"
+    },
+    {
+      "id": "ninth-circuit-ffl-surveillance-mandate",
+      "date": "2026-08-28",
+      "category": "Court Ruling",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit Upholds California Mandatory Video and Audio Recording Requirements for Gun Dealers",
+      "statute_or_case": "Richards v. Bonta / Penal Code § 26806",
+      "summary": "A Ninth Circuit Court of Appeals panel affirmed the dismissal of a constitutional challenge against California Penal Code § 26806, upholding state mandates requiring federally licensed firearms dealers to operate continuous 24-hour audio and video surveillance systems. The court rejected plaintiffs' First, Fourth, and Fifth Amendment claims, determining that the surveillance requirement rationally serves the state's interest in deterring illegal firearms trafficking and straw purchases.",
+      "community_takeaway": "Purchasers visiting California gun shops should note that all retail transactions and counter communications are continuously recorded; first-time buyers should verify store procedures and review retailer privacy disclosures.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-ninth-circuit-victory-defending-californias"
     },
     {
       "id": "ninth-circuit-upholds-gun-store-surveillance-mandate",
@@ -133,6 +172,19 @@
       "source_url": "https://www.reuters.com"
     },
     {
+      "id": "calmatters-retail-crime-gun-tracing-report",
+      "date": "2026-08-21",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "State Crime Gun Tracing Data Prompts New Scrutiny of High-Volume Retail Gun Sales",
+      "statute_or_case": "Penal Code § 34200",
+      "summary": "CalMatters released an investigative report examining newly published California Department of Justice firearms tracing data that details commercial origins of weapons recovered in major metropolitan areas. The investigation analyzed dealer distribution patterns and short 'time-to-crime' transactions, triggering renewed legislative calls for heightened retailer oversight and rigorous straw-purchasing enforcement.",
+      "community_takeaway": "Law-abiding gun owners should retain all bills of sale, receipts, and DROS documentation in their records and ensure private party transfers always proceed through a licensed dealer to avoid confusion regarding historical ownership.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice"
+    },
+    {
       "id": "calmatters-retail-crime-gun-inspection-audit",
       "date": "2026-08-21",
       "category": "Community Safety",
@@ -172,6 +224,19 @@
       "source_url": "https://www.latimes.com"
     },
     {
+      "id": "latimes-lasd-ccw-delay-settlement",
+      "date": "2026-08-13",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "Los Angeles County Settles Federal Lawsuits Over Protracted Concealed Weapon Permit Delays",
+      "statute_or_case": "CRPA v. Los Angeles County Sheriff's Department",
+      "summary": "The Los Angeles Times reported that the Los Angeles County Sheriff's Department finalized a legal settlement over long-standing delays in processing concealed carry weapon permits, committing to resolve applications within California's 120-day statutory window. The agreement concludes multi-year civil rights litigation that challenged administrative backlogs that previously stretched applicant waiting periods upwards of nearly three years.",
+      "community_takeaway": "Applicants in Los Angeles County should prepare for streamlined application timelines, but should double-check all requisite documentation and qualification certificates before filing to prevent administrative pauses.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com"
+    },
+    {
       "id": "latimes-lasd-ccw-delays-federal-settlement",
       "date": "2026-08-13",
       "category": "State News",
@@ -195,6 +260,19 @@
       "summary": "California requires all handguns transported in a motor vehicle to be completely unloaded and locked inside the trunk or in a fully enclosed locked container. Glove compartments and center consoles are expressly prohibited by statute.",
       "community_takeaway": "Place firearms inside a locked lockbox in the back of SUVs or hatchbacks, and transport ammunition in a separate compartment or bag.",
       "source_name": "California Department of Justice",
+      "source_url": "https://oag.ca.gov/firearms"
+    },
+    {
+      "id": "cadoj-nonresident-ccw-fingerprint-guidance",
+      "date": "2026-08-07",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Issues Clarified Fingerprint Procedures for Non-Resident CCW Applicants",
+      "statute_or_case": "AB 1078 / Bulletin 2026-DLE-13",
+      "summary": "The California Department of Justice published Information Bulletin 2026-DLE-13, providing revised guidance for licensing authorities processing non-resident concealed carry permit applications under AB 1078. The advisory confirms that non-resident applicants may submit standard FBI Form FD-258 fingerprint cards completed by out-of-state law enforcement agencies in lieu of traveling to California for in-person Live Scan appointments.",
+      "community_takeaway": "Non-resident applicants and multi-state travelers should coordinate with their local law enforcement agency to roll physical FD-258 cards and confirm that their issuing authority adheres to the updated CA DOJ routing code instructions.",
+      "source_name": "CA DOJ Bureau of Firearms",
       "source_url": "https://oag.ca.gov/firearms"
     },
     {
