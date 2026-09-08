@@ -52,6 +52,12 @@
 </head>
 <body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
 
+  <!-- Network Offline Banner (Auto-displays when device disconnects) -->
+  <div id="offlineNoticeBanner" class="hidden bg-rose-600 text-white text-xs font-bold py-2 px-4 text-center shadow-md sticky top-0 z-50 flex items-center justify-center gap-2">
+    <i data-lucide="wifi-off" class="w-4 h-4 shrink-0"></i>
+    <span>You are currently offline. Actions and record refreshes will resume once reconnected.</span>
+  </div>
+
   <!-- =========================================================================
        AUTHENTICATION OVERLAY (Passcode Protection)
        ========================================================================= -->
@@ -73,7 +79,7 @@
           <select 
             id="officerRoleSelect" 
             required
-            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white"
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white touch-target"
           >
             <option value="president">President (president@sikhrpa.org)</option>
             <option value="treasurer">Treasurer (treasurer@sikhrpa.org)</option>
@@ -90,7 +96,7 @@
             required 
             placeholder="Enter officer password"
             autocomplete="current-password"
-            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-slate-50 text-center font-mono"
+            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900 bg-slate-50 text-center font-mono touch-target"
           />
         </div>
 
@@ -112,7 +118,7 @@
   </div>
 
   <!-- =========================================================================
-       MAIN DASHBOARD (Revealed upon successful PIN)
+       MAIN DASHBOARD
        ========================================================================= -->
   <header class="border-b border-slate-200 bg-white sticky top-0 z-30 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -144,7 +150,7 @@
           type="button" 
           onclick="fetchSubmissions()" 
           id="refreshBtn"
-          class="px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer touch-target"
+          class="px-3.5 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer touch-target"
           title="Refresh entries from Google Sheet"
         >
           <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-amber-600"></i>
@@ -154,7 +160,7 @@
         <button 
           type="button" 
           onclick="handleAdminLogout()" 
-          class="px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer touch-target"
+          class="px-3.5 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition-colors flex items-center justify-center gap-1.5 cursor-pointer touch-target"
         >
           <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
           <span class="hidden sm:inline">Sign Out</span>
@@ -211,12 +217,12 @@
     <!-- CONTROLS & FILTER BAR -->
     <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
       
-      <!-- Category Tabs -->
+      <!-- Category Tabs (Enforced 44px min touch target) -->
       <div class="flex flex-wrap items-center gap-1.5" id="statusFilterContainer">
         <button 
           type="button" 
           onclick="setStatusFilter('all')" 
-          class="status-tab px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm"
+          class="status-tab px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm touch-target flex items-center justify-center cursor-pointer"
           data-status="all"
         >
           All Requests
@@ -224,7 +230,7 @@
         <button 
           type="button" 
           onclick="setStatusFilter('Pending Review')" 
-          class="status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+          class="status-tab px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 touch-target flex items-center justify-center cursor-pointer"
           data-status="Pending Review"
         >
           Pending Review
@@ -232,7 +238,7 @@
         <button 
           type="button" 
           onclick="setStatusFilter('Tax Receipt')" 
-          class="status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+          class="status-tab px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 touch-target flex items-center justify-center cursor-pointer"
           data-status="Tax Receipt"
         >
           Tax Receipts
@@ -240,7 +246,7 @@
         <button 
           type="button" 
           onclick="setStatusFilter('Reimbursement')" 
-          class="status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+          class="status-tab px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 touch-target flex items-center justify-center cursor-pointer"
           data-status="Reimbursement"
         >
           Reimbursements
@@ -248,22 +254,22 @@
         <button 
           type="button" 
           onclick="setStatusFilter('Rejected')" 
-          class="status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+          class="status-tab px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 touch-target flex items-center justify-center cursor-pointer"
           data-status="Rejected"
         >
           Rejected
         </button>
       </div>
 
-      <!-- Keyword Search -->
+      <!-- Keyword Search Input -->
       <div class="relative w-full md:w-64">
-        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
         <input 
           type="text" 
           id="adminSearchInput" 
           oninput="handleSearch(this.value)"
           placeholder="Search donor, email, ref #..."
-          class="w-full pl-9 pr-3 py-1.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-blue-900 bg-slate-50"
+          class="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-blue-900 bg-slate-50 touch-target"
         />
       </div>
     </div>
@@ -312,7 +318,7 @@
             <p class="text-[11px] text-slate-500">Official IRC § 170(f)(8) Written Acknowledgment PDF</p>
           </div>
         </div>
-        <button type="button" onclick="closeReceiptModal()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-600">
+        <button type="button" onclick="closeReceiptModal()" class="p-2 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-600 touch-target flex items-center justify-center">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
@@ -331,7 +337,7 @@
             href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="px-3 py-1 bg-white border border-blue-300 hover:bg-blue-100 text-blue-900 font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-2xs"
+            class="px-3 py-1.5 bg-white border border-blue-300 hover:bg-blue-100 text-blue-900 font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-2xs touch-target"
           >
             <span>View Document</span>
             <i data-lucide="external-link" class="w-3 h-3"></i>
@@ -366,7 +372,7 @@
               type="text" 
               id="modalReceiptNumber" 
               required
-              class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono text-xs font-bold text-slate-900 bg-white"
+              class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono text-xs font-bold text-slate-900 bg-white touch-target"
             />
           </div>
 
@@ -378,7 +384,7 @@
               type="text" 
               id="modalAuthorizedOfficer" 
               required
-              class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white"
+              class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-800 bg-white touch-target"
             />
           </div>
         </div>
@@ -405,14 +411,14 @@
           <button 
             type="button" 
             onclick="closeReceiptModal()" 
-            class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700"
+            class="px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700 touch-target cursor-pointer"
           >
             Cancel
           </button>
           <button 
             type="submit" 
             id="modalDispatchBtn"
-            class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+            class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer touch-target"
           >
             <i data-lucide="send" class="w-4 h-4"></i>
             <span>Generate PDF & Email Donor</span>
@@ -437,7 +443,7 @@
             <p class="text-[11px] text-slate-500">Record treasury payout & send notice</p>
           </div>
         </div>
-        <button type="button" onclick="closeReimburseModal()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400">
+        <button type="button" onclick="closeReimburseModal()" class="p-2 rounded-lg hover:bg-slate-100 text-slate-400 touch-target flex items-center justify-center">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
@@ -456,7 +462,7 @@
             href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="px-3 py-1 bg-white border border-purple-300 hover:bg-purple-100 text-purple-900 font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-2xs"
+            class="px-3 py-1.5 bg-white border border-purple-300 hover:bg-purple-100 text-purple-900 font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-2xs touch-target"
           >
             <span>View Receipt</span>
             <i data-lucide="external-link" class="w-3 h-3"></i>
@@ -478,7 +484,7 @@
             id="reimbursePayoutRef" 
             required 
             placeholder="e.g. Zelle Conf #9821, Check #1042" 
-            class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs"
+            class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs touch-target"
           />
         </div>
 
@@ -487,13 +493,13 @@
         </div>
 
         <div class="pt-2 flex items-center justify-end gap-2 border-t border-slate-200">
-          <button type="button" onclick="closeReimburseModal()" class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700">
+          <button type="button" onclick="closeReimburseModal()" class="px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700 touch-target cursor-pointer">
             Cancel
           </button>
           <button 
             type="submit" 
             id="reimburseSubmitBtn"
-            class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+            class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer touch-target"
           >
             <i data-lucide="check-circle" class="w-4 h-4"></i>
             <span>Confirm Payout & Email Requester</span>
@@ -518,7 +524,7 @@
             <p class="text-[11px] text-slate-500">Document reason & notify requester</p>
           </div>
         </div>
-        <button type="button" onclick="closeRejectModal()" class="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400">
+        <button type="button" onclick="closeRejectModal()" class="p-2 rounded-lg hover:bg-slate-100 text-slate-400 touch-target flex items-center justify-center">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
@@ -545,19 +551,19 @@
           ></textarea>
         </div>
 
-        <label class="flex items-center gap-2 cursor-pointer select-none text-slate-700 font-medium">
+        <label class="flex items-center gap-2 cursor-pointer select-none text-slate-700 font-medium py-1">
           <input type="checkbox" id="rejectNotifyCheckbox" checked class="w-4 h-4 rounded text-blue-900 border-slate-300 focus:ring-amber-500" />
           <span>Send explanation email to requester from receipts@sikhrpa.org</span>
         </label>
 
         <div class="pt-2 flex items-center justify-end gap-2 border-t border-slate-200">
-          <button type="button" onclick="closeRejectModal()" class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700">
+          <button type="button" onclick="closeRejectModal()" class="px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 font-semibold text-slate-700 touch-target cursor-pointer">
             Cancel
           </button>
           <button 
             type="submit" 
             id="rejectSubmitBtn"
-            class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer"
+            class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold flex items-center gap-2 shadow-sm cursor-pointer touch-target"
           >
             <i data-lucide="x-circle" class="w-4 h-4"></i>
             <span>Confirm Rejection</span>
@@ -567,9 +573,9 @@
     </div>
   </div>
 
-  <!-- TOAST NOTIFICATION CONTAINER -->
-  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-semibold">
-    <i id="toastIcon" data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+  <!-- TOAST NOTIFICATION CONTAINER (Supports Success and Warning/Error Styling) -->
+  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-semibold max-w-sm">
+    <i id="toastIcon" data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
     <span id="toastMessage">Action completed successfully!</span>
   </div>
 
@@ -586,9 +592,18 @@
 
     lucide.createIcons();
 
-    // Authenticated state is maintained in volatile memory; credentials are never written to sessionStorage or localStorage
-    document.addEventListener('DOMContentLoaded', () => {
-      // Shows authentication overlay on initial load / reload
+    // Setup network online / offline listeners
+    window.addEventListener('offline', () => {
+      const banner = document.getElementById('offlineNoticeBanner');
+      if (banner) banner.classList.remove('hidden');
+      showToast('Network disconnected. Live sync will pause until reconnected.', true);
+    });
+
+    window.addEventListener('online', () => {
+      const banner = document.getElementById('offlineNoticeBanner');
+      if (banner) banner.classList.add('hidden');
+      showToast('Internet restored. Syncing latest data...');
+      if (currentOfficer) fetchSubmissions();
     });
 
     function showDashboardView() {
@@ -614,6 +629,12 @@
 
       if (!password) return;
 
+      if (!navigator.onLine) {
+        err.innerText = 'Unable to sign in while offline. Please verify internet connection.';
+        err.classList.remove('hidden');
+        return;
+      }
+
       try {
         btn.disabled = true;
         btn.innerText = 'Verifying Credentials...';
@@ -637,7 +658,6 @@
           err.classList.remove('hidden');
         }
       } catch (errCatch) {
-        // Fallback for CORS: test with direct get_requests
         try {
           const fallbackRes = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=get_requests&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
           const fallbackJson = await fallbackRes.json();
@@ -656,7 +676,7 @@
             return;
           }
         } catch (e2) {}
-        err.innerText = 'Authentication error. Please check your internet connection or Apps Script deployment.';
+        err.innerText = 'Authentication error. Please check your connection or Apps Script deployment.';
         err.classList.remove('hidden');
       } finally {
         btn.disabled = false;
@@ -675,6 +695,12 @@
     async function fetchSubmissions() {
       if (!currentOfficer) return;
       const refreshBtn = document.getElementById('refreshBtn');
+
+      if (!navigator.onLine) {
+        showToast('Offline: Unable to fetch fresh data. Showing cached view.', true);
+        return;
+      }
+
       try {
         if (refreshBtn) refreshBtn.innerHTML = '<span>Loading...</span>';
         const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=get_requests&username=${encodeURIComponent(currentOfficer.username)}&password=${encodeURIComponent(currentOfficer.password)}`);
@@ -684,9 +710,12 @@
           renderSubmissions();
           updateStats();
           showToast('Data refreshed successfully from Google Sheets.');
+        } else {
+          showToast('Server error: ' + (json.message || 'Unable to load records.'), true);
         }
       } catch (err) {
         console.warn('Data sync notice:', err);
+        showToast('Network error: Unable to connect to Google Sheets backend.', true);
       } finally {
         if (refreshBtn) {
           refreshBtn.innerHTML = '<i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-amber-600"></i><span class="hidden sm:inline">Refresh</span>';
@@ -699,9 +728,9 @@
       currentFilter = status;
       document.querySelectorAll('.status-tab').forEach(tab => {
         if (tab.dataset.status === status) {
-          tab.className = 'status-tab px-3 py-1.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm';
+          tab.className = 'status-tab px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all bg-blue-900 text-white shadow-sm touch-target flex items-center justify-center cursor-pointer';
         } else {
-          tab.className = 'status-tab px-3 py-1.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200';
+          tab.className = 'status-tab px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200 touch-target flex items-center justify-center cursor-pointer';
         }
       });
       renderSubmissions();
@@ -764,7 +793,7 @@
         return;
       }
 
-      filtered.forEach((item, idx) => {
+      filtered.forEach((item) => {
         const tr = document.createElement('tr');
         tr.className = 'hover:bg-slate-50 transition-colors';
 
@@ -806,7 +835,7 @@
                 href="${item.attachment_url}" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="inline-flex items-center gap-1 text-[10px] font-bold text-blue-900 hover:text-blue-950 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded-md border border-blue-200 mt-1 shadow-2xs transition-colors"
+                class="inline-flex items-center gap-1 text-[10px] font-bold text-blue-900 hover:text-blue-950 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-md border border-blue-200 mt-1 shadow-2xs transition-colors touch-target"
                 title="Open uploaded file in new tab"
               >
                 <i data-lucide="paperclip" class="w-3 h-3 text-amber-600"></i>
@@ -830,7 +859,7 @@
                 <button 
                   type="button" 
                   onclick="openReimburseModal(${item.row_index})" 
-                  class="px-2.5 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1 shadow-2xs cursor-pointer"
+                  class="px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-[11px] inline-flex items-center justify-center gap-1 shadow-2xs cursor-pointer touch-target"
                 >
                   <i data-lucide="badge-dollar-sign" class="w-3.5 h-3.5"></i>
                   <span>Pay Out</span>
@@ -839,7 +868,7 @@
                 <button 
                   type="button" 
                   onclick="openReceiptModal(${item.row_index})" 
-                  class="px-2.5 py-1.5 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1 shadow-2xs cursor-pointer"
+                  class="px-3 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-[11px] inline-flex items-center justify-center gap-1 shadow-2xs cursor-pointer touch-target"
                 >
                   <i data-lucide="file-check" class="w-3.5 h-3.5 text-amber-400"></i>
                   <span>Email PDF Receipt</span>
@@ -848,7 +877,7 @@
               <button 
                 type="button" 
                 onclick="openRejectModal(${item.row_index})" 
-                class="px-2 py-1.5 bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-700 border border-slate-300 hover:border-rose-300 rounded-lg font-bold text-[11px] inline-flex items-center gap-1 transition-colors cursor-pointer"
+                class="px-2.5 py-2 bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-700 border border-slate-300 hover:border-rose-300 rounded-lg font-bold text-[11px] inline-flex items-center justify-center gap-1 transition-colors cursor-pointer touch-target"
                 title="Reject Request"
               >
                 <i data-lucide="x" class="w-3.5 h-3.5 text-rose-500"></i>
@@ -874,7 +903,6 @@
       document.getElementById('modalAmount').innerText = `$${parseFloat(item.amount || 0).toFixed(2)}`;
       document.getElementById('modalTxDate').innerText = item.transaction_date;
 
-      // Handle Attachment Display
       const attachSection = document.getElementById('modalAttachmentSection');
       const attachLink = document.getElementById('modalAttachmentLink');
       if (item.attachment_url && item.attachment_url !== 'None' && item.attachment_url.startsWith('http')) {
@@ -888,7 +916,6 @@
       const randomId = Math.floor(1000 + Math.random() * 9000);
       document.getElementById('modalReceiptNumber').value = `SRPA-${year}-${randomId}`;
 
-      // Set Authorized Officer name and title based on active login
       const defaultSigner = currentOfficer 
         ? `${currentOfficer.name} (${currentOfficer.title})`
         : 'SikhRPA Board of Directors';
@@ -913,7 +940,6 @@
       document.getElementById('reimburseEmail').innerText = item.email;
       document.getElementById('reimbursePayoutRef').value = '';
 
-      // Handle Attachment Display
       const attachSection = document.getElementById('reimburseAttachmentSection');
       const attachLink = document.getElementById('reimburseAttachmentLink');
       if (item.attachment_url && item.attachment_url !== 'None' && item.attachment_url.startsWith('http')) {
@@ -921,11 +947,6 @@
         attachSection.classList.remove('hidden');
       } else {
         attachSection.classList.add('hidden');
-      }
-
-      const approverLabel = document.getElementById('reimburseApproverLabel');
-      if (approverLabel && currentOfficer) {
-        approverLabel.innerText = `${currentOfficer.title} (${currentOfficer.name})`;
       }
 
       document.getElementById('reimburseModal').classList.remove('hidden');
@@ -965,6 +986,11 @@
       const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
       if (!item || !currentOfficer) return;
 
+      if (!navigator.onLine) {
+        showToast('Network error: You are currently offline. Connect to process rejections.', true);
+        return;
+      }
+
       try {
         btn.disabled = true;
         btn.innerHTML = '<span>Rejecting...</span>';
@@ -995,8 +1021,7 @@
         showToast(`Request rejected by ${currentOfficer.title}.`);
       } catch (err) {
         closeRejectModal();
-        showToast('Rejection recorded.');
-        fetchSubmissions();
+        showToast('Network error: Unable to update rejection status. Check connection.', true);
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<i data-lucide="x-circle" class="w-4 h-4"></i><span>Confirm Rejection</span>';
@@ -1014,6 +1039,11 @@
 
       const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
       if (!item || !currentOfficer) return;
+
+      if (!navigator.onLine) {
+        showToast('Network error: You are offline. Cannot generate PDF without connection.', true);
+        return;
+      }
 
       try {
         btn.disabled = true;
@@ -1049,12 +1079,11 @@
           updateStats();
           showToast(`Official IRS Receipt PDF generated and emailed by ${currentOfficer.title}!`);
         } else {
-          showToast(`Error: ${resJson.error || 'Failed to dispatch receipt.'}`);
+          showToast(`Error: ${resJson.message || 'Failed to dispatch receipt.'}`, true);
         }
       } catch (err) {
-        showToast('Receipt dispatch request sent. Verify in Gmail sent folder.');
+        showToast('Network timeout: Verify sent folder in Gmail or check connection.', true);
         closeReceiptModal();
-        fetchSubmissions();
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i><span>Generate PDF & Email Donor</span>';
@@ -1070,6 +1099,11 @@
 
       const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
       if (!item || !currentOfficer) return;
+
+      if (!navigator.onLine) {
+        showToast('Network error: You are offline. Cannot record payout.', true);
+        return;
+      }
 
       try {
         btn.disabled = true;
@@ -1099,8 +1133,7 @@
         showToast(`Reimbursement recorded and confirmation emailed by ${currentOfficer.title}!`);
       } catch (err) {
         closeReimburseModal();
-        showToast('Reimbursement recorded.');
-        fetchSubmissions();
+        showToast('Network error: Unable to record payout. Check connection.', true);
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<i data-lucide="check-circle" class="w-4 h-4"></i><span>Confirm Payout & Email Requester</span>';
@@ -1108,15 +1141,30 @@
       }
     }
 
-    function showToast(msg) {
+    function showToast(msg, isError = false) {
       const toast = document.getElementById('toastNotification');
       const text = document.getElementById('toastMessage');
+      const icon = document.getElementById('toastIcon');
       if (toast && text) {
         text.innerText = msg;
+        if (isError) {
+          toast.className = 'fixed bottom-5 right-5 z-50 bg-rose-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-semibold max-w-sm';
+          if (icon) {
+            icon.className = 'w-4 h-4 text-rose-300 shrink-0';
+            icon.setAttribute('data-lucide', 'alert-circle');
+          }
+        } else {
+          toast.className = 'fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-semibold max-w-sm';
+          if (icon) {
+            icon.className = 'w-4 h-4 text-emerald-400 shrink-0';
+            icon.setAttribute('data-lucide', 'check');
+          }
+        }
+        lucide.createIcons();
         toast.classList.remove('hidden');
         setTimeout(() => {
           toast.classList.add('hidden');
-        }, 4000);
+        }, 4500);
       }
     }
   </script>
