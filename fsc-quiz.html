@@ -64,13 +64,19 @@
 </head>
 <body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
 
+  <!-- Network Offline Indicator Strip -->
+  <div id="quizOfflineNotice" class="hidden bg-amber-500 text-slate-950 text-xs font-bold py-1.5 px-4 text-center sticky top-0 z-40 flex items-center justify-center gap-1.5 shadow-sm">
+    <i data-lucide="wifi-off" class="w-3.5 h-3.5 shrink-0"></i>
+    <span>Offline Mode: You can continue taking the test. Results are saved locally and will sync when reconnected.</span>
+  </div>
+
   <!-- Top Navigation Bar -->
   <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-30 shadow-sm">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
       <!-- Brand & Return Link -->
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
-        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-2 rounded-lg hover:bg-slate-100 touch-target">
           <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
           <span>Home</span>
         </a>
@@ -83,11 +89,11 @@
 
       <!-- Live Header Progress & Timer -->
       <div class="flex items-center gap-2 shrink-0">
-        <span id="headerTimer" class="inline-flex items-center gap-1 text-xs font-mono font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full border border-slate-200">
+        <span id="headerTimer" class="inline-flex items-center gap-1 text-xs font-mono font-semibold bg-slate-100 text-slate-700 px-3 py-1.5 rounded-full border border-slate-200">
           <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i>
           <span id="elapsedDisplay">00:00</span>
         </span>
-        <a href="donate" class="hidden xs:inline-flex items-center gap-1.5 text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 px-3 py-1.5 rounded-full shadow-sm transition-colors">
+        <a href="donate" class="hidden xs:inline-flex items-center gap-1.5 text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 px-3.5 py-2 rounded-full shadow-sm transition-colors touch-target">
           <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
           <span>Donate</span>
         </a>
@@ -109,14 +115,14 @@
         Model examination aligned with California Department of Justice guidelines. Requires <strong>75% or higher</strong> to pass.
       </p>
 
-      <!-- Exam Mode & Shuffling Bar (Fully Responsive) -->
+      <!-- Exam Mode & Shuffling Bar (Fully Responsive with 44px Touch Targets) -->
       <div class="mt-5 flex flex-wrap items-center justify-center gap-2 bg-white p-2 rounded-2xl border-2 border-slate-200 shadow-sm max-w-xl mx-auto">
         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
           <button 
             id="mode30Btn" 
             type="button"
             onclick="setExamMode(30)" 
-            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer"
+            class="px-3.5 py-2.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer touch-target flex items-center justify-center"
           >
             Full CA Exam (30 Qs)
           </button>
@@ -124,7 +130,7 @@
             id="mode15Btn" 
             type="button"
             onclick="setExamMode(15)" 
-            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer"
+            class="px-3.5 py-2.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer touch-target flex items-center justify-center"
           >
             Quick (15 Qs)
           </button>
@@ -134,7 +140,7 @@
           id="shuffleToggleBtn"
           type="button"
           onclick="toggleShuffle()"
-          class="px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors cursor-pointer"
+          class="px-3.5 py-2.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center justify-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors cursor-pointer touch-target"
           title="Toggle question and answer option shuffling on retakes"
         >
           <i data-lucide="shuffle" class="w-3.5 h-3.5 text-amber-600"></i>
@@ -189,7 +195,7 @@
         <button 
           id="prevBtn" 
           onclick="prevQuestion()" 
-          class="px-3.5 sm:px-4 py-2.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed touch-target cursor-pointer"
+          class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed touch-target cursor-pointer"
           disabled
         >
           <i data-lucide="chevron-left" class="w-4 h-4"></i>
@@ -202,7 +208,7 @@
             id="finishEarlyBtn"
             type="button"
             onclick="confirmFinishEarly()"
-            class="hidden px-3 sm:px-3.5 py-2.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-bold transition-colors touch-target cursor-pointer"
+            class="hidden px-3.5 py-2.5 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-900 text-xs font-bold transition-colors touch-target cursor-pointer flex items-center justify-center"
             title="Finish the test early with current answered questions"
           >
             Finish Early
@@ -211,7 +217,7 @@
           <button 
             id="nextBtn" 
             onclick="nextQuestion()" 
-            class="px-4 sm:px-6 py-2.5 rounded-lg bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm touch-target cursor-pointer"
+            class="px-5 sm:px-6 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm touch-target cursor-pointer"
             disabled
           >
             <span>Next Question</span>
@@ -265,7 +271,7 @@
         <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
           <button 
             onclick="restartQuiz()" 
-            class="px-4 sm:px-5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-colors cursor-pointer touch-target"
+            class="px-5 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer touch-target"
           >
             <i data-lucide="rotate-ccw" class="w-4 h-4 text-amber-400"></i> Retake Practice Quiz
           </button>
@@ -273,13 +279,13 @@
             href="https://oag.ca.gov/sites/all/files/agweb/pdfs/firearms/forms/hscsg.pdf" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="px-4 sm:px-5 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center gap-2 shadow-sm transition-colors touch-target"
+            class="px-5 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors touch-target"
           >
             <i data-lucide="file-down" class="w-4 h-4 text-amber-600"></i> CA DOJ Study Guide PDF
           </a>
           <a 
             href="./" 
-            class="px-4 sm:px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center gap-2 transition-colors touch-target"
+            class="px-5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 transition-colors touch-target"
           >
             <i data-lucide="home" class="w-4 h-4"></i> Return Home
           </a>
@@ -330,7 +336,7 @@
           <h3 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
             <i data-lucide="history" class="w-4 h-4 text-blue-900"></i> Your Local Test History
           </h3>
-          <button onclick="clearHistory()" class="text-xs text-slate-400 hover:text-rose-600 transition-colors cursor-pointer">
+          <button id="clearHistoryBtn" onclick="clearHistory()" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-rose-600 hover:bg-slate-50 transition-colors cursor-pointer touch-target">
             Clear History
           </button>
         </div>
@@ -340,7 +346,7 @@
     </div>
   </main>
 
-  <!-- Custom In-Page Confirmation Modal (Accessible, No Browser Alert/Confirm) -->
+  <!-- Custom In-Page Confirmation Modal -->
   <div 
     id="confirmModal" 
     class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4" 
@@ -361,7 +367,7 @@
           id="confirmModalCancelBtn" 
           type="button" 
           onclick="closeCustomConfirm()" 
-          class="px-4 py-2 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors touch-target"
+          class="px-4 py-2.5 rounded-xl border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors touch-target"
         >
           Cancel
         </button>
@@ -369,7 +375,7 @@
           id="confirmModalOkBtn" 
           type="button" 
           onclick="executeCustomConfirm()" 
-          class="px-4 py-2 rounded-lg bg-blue-900 text-white text-xs font-bold hover:bg-blue-800 transition-colors shadow-sm touch-target"
+          class="px-4 py-2.5 rounded-xl bg-blue-900 text-white text-xs font-bold hover:bg-blue-800 transition-colors shadow-sm touch-target"
         >
           Confirm
         </button>
@@ -825,14 +831,11 @@
     let telemetryDebounceTimer = null;
     let pendingConfirmAction = null;
 
-    // Cryptographically secure session identifier generator (remediates CodeQL js/insecure-randomness)
+    // Cryptographically secure session identifier (satisfies CodeQL js/insecure-randomness)
     function generateSessionId() {
-      // Modern standard: native UUID v4 via Web Crypto API (CSPRNG)
       if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
         return 'fsc_' + crypto.randomUUID();
       }
-
-      // Secure fallback using cryptographically secure random bytes
       if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') {
         const bytes = new Uint8Array(16);
         crypto.getRandomValues(bytes);
@@ -840,8 +843,6 @@
           return b.toString(16).padStart(2, '0');
         }).join('');
       }
-
-      // Timestamp fallback if Web Crypto API is unavailable in older environments
       return 'fsc_' + Date.now().toString(36) + '_' + performance.now().toString(36).replace('.', '');
     }
 
@@ -894,11 +895,11 @@
       const btn30 = document.getElementById('mode30Btn');
       const btn15 = document.getElementById('mode15Btn');
       if (count === 30) {
-        btn30.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer';
-        btn15.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer';
+        btn30.className = 'px-3.5 py-2.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer touch-target flex items-center justify-center';
+        btn15.className = 'px-3.5 py-2.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer touch-target flex items-center justify-center';
       } else {
-        btn15.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer';
-        btn30.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer';
+        btn15.className = 'px-3.5 py-2.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm cursor-pointer touch-target flex items-center justify-center';
+        btn30.className = 'px-3.5 py-2.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900 cursor-pointer touch-target flex items-center justify-center';
       }
       restartQuiz();
     }
@@ -909,10 +910,10 @@
       const btn = document.getElementById('shuffleToggleBtn');
       if (shuffleEnabled) {
         label.innerText = 'Randomize: ON';
-        btn.className = 'px-3 py-1.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors cursor-pointer';
+        btn.className = 'px-3.5 py-2.5 rounded-xl border border-amber-300 text-xs font-semibold flex items-center justify-center gap-1.5 text-amber-900 bg-amber-50 shadow-sm transition-colors cursor-pointer touch-target';
       } else {
         label.innerText = 'Randomize: OFF';
-        btn.className = 'px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold flex items-center gap-1.5 text-slate-600 bg-slate-50 transition-colors cursor-pointer';
+        btn.className = 'px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold flex items-center justify-center gap-1.5 text-slate-600 bg-slate-50 transition-colors cursor-pointer touch-target';
       }
       restartQuiz();
     }
@@ -925,6 +926,7 @@
       startTimer();
       renderQuestion();
       setupPageUnloadSync();
+      setupNetworkSync();
     }
 
     function startTimer() {
@@ -974,12 +976,12 @@
       q.options.forEach((optText, optIdx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'w-full text-left p-3.5 sm:p-4 rounded-xl border-2 transition-all flex items-start gap-3 group relative ';
+        btn.className = 'w-full text-left p-3.5 sm:p-4 rounded-xl border-2 transition-all flex items-start gap-3 group relative touch-target ';
 
         let badgeClass = 'w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ';
 
         if (!hasAnswered) {
-          btn.className += 'bg-slate-50 border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 text-slate-800 cursor-pointer touch-target';
+          btn.className += 'bg-slate-50 border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 text-slate-800 cursor-pointer';
           badgeClass += 'border-slate-300 text-slate-500 group-hover:border-blue-600 group-hover:text-blue-600';
           btn.onclick = () => selectOption(optIdx);
         } else {
@@ -1500,8 +1502,64 @@
       });
     }
 
-    async function transmitTelemetry(payload, useKeepalive = false) {
+    // Offline Resilience & Synchronization Queue
+    function setupNetworkSync() {
+      window.addEventListener('offline', () => {
+        const notice = document.getElementById('quizOfflineNotice');
+        if (notice) notice.classList.remove('hidden');
+      });
+
+      window.addEventListener('online', () => {
+        const notice = document.getElementById('quizOfflineNotice');
+        if (notice) notice.classList.add('hidden');
+        syncPendingTelemetryQueue();
+      });
+
+      // Initial check on load
+      if (!navigator.onLine) {
+        const notice = document.getElementById('quizOfflineNotice');
+        if (notice) notice.classList.remove('hidden');
+      } else {
+        syncPendingTelemetryQueue();
+      }
+    }
+
+    function queueOfflineTelemetry(payload) {
+      try {
+        const queue = JSON.parse(localStorage.getItem('srpa_pending_quiz_telemetry') || '[]');
+        queue.push({
+          payload: payload,
+          timestamp: new Date().toISOString()
+        });
+        localStorage.setItem('srpa_pending_quiz_telemetry', JSON.stringify(queue.slice(-5)));
+      } catch (err) {
+        console.warn('Unable to queue telemetry offline:', err);
+      }
+    }
+
+    async function syncPendingTelemetryQueue() {
+      if (!navigator.onLine) return;
+      try {
+        const queue = JSON.parse(localStorage.getItem('srpa_pending_quiz_telemetry') || '[]');
+        if (queue.length === 0) return;
+
+        for (const item of queue) {
+          await transmitTelemetry(item.payload, false, true);
+        }
+        localStorage.removeItem('srpa_pending_quiz_telemetry');
+      } catch (err) {
+        console.warn('Queue sync error:', err);
+      }
+    }
+
+    async function transmitTelemetry(payload, useKeepalive = false, isReplayingQueue = false) {
       if (!GOOGLE_SHEETS_WEBHOOK_URL || !GOOGLE_SHEETS_WEBHOOK_URL.startsWith('https://script.google.com/')) {
+        return;
+      }
+
+      // If offline, buffer in local storage to preserve analytics
+      if (!navigator.onLine && !isReplayingQueue) {
+        queueOfflineTelemetry(payload);
         return;
       }
 
@@ -1536,7 +1594,9 @@
           body: body
         });
       } catch (err) {
-        console.warn('Telemetry update failed gracefully:', err);
+        if (!isReplayingQueue) {
+          queueOfflineTelemetry(payload);
+        }
       }
     }
 
