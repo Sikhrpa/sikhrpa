@@ -825,8 +825,24 @@
     let telemetryDebounceTimer = null;
     let pendingConfirmAction = null;
 
+    // Cryptographically secure session identifier generator (remediates CodeQL js/insecure-randomness)
     function generateSessionId() {
-      return 'fsc_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+      // Modern standard: native UUID v4 via Web Crypto API (CSPRNG)
+      if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+        return 'fsc_' + crypto.randomUUID();
+      }
+
+      // Secure fallback using cryptographically secure random bytes
+      if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') {
+        const bytes = new Uint8Array(16);
+        crypto.getRandomValues(bytes);
+        return 'fsc_' + Array.from(bytes, function(b) {
+          return b.toString(16).padStart(2, '0');
+        }).join('');
+      }
+
+      // Timestamp fallback if Web Crypto API is unavailable in older environments
+      return 'fsc_' + Date.now().toString(36) + '_' + performance.now().toString(36).replace('.', '');
     }
 
     function shuffleArray(arr) {
