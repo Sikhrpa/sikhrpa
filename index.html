@@ -167,6 +167,16 @@
               </div>
             </a>
 
+            <a href="shot-diagnosis" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-amber-50/70 transition-colors group/item">
+              <div class="p-2 bg-amber-50 text-amber-800 rounded-lg group-hover/item:bg-amber-100 shrink-0 mt-0.5">
+                <i data-lucide="target" class="w-4 h-4 text-amber-600"></i>
+              </div>
+              <div>
+                <span class="font-bold text-slate-900 text-xs block group-hover/item:text-blue-900">Pistol Shot Diagnostic</span>
+                <span class="text-[11px] text-slate-500 block leading-tight">Interactive clock dial, flinch correction & trigger biomechanics</span>
+              </div>
+            </a>
+
             <a href="trauma-safety" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-rose-50/70 transition-colors group/item">
               <div class="p-2 bg-rose-50 text-rose-800 rounded-lg group-hover/item:bg-rose-100 shrink-0 mt-0.5">
                 <i data-lucide="heart-pulse" class="w-4 h-4 text-rose-600"></i>
@@ -253,6 +263,13 @@
           How to Zero Optics (Click Calculator)
         </span>
         <span class="text-xs bg-blue-900 text-white font-semibold px-2 py-0.5 rounded-full">Interactive</span>
+      </a>
+      <a href="shot-diagnosis" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-amber-50">
+        <span class="flex items-center gap-2">
+          <i data-lucide="target" class="w-5 h-5 text-amber-600"></i>
+          Pistol Shot Diagnostic & Analyzer
+        </span>
+        <span class="text-xs bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded-full">Interactive</span>
       </a>
       <a href="trauma-safety" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-rose-50">
         <span class="flex items-center gap-2">
@@ -561,9 +578,9 @@
           <p class="text-slate-600 text-sm mt-2 font-medium">Foundational knowledge, interactive calculators, and procedural guides designed for community safety.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          <!-- Guide Card 1: Zeroing Optics (New Interactive Tool) -->
+          <!-- Guide Card 1: Zeroing Optics -->
           <div class="bg-white p-5 sm:p-6 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-900 hover:shadow-md transition-all">
             <div>
               <div class="p-3 bg-blue-50 text-blue-900 rounded-xl w-fit mb-3.5">
@@ -583,7 +600,27 @@
             </a>
           </div>
 
-          <!-- Guide Card 2: Range Trauma & Stop the Bleed -->
+          <!-- Guide Card 2: Pistol Shot Diagnostic & Correction Analyzer -->
+          <div class="bg-white p-5 sm:p-6 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col justify-between hover:border-amber-500 hover:shadow-md transition-all">
+            <div>
+              <div class="p-3 bg-amber-50 text-amber-900 rounded-xl w-fit mb-3.5">
+                <i data-lucide="target" class="w-6 h-6 text-amber-600"></i>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-amber-100 text-amber-900 border border-amber-200 mb-2">
+                <span>Interactive Diagnostic Wheel</span>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base mb-1.5">Pistol Shot Diagnostic</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                Diagnose why shots land low-left or high-right. Interactive 8-sector target dial, right/left stance mirroring, anatomical trigger finger diagrams, and dry-fire drills.
+              </p>
+            </div>
+            <a href="shot-diagnosis" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-900 hover:text-blue-950 underline mt-2">
+              <span>Launch Shot Analyzer</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+          <!-- Guide Card 3: Range Trauma & Stop the Bleed -->
           <div class="bg-white p-5 sm:p-6 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col justify-between hover:border-rose-400 hover:shadow-md transition-all">
             <div>
               <div class="p-3 bg-rose-50 text-rose-800 rounded-xl w-fit mb-3.5">
@@ -603,7 +640,7 @@
             </a>
           </div>
 
-          <!-- Guide Card 3: First-Time Buyer Roadmap -->
+          <!-- Guide Card 4: First-Time Buyer Roadmap -->
           <div class="bg-white p-5 sm:p-6 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col justify-between hover:border-amber-400 hover:shadow-md transition-all">
             <div>
               <div class="p-3 bg-amber-50 text-amber-800 rounded-xl w-fit mb-3.5">
@@ -623,7 +660,7 @@
             </a>
           </div>
 
-          <!-- Guide Card 4: CA FSC Practice Exam -->
+          <!-- Guide Card 5: CA FSC Practice Exam -->
           <div class="bg-white p-5 sm:p-6 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-900 hover:shadow-md transition-all">
             <div>
               <div class="p-3 bg-blue-50 text-blue-900 rounded-xl w-fit mb-3.5">
@@ -845,6 +882,8 @@
         <span aria-hidden="true">•</span>
         <a href="zero-optics" class="hover:text-blue-900 p-1">Zeroing Optics Guide</a>
         <span aria-hidden="true">•</span>
+        <a href="shot-diagnosis" class="hover:text-blue-900 p-1">Shot Diagnostic Tool</a>
+        <span aria-hidden="true">•</span>
         <a href="buyer-guide" class="hover:text-blue-900 p-1">First-Time Buyer's Guide</a>
         <span aria-hidden="true">•</span>
         <a href="fsc-quiz" class="hover:text-blue-900 p-1">CA FSC Practice Exam</a>
@@ -861,7 +900,7 @@
       </div>
 
       <p class="text-xs text-slate-500 leading-relaxed">
-        Federal EIN: 42-2595402<br>
+        Federal EIN: 42-2595402 • president@sikhrpa.org<br>
         © <span id="current-year"></span> Sikh Rifle and Pistol Association. All rights reserved.
       </p>
     </div>
