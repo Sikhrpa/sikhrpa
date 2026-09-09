@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>How to Zero Optics & Interactive Click Calculator | SikhRPA 501(c)(3)</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TRVZCG17K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4TRVZCG17K');
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="How to Zero Optics & Interactive Click Calculator | SikhRPA 501(c)(3)" />
+  <meta name="description" content="Interactive optics zeroing click calculator, individual shot group plotter, height-over-bore offset diagrams, and bilingual field protocol by SikhRPA." />
+  <meta name="keywords" content="zero optics calculator, MOA click calculator, red dot zeroing, height over bore, SikhRPA zeroing guide, MIL vs MOA zeroing" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN with Fallback -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (typeof lucide === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"><\/script>');
+    }
+  </script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Mahee:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap');
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .gurmukhi {
+      font-family: 'Mukta Mahee', 'Raavi', 'Gurmukhi MN', sans-serif;
+      line-height: 1.35;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .target-canvas {
+      cursor: crosshair;
+      user-select: none;
+      touch-action: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
+
+  <!-- Accessibility Skip Link -->
+  <a 
+    href="#main-content" 
+    class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-600 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:outline-none"
+  >
+    Skip to main content
+  </a>
+
+  <!-- Top Header Navigation -->
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Return Link -->
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
+          <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span class="hidden xs:inline">Home</span>
+        </a>
+        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <img 
+            src="srpa-logo.png" 
+            alt="SikhRPA Logo" 
+            class="h-8 sm:h-9 w-auto object-contain shrink-0"
+            onerror="this.style.display='none'"
+          />
+          <a href="./" class="font-bold text-sm sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors truncate">
+            <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+        <a href="buyer-guide" class="hover:text-amber-600 transition-colors">Buyer's Guide</a>
+        <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-950 font-bold text-xs transition-colors">
+          <svg class="w-3.5 h-3.5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>FSC Quiz</span>
+        </a>
+        <span class="inline-flex items-center gap-1.5 text-blue-950 font-bold bg-blue-50 px-3 py-1 rounded-full border border-blue-200 text-xs shadow-sm">
+          <svg class="w-3.5 h-3.5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 3v4m0 10v4m-9-9h4m10 0h4" />
+          </svg>
+          <span>Zeroing Optics</span>
+        </span>
+        <a href="trauma-safety" class="hover:text-amber-600 transition-colors">Trauma Safety</a>
+        <a href="news" class="hover:text-amber-600 transition-colors">Legal Watch</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <a
+          href="donate"
+          class="inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors items-center gap-1.5 shadow-sm touch-target"
+          title="Tax-Deductible 501(c)(3) Giving"
+        >
+          <svg class="w-3.5 h-3.5 text-rose-600 fill-rose-600" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          </svg>
+          <span>Donate</span>
+        </a>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button
+          type="button"
+          id="mobileMenuBtn"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors touch-target flex items-center justify-center"
+          aria-label="Toggle Navigation Menu"
+          aria-expanded="false"
+        >
+          <svg id="menuIcon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="closeIcon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div 
+      id="mobileMenuDrawer" 
+      class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+    >
+      <a href="./" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        Return to Homepage
+      </a>
+      <a href="buyer-guide" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        First-Time Buyer's Guide
+      </a>
+      <a href="fsc-quiz" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        FSC Practice Quiz
+      </a>
+      <a href="trauma-safety" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        Range Trauma & Stop the Bleed
+      </a>
+      <a href="news" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        California Legal Watch
+      </a>
+      <a href="donate" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-bold text-amber-950 bg-amber-50 border border-amber-200">
+        <span class="flex items-center gap-2">Support Our Mission</span>
+        <span class="text-[10px] bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded-full uppercase">Donate</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- Hero Header Banner -->
+    <div class="mb-10 text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-950 border border-blue-200 mb-3.5 shadow-sm">
+        <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 3v4m0 10v4m-9-9h4m10 0h4" />
+        </svg>
+        <span>Ballistics & Marksmanship Curriculum • 501(c)(3) Educational Tool</span>
+      </div>
+      
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-2">
+        How to Zero Optics & Interactive Click Calculator
+      </h1>
+      
+      <p class="gurmukhi text-base sm:text-xl font-bold text-blue-950 mb-3">
+        ਓਪਟਿਕਸ ਜ਼ੀਰੋ ਕਰਨ ਦਾ ਤਰੀਕਾ, ਕਲਿੱਕ ਕੈਲਕੁਲੇਟਰ ਅਤੇ ਬੈਲਿਸਟਿਕਸ ਗਾਈਡ
+      </p>
+
+      <p class="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
+        Plot your bullet holes on the interactive target grid below. The simulator triangulates your group's center and computes the exact number of turret clicks needed to shift your point of impact directly to the bullseye.
+      </p>
+
+      <!-- Key Concept Pills -->
+      <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs text-slate-700 bg-white p-2.5 sm:px-5 sm:py-2 rounded-2xl border border-slate-200 shadow-2xs">
+        <span class="flex items-center gap-1 font-bold text-slate-900">
+          <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+          No Math Required
+        </span>
+        <span class="text-slate-300">•</span>
+        <span class="flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M12 3v4m0 10v4m-9-9h4m10 0h4" /></svg>
+          Pistol Red Dots & Rifle Scopes
+        </span>
+        <span class="text-slate-300">•</span>
+        <span class="text-amber-800 font-semibold">1 MOA, 1/2 MOA, 1/4 MOA & 0.1 MIL</span>
+      </div>
+    </div>
+
+    <!-- SECTION 1: THE INTERACTIVE ZEROING SIMULATOR & SHOT PLOTTER -->
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-8 mb-10">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-[10px] font-bold text-amber-700 uppercase tracking-widest block">Interactive Range Simulator</span>
+          <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900">
+            Target Grid & Group Centroid Plotter
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Click directly on the target to plot your bullet holes (Shot 1, Shot 2, Shot 3...).</p>
+        </div>
+
+        <div class="flex items-center gap-2 self-start sm:self-auto">
+          <button
+            type="button"
+            onclick="undoLastShot()"
+            id="undoBtn"
+            class="px-3 py-1.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors touch-target"
+            title="Undo last placed shot"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a5 5 0 015 5v2m-15-7l4-4m-4 4l4 4" /></svg>
+            <span>Undo</span>
+          </button>
+          <button
+            type="button"
+            onclick="clearAllShots()"
+            class="px-3 py-1.5 rounded-xl border border-rose-200 bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold flex items-center gap-1.5 transition-colors touch-target"
+            title="Clear all plotted bullet holes"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+            <span>Clear Grid</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Simulator Controls Strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-6 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+        
+        <!-- Platform & Optic Selection -->
+        <div>
+          <label for="opticPresetSelect" class="block font-bold text-slate-700 uppercase tracking-wider mb-1 text-[11px]">
+            Optic & Turret Value:
+          </label>
+          <select 
+            id="opticPresetSelect" 
+            onchange="onOpticPresetChange(this.value)"
+            class="w-full px-3 py-2 rounded-xl border border-slate-300 font-semibold text-xs text-slate-900 bg-white focus:ring-2 focus:ring-blue-900 focus:outline-none touch-target"
+          >
+            <option value="1.0">Pistol Red Dot (1 MOA / click) — Holosun / RMR</option>
+            <option value="0.5" selected>Carbine Red Dot (1/2 MOA / click) — Aimpoint / EOTech</option>
+            <option value="0.25">Rifle Scope (1/4 MOA / click) — Leupold / Vortex</option>
+            <option value="mil_0.1">Precision Scope (0.1 MIL / click) — MRAD Turrets</option>
+          </select>
+        </div>
+
+        <!-- Target Distance Selection -->
+        <div>
+          <label for="targetDistanceSelect" class="block font-bold text-slate-700 uppercase tracking-wider mb-1 text-[11px]">
+            Target Distance (Yards):
+          </label>
+          <select 
+            id="targetDistanceSelect" 
+            onchange="onDistanceChange(this.value)"
+            class="w-full px-3 py-2 rounded-xl border border-slate-300 font-semibold text-xs text-slate-900 bg-white focus:ring-2 focus:ring-blue-900 focus:outline-none touch-target"
+          >
+            <option value="10">10 Yards (Pistol Initial Paper Boresight)</option>
+            <option value="15">15 Yards (Common Handgun Zero)</option>
+            <option value="25" selected>25 Yards (Standard Pistol & Carbine Initial)</option>
+            <option value="36">36 Yards (USMC Combat Zero Arc)</option>
+            <option value="50">50 Yards (Carbine Universal Flat Zero)</option>
+            <option value="100">100 Yards (Precision Rifle Standard Zero)</option>
+          </select>
+        </div>
+
+        <!-- Metric Indicator Box -->
+        <div class="bg-white p-2.5 rounded-xl border border-slate-200 flex flex-col justify-center">
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Click Value at Selected Distance:</span>
+          <div class="flex items-baseline gap-2 mt-0.5">
+            <span id="clickValueInchDisplay" class="font-mono text-base font-extrabold text-blue-900">0.13" / click</span>
+            <span id="clickValueMoaDisplay" class="text-[11px] font-mono text-slate-500 font-semibold">(0.50 MOA)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Two Column Layout: Target Grid Canvas on Left, Diagnostics & Instructions on Right -->
+      <div class="grid lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Interactive 1-Inch Target Grid -->
+        <div class="lg:col-span-7 flex flex-col items-center">
+          <div class="relative w-full max-w-[440px] aspect-square bg-white rounded-2xl border-2 border-slate-300 shadow-md p-2 overflow-hidden">
+            
+            <svg 
+              id="targetSvg" 
+              viewBox="-200 -200 400 400" 
+              class="w-full h-full target-canvas" 
+              onclick="handleTargetClick(event)"
+              role="region"
+              aria-label="Interactive 1-inch target grid. Click to place bullet holes."
+            >
+              <defs>
+                <!-- 1-inch (40px) Grid Pattern -->
+                <pattern id="oneInchGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                </pattern>
+                <radialGradient id="bullseyeGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ef4444"/>
+                  <stop offset="70%" stop-color="#dc2626"/>
+                  <stop offset="100%" stop-color="#991b1b"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Base Background Fill -->
+              <rect x="-200" y="-200" width="400" height="400" fill="#ffffff" />
+              <!-- 1" Grid Overlay -->
+              <rect x="-200" y="-200" width="400" height="400" fill="url(#oneInchGrid)" />
+
+              <!-- Concentric 1-inch and 2-inch rings (40px radius = 1 inch) -->
+              <circle cx="0" cy="0" r="160" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+              <circle cx="0" cy="0" r="120" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
+              <circle cx="0" cy="0" r="80" fill="none" stroke="#64748b" stroke-width="1.5"/>
+              <circle cx="0" cy="0" r="40" fill="none" stroke="#475569" stroke-width="1.8"/>
+
+              <!-- Diamond Sight Reference -->
+              <polygon points="0,-40 40,0 0,40 -40,0" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.6"/>
+
+              <!-- Target Axes Crosshairs (X and Y with 1-inch tick marks) -->
+              <line x1="-200" y1="0" x2="200" y2="0" stroke="#0f172a" stroke-width="2"/>
+              <line x1="0" y1="-200" x2="0" y2="200" stroke="#0f172a" stroke-width="2"/>
+
+              <!-- Center Bullseye (0.5" radius = 20px) -->
+              <circle cx="0" cy="0" r="18" fill="url(#bullseyeGrad)" stroke="#7f1d1d" stroke-width="1.5"/>
+              <circle cx="0" cy="0" r="5" fill="#ffffff"/>
+
+              <!-- Dynamic Dispersion Group Circle (Computed via JS) -->
+              <circle id="dispersionCircle" cx="0" cy="0" r="0" fill="rgba(217, 119, 6, 0.12)" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4 2" style="display:none;"/>
+
+              <!-- Vector Connecting Line between Centroid and Bullseye -->
+              <line id="correctionVector" x1="0" y1="0" x2="0" y2="0" stroke="#2563eb" stroke-width="2" stroke-dasharray="3 3" style="display:none;"/>
+
+              <!-- Dynamic Mean Point of Impact (MPI) Crosshair Marker -->
+              <g id="mpiMarker" style="display:none;">
+                <circle cx="0" cy="0" r="10" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+                <line x1="-14" y1="0" x2="14" y2="0" stroke="#2563eb" stroke-width="2"/>
+                <line x1="0" y1="-14" x2="0" y2="14" stroke="#2563eb" stroke-width="2"/>
+              </g>
+
+              <!-- Container where Plotted Shots are dynamically appended -->
+              <g id="shotsLayer"></g>
+
+              <!-- Axis Labels -->
+              <text x="180" y="-8" fill="#64748b" font-size="9" font-weight="bold" font-family="monospace">+RIGHT</text>
+              <text x="-195" y="-8" fill="#64748b" font-size="9" font-weight="bold" font-family="monospace">-LEFT</text>
+              <text x="6" y="-180" fill="#64748b" font-size="9" font-weight="bold" font-family="monospace">+UP</text>
+              <text x="6" y="190" fill="#64748b" font-size="9" font-weight="bold" font-family="monospace">-DOWN</text>
+            </svg>
+
+            <!-- Bottom helper text -->
+            <div class="text-center mt-1.5">
+              <span class="text-[10px] text-slate-400 font-mono">1 Grid Square = Exactly 1.0" × 1.0" at Target</span>
+            </div>
+          </div>
+
+          <!-- Fine Tuning Sliders (Alternative to direct clicking) -->
+          <div class="w-full max-w-[440px] mt-3 space-y-2 text-xs bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">Manual Centroid Adjustment Sliders:</span>
+            <div class="flex items-center gap-3">
+              <span class="text-slate-600 font-bold w-16">Horiz (L/R):</span>
+              <input type="range" id="sliderHoriz" min="-4.5" max="4.5" step="0.1" value="0" oninput="onSliderChange()" class="flex-1 accent-blue-900 cursor-pointer" />
+              <span id="labelSliderHoriz" class="font-mono text-slate-900 font-bold w-14 text-right">0.0"</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-slate-600 font-bold w-16">Vert (U/D):</span>
+              <input type="range" id="sliderVert" min="-4.5" max="4.5" step="0.1" value="0" oninput="onSliderChange()" class="flex-1 accent-blue-900 cursor-pointer" />
+              <span id="labelSliderVert" class="font-mono text-slate-900 font-bold w-14 text-right">0.0"</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Diagnostic Output & Exact Turret Instructions -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Plotted Shot Log Badges -->
+          <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-blue-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+                Plotted Shot List:
+              </span>
+              <span id="shotCountBadge" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-900">
+                3 Shots Plotted
+              </span>
+            </div>
+
+            <div id="shotListContainer" class="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto custom-scrollbar">
+              <!-- Dynamically populated badges -->
+            </div>
+          </div>
+
+          <!-- Group Size & Centroid KPIs -->
+          <div class="grid grid-cols-2 gap-2.5">
+            <div class="p-3 rounded-xl bg-blue-50/70 border border-blue-200">
+              <span class="text-[10px] font-bold text-blue-950 uppercase tracking-wider block">Group Center (MPI):</span>
+              <span id="mpiCoordinateText" class="font-mono text-sm font-extrabold text-blue-900 block mt-0.5">
+                -1.8" Left, -2.1" Low
+              </span>
+            </div>
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200">
+              <span class="text-[10px] font-bold text-amber-950 uppercase tracking-wider block">Extreme Spread (Group):</span>
+              <span id="extremeSpreadText" class="font-mono text-sm font-extrabold text-amber-900 block mt-0.5">
+                1.4" (5.3 MOA)
+              </span>
+            </div>
+          </div>
+
+          <!-- PRIMARY ACTION CARD: Turret Dial Instructions -->
+          <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white shadow-lg border-2 border-slate-800 space-y-4">
+            
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                Exact Turret Corrections
+              </span>
+              <span class="text-[10px] font-mono text-slate-400 font-bold" id="rangeBanner">25 Yds</span>
+            </div>
+
+            <!-- Elevation Directive -->
+            <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-700 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-bold uppercase text-slate-400 block tracking-wider">Top Turret (Elevation):</span>
+                <span id="elevDirectionLabel" class="text-base sm:text-lg font-black text-amber-300 block">
+                  DIAL 16 CLICKS "UP"
+                </span>
+                <span id="elevDetailLabel" class="text-[11px] text-slate-300 font-mono">
+                  Moves POI up by 2.1 inches
+                </span>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center font-bold text-base">
+                ▲
+              </div>
+            </div>
+
+            <!-- Windage Directive -->
+            <div class="bg-slate-900/90 p-3.5 rounded-xl border border-slate-700 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-bold uppercase text-slate-400 block tracking-wider">Side Turret (Windage):</span>
+                <span id="windDirectionLabel" class="text-base sm:text-lg font-black text-emerald-300 block">
+                  DIAL 14 CLICKS "RIGHT"
+                </span>
+                <span id="windDetailLabel" class="text-[11px] text-slate-300 font-mono">
+                  Moves POI right by 1.8 inches
+                </span>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold text-base">
+                ▶
+              </div>
+            </div>
+
+            <!-- Gurmukhi Translation Summary -->
+            <div class="p-2.5 bg-blue-900/50 rounded-lg border border-blue-800 text-[11px] leading-snug">
+              <span class="gurmukhi text-amber-300 font-bold block" id="gurmukhiInstruction">
+                ਸਿਖਰਲਾ ਡਾਇਲ ੧੬ ਕਲਿੱਕ "UP" ਵੱਲ ਘੁਮਾਓ ਅਤੇ ਸੱਜਾ ਡਾਇਲ ੧੪ ਕਲਿੱਕ "RIGHT" ਵੱਲ ਘੁਮਾਓ।
+              </span>
+            </div>
+
+          </div>
+
+          <!-- The Golden Rule Callout -->
+          <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-950 flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-amber-700 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            <p class="leading-relaxed">
+              <strong>The Golden Rule of Turrets:</strong> The arrows marked "UP" or "R" on your optic dials move your <strong>bullet impact point (POI)</strong> on paper—they do <em>not</em> move the crosshair in reverse!
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SECTION 2: CUSTOM TECHNICAL VECTOR GRAPHICS -->
+    <div class="space-y-8 mb-10">
+      
+      <!-- Graphic 1: Turret Anatomy & The Golden Rule -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-7">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-200">
+          <div>
+            <span class="text-[10px] font-bold text-blue-900 uppercase tracking-wider block">Mechanics Diagram</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">
+              1. Understanding Turret Clicks & Directional Travel
+            </h3>
+          </div>
+          <span class="text-xs font-bold text-slate-500 font-mono">Elevation & Windage Knobs</span>
+        </div>
+
+        <div class="bg-slate-950 rounded-xl p-4 mb-4 border border-slate-800">
+          <svg viewBox="0 0 600 240" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Turret Dial Adjustment Diagram">
+            <defs>
+              <linearGradient id="turretKnurl" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1e293b"/>
+                <stop offset="50%" stop-color="#475569"/>
+                <stop offset="100%" stop-color="#1e293b"/>
+              </linearGradient>
+              <marker id="arrowGold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+              </marker>
+            </defs>
+
+            <!-- Elevation Turret Dial (Left) -->
+            <g transform="translate(60, 20)">
+              <!-- Dial Cylinder Base -->
+              <rect x="30" y="50" width="140" height="90" rx="8" fill="url(#turretKnurl)" stroke="#94a3b8" stroke-width="1.5"/>
+              <!-- Knurling ridges -->
+              <line x1="45" y1="50" x2="45" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="60" y1="50" x2="60" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="75" y1="50" x2="75" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="90" y1="50" x2="90" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="105" y1="50" x2="105" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="120" y1="50" x2="120" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="135" y1="50" x2="135" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="150" y1="50" x2="150" y2="140" stroke="#0f172a" stroke-width="2"/>
+
+              <!-- Turret Cap Graduation Plate -->
+              <ellipse cx="100" cy="50" rx="70" ry="24" fill="#0f172a" stroke="#cbd5e1" stroke-width="1.8"/>
+              <circle cx="100" cy="50" r="14" fill="#1e293b"/>
+              
+              <!-- Arrow marking UP (Counter-Clockwise) -->
+              <path d="M 55 45 A 50 18 0 0 1 145 45" fill="none" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowGold)"/>
+              <text x="100" y="36" fill="#fde047" font-size="11" font-weight="900" font-family="monospace" text-anchor="middle">UP ▲</text>
+
+              <text x="100" y="165" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">TOP TURRET (ELEVATION)</text>
+              <text x="100" y="180" fill="#94a3b8" font-size="9.5" text-anchor="middle">Turn "UP" to raise bullet holes on paper</text>
+            </g>
+
+            <!-- Windage Turret Dial (Right) -->
+            <g transform="translate(340, 20)">
+              <!-- Dial Cylinder Base -->
+              <rect x="30" y="50" width="140" height="90" rx="8" fill="url(#turretKnurl)" stroke="#94a3b8" stroke-width="1.5"/>
+              <!-- Knurling ridges -->
+              <line x1="45" y1="50" x2="45" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="60" y1="50" x2="60" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="75" y1="50" x2="75" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="90" y1="50" x2="90" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="105" y1="50" x2="105" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="120" y1="50" x2="120" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="135" y1="50" x2="135" y2="140" stroke="#0f172a" stroke-width="2"/>
+              <line x1="150" y1="50" x2="150" y2="140" stroke="#0f172a" stroke-width="2"/>
+
+              <!-- Turret Cap Graduation Plate -->
+              <ellipse cx="100" cy="50" rx="70" ry="24" fill="#0f172a" stroke="#cbd5e1" stroke-width="1.8"/>
+              <circle cx="100" cy="50" r="14" fill="#1e293b"/>
+
+              <!-- Arrow marking R (Clockwise) -->
+              <path d="M 145 45 A 50 18 0 0 1 55 45" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrowGold)"/>
+              <text x="100" y="36" fill="#a7f3d0" font-size="11" font-weight="900" font-family="monospace" text-anchor="middle">R ▶</text>
+
+              <text x="100" y="165" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">RIGHT TURRET (WINDAGE)</text>
+              <text x="100" y="180" fill="#94a3b8" font-size="9.5" text-anchor="middle">Turn "R" to push bullet holes right on paper</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-700">
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <strong class="text-slate-900 block mb-1">If your shots hit LOW:</strong>
+            Turn the elevation dial in the direction marked <strong>UP</strong>. This physically tilts the internal reticle mechanism downward, forcing the shooter to elevate the firearm barrel to re-align the dot.
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <strong class="text-slate-900 block mb-1">If your shots hit LEFT:</strong>
+            Turn the windage dial in the direction marked <strong>R (RIGHT)</strong>. This shifts the point of impact horizontally to the right toward the center line.
+          </div>
+        </div>
+      </div>
+
+      <!-- Graphic 2: Height-Over-Bore & Mechanical Offset -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-7">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-200">
+          <div>
+            <span class="text-[10px] font-bold text-blue-900 uppercase tracking-wider block">Close Quarters Trajectory</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">
+              2. Height-Over-Bore (Mechanical Offset): Why Close Shots Hit Low
+            </h3>
+          </div>
+          <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+            1.5" – 2.6" Offset
+          </span>
+        </div>
+
+        <div class="bg-slate-950 rounded-xl p-4 mb-4 border border-slate-800">
+          <svg viewBox="0 0 620 220" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Height-Over-Bore Mechanical Offset Ballistics Diagram">
+            <!-- Sight Line (Straight Red Laser) -->
+            <line x1="40" y1="50" x2="580" y2="130" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6 3"/>
+            
+            <!-- Bore Line (Physical Barrel Origin to Bullet Trajectory) -->
+            <path d="M 40 130 Q 300 120 580 130" stroke="#38bdf8" stroke-width="2.5" fill="none"/>
+
+            <!-- Receiver / Optic Mount Origin (At shooter's position) -->
+            <rect x="25" y="42" width="30" height="20" rx="3" fill="#334155" stroke="#94a3b8" stroke-width="1"/>
+            <text x="40" y="32" fill="#ef4444" font-size="8.5" font-weight="bold" text-anchor="middle">OPTIC (LOS)</text>
+
+            <rect x="20" y="122" width="40" height="15" rx="3" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+            <text x="40" y="152" fill="#38bdf8" font-size="8.5" font-weight="bold" text-anchor="middle">BARREL BORE</text>
+
+            <!-- Mechanical Offset Dimension Bracket -->
+            <line x1="75" y1="50" x2="75" y2="130" stroke="#f59e0b" stroke-width="1.5"/>
+            <line x1="70" y1="50" x2="80" y2="50" stroke="#f59e0b" stroke-width="1.5"/>
+            <line x1="70" y1="130" x2="80" y2="130" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="90" y="93" fill="#fde047" font-size="9" font-weight="900" font-family="monospace">2.5" OFFSET</text>
+
+            <!-- Close Distance: 5 to 7 Yards (Bullet is BELOW dot) -->
+            <line x1="200" y1="40" x2="200" y2="170" stroke="#475569" stroke-width="1" stroke-dasharray="2 2"/>
+            <circle cx="200" cy="74" r="5" fill="#ef4444"/>
+            <circle cx="200" cy="126" r="5" fill="#38bdf8"/>
+            <text x="200" y="185" fill="#ffffff" font-size="8.5" font-weight="bold" text-anchor="middle">5–7 YARDS</text>
+            <text x="200" y="198" fill="#fda4af" font-size="7.5" text-anchor="middle">Hits ~1.8" LOW</text>
+
+            <!-- Zero Distance: 25 / 50 Yards (Lines Converge) -->
+            <line x1="580" y1="40" x2="580" y2="170" stroke="#10b981" stroke-width="1.5"/>
+            <circle cx="580" cy="130" r="7" fill="#10b981"/>
+            <text x="580" y="185" fill="#a7f3d0" font-size="9" font-weight="bold" text-anchor="middle">ZERO CONVERGENCE</text>
+            <text x="580" y="198" fill="#94a3b8" font-size="7.5" text-anchor="middle">(POI = POA at 50 Yds)</text>
+          </svg>
+        </div>
+
+        <p class="text-xs text-slate-600 leading-relaxed">
+          <strong>Key Practical Takeaway:</strong> Because an AR-15 red dot sits roughly 2.6 inches above the center of the barrel (and a pistol optic sits ~0.8" above the bore), your bullet originates lower than your sight window. At close self-defense distances (3 to 7 yards), <strong>your bullets will always land 1.5 to 2.5 inches below where your dot is placed</strong>. Always hold slightly high on close targets!
+        </p>
+      </div>
+
+      <!-- Graphic 3: 5.56 Trajectory Curve Comparison -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-7">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-200">
+          <div>
+            <span class="text-[10px] font-bold text-blue-900 uppercase tracking-wider block">Ballistics Comparison</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">
+              3. 5.56 NATO Trajectory: 50/200 Yard vs. 100 Yard vs. 36 Yard Zero
+            </h3>
+          </div>
+          <span class="text-xs font-bold text-slate-500 font-mono">0 to 300 Yards Arc</span>
+        </div>
+
+        <div class="bg-slate-950 rounded-xl p-4 mb-4 border border-slate-800">
+          <svg viewBox="0 0 620 200" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ballistic trajectory comparison chart">
+            <!-- Line of Sight (Zero Datum Plane) -->
+            <line x1="40" y1="100" x2="580" y2="100" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <text x="45" y="93" fill="#cbd5e1" font-size="8" font-family="monospace">LINE OF SIGHT (0.0")</text>
+
+            <!-- Y-Axis +2" and -4" Reference Lines -->
+            <line x1="40" y1="65" x2="580" y2="65" stroke="#334155" stroke-width="1" stroke-dasharray="2 2"/>
+            <text x="590" y="68" fill="#64748b" font-size="7.5" font-family="monospace">+2.0"</text>
+
+            <line x1="40" y1="150" x2="580" y2="150" stroke="#334155" stroke-width="1" stroke-dasharray="2 2"/>
+            <text x="590" y="153" fill="#64748b" font-size="7.5" font-family="monospace">-4.0"</text>
+
+            <!-- Curve 1: 50 / 200 Yard Universal Zero (Green) -->
+            <path d="M 40 145 C 90 120, 140 100, 200 82 C 270 70, 370 75, 430 100 C 480 120, 540 165, 580 190" stroke="#10b981" stroke-width="2.5" fill="none"/>
+            <circle cx="150" cy="100" r="4" fill="#10b981"/>
+            <circle cx="430" cy="100" r="4" fill="#10b981"/>
+            <text x="260" y="65" fill="#a7f3d0" font-size="8" font-weight="bold">50 / 200 Yd Universal Combat Zero (Max +1.8" at 120 yds)</text>
+
+            <!-- Curve 2: 100 Yard Flat Zero (Blue) -->
+            <path d="M 40 145 C 120 125, 200 108, 280 100 C 360 104, 460 135, 580 195" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 2" fill="none"/>
+            <circle cx="280" cy="100" r="4" fill="#38bdf8"/>
+            <text x="290" y="115" fill="#bae6fd" font-size="7.5" font-weight="bold">100 Yd Flat Zero (Never rises above point of aim)</text>
+
+            <!-- Distance Markers (X Axis) -->
+            <line x1="150" y1="40" x2="150" y2="160" stroke="#334155" stroke-width="1"/>
+            <text x="150" y="175" fill="#94a3b8" font-size="8" font-family="monospace" text-anchor="middle">50 YDS</text>
+
+            <line x1="280" y1="40" x2="280" y2="160" stroke="#334155" stroke-width="1"/>
+            <text x="280" y="175" fill="#94a3b8" font-size="8" font-family="monospace" text-anchor="middle">100 YDS</text>
+
+            <line x1="430" y1="40" x2="430" y2="160" stroke="#334155" stroke-width="1"/>
+            <text x="430" y="175" fill="#94a3b8" font-size="8" font-family="monospace" text-anchor="middle">200 YDS</text>
+          </svg>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+            <strong class="text-emerald-800 block mb-1">50/200 Yd Combat Zero:</strong>
+            Most versatile all-around carbine zero. The bullet crosses line of sight at 50 yds, rises less than 2" at 120 yds, and drops back through zero at 200 yds.
+          </div>
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+            <strong class="text-sky-800 block mb-1">100 Yd Flat Zero:</strong>
+            Preferred for magnified optics and precision rifles. The trajectory touches the crosshair at 100 yds and drops continuously thereafter—you never hold under.
+          </div>
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+            <strong class="text-amber-800 block mb-1">15/25 Yd Pistol Zero:</strong>
+            For handgun red dots (Holosun/RMR), zeroing at 15 or 25 yards provides a flat, practical hit zone from 3 yards to 50 yards with minimal variance.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECTION 3: BILINGUAL 5-STEP FIELD ZEROING PROTOCOL -->
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-6 sm:p-8 mb-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Field Procedure
+        </span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-2">
+          5-Step Field Protocol for a Perfect Zero
+        </h2>
+        <p class="gurmukhi text-sm font-bold text-blue-950 mt-1">
+          ਸਹੀ ਜ਼ੀਰੋਇੰਗ ਲਈ ੫ ਜ਼ਰੂਰੀ ਕਦਮ
+        </p>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm">
+        
+        <!-- Step 1 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-xs shrink-0 font-mono">1</span>
+            <strong class="text-slate-900 text-sm">Lock in a Rock-Solid Benchrest or Sandbag Position</strong>
+          </div>
+          <p class="text-slate-600 leading-relaxed pl-8">
+            Never zero an optic while standing unsupported or off-hand. Any shooter sway will ruin your adjustments. Rest your firearm securely on sandbags, a sturdy shooting rest, or a bipod with your elbows supported.
+          </p>
+          <p class="gurmukhi text-xs text-blue-950 font-bold pl-8 pt-1">
+            ਕਦੇ ਵੀ ਖੜ੍ਹੇ ਹੋ ਕੇ ਜਾਂ ਬਿਨਾਂ ਸਹਾਰੇ ਤੋਂ ਓਪਟਿਕ ਜ਼ੀਰੋ ਨਾ ਕਰੋ। ਬੰਦੂਕ ਨੂੰ ਸੈਂਡਬੈਗ ਜਾਂ ਰੈਸਟ ਉੱਤੇ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਥਿਰ ਕਰਕੇ ਰੱਖੋ।
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-xs shrink-0 font-mono">2</span>
+            <strong class="text-slate-900 text-sm">Boresight or Start at Close Distance (10 to 15 Yards)</strong>
+          </div>
+          <p class="text-slate-600 leading-relaxed pl-8">
+            Do not start at 100 yards right out of the box—you will waste expensive ammunition shooting off the paper. Fire your first confirmation shots at 10 or 15 yards to ensure bullet impact is within the paper boundary.
+          </p>
+          <p class="gurmukhi text-xs text-blue-950 font-bold pl-8 pt-1">
+            ਸਿੱਧਾ ੧੦੦ ਗਜ਼ 'ਤੇ ਸ਼ੁਰੂ ਨਾ ਕਰੋ। ਪਹਿਲਾਂ ੧੦-੧੫ ਗਜ਼ 'ਤੇ ਗੋਲੀ ਚਲਾ ਕੇ ਦੇਖੋ ਤਾਂ ਜੋ ਗੋਲੀ ਟਾਰਗੈੱਟ ਪੇਪਰ 'ਤੇ ਲੱਗੇ।
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-xs shrink-0 font-mono">3</span>
+            <strong class="text-slate-900 text-sm">Fire a 3 to 5-Shot Group (Never Adjust for a Single Shot!)</strong>
+          </div>
+          <p class="text-slate-600 leading-relaxed pl-8">
+            Beginners often make the critical mistake of "chasing fliers" by turning dials after every single round. Fire a disciplined group of 3 to 5 rounds with a smooth trigger press to find your true group center.
+          </p>
+          <p class="gurmukhi text-xs text-blue-950 font-bold pl-8 pt-1">
+            ਇੱਕ ਗੋਲੀ ਦੇਖ ਕੇ ਕਦੇ ਵੀ ਡਾਇਲ ਨਾ ਘੁਮਾਓ। ਹਮੇਸ਼ਾ ੩ ਤੋਂ ੫ ਗੋਲੀਆਂ ਦਾ ਗਰੁੱਪ ਫਾਇਰ ਕਰੋ ਅਤੇ ਉਸ ਗਰੁੱਪ ਦੇ ਕੇਂਦਰ ਨੂੰ ਦੇਖੋ।
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-xs shrink-0 font-mono">4</span>
+            <strong class="text-slate-900 text-sm">Measure Group Centroid to Bullseye & Dial Turrets</strong>
+          </div>
+          <p class="text-slate-600 leading-relaxed pl-8">
+            Measure the horizontal and vertical distance from the center of your group to the center bullseye. Enter the numbers into our calculator above to obtain your exact click values.
+          </p>
+          <p class="gurmukhi text-xs text-blue-950 font-bold pl-8 pt-1">
+            ਗਰੁੱਪ ਦੇ ਕੇਂਦਰ ਤੋਂ ਬੁੱਲਜ਼-ਆਈ ਦੀ ਦੂਰੀ ਮਾਪੋ ਅਤੇ ਕੈਲਕੁਲੇਟਰ ਅਨੁਸਾਰ ਕਲਿੱਕ ਘੁਮਾਓ।
+          </p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-900 text-amber-400 font-bold flex items-center justify-center text-xs shrink-0 font-mono">5</span>
+            <strong class="text-slate-900 text-sm">Fire Confirmation Group & Reset Slip Turrets to Zero</strong>
+          </div>
+          <p class="text-slate-600 leading-relaxed pl-8">
+            Fire a final 3-shot confirmation string directly into the bullseye. Loosen your turret dial caps and slip the numerical marking to "0" without turning the internal mechanism so you have a true zero reference.
+          </p>
+          <p class="gurmukhi text-xs text-blue-950 font-bold pl-8 pt-1">
+            ਆਖਰੀ ੩ ਗੋਲੀਆਂ ਚਲਾ ਕੇ ਪੁਸ਼ਟੀ ਕਰੋ ਅਤੇ ਆਪਣੇ ਡਾਇਲ ਕੈਪ ਨੂੰ "0" 'ਤੇ ਸੈੱਟ ਕਰੋ।
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Community Safety Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10 sm:py-12 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4">
+      <img 
+        src="srpa-logo.png" 
+        alt="SikhRPA Logo" 
+        class="h-8 w-auto object-contain mx-auto mb-3 opacity-90"
+        onerror="this.style.display='none'"
+      />
+      <p class="font-semibold text-slate-800 mb-1">
+        Sikh Rifle and Pistol Association • California 501(c)(3) Nonprofit Public Benefit Corporation
+      </p>
+      <p class="text-slate-500 text-[11px] leading-relaxed mb-4">
+        1075 Mohawk St, South Lake Tahoe, CA 96150 • Federal EIN: 42-2595402 • Direct Contact: president@sikhrpa.org
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 font-semibold text-slate-600 text-xs mb-4">
+        <a href="./" class="hover:text-blue-900">Home</a>
+        <span>•</span>
+        <a href="buyer-guide" class="hover:text-blue-900">Buyer's Guide</a>
+        <span>•</span>
+        <a href="fsc-quiz" class="hover:text-blue-900">FSC Quiz</a>
+        <span>•</span>
+        <a href="trauma-safety" class="hover:text-rose-700">Trauma Safety</a>
+        <span>•</span>
+        <a href="news" class="hover:text-blue-900">Legal Watch</a>
+        <span>•</span>
+        <a href="donate" class="hover:text-blue-900">Donate</a>
+      </div>
+      <p class="text-xs text-blue-900 font-bold bg-blue-50 py-1 px-4 rounded-full inline-block border border-blue-200">
+        ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Safe Lucide Icon Renderer that never throws ReferenceError
+    function safeRenderIcons() {
+      if (typeof lucide !== 'undefined' && lucide && typeof lucide.createIcons === 'function') {
+        try {
+          lucide.createIcons();
+        } catch (e) {
+          console.warn('Lucide notice:', e);
+        }
+      }
+    }
+
+    // Defensive window stub
+    if (typeof window.lucide === 'undefined') {
+      window.lucide = { createIcons: safeRenderIcons };
+    }
+
+    // Check periodically if Lucide finished downloading
+    if (typeof lucide === 'undefined' || typeof lucide.createIcons !== 'function') {
+      const iconCheckInterval = setInterval(() => {
+        if (typeof lucide !== 'undefined' && lucide && typeof lucide.createIcons === 'function') {
+          clearInterval(iconCheckInterval);
+          safeRenderIcons();
+        }
+      }, 100);
+      setTimeout(() => clearInterval(iconCheckInterval), 4000);
+    }
+
+    window.addEventListener('load', safeRenderIcons);
+
+    // Mobile Drawer Toggle
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      
+      drawer.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    // =========================================================================
+    // OPTICS ZERO CALCULATOR & PLOTTER STATE
+    // =========================================================================
+    // Scale: 40 SVG pixels = 1.0 inch on paper
+    const PIXELS_PER_INCH = 40;
+
+    // Initial pre-populated 3-shot group (representative beginner group landing low & left)
+    let shotList = [
+      { x: -1.7, y: -2.3 },
+      { x: -2.1, y: -1.9 },
+      { x: -1.6, y: -2.1 }
+    ];
+
+    let currentDistanceYards = 25;
+    let currentClickType = "0.5"; // 0.5 MOA per click
+
+    function handleTargetClick(event) {
+      const svg = document.getElementById('targetSvg');
+      const pt = svg.createSVGPoint();
+      pt.x = event.clientX;
+      pt.y = event.clientY;
+
+      const cursorPt = pt.matrixTransform(svg.getScreenCTM().inverse());
+      
+      // Convert SVG coordinates to physical inches (relative to center 0,0)
+      const inchX = parseFloat((cursorPt.x / PIXELS_PER_INCH).toFixed(2));
+      // In SVG, positive Y is downwards. For ballistic targets, positive Y is UP.
+      const inchY = parseFloat((-cursorPt.y / PIXELS_PER_INCH).toFixed(2));
+
+      // Clamp coordinates to target face (±4.5 inches)
+      const clampedX = Math.max(-4.5, Math.min(4.5, inchX));
+      const clampedY = Math.max(-4.5, Math.min(4.5, inchY));
+
+      shotList.push({ x: clampedX, y: clampedY });
+      recalculateZero();
+    }
+
+    function undoLastShot() {
+      if (shotList.length > 0) {
+        shotList.pop();
+        recalculateZero();
+      }
+    }
+
+    function clearAllShots() {
+      shotList = [];
+      recalculateZero();
+    }
+
+    function removeSpecificShot(index) {
+      if (index >= 0 && index < shotList.length) {
+        shotList.splice(index, 1);
+        recalculateZero();
+      }
+    }
+
+    function onOpticPresetChange(val) {
+      currentClickType = val;
+      recalculateZero();
+    }
+
+    function onDistanceChange(val) {
+      currentDistanceYards = parseFloat(val);
+      const rangeBanner = document.getElementById('rangeBanner');
+      if (rangeBanner) rangeBanner.innerText = `${currentDistanceYards} Yds`;
+      recalculateZero();
+    }
+
+    function onSliderChange() {
+      const hVal = parseFloat(document.getElementById('sliderHoriz').value);
+      const vVal = parseFloat(document.getElementById('sliderVert').value);
+
+      document.getElementById('labelSliderHoriz').innerText = `${hVal > 0 ? '+' : ''}${hVal.toFixed(1)}"`;
+      document.getElementById('labelSliderVert').innerText = `${vVal > 0 ? '+' : ''}${vVal.toFixed(1)}"`;
+
+      // Set single override shot representing manual centroid
+      shotList = [{ x: hVal, y: vVal }];
+      recalculateZero();
+    }
+
+    function recalculateZero() {
+      const shotsLayer = document.getElementById('shotsLayer');
+      const shotListContainer = document.getElementById('shotListContainer');
+      const shotCountBadge = document.getElementById('shotCountBadge');
+      const mpiMarker = document.getElementById('mpiMarker');
+      const dispersionCircle = document.getElementById('dispersionCircle');
+      const correctionVector = document.getElementById('correctionVector');
+
+      shotsLayer.innerHTML = '';
+      shotListContainer.innerHTML = '';
+
+      const count = shotList.length;
+      shotCountBadge.innerText = `${count} Shot${count === 1 ? '' : 's'} Plotted`;
+
+      let meanX = 0;
+      let meanY = 0;
+      let extremeSpreadInches = 0;
+
+      if (count === 0) {
+        mpiMarker.style.display = 'none';
+        dispersionCircle.style.display = 'none';
+        correctionVector.style.display = 'none';
+        document.getElementById('mpiCoordinateText').innerText = '0.0" Center (No Shots)';
+        document.getElementById('extremeSpreadText').innerText = '--';
+        document.getElementById('elevDirectionLabel').innerText = 'ZERO ADJUSTMENT';
+        document.getElementById('elevDetailLabel').innerText = 'Click target to plot bullet holes';
+        document.getElementById('windDirectionLabel').innerText = 'ZERO ADJUSTMENT';
+        document.getElementById('windDetailLabel').innerText = 'Click target to plot bullet holes';
+        document.getElementById('gurmukhiInstruction').innerText = 'ਟਾਰਗੈੱਟ ਗਰਿੱਡ ਉੱਤੇ ਕਲਿੱਕ ਕਰਕੇ ਆਪਣੀਆਂ ਗੋਲੀਆਂ ਦੇ ਨਿਸ਼ਾਨ ਲਗਾਓ।';
+        updateClickValueKpi();
+        return;
+      }
+
+      // Compute Group Mean Point of Impact (MPI Centroid)
+      let sumX = 0;
+      let sumY = 0;
+      shotList.forEach((s, idx) => {
+        sumX += s.x;
+        sumY += s.y;
+
+        // Render Shot Dot on SVG Target
+        const svgX = s.x * PIXELS_PER_INCH;
+        const svgY = -s.y * PIXELS_PER_INCH; // flip for SVG coordinate space
+
+        const shotGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        
+        // Dark bullet puncture hole
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", svgX);
+        circle.setAttribute("cy", svgY);
+        circle.setAttribute("r", "9");
+        circle.setAttribute("fill", "#0f172a");
+        circle.setAttribute("stroke", "#f59e0b");
+        circle.setAttribute("stroke-width", "2");
+
+        // Bullet hole number text
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", svgX);
+        text.setAttribute("y", svgY + 3);
+        text.setAttribute("fill", "#ffffff");
+        text.setAttribute("font-size", "8");
+        text.setAttribute("font-weight", "bold");
+        text.setAttribute("text-anchor", "middle");
+        text.textContent = idx + 1;
+
+        shotGroup.appendChild(circle);
+        shotGroup.appendChild(text);
+        shotsLayer.appendChild(shotGroup);
+
+        // Render Shot Tag in List
+        const badge = document.createElement("span");
+        badge.className = "inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-white border border-slate-300 text-[11px] font-mono text-slate-800 shadow-2xs";
+        badge.innerHTML = `
+          <strong>#${idx + 1}:</strong> ${s.x > 0 ? '+' : ''}${s.x}", ${s.y > 0 ? '+' : ''}${s.y}"
+          <button type="button" onclick="removeSpecificShot(${idx})" class="text-slate-400 hover:text-rose-600 font-bold ml-1" title="Remove shot">&times;</button>
+        `;
+        shotListContainer.appendChild(badge);
+      });
+
+      meanX = sumX / count;
+      meanY = sumY / count;
+
+      // Compute Extreme Spread (Maximum distance between any two shots)
+      if (count >= 2) {
+        let maxDist = 0;
+        for (let i = 0; i < count; i++) {
+          for (let j = i + 1; j < count; j++) {
+            const dx = shotList[i].x - shotList[j].x;
+            const dy = shotList[i].y - shotList[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist > maxDist) maxDist = dist;
+          }
+        }
+        extremeSpreadInches = maxDist;
+      }
+
+      // Position Centroid Marker
+      const mpiSvgX = meanX * PIXELS_PER_INCH;
+      const mpiSvgY = -meanY * PIXELS_PER_INCH;
+
+      mpiMarker.setAttribute("transform", `translate(${mpiSvgX}, ${mpiSvgY})`);
+      mpiMarker.style.display = 'block';
+
+      // Position Correction Vector Line
+      correctionVector.setAttribute("x1", mpiSvgX);
+      correctionVector.setAttribute("y1", mpiSvgY);
+      correctionVector.setAttribute("x2", 0);
+      correctionVector.setAttribute("y2", 0);
+      correctionVector.style.display = 'block';
+
+      // Dispersion circle around centroid encompassing furthest shot
+      if (count >= 2) {
+        let maxRadius = 0;
+        shotList.forEach(s => {
+          const dx = s.x - meanX;
+          const dy = s.y - meanY;
+          const r = Math.sqrt(dx * dx + dy * dy);
+          if (r > maxRadius) maxRadius = r;
+        });
+        dispersionCircle.setAttribute("cx", mpiSvgX);
+        dispersionCircle.setAttribute("cy", mpiSvgY);
+        dispersionCircle.setAttribute("r", (maxRadius * PIXELS_PER_INCH) + 12);
+        dispersionCircle.style.display = 'block';
+      } else {
+        dispersionCircle.style.display = 'none';
+      }
+
+      // Display Centroid Coordinate Text
+      const horizDesc = meanX > 0.05 ? `${Math.abs(meanX).toFixed(2)}" Right` : (meanX < -0.05 ? `${Math.abs(meanX).toFixed(2)}" Left` : `0.0" Center`);
+      const vertDesc = meanY > 0.05 ? `${Math.abs(meanY).toFixed(2)}" High` : (meanY < -0.05 ? `${Math.abs(meanY).toFixed(2)}" Low` : `0.0" Center`);
+      document.getElementById('mpiCoordinateText').innerText = `${horizDesc}, ${vertDesc}`;
+
+      // Calculate Group Spread in Inches and MOA
+      const inchesPerMoaAtDistance = (currentDistanceYards / 100) * 1.047;
+      const spreadMoa = inchesPerMoaAtDistance > 0 ? (extremeSpreadInches / inchesPerMoaAtDistance).toFixed(1) : 0;
+      document.getElementById('extremeSpreadText').innerText = count >= 2 
+        ? `${extremeSpreadInches.toFixed(2)}" (${spreadMoa} MOA)` 
+        : 'Plot 2+ shots';
+
+      // Compute Movement per Single Click in Inches at this Target Distance
+      let movementPerClickInches = 0;
+      if (currentClickType === "mil_0.1") {
+        // 0.1 MIL = 0.36" per click at 100 yds
+        movementPerClickInches = 0.36 * (currentDistanceYards / 100);
+      } else {
+        const moaPerClick = parseFloat(currentClickType);
+        movementPerClickInches = (moaPerClick * inchesPerMoaAtDistance);
+      }
+
+      updateClickValueKpi(movementPerClickInches);
+
+      // Compute Turret Clicks
+      const neededElevClicks = Math.round(Math.abs(meanY) / movementPerClickInches);
+      const neededWindClicks = Math.round(Math.abs(meanX) / movementPerClickInches);
+
+      // Elevation Directive
+      const elevDirLabel = document.getElementById('elevDirectionLabel');
+      const elevDetailLabel = document.getElementById('elevDetailLabel');
+      let elevTextGurmukhi = "";
+
+      if (meanY < -0.08) {
+        // Group is LOW -> Must move bullets UP
+        elevDirLabel.innerText = `DIAL ${neededElevClicks} CLICKS "UP"`;
+        elevDirLabel.className = 'text-base sm:text-lg font-black text-amber-300 block';
+        elevDetailLabel.innerText = `Raises group centroid by ${Math.abs(meanY).toFixed(2)} inches`;
+        elevTextGurmukhi = `ਉੱਪਰਲਾ ਡਾਇਲ ${neededElevClicks} ਕਲਿੱਕ "UP" ਵੱਲ`;
+      } else if (meanY > 0.08) {
+        // Group is HIGH -> Must move bullets DOWN
+        elevDirLabel.innerText = `DIAL ${neededElevClicks} CLICKS "DOWN"`;
+        elevDirLabel.className = 'text-base sm:text-lg font-black text-amber-300 block';
+        elevDetailLabel.innerText = `Lowers group centroid by ${Math.abs(meanY).toFixed(2)} inches`;
+        elevTextGurmukhi = `ਉੱਪਰਲਾ ਡਾਇਲ ${neededElevClicks} ਕਲਿੱਕ "DOWN" ਵੱਲ`;
+      } else {
+        elevDirLabel.innerText = 'ELEVATION CENTERED';
+        elevDirLabel.className = 'text-base sm:text-lg font-black text-slate-400 block';
+        elevDetailLabel.innerText = 'Within 0.1" of elevation zero';
+        elevTextGurmukhi = 'ਉਚਾਈ (Elevation) ਸਹੀ ਹੈ';
+      }
+
+      // Windage Directive
+      const windDirLabel = document.getElementById('windDirectionLabel');
+      const windDetailLabel = document.getElementById('windDetailLabel');
+      let windTextGurmukhi = "";
+
+      if (meanX < -0.08) {
+        // Group is LEFT -> Must move bullets RIGHT
+        windDirLabel.innerText = `DIAL ${neededWindClicks} CLICKS "RIGHT"`;
+        windDirLabel.className = 'text-base sm:text-lg font-black text-emerald-300 block';
+        windDetailLabel.innerText = `Pushes group centroid right by ${Math.abs(meanX).toFixed(2)} inches`;
+        windTextGurmukhi = `ਸੱਜਾ ਡਾਇਲ ${neededWindClicks} ਕਲਿੱਕ "RIGHT" ਵੱਲ`;
+      } else if (meanX > 0.08) {
+        // Group is RIGHT -> Must move bullets LEFT
+        windDirLabel.innerText = `DIAL ${neededWindClicks} CLICKS "LEFT"`;
+        windDirLabel.className = 'text-base sm:text-lg font-black text-emerald-300 block';
+        windDetailLabel.innerText = `Pushes group centroid left by ${Math.abs(meanX).toFixed(2)} inches`;
+        windTextGurmukhi = `ਸੱਜਾ ਡਾਇਲ ${neededWindClicks} ਕਲਿੱਕ "LEFT" ਵੱਲ`;
+      } else {
+        windDirLabel.innerText = 'WINDAGE CENTERED';
+        windDirLabel.className = 'text-base sm:text-lg font-black text-slate-400 block';
+        windDetailLabel.innerText = 'Within 0.1" of horizontal zero';
+        windTextGurmukhi = 'ਖਿਤਿਜੀ (Windage) ਸਹੀ ਹੈ';
+      }
+
+      // Gurmukhi Sentence Synthesis
+      const gurmukhiEl = document.getElementById('gurmukhiInstruction');
+      if (gurmukhiEl) {
+        gurmukhiEl.innerText = `${elevTextGurmukhi} ਅਤੇ ${windTextGurmukhi} ਘੁਮਾਓ।`;
+      }
+    }
+
+    function updateClickValueKpi(calculatedInches = null) {
+      const clickValEl = document.getElementById('clickValueInchDisplay');
+      const clickMoaEl = document.getElementById('clickValueMoaDisplay');
+
+      const inchesPerMoaAtDistance = (currentDistanceYards / 100) * 1.047;
+      let valInches = calculatedInches;
+
+      if (!valInches) {
+        if (currentClickType === "mil_0.1") {
+          valInches = 0.36 * (currentDistanceYards / 100);
+        } else {
+          valInches = parseFloat(currentClickType) * inchesPerMoaAtDistance;
+        }
+      }
+
+      if (clickValEl) clickValEl.innerText = `${valInches.toFixed(2)}" / click`;
+
+      if (clickMoaEl) {
+        if (currentClickType === "mil_0.1") {
+          clickMoaEl.innerText = '(0.1 MIL / 0.34 MOA)';
+        } else {
+          clickMoaEl.innerText = `(${parseFloat(currentClickType).toFixed(2)} MOA)`;
+        }
+      }
+    }
+
+    // Initialize application on DOM ready
+    window.addEventListener('DOMContentLoaded', () => {
+      recalculateZero();
+      safeRenderIcons();
+    });
+  </script>
+</body>
+</html>
