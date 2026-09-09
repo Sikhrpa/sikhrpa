@@ -183,10 +183,12 @@
         <span class="flex items-center gap-1 font-bold text-slate-900">
           <i data-lucide="award" class="w-3.5 h-3.5 text-emerald-600"></i> EIN: 42-2595402
         </span>
+
         <span class="text-slate-300">•</span>
         <span class="flex items-center gap-1">
           <i data-lucide="check" class="w-3.5 h-3.5 text-blue-700"></i> IRC § 170(f)(8) Compliant
         </span>
+
         <span class="text-slate-300">•</span>
         <span class="text-amber-800 font-semibold">1–2 Business Day Turnaround</span>
       </div>
@@ -582,7 +584,7 @@
         Sikh Rifle and Pistol Association • California 501(c)(3) Nonprofit Public Benefit Corporation
       </p>
       <p class="text-slate-500 text-[11px] leading-relaxed mb-4">
-        1075 Mohawk St, South Lake Tahoe, CA 96150 • Federal EIN: 42-2595402 • Direct Contact: president@sikhrpa.org
+        Federal EIN: 42-2595402 • Direct Contact: president@sikhrpa.org
       </p>
       <div class="flex flex-wrap items-center justify-center gap-3 font-semibold text-slate-600 text-xs">
         <a href="./" class="hover:text-blue-900">Home</a>
@@ -622,7 +624,6 @@
       const file = e.target.files[0];
       if (!file) return;
 
-      // 10MB maximum limit
       if (file.size > 10 * 1024 * 1024) {
         alert("File exceeds maximum allowed size of 10MB. Please select a smaller file or compressed PDF.");
         e.target.value = '';
@@ -634,7 +635,7 @@
         attachedFilePayload = {
           file_name: file.name,
           file_type: file.type || 'application/octet-stream',
-          file_data: evt.target.result // Base64 Data URL
+          file_data: evt.target.result
         };
 
         document.getElementById('uploadDropzone').classList.add('hidden');
@@ -655,7 +656,6 @@
       lucide.createIcons();
     }
 
-    // Dynamic UI adjustments when request type changes
     function updateRequestTypeUI(selectedType) {
       const taxLabel = document.getElementById('typeLabelTax');
       const outPocketTaxLabel = document.getElementById('typeLabelOutPocketTax');
@@ -741,7 +741,6 @@
           body: JSON.stringify(payload)
         });
 
-        // Show success card and hide form
         form.classList.add('hidden');
         successCard.classList.remove('hidden');
         lucide.createIcons();
@@ -767,7 +766,6 @@
       updateRequestTypeUI('Direct Donation Receipt (IRS § 170)');
     }
 
-    // Set today as default date in picker
     document.addEventListener('DOMContentLoaded', () => {
       const today = new Date().toISOString().split('T')[0];
       const dateEl = document.getElementById('txDate');
