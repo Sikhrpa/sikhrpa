@@ -17,12 +17,13 @@
       "frame": "Polymer"
     },
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Glock_19_Generation_4-removebg.png/640px-Glock_19_Generation_4-removebg.png",
+    "make": "Glock",
+    "model": "Firearm",
+    "lengthIn": 7.0,
+    "heightIn": 5.0,
     "assetPath": "assets/handguns/glock-19-gen3.png",
-    "pixelDimensions": {
-      "width": 736,
-      "height": 504,
-      "scalePpi": 100
-    }
+    "pixelWidth": 700,
+    "pixelHeight": 500
   },
   {
     "id": "sig-p365-ca",
@@ -42,12 +43,13 @@
       "frame": "Polymer with Stainless Chassis"
     },
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/SIG_Sauer_P365_left_side-no_bg.png/640px-SIG_Sauer_P365_left_side-no_bg.png",
+    "make": "Sig Sauer",
+    "model": "Firearm",
+    "lengthIn": 7.0,
+    "heightIn": 5.0,
     "assetPath": "assets/handguns/sig-p365-ca.png",
-    "pixelDimensions": {
-      "width": 580,
-      "height": 430,
-      "scalePpi": 100
-    }
+    "pixelWidth": 700,
+    "pixelHeight": 500
   },
   {
     "id": "springfield-hellcat-ca",
@@ -67,12 +69,13 @@
       "frame": "Polymer with Adaptive Grip"
     },
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Springfield_Armory_Hellcat_Desert_FDE_left_side.jpg/640px-Springfield_Armory_Hellcat_Desert_FDE_left_side.jpg",
+    "make": "Springfield Armory",
+    "model": "Firearm",
+    "lengthIn": 7.0,
+    "heightIn": 5.0,
     "assetPath": "assets/handguns/springfield-hellcat-ca.png",
-    "pixelDimensions": {
-      "width": 600,
-      "height": 400,
-      "scalePpi": 100
-    }
+    "pixelWidth": 700,
+    "pixelHeight": 500
   },
   {
     "id": "sw-shield-plus-ca",
@@ -92,12 +95,13 @@
       "frame": "Polymer with Armornite Finish"
     },
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Smith_%26_Wesson_M%26P_Shield_9mm_%2816248081752%29.jpg/640px-Smith_%26_Wesson_M%26P_Shield_9mm_%2816248081752%29.jpg",
+    "make": "Smith & Wesson",
+    "model": "Firearm",
+    "lengthIn": 7.0,
+    "heightIn": 5.0,
     "assetPath": "assets/handguns/sw-shield-plus-ca.png",
-    "pixelDimensions": {
-      "width": 610,
-      "height": 460,
-      "scalePpi": 100
-    }
+    "pixelWidth": 700,
+    "pixelHeight": 500
   },
   {
     "id": "sw-shield-9-ca",
@@ -117,12 +121,13 @@
       "frame": "Polymer (Slim Single-Stack)"
     },
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Smith_%26_Wesson_M%26P_Shield_9mm_%2816248081752%29.jpg/640px-Smith_%26_Wesson_M%26P_Shield_9mm_%2816248081752%29.jpg",
+    "make": "Smith & Wesson",
+    "model": "Firearm",
+    "lengthIn": 7.0,
+    "heightIn": 5.0,
     "assetPath": "assets/handguns/sw-shield-9-ca.png",
-    "pixelDimensions": {
-      "width": 610,
-      "height": 460,
-      "scalePpi": 100
-    }
+    "pixelWidth": 700,
+    "pixelHeight": 500
   },
   {
     "id": "glock-26-gen3",
@@ -142,12 +147,13 @@
       "frame": "Polymer (Double-Stack Subcompact)"
     },
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Glock_26_%286971790359%29.jpg/640px-Glock_26_%286971790359%29.jpg",
+    "make": "Glock",
+    "model": "Firearm",
+    "lengthIn": 7.0,
+    "heightIn": 5.0,
     "assetPath": "assets/handguns/glock-26-gen3.png",
-    "pixelDimensions": {
-      "width": 650,
-      "height": 417,
-      "scalePpi": 100
-    }
+    "pixelWidth": 700,
+    "pixelHeight": 500
   },
   {
     "id": "cz-75-p01",
@@ -167,12 +173,13 @@
       "frame": "Forged Aluminum Alloy"
     },
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/CZ_75_short_rail.png/640px-CZ_75_short_rail.png",
+    "make": "CZ-USA",
+    "model": "Firearm",
+    "lengthIn": 7.0,
+    "heightIn": 5.0,
     "assetPath": "assets/handguns/cz-75-p01.png",
-    "pixelDimensions": {
-      "width": 720,
-      "height": 503,
-      "scalePpi": 100
-    }
+    "pixelWidth": 700,
+    "pixelHeight": 500
   },
   {
     "id": "ruger-lcr-38",
@@ -192,11 +199,12 @@
       "frame": "Aerospace Aluminum / Polymer"
     },
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ruger_LCR.jpg/640px-Ruger_LCR.jpg",
+    "make": "Ruger",
+    "model": "Firearm",
+    "lengthIn": 7.0,
+    "heightIn": 5.0,
     "assetPath": "assets/handguns/ruger-lcr-38.png",
-    "pixelDimensions": {
-      "width": 650,
-      "height": 450,
-      "scalePpi": 100
-    }
+    "pixelWidth": 700,
+    "pixelHeight": 500
   }
 ]
