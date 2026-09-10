@@ -1,46 +1,46 @@
 name: Process Handgun Assets & Calibrate Scale
 
 on:
-workflow_dispatch:
-push:
-paths:
-- 'data/handgun_manifest.json'
-- 'scripts/process_handgun_assets.py'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/handgun_manifest.json'
+      - 'scripts/process_handgun_assets.py'
 
 permissions:
-contents: write
+  contents: write
 
 jobs:
-calibrate-assets:
-runs-on: ubuntu-latest
+  calibrate-assets:
+    runs-on: ubuntu-latest
 
-steps:
-  - name: Checkout Repository
-    uses: actions/checkout@v4
+  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
-  - name: Set up Python 3.11
-    uses: actions/setup-python@v5
-    with:
-      python-version: '3.11'
-      cache: 'pip'
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
 
-  - name: Install Imaging Dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install pillow
+    - name: Install Imaging Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pillow
 
-  - name: Execute Handgun Scrubbing & Scaling Pipeline
-    run: |
-      python scripts/process_handgun_assets.py
+    - name: Execute Handgun Scrubbing & Scaling Pipeline
+      run: |
+        python scripts/process_handgun_assets.py
 
-  - name: Commit and Push Calibrated Assets
-    run: |
-      git config --global user.name "SikhRPA Asset Bot"
-      git config --global user.email "bot@sikhrpa.org"
-      git add assets/handguns/*.png data/handgun_database.json data/handgun_manifest.json
-      if git diff --staged --quiet; then
-        echo "No asset or database changes detected. Working tree is clean."
-      else
-        git commit -m "Automated Handgun Scale & Alpha Calibration [skip ci]"
-        git push
+    - name: Commit and Push Calibrated Assets
+      run: |
+        git config --global user.name "SikhRPA Asset Bot"
+        git config --global user.email "bot@sikhrpa.org"
+        git add assets/handguns/*.png data/handgun_database.json data/handgun_manifest.json
+        if git diff --staged --quiet; then
+          echo "No asset or database changes detected. Working tree is clean."
+        else
+          git commit -m "Automated Handgun Scale & Alpha Calibration [skip ci]"
+          git push
       fi
