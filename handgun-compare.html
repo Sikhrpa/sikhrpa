@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>California Handgun Size & CCW Comparison Tool | SikhRPA 501(c)(3)</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TRVZCG17K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4TRVZCG17K');
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="California Handgun Size & CCW Comparison Tool | SikhRPA 501(c)(3)" />
+  <meta name="description" content="Compare dimensions, silhouettes, and specs of popular California Roster and CCW handguns side-by-side or stacked in 1:1 scale overlay with HandgunHero-style alignments." />
+  <meta name="keywords" content="handgun comparison California, California handgun roster size, CCW handgun size comparison, Glock 19 vs P365, HandgunHero California, SikhRPA CCW tools" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN with Fallback -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (typeof lucide === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"><\/script>');
+    }
+  </script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Mahee:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap');
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .gurmukhi {
+      font-family: 'Mukta Mahee', 'Raavi', 'Gurmukhi MN', sans-serif;
+      line-height: 1.35;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    /* Physical 1-inch Grid Pattern (50px = 1.0 inch) */
+    .ruler-grid-inch {
+      background-image: 
+        linear-gradient(to right, rgba(203, 213, 225, 0.4) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(203, 213, 225, 0.4) 1px, transparent 1px),
+        linear-gradient(to right, rgba(148, 163, 184, 0.8) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.8) 1px, transparent 1px);
+      background-size: 10px 10px, 10px 10px, 50px 50px, 50px 50px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
+
+  <!-- Accessibility Skip Link -->
+  <a 
+    href="#main-content" 
+    class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-600 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-xl focus:outline-none"
+  >
+    Skip to main content
+  </a>
+
+  <!-- Top Navigation Header -->
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Return Link -->
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
+          <span class="hidden xs:inline">Home</span>
+        </a>
+        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <img 
+            src="srpa-logo.png" 
+            alt="SikhRPA Logo" 
+            class="h-8 sm:h-9 w-auto object-contain shrink-0"
+            onerror="this.style.display='none'"
+          />
+          <a href="./" class="font-bold text-sm sm:text-lg tracking-tight text-slate-900 hover:text-blue-900 transition-colors truncate">
+            <span class="underline decoration-amber-600 decoration-2 underline-offset-4">SikhRPA</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+        <a href="zero-optics" class="hover:text-amber-600 transition-colors">Zero Optics</a>
+        <a href="shot-diagnosis" class="hover:text-amber-600 transition-colors">Shot Diagnostic</a>
+        <a href="buyer-guide" class="hover:text-amber-600 transition-colors">Buyer's Guide</a>
+        <a href="fsc-quiz" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-slate-700 hover:bg-blue-50 hover:text-blue-950 font-bold text-xs transition-colors">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span>FSC Quiz</span>
+        </a>
+        <span class="inline-flex items-center gap-1.5 text-blue-950 font-bold bg-blue-50 px-3 py-1 rounded-full border border-blue-200 text-xs shadow-sm">
+          <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span>Handgun Comparison</span>
+        </span>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button
+          type="button"
+          onclick="openAttributionModal()"
+          class="inline-flex px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 transition-colors items-center gap-1.5 shadow-2xs touch-target"
+          title="View Asset Attribution & Licensing Provenance"
+        >
+          <i data-lucide="info" class="w-3.5 h-3.5 text-blue-900"></i>
+          <span class="hidden sm:inline">Attribution & Sources</span>
+        </button>
+
+        <a
+          href="donate"
+          class="inline-flex px-3.5 py-1.5 text-xs font-bold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors items-center gap-1.5 shadow-sm touch-target"
+          title="Tax-Deductible 501(c)(3) Giving"
+        >
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-600 fill-rose-600"></i>
+          <span>Donate</span>
+        </a>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button
+          type="button"
+          id="mobileMenuBtn"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 focus:outline-none transition-colors touch-target flex items-center justify-center"
+          aria-label="Toggle Navigation Menu"
+          aria-expanded="false"
+        >
+          <i id="menuIcon" data-lucide="menu" class="w-5 h-5"></i>
+          <i id="closeIcon" data-lucide="x" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div 
+      id="mobileMenuDrawer" 
+      class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+    >
+      <a href="./" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        Return to Homepage
+      </a>
+      <a href="zero-optics" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        How to Zero Optics (Click Calculator)
+      </a>
+      <a href="shot-diagnosis" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        Pistol Shot Diagnostic & Analyzer
+      </a>
+      <a href="buyer-guide" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        First-Time Buyer's Guide
+      </a>
+      <a href="fsc-quiz" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50">
+        FSC Practice Quiz
+      </a>
+      <button 
+        type="button" 
+        onclick="openAttributionModal(); closeMobileMenu();" 
+        class="w-full text-left px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 flex items-center justify-between"
+      >
+        <span>Asset Attribution & Provenance</span>
+        <i data-lucide="info" class="w-4 h-4 text-slate-400"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+    
+    <!-- Hero Header Banner -->
+    <div class="mb-8 text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-950 border border-blue-200 mb-3 shadow-sm">
+        <i data-lucide="scale" class="w-4 h-4 text-amber-600 shrink-0"></i>
+        <span>California Handgun Roster & CCW Sizing • 501(c)(3) Educational Tool</span>
+      </div>
+      
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-2">
+        California Handgun Size & CCW Comparison
+      </h1>
+      
+      <p class="gurmukhi text-base sm:text-xl font-bold text-blue-950 mb-3">
+        ਕੈਲੀਫੋਰਨੀਆ ਹੈਂਡਗੰਨ ਸਾਈਜ਼ ਅਤੇ ਸੀ.ਸੀ.ਡਬਲਯੂ ਤੁਲਨਾ ਟੂਲ (HandgunHero ਮਾਡਲ)
+      </p>
+
+      <p class="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
+        Compare dimensions, concealability, and profiles of popular California Roster and CCW handguns. Overlay models at <strong>1:1 true physical scale</strong>, align by slide, trigger, or muzzle, and view precise mathematical deltas.
+      </p>
+    </div>
+
+    <!-- Primary Comparison Selector Strip -->
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-4 sm:p-6 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+        
+        <!-- Firearm A Selector (Left) -->
+        <div class="md:col-span-5 space-y-1.5">
+          <div class="flex items-center justify-between">
+            <label for="selectGunA" class="text-xs font-black text-blue-900 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span>
+              <span>Handgun A (Primary Baseline):</span>
+            </label>
+            <span id="badgeRosterGunA" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+              CA Roster Legal
+            </span>
+          </div>
+          <select 
+            id="selectGunA" 
+            onchange="onGunChange('A', this.value)"
+            class="w-full px-3.5 py-2.5 rounded-xl border-2 border-blue-200 font-bold text-xs sm:text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-900 touch-target cursor-pointer"
+          >
+            <!-- Dynamically populated via JS -->
+          </select>
+        </div>
+
+        <!-- Swap Button (Center) -->
+        <div class="md:col-span-2 flex items-center justify-center pt-2 md:pt-4">
+          <button 
+            type="button" 
+            onclick="swapHandguns()" 
+            class="p-2.5 rounded-xl bg-slate-100 hover:bg-amber-50 border border-slate-300 hover:border-amber-400 text-slate-700 hover:text-amber-950 font-bold transition-all flex items-center gap-1.5 shadow-2xs touch-target"
+            title="Swap Handgun A and Handgun B"
+          >
+            <i data-lucide="arrow-left-right" class="w-4 h-4 text-amber-600"></i>
+            <span class="text-xs font-bold md:hidden">Swap Models</span>
+          </button>
+        </div>
+
+        <!-- Firearm B Selector (Right) -->
+        <div class="md:col-span-5 space-y-1.5">
+          <div class="flex items-center justify-between">
+            <label for="selectGunB" class="text-xs font-black text-amber-700 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+              <span>Handgun B (Comparison Target):</span>
+            </label>
+            <span id="badgeRosterGunB" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+              CA Roster Legal
+            </span>
+          </div>
+          <select 
+            id="selectGunB" 
+            onchange="onGunChange('B', this.value)"
+            class="w-full px-3.5 py-2.5 rounded-xl border-2 border-amber-300 font-bold text-xs sm:text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 touch-target cursor-pointer"
+          >
+            <!-- Dynamically populated via JS -->
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Visual Stage View Controls & HandgunHero Alignments -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm mb-6 flex flex-wrap items-center justify-between gap-3 text-xs">
+      
+      <!-- Left: View Mode (Overlay vs Side-by-Side) -->
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-700 uppercase tracking-wider text-[11px]">View Mode:</span>
+        <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+          <button 
+            type="button" 
+            id="viewOverlayBtn"
+            onclick="setViewMode('overlay')" 
+            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm flex items-center gap-1.5 touch-target"
+          >
+            <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Overlay (Stacked)</span>
+          </button>
+          <button 
+            type="button" 
+            id="viewSideBtn"
+            onclick="setViewMode('sideBySide')" 
+            class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900 flex items-center gap-1.5 touch-target"
+          >
+            <i data-lucide="columns-2" class="w-3.5 h-3.5"></i>
+            <span>Side-by-Side</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Center: Alignments (Beavertail, Trigger, Muzzle, Base) -->
+      <div id="alignmentControlGroup" class="flex items-center gap-2">
+        <label for="alignSelect" class="font-bold text-slate-700 uppercase tracking-wider text-[11px]">Align By:</label>
+        <select 
+          id="alignSelect" 
+          onchange="onAlignChange(this.value)"
+          class="px-3 py-1.5 rounded-xl border border-slate-300 font-bold text-xs text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-blue-900 touch-target cursor-pointer"
+        >
+          <option value="beavertail">Beavertail / Rear of Slide (Best for CCW)</option>
+          <option value="trigger">Trigger Guard / Center Mass</option>
+          <option value="muzzle">Front Muzzle</option>
+          <option value="base">Base of Grip / Magazine</option>
+        </select>
+      </div>
+
+      <!-- Right: Render Style & Grid Toggles -->
+      <div class="flex items-center gap-3">
+        <!-- Render Style Toggle -->
+        <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+          <button 
+            type="button" 
+            id="stylePhotoBtn"
+            onclick="setRenderStyle('photo')" 
+            class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-2xs flex items-center gap-1"
+          >
+            <i data-lucide="camera" class="w-3 h-3 text-amber-600"></i>
+            <span>Photos</span>
+          </button>
+          <button 
+            type="button" 
+            id="styleSilhouetteBtn"
+            onclick="setRenderStyle('silhouette')" 
+            class="px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900 flex items-center gap-1"
+          >
+            <i data-lucide="shapes" class="w-3 h-3"></i>
+            <span>Silhouettes</span>
+          </button>
+        </div>
+
+        <!-- Opacity Slider for Gun B -->
+        <div id="opacityControlGroup" class="flex items-center gap-2 min-w-[150px]">
+          <span class="text-[11px] font-semibold text-slate-500 whitespace-nowrap">Opacity B:</span>
+          <input 
+            type="range" 
+            id="opacitySlider" 
+            min="10" 
+            max="100" 
+            value="65" 
+            oninput="onOpacityChange(this.value)"
+            class="w-20 accent-amber-600 cursor-pointer"
+          />
+          <span id="opacityLabel" class="font-mono text-[11px] text-slate-700 font-bold w-7">65%</span>
+        </div>
+
+        <!-- Ruler Grid Toggle Button -->
+        <button 
+          type="button" 
+          id="toggleGridBtn"
+          onclick="togglePhysicalGrid()"
+          class="p-2 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 transition-colors"
+          title="Toggle 1-inch physical measurement grid"
+        >
+          <i data-lucide="grid" class="w-4 h-4 text-blue-900"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- PRIMARY VISUAL COMPARISON STAGE (1:1 Physical Scale Simulation) -->
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-4 sm:p-6 mb-8 overflow-hidden">
+      
+      <!-- Stage Status & Scale Pill -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-200">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Visual Stage</span>
+          <span class="text-[10px] font-mono font-bold bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
+            Scale: 50 px = 1.0 Inch (1.97 px / mm)
+          </span>
+        </div>
+
+        <div class="flex items-center gap-4 text-xs font-semibold">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-blue-600 inline-block"></span>
+            <span id="legendGunA" class="font-bold text-blue-950">Gun A: Glock 19</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+            <span id="legendGunB" class="font-bold text-amber-950">Gun B: Sig P365</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Responsive Canvas Container -->
+      <div 
+        id="visualStageWrapper" 
+        class="relative w-full min-h-[360px] sm:min-h-[420px] rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center p-6 overflow-hidden select-none ruler-grid-inch"
+      >
+        <!-- The Dynamic Visual Stage injected by JavaScript -->
+        <div id="visualStage" class="relative transition-all duration-200 flex items-center justify-center">
+          <!-- Injected dynamically -->
+        </div>
+
+        <!-- Physical Scale Ruler Overlay (Bottom-Left Corner) -->
+        <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur border border-slate-300 rounded-lg p-1.5 text-[10px] font-mono shadow-2xs flex items-center gap-2">
+          <div class="w-[50px] h-2 bg-slate-800 border border-slate-900"></div>
+          <span class="font-bold text-slate-800">1.0" (25.4mm)</span>
+        </div>
+      </div>
+
+      <!-- Quick Alignment Helper Cues -->
+      <div class="mt-3 flex flex-wrap items-center justify-between text-[11px] text-slate-500 px-1 font-mono">
+        <span id="currentAlignmentNotice">Alignment: Beavertail / Rear of Slide</span>
+        <span>Tip: Switch between Photos and Silhouettes or adjust Opacity B for outline contrasts.</span>
+      </div>
+    </div>
+
+    <!-- MATHEMATICAL DELTA & CONCEALABILITY CALLOUT CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      
+      <!-- Delta 1: Length Comparison -->
+      <div class="p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Overall Length Difference:</span>
+          <div class="flex items-baseline gap-2 mt-1">
+            <span id="deltaLengthValue" class="text-xl font-extrabold font-mono text-slate-900">-1.56"</span>
+            <span id="deltaLengthPercent" class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">-21% Shorter</span>
+          </div>
+          <p id="deltaLengthText" class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Gun B is substantially shorter, reducing printing along the holster line during inside-the-waistband (IWB) carry.
+          </p>
+        </div>
+        <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+          <span>Keel Effect (Holster Stability)</span>
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-blue-900"></i>
+        </div>
+      </div>
+
+      <!-- Delta 2: Height (Grip Length / Printing) -->
+      <div class="p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Grip Height (Printing Factor):</span>
+          <div class="flex items-baseline gap-2 mt-1">
+            <span id="deltaHeightValue" class="text-xl font-extrabold font-mono text-slate-900">-0.74"</span>
+            <span id="deltaHeightPercent" class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">-15% Lower</span>
+          </div>
+          <p id="deltaHeightText" class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Grip height is the #1 factor causing concealed carry printing under t-shirts. Gun B offers a much tighter silhouette.
+          </p>
+        </div>
+        <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+          <span>Printing Potential</span>
+          <i data-lucide="eye-off" class="w-3.5 h-3.5 text-amber-600"></i>
+        </div>
+      </div>
+
+      <!-- Delta 3: Weight & Carry Footprint -->
+      <div class="p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Weight Difference (Empty):</span>
+          <div class="flex items-baseline gap-2 mt-1">
+            <span id="deltaWeightValue" class="text-xl font-extrabold font-mono text-slate-900">-5.8 oz</span>
+            <span id="deltaWeightPercent" class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">-25% Lighter</span>
+          </div>
+          <p id="deltaWeightText" class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Carrying Gun B saves over a third of a pound on your gun belt, providing greater comfort during 12+ hour daily carry.
+          </p>
+        </div>
+        <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+          <span>Belt Fatigue</span>
+          <i data-lucide="activity" class="w-3.5 h-3.5 text-rose-600"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DETAILED SPECIFICATIONS COMPARISON TABLE -->
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-sm p-5 sm:p-8 mb-10 overflow-hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-200">
+        <div>
+          <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
+            Side-by-Side Dimensional & Mechanical Specifications
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Authoritative manufacturer specifications cross-referenced with California DOJ roster data.</p>
+        </div>
+        <span class="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full self-start sm:self-auto">
+          Units: Inches (in) • Ounces (oz)
+        </span>
+      </div>
+
+      <div class="overflow-x-auto custom-scrollbar">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-slate-200 bg-slate-50 text-[11px] uppercase tracking-wider text-slate-600 font-bold">
+              <th class="py-3 px-4">Specification / Dimension</th>
+              <th id="thGunA" class="py-3 px-4 text-blue-900">Handgun A: Glock 19</th>
+              <th id="thGunB" class="py-3 px-4 text-amber-800">Handgun B: Sig P365</th>
+              <th class="py-3 px-4 text-right">Direct Delta (Diff)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 font-medium">
+            <!-- Overall Length -->
+            <tr class="hover:bg-slate-50/80 transition-colors">
+              <td class="py-3 px-4 font-bold text-slate-900">Overall Length (Slide to Muzzle)</td>
+              <td id="specLengthA" class="py-3 px-4 font-mono font-semibold text-slate-800">7.36" (187 mm)</td>
+              <td id="specLengthB" class="py-3 px-4 font-mono font-semibold text-slate-800">5.80" (147 mm)</td>
+              <td id="specLengthDiff" class="py-3 px-4 text-right font-mono font-bold text-emerald-700">-1.56" (-21%)</td>
+            </tr>
+            <!-- Overall Height -->
+            <tr class="hover:bg-slate-50/80 transition-colors">
+              <td class="py-3 px-4 font-bold text-slate-900">Overall Height (Base to Sights)</td>
+              <td id="specHeightA" class="py-3 px-4 font-mono font-semibold text-slate-800">5.04" (128 mm)</td>
+              <td id="specHeightB" class="py-3 px-4 font-mono font-semibold text-slate-800">4.30" (109 mm)</td>
+              <td id="specHeightDiff" class="py-3 px-4 text-right font-mono font-bold text-emerald-700">-0.74" (-15%)</td>
+            </tr>
+            <!-- Width / Thickness -->
+            <tr class="hover:bg-slate-50/80 transition-colors">
+              <td class="py-3 px-4 font-bold text-slate-900">Width / Thickness</td>
+              <td id="specWidthA" class="py-3 px-4 font-mono font-semibold text-slate-800">1.26" (32 mm)</td>
+              <td id="specWidthB" class="py-3 px-4 font-mono font-semibold text-slate-800">1.06" (27 mm)</td>
+              <td id="specWidthDiff" class="py-3 px-4 text-right font-mono font-bold text-emerald-700">-0.20" (-16%)</td>
+            </tr>
+            <!-- Barrel Length -->
+            <tr class="hover:bg-slate-50/80 transition-colors">
+              <td class="py-3 px-4 font-bold text-slate-900">Barrel Length</td>
+              <td id="specBarrelA" class="py-3 px-4 font-mono font-semibold text-slate-800">4.02"</td>
+              <td id="specBarrelB" class="py-3 px-4 font-mono font-semibold text-slate-800">3.10"</td>
+              <td id="specBarrelDiff" class="py-3 px-4 text-right font-mono font-bold text-slate-700">-0.92"</td>
+            </tr>
+            <!-- Weight (Empty Mag) -->
+            <tr class="hover:bg-slate-50/80 transition-colors">
+              <td class="py-3 px-4 font-bold text-slate-900">Weight (with Empty Magazine)</td>
+              <td id="specWeightA" class="py-3 px-4 font-mono font-semibold text-slate-800">23.6 oz (670 g)</td>
+              <td id="specWeightB" class="py-3 px-4 font-mono font-semibold text-slate-800">17.8 oz (505 g)</td>
+              <td id="specWeightDiff" class="py-3 px-4 text-right font-mono font-bold text-emerald-700">-5.8 oz (-25%)</td>
+            </tr>
+            <!-- Standard Capacity -->
+            <tr class="hover:bg-slate-50/80 transition-colors">
+              <td class="py-3 px-4 font-bold text-slate-900">Standard California Capacity</td>
+              <td id="specCapA" class="py-3 px-4 font-semibold text-slate-800">10 Rounds (CA Max)</td>
+              <td id="specCapB" class="py-3 px-4 font-semibold text-slate-800">10 Rounds (CA Max)</td>
+              <td id="specCapDiff" class="py-3 px-4 text-right font-mono text-slate-500">Identical (10 Rds)</td>
+            </tr>
+            <!-- Operating Action -->
+            <tr class="hover:bg-slate-50/80 transition-colors">
+              <td class="py-3 px-4 font-bold text-slate-900">Operating Action & Trigger</td>
+              <td id="specActionA" class="py-3 px-4 text-slate-800">Safe Action Striker</td>
+              <td id="specActionB" class="py-3 px-4 text-slate-800">Striker Fired</td>
+              <td class="py-3 px-4 text-right text-slate-400 font-mono text-xs">--</td>
+            </tr>
+            <!-- Frame Material -->
+            <tr class="hover:bg-slate-50/80 transition-colors">
+              <td class="py-3 px-4 font-bold text-slate-900">Frame Material</td>
+              <td id="specFrameA" class="py-3 px-4 text-slate-800">Polymer</td>
+              <td id="specFrameB" class="py-3 px-4 text-slate-800">Polymer w/ Stainless Chassis</td>
+              <td class="py-3 px-4 text-right text-slate-400 font-mono text-xs">--</td>
+            </tr>
+            <!-- CA DOJ Roster Status -->
+            <tr class="hover:bg-slate-50/80 transition-colors bg-blue-50/30">
+              <td class="py-3 px-4 font-bold text-blue-950">California Roster Status</td>
+              <td id="specRosterA" class="py-3 px-4 font-semibold text-emerald-800">Certified CA Roster Legal</td>
+              <td id="specRosterB" class="py-3 px-4 font-semibold text-emerald-800">Certified CA Roster Legal (Added 2024)</td>
+              <td class="py-3 px-4 text-right font-bold text-emerald-700 text-xs">Both Over-the-Counter Legal</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CCW CONCEALABILITY & CALIFORNIA ROSTER GUIDANCE -->
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      
+      <!-- Guidance Card 1: Handgun Size & CCW Footprint -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-sm space-y-3">
+        <div class="flex items-center gap-2.5 text-blue-900">
+          <div class="p-2 bg-blue-50 rounded-xl border border-blue-200">
+            <i data-lucide="compass" class="w-5 h-5 text-amber-600"></i>
+          </div>
+          <h3 class="font-extrabold text-base sm:text-lg text-slate-900">
+            How Size Governs Concealed Carry in California
+          </h3>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Many first-time California CCW permit holders purchase a full-size or standard compact handgun (like a Glock 19) only to find it uncomfortable during daily seated routines or summertime attire. 
+        </p>
+        <ul class="space-y-1.5 text-xs text-slate-700">
+          <li class="flex items-start gap-1.5">
+            <span class="text-amber-600 font-bold">•</span>
+            <span><strong>Grip Length Dictates Printing:</strong> The butt of the grip accounts for over 80% of accidental garment printing when bending over or twisting.</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-amber-600 font-bold">•</span>
+            <span><strong>Slide Length Aids Keel Principle:</strong> A slightly longer slide (e.g. 3.5" to 4.0") actually prevents the gun from tipping outward over your belt line in appendix carry (AIWB).</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <span class="text-amber-600 font-bold">•</span>
+            <span><strong>Width (Thickness) Governs Comfort:</strong> Slim micro-compacts (1.0" wide) distribute pressure much more gently against the pelvic bone than double-stacks (1.3"+ wide).</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Guidance Card 2: California Roster Context & Added Models -->
+      <div class="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-sm space-y-3">
+        <div class="flex items-center gap-2.5 text-blue-900">
+          <div class="p-2 bg-amber-50 rounded-xl border border-amber-200">
+            <i data-lucide="shield-check" class="w-5 h-5 text-amber-600"></i>
+          </div>
+          <h3 class="font-extrabold text-base sm:text-lg text-slate-900">
+            Understanding the California Roster (PC § 32000)
+          </h3>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          In California, licensed gun dealers (FFLs) may only sell new handguns listed on the <em>California Roster of Certified Handguns</em>, unless transferred via private party (PPT) or legal intra-familial gift.
+        </p>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs space-y-1">
+          <span class="font-bold text-slate-900 block">Recent 2024 Roster Expansions:</span>
+          <p class="text-slate-600 text-[11px] leading-relaxed">
+            Recent legal challenges (*Boland v. Bonta*, *Renna v. Bonta*) prompted manufacturers to release specialized California models featuring manual safeties, loaded chamber indicators (LCI), and magazine disconnect mechanisms—introducing modern models like the <strong>Sig P365</strong>, <strong>Springfield Hellcat</strong>, and <strong>M&P Shield Plus</strong> to California counters.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       ASSET ATTRIBUTION, SCRUBBING & PROVENANCE MODAL
+       ========================================================================= -->
+  <div 
+    id="attributionModal" 
+    class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="attrModalTitle"
+  >
+    <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-2xl max-w-2xl w-full p-6 sm:p-8 space-y-5 max-h-[90vh] overflow-y-auto custom-scrollbar">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+        <div class="flex items-center gap-2.5">
+          <div class="p-2 bg-blue-50 text-blue-900 rounded-xl border border-blue-200">
+            <i data-lucide="scale" class="w-5 h-5 text-amber-600"></i>
+          </div>
+          <div>
+            <h3 id="attrModalTitle" class="font-bold text-slate-900 text-base sm:text-lg">
+              Asset Provenance, Scrubbing Pipeline & Attribution
+            </h3>
+            <p class="text-[11px] text-slate-500">Methodology, licensing, and 17 U.S.C. § 107 Educational Fair Use</p>
+          </div>
+        </div>
+        <button 
+          type="button" 
+          onclick="closeAttributionModal()" 
+          class="p-2 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-600 touch-target flex items-center justify-center"
+          aria-label="Close modal"
+        >
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
+        
+        <!-- UX & Inspiration Attribution -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+          <div class="flex items-center justify-between">
+            <h4 class="font-extrabold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+              UX Design Attribution & Inspiration
+            </h4>
+            <span class="text-[10px] font-mono text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">HandgunHero.com</span>
+          </div>
+          <p class="text-slate-600 text-xs">
+            The overlay comparison format, alignment controls (Beavertail, Trigger, Muzzle, Base), and stacked transparency sliders featured in this application are directly inspired by the pioneering visual comparison UX popularized by <strong>HandgunHero.com</strong>. We gratefully acknowledge their contributions to public firearm safety and educational ergonomics.
+          </p>
+        </div>
+
+        <!-- The Automated Scrubbing & Scaling Pipeline -->
+        <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200 space-y-1.5">
+          <h4 class="font-extrabold text-blue-950 text-xs sm:text-sm flex items-center gap-1.5">
+            <i data-lucide="cpu" class="w-4 h-4 text-blue-800"></i>
+            How Assets are Scrubbed & Physically Calibrated
+          </h4>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            To achieve accurate 1:1 true physical scale comparison, raw studio photography and press assets are processed through our automated imaging pipeline (<code>scripts/process_handgun_assets.py</code>):
+          </p>
+          <ol class="list-decimal list-inside space-y-1 text-xs text-slate-700 font-mono">
+            <li><strong>Background Scrubbing:</strong> Neutral/white studio backdrops are converted to transparent alpha channels (RGBA).</li>
+            <li><strong>Tight Bounding Box Trim:</strong> All surplus empty margins are cropped tight to the physical outer extremities (muzzle to beavertail, sights to baseplate).</li>
+            <li><strong>1:1 Dimensional Scaling:</strong> Assets are resized using high-order Lanczos resampling so that pixel width and height correspond strictly to <code>lengthIn * PPI</code> and <code>heightIn * PPI</code>.</li>
+            <li><strong>EXIF & Tracking Scrub:</strong> All camera metadata, geolocation, and tracking headers are stripped.</li>
+          </ol>
+        </div>
+
+        <!-- Legal Notice: 17 U.S.C. Section 107 -->
+        <div class="p-4 rounded-xl bg-amber-50/80 border border-amber-300 space-y-1.5 text-xs text-amber-950">
+          <h4 class="font-extrabold text-amber-950 flex items-center gap-1.5">
+            <i data-lucide="shield" class="w-4 h-4 text-amber-700"></i>
+            17 U.S. Code § 107 — Non-Profit Educational Fair Use
+          </h4>
+          <p class="leading-relaxed">
+            The Sikh Rifle and Pistol Association is an IRS-recognized 501(c)(3) nonprofit public benefit corporation. Photographic images, silhouettes, and manufacturer specifications displayed in this comparison tool are utilized strictly for <strong>non-commercial, public safety, and educational comparative purposes</strong> under the Fair Use provisions of Title 17, United States Code, Section 107.
+          </p>
+          <p class="text-[11px] text-slate-600">
+            All registered product trademarks, brand names, and logos belong to their respective manufacturers (Glock Ges.m.b.H., SIG SAUER Inc., Smith & Wesson Brands, Inc., Springfield Armory, and CZ-USA). SikhRPA is not affiliated with, sponsored by, or endorsed by any firearm manufacturer.
+          </p>
+        </div>
+
+        <!-- Photographic Source Repositories -->
+        <div class="space-y-1 text-xs">
+          <span class="font-bold text-slate-900 block">Photographic Source Provenance:</span>
+          <ul class="list-disc list-inside space-y-0.5 text-slate-600 text-[11px]">
+            <li>Wikimedia Commons Creative Commons licensed media (CC BY-SA 4.0 / CC BY-SA 3.0).</li>
+            <li>Public manufacturer media press kits and distributor catalogs used under fair use.</li>
+            <li>High-precision mathematical SVG vector fallbacks generated dynamically in browser memory.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-3 border-t border-slate-200 flex items-center justify-end">
+        <button 
+          type="button" 
+          onclick="closeAttributionModal()" 
+          class="px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition-colors shadow-sm touch-target"
+        >
+          Close & Return to Comparison
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Community Safety Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10 sm:py-12 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4">
+      <img 
+        src="srpa-logo.png" 
+        alt="SikhRPA Logo" 
+        class="h-8 w-auto object-contain mx-auto mb-3 opacity-90"
+        onerror="this.style.display='none'"
+      />
+      <p class="font-semibold text-slate-800 mb-1">
+        Sikh Rifle and Pistol Association • California 501(c)(3) Nonprofit Public Benefit Corporation
+      </p>
+      <p class="text-slate-500 text-[11px] leading-relaxed mb-4">
+        Federal EIN: 42-2595402 • Direct Contact: president@sikhrpa.org
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 font-semibold text-slate-600 text-xs mb-4">
+        <a href="./" class="hover:text-blue-900">Home</a>
+        <span>•</span>
+        <a href="zero-optics" class="hover:text-blue-900">Zero Optics Tool</a>
+        <span>•</span>
+        <a href="shot-diagnosis" class="hover:text-blue-900">Shot Diagnostic</a>
+        <span>•</span>
+        <a href="buyer-guide" class="hover:text-blue-900">Buyer's Guide</a>
+        <span>•</span>
+        <a href="fsc-quiz" class="hover:text-blue-900">FSC Quiz</a>
+        <span>•</span>
+        <a href="donate" class="hover:text-blue-900">Donate</a>
+        <span>•</span>
+        <button type="button" onclick="openAttributionModal()" class="hover:text-blue-900 underline">Sources & Attribution</button>
+      </div>
+      <p class="text-xs text-blue-900 font-bold bg-blue-50 py-1 px-4 rounded-full inline-block border border-blue-200">
+        ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
+      </p>
+    </div>
+  </footer>
+
+  <!-- Application Logic & Model Database -->
+  <script>
+    // Scale definition: 50 pixels = 1.0 inch (1.97 px per mm)
+    const SCALE_PPI = 50;
+
+    // Handgun Database focused on popular California Roster & CCW models with direct photo assets
+    const HANDGUN_DATABASE = [
+      {
+        id: "glock-19-gen3",
+        name: "Glock 19 Gen 3",
+        brand: "Glock",
+        caliber: "9x19mm",
+        category: "Compact",
+        rosterStatus: "Certified CA Roster Legal",
+        assetPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Glock_19_Generation_4-removebg.png/640px-Glock_19_Generation_4-removebg.png",
+        specs: {
+          lengthIn: 7.36,
+          heightIn: 5.04,
+          widthIn: 1.26,
+          barrelIn: 4.02,
+          weightOz: 23.6,
+          capacity: "10 Rounds (CA Max)",
+          action: "Safe Action Striker",
+          frame: "Polymer"
+        }
+      },
+      {
+        id: "sig-p365-ca",
+        name: "Sig Sauer P365 (CA Model)",
+        brand: "Sig Sauer",
+        caliber: "9x19mm",
+        category: "Micro-Compact",
+        rosterStatus: "Certified CA Roster Legal (Added 2024)",
+        assetPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/SIG_Sauer_P365_left_side-no_bg.png/640px-SIG_Sauer_P365_left_side-no_bg.png",
+        specs: {
+          lengthIn: 5.80,
+          heightIn: 4.30,
+          widthIn: 1.06,
+          barrelIn: 3.10,
+          weightOz: 17.8,
+          capacity: "10 Rounds (CA Max)",
+          action: "Striker Fired",
+          frame: "Polymer with Stainless Chassis"
+        }
+      },
+      {
+        id: "springfield-hellcat-ca",
+        name: "Springfield Hellcat OSP (CA)",
+        brand: "Springfield Armory",
+        caliber: "9x19mm",
+        category: "Micro-Compact",
+        rosterStatus: "Certified CA Roster Legal (Added 2024)",
+        assetPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Springfield_Armory_Hellcat_Desert_FDE_left_side.jpg/640px-Springfield_Armory_Hellcat_Desert_FDE_left_side.jpg",
+        specs: {
+          lengthIn: 6.00,
+          heightIn: 4.00,
+          widthIn: 1.00,
+          barrelIn: 3.00,
+          weightOz: 17.9,
+          capacity: "10 Rounds (CA Max)",
+          action: "Striker Fired",
+          frame: "Polymer with Adaptive Grip"
+        }
+      },
+      {
+        id: "sw-shield-plus-ca",
+        name: "S&W M&P Shield Plus (CA)",
+        brand: "Smith & Wesson",
+        caliber: "9x19mm",
+        category: "Subcompact",
+        rosterStatus: "Certified CA Roster Legal (Added 2024)",
+        assetPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Smith_%26_Wesson_M%26P_Shield_9mm_%2816248081752%29.jpg/640px-Smith_%26_Wesson_M%26P_Shield_9mm_%2816248081752%29.jpg",
+        specs: {
+          lengthIn: 6.10,
+          heightIn: 4.60,
+          widthIn: 1.10,
+          barrelIn: 3.10,
+          weightOz: 20.2,
+          capacity: "10 Rounds (CA Max)",
+          action: "Striker Fired",
+          frame: "Polymer with Armornite Finish"
+        }
+      },
+      {
+        id: "sw-shield-9-ca",
+        name: "S&W M&P Shield 9mm Gen 1 (CA)",
+        brand: "Smith & Wesson",
+        caliber: "9x19mm",
+        category: "Subcompact",
+        rosterStatus: "Certified CA Roster Legal",
+        assetPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Smith_%26_Wesson_M%26P_Shield_9mm_%2816248081752%29.jpg/640px-Smith_%26_Wesson_M%26P_Shield_9mm_%2816248081752%29.jpg",
+        specs: {
+          lengthIn: 6.10,
+          heightIn: 4.60,
+          widthIn: 0.95,
+          barrelIn: 3.10,
+          weightOz: 20.8,
+          capacity: "7 / 8 Rounds",
+          action: "Striker Fired",
+          frame: "Polymer (Slim Single-Stack)"
+        }
+      },
+      {
+        id: "glock-26-gen3",
+        name: "Glock 26 Gen 3 (Baby Glock)",
+        brand: "Glock",
+        caliber: "9x19mm",
+        category: "Subcompact",
+        rosterStatus: "Certified CA Roster Legal",
+        assetPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Glock_26_%286971790359%29.jpg/640px-Glock_26_%286971790359%29.jpg",
+        specs: {
+          lengthIn: 6.50,
+          heightIn: 4.17,
+          widthIn: 1.26,
+          barrelIn: 3.43,
+          weightOz: 21.5,
+          capacity: "10 Rounds (CA Max)",
+          action: "Safe Action Striker",
+          frame: "Polymer (Double-Stack Subcompact)"
+        }
+      },
+      {
+        id: "cz-75-p01",
+        name: "CZ 75 P-01 (Decocker)",
+        brand: "CZ-USA",
+        caliber: "9x19mm",
+        category: "Compact",
+        rosterStatus: "Certified CA Roster Legal",
+        assetPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/CZ_75_short_rail.png/640px-CZ_75_short_rail.png",
+        specs: {
+          lengthIn: 7.20,
+          heightIn: 5.03,
+          widthIn: 1.38,
+          barrelIn: 3.75,
+          weightOz: 28.1,
+          capacity: "10 Rounds (CA Max)",
+          action: "DA/SA with Decocker",
+          frame: "Forged Aluminum Alloy"
+        }
+      },
+      {
+        id: "ruger-lcr-38",
+        name: "Ruger LCR .38 Special +P",
+        brand: "Ruger",
+        caliber: ".38 Special +P",
+        category: "Snub-Nose Revolver",
+        rosterStatus: "Certified CA Roster Legal",
+        assetPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ruger_LCR.jpg/640px-Ruger_LCR.jpg",
+        specs: {
+          lengthIn: 6.50,
+          heightIn: 4.50,
+          widthIn: 1.28,
+          barrelIn: 1.87,
+          weightOz: 13.5,
+          capacity: "5 Rounds",
+          action: "DAO (Enclosed Hammer)",
+          frame: "Aerospace Aluminum / Polymer"
+        }
+      }
+    ];
+
+    // State Variables
+    let selectedGunAId = "glock-19-gen3";
+    let selectedGunBId = "sig-p365-ca";
+    let currentViewMode = "overlay"; // "overlay" or "sideBySide"
+    let currentRenderStyle = "photo"; // "photo" or "silhouette"
+    let currentAlignment = "beavertail"; // "beavertail", "trigger", "muzzle", "base"
+    let overlayOpacity = 0.65;
+    let showGrid = true;
+
+    // Safe Lucide Icon Renderer
+    function safeRenderIcons() {
+      if (typeof lucide !== 'undefined' && lucide && typeof lucide.createIcons === 'function') {
+        try {
+          lucide.createIcons();
+        } catch (e) {
+          console.warn('Lucide notice:', e);
+        }
+      }
+    }
+
+    // Modal Control Functions
+    function openAttributionModal() {
+      const modal = document.getElementById('attributionModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        safeRenderIcons();
+      }
+    }
+
+    function closeAttributionModal() {
+      const modal = document.getElementById('attributionModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      drawer.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    function closeMobileMenu() {
+      const drawer = document.getElementById('mobileMenuDrawer');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      drawer.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+
+    // Populate Handgun Selectors
+    function populateDropdowns() {
+      const selectA = document.getElementById("selectGunA");
+      const selectB = document.getElementById("selectGunB");
+      if (!selectA || !selectB) return;
+
+      selectA.innerHTML = "";
+      selectB.innerHTML = "";
+
+      HANDGUN_DATABASE.forEach(gun => {
+        const optA = document.createElement("option");
+        optA.value = gun.id;
+        optA.textContent = `${gun.name} (${gun.caliber}) — ${gun.category}`;
+        if (gun.id === selectedGunAId) optA.selected = true;
+
+        const optB = document.createElement("option");
+        optB.value = gun.id;
+        optB.textContent = `${gun.name} (${gun.caliber}) — ${gun.category}`;
+        if (gun.id === selectedGunBId) optB.selected = true;
+
+        selectA.appendChild(optA);
+        selectB.appendChild(optB);
+      });
+    }
+
+    function onGunChange(slot, gunId) {
+      if (slot === 'A') {
+        selectedGunAId = gunId;
+      } else {
+        selectedGunBId = gunId;
+      }
+      renderComparison();
+    }
+
+    function swapHandguns() {
+      const temp = selectedGunAId;
+      selectedGunAId = selectedGunBId;
+      selectedGunBId = temp;
+
+      populateDropdowns();
+      renderComparison();
+    }
+
+    function setViewMode(mode) {
+      currentViewMode = mode;
+      const overlayBtn = document.getElementById("viewOverlayBtn");
+      const sideBtn = document.getElementById("viewSideBtn");
+      const alignGroup = document.getElementById("alignmentControlGroup");
+      const opacityGroup = document.getElementById("opacityControlGroup");
+
+      if (mode === "overlay") {
+        overlayBtn.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm flex items-center gap-1.5 touch-target";
+        sideBtn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900 flex items-center gap-1.5 touch-target";
+        if (alignGroup) alignGroup.style.display = "flex";
+        if (opacityGroup) opacityGroup.style.display = "flex";
+      } else {
+        sideBtn.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-blue-900 text-white shadow-sm flex items-center gap-1.5 touch-target";
+        overlayBtn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900 flex items-center gap-1.5 touch-target";
+        if (alignGroup) alignGroup.style.display = "none";
+        if (opacityGroup) opacityGroup.style.display = "none";
+      }
+
+      renderComparison();
+    }
+
+    function setRenderStyle(style) {
+      currentRenderStyle = style;
+      const photoBtn = document.getElementById("stylePhotoBtn");
+      const silBtn = document.getElementById("styleSilhouetteBtn");
+
+      if (style === "photo") {
+        photoBtn.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-2xs flex items-center gap-1";
+        silBtn.className = "px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900 flex items-center gap-1";
+      } else {
+        silBtn.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-2xs flex items-center gap-1";
+        photoBtn.className = "px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900 flex items-center gap-1";
+      }
+
+      renderComparison();
+    }
+
+    function onAlignChange(val) {
+      currentAlignment = val;
+      const notice = document.getElementById("currentAlignmentNotice");
+      if (notice) {
+        const labels = {
+          beavertail: "Alignment: Beavertail / Rear of Slide (Best for CCW)",
+          trigger: "Alignment: Trigger Guard / Center Mass",
+          muzzle: "Alignment: Front Muzzle",
+          base: "Alignment: Base of Grip / Magazine"
+        };
+        notice.innerText = labels[val] || "Alignment: Beavertail";
+      }
+      renderComparison();
+    }
+
+    function onOpacityChange(val) {
+      overlayOpacity = parseInt(val, 10) / 100;
+      const label = document.getElementById("opacityLabel");
+      if (label) label.innerText = `${val}%`;
+
+      const wrapperB = document.getElementById("wrapperGunB");
+      if (wrapperB) {
+        wrapperB.style.opacity = overlayOpacity;
+      } else {
+        renderComparison();
+      }
+    }
+
+    function togglePhysicalGrid() {
+      showGrid = !showGrid;
+      const stageWrapper = document.getElementById("visualStageWrapper");
+      const btn = document.getElementById("toggleGridBtn");
+      if (stageWrapper) {
+        if (showGrid) {
+          stageWrapper.classList.add("ruler-grid-inch");
+          if (btn) btn.className = "p-2 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 transition-colors";
+        } else {
+          stageWrapper.classList.remove("ruler-grid-inch");
+          if (btn) btn.className = "p-2 rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-slate-50 transition-colors";
+        }
+      }
+    }
+
+    function renderComparison() {
+      const gunA = HANDGUN_DATABASE.find(g => g.id === selectedGunAId) || HANDGUN_DATABASE[0];
+      const gunB = HANDGUN_DATABASE.find(g => g.id === selectedGunBId) || HANDGUN_DATABASE[1];
+
+      // Update Header Legends
+      const legA = document.getElementById("legendGunA");
+      const legB = document.getElementById("legendGunB");
+      if (legA) legA.innerText = `Gun A: ${gunA.name}`;
+      if (legB) legB.innerText = `Gun B: ${gunB.name}`;
+
+      // Update Roster Badges in Selector
+      const badgeA = document.getElementById("badgeRosterGunA");
+      const badgeB = document.getElementById("badgeRosterGunB");
+      if (badgeA) badgeA.innerText = gunA.rosterStatus.includes("Added") ? "CA Roster (New)" : "CA Roster Legal";
+      if (badgeB) badgeB.innerText = gunB.rosterStatus.includes("Added") ? "CA Roster (New)" : "CA Roster Legal";
+
+      renderVisualStage(gunA, gunB);
+      updateDeltas(gunA, gunB);
+      updateSpecsTable(gunA, gunB);
+      safeRenderIcons();
+    }
+
+    function renderVisualStage(gunA, gunB) {
+      const stage = document.getElementById("visualStage");
+      if (!stage) return;
+      stage.innerHTML = "";
+
+      const widthA_px = Math.round(gunA.specs.lengthIn * SCALE_PPI);
+      const heightA_px = Math.round(gunA.specs.heightIn * SCALE_PPI);
+
+      const widthB_px = Math.round(gunB.specs.lengthIn * SCALE_PPI);
+      const heightB_px = Math.round(gunB.specs.heightIn * SCALE_PPI);
+
+      if (currentViewMode === "overlay") {
+        // HandgunHero-Style Alignment Stack
+        const maxStageWidth = Math.max(widthA_px, widthB_px) + 60;
+        const maxStageHeight = Math.max(heightA_px, heightB_px) + 60;
+
+        let alignClass = "items-center justify-center";
+        let wrapperPosClass = "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2";
+
+        if (currentAlignment === "beavertail") {
+          alignClass = "items-start justify-end";
+          wrapperPosClass = "top-6 right-6";
+        } else if (currentAlignment === "muzzle") {
+          alignClass = "items-start justify-start";
+          wrapperPosClass = "top-6 left-6";
+        } else if (currentAlignment === "base") {
+          alignClass = "items-end justify-center";
+          wrapperPosClass = "bottom-6 left-1/2 -translate-x-1/2";
+        } else if (currentAlignment === "trigger") {
+          alignClass = "items-center justify-center";
+          wrapperPosClass = "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2";
+        }
+
+        const container = document.createElement("div");
+        container.className = `relative flex ${alignClass} transition-all duration-200`;
+        container.style.width = `${maxStageWidth}px`;
+        container.style.height = `${maxStageHeight}px`;
+
+        // Gun A (Primary Baseline Photo / Blue)
+        const wrapperA = document.createElement("div");
+        wrapperA.id = "wrapperGunA";
+        wrapperA.className = `absolute ${wrapperPosClass} transition-all duration-200 z-10`;
+        wrapperA.innerHTML = renderGunVisual(gunA, widthA_px, heightA_px, "#2563eb", 1.0, "assetGunA");
+
+        // Gun B (Comparison Target Photo with Opacity Slider / Amber)
+        const wrapperB = document.createElement("div");
+        wrapperB.id = "wrapperGunB";
+        wrapperB.className = `absolute ${wrapperPosClass} transition-all duration-200 z-20 pointer-events-none`;
+        wrapperB.style.opacity = overlayOpacity;
+        wrapperB.innerHTML = renderGunVisual(gunB, widthB_px, heightB_px, "#d97706", 1.0, "assetGunB");
+
+        container.appendChild(wrapperA);
+        container.appendChild(wrapperB);
+        stage.appendChild(container);
+
+      } else {
+        // Side-by-Side Mode
+        const sideContainer = document.createElement("div");
+        sideContainer.className = "flex flex-col sm:flex-row items-end justify-center gap-8 sm:gap-12";
+
+        const cardA = document.createElement("div");
+        cardA.className = "flex flex-col items-center gap-2";
+        cardA.innerHTML = `
+          <div class="p-3 border-2 border-blue-200 rounded-2xl bg-white/90 backdrop-blur shadow-sm">
+            ${renderGunVisual(gunA, widthA_px, heightA_px, "#2563eb", 1.0, "sideAssetA")}
+          </div>
+          <span class="text-xs font-bold text-blue-900">${gunA.name}</span>
+          <span class="text-[11px] text-slate-500 font-mono font-bold">${gunA.specs.lengthIn}" L × ${gunA.specs.heightIn}" H × ${gunA.specs.widthIn}" W</span>
+        `;
+
+        const cardB = document.createElement("div");
+        cardB.className = "flex flex-col items-center gap-2";
+        cardB.innerHTML = `
+          <div class="p-3 border-2 border-amber-300 rounded-2xl bg-white/90 backdrop-blur shadow-sm">
+            ${renderGunVisual(gunB, widthB_px, heightB_px, "#d97706", 1.0, "sideAssetB")}
+          </div>
+          <span class="text-xs font-bold text-amber-800">${gunB.name}</span>
+          <span class="text-[11px] text-slate-500 font-mono font-bold">${gunB.specs.lengthIn}" L × ${gunB.specs.heightIn}" H × ${gunB.specs.widthIn}" W</span>
+        `;
+
+        sideContainer.appendChild(cardA);
+        sideContainer.appendChild(cardB);
+        stage.appendChild(sideContainer);
+      }
+    }
+
+    function renderGunVisual(gun, widthPx, heightPx, fillColor, opacity, id) {
+      if (currentRenderStyle === "photo" && gun.assetPath) {
+        return `
+          <div style="width: ${widthPx}px; height: ${heightPx}px;" class="relative transition-all duration-200 flex items-center justify-center">
+            <img 
+              id="${id}"
+              src="${gun.assetPath}" 
+              alt="${gun.name}"
+              crossorigin="anonymous"
+              style="width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply;"
+              class="drop-shadow-md select-none pointer-events-none filter contrast-115"
+              onerror="document.getElementById('${id}').style.display='none'; document.getElementById('${id}-fallback').style.display='block';"
+            />
+            <div id="${id}-fallback" style="display: none; width: 100%; height: 100%;">
+              ${generateGunSvg(gun, widthPx, heightPx, fillColor, id)}
+            </div>
+          </div>
+        `;
+      }
+
+      return generateGunSvg(gun, widthPx, heightPx, fillColor, id);
+    }
+
+    function generateGunSvg(gun, widthPx, heightPx, fillColor, id) {
+      const slideHeight = Math.round(heightPx * 0.40);
+      const gripWidth = Math.round(widthPx * 0.38);
+      const triggerX = Math.round(widthPx * 0.52);
+      const triggerY = slideHeight;
+
+      return `
+        <svg 
+          id="${id}" 
+          width="${widthPx}" 
+          height="${heightPx}" 
+          viewBox="0 0 ${widthPx} ${heightPx}" 
+          class="transition-all duration-200 select-none drop-shadow-sm"
+        >
+          <!-- Slide & Dustcover (Top) -->
+          <rect 
+            x="0" 
+            y="4" 
+            width="${widthPx}" 
+            height="${slideHeight}" 
+            rx="5" 
+            fill="${fillColor}" 
+            fill-opacity="0.85" 
+            stroke="${fillColor}" 
+            stroke-width="2"
+          />
+          <!-- Front Sight & Rear Sight -->
+          <rect x="12" y="0" width="8" height="4" fill="#0f172a" />
+          <rect x="${widthPx - 20}" y="0" width="10" height="4" fill="#0f172a" />
+          
+          <!-- Ejection Port Notch -->
+          <rect x="${Math.round(widthPx * 0.48)}" y="4" width="${Math.round(widthPx * 0.22)}" height="12" fill="#0f172a" fill-opacity="0.3" />
+
+          <!-- Lower Receiver & Grip (Bottom) -->
+          <polygon 
+            points="
+              ${widthPx - 10},${slideHeight} 
+              ${widthPx - Math.round(gripWidth * 0.25)},${heightPx} 
+              ${widthPx - gripWidth},${heightPx} 
+              ${triggerX - Math.round(widthPx * 0.12)},${slideHeight + 25}
+              ${triggerX},${slideHeight}
+            " 
+            fill="${fillColor}" 
+            fill-opacity="0.95" 
+            stroke="${fillColor}" 
+            stroke-width="2"
+          />
+
+          <!-- Trigger Guard Loop -->
+          <path 
+            d="M ${triggerX} ${triggerY} Q ${triggerX - 25} ${triggerY + 38} ${triggerX - Math.round(widthPx * 0.18)} ${triggerY}" 
+            fill="none" 
+            stroke="${fillColor}" 
+            stroke-width="4" 
+            stroke-linecap="round"
+          />
+
+          <!-- Trigger Shoe Blade -->
+          <line 
+            x1="${triggerX - 10}" 
+            y1="${triggerY + 6}" 
+            x2="${triggerX - 16}" 
+            y2="${triggerY + 24}" 
+            stroke="#ffffff" 
+            stroke-width="3" 
+            stroke-linecap="round"
+          />
+        </svg>
+      `;
+    }
+
+    function updateDeltas(gunA, gunB) {
+      // 1. Length Delta
+      const lenDiff = gunB.specs.lengthIn - gunA.specs.lengthIn;
+      const lenPct = Math.round((lenDiff / gunA.specs.lengthIn) * 100);
+      const lenValEl = document.getElementById("deltaLengthValue");
+      const lenPctEl = document.getElementById("deltaLengthPercent");
+      const lenTxtEl = document.getElementById("deltaLengthText");
+
+      if (lenValEl && lenPctEl) {
+        lenValEl.innerText = `${lenDiff >= 0 ? '+' : ''}${lenDiff.toFixed(2)}"`;
+        lenPctEl.innerText = `${lenDiff >= 0 ? '+' : ''}${lenPct}% ${lenDiff >= 0 ? 'Longer' : 'Shorter'}`;
+        lenPctEl.className = lenDiff <= 0 
+          ? "text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded" 
+          : "text-xs font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded";
+        if (lenTxtEl) {
+          lenTxtEl.innerText = lenDiff <= 0
+            ? `${gunB.name} is ${Math.abs(lenDiff).toFixed(2)}" shorter, greatly reducing thigh rub and holster bulk during inside-the-waistband (IWB) carry.`
+            : `${gunB.name} is ${Math.abs(lenDiff).toFixed(2)}" longer, providing a longer sight radius and slightly higher muzzle velocity.`;
+        }
+      }
+
+      // 2. Height Delta (Grip / Printing)
+      const htDiff = gunB.specs.heightIn - gunA.specs.heightIn;
+      const htPct = Math.round((htDiff / gunA.specs.heightIn) * 100);
+      const htValEl = document.getElementById("deltaHeightValue");
+      const htPctEl = document.getElementById("deltaHeightPercent");
+      const htTxtEl = document.getElementById("deltaHeightText");
+
+      if (htValEl && htPctEl) {
+        htValEl.innerText = `${htDiff >= 0 ? '+' : ''}${htDiff.toFixed(2)}"`;
+        htPctEl.innerText = `${htDiff >= 0 ? '+' : ''}${htPct}% ${htDiff >= 0 ? 'Taller' : 'Lower'}`;
+        htPctEl.className = htDiff <= 0 
+          ? "text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded" 
+          : "text-xs font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded";
+        if (htTxtEl) {
+          htTxtEl.innerText = htDiff <= 0
+            ? `${gunB.name} has a ${Math.abs(htDiff).toFixed(2)}" shorter grip, minimizing concealment printing under fitted shirts.`
+            : `${gunB.name} has a ${Math.abs(htDiff).toFixed(2)}" taller grip, allowing a full 3-finger master purchase without a pinky extension.`;
+        }
+      }
+
+      // 3. Weight Delta
+      const wtDiff = gunB.specs.weightOz - gunA.specs.weightOz;
+      const wtPct = Math.round((wtDiff / gunA.specs.weightOz) * 100);
+      const wtValEl = document.getElementById("deltaWeightValue");
+      const wtPctEl = document.getElementById("deltaWeightPercent");
+      const wtTxtEl = document.getElementById("deltaWeightText");
+
+      if (wtValEl && wtPctEl) {
+        wtValEl.innerText = `${wtDiff >= 0 ? '+' : ''}${wtDiff.toFixed(1)} oz`;
+        wtPctEl.innerText = `${wtDiff >= 0 ? '+' : ''}${wtPct}% ${wtDiff >= 0 ? 'Heavier' : 'Lighter'}`;
+        wtPctEl.className = wtDiff <= 0 
+          ? "text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded" 
+          : "text-xs font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded";
+        if (wtTxtEl) {
+          wtTxtEl.innerText = wtDiff <= 0
+            ? `Carrying ${gunB.name} reduces your belt load by ${Math.abs(wtDiff).toFixed(1)} oz, preventing waistband sagging.`
+            : `${gunB.name} is ${Math.abs(wtDiff).toFixed(1)} oz heavier. The added mass significantly dampens recoil and muzzle rise.`;
+        }
+      }
+    }
+
+    function updateSpecsTable(gunA, gunB) {
+      document.getElementById("thGunA").innerText = `Handgun A: ${gunA.name}`;
+      document.getElementById("thGunB").innerText = `Handgun B: ${gunB.name}`;
+
+      // Length
+      document.getElementById("specLengthA").innerText = `${gunA.specs.lengthIn}" (${Math.round(gunA.specs.lengthIn * 25.4)} mm)`;
+      document.getElementById("specLengthB").innerText = `${gunB.specs.lengthIn}" (${Math.round(gunB.specs.lengthIn * 25.4)} mm)`;
+      const diffL = (gunB.specs.lengthIn - gunA.specs.lengthIn).toFixed(2);
+      document.getElementById("specLengthDiff").innerText = `${diffL >= 0 ? '+' : ''}${diffL}"`;
+
+      // Height
+      document.getElementById("specHeightA").innerText = `${gunA.specs.heightIn}" (${Math.round(gunA.specs.heightIn * 25.4)} mm)`;
+      document.getElementById("specHeightB").innerText = `${gunB.specs.heightIn}" (${Math.round(gunB.specs.heightIn * 25.4)} mm)`;
+      const diffH = (gunB.specs.heightIn - gunA.specs.heightIn).toFixed(2);
+      document.getElementById("specHeightDiff").innerText = `${diffH >= 0 ? '+' : ''}${diffH}"`;
+
+      // Width
+      document.getElementById("specWidthA").innerText = `${gunA.specs.widthIn}" (${Math.round(gunA.specs.widthIn * 25.4)} mm)`;
+      document.getElementById("specWidthB").innerText = `${gunB.specs.widthIn}" (${Math.round(gunB.specs.widthIn * 25.4)} mm)`;
+      const diffW = (gunB.specs.widthIn - gunA.specs.widthIn).toFixed(2);
+      document.getElementById("specWidthDiff").innerText = `${diffW >= 0 ? '+' : ''}${diffW}"`;
+
+      // Barrel
+      document.getElementById("specBarrelA").innerText = `${gunA.specs.barrelIn}"`;
+      document.getElementById("specBarrelB").innerText = `${gunB.specs.barrelIn}"`;
+      const diffB = (gunB.specs.barrelIn - gunA.specs.barrelIn).toFixed(2);
+      document.getElementById("specBarrelDiff").innerText = `${diffB >= 0 ? '+' : ''}${diffB}"`;
+
+      // Weight
+      document.getElementById("specWeightA").innerText = `${gunA.specs.weightOz} oz (${Math.round(gunA.specs.weightOz * 28.35)} g)`;
+      document.getElementById("specWeightB").innerText = `${gunB.specs.weightOz} oz (${Math.round(gunB.specs.weightOz * 28.35)} g)`;
+      const diffWt = (gunB.specs.weightOz - gunA.specs.weightOz).toFixed(1);
+      document.getElementById("specWeightDiff").innerText = `${diffWt >= 0 ? '+' : ''}${diffWt} oz`;
+
+      // Capacity & Action
+      document.getElementById("specCapA").innerText = gunA.specs.capacity;
+      document.getElementById("specCapB").innerText = gunB.specs.capacity;
+      document.getElementById("specActionA").innerText = gunA.specs.action;
+      document.getElementById("specActionB").innerText = gunB.specs.action;
+      document.getElementById("specFrameA").innerText = gunA.specs.frame;
+      document.getElementById("specFrameB").innerText = gunB.specs.frame;
+
+      // Roster
+      document.getElementById("specRosterA").innerText = gunA.rosterStatus;
+      document.getElementById("specRosterB").innerText = gunB.rosterStatus;
+    }
+
+    // Initialize application on DOM ready
+    window.addEventListener("DOMContentLoaded", () => {
+      populateDropdowns();
+      renderComparison();
+      safeRenderIcons();
+    });
+  </script>
+</body>
+</html>
