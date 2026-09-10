@@ -62,7 +62,6 @@ def strip_background_to_alpha(img: Image.Image, tolerance: int = 28) -> Image.Im
     """
     rgba = img.convert("RGBA")
     
-    # Sample corner pixels to detect backdrop tint
     corners = [
         rgba.getpixel((0, 0)),
         rgba.getpixel((rgba.width - 1, 0)),
@@ -73,12 +72,10 @@ def strip_background_to_alpha(img: Image.Image, tolerance: int = 28) -> Image.Im
     avg_g = sum(c[1] for c in corners) // 4
     avg_b = sum(c[2] for c in corners) // 4
 
-    # If the corners are light (typical studio lightbox), key it out
     if avg_r > 200 and avg_g > 200 and avg_b > 200:
         datas = rgba.getdata()
         new_data = []
         for item in datas:
-            # Check Euclidean distance from corner sample
             diff = abs(item[0] - avg_r) + abs(item[1] - avg_g) + abs(item[2] - avg_b)
             if diff <= tolerance * 3 or (item[0] > 240 and item[1] > 240 and item[2] > 240):
                 new_data.append((255, 255, 255, 0))
@@ -103,10 +100,10 @@ def crop_and_calibrate(img: Image.Image, length_in: float, height_in: float) -> 
 
 def generate_silhouette(length_in: float, height_in: float) -> Image.Image:
     """
-    Emergency fallback procedural silhouette if network fails.
+    Fallback procedural silhouette if network fails or URL is invalid.
     """
-    target_w = int(round(length_in * PIXELS_PER_INCH))
-    target_h = int(round(height_in * PIXELS_PER_INCH))
+    target_w = max(10, int(round(length_in * PIXELS_PER_INCH)))
+    target_h = max(10, int(round(height_in * PIXELS_PER_INCH)))
     
     img = Image.new("RGBA", (target_w, target_h), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
@@ -137,12 +134,23 @@ def process_all_assets():
     print(f"Starting asset pipeline for {len(manifest)} firearms...")
 
     for item in manifest:
-        gun_id = item["id"]
-        make = item["make"]
-        model = item["model"]
-        length_in = float(item["lengthIn"])
-        height_in = float(item["heightIn"])
-        source_url = item.get("source_url", "")
+        gun_id = item.get("id", "unknown")
+        # Support both 'make' and 'brand'
+        make = item.get("make") or item.get("brand") or "Unknown"
+        model = item.get("model") or "Firearm"
+
+        # Support camelCase and snake_case dimension keys
+        length_val = item.get("lengthIn") or item.get("length_in") or item.get("length") or 7.0
+        height_val = item.get("heightIn") or item.get("height_in") or item.get("height") or 5.0
+
+        try:
+            length_in = float(length_val)
+            height_in = float(height_val)
+        except (ValueError, TypeError):
+            length_in = 7.0
+            height_in = 5.0
+
+        source_url = item.get("source_url") or item.get("image_url") or item.get("imageUrl") or ""
         out_filename = f"{gun_id}.png"
         out_filepath = os.path.join(OUTPUT_DIR, out_filename)
 
@@ -154,10 +162,7 @@ def process_all_assets():
                 print(f"  Fetching: {source_url}")
                 raw_bytes = fetch_image_data(source_url)
                 raw_img = Image.open(io.BytesIO(raw_bytes))
-                
-                # Strip backdrop to transparent alpha
                 alpha_img = strip_background_to_alpha(raw_img)
-                # Crop to physical boundary and scale to 1:1
                 processed_img = crop_and_calibrate(alpha_img, length_in, height_in)
                 print(f"  Scrubbed and calibrated successfully: {processed_img.width}x{processed_img.height} px")
             except Exception as e:
@@ -173,6 +178,11 @@ def process_all_assets():
         clean_buffer.save(out_filepath, "PNG", optimize=True)
 
         record = dict(item)
+        record["make"] = make
+        record["brand"] = make
+        record["model"] = model
+        record["lengthIn"] = length_in
+        record["heightIn"] = height_in
         record["assetPath"] = f"assets/handguns/{out_filename}"
         record["pixelWidth"] = processed_img.width
         record["pixelHeight"] = processed_img.height
