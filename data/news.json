@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-08T18:02:13.558Z",
-  "updated_formatted": "September 8, 2026 • 11:02 AM PDT",
+  "last_updated": "2026-09-12T04:50:54.311Z",
+  "updated_formatted": "September 11, 2026 • 9:50 PM PDT",
   "items": [
     {
       "id": "ca-legislature-ab-2047-3d-printer-restrictions",
@@ -55,6 +55,19 @@
       "source_url": "https://www.cdtfa.ca.gov/taxes-and-fees/firearms-and-ammunition-excise-tax.htm"
     },
     {
+      "id": "cadoj-bulletin-2026-dle-14-ccw-renewals",
+      "date": "2026-08-31",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "blue",
+      "headline": "CA DOJ Mandates Live Scan Fingerprints and Continuous Rap Back Enrollment for CCW Renewals",
+      "statute_or_case": "CA DOJ Information Bulletin 2026-DLE-14 (SB 2 / Penal Code § 26175)",
+      "summary": "The California Department of Justice Division of Law Enforcement issued Information Bulletin 2026-DLE-14 advising law enforcement agencies of mandatory Live Scan fingerprinting for all Concealed Carry Weapon (CCW) renewals. The bulletin also implements revised state renewal fee structures and requires licensing authorities to enroll in the FBI's Next Generation Identification Rap Back continuous tracking service.",
+      "community_takeaway": "Current CCW holders preparing for renewal must schedule a Live Scan fingerprint appointment and account for updated processing fees well in advance of license expiration to prevent lawful carry lapses.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
+    },
+    {
       "id": "cadoj-ccw-renewal-live-scan-bulletin",
       "date": "2026-08-31",
       "category": "CA DOJ Notice",
@@ -105,6 +118,45 @@
       "community_takeaway": "California firearm owners and 3D printing enthusiasts should monitor state DOJ regulatory releases regarding hardware certification standards and compliance timelines.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB2047"
+    },
+    {
+      "id": "ca-legislature-sb-948-firearm-safety-certificate-mandate",
+      "date": "2026-08-29",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "amber",
+      "headline": "California Legislature Passes SB 948 Requiring Safety Certificates for New Residents",
+      "statute_or_case": "Senate Bill 948 (Arreguín) / Penal Code § 31615",
+      "summary": "The California State Legislature completed final passage of Senate Bill 948, sending legislation to the Governor that requires individuals relocating to California with firearms to obtain a Firearm Safety Certificate. The measure eliminates the existing new-resident exemption to establish uniform certification standards across both in-state buyers and incoming gun owners.",
+      "community_takeaway": "Families moving to California with previously owned firearms must prepare to pass the Department of Justice written safety test and register their firearms within the statutory arrival window.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov"
+    },
+    {
+      "id": "davis-vanguard-sb-948-incoming-resident-mandates",
+      "date": "2026-08-29",
+      "category": "Community Safety",
+      "badge_status": "Pending Review",
+      "badge_color": "amber",
+      "headline": "Legal Reporting Outlines Community Safety Impacts of New Firearm Safety Training Measures",
+      "statute_or_case": "Senate Bill 948 (Firearm Safety Certification)",
+      "summary": "Coverage by the Davis Vanguard outlined the practical community impact of SB 948 as it moved to the Governor's desk, emphasizing the standardization of safe handling assessments for incoming residents. The analysis highlighted provisions intended to close interstate training disparities and examined the future introduction of mandatory live-fire testing components.",
+      "community_takeaway": "New residents planning a move into California should budget time to complete their Firearm Safety Certificate with a certified local instructor promptly upon taking up residence.",
+      "source_name": "Davis Vanguard",
+      "source_url": "https://davisvanguard.org/2026/08/california-gun-safety-bill-heads-to-governors-desk/"
+    },
+    {
+      "id": "ninth-circuit-richards-bonta-dealer-surveillance",
+      "date": "2026-08-28",
+      "category": "Court Ruling",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit Upholds California Mandate Requiring Video and Audio Surveillance in Gun Stores",
+      "statute_or_case": "Richards v. Bonta, CA Penal Code § 26806",
+      "summary": "A Ninth Circuit Court of Appeals panel affirmed the dismissal of a constitutional challenge against California Penal Code section 26806, which mandates continuous audio and video recording systems inside licensed firearm dealerships. The appellate court held that these mandatory retail surveillance rules do not infringe upon the First, Fourth, or Fifth Amendment rights of dealers or consumers.",
+      "community_takeaway": "Community members visiting licensed firearm retailers should expect all counter interactions and purchase processes to be recorded and preserved under state surveillance requirements.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-ninth-circuit-victory-defending-california%E2%80%99s"
     },
     {
       "id": "ninth-circuit-ffl-surveillance-mandate",
@@ -170,6 +222,19 @@
       "community_takeaway": "While federal ATF rules remain intact nationally, California residents and firearm retailers remain subject to stringent state-level ghost gun, serialization, and background check laws.",
       "source_name": "Reuters",
       "source_url": "https://www.reuters.com"
+    },
+    {
+      "id": "calmatters-turners-outdoorsman-crime-gun-investigation",
+      "date": "2026-08-21",
+      "category": "State News",
+      "badge_status": "In Effect",
+      "badge_color": "purple",
+      "headline": "CalMatters Investigation Examines Chain Retailer Traces and Crime Gun Patterns in Major Cities",
+      "statute_or_case": "CA Penal Code § 26800 / Bureau of Firearms Dealer Compliance",
+      "summary": "An investigative report by CalMatters revealed that high-volume retail chains such as Turner's Outdoorsman remain leading sources of recovered crime guns traced by law enforcement across California's largest cities. The investigation examined how state regulatory audits and dealer compliance measures are functioning alongside illegal secondary straw purchasing rings.",
+      "community_takeaway": "Community gun owners should adhere strictly to personal transfer rules, store firearms in certified safes to prevent theft, and recognize that buying a firearm on behalf of anyone else is a serious felony under state and federal law.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/08/turners-outdoorsman-crime-guns-california/"
     },
     {
       "id": "calmatters-retail-crime-gun-tracing-report",
