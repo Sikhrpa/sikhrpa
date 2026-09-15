@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-09-12T04:50:54.311Z",
-  "updated_formatted": "September 11, 2026 • 9:50 PM PDT",
+  "last_updated": "2026-09-15T18:25:08.022Z",
+  "updated_formatted": "September 15, 2026 • 11:25 AM PDT",
   "items": [
+    {
+      "id": "ca-legislature-ab-1615-probation-firearm-standards",
+      "date": "2026-09-14",
+      "category": "Legislation",
+      "badge_status": "In Effect",
+      "badge_color": "purple",
+      "headline": "Governor Signs AB 1615 Adjusting Sworn Peace Officer Handgun Standards and Training",
+      "statute_or_case": "California Penal Code § 32000 / AB 1615",
+      "summary": "Governor Gavin Newsom chaptered Assembly Bill 1615 into law, amending California Penal Code § 32000 concerning service weapon standards and POST firearm qualification cycles for county probation officers. The statute maintains exemptions under the Unsafe Handgun Act for sworn peace officers while establishing specific quarterly firearm requalification protocols.",
+      "community_takeaway": "First-time civilian firearm purchasers must remember that roster exemptions apply strictly to qualified law enforcement personnel, and all civilian handgun sales remain restricted to the state-certified roster.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1615"
+    },
     {
       "id": "ca-legislature-ab-2047-3d-printer-restrictions",
       "date": "2026-09-06",
@@ -42,6 +55,19 @@
       "source_url": "https://www.latimes.com/california/story/2026-09-04/goleta-gun-store-daycare-zoning-controversy"
     },
     {
+      "id": "the-reload-gun-store-surveillance-analysis",
+      "date": "2026-09-03",
+      "category": "State News",
+      "badge_status": "In Effect",
+      "badge_color": "blue",
+      "headline": "The Reload Analyzes Appellate Ruling Upholding California Gun Store Surveillance Mandate",
+      "statute_or_case": "Richards v. Newsom / CA Penal Code § 26806",
+      "summary": "Investigative outlet The Reload examined the Ninth Circuit's panel decision upholding California's mandatory video and audio recording rules for licensed gun retailers. The reporting details retail compliance burdens and concerns raised by Second Amendment advocates regarding commercial privacy during customer consultations.",
+      "community_takeaway": "Firearm owners should recognize that verbal inquiries and transaction details inside California gun stores are recorded, underscoring the need to ensure all documentation and storage accessories are properly prepared in advance.",
+      "source_name": "The Reload",
+      "source_url": "https://thereload.com/ninth-circuit-upholds-state-surveillance-mandate-at-california-gun-stores/"
+    },
+    {
       "id": "ab28-state-excise-tax",
       "date": "2026-09-01",
       "category": "Legislation",
@@ -53,6 +79,19 @@
       "community_takeaway": "First-time buyers should account for the 11% surcharge added at checkout alongside standard local sales taxes when budgeting for ammunition and home storage hardware.",
       "source_name": "California Department of Tax and Fee Administration (CDTFA)",
       "source_url": "https://www.cdtfa.ca.gov/taxes-and-fees/firearms-and-ammunition-excise-tax.htm"
+    },
+    {
+      "id": "ca-doj-bulletin-2026-dle-14-ccw-rapback",
+      "date": "2026-08-31",
+      "category": "CA DOJ Notice",
+      "badge_status": "In Effect",
+      "badge_color": "blue",
+      "headline": "CA DOJ Issues DLE Bulletin 2026-DLE-14 on CCW Renewals and Federal Rap Back Enrollment",
+      "statute_or_case": "California Penal Code § 26165 / AB 1078",
+      "summary": "The California Department of Justice Division of Law Enforcement issued Information Bulletin 2026-DLE-14 instructing licensing authorities on mandatory CCW renewal protocols taking effect September 1, 2026. The directive requires issuing agencies to ensure renewal applicants are enrolled in the Federal Rap Back Service to guarantee ongoing real-time criminal background monitoring.",
+      "community_takeaway": "Current CCW permit holders submitting renewal applications should coordinate with their local sheriff or police department early to ensure electronic Rap Back enrollment records are processed without causing permit lapses.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/law-enforcement/bulletins"
     },
     {
       "id": "cadoj-bulletin-2026-dle-14-ccw-renewals",
@@ -146,6 +185,19 @@
       "source_url": "https://davisvanguard.org/2026/08/california-gun-safety-bill-heads-to-governors-desk/"
     },
     {
+      "id": "ninth-circuit-gun-store-surveillance-ruling",
+      "date": "2026-08-28",
+      "category": "Court Ruling",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit Upholds California Law Mandating Video and Audio Surveillance in Gun Stores",
+      "statute_or_case": "Richards v. Bonta / California Penal Code § 26806",
+      "summary": "A three-judge panel of the U.S. Court of Appeals for the Ninth Circuit affirmed the dismissal of a constitutional challenge to California Penal Code § 26806, upholding statutory requirements for licensed firearm retailers to maintain continuous 24-hour audio and video surveillance systems. The court rejected claims that mandatory merchant surveillance constitutes an unconstitutional warrantless search or infringes upon First, Fourth, and Fifth Amendment rights.",
+      "community_takeaway": "Patrons visiting licensed California firearms dealers should note that all transaction counters and firearm sales display areas are subject to continuous audio and video recording under active state mandates.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-ninth-circuit-victory-defending-californias"
+    },
+    {
       "id": "ninth-circuit-richards-bonta-dealer-surveillance",
       "date": "2026-08-28",
       "category": "Court Ruling",
@@ -224,6 +276,19 @@
       "source_url": "https://www.reuters.com"
     },
     {
+      "id": "calmatters-trace-crime-gun-tracing-report",
+      "date": "2026-08-21",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "purple",
+      "headline": "CalMatters and The Trace Investigate Retail Gun Tracing Data Across Major California Cities",
+      "statute_or_case": "California Penal Code § 27555 / CA DOJ Trace Data",
+      "summary": "A joint investigative report by CalMatters and The Trace evaluated California Department of Justice firearm trace records from major retail locations across the state's largest cities. The report highlights heightened scrutiny by state regulators and local law enforcement regarding retail straw purchases and inventory diversion.",
+      "community_takeaway": "Responsible gun owners should maintain strict compliance with California safe storage statutes (such as California Penal Code § 25100) to prevent theft and unauthorized access, and never attempt a purchase on behalf of another party.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/08/turners-outdoorsman-crime-guns-california/"
+    },
+    {
       "id": "calmatters-turners-outdoorsman-crime-gun-investigation",
       "date": "2026-08-21",
       "category": "State News",
@@ -287,6 +352,19 @@
       "community_takeaway": "First-time applicants in Los Angeles County should submit applications through the updated LASD portal and track the newly accelerated statutory review timetable.",
       "source_name": "Los Angeles Times",
       "source_url": "https://www.latimes.com"
+    },
+    {
+      "id": "la-times-doj-lasd-ccw-settlement",
+      "date": "2026-08-13",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Federal Settlement Reached with L.A. County Sheriff's Department Over Concealed Carry Delays",
+      "statute_or_case": "United States v. County of Los Angeles / CA Penal Code § 26150",
+      "summary": "The Los Angeles Times reported that the U.S. Department of Justice reached a binding settlement with the Los Angeles County Sheriff's Department to resolve federal civil rights litigation over long-standing concealed carry permit delays. The agreement establishes concrete processing timelines and staffing commitments to clear substantial backlogs affecting thousands of law-abiding applicants.",
+      "community_takeaway": "Los Angeles County residents seeking concealed carry permits should see faster application turnarounds and can expect standardized processing intervals following the department's compliance milestones.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com/california/story/2026-08-13/feds-settle-lawsuit-with-l-a-county-sheriffs-department-over-concealed-firearm-permits"
     },
     {
       "id": "latimes-lasd-ccw-delay-settlement",
