@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-09-15T18:25:08.022Z",
-  "updated_formatted": "September 15, 2026 • 11:25 AM PDT",
+  "last_updated": "2026-09-19T04:51:56.110Z",
+  "updated_formatted": "September 18, 2026 • 9:51 PM PDT",
   "items": [
+    {
+      "id": "calmatters-investigation-school-police-rifles",
+      "date": "2026-09-15",
+      "category": "Community Safety",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "CalMatters Investigation Exposes Reporting Lapses in School Police Patrol Rifle Inventories",
+      "statute_or_case": "Cal. Government Code §§ 7070–7075 (AB 481 Compliance)",
+      "summary": "A CalMatters statewide investigation revealed that several California K-12 public school district police departments acquired military-style semi-automatic patrol rifles without providing mandated public notifications. The investigation identified systemic noncompliance with statutory requirements that obligate educational law enforcement agencies to publish weapon inventories and host community oversight meetings.",
+      "community_takeaway": "Parents and safety advocates can verify the security protocols and firearms kept on local campuses by inspecting their school district's annual AB 481 military equipment disclosure report.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/education/k-12-education/2026/09/california-schools-military-rifles-reporting/"
+    },
     {
       "id": "ca-legislature-ab-1615-probation-firearm-standards",
       "date": "2026-09-14",
@@ -27,6 +40,19 @@
       "community_takeaway": "Hobbyists and families utilizing 3D printers should track the enactment status of AB 2047, as future retail equipment sold in California will incorporate firmware-level component restrictions.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov"
+    },
+    {
+      "id": "la-times-goleta-gun-store-day-care-zoning",
+      "date": "2026-09-04",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "amber",
+      "headline": "Goleta Gun Shop Relocation Next to Day Care Sparks Municipal Zoning Buffer Feud",
+      "statute_or_case": "Goleta Municipal Code / California Local Firearm Retail Zoning Authority",
+      "summary": "The Los Angeles Times reported on mounting municipal disputes in Goleta after a retail firearms dealer opened adjacent to an active day care center and playground. In response to parental protests and declining child care enrollment, local officials initiated emergency zoning moratoriums to establish mandatory buffer zones separating gun retailers from youth-centered facilities.",
+      "community_takeaway": "Firearm owners and retail patrons should consult local municipal zoning codes before arranging private transfers or shipments, as cities are increasingly implementing strict geographic buffer requirements.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com/california/story/2026-09-04/goleta-gun-store-day-care-zoning-dispute"
     },
     {
       "id": "latimes-goleta-gun-store-zoning-dispute",
@@ -79,6 +105,19 @@
       "community_takeaway": "First-time buyers should account for the 11% surcharge added at checkout alongside standard local sales taxes when budgeting for ammunition and home storage hardware.",
       "source_name": "California Department of Tax and Fee Administration (CDTFA)",
       "source_url": "https://www.cdtfa.ca.gov/taxes-and-fees/firearms-and-ammunition-excise-tax.htm"
+    },
+    {
+      "id": "ca-doj-bulletin-ccw-renewals-livescan",
+      "date": "2026-08-31",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "blue",
+      "headline": "CA DOJ Mandates Live Scan Fingerprinting and Federal Rap Back for CCW Renewals",
+      "statute_or_case": "Information Bulletin 2026-DLE-14 / Cal. Penal Code § 26185",
+      "summary": "The California Department of Justice Division of Law Enforcement issued Information Bulletin 2026-DLE-14, establishing that all CCW renewal applications submitted on or after September 1, 2026, must include Live Scan fingerprint submissions and state eligibility clearance prior to license reissuance. The bulletin also implements local licensing authority integration with the FBI's Next Generation Identification Rap Back Service and establishes an updated $93 state renewal fee.",
+      "community_takeaway": "Permit holders should initiate CCW renewal applications at least 90 days before expiration to account for Live Scan processing times, mandatory background clearance, and updated state fees.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms/infobuls"
     },
     {
       "id": "ca-doj-bulletin-2026-dle-14-ccw-rapback",
@@ -341,6 +380,19 @@
       "source_url": "https://oag.ca.gov/firearms"
     },
     {
+      "id": "ninth-circuit-baird-bonta-en-banc-rehearing",
+      "date": "2026-08-14",
+      "category": "Court Ruling",
+      "badge_status": "Pending Review",
+      "badge_color": "purple",
+      "headline": "Ninth Circuit Confirms En Banc Review in Baird v. Bonta, Keeping Open-Carry Ban Intact",
+      "statute_or_case": "Baird v. Bonta, No. 24-565 (9th Cir.) / Cal. Penal Code §§ 25850 & 26350",
+      "summary": "The U.S. Court of Appeals for the Ninth Circuit confirmed the assumption of en banc jurisdiction over Baird v. Bonta, which officially vacates the January 2026 panel ruling that had declared California's open-carry ban unconstitutional. As a result of the vacatur, the state's statutory restrictions prohibiting open firearm carry in counties with populations over 200,000 remain fully enforceable while the full court deliberates.",
+      "community_takeaway": "Gun owners must avoid open carrying in populated California jurisdictions, as the prior decision invalidating the ban is formally vacated and offers no legal protection during en banc review.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov"
+    },
+    {
       "id": "la-times-doj-lasd-ccw-delay-settlement",
       "date": "2026-08-14",
       "category": "State News",
@@ -404,6 +456,19 @@
       "community_takeaway": "Place firearms inside a locked lockbox in the back of SUVs or hatchbacks, and transport ammunition in a separate compartment or bag.",
       "source_name": "California Department of Justice",
       "source_url": "https://oag.ca.gov/firearms"
+    },
+    {
+      "id": "ca-doj-bulletin-nonresident-ccw-fingerprints",
+      "date": "2026-08-07",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "blue",
+      "headline": "CA DOJ Clarifies Out-of-State Fingerprint Procedures for Nonresident CCW Applicants",
+      "statute_or_case": "Amended Information Bulletin 2026-DLE-13 / Cal. Penal Code § 26150",
+      "summary": "The California Department of Justice released Amended Information Bulletin 2026-DLE-13, clarifying that out-of-state applicants seeking a California CCW may submit hard-copy FBI Form FD-258 fingerprint cards completed by their local law enforcement agency. This guidance updates administrative procedures under AB 1078, providing a standardized fingerprinting process for nonresidents without mandating travel to an in-state Live Scan vendor.",
+      "community_takeaway": "Nonresident applicants should confirm that their home-state law enforcement agency includes the required California DOJ ORI code on the FD-258 card before submitting their application packet to local issuing authorities.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms/infobuls"
     },
     {
       "id": "cadoj-nonresident-ccw-fingerprint-guidance",
