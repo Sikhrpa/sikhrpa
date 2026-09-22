@@ -1,7 +1,46 @@
 {
-  "last_updated": "2026-09-19T04:51:56.110Z",
-  "updated_formatted": "September 18, 2026 • 9:51 PM PDT",
+  "last_updated": "2026-09-22T18:15:11.560Z",
+  "updated_formatted": "September 22, 2026 • 11:15 AM PDT",
   "items": [
+    {
+      "id": "cal-law-review-municipal-ghost-gun-litigation",
+      "date": "2026-09-21",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "San Francisco and CA DOJ Escalate Legal Offensive Against 3D-Printed Ghost Gun Sites",
+      "statute_or_case": "City and County of San Francisco v. Gatalog / CA Penal Code § 29180",
+      "summary": "An investigative report by the California Law Review documented San Francisco's partnership with the California Attorney General in pursuing affirmative litigation against online code repositories distributing 3D firearm blueprints into California. The joint municipal-state enforcement effort targets websites providing downloadable CAD code for untraceable firearm parts without required serial numbers or precursor vetting.",
+      "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
+      "source_name": "California Law Review",
+      "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-nfa-prohibition-notice",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "amber",
+      "headline": "CA DOJ Bureau of Firearms Issues Advisory on State Prohibition of NFA-Regulated Firearms",
+      "statute_or_case": "CA Penal Code § 32625 / Information Bulletin 2026-DLE-16",
+      "summary": "The California Department of Justice Division of Law Enforcement issued Information Bulletin 2026-DLE-16 alerting law enforcement agencies and licensed dealers regarding state prohibitions on National Firearms Act (NFA) weapons. The advisory clarifies that federal ATF tax stamps and registration do not exempt individuals from California's strict independent bans on machine guns, short-barreled rifles, and silencers.",
+      "community_takeaway": "Sikh community members and gun owners must ensure they do not attempt to import or configure NFA-regulated items in California, as federal paperwork does not protect against state felony charges.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms/bulletins"
+    },
+    {
+      "id": "the-reload-doj-lawsuit-san-jose-ccw-fees",
+      "date": "2026-09-18",
+      "category": "State News",
+      "badge_status": "Pending Review",
+      "badge_color": "purple",
+      "headline": "Federal DOJ Sues City of San Jose Over Onerous $1,500 Concealed Carry Permitting Fees",
+      "statute_or_case": "United States v. City of San Jose / 34 U.S.C. § 12601",
+      "summary": "The Reload reported that the U.S. Department of Justice Civil Rights Division filed a civil rights lawsuit against San Jose challenging local CCW fees that exceed $1,500 per applicant. The federal complaint alleges that imposing prohibitive administrative processing costs and uncapped third-party psychological examination fees violates the Second Amendment.",
+      "community_takeaway": "First-time applicants burdened by steep local application fees should follow this action, as a federal ruling or settlement could significantly reduce administrative carry permit costs across Northern California.",
+      "source_name": "The Reload",
+      "source_url": "https://thereload.com/analysis-doj-doubles-down-on-gun-carry-lawsuits/"
+    },
     {
       "id": "calmatters-investigation-school-police-rifles",
       "date": "2026-09-15",
@@ -27,6 +66,19 @@
       "community_takeaway": "First-time civilian firearm purchasers must remember that roster exemptions apply strictly to qualified law enforcement personnel, and all civilian handgun sales remain restricted to the state-certified roster.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1615"
+    },
+    {
+      "id": "la-times-waymo-ghost-gun-seizure",
+      "date": "2026-09-12",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "San Francisco Police Seize Loaded Ghost Gun from Autonomous Robotaxi",
+      "statute_or_case": "CA Penal Code § 24610 / CA Penal Code § 30605",
+      "summary": "The Los Angeles Times reported that San Francisco officers conducted a high-risk vehicle stop and arrested two minors found in possession of an illegal, loaded AR-style ghost gun inside a Waymo vehicle. The vehicle pulled over and alerted authorities following an automated alert detecting a terms-of-service firearm violation, demonstrating expanded vehicle surveillance and aggressive urban gun interdiction.",
+      "community_takeaway": "Families should caution youth that possessing unserialized ghost guns and carrying firearms in commercial rideshares or autonomous transit brings instant police dispatch and felony charges.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com/california/story/2026-09-12/juveniles-riding-in-waymo-arrested-after-police-find-a-ghost-gun"
     },
     {
       "id": "ca-legislature-ab-2047-3d-printer-restrictions",
@@ -105,6 +157,19 @@
       "community_takeaway": "First-time buyers should account for the 11% surcharge added at checkout alongside standard local sales taxes when budgeting for ammunition and home storage hardware.",
       "source_name": "California Department of Tax and Fee Administration (CDTFA)",
       "source_url": "https://www.cdtfa.ca.gov/taxes-and-fees/firearms-and-ammunition-excise-tax.htm"
+    },
+    {
+      "id": "ca-doj-ccw-rap-back-enrollment-mandate",
+      "date": "2026-08-31",
+      "category": "CA DOJ Notice",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "CA DOJ Mandates Federal Rap Back Enrollment for CCW Renewals",
+      "statute_or_case": "CA Penal Code § 26165 / Information Bulletin 2026-DLE-14",
+      "summary": "CA DOJ issued Information Bulletin 2026-DLE-14 notifying licensing authorities of statutory changes taking effect September 1, 2026, for concealed carry renewals. The bulletin mandates that all CCW renewal applicants must be enrolled in the FBI Federal Rap Back Service to ensure ongoing real-time criminal background monitoring.",
+      "community_takeaway": "Concealed carry permit holders preparing for renewal should contact their issuing sheriff or police department early to allow extra lead time for continuous Live Scan background enrollment verification.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms/bulletins"
     },
     {
       "id": "ca-doj-bulletin-ccw-renewals-livescan",
@@ -456,6 +521,19 @@
       "community_takeaway": "Place firearms inside a locked lockbox in the back of SUVs or hatchbacks, and transport ammunition in a separate compartment or bag.",
       "source_name": "California Department of Justice",
       "source_url": "https://oag.ca.gov/firearms"
+    },
+    {
+      "id": "ca-doj-ccw-ab1078-licensing-guidance",
+      "date": "2026-08-07",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "blue",
+      "headline": "CA DOJ Releases Amended Guidance to CCW Licensing Authorities Under AB 1078",
+      "statute_or_case": "AB 1078 / Information Bulletin 2026-DLE-13",
+      "summary": "The California Bureau of Firearms issued Information Bulletin 2026-DLE-13 providing revised instructions to local licensing agencies following statutory amendments under AB 1078. The guidance details administrative standards regarding multi-firearm purchase transaction limits and uniform enforcement of CCW sensitive place restrictions.",
+      "community_takeaway": "First-time applicants should cross-reference local agency policies with current CA DOJ advisories to verify exact training curriculum requirements and sensitive place travel restrictions.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms/bulletins"
     },
     {
       "id": "ca-doj-bulletin-nonresident-ccw-fingerprints",
