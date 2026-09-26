@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-09-22T18:15:11.560Z",
-  "updated_formatted": "September 22, 2026 • 11:15 AM PDT",
+  "last_updated": "2026-09-26T05:17:12.566Z",
+  "updated_formatted": "September 25, 2026 • 10:17 PM PDT",
   "items": [
+    {
+      "id": "ninth-circuit-en-banc-yukutake-ruling",
+      "date": "2026-09-22",
+      "category": "Court Ruling",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit En Banc Panel Upholds Firearm Acquisition Rules Under Bruen",
+      "statute_or_case": "Yukutake v. Lopez, No. 21-16756 (9th Cir. en banc)",
+      "summary": "In an 11-judge en banc ruling, the Ninth Circuit reversed a district court injunction and upheld shall-issue acquisition restrictions, determining that procedural permit deadlines and physical police inspection rules impose only modest administrative burdens under Bruen's licensing framework. The 6-5 decision establishes binding circuit-wide precedent across the western states regarding state authority to enforce non-discretionary procedural purchase requirements.",
+      "community_takeaway": "California gun owners should be aware that the Ninth Circuit continues to uphold administrative firearm acquisition timelines, reinforcing the legal necessity to strictly follow statutory delivery and pickup windows.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov"
+    },
     {
       "id": "cal-law-review-municipal-ghost-gun-litigation",
       "date": "2026-09-21",
@@ -14,6 +27,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "cadoj-bulletin-nfa-firearms-warning",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Issues Advisory Clarifying State Bans on NFA Firearms and Suppressors",
+      "statute_or_case": "CA Penal Code §§ 33410, 33215, 24510; Bulletin 2026-DLE-16",
+      "summary": "The California Department of Justice issued Information Bulletin 2026-DLE-16 reminding licensed firearm dealers and the public that federal district court decisions modifying NFA registration enforcement do not invalidate California state law. State penal code provisions strictly prohibiting suppressors, short-barreled rifles, and short-barreled shotguns remain fully active criminal statutes across California.",
+      "community_takeaway": "Never attempt to buy, order, or bring suppressors or short-barreled firearms into California, as possessing them remains a state-level felony regardless of out-of-state federal rulings.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/system/files/media/2026-dle-16.pdf"
     },
     {
       "id": "ca-doj-bulletin-nfa-prohibition-notice",
@@ -40,6 +66,19 @@
       "community_takeaway": "First-time applicants burdened by steep local application fees should follow this action, as a federal ruling or settlement could significantly reduce administrative carry permit costs across Northern California.",
       "source_name": "The Reload",
       "source_url": "https://thereload.com/analysis-doj-doubles-down-on-gun-carry-lawsuits/"
+    },
+    {
+      "id": "doj-lawsuit-san-jose-carry-fees",
+      "date": "2026-09-16",
+      "category": "State News",
+      "badge_status": "Pending Review",
+      "badge_color": "amber",
+      "headline": "Federal Government Sues San Jose Over Prohibitive $1,600 Concealed Carry Fees",
+      "statute_or_case": "United States v. City of San Jose; CA Penal Code § 26190",
+      "summary": "The U.S. Department of Justice filed a civil rights lawsuit against the City of San Jose, alleging its nearly $1,600 concealed carry permit application fee unconstitutionally infringes on Second Amendment rights. The federal complaint asserts that San Jose's fees are the highest in the country and violate Supreme Court precedent prohibiting prohibitive financial obstacles to public carry.",
+      "community_takeaway": "Permit applicants in the South Bay should track this docket closely, as a preliminary injunction or settlement could significantly lower out-of-pocket licensing fees for law-abiding community members.",
+      "source_name": "Associated Press",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-sues-san-jose-unconstitutional-1600-firearm-permit-fee"
     },
     {
       "id": "calmatters-investigation-school-police-rifles",
@@ -159,6 +198,19 @@
       "source_url": "https://www.cdtfa.ca.gov/taxes-and-fees/firearms-and-ammunition-excise-tax.htm"
     },
     {
+      "id": "cadoj-bulletin-ccw-renewal-rap-back",
+      "date": "2026-08-31",
+      "category": "CA DOJ Notice",
+      "badge_status": "In Effect",
+      "badge_color": "blue",
+      "headline": "CA DOJ Directs Licensing Authorities on Mandatory Live Scan CCW Renewals",
+      "statute_or_case": "CA Penal Code § 26210; Bulletin 2026-DLE-14",
+      "summary": "The CA DOJ Division of Law Enforcement published Information Bulletin 2026-DLE-14 establishing procedural guidance for concealed carry weapon (CCW) renewals taking effect on September 1, 2026. The advisory mandates that issuing authorities collect Live Scan fingerprints for renewing applicants to maintain automated criminal background notifications via the Federal Rap Back system.",
+      "community_takeaway": "CCW permit holders approaching expiration should schedule a Live Scan fingerprint appointment early and submit renewal packets at least 90 to 120 days ahead to avoid lapses in lawful carry coverage.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
+    },
+    {
       "id": "ca-doj-ccw-rap-back-enrollment-mandate",
       "date": "2026-08-31",
       "category": "CA DOJ Notice",
@@ -261,6 +313,19 @@
       "community_takeaway": "California firearm owners and 3D printing enthusiasts should monitor state DOJ regulatory releases regarding hardware certification standards and compliance timelines.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB2047"
+    },
+    {
+      "id": "legislature-advances-sb-948-migrant-safety-cert",
+      "date": "2026-08-29",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Legislature Approves SB 948 Extending Firearm Certification to New Residents",
+      "statute_or_case": "Senate Bill 948 (Arreguín)",
+      "summary": "The California Legislature passed Senate Bill 948, sending legislation to the Governor's desk that requires individuals moving into the state to obtain a Firearm Safety Certificate within statutory registration deadlines. The measure ensures that gun owners relocating to California demonstrate familiarity with the state's mandatory safe storage, transportation, and criminal liability statutes.",
+      "community_takeaway": "Families moving to California from other states must prepare to take the state Firearm Safety Certificate (FSC) written test and complete firearm registration with the CA DOJ within 180 days of arrival.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/05/california-gun-laws-sb948/"
     },
     {
       "id": "ca-legislature-sb-948-firearm-safety-certificate-mandate",
