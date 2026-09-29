@@ -1,7 +1,59 @@
 {
-  "last_updated": "2026-09-26T05:17:12.566Z",
-  "updated_formatted": "September 25, 2026 • 10:17 PM PDT",
+  "last_updated": "2026-09-29T19:35:03.961Z",
+  "updated_formatted": "September 29, 2026 • 12:35 PM PDT",
   "items": [
+    {
+      "id": "calmatters-newsom-signs-ten-gun-safety-bills",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "CalMatters Reports Newsom Approval of 10-Bill Firearm Safety Legislative Package",
+      "statute_or_case": "SB 948, AB 1743 & AB 2047",
+      "summary": "CalMatters reported on Governor Newsom signing a 10-bill legislative package aimed at expanding safety class hours, tracking crime guns, and regulating 3D printer hardware. Civil rights groups announced preparations for legal challenges against the expanded training hours and associated administrative fees imposed on lawful purchasers.",
+      "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "california-chaptered-sb-948-firearm-safety-certificate",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "Governor Signs SB 948 Overhauling Firearm Safety Certificates and New Resident Rules",
+      "statute_or_case": "SB 948 (Stats. 2026, ch. 465) / CA Penal Code § 31615",
+      "summary": "Governor Gavin Newsom signed Senate Bill 948 into law, establishing a mandatory four-hour certified safety course that includes live-fire range qualification to obtain a Firearm Safety Certificate. The bill also closes exemptions for new residents bringing firearms into California, requiring them to acquire a certificate and register imported firearms within 180 days.",
+      "community_takeaway": "Families planning first-time purchases or relocating into California should prepare for mandatory live-fire instruction and ensure out-of-state firearms are formally registered within the statutory grace period.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB948"
+    },
+    {
+      "id": "abc10-voluntary-gun-storage-and-red-flag-expansion",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "ABC10 Explores Expansion of Voluntary Firearm Storage and Youth Violence Prevention",
+      "statute_or_case": "AB 1974 & AB 1753",
+      "summary": "ABC10 highlighted newly enacted provisions expanding state-supported voluntary firearm storage infrastructure and refining protective order surrender procedures. The legislation aims to mitigate accidental household shootings and youth crises by providing safe, temporary off-site storage options through licensed facilities.",
+      "community_takeaway": "Families facing personal crises or temporary household vulnerability should explore authorized off-site voluntary storage options to keep homes secure without permanently surrendering ownership rights.",
+      "source_name": "ABC10 News",
+      "source_url": "https://www.abc10.com/article/news/politics/california-gun-laws-firearm-storage-prevention/103-9fd1b975"
+    },
+    {
+      "id": "ninth-circuit-en-banc-yukutake-shall-issue",
+      "date": "2026-09-22",
+      "category": "Court Ruling",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit En Banc Upholds Objective Shall-Issue Firearm Permitting Regulations",
+      "statute_or_case": "Yukutake v. Lopez, No. 21-16756",
+      "summary": "In an 11-judge en banc decision, the Ninth Circuit reversed a district court injunction and held that objective shall-issue firearm permitting requirements do not violate the Second Amendment. The court determined that reasonable procedural timelines and firearm verification requirements impose only modest burdens and remain presumptively lawful under the Bruen doctrine.",
+      "community_takeaway": "CCW permit holders and prospective firearm purchasers across Ninth Circuit jurisdictions should prepare for continued administrative verification procedures and strictly observe permit expiration windows.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov/opinions/"
+    },
     {
       "id": "ninth-circuit-en-banc-yukutake-ruling",
       "date": "2026-09-22",
@@ -196,6 +248,19 @@
       "community_takeaway": "First-time buyers should account for the 11% surcharge added at checkout alongside standard local sales taxes when budgeting for ammunition and home storage hardware.",
       "source_name": "California Department of Tax and Fee Administration (CDTFA)",
       "source_url": "https://www.cdtfa.ca.gov/taxes-and-fees/firearms-and-ammunition-excise-tax.htm"
+    },
+    {
+      "id": "ca-doj-ccw-renewal-rap-back-fingerprint-mandate",
+      "date": "2026-08-31",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Issues Mandate for CCW Renewal Live Scan and Federal Rap Back Enrollment",
+      "statute_or_case": "CA Penal Code § 26175 & Bulletin 2026-DLE-14",
+      "summary": "The California Department of Justice released Information Bulletin 2026-DLE-14 notifying law enforcement agencies that all renewal CCW applicants must submit fresh Live Scan fingerprint images. This directive enforces continuous criminal background monitoring by mandating enrollment in the Federal Rap Back Service for all renewing permit holders.",
+      "community_takeaway": "Existing CCW holders must initiate renewal applications at least 60 to 90 days before expiration to complete mandatory Live Scan re-fingerprinting and budget for additional statutory processing fees.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "cadoj-bulletin-ccw-renewal-rap-back",
