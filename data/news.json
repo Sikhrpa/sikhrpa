@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-09-29T19:35:03.961Z",
-  "updated_formatted": "September 29, 2026 • 12:35 PM PDT",
+  "last_updated": "2026-10-03T05:34:20.608Z",
+  "updated_formatted": "October 2, 2026 • 10:34 PM PDT",
   "items": [
+    {
+      "id": "calmatters-sb948-mandatory-safety-training",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "amber",
+      "headline": "CalMatters Analyzes Passage of SB 948 Imposing 4-Hour Live Training and Strict Resident Timelines",
+      "statute_or_case": "Senate Bill 948",
+      "summary": "CalMatters published an in-depth breakdown of Senate Bill 948, reporting that gun buyers will eventually be required to take a four-hour safety course while incoming state residents must secure a safety certificate within 180 days. Civil rights advocates warned the training mandate acts as an economic barrier to entry, while state sponsors defended the law as necessary to stem unintentional injuries.",
+      "community_takeaway": "Individuals relocating to California must plan ahead to obtain valid California Firearm Safety Certificates within the initial 180-day grace period, and first-time buyers should budget time for enhanced classroom hours.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/gavin-newsom-gun-laws/"
+    },
     {
       "id": "calmatters-newsom-signs-ten-gun-safety-bills",
       "date": "2026-09-27",
@@ -14,6 +27,32 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "newsom-signs-2026-gun-legislation-package",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "California Legislature Enacts 10-Bill Gun Safety Package Expanding Training and Storage Protocols",
+      "statute_or_case": "Senate Bill 948 & Assembly Bill 1974 (Stats. 2026)",
+      "summary": "Governor Gavin Newsom signed a comprehensive slate of ten firearm-related measures chaptered during the 2026 legislative session, led by SB 948 and AB 1974. The statutory changes expand mandatory training requirements, establish structured voluntary safe-storage initiatives, and implement new tracing protocols for local law enforcement.",
+      "community_takeaway": "Families and new owners should audit their current Firearm Safety Certificates (FSC) and track emerging state certification rules, while exploring local secure storage alternatives for times of family crisis or extended travel.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/"
+    },
+    {
+      "id": "abc10-storage-and-crisis-prevention-expansion",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "ABC10 Reports on State Rollout of Voluntary Firearm Storage Programs and GVRO Enforcement",
+      "statute_or_case": "AB 1974 & CA Penal Code § 25100",
+      "summary": "ABC10 News Sacramento reported on the state's rollout of voluntary off-site firearms storage frameworks and increased funding for Gun Violence Restraining Order (GVRO) educational campaigns. Reporting underscored state data highlighting over 1,700 court-issued GVROs and the critical role of licensed community storage facilities during behavioral health crises.",
+      "community_takeaway": "Gun-owning households should ensure all defensive firearms remain securely locked in CA DOJ-approved lockboxes or gun safes accessible only to licensed adults, and familiarize themselves with legal pathways for temporary voluntary storage.",
+      "source_name": "ABC10 News Sacramento",
+      "source_url": "https://www.abc10.com/"
     },
     {
       "id": "california-chaptered-sb-948-firearm-safety-certificate",
@@ -40,6 +79,19 @@
       "community_takeaway": "Families facing personal crises or temporary household vulnerability should explore authorized off-site voluntary storage options to keep homes secure without permanently surrendering ownership rights.",
       "source_name": "ABC10 News",
       "source_url": "https://www.abc10.com/article/news/politics/california-gun-laws-firearm-storage-prevention/103-9fd1b975"
+    },
+    {
+      "id": "ninth-circuit-en-banc-yukutake-permitting",
+      "date": "2026-09-22",
+      "category": "Court Ruling",
+      "badge_status": "In Effect",
+      "badge_color": "purple",
+      "headline": "Ninth Circuit En Banc Upholds 30-Day Permit Expiration and In-Person Inspection Regimes Under Bruen",
+      "statute_or_case": "Yukutake v. Lopez, No. 21-16756 (9th Cir. en banc)",
+      "summary": "An 11-judge en banc panel of the U.S. Court of Appeals for the Ninth Circuit ruled that procedural gun permitting regulations, including strict 30-day purchase authorization deadlines and physical police inspection mandates, are presumptively lawful under the Second Amendment. The court determined that non-abusive, shall-issue administrative hurdles impose only modest burdens that do not unlawfully deny the right to acquire firearms.",
+      "community_takeaway": "Prospective buyers and permit applicants throughout the Ninth Circuit must rigorously monitor statutory deadlines and inspection windows, as procedural timelines set by licensing authorities continue to receive strong judicial deference.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov/"
     },
     {
       "id": "ninth-circuit-en-banc-yukutake-shall-issue",
@@ -79,6 +131,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-nfa-suppressor-clarification",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "blue",
+      "headline": "CA DOJ BOF Issues Advisory Confirming State Bans on Suppressors and SBRs Remain Strictly Enforced",
+      "statute_or_case": "CA Penal Code § 33410 & § 33215; Bulletin 2026-DLE-16",
+      "summary": "The California Department of Justice Bureau of Firearms published Information Bulletin 2026-DLE-16 in response to out-of-state federal rulings concerning the National Firearms Act. The bulletin explicitly clarifies that suppressors, short-barreled rifles, and camouflaged firearms remain strictly prohibited under California state penal statutes regardless of federal NFA litigation in other jurisdictions.",
+      "community_takeaway": "First-time owners and community members must be aware that federal court developments outside California do not modify state law; possessing or purchasing suppressors or short-barreled rifles in California remains a serious state felony.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "cadoj-bulletin-nfa-firearms-warning",
