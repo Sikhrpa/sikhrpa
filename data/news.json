@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-10-03T05:34:20.608Z",
-  "updated_formatted": "October 2, 2026 • 10:34 PM PDT",
+  "last_updated": "2026-10-06T19:46:24.097Z",
+  "updated_formatted": "October 6, 2026 • 12:46 PM PDT",
   "items": [
+    {
+      "id": "calmatters-coverage-newsom-signs-gun-control-package",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "amber",
+      "headline": "CalMatters Reports on Governor Signing 10 Gun Measures and New Mandated Training Costs",
+      "statute_or_case": "Senate Bill 948 & 2026 Gun Safety Legislative Package",
+      "summary": "CalMatters reported on Governor Newsom's signing of a 10-bill firearm safety package, highlighting debate surrounding the new four-hour live-fire training mandate for gun purchasers. Firearms advocates contend the requirement imposes disproportionate financial and logistical barriers, while safety advocates maintain it ensures vital firearm handling competence.",
+      "community_takeaway": "First-time buyers should stay informed on implementing administrative regulations and budget appropriate course and range fees into their firearm safety planning.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/california-gun-laws-gavin-newsom/"
+    },
     {
       "id": "calmatters-sb948-mandatory-safety-training",
       "date": "2026-09-27",
@@ -27,6 +40,32 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "california-legislature-chaptered-sb-948-safety-training",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "California Enacts SB 948 Requiring Four-Hour Live-Fire Course and New Resident Compliance",
+      "statute_or_case": "Senate Bill 948 / Chapter 465, Statutes of 2026 (CA Penal Code § 31640.5)",
+      "summary": "Governor Gavin Newsom signed SB 948 into law, overhauling California's Firearm Safety Certificate process by requiring a four-hour course with mandatory live-fire range instruction. The statute also requires individuals moving into California with firearms to obtain a Firearm Safety Certificate within 180 days of establishing residency.",
+      "community_takeaway": "Families planning to relocate to California must prepare to secure an FSC within 180 days, and future firearm purchasers should anticipate mandatory live-fire coursework.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov"
+    },
+    {
+      "id": "abc10-sacramento-firearm-storage-prevention-package",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "ABC10 Reports on California Expanding Voluntary Gun Storage and School Storage Notices",
+      "statute_or_case": "Assembly Bill 1974 & Assembly Bill 1943",
+      "summary": "ABC10 Sacramento reported on newly enacted California legislation establishing a voluntary off-site firearm storage program and expanding public school safe storage notices. Assembly Bill 1974 establishes a statutory framework for voluntary firearm storage during personal or family crises, while Assembly Bill 1943 updates parental notifications on home child access prevention laws.",
+      "community_takeaway": "Families should confirm all home defense weapons are secured in CA DOJ-approved locking containers and familiarize themselves with voluntary temporary off-site storage options during household crises.",
+      "source_name": "ABC10 Sacramento",
+      "source_url": "https://www.abc10.com/article/news/politics/california-gun-safety-bills-signed/103-9fd1b975-3ac9-4a02-a0a6-ada866c80acf"
     },
     {
       "id": "newsom-signs-2026-gun-legislation-package",
@@ -79,6 +118,19 @@
       "community_takeaway": "Families facing personal crises or temporary household vulnerability should explore authorized off-site voluntary storage options to keep homes secure without permanently surrendering ownership rights.",
       "source_name": "ABC10 News",
       "source_url": "https://www.abc10.com/article/news/politics/california-gun-laws-firearm-storage-prevention/103-9fd1b975"
+    },
+    {
+      "id": "ninth-circuit-en-banc-yukutake-v-lopez",
+      "date": "2026-09-22",
+      "category": "Court Ruling",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit En Banc Upholds Handgun Permitting Timeframe and Inspection Requirements",
+      "statute_or_case": "Yukutake v. Lopez, No. 21-16756",
+      "summary": "An 11-judge en banc panel of the Ninth Circuit reversed a lower court decision and upheld provisions requiring handgun purchase permits to be used within 30 days and requiring in-person inspection of newly acquired firearms. The court ruled that objective 'shall-issue' administrative schemes are presumptively constitutional under the Bruen framework and do not meaningfully infringe upon Second Amendment rights.",
+      "community_takeaway": "Gun owners should note that federal appellate precedent within the Ninth Circuit continues to defer to procedural firearm acquisition windows and physical verification mandates.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov"
     },
     {
       "id": "ninth-circuit-en-banc-yukutake-permitting",
