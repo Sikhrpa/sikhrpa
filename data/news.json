@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-10-06T19:46:24.097Z",
-  "updated_formatted": "October 6, 2026 • 12:46 PM PDT",
+  "last_updated": "2026-10-10T06:12:04.534Z",
+  "updated_formatted": "October 9, 2026 • 11:12 PM PDT",
   "items": [
+    {
+      "id": "calmatters-newsom-signs-ten-gun-control-bills",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "CalMatters Reports on Sweeping California Firearm Package Expanding Buyer Certification and Tech Mandates",
+      "statute_or_case": "SB 948 / AB 2642",
+      "summary": "CalMatters reported on Governor Gavin Newsom signing ten new California firearm measures, highlighting Senate Bill 948's mandate for live-fire training alongside consumer technology and safe storage provisions. The reporting notes significant logistical concerns among California ranges regarding class availability and highlights imminent constitutional challenges from civil rights coalitions.",
+      "community_takeaway": "Community members and new gun owners should expect increased demand at local shooting ranges and possible course backlogs once live-fire curricula are formally accredited. Staying in contact with local certified instructors will ensure families complete required safety courses well before intended purchases.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/california-gun-laws-newsom-training/"
+    },
     {
       "id": "calmatters-coverage-newsom-signs-gun-control-package",
       "date": "2026-09-27",
@@ -40,6 +53,19 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "ca-legislature-sb-948-firearm-training-enacted",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "Governor Newsom Signs Senate Bill 948 Establishing Mandatory Live-Fire FSC Training Requirements",
+      "statute_or_case": "SB 948 / Cal. Penal Code § 31640 et seq.",
+      "summary": "Governor Gavin Newsom signed Senate Bill 948 into law as part of a 10-bill state gun violence prevention legislative package enacted by the California Legislature. The enacted measure overhauls California's Firearm Safety Certificate framework by establishing a mandatory four-hour safety curriculum with live-fire qualification and creating a 180-day certification rule for new state residents.",
+      "community_takeaway": "Current FSC cardholders remain compliant until expiration, but prospective purchasers and newly arriving residents must prepare for hands-on, live-fire training standards rather than a simple written exam. Families planning future purchases should budget additional instructional time and monitor range facility certifications.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov"
     },
     {
       "id": "california-legislature-chaptered-sb-948-safety-training",
@@ -183,6 +209,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-2026-dle-16-nfa-firearms",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Issues Regulatory Bulletin Reaffirming Statewide Bans on NFA Firearms and Suppressors",
+      "statute_or_case": "CA DOJ Information Bulletin 2026-DLE-16 / Cal. Penal Code §§ 33410, 33215",
+      "summary": "The California Department of Justice Bureau of Firearms published an official bulletin clarifying that California's prohibitions against silencers, short-barreled rifles, and short-barreled shotguns remain fully operational. The bureau cautioned licensed dealers and residents that out-of-state federal rulings invalidating portions of the federal National Firearms Act do not preempt California's independent statutory restrictions.",
+      "community_takeaway": "California firearm owners and families must verify that out-of-state firearm configurations and sound suppressors remain completely unlawful in California despite shifting federal court decisions elsewhere. Never attempt to order, import, or build National Firearms Act regulated items into California without specific statutory exemptions.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "ca-doj-bulletin-nfa-suppressor-clarification",
@@ -599,6 +638,32 @@
       "community_takeaway": "Dealers across California continue to enforce the 30-day waiting window on purchase submissions. Always confirm your last DROS release date with your local FFL dealer before initiating a new application.",
       "source_name": "U.S. Court of Appeals for the Ninth Circuit",
       "source_url": "https://oag.ca.gov/firearms"
+    },
+    {
+      "id": "ninth-circuit-richards-v-newsom-surveillance",
+      "date": "2026-08-27",
+      "category": "Court Ruling",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit Upholds California Mandate Requiring 24/7 Audio and Video Surveillance at Gun Stores",
+      "statute_or_case": "Richards v. Newsom, No. 25-5028 / Cal. Penal Code § 26806",
+      "summary": "A Ninth Circuit appellate panel affirmed the dismissal of a constitutional lawsuit challenging California Penal Code § 26806, which requires licensed firearm dealers to operate continuous 24-hour audiovisual recording systems on their premises. The court rejected plaintiffs' Fourth Amendment arguments, holding that the statutory recording mandate alone does not constitute an unconstitutional government search without specific state intrusion.",
+      "community_takeaway": "First-time buyers and families visiting licensed California gun shops should be aware that all retail counter interactions, firearm safety demonstrations, and sales discussions are recorded under state law. Lawful purchasers do not need to alter their purchasing process, but they should expect strict compliance checks across all licensed retail storefronts.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov"
+    },
+    {
+      "id": "courthouse-news-gun-store-surveillance-ruling",
+      "date": "2026-08-27",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Courthouse News Analyzes Federal Court Confirmation of California Gun Retailer Surveillance Requirements",
+      "statute_or_case": "Richards v. Newsom / Cal. Penal Code § 26806",
+      "summary": "Courthouse News covered the Ninth Circuit's decision affirming mandatory 24-hour video and audio surveillance standards for California firearm retailers. The analysis details how courts balanced retail operational costs and consumer privacy objections against state efforts to deter straw purchasing, prevent burglaries, and enhance community safety.",
+      "community_takeaway": "First-time buyers should ensure they have all necessary paperwork, proof of residency, and identification prepared in advance to avoid extended processing times under recorded store environments. Familiarizing family members with standard gun shop transaction procedures helps guarantee transparent, compliant retail interactions.",
+      "source_name": "Courthouse News Service",
+      "source_url": "https://www.courthousenews.com/ninth-circuit-rules-california-gun-dealers-must-keep-surveillance-systems/"
     },
     {
       "id": "ninth-circuit-richards-newsom-dealer-surveillance",
