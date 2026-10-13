@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-10-10T06:12:04.534Z",
-  "updated_formatted": "October 9, 2026 • 11:12 PM PDT",
+  "last_updated": "2026-10-13T20:20:11.938Z",
+  "updated_formatted": "October 13, 2026 • 1:20 PM PDT",
   "items": [
+    {
+      "id": "calmatters-newsom-signs-gun-safety-package-sb948",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "CalMatters Reports on State Gun Law Expansion and Scrutiny Over New Live-Fire Mandate",
+      "statute_or_case": "SB 948 & 2026 Legislative Gun Package",
+      "summary": "CalMatters reported on Governor Newsom signing a 10-bill firearm safety package, highlighting the significant transition from a written test to mandatory live-fire instruction under SB 948. The reporting analyzed growing pushback from civil rights advocates who warn the additional course hours and facility fees create disproportionate hurdles for lower-income applicants.",
+      "community_takeaway": "Prospective first-time buyers should expect longer qualification timelines and higher initial certification expenses as California DOJ finalizes curriculum and instructor accreditation standards.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/california-gun-control-bills-safety-class/"
+    },
     {
       "id": "calmatters-newsom-signs-ten-gun-control-bills",
       "date": "2026-09-27",
@@ -53,6 +66,32 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "ca-legislature-ab-1974-voluntary-firearm-storage-framework",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "purple",
+      "headline": "California Codifies Voluntary Law Enforcement Gun Safekeeping Program Under AB 1974",
+      "statute_or_case": "AB 1974 (Chapter 460, Stats. 2026) / Cal. Penal Code § 25010",
+      "summary": "Governor Newsom chaptered Assembly Bill 1974, establishing clear statutory authorization for local police and sheriff departments to provide temporary, voluntary firearm storage for owners experiencing acute crisis. The framework protects participants from transfer liabilities for up to one year and requires Automated Firearms System clearing and CFARS eligibility checks prior to return.",
+      "community_takeaway": "Families navigating temporary domestic crises or caring for relatives experiencing cognitive decline can utilize designated law enforcement safe storage programs as a voluntary safety net without forfeiting legal ownership.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1974"
+    },
+    {
+      "id": "abc10-california-firearm-storage-community-safety-laws",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "ABC10 Covers New California Legislation Expanding Voluntary Storage and Violence Interruption",
+      "statute_or_case": "AB 1974 & AB 1943",
+      "summary": "ABC10 reported on the enactment of new state firearm statutes focused on voluntary law enforcement storage and expanded safe storage awareness communications for public school parents. The broadcast emphasized that standardized safe storage initiatives provide pragmatic alternatives designed to prevent youth accidental shootings without immediate criminal penalties.",
+      "community_takeaway": "Household firearm owners should verify that home storage practices adhere to California safe storage mandates under Penal Code § 25100, ensuring all firearms are inaccessible to minors and prohibited individuals.",
+      "source_name": "ABC10 News",
+      "source_url": "https://www.abc10.com/video/news/politics/newsom-signs-gun-safety-package-and-new-california-fireworks-law/103-c37f5ffb-9a1b-4d6a-972a-bc22a44e1678"
     },
     {
       "id": "ca-legislature-sb-948-firearm-training-enacted",
@@ -144,6 +183,19 @@
       "community_takeaway": "Families facing personal crises or temporary household vulnerability should explore authorized off-site voluntary storage options to keep homes secure without permanently surrendering ownership rights.",
       "source_name": "ABC10 News",
       "source_url": "https://www.abc10.com/article/news/politics/california-gun-laws-firearm-storage-prevention/103-9fd1b975"
+    },
+    {
+      "id": "ninth-circuit-yukutake-permitting-inspection-en-banc",
+      "date": "2026-09-22",
+      "category": "Court Ruling",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "Ninth Circuit En Banc Upholds Firearm Permitting Deadlines and Police Station Inspection Rules",
+      "statute_or_case": "Yukutake v. Lopez, No. 21-16756 (9th Cir. 2026)",
+      "summary": "An en banc panel of the U.S. Court of Appeals for the Ninth Circuit ruled that statutory 30-day permit use windows and mandatory physical inspections of newly acquired firearms at police stations do not violate the Second Amendment. The court held that non-abusive permitting criteria and procedural verification checkpoints impose only modest administrative burdens on lawful firearm purchasers.",
+      "community_takeaway": "Gun owners across Ninth Circuit jurisdictions should note that strict procedural windows and administrative verification requirements remain enforceable, making prompt compliance with transaction deadlines essential.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov"
     },
     {
       "id": "ninth-circuit-en-banc-yukutake-v-lopez",
