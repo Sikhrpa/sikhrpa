@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-10-13T20:20:11.938Z",
-  "updated_formatted": "October 13, 2026 • 1:20 PM PDT",
+  "last_updated": "2026-10-17T04:49:03.085Z",
+  "updated_formatted": "October 16, 2026 • 9:49 PM PDT",
   "items": [
+    {
+      "id": "calmatters-mandatory-training-sb948-coverage",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "CalMatters Examines Expanded Four-Hour In-Person Class Requirements for California Gun Owners",
+      "statute_or_case": "SB 948 / Cal. Penal Code § 31640",
+      "summary": "CalMatters reported on the extensive regulatory overhaul codified by SB 948, which will require new buyers and incoming residents to complete a mandatory four-hour live instructional course to secure a Firearm Safety Certificate. Civil rights and Second Amendment groups have already declared intentions to mount constitutional challenges, arguing the expanded prerequisites create an undue barrier to lawful ownership.",
+      "community_takeaway": "Prospective first-time buyers should verify the expiration date of their current Firearm Safety Certificates (FSCs) and budget additional classroom time into their purchase planning before newly scheduled rules phase in.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/california-gun-laws-safety-class/"
+    },
     {
       "id": "calmatters-newsom-signs-gun-safety-package-sb948",
       "date": "2026-09-27",
@@ -66,6 +79,32 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "legislature-chaptered-ab1974-sb948-package",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Governor Signs Omnibus Gun Safety Package Expanding Storage Programs and Training Rules",
+      "statute_or_case": "AB 1974 (Stefani) & SB 948 (Arreguín)",
+      "summary": "Governor Gavin Newsom chaptered a major ten-bill firearm safety package that establishes a statewide voluntary firearm safe-storage network (AB 1974) and enacts expanded mandatory training requirements for future firearm certification (SB 948). The legislation creates formal legal protections for gun owners temporarily surrendering weapons to licensed facilities while significantly raising training thresholds for new purchasers.",
+      "community_takeaway": "Families navigating temporary domestic distress or mental health crises should familiarize themselves with new certified voluntary safe-storage repositories, which allow lawful offsite locking without forfeiting ownership.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov"
+    },
+    {
+      "id": "abc10-voluntary-firearm-storage-initiative",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "ABC10 Highlights New Safe-Storage Safeguards and Youth Violence Interventions Across California",
+      "statute_or_case": "AB 1974 / Cal. Penal Code § 25100",
+      "summary": "Investigative reporting from ABC10 Northern California detailed how newly signed laws expand access to neutral voluntary storage sites and grant programs aimed at keeping household firearms away from children and individuals in crisis. State health officials and community advocates underscored that voluntary offsite storage serves as an effective preventative strategy against household accidents and self-harm.",
+      "community_takeaway": "Ensure all home firearms are secured in California DOJ-approved lockboxes or safes with dedicated child-resistant mechanisms, and locate local certified storage partners before household emergencies occur.",
+      "source_name": "ABC10 Northern California",
+      "source_url": "https://www.abc10.com/article/news/politics/new-california-gun-laws-firearm-storage/103-9fd1b975-3ac9-4a02-a0a6-ada866c80acf"
     },
     {
       "id": "ca-legislature-ab-1974-voluntary-firearm-storage-framework",
@@ -261,6 +300,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-nfa-firearms-clarification",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Releases Advisory Affirming State-Level Bans on Federal NFA Firearms and Suppressors",
+      "statute_or_case": "Cal. Penal Code § 33410 & § 33215",
+      "summary": "The California Department of Justice Division of Law Enforcement published Information Bulletin 2026-DLE-16 to clarify that recent federal court rulings and non-enforcement shifts concerning the National Firearms Act have zero legal effect on California statutory law. The Department reiterated that civilian possession or purchase of suppressors, short-barreled rifles, and short-barreled shotguns remains strictly prohibited as felonies under state penal codes.",
+      "community_takeaway": "Do not attempt to purchase, transport, or order suppressors or short-barreled firearms into California, even if out-of-state retailers or federal headlines suggest federal NFA rules have eased.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "ca-doj-bulletin-2026-dle-16-nfa-firearms",
