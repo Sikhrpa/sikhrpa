@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-10-17T04:49:03.085Z",
-  "updated_formatted": "October 16, 2026 • 9:49 PM PDT",
+  "last_updated": "2026-10-20T18:39:47.189Z",
+  "updated_formatted": "October 20, 2026 • 11:39 AM PDT",
   "items": [
+    {
+      "id": "calmatters-newsom-signs-gun-control-package",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Pending Review",
+      "badge_color": "blue",
+      "headline": "CalMatters Examines Retail and Consumer Pushback Against California's New Live-Fire Mandate",
+      "statute_or_case": "SB 948 / California 2026 Gun Safety Package",
+      "summary": "CalMatters investigated the implications of California's newly enacted gun control package, highlighting legal resistance from civil rights organizations that view the mandatory four-hour live-fire course as an undue financial barrier. The reporting details concerns over range congestion, instructional costs, and anticipated federal constitutional challenges under post-Bruen Second Amendment jurisprudence.",
+      "community_takeaway": "First-time purchasers should monitor upcoming court filings and local shooting range capacity, budgeting extra funds to account for tuition and ammunition expenses tied to expanded safety certifications.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/newsom-gun-control-bills-training/"
+    },
     {
       "id": "calmatters-mandatory-training-sb948-coverage",
       "date": "2026-09-27",
@@ -79,6 +92,32 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "ca-legislature-chaptered-sb-948",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "amber",
+      "headline": "Governor Newsom Signs SB 948 Requiring 4-Hour Course and Live-Fire Qualification for FSC",
+      "statute_or_case": "SB 948 (Chapter 465, Statutes of 2026) / Cal. Penal Code § 31615",
+      "summary": "Governor Gavin Newsom signed Senate Bill 948 into law as part of a 10-bill firearm safety package, replacing California's simple written Firearm Safety Certificate (FSC) test with a comprehensive four-hour course that includes live-fire shooting range exercises. The legislation also establishes a 180-day window and FSC certification requirement for new residents moving into the state with personal firearms.",
+      "community_takeaway": "Prospective first-time buyers and families planning firearm purchases should anticipate forthcoming live-fire training mandates and verify certified instructors early as training availability becomes constrained.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov"
+    },
+    {
+      "id": "abc10-california-firearm-storage-and-gvro-laws",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "ABC10 Highlights California Expansion of Voluntary Firearm Storage and Relinquishment Protocols",
+      "statute_or_case": "AB 1743 / AB 2047 / Cal. Penal Code § 18100",
+      "summary": "ABC10 reported on the state's rollout of measures designed to expand community-based voluntary offsite firearm storage programs and sharpen law enforcement surrender procedures for gun violence restraining orders. The coverage emphasizes youth suicide prevention initiatives and highlights that California courts issued 1,727 gun violence restraining orders over the preceding year.",
+      "community_takeaway": "Families with firearms at home should review locking container practices and familiarize themselves with local voluntary offsite storage options to safeguard households during acute mental health crises.",
+      "source_name": "ABC10 News",
+      "source_url": "https://www.abc10.com/article/news/politics/new-california-gun-laws-storage-violence-prevention/"
     },
     {
       "id": "legislature-chaptered-ab1974-sb948-package",
@@ -300,6 +339,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-nfa-firearms-2026-dle-16",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Issues Advisory Affirming State Prohibitions on NFA Firearms and Suppressors",
+      "statute_or_case": "Information Bulletin 2026-DLE-16 / Cal. Penal Code § 3273.51",
+      "summary": "The California Department of Justice Bureau of Firearms issued Information Bulletin 2026-DLE-16 advising federal licensees and gun show operators that state bans on silencers, short-barreled rifles, and short-barreled shotguns remain in full force. The state clarified that federal district court decisions invalidating portions of the National Firearms Act elsewhere have zero legal effect on California's independent statutory restrictions.",
+      "community_takeaway": "California firearm owners and families must understand that despite out-of-state federal challenges to NFA regulations, possessing or purchasing suppressors and short-barreled configurations remains illegal under California state law.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "ca-doj-bulletin-nfa-firearms-clarification",
