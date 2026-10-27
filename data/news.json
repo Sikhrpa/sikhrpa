@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-24T04:54:07.823Z",
-  "updated_formatted": "October 23, 2026 • 9:54 PM PDT",
+  "last_updated": "2026-10-27T19:35:17.460Z",
+  "updated_formatted": "October 27, 2026 • 12:35 PM PDT",
   "items": [
     {
       "id": "sierra-sun-times-ab1974-temporary-safe-storage",
@@ -14,6 +14,19 @@
       "community_takeaway": "Families experiencing temporary domestic turmoil or mental health crises can consult local law enforcement to safely store household firearms off-premises without relinquishing legal property ownership.",
       "source_name": "Sierra Sun Times",
       "source_url": "https://goldrushcam.com/sierrasuntimes"
+    },
+    {
+      "id": "calmatters-sb-948-firearm-training-overhaul",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Pending Review",
+      "badge_color": "amber",
+      "headline": "CalMatters Highlights Training Mandate Hurdles and Brewing Court Battles",
+      "statute_or_case": "Senate Bill 948 / CA Penal Code § 31640",
+      "summary": "CalMatters analyzed the practical impact of the governor's 10-bill firearm safety package, highlighting the significant logistics of implementing mandatory range qualifications across the state. The report underscores pending legal preparations by civil rights advocates who argue the requirement imposes prohibitive cost barriers on lower-income purchasers.",
+      "community_takeaway": "Prospective buyers should monitor ongoing legal proceedings by advocacy groups, as early lawsuits may seek preliminary injunctions against implementation schedules and instructor licensing criteria.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/gavin-newsom-signs-california-gun-control-laws/"
     },
     {
       "id": "calmatters-newsom-signs-gun-control-package",
@@ -105,6 +118,32 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "california-legislature-sb-948-training-mandate",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Governor Signs SB 948 Mandating Range Qualification for Firearm Safety Certificates",
+      "statute_or_case": "SB 948 (Stats. 2026) / CA Penal Code § 31640",
+      "summary": "Governor Gavin Newsom signed Senate Bill 948, overhauling the statutory standards for California Firearm Safety Certificates. The newly chaptered measure introduces mandatory minimum four-hour training courses including certified live-fire qualification exercises at shooting ranges for firearm applicants.",
+      "community_takeaway": "Prospective first-time owners and renewing cardholders should budget additional time and funds for certified live-fire range instruction rather than relying on standard written questionnaires alone.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB948"
+    },
+    {
+      "id": "abc10-expansion-firearm-storage-programs",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "ABC10 Reports on New Voluntary Firearm Storage and Safe Harbor Programs",
+      "statute_or_case": "Assembly Bill 1974 & Assembly Bill 1753",
+      "summary": "ABC10 Northern California covered the approval of legislative measures that establish community-based voluntary firearm storage repositories and clarify surrender rules under protective orders. The framework facilitates safe, confidential off-site gun holding during acute domestic crises or periods of familial distress without relinquishing property rights.",
+      "community_takeaway": "Families experiencing personal distress or mental health challenges should explore participating local licensed storage repositories to temporarily and safely park household firearms outside the residence.",
+      "source_name": "ABC10 News",
+      "source_url": "https://www.abc10.com/article/news/politics/new-california-gun-laws-expand-firearm-storage/103-c37f5ffb-9a1b-4d6a-972a-bc22a44e1678"
     },
     {
       "id": "ca-legislature-chaptered-sb948-firearm-training",
@@ -365,6 +404,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-nfa-regulated-firearms",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "blue",
+      "headline": "CA DOJ Clarifies State Prohibitions on Federally Registered NFA Weapons",
+      "statute_or_case": "CA DOJ Information Bulletin No. 2026-DLE-16 / CA Penal Code § 32625 & § 33215",
+      "summary": "The California Department of Justice Bureau of Firearms issued an information bulletin confirming that federal National Firearms Act registrations do not exempt weapons from California penal codes. State restrictions strictly outlaw short-barreled rifles, machine guns, and sound suppressors without specific California dangerous weapons permits.",
+      "community_takeaway": "Owners moving into California must recognize that federal ATF tax stamps do not permit possession in California; NFA-regulated items must be legally configured or stored out-of-state before entry.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "ca-doj-bulletin-2026-dle-16-nfa-prohibition",
@@ -781,6 +833,19 @@
       "community_takeaway": "New residents planning a move into California should budget time to complete their Firearm Safety Certificate with a certified local instructor promptly upon taking up residence.",
       "source_name": "Davis Vanguard",
       "source_url": "https://davisvanguard.org/2026/08/california-gun-safety-bill-heads-to-governors-desk/"
+    },
+    {
+      "id": "ninth-circuit-richards-surveillance-mandate",
+      "date": "2026-08-28",
+      "category": "Court Ruling",
+      "badge_status": "In Effect",
+      "badge_color": "purple",
+      "headline": "Ninth Circuit Upholds Audio and Video Recording Mandates for Licensed Gun Retailers",
+      "statute_or_case": "Richards v. Newsom, No. 23-16275 (9th Cir.) / CA Penal Code § 26806",
+      "summary": "The U.S. Court of Appeals for the Ninth Circuit affirmed the district court dismissal of a constitutional challenge against California Penal Code section 26806. The ruling confirms the state's legal authority to mandate that licensed gun dealers maintain continuous audiovisual surveillance on commercial premises.",
+      "community_takeaway": "Community members should note that all retail firearm interactions, counter consultations, and transfers take place under mandatory digital audiovisual surveillance across California licensed dealerships.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-ninth-circuit-victory-defending-californias"
     },
     {
       "id": "ninth-circuit-gun-store-surveillance-ruling",
