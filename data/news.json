@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-27T19:35:17.460Z",
-  "updated_formatted": "October 27, 2026 • 12:35 PM PDT",
+  "last_updated": "2026-10-31T06:07:13.266Z",
+  "updated_formatted": "October 30, 2026 • 11:07 PM PDT",
   "items": [
     {
       "id": "sierra-sun-times-ab1974-temporary-safe-storage",
@@ -14,6 +14,32 @@
       "community_takeaway": "Families experiencing temporary domestic turmoil or mental health crises can consult local law enforcement to safely store household firearms off-premises without relinquishing legal property ownership.",
       "source_name": "Sierra Sun Times",
       "source_url": "https://goldrushcam.com/sierrasuntimes"
+    },
+    {
+      "id": "lbpost-youth-safety-and-storage-mandates",
+      "date": "2026-09-28",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "Long Beach Post Examines Community Impact and Safe Storage Under Signed Legislation",
+      "statute_or_case": "SB 948 / AB 1743",
+      "summary": "The Long Beach Post analyzed the local implementation of California's newly signed gun control package, focusing on safe storage mandates and statutory requirements addressing youth firearm violence. The report emphasized state public health data showing that preventable accidents comprise a major share of youth firearm injuries in the state.",
+      "community_takeaway": "Parents and guardians should confirm that all home firearms remain completely inaccessible to minors through certified biometric safes or cable locks in accordance with California child access prevention laws.",
+      "source_name": "Long Beach Post",
+      "source_url": "https://lbpost.com/news/newsom-signs-new-gun-control-laws-including-one-requiring-owners-to-take-a-4-hour-class"
+    },
+    {
+      "id": "calmatters-sb948-training-mandate-analysis",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "amber",
+      "headline": "CalMatters Reports on New California Law Mandating Four-Hour Safety Class for Gun Owners",
+      "statute_or_case": "Senate Bill 948",
+      "summary": "CalMatters reported on Governor Gavin Newsom signing a 10-bill firearm safety package, highlighting a new requirement for gun buyers to complete a four-hour safety class and range session. Gun rights advocates raised concerns over additional training fees and limited range capacity, while state officials stressed accidental shooting reduction.",
+      "community_takeaway": "First-time buyers should verify local certified instructor pricing and course availability early, ensuring full compliance with both the written exam and upcoming live-fire testing mandates.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/gavin-newsom-gun-control-laws/"
     },
     {
       "id": "calmatters-sb-948-firearm-training-overhaul",
@@ -118,6 +144,32 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "ca-leg-sb948-safety-training-mandate",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "California Enacts SB 948 Establishing Four-Hour Training and Live-Fire Requirements",
+      "statute_or_case": "Senate Bill 948 / CA Penal Code § 31615",
+      "summary": "Governor Gavin Newsom signed SB 948 into law, establishing a mandatory four-hour safety curriculum that incorporates live-fire range qualification for future Firearm Safety Certificate applicants. The statute also requires new residents moving into California with firearms to obtain a state safety certificate within 180 days of establishing domicile.",
+      "community_takeaway": "Prospective purchasers should prepare for mandatory live-fire instruction costs and scheduling requirements, while families relocating to California must register and complete certification within 180 days.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB948"
+    },
+    {
+      "id": "abc10-storage-and-prevention-package-overview",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "ABC10 Details California Expansion of Firearm Storage Initiatives and Restraining Orders",
+      "statute_or_case": "Assembly Bill 1743 / Senate Bill 1220",
+      "summary": "ABC10 reported on California's enactment of new legislation expanding state-backed voluntary firearm safe storage initiatives and refining Gun Violence Restraining Order surrender procedures. The broadcast highlighted state funding directed to community groups to educate families on temporary offsite storage and suicide prevention protocols.",
+      "community_takeaway": "Families should audit home gun security by investing in California DOJ-certified lockboxes and take advantage of voluntary local storage programs during temporary domestic or behavioral crises.",
+      "source_name": "ABC10 News Sacramento",
+      "source_url": "https://www.abc10.com/article/news/politics/new-california-gun-laws-firearm-storage-violence-prevention/103-9fd1b975-3ac9-4a02-a0a6-ada866c80acf"
     },
     {
       "id": "california-legislature-sb-948-training-mandate",
@@ -406,6 +458,19 @@
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
     },
     {
+      "id": "ca-doj-bulletin-2026-dle-16-nfa-weapons",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Bureau of Firearms Releases Advisory on State Law Prohibitions Against NFA Firearms",
+      "statute_or_case": "Information Bulletin 2026-DLE-16 / CA Penal Code § 32625",
+      "summary": "The California Department of Justice published Information Bulletin 2026-DLE-16 to provide law enforcement agencies and licensees with updated guidance on state prohibitions governing National Firearms Act weapons. The advisory clarifies that federal ATF registration does not exempt California residents from state felony prohibitions on short-barreled rifles, shotguns, and suppressors.",
+      "community_takeaway": "Never assume federal ATF tax stamps authorize possession in California; state statutes ban suppressors and short-barreled configurations without rare and specific Department of Justice permits.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
+    },
+    {
       "id": "ca-doj-bulletin-nfa-regulated-firearms",
       "date": "2026-09-18",
       "category": "CA DOJ Notice",
@@ -651,6 +716,19 @@
       "community_takeaway": "Firearm owners should recognize that verbal inquiries and transaction details inside California gun stores are recorded, underscoring the need to ensure all documentation and storage accessories are properly prepared in advance.",
       "source_name": "The Reload",
       "source_url": "https://thereload.com/ninth-circuit-upholds-state-surveillance-mandate-at-california-gun-stores/"
+    },
+    {
+      "id": "ca-doj-bulletin-2026-dle-14-ccw-renewals",
+      "date": "2026-09-01",
+      "category": "CA DOJ Notice",
+      "badge_status": "In Effect",
+      "badge_color": "blue",
+      "headline": "CA DOJ Enforces New CCW Renewal Live Scan Fingerprinting and Rap Back Mandates",
+      "statute_or_case": "Information Bulletin 2026-DLE-14 / CA Penal Code § 26185",
+      "summary": "The California Department of Justice issued Information Bulletin 2026-DLE-14 enforcing new statewide procedures for concealed carry weapon renewal applicants effective September 1, 2026. Under the guidance, issuing authorities cannot grant CCW renewals without new Live Scan fingerprint clearance and mandatory enrollment in the FBI's Rap Back notification service.",
+      "community_takeaway": "Concealed carry license holders should schedule Live Scan fingerprint appointments and renewal coursework months prior to expiration to avoid processing delays or permit lapses.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "ab28-state-excise-tax",
