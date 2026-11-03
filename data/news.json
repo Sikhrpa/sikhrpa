@@ -1,7 +1,33 @@
 {
-  "last_updated": "2026-10-31T06:07:13.266Z",
-  "updated_formatted": "October 30, 2026 • 11:07 PM PDT",
+  "last_updated": "2026-11-03T20:37:02.143Z",
+  "updated_formatted": "November 3, 2026 • 12:37 PM PST",
   "items": [
+    {
+      "id": "ninth-circuit-california-v-atf-ghost-guns",
+      "date": "2026-10-14",
+      "category": "Court Ruling",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit Denies California Rehearing in Legal Challenge Over Federal Ghost Gun Regulations",
+      "statute_or_case": "State of California v. ATF, No. 24-1524 (9th Cir.)",
+      "summary": "A three-judge panel of the Ninth Circuit Court of Appeals unanimously denied California's petition for panel rehearing in its lawsuit seeking to compel the ATF to enforce stricter federal receiver rules. The order affirms the dismissal of California's complaint on Article III standing grounds, holding that the state failed to demonstrate direct redressable injury.",
+      "community_takeaway": "California gun owners should recognize that while federal ghost gun litigation continues, California's own strict state serialization and precursor part background check statutes remain fully operative.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov"
+    },
+    {
+      "id": "sierra-sun-times-ab1974-community-storage",
+      "date": "2026-10-10",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Regional Press Details Expansion of Law Enforcement Temporary Gun Storage Programs",
+      "statute_or_case": "AB 1974 / Cal. Penal Code § 33850",
+      "summary": "The Sierra Sun Times reported on the community impact of AB 1974, which adapts San Francisco's Pierce's Pledge model to help law enforcement agencies statewide store firearms safely during domestic disputes. The coverage emphasizes how off-site secure storage prevents family tragedies while maintaining clear legal pathways for owners to recover their property.",
+      "community_takeaway": "Families with children should review their home storage safety plans and familiarize themselves with local municipal resources that offer temporary off-site firearm storage during difficult transitions.",
+      "source_name": "Sierra Sun Times",
+      "source_url": "https://goldrushcam.com/sierrasuntimes/index.php/news/local-news/60875-governor-gavin-newsom-signs-assemblymember-catherine-stefani-bill-giving-californians-a-safe-place-to-store-firearms-during-a-crisis"
+    },
     {
       "id": "sierra-sun-times-ab1974-temporary-safe-storage",
       "date": "2026-10-10",
@@ -16,6 +42,19 @@
       "source_url": "https://goldrushcam.com/sierrasuntimes"
     },
     {
+      "id": "ca-legislature-ab-1974-safe-storage",
+      "date": "2026-10-09",
+      "category": "Legislation",
+      "badge_status": "In Effect",
+      "badge_color": "blue",
+      "headline": "California Enacts AB 1974 Creating Statewide Voluntary Firearm Safe Storage Program",
+      "statute_or_case": "AB 1974 (Stats. 2026, Ch. 812) / Cal. Penal Code § 33850",
+      "summary": "Governor Gavin Newsom chaptered Assembly Bill 1974, enacting a statewide statutory framework for local police and sheriff departments to offer temporary, voluntary firearm storage. The law provides safe-harbor retention protocols for gun owners experiencing crises and outlines non-punitive procedures to retrieve or dispose of stored firearms.",
+      "community_takeaway": "Families encountering a domestic or emotional crisis can utilize voluntary local law enforcement storage programs to secure household firearms temporarily without forfeiting property rights.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1974"
+    },
+    {
       "id": "lbpost-youth-safety-and-storage-mandates",
       "date": "2026-09-28",
       "category": "State News",
@@ -27,6 +66,19 @@
       "community_takeaway": "Parents and guardians should confirm that all home firearms remain completely inaccessible to minors through certified biometric safes or cable locks in accordance with California child access prevention laws.",
       "source_name": "Long Beach Post",
       "source_url": "https://lbpost.com/news/newsom-signs-new-gun-control-laws-including-one-requiring-owners-to-take-a-4-hour-class"
+    },
+    {
+      "id": "calmatters-newsom-signs-sb-948-training-mandate",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "CalMatters Investigates New Law Requiring Four-Hour Safety Courses and Live-Fire Drills",
+      "statute_or_case": "Senate Bill 948 / Cal. Penal Code § 31615",
+      "summary": "CalMatters reported on Governor Newsom signing a 10-bill firearm safety package, highlighting Senate Bill 948's mandate establishing a four-hour training course with range live fire for future FSC applicants. The analysis notes that the legislation also requires new residents moving into California to obtain an FSC within 180 days of relocating.",
+      "community_takeaway": "Individuals moving to California or planning firearm purchases should prepare for increased certification requirements, including finding certified instructors providing compliant range time.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/gun-control-laws/"
     },
     {
       "id": "calmatters-sb948-training-mandate-analysis",
@@ -458,6 +510,19 @@
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
     },
     {
+      "id": "ca-doj-bulletin-nfa-restrictions",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Issues Advisory Affirming State NFA Weapons Bans Despite Federal Court Invalidation",
+      "statute_or_case": "Information Bulletin 2026-DLE-16 / Pen. Code §§ 33410, 33215, 24510",
+      "summary": "The California Department of Justice Bureau of Firearms issued Information Bulletin 2026-DLE-16 advising law enforcement and dealers that state bans on silencers and short-barreled rifles remain fully in force. The advisory clarifies that an out-of-state federal ruling against the National Firearms Act does not invalidate California's standalone state criminal statutes.",
+      "community_takeaway": "Gun owners and families must understand that silencers, short-barreled long guns, and disguised firearms remain illegal under California Penal Code regardless of federal-level litigation.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/system/files/media/2026-dle-16.pdf"
+    },
+    {
       "id": "ca-doj-bulletin-2026-dle-16-nfa-weapons",
       "date": "2026-09-18",
       "category": "CA DOJ Notice",
@@ -690,6 +755,19 @@
       "community_takeaway": "Firearm retailers and customers must monitor local city council and planning commission agendas, as municipalities are increasingly implementing local zoning setbacks and conditional-use restrictions independent of state licensing rules.",
       "source_name": "Los Angeles Times",
       "source_url": "https://www.latimes.com/california/story/2026-09-04/goleta-gun-store-daycare-zoning-controversy"
+    },
+    {
+      "id": "the-reload-ninth-circuit-gun-dealer-surveillance",
+      "date": "2026-09-03",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "purple",
+      "headline": "The Reload Analyzes Ruling Upholding California 24/7 Gun Store Audio and Video Surveillance",
+      "statute_or_case": "Richards v. Newsom, No. 25-693 / Cal. Penal Code § 26806",
+      "summary": "The Reload reported on the Ninth Circuit Court of Appeals decision upholding California's requirement that licensed firearm dealers maintain continuous audio and video recording systems. The piece outlines privacy and constitutional concerns raised by gun retailers, alongside pending petitions for full en banc court reconsideration.",
+      "community_takeaway": "First-time buyers and families visiting local California gun shops should be conscious that audio and video interactions at retail counters are continuously recorded under state law.",
+      "source_name": "The Reload",
+      "source_url": "https://thereload.com/ninth-circuit-upholds-state-surveillance-mandate-at-california-gun-stores/"
     },
     {
       "id": "the-reload-gun-store-surveillance-ninth-circuit",
