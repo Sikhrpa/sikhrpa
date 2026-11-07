@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-03T20:37:02.143Z",
-  "updated_formatted": "November 3, 2026 • 12:37 PM PST",
+  "last_updated": "2026-11-07T06:22:31.803Z",
+  "updated_formatted": "November 6, 2026 • 10:22 PM PST",
   "items": [
     {
       "id": "ninth-circuit-california-v-atf-ghost-guns",
@@ -14,6 +14,19 @@
       "community_takeaway": "California gun owners should recognize that while federal ghost gun litigation continues, California's own strict state serialization and precursor part background check statutes remain fully operative.",
       "source_name": "U.S. Court of Appeals for the Ninth Circuit",
       "source_url": "https://www.ca9.uscourts.gov"
+    },
+    {
+      "id": "la-times-ghost-gun-3d-printer-litigation",
+      "date": "2026-10-10",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Los Angeles Times Investigates Lawsuit Targeting 3D-Printer Materials Used for Untraceable Guns",
+      "statute_or_case": "CA Civil Code § 3273.50 & Unserialized Firearm Prohibitions",
+      "summary": "The Los Angeles Times highlighted a landmark California legal action targeting manufacturers that market 3D-printer filament and components used to construct untraceable ghost guns. The investigative report details how state and municipal authorities are increasingly focusing civil enforcement on upstream supply chains linked to home firearm manufacturing.",
+      "community_takeaway": "Households using desktop 3D printers should be vigilant to prevent minors or unauthorized individuals from utilizing home manufacturing equipment for restricted firearm parts or unserialized frames.",
+      "source_name": "Los Angeles Times",
+      "source_url": "https://www.latimes.com"
     },
     {
       "id": "sierra-sun-times-ab1974-community-storage",
@@ -66,6 +79,19 @@
       "community_takeaway": "Parents and guardians should confirm that all home firearms remain completely inaccessible to minors through certified biometric safes or cable locks in accordance with California child access prevention laws.",
       "source_name": "Long Beach Post",
       "source_url": "https://lbpost.com/news/newsom-signs-new-gun-control-laws-including-one-requiring-owners-to-take-a-4-hour-class"
+    },
+    {
+      "id": "calmatters-sb948-firearm-training-impact",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "CalMatters Details Consumer and Retail Impacts of California's New Firearm Training Law",
+      "statute_or_case": "Senate Bill 948 & Chapter 542 Statutes",
+      "summary": "CalMatters reported on the legislative package signed by Governor Newsom, highlighting concerns from shooting instructors and civil rights organizations regarding new live-fire requirements. The investigation analyzes how range shortages and additional course fees could create practical access barriers for first-time purchasers.",
+      "community_takeaway": "First-time buyers should account for upcoming instructional range requirements and verify training provider accreditation when preparing to apply for an FSC.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/gavin-newsom-gun-control-laws/"
     },
     {
       "id": "calmatters-newsom-signs-sb-948-training-mandate",
@@ -196,6 +222,19 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "ca-state-legislature-sb-948-training-mandate",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "purple",
+      "headline": "Governor Newsom Signs SB 948 Mandating Live-Fire Training for Safety Certificates",
+      "statute_or_case": "Senate Bill 948 / CA Penal Code §§ 27560, 31615, 31640.5",
+      "summary": "Governor Gavin Newsom chaptered Senate Bill 948 into law, overhauling California's Firearm Safety Certificate (FSC) framework to require a minimum four-hour course including live-fire range qualifications. The statute also mandates that individuals moving into California must obtain a valid FSC within 180 days of importing firearms into the state.",
+      "community_takeaway": "Prospective owners and families moving to California must plan for mandatory live-fire certifications and ensure that firearms brought across state lines are registered within statutory deadlines.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov"
     },
     {
       "id": "ca-leg-sb948-safety-training-mandate",
@@ -508,6 +547,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-nfa-firearms-prohibitions",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "amber",
+      "headline": "CA DOJ Reaffirms Unaltered State Prohibitions on NFA Firearms and Silencers",
+      "statute_or_case": "CA Penal Code §§ 33410, 33215 & Information Bulletin 2026-DLE-16",
+      "summary": "The California Department of Justice Division of Law Enforcement issued Information Bulletin 2026-DLE-16 alerting law enforcement and licensed dealers that state bans on silencers and short-barreled rifles remain fully operative. The advisory clarifies that recent federal district court challenges regarding the federal National Firearms Act do not alter or exempt California residents from state penal prohibitions.",
+      "community_takeaway": "California firearm owners and families should note that silencers and short-barreled rifles remain completely illegal under California law, regardless of federal regulatory changes or national litigation.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "ca-doj-bulletin-nfa-restrictions",
