@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-11-07T06:22:31.803Z",
-  "updated_formatted": "November 6, 2026 • 10:22 PM PST",
+  "last_updated": "2026-11-10T20:58:29.138Z",
+  "updated_formatted": "November 10, 2026 • 12:58 PM PST",
   "items": [
+    {
+      "id": "ninth-circuit-richards-v-newsom-en-banc-briefing",
+      "date": "2026-10-23",
+      "category": "Court Ruling",
+      "badge_status": "Pending Review",
+      "badge_color": "purple",
+      "headline": "En Banc Review Petitions Filed Challenging California Dealer Surveillance Mandate",
+      "statute_or_case": "Richards v. Newsom, No. 25-693 (9th Cir.); Cal. Penal Code § 26806",
+      "summary": "Following a Ninth Circuit panel decision upholding California's 24/7 video and audio surveillance mandate for federally licensed firearm dealers, civil rights groups filed en banc petitions seeking full court rehearing. The petitions argue that state-compelled audiovisual recording of customer transactions and conversations inside licensed premises impermissibly infringes upon First and Fourth Amendment protections.",
+      "community_takeaway": "Retail consumers should note that California firearm dealers currently remain legally required to maintain active video and audio recording systems on premises while appellate challenges proceed.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://www.ca9.uscourts.gov"
+    },
     {
       "id": "ninth-circuit-california-v-atf-ghost-guns",
       "date": "2026-10-14",
@@ -79,6 +92,19 @@
       "community_takeaway": "Parents and guardians should confirm that all home firearms remain completely inaccessible to minors through certified biometric safes or cable locks in accordance with California child access prevention laws.",
       "source_name": "Long Beach Post",
       "source_url": "https://lbpost.com/news/newsom-signs-new-gun-control-laws-including-one-requiring-owners-to-take-a-4-hour-class"
+    },
+    {
+      "id": "calmatters-newsom-signs-10-bill-gun-control-package",
+      "date": "2026-09-27",
+      "category": "State News",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "CalMatters Analysis: California Adds Live-Fire Training Mandates and Tightens Firearm Tech Laws",
+      "statute_or_case": "SB 948 & AB 2047",
+      "summary": "CalMatters reported on the enactment of ten newly signed firearm measures addressing firearm safety training, 3D printing safeguards, and protective orders. The investigative report highlights concerns from community organizations and civil rights groups regarding the escalating economic costs imposed on lawful buyers by extensive classroom and range requirements.",
+      "community_takeaway": "Families should review purchasing schedules and keep copies of all completed training documentation, as additional compliance layers and certified testing requirements become integrated into state dealer systems.",
+      "source_name": "CalMatters",
+      "source_url": "https://calmatters.org/justice/2026/09/gavin-newsom-signs-gun-control-laws/"
     },
     {
       "id": "calmatters-sb948-firearm-training-impact",
@@ -222,6 +248,32 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "ca-legislature-chaptered-sb-948-firearm-safety-certificates",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Governor Signs SB 948 Overhauling Firearm Safety Certificate Training Mandates",
+      "statute_or_case": "SB 948 (Cal. Penal Code § 31615 et seq.)",
+      "summary": "Governor Gavin Newsom chaptered Senate Bill 948 as part of the state's end-of-session firearm legislative package. The enacted statute restructures California's Firearm Safety Certificate (FSC) framework by mandating a minimum four-hour course with live-fire range qualification and establishing new FSC requirements for new residents moving into California.",
+      "community_takeaway": "While existing firearm owners are not immediately affected, first-time buyers and those planning to relocate to California should prepare for mandatory four-hour live-fire courses and budget for certified instructor fees.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB948"
+    },
+    {
+      "id": "abc10-california-safe-storage-and-intervention-programs",
+      "date": "2026-09-26",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "ABC10 Explores Expansion of Voluntary Firearm Storage and Youth Safety Grants",
+      "statute_or_case": "AB 1974 & AB 2378",
+      "summary": "ABC10 reported on newly signed statutes including AB 1974, which promotes voluntary off-site firearm storage arrangements, and AB 2378, which strengthens community violence intervention infrastructure. The report highlights public health efforts to encourage secure home locking protocols and prevent accidental child access to firearms.",
+      "community_takeaway": "Parents and household members are encouraged to utilize California-approved locking devices, store firearms unloaded separately from ammunition, and explore voluntary local storage options during family emergencies.",
+      "source_name": "CBS News Bay Area / Sacramento",
+      "source_url": "https://www.abc10.com/article/news/politics/california-gun-laws-storage-prevention/103-9fd1b975-3ac9-4a02-a0a6-ada866c80acf"
     },
     {
       "id": "ca-state-legislature-sb-948-training-mandate",
@@ -471,6 +523,19 @@
       "source_url": "https://www.abc10.com/article/news/politics/california-gun-laws-firearm-storage-prevention/103-9fd1b975"
     },
     {
+      "id": "reload-federal-lawsuit-challenges-san-jose-ccw-fees",
+      "date": "2026-09-23",
+      "category": "State News",
+      "badge_status": "Pending Review",
+      "badge_color": "purple",
+      "headline": "Federal Lawsuit Challenges San Jose's $1,600 Concealed Carry Licensing Fee",
+      "statute_or_case": "Cal. Penal Code § 26190 & U.S. Const. amend. II",
+      "summary": "Civil rights litigators and federal authorities filed an affirmative civil action challenging the City of San Jose's municipal carry licensing fee schedule. The lawsuit contends that imposing over $1,600 in municipal administrative fees—excluding required psychological evaluations, state processing fees, and mandatory range courses—effectively prices ordinary citizens out of exercising their constitutional right to bear arms.",
+      "community_takeaway": "Concealed carry permit applicants in Northern California jurisdictions should track local fee litigation closely, retain detailed payment receipts, and inquire about statutory fee waiver processes where applicable.",
+      "source_name": "The Reload",
+      "source_url": "https://thereload.com/trump-doj-sues-san-jose-concealed-carry-fee/"
+    },
+    {
       "id": "ninth-circuit-yukutake-permitting-inspection-en-banc",
       "date": "2026-09-22",
       "category": "Court Ruling",
@@ -547,6 +612,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-2026-dle-16-nfa-restrictions",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "blue",
+      "headline": "CA DOJ Bureau of Firearms Advises Federal Rulings Do Not Alter State NFA Prohibitions",
+      "statute_or_case": "Cal. Penal Code § 33410 & Bulletin No. 2026-DLE-16",
+      "summary": "The California Department of Justice Bureau of Firearms issued Information Bulletin 2026-DLE-16 to law enforcement agencies and licensed firearm dealers addressing out-of-state federal rulings concerning the National Firearms Act. The bulletin explicitly clarifies that California's state-level statutory bans on suppressors, short-barreled rifles, and short-barreled shotguns remain fully active and enforceable under the California Penal Code.",
+      "community_takeaway": "Gun owners and families should understand that regardless of federal court decisions in other states, possessing or acquiring suppressors and short-barreled rifles remains illegal under California state law.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/system/files/media/2026-dle-16.pdf"
     },
     {
       "id": "ca-doj-bulletin-nfa-firearms-prohibitions",
