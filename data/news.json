@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-10T20:58:29.138Z",
-  "updated_formatted": "November 10, 2026 • 12:58 PM PST",
+  "last_updated": "2026-11-14T06:52:21.707Z",
+  "updated_formatted": "November 13, 2026 • 10:52 PM PST",
   "items": [
     {
       "id": "ninth-circuit-richards-v-newsom-en-banc-briefing",
@@ -79,6 +79,19 @@
       "community_takeaway": "Families encountering a domestic or emotional crisis can utilize voluntary local law enforcement storage programs to secure household firearms temporarily without forfeiting property rights.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1974"
+    },
+    {
+      "id": "kpbs-safe-storage-community-initiatives",
+      "date": "2026-09-28",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "KPBS Highlights California's Expansion of Voluntary Gun Storage and Safety Programs",
+      "statute_or_case": "CA Penal Code § 25100 & 2026 Firearm Safety Legislative Package",
+      "summary": "KPBS covered statewide legislative initiatives expanding community voluntary gun storage hubs aimed at mitigating domestic emergencies and accidental firearm access by minors. The report details how public health programs and local organizations are coordinating to distribute DOJ-approved locking equipment alongside safe storage community outreach.",
+      "community_takeaway": "Household firearm owners should verify all firearms are secured in California DOJ-approved lockboxes or safes with ammunition stored separately to maintain full compliance with child access prevention laws.",
+      "source_name": "KPBS News",
+      "source_url": "https://www.kpbs.org/news/public-safety/2026/09/28/newsom-signs-new-gun-control-laws-including-one-requiring-owners-to-take-a-4-hour-class"
     },
     {
       "id": "lbpost-youth-safety-and-storage-mandates",
@@ -248,6 +261,19 @@
       "community_takeaway": "Community members and new gun owners should closely watch certified trainer availability and class schedules as local ranges adapt course curricula to satisfy the state's new live-fire mandates.",
       "source_name": "CalMatters",
       "source_url": "https://calmatters.org/justice/2026/09/california-gun-safety-laws-course/"
+    },
+    {
+      "id": "chaptered-sb-948-firearm-safety-certificates",
+      "date": "2026-09-26",
+      "category": "Legislation",
+      "badge_status": "In Effect",
+      "badge_color": "blue",
+      "headline": "Governor Signs SB 948 Mandating Live-Fire Training and Personal Importer Certification",
+      "statute_or_case": "SB 948 (Chapter 465, Statutes of 2026); CA Penal Code §§ 27560, 31615",
+      "summary": "Senate Bill 948 was chaptered into law by Governor Newsom, establishing mandatory live-fire practical range training for Firearm Safety Certificate (FSC) applicants and closing exemptions for personal firearm importers. The measure requires new California residents bringing firearms into the state to obtain a valid FSC alongside their standard registration within mandated statutory windows.",
+      "community_takeaway": "Families planning to relocate to California with legally acquired firearms must prepare to obtain California FSC credentials, and current owners should verify certificates remain current ahead of planned acquisitions.",
+      "source_name": "California State Legislature",
+      "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB948"
     },
     {
       "id": "ca-legislature-chaptered-sb-948-firearm-safety-certificates",
@@ -536,6 +562,19 @@
       "source_url": "https://thereload.com/trump-doj-sues-san-jose-concealed-carry-fee/"
     },
     {
+      "id": "ninth-circuit-yukutake-en-banc-ruling",
+      "date": "2026-09-22",
+      "category": "Court Ruling",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "Ninth Circuit En Banc Upholds State Firearm Permitting and Acquisition Frameworks",
+      "statute_or_case": "Yukutake v. Lopez, No. 21-16756",
+      "summary": "The en banc U.S. Court of Appeals for the Ninth Circuit reversed a lower court injunction, ruling that objective shall-issue firearm permitting and registration procedures comply with the Second Amendment under the Bruen framework. The decision solidifies binding precedent across the circuit, affirming state authority to require administrative vetting, permits, and registration records prior to firearm acquisition.",
+      "community_takeaway": "Prospective owners must continue to strictly follow all state and local permitting, certification, and registration requirements, as judicial precedent firmly reinforces pre-purchase administrative vetting.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2026/09/22/21-16756.pdf"
+    },
+    {
       "id": "ninth-circuit-yukutake-permitting-inspection-en-banc",
       "date": "2026-09-22",
       "category": "Court Ruling",
@@ -612,6 +651,19 @@
       "community_takeaway": "Prospective DIY firearm hobbyists must understand that manufacturing receiver parts with 3D printers without prior serial assignment from CA DOJ is strictly prohibited under state criminal statutes.",
       "source_name": "California Law Review",
       "source_url": "https://www.californialawreview.org/cities-and-counties-as-progressive-plaintiffs-san-franciscos-model"
+    },
+    {
+      "id": "ca-doj-bulletin-nfa-firearms-prohibition",
+      "date": "2026-09-18",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ BOF Reaffirms Strict State Prohibition on NFA-Regulated Firearms and Devices",
+      "statute_or_case": "CA Penal Code §§ 33410, 33215 & Information Bulletin 2026-DLE-16",
+      "summary": "The California Department of Justice Bureau of Firearms issued Information Bulletin 2026-DLE-16 advising law enforcement agencies and licensed dealers that out-of-state federal litigation does not loosen state statutory bans. The advisory clarifies that silencers, short-barreled rifles, and short-barreled shotguns remain strictly prohibited under California Penal Code regardless of shifts in federal policy.",
+      "community_takeaway": "Do not attempt to purchase or import silencers or short-barreled configurations into California based on federal policy news, as California law imposes independent criminal penalties for possession.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/firearms"
     },
     {
       "id": "ca-doj-bulletin-2026-dle-16-nfa-restrictions",
