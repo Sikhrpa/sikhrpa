@@ -1,7 +1,33 @@
 {
-  "last_updated": "2026-11-17T22:36:04.083Z",
-  "updated_formatted": "November 17, 2026 • 2:36 PM PST",
+  "last_updated": "2026-11-21T07:34:15.046Z",
+  "updated_formatted": "November 20, 2026 • 11:34 PM PST",
   "items": [
+    {
+      "id": "ninth-circuit-shilling-v-san-diego-ccw-revocation",
+      "date": "2026-11-20",
+      "category": "Court Ruling",
+      "badge_status": "Active",
+      "badge_color": "blue",
+      "headline": "Ninth Circuit Reverses Dismissal of Lawsuit Challenging Discretionary CCW Revocation",
+      "statute_or_case": "Shilling v. County of San Diego, No. 25-291",
+      "summary": "The U.S. Court of Appeals for the Ninth Circuit reversed a district court's dismissal of a 42 U.S.C. § 1983 civil rights lawsuit challenging the San Diego County Sheriff's revocation of a concealed carry weapon license. The appellate panel ruled that revoking a CCW permit based on an individual's lawful associations and subjective moral character evaluations directly implicates First and Second Amendment protections.",
+      "community_takeaway": "Permit holders should understand that issuing authorities cannot revoke or deny CCW licenses based solely on lawful group affiliations or unguided subjective criteria under post-Bruen standards.",
+      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
+      "source_url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2026/11/20/25-291.pdf"
+    },
+    {
+      "id": "mynewsla-doj-lawsuit-glendale-excessive-ccw-fees",
+      "date": "2026-11-09",
+      "category": "State News",
+      "badge_status": "Pending Review",
+      "badge_color": "blue",
+      "headline": "Federal Civil Rights Lawsuit Filed Challenging Glendale's $2,000 Concealed Carry Permitting Scheme",
+      "statute_or_case": "United States v. City of Glendale, No. 2:26-cv-13098 (C.D. Cal.)",
+      "summary": "MyNewsLA reported on a major federal lawsuit filed by the U.S. Department of Justice against the City of Glendale alleging its concealed carry permitting fees of up to $2,106 violate the Second Amendment. The complaint asserts that exorbitant municipal administrative fees, mandatory psychological exams, and subjective social media vetting function as an unconstitutional barrier to public carry rights.",
+      "community_takeaway": "Applicants facing municipal CCW application costs in excess of standard county sheriff benchmarks should follow this litigation closely, as a favorable injunction could force cities across California to slash permitting fees.",
+      "source_name": "MyNewsLA",
+      "source_url": "https://mynewsla.com/crime/2026/11/09/doj-sues-city-of-glendale-over-concealed-carry-permit-costs/"
+    },
     {
       "id": "ninth-circuit-richards-v-newsom-en-banc-briefing",
       "date": "2026-10-23",
@@ -27,6 +53,19 @@
       "community_takeaway": "California gun owners should recognize that while federal ghost gun litigation continues, California's own strict state serialization and precursor part background check statutes remain fully operative.",
       "source_name": "U.S. Court of Appeals for the Ninth Circuit",
       "source_url": "https://www.ca9.uscourts.gov"
+    },
+    {
+      "id": "sierra-sun-times-ab1974-voluntary-firearm-safe-storage",
+      "date": "2026-10-10",
+      "category": "Community Safety",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "California Enacts AB 1974 Creating Statewide Framework for Voluntary Temporary Gun Storage",
+      "statute_or_case": "AB 1974 (Stats. 2026, ch. 468; Cal. Penal Code § 29800 et seq.)",
+      "summary": "The Sierra Sun Times reported on Governor Newsom signing Assembly Bill 1974, which authorizes local police and sheriff departments to operate voluntary, temporary firearm storage repositories for individuals experiencing family crises or mental health distress. The report examines safeguards against premature firearm destruction as well as mandatory background checks required before an owner can retrieve their property from police custody.",
+      "community_takeaway": "Families seeking crisis-related temporary offsite firearm storage should verify specific law enforcement agency surrender policies and retain full proof of ownership and eligibility documentation before utilizing municipal drop-offs.",
+      "source_name": "Sierra Sun Times",
+      "source_url": "https://goldrushcam.com/sierrasuntimes/index.php/news/local-news/governor-gavin-newsom-signs-assemblymember-catherine-stefani-bill-giving-californians-a-safe-place-to-store-firearms-during-a-crisis"
     },
     {
       "id": "la-times-ghost-gun-3d-printer-litigation",
@@ -586,6 +625,19 @@
       "community_takeaway": "Families facing personal crises or temporary household vulnerability should explore authorized off-site voluntary storage options to keep homes secure without permanently surrendering ownership rights.",
       "source_name": "ABC10 News",
       "source_url": "https://www.abc10.com/article/news/politics/california-gun-laws-firearm-storage-prevention/103-9fd1b975"
+    },
+    {
+      "id": "ca-doj-bof-bulletin-2026-dle-15-restraining-orders",
+      "date": "2026-09-25",
+      "category": "CA DOJ Notice",
+      "badge_status": "Regulatory Notice",
+      "badge_color": "purple",
+      "headline": "CA DOJ Issues Law Enforcement Guidance on Firearm Protective Orders and Relinquishment Protocols",
+      "statute_or_case": "Information Bulletin No. 2026-DLE-15 / Cal. Penal Code § 29825",
+      "summary": "The California Department of Justice Bureau of Firearms issued Information Bulletin 2026-DLE-15 detailing statutory mandates under AB 451 for law enforcement agencies serving firearm-prohibiting court orders. The advisory establishes mandatory procedures for timely service, immediate weapons relinquishment verification, and reporting via the BOF 4546 Notice of No Longer in Possession form.",
+      "community_takeaway": "Families and individuals subject to civil or domestic protective orders must strictly adhere to mandatory 24-hour relinquishment timelines to avoid compounding criminal liability or firearm prohibitor enhancements.",
+      "source_name": "CA DOJ Bureau of Firearms",
+      "source_url": "https://oag.ca.gov/system/files/media/2026-dle-15.pdf"
     },
     {
       "id": "courthouse-news-ninth-circuit-licensing-analysis",
