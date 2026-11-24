@@ -43,32 +43,17 @@
   <link rel="icon" type="image/png" href="srpa-logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Prebuilt Tailwind CSS -->
+  <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- Lucide Icons CDN with Fallback -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@1.79.0/dist/umd/lucide.min.js" integrity="sha384-BqRrWtT4teonPDtZKRNshL/rppOoqxeAHLfUcL1tSbU0Slok4OE/xVxwdLb9R2ls" crossorigin="anonymous"></script>
   <script>
     if (typeof lucide === 'undefined') {
       document.write('<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"><\/script>');
     }
   </script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              navy: '#0f172a',
-              gold: '#d97706',
-              blue: '#1e3a8a',
-            }
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Mahee:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap');

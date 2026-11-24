@@ -78,27 +78,12 @@
   <link rel="icon" type="image/png" href="srpa-logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Prebuilt Tailwind CSS -->
+  <link rel="stylesheet" href="assets/styles.css" />
   
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@1.79.0/dist/umd/lucide.min.js" integrity="sha384-BqRrWtT4teonPDtZKRNshL/rppOoqxeAHLfUcL1tSbU0Slok4OE/xVxwdLb9R2ls" crossorigin="anonymous"></script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              navy: '#0f172a',
-              gold: '#d97706',
-              blue: '#1e3a8a',
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
     body {
       background-color: #ffffff !important;
@@ -931,11 +916,34 @@
       closeIcon.classList.toggle('hidden');
     }
 
-    // Security & mobile-hardened clipboard helper (with fallback for restricted iFrames)
-    function copyToClipboard(text, btnTextEl, btnIconEl, defaultLabel = 'Copy') {
+    // Modern Clipboard API helper with textarea execCommand fallback
+    async function copyToClipboard(text, btnTextEl, btnIconEl, defaultLabel = 'Copy') {
+      const showCopied = () => {
+        if (btnTextEl) btnTextEl.innerText = 'Copied!';
+        if (btnIconEl) btnIconEl.setAttribute('data-lucide', 'check');
+        lucide.createIcons();
+
+        setTimeout(() => {
+          if (btnTextEl) btnTextEl.innerText = defaultLabel;
+          if (btnIconEl) btnIconEl.setAttribute('data-lucide', 'copy');
+          lucide.createIcons();
+        }, 2200);
+      };
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          showCopied();
+          return;
+        }
+      } catch (clipErr) {
+        // Fall through to legacy textarea fallback
+      }
+
       try {
         const ta = document.createElement('textarea');
         ta.value = text;
+        ta.setAttribute('readonly', '');
         ta.style.position = 'fixed';
         ta.style.opacity = '0';
         ta.style.left = '-9999px';
@@ -944,18 +952,12 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-
-        btnTextEl.innerText = 'Copied!';
-        if (btnIconEl) btnIconEl.setAttribute('data-lucide', 'check');
-        lucide.createIcons();
-
-        setTimeout(() => {
-          btnTextEl.innerText = defaultLabel;
-          if (btnIconEl) btnIconEl.setAttribute('data-lucide', 'copy');
-          lucide.createIcons();
-        }, 2200);
+        showCopied();
       } catch (err) {
-        if (btnTextEl) btnTextEl.innerText = 'Copied!';
+        if (btnTextEl) btnTextEl.innerText = 'Copy failed';
+        setTimeout(() => {
+          if (btnTextEl) btnTextEl.innerText = defaultLabel;
+        }, 2200);
       }
     }
 
