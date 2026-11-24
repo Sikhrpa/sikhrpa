@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin.html
+Disallow: /handgun-compare
+Disallow: /handgun-compare.html
 
 Sitemap: https://sikhrpa.org/sitemap.xml

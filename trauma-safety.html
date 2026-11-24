@@ -43,27 +43,12 @@
   <link rel="icon" type="image/png" href="srpa-logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Prebuilt Tailwind CSS -->
+  <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@1.79.0/dist/umd/lucide.min.js" integrity="sha384-BqRrWtT4teonPDtZKRNshL/rppOoqxeAHLfUcL1tSbU0Slok4OE/xVxwdLb9R2ls" crossorigin="anonymous"></script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              navy: '#0f172a',
-              gold: '#d97706',
-              blue: '#1e3a8a',
-            }
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Mahee:wght@500;600;700;800&display=swap');
@@ -1499,9 +1484,9 @@
               Community Health & Temple Safety
             </span>
           </div>
-          <h4 class="font-extrabold text-slate-950 text-base sm:text-lg leading-snug">
+          <h3 class="font-extrabold text-slate-950 text-base sm:text-lg leading-snug">
             Does Your Gurdwara or Community Center Have a Wall-Mounted Bleeding Control Kit?
-          </h4>
+          </h3>
           <p class="gurmukhi text-xs sm:text-sm font-bold text-blue-950" lang="pa">
             ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ ਵਿੱਚ ਐਮਰਜੈਂਸੀ ਬਲੀਡਿੰਗ ਕੰਟਰੋਲ ਕਿੱਟ ਲਗਾਉਣ ਲਈ ਸਹਾਇਤਾ
           </p>
@@ -1671,25 +1656,45 @@
       document.getElementById('verbatimScriptDisplay').innerText = scriptText;
     }
 
-    function copy911Script() {
+    async function copy911Script() {
       const text = document.getElementById('verbatimScriptDisplay').innerText;
       const copyBtnText = document.getElementById('copyScriptText');
+
+      const showCopied = () => {
+        if (copyBtnText) {
+          copyBtnText.innerText = 'Copied to Clipboard!';
+          setTimeout(() => { copyBtnText.innerText = 'Copy Script'; }, 2500);
+        }
+      };
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          showCopied();
+          return;
+        }
+      } catch (clipErr) {
+        // Fall through to legacy textarea fallback
+      }
 
       try {
         const ta = document.createElement('textarea');
         ta.value = text;
+        ta.setAttribute('readonly', '');
         ta.style.position = 'fixed';
         ta.style.opacity = '0';
+        ta.style.left = '-9999px';
         document.body.appendChild(ta);
         ta.focus();
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-
-        copyBtnText.innerText = 'Copied to Clipboard!';
-        setTimeout(() => { copyBtnText.innerText = 'Copy Script'; }, 2500);
+        showCopied();
       } catch (e) {
-        copyBtnText.innerText = 'Copied!';
+        if (copyBtnText) {
+          copyBtnText.innerText = 'Copy failed';
+          setTimeout(() => { copyBtnText.innerText = 'Copy Script'; }, 2500);
+        }
       }
     }
   </script>

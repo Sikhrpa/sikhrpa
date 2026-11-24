@@ -11,27 +11,12 @@
   <link rel="icon" type="image/png" href="srpa-logo.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Prebuilt Tailwind CSS -->
+  <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@1.79.0/dist/umd/lucide.min.js" integrity="sha384-BqRrWtT4teonPDtZKRNshL/rppOoqxeAHLfUcL1tSbU0Slok4OE/xVxwdLb9R2ls" crossorigin="anonymous"></script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              navy: '#0f172a',
-              gold: '#d97706',
-              blue: '#1e3a8a',
-            }
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
     body {
@@ -317,7 +302,7 @@
             <i data-lucide="file-check" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 class="font-bold text-slate-900 text-base">Approve & Email IRS Tax Receipt</h3>
+            <h2 class="font-bold text-slate-900 text-base">Approve & Email IRS Tax Receipt</h2>
             <p class="text-[11px] text-slate-500">Official IRC § 170(f)(8) Written Acknowledgment PDF</p>
           </div>
         </div>
@@ -442,7 +427,7 @@
             <i data-lucide="badge-dollar-sign" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 class="font-bold text-slate-900 text-base">Mark Reimbursement Paid</h3>
+            <h2 class="font-bold text-slate-900 text-base">Mark Reimbursement Paid</h2>
             <p class="text-[11px] text-slate-500">Record treasury payout & send notice</p>
           </div>
         </div>
@@ -523,7 +508,7 @@
             <i data-lucide="x-circle" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 class="font-bold text-slate-900 text-base">Reject Request</h3>
+            <h2 class="font-bold text-slate-900 text-base">Reject Request</h2>
             <p class="text-[11px] text-slate-500">Document reason & notify requester</p>
           </div>
         </div>
@@ -656,6 +641,21 @@
       lucide.createIcons();
     }
 
+    function buildAuthPayload(action, extra = {}) {
+      const base = {
+        action,
+        username: currentOfficer.username,
+        ...extra
+      };
+      if (currentOfficer.session_token) {
+        base.session_token = currentOfficer.session_token;
+      }
+      if (currentOfficer.password) {
+        base.password = currentOfficer.password;
+      }
+      return base;
+    }
+
     async function handleAdminLogin(e) {
       e.preventDefault();
       const roleSelect = document.getElementById('officerRoleSelect');
@@ -679,14 +679,36 @@
         btn.innerText = 'Verifying Credentials...';
         err.classList.add('hidden');
 
-        const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
+        // 1. Prefer POST body so officer password is not sent in URL query strings
+        let json = null;
+        try {
+          const postRes = await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({ action: 'login', username, password })
+          });
+          if (postRes.ok) {
+            const candidate = await postRes.json();
+            if (candidate && (candidate.status === 'success' || /invalid|unauthorized|password/i.test(candidate.message || ''))) {
+              json = candidate;
+            }
+          }
+        } catch (postErr) {
+          // Fall back to legacy GET endpoint below if Apps Script doPost does not yet handle login
+        }
+
+        // 2. Fallback to legacy GET login for backward compatibility with existing Apps Script deployment
+        if (!json) {
+          const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          json = await res.json();
+        }
 
         if (json.status === 'success' && json.officer) {
           currentOfficer = {
             username: username,
-            password: password,
+            password: json.session_token ? null : password,
+            session_token: json.session_token || null,
             title: json.officer.title,
             name: json.officer.name,
             email: json.officer.email
@@ -706,12 +728,13 @@
             currentOfficer = {
               username: username,
               password: password,
+              session_token: fallbackJson.session_token || null,
               title: username === 'president' ? 'President' : 'Treasurer',
               name: username === 'president' ? 'President, Sikh Rifle and Pistol Association' : 'Treasurer, Sikh Rifle and Pistol Association',
               email: `${username}@sikhrpa.org`
             };
             showDashboardView();
-            submissions = fallbackJson.data || [];
+            submissions = Array.isArray(fallbackJson.data) ? fallbackJson.data : [];
             renderSubmissions();
             updateStats();
             return;
@@ -744,16 +767,37 @@
 
       try {
         if (refreshBtn) refreshBtn.innerHTML = '<span>Loading...</span>';
-        const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=get_requests&username=${encodeURIComponent(currentOfficer.username)}&password=${encodeURIComponent(currentOfficer.password)}`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
-        if (json.status === 'success') {
+
+        // Prefer POST body (supports session_token and avoids password in URL query)
+        let json = null;
+        try {
+          const postRes = await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(buildAuthPayload('get_requests'))
+          });
+          if (postRes.ok) {
+            const candidate = await postRes.json();
+            if (candidate && (candidate.status === 'success' || /unauthorized|expired/i.test(candidate.message || ''))) {
+              json = candidate;
+            }
+          }
+        } catch (postErr) {}
+
+        // Fallback to legacy GET if doPost does not yet support get_requests
+        if (!json && currentOfficer.password) {
+          const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=get_requests&username=${encodeURIComponent(currentOfficer.username)}&password=${encodeURIComponent(currentOfficer.password)}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          json = await res.json();
+        }
+
+        if (json && json.status === 'success') {
           submissions = Array.isArray(json.data) ? json.data : [];
           renderSubmissions();
           updateStats();
           showToast('Data refreshed successfully from Google Sheets.');
         } else {
-          showToast('Server error: ' + (json.message || 'Unable to load records.'), true);
+          showToast('Server error: ' + ((json && json.message) || 'Unable to load records.'), true);
         }
       } catch (err) {
         console.warn('Data sync notice:', err);
@@ -1061,10 +1105,7 @@
         btn.disabled = true;
         btn.innerHTML = '<span>Rejecting...</span>';
 
-        const payload = {
-          action: 'reject_request',
-          username: currentOfficer.username,
-          password: currentOfficer.password,
+        const payload = buildAuthPayload('reject_request', {
           row_index: parsedRowIndex,
           reason: reason,
           notify_requester: notify,
@@ -1072,7 +1113,7 @@
           requester_email: item.email,
           request_type: item.request_type,
           amount: item.amount
-        };
+        });
 
         const res = await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
           method: 'POST',
@@ -1124,10 +1165,7 @@
         btn.disabled = true;
         btn.innerHTML = '<span>Compiling PDF & Sending...</span>';
 
-        const payload = {
-          action: 'approve_receipt',
-          username: currentOfficer.username,
-          password: currentOfficer.password,
+        const payload = buildAuthPayload('approve_receipt', {
           row_index: parsedRowIndex,
           receipt_number: receiptNo,
           donor_name: item.full_name,
@@ -1138,7 +1176,7 @@
           payment_channel: item.payment_channel,
           authorized_officer: officer,
           custom_note: note
-        };
+        });
 
         const res = await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
           method: 'POST',
@@ -1188,16 +1226,13 @@
         btn.disabled = true;
         btn.innerHTML = '<span>Recording Payout...</span>';
 
-        const payload = {
-          action: 'approve_reimbursement',
-          username: currentOfficer.username,
-          password: currentOfficer.password,
+        const payload = buildAuthPayload('approve_reimbursement', {
           row_index: parsedRowIndex,
           payout_reference: payoutRef,
           requester_name: item.full_name,
           requester_email: item.email,
           amount: item.amount
-        };
+        });
 
         const res = await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
           method: 'POST',
