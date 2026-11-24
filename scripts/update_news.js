@@ -169,11 +169,20 @@ function isDuplicateItem(a, b, windowDays = DEDUP_WINDOW_DAYS) {
 function scoreItemQuality(item) {
   let score = 0;
   const url = item.source_url || '';
-  if (url.includes('leginfo.legislature.ca.gov/faces/billNavClient')) score += 6;
-  if (url.includes('cdn.ca9.uscourts.gov') || url.includes('oag.ca.gov/system/files') || url.includes('justice.gov/opa/pr')) score += 6;
   try {
     const u = new URL(url);
-    if (u.pathname && u.pathname.length > 10) score += 2;
+    const host = u.hostname.toLowerCase();
+    const pathname = u.pathname || '';
+    if (host === 'leginfo.legislature.ca.gov' && pathname.startsWith('/faces/billNavClient')) {
+      score += 6;
+    } else if (
+      host === 'cdn.ca9.uscourts.gov' ||
+      (host === 'oag.ca.gov' && pathname.startsWith('/system/files')) ||
+      ((host === 'justice.gov' || host === 'www.justice.gov') && pathname.startsWith('/opa/pr'))
+    ) {
+      score += 6;
+    }
+    if (pathname.length > 10) score += 2;
   } catch {}
   if (['Legislation', 'Court Ruling', 'CA DOJ Notice'].includes(item.category)) score += 2;
   return score;
