@@ -1,7 +1,20 @@
 {
-  "last_updated": "2026-11-21T07:34:15.046Z",
-  "updated_formatted": "November 20, 2026 • 11:34 PM PST",
+  "last_updated": "2026-11-24T23:38:33.215Z",
+  "updated_formatted": "November 24, 2026 • 3:38 PM PST",
   "items": [
+    {
+      "id": "daily-journal-scotus-firearms-california-limits",
+      "date": "2026-11-24",
+      "category": "State News",
+      "badge_status": "Pending Review",
+      "badge_color": "amber",
+      "headline": "Daily Journal Analyzes How Imminent Supreme Court Rulings Could Reshape California Assault Weapons Ban",
+      "statute_or_case": "Cal. Penal Code § 30515; Khaya v. Cook County, No. 25-238",
+      "summary": "The Daily Journal reports that pending U.S. Supreme Court arguments over municipal AR-15 bans will set binding nationwide Second Amendment precedent directly affecting California's 37-year-old firearms restrictions. Legal analysts note that while California's statute is not formally on the high court's docket, an adverse ruling against assault weapon prohibitions would control pending Ninth Circuit challenges.",
+      "community_takeaway": "While federal appellate and Supreme Court proceedings may alter firearms classifications in the future, gun owners must continue adhering strictly to current California assault weapon definitions and compliance guidelines.",
+      "source_name": "Daily Journal",
+      "source_url": "https://www.dailyjournal.com/articles/388273-supreme-court-gun-cases-could-reshape-california-firearms-limits"
+    },
     {
       "id": "ninth-circuit-shilling-v-san-diego-ccw-revocation",
       "date": "2026-11-20",
@@ -27,6 +40,32 @@
       "community_takeaway": "Applicants facing municipal CCW application costs in excess of standard county sheriff benchmarks should follow this litigation closely, as a favorable injunction could force cities across California to slash permitting fees.",
       "source_name": "U.S. Department of Justice",
       "source_url": "https://www.justice.gov/opa/pr/justice-department-sues-city-glendale-california-violating-citizens-second-amendment-rights"
+    },
+    {
+      "id": "fullerton-observer-orange-county-gun-lock-expansion",
+      "date": "2026-11-06",
+      "category": "Community Safety",
+      "badge_status": "In Effect",
+      "badge_color": "emerald",
+      "headline": "Orange County Establishes Permanent Year-Round Free Gun Lock Distribution Initiative",
+      "statute_or_case": "Cal. Penal Code § 25100; SB 53 Safe Storage Framework",
+      "summary": "The Fullerton Observer reports that Orange County has transitioned its pilot gun lock distribution program into a permanent year-round service managed by the Orange County Health Care Agency. The initiative has distributed more than 1,200 cable locks to encourage compliance with California safe storage statutes and reduce accidental injuries and suicides.",
+      "community_takeaway": "Orange County residents can obtain free, California-certified cable locks through county health clinics and community safety events to ensure firearms at home are secured in full accordance with California safe storage laws.",
+      "source_name": "Fullerton Observer",
+      "source_url": "https://fullertonobserver.com/2026/11/06/orange-county-expands-free-gun-lock-program-to-enhance-public-safety/"
+    },
+    {
+      "id": "ca-doj-amicus-brief-scotus-assault-weapons",
+      "date": "2026-10-28",
+      "category": "CA DOJ Notice",
+      "badge_status": "Active",
+      "badge_color": "purple",
+      "headline": "California Department of Justice Urges Supreme Court to Affirm State Authority to Regulate Semiautomatic Rifles",
+      "statute_or_case": "Cal. Penal Code § 30510 et seq.; Viramontes v. Cook County",
+      "summary": "California Attorney General Rob Bonta joined a 19-state amicus coalition urging the U.S. Supreme Court to uphold state assault weapon prohibitions in pending challenges to semiautomatic rifle bans. The Department argues that AR-15 platform rifles are extraordinarily dangerous for civilian spaces and that feature-based restrictions are consistent with historic firearms regulations.",
+      "community_takeaway": "California's Roberti-Roos Assault Weapons Control Act remains strictly enforced statewide; owners must ensure centerfire semiautomatic rifles comply with all featureless or fixed-magazine statutory requirements.",
+      "source_name": "California Department of Justice",
+      "source_url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-states-must-have-ability-protect-residents-assault-rifles"
     },
     {
       "id": "ninth-circuit-richards-v-newsom-en-banc-briefing",
@@ -79,6 +118,19 @@
       "community_takeaway": "Families encountering a domestic or emotional crisis can utilize voluntary local law enforcement storage programs to secure household firearms temporarily without forfeiting property rights.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1974"
+    },
+    {
+      "id": "the-reload-analysis-california-ab-1127-challenge",
+      "date": "2026-10-02",
+      "category": "State News",
+      "badge_status": "Active",
+      "badge_color": "emerald",
+      "headline": "The Reload Details Legal Hurdles Facing Federal Challenge to California Convertible Pistol Restrictions",
+      "statute_or_case": "AB 1127 / Cal. Penal Code § 31910; United States v. California",
+      "summary": "An investigative analysis by The Reload explores why federal courts granted an injunction against Connecticut's handgun ban while denying emergency injunctive relief against California's Assembly Bill 1127. The report explains that the federal government's novel pattern-and-practice theory faces skepticism in California district court, leaving the state's convertible handgun restrictions enforceable while litigation proceeds.",
+      "community_takeaway": "Prospective handgun buyers and retailers must confirm that semi-automatic pistols comply with California roster requirements and state convertible handgun standards before completing retail or transfer paperwork.",
+      "source_name": "The Reload",
+      "source_url": "https://thereload.com/analysis-why-connecticuts-glock-ban-was-blocked-after-californias-wasnt/"
     },
     {
       "id": "chaptered-sb-948-firearm-safety-certificates",

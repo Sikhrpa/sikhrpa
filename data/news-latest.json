@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-11-21T07:34:15.046Z",
-  "updated_formatted": "November 20, 2026 • 11:34 PM PST",
-  "total_count": 40,
+  "last_updated": "2026-11-24T23:38:33.215Z",
+  "updated_formatted": "November 24, 2026 • 3:38 PM PST",
+  "total_count": 44,
   "items": [
     {
-      "id": "ninth-circuit-shilling-v-san-diego-ccw-revocation",
-      "date": "2026-11-20",
-      "category": "Court Ruling",
-      "badge_status": "Active",
-      "badge_color": "blue",
-      "headline": "Ninth Circuit Reverses Dismissal of Lawsuit Challenging Discretionary CCW Revocation",
-      "statute_or_case": "Shilling v. County of San Diego, No. 25-291",
-      "summary": "The U.S. Court of Appeals for the Ninth Circuit reversed a district court's dismissal of a 42 U.S.C. § 1983 civil rights lawsuit challenging the San Diego County Sheriff's revocation of a concealed carry weapon license. The appellate panel ruled that revoking a CCW permit based on an individual's lawful associations and subjective moral character evaluations directly implicates First and Second Amendment protections.",
-      "community_takeaway": "Permit holders should understand that issuing authorities cannot revoke or deny CCW licenses based solely on lawful group affiliations or unguided subjective criteria under post-Bruen standards.",
-      "source_name": "U.S. Court of Appeals for the Ninth Circuit",
-      "source_url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2026/11/20/25-291.pdf"
+      "id": "daily-journal-scotus-firearms-california-limits",
+      "date": "2026-11-24",
+      "category": "State News",
+      "badge_status": "Pending Review",
+      "badge_color": "amber",
+      "headline": "Daily Journal Analyzes How Imminent Supreme Court Rulings Could Reshape California Assault Weapons Ban",
+      "statute_or_case": "Cal. Penal Code § 30515; Khaya v. Cook County, No. 25-238",
+      "summary": "The Daily Journal reports that pending U.S. Supreme Court arguments over municipal AR-15 bans will set binding nationwide Second Amendment precedent directly affecting California's 37-year-old firearms restrictions. Legal analysts note that while California's statute is not formally on the high court's docket, an adverse ruling against assault weapon prohibitions would control pending Ninth Circuit challenges.",
+      "community_takeaway": "While federal appellate and Supreme Court proceedings may alter firearms classifications in the future, gun owners must continue adhering strictly to current California assault weapon definitions and compliance guidelines.",
+      "source_name": "Daily Journal",
+      "source_url": "https://www.dailyjournal.com/articles/388273-supreme-court-gun-cases-could-reshape-california-firearms-limits"
     }
   ]
 }
