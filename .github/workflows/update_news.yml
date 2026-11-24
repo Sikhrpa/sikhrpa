@@ -1,4 +1,4 @@
-name: Daily California Legal & News Update
+name: Bi-Weekly California Legal Watch Update
 
 on:
   schedule:
@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --global user.name "SikhRPA News Bot"
           git config --global user.email "bot@sikhrpa.org"
-          git add data/news.json
+          git add data/news.json data/news-latest.json
           if git diff --staged --quiet; then
             echo "No changes detected in news archive."
           else

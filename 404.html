@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="noindex, follow" />
+  <title>Page Not Found (404) | Sikh Rifle and Pistol Association</title>
+  <meta name="description" content="The requested page could not be found on sikhrpa.org. Return to SikhRPA firearm safety guides, CA FSC practice quiz, and California Legal Watch." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="srpa-logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              gold: '#d97706',
+              blue: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #d97706;
+      outline-offset: 2px;
+    }
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-amber-500 selection:text-white bg-slate-50">
+
+  <header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <img
+          src="/srpa-logo.png"
+          alt="SikhRPA Logo"
+          class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+          onerror="this.style.display='none'"
+        />
+        <div class="flex flex-col">
+          <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 group-hover:text-blue-900 transition-colors">
+            SikhRPA
+          </span>
+          <span class="text-[10px] sm:text-[11px] font-semibold tracking-wider text-slate-500 uppercase -mt-1">
+            501(c)(3) Nonprofit
+          </span>
+        </div>
+      </a>
+
+      <a
+        href="/donate"
+        class="px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all flex items-center gap-1.5 shadow-sm touch-target"
+      >
+        <i data-lucide="heart" class="w-4 h-4 text-rose-600 fill-rose-600"></i>
+        <span>Donate</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center px-4 py-12 sm:py-16">
+    <div class="max-w-2xl w-full bg-white rounded-3xl border-2 border-slate-200 shadow-sm p-6 sm:p-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-950 border border-amber-300 mb-5">
+        <i data-lucide="compass" class="w-4 h-4 text-amber-700"></i>
+        <span>Error 404 • Page Not Found</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+        We Couldn't Find That Page
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg mx-auto mb-8">
+        The link you followed may have moved or been updated. Use one of the verified SikhRPA community safety resources below to get right back on target.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-3 text-left mb-8">
+        <a href="/" class="p-4 rounded-2xl bg-blue-50 border border-blue-200 hover:border-blue-400 transition-colors flex items-center gap-3">
+          <div class="p-2.5 rounded-xl bg-blue-900 text-amber-400 shrink-0">
+            <i data-lucide="home" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 text-sm block">SikhRPA Homepage</span>
+            <span class="text-xs text-slate-600">4 Universal Safety Rules &amp; mission</span>
+          </div>
+        </a>
+
+        <a href="/fsc-quiz" class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-colors flex items-center gap-3">
+          <div class="p-2.5 rounded-xl bg-amber-100 text-amber-800 shrink-0">
+            <i data-lucide="award" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 text-sm block">CA FSC Practice Quiz</span>
+            <span class="text-xs text-slate-600">30-question state safety test</span>
+          </div>
+        </a>
+
+        <a href="/buyer-guide" class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-colors flex items-center gap-3">
+          <div class="p-2.5 rounded-xl bg-blue-100 text-blue-900 shrink-0">
+            <i data-lucide="compass" class="w-5 h-5 text-amber-600"></i>
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 text-sm block">First-Time Buyer's Guide</span>
+            <span class="text-xs text-slate-600">REAL ID, residency &amp; DROS roadmap</span>
+          </div>
+        </a>
+
+        <a href="/news" class="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-colors flex items-center gap-3">
+          <div class="p-2.5 rounded-xl bg-emerald-100 text-emerald-800 shrink-0">
+            <i data-lucide="newspaper" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 text-sm block">California Legal Watch</span>
+            <span class="text-xs text-slate-600">Bi-weekly legislation &amp; court rulings</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a
+          href="/"
+          class="px-6 py-3 rounded-xl bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs sm:text-sm transition-colors shadow-sm inline-flex items-center gap-2 touch-target"
+        >
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-400"></i>
+          <span>Return to Homepage</span>
+        </a>
+        <a
+          href="/trifold-brochure"
+          class="px-5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-bold text-xs sm:text-sm transition-colors inline-flex items-center gap-2 touch-target"
+        >
+          <i data-lucide="book-open" class="w-4 h-4 text-amber-600"></i>
+          <span>Printable Bilingual Brochure</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-8 text-center">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col items-center">
+      <p class="text-xs sm:text-sm text-blue-900 font-bold mb-3 tracking-wide bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200">
+        <span lang="pa">ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ!</span> - STAY SAFE, BE RESPONSIBLE!
+      </p>
+      <p class="text-xs text-slate-500">
+        Federal EIN: 42-2595402 • president@sikhrpa.org • © <span id="current-year"></span> Sikh Rifle and Pistol Association.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').innerText = new Date().getFullYear();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

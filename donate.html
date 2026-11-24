@@ -22,25 +22,30 @@
   <meta name="author" content="Sikh Rifle and Pistol Association" />
   <meta name="theme-color" content="#0f172a" />
 
+  <link rel="canonical" href="https://sikhrpa.org/donate" />
+
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sikhrpa.org/donate" />
   <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
   <meta property="og:title" content="Support Community Safety Education | SikhRPA 501(c)(3)" />
   <meta property="og:description" content="100% of your tax-deductible contribution funds free bilingual safety manuals, youth lockbox distribution, and safe firearm handling clinics across California." />
-  <meta property="og:image" content="srpa-logo.png" />
+  <meta property="og:image" content="https://sikhrpa.org/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter / X Cards -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Support Community Safety Education | SikhRPA 501(c)(3)" />
   <meta name="twitter:description" content="Tax-deductible charitable giving supporting public firearm education and safe storage." />
-  <meta name="twitter:image" content="srpa-logo.png" />
+  <meta name="twitter:image" content="https://sikhrpa.org/og-card.png" />
 
   <!-- Structured Data (JSON-LD) for 501(c)(3) Nonprofit Donation -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Nonprofit501c3",
+    "@type": "NGO",
+    "nonprofitStatus": "https://schema.org/Nonprofit501c3",
     "name": "Sikh Rifle and Pistol Association",
     "alternateName": "SikhRPA",
     "legalName": "Sikh Rifle and Pistol Association",
@@ -48,6 +53,10 @@
     "url": "https://sikhrpa.org",
     "logo": "https://sikhrpa.org/srpa-logo.png",
     "description": "California 501(c)(3) nonprofit public benefit corporation dedicated to firearm safety education, marksmanship fundamentals, and community storage compliance.",
+    "sameAs": [
+      "https://www.instagram.com/sikhrpa/",
+      "https://dvn.org/organizations/sikh-rifle-and-pistol-association"
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1075 Mohawk St",
@@ -64,8 +73,10 @@
   }
   </script>
 
-  <!-- Favicon -->
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="srpa-logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -130,9 +141,9 @@
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
         <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
           <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
-          <span class="hidden xs:inline">Home</span>
+          <span class="hidden sm:inline">Home</span>
         </a>
-        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <span class="text-slate-300 hidden sm:inline" aria-hidden="true">|</span>
         <div class="flex items-center gap-2 min-w-0">
           <img 
             src="srpa-logo.png" 
@@ -187,7 +198,7 @@
           aria-label="Contact SikhRPA via Email"
         >
           <i data-lucide="mail" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
-          <span class="hidden xs:inline">Contact</span>
+          <span class="hidden sm:inline">Contact</span>
         </a>
 
         <!-- Mobile Navigation Hamburger -->
@@ -209,7 +220,7 @@
     <!-- Mobile Slide-Down Drawer -->
     <div 
       id="mobileMenuDrawer" 
-      class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+      class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
       aria-label="Mobile Navigation Menu"
     >
       <a href="./" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
@@ -277,7 +288,7 @@
             Select a Community Impact Tier
           </h2>
           <p class="text-slate-600 text-xs sm:text-sm mt-1.5 font-medium">
-            Choose a tier below to automatically configure your gift amount in PayPal or Zelle.
+            Choose a tier below to automatically configure your gift amount across Zelle, PayPal, or Dasvandh Network.
           </p>
         </div>
 
@@ -311,6 +322,7 @@
           <!-- Tier 2: $50 (Featured / Default Selected) -->
           <button 
             type="button"
+            id="defaultTierCard"
             onclick="selectTier(50, '100 Bilingual Safety Guides', this)"
             class="tier-card text-left bg-white rounded-2xl border-2 border-amber-500 ring-2 ring-amber-400/50 p-5 sm:p-6 flex flex-col justify-between shadow-md transition-all relative group bg-gradient-to-b from-amber-50/50 to-white focus:outline-none cursor-pointer"
             data-amount="50"
@@ -386,7 +398,7 @@
         </div>
 
         <!-- Custom Donation Amount Option (Fully Mobile Responsive) -->
-        <div class="mt-6 sm:mt-8 max-w-lg mx-auto bg-white p-4 sm:p-4.5 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <div class="mt-6 sm:mt-8 max-w-lg mx-auto bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <label for="customAmountInput" class="text-xs font-bold text-slate-700 text-center sm:text-left shrink-0">
             Or Custom Dollar Amount:
           </label>
@@ -396,8 +408,8 @@
               type="number" 
               id="customAmountInput" 
               min="1" 
-              step="1" 
-              placeholder="e.g. 75" 
+              step="0.01" 
+              placeholder="e.g. 75 or 25.50" 
               oninput="handleCustomAmount(this.value)"
               class="w-full pl-8 pr-3 py-2.5 text-sm font-semibold rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-900"
               aria-label="Custom donation dollar amount"
@@ -410,7 +422,7 @@
 
     <!-- Payment Methods Section -->
     <section class="py-12 sm:py-16 bg-white" id="payment-methods">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Live Selected Amount Synchronizer Banner -->
         <div class="mb-8 sm:mb-10 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900 via-blue-950 to-slate-900 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -428,7 +440,7 @@
             </div>
           </div>
           <span class="text-[11px] sm:text-xs text-slate-300 bg-white/10 px-3 py-1.5 rounded-full border border-white/15 text-center shrink-0">
-            Auto-propagated to PayPal & Zelle below
+            Synced to Zelle, PayPal & Dasvandh Network below
           </span>
         </div>
 
@@ -439,18 +451,18 @@
           <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-slate-900 mt-2">
             Complete Your Contribution
           </h2>
-          <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-md mx-auto">
-            PayPal is pre-filled with your chosen amount. For Zelle, use your bank app with the pre-formatted memo below.
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-xl mx-auto">
+            Give with 0% fees via Zelle or Dasvandh Network (including monthly AutoDasvandh), or donate instantly via pre-filled PayPal checkout.
           </p>
         </div>
 
-        <!-- 2 Payment Gateways -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <!-- 3 Payment Gateways -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           
           <!-- Method 1: Zelle Direct Giving (Tag: sikhrpa) -->
-          <div class="p-5 sm:p-7 rounded-2xl bg-slate-50 border-2 border-purple-200 hover:border-purple-300 transition-colors flex flex-col justify-between shadow-sm">
+          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border-2 border-purple-200 hover:border-purple-300 transition-colors flex flex-col justify-between shadow-sm">
             <div>
-              <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center justify-between gap-2 mb-3">
                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-900 border border-purple-300">
                   <i data-lucide="zap" class="w-3.5 h-3.5 text-purple-700"></i> 100% to Mission (0% Fees)
                 </span>
@@ -462,7 +474,7 @@
               </p>
 
               <!-- Copyable Zelle Tag Card (Mobile-hardened flex) -->
-              <div class="bg-white p-3 rounded-xl border border-slate-300 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5 shadow-inner mb-2.5">
+              <div class="bg-white p-3 rounded-xl border border-slate-300 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-inner mb-2.5">
                 <div class="min-w-0">
                   <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">Official Zelle® Tag:</span>
                   <span id="zelleRecipient" class="font-mono font-bold text-sm text-purple-900 truncate select-all block">sikhrpa</span>
@@ -481,7 +493,7 @@
               </div>
 
               <!-- Synchronized Suggested Memo with Copy Button (Mobile-hardened flex) -->
-              <div class="bg-purple-50/70 p-3 rounded-xl border border-purple-200 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5 shadow-inner mb-2.5">
+              <div class="bg-purple-50/70 p-3 rounded-xl border border-purple-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-inner mb-2.5">
                 <div class="min-w-0">
                   <span class="text-[10px] font-semibold text-purple-800 uppercase tracking-wider block">Suggested Memo / Note:</span>
                   <span id="zelleMemoDisplay" class="font-mono font-bold text-xs text-purple-950 break-words block select-all">
@@ -511,10 +523,69 @@
             </div>
           </div>
 
-          <!-- Method 2: PayPal & Debit / Credit Card (ID: S5PAN9B85U28J) -->
-          <div class="p-5 sm:p-7 rounded-2xl bg-slate-50 border-2 border-blue-200 hover:border-blue-300 transition-colors flex flex-col justify-between shadow-sm">
+          <!-- Method 2: Dasvandh Network (DVN) -->
+          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border-2 border-amber-300 hover:border-amber-400 transition-colors flex flex-col justify-between shadow-sm">
             <div>
-              <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-950 border border-amber-300">
+                  <i data-lucide="heart-handshake" class="w-3.5 h-3.5 text-amber-700"></i> 0% Platform Fees
+                </span>
+                <span class="text-xs font-semibold text-slate-500">AutoDasvandh</span>
+              </div>
+              <h3 class="font-bold text-slate-900 text-lg sm:text-xl mb-1.5">Dasvandh Network (DVN)</h3>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                Support SikhRPA with <strong class="text-amber-900 font-bold" id="dvnSelectedAmountDisplay">$50</strong> on the premier Sikh giving platform—<strong>0% platform fees</strong> for one-time gifts or recurring <strong>AutoDasvandh</strong> monthly giving.
+              </p>
+
+              <!-- Direct DVN Action Link & Copyable Profile URL -->
+              <div class="space-y-2.5 mb-2.5">
+                <a
+                  id="dvnDonateLink"
+                  href="https://dvn.org/organizations/sikh-rifle-and-pistol-association"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full py-3.5 px-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow group touch-target text-center"
+                  title="Open SikhRPA official profile on Dasvandh Network (dvn.org)"
+                >
+                  <i data-lucide="heart" class="w-4 h-4 text-rose-600 fill-rose-600 shrink-0"></i>
+                  <span id="dvnBtnText">Donate $50 via Dasvandh Network</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-800 group-hover:translate-x-0.5 transition-transform shrink-0"></i>
+                </a>
+
+                <!-- DVN Profile Link Copy Card -->
+                <div class="bg-white p-3 rounded-xl border border-slate-300 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-inner">
+                  <div class="min-w-0">
+                    <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">Official DVN Profile Link:</span>
+                    <span id="dvnProfileUrl" class="font-mono font-bold text-xs text-amber-950 truncate select-all block">dvn.org/organizations/sikh-rifle-and-pistol-association</span>
+                  </div>
+                  <button 
+                    type="button"
+                    onclick="copyDvnLink()" 
+                    id="dvnCopyBtn"
+                    class="px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center justify-center gap-1.5 shadow-sm touch-target"
+                    title="Copy Dasvandh Network link to clipboard"
+                    aria-label="Copy Dasvandh Network link"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5" id="dvnCopyIcon"></i>
+                    <span id="dvnCopyText">Copy Link</span>
+                  </button>
+                </div>
+              </div>
+
+              <p class="text-[11px] text-slate-500 italic leading-snug">
+                *Verified SikhRPA 501(c)(3) partner page on <strong>Dasvandh Network (dvn.org)</strong>. Supports one-time donations &amp; automated monthly AutoDasvandh giving.
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-200 text-xs text-slate-600 leading-relaxed">
+              <strong class="text-slate-900">Recurring &amp; Receipts:</strong> Automated monthly AutoDasvandh giving and consolidated annual tax receipts managed in one dashboard.
+            </div>
+          </div>
+
+          <!-- Method 3: PayPal & Debit / Credit Card (ID: S5PAN9B85U28J) -->
+          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border-2 border-blue-200 hover:border-blue-300 transition-colors flex flex-col justify-between shadow-sm md:col-span-2 lg:col-span-1">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-300">
                   <i data-lucide="credit-card" class="w-3.5 h-3.5 text-blue-700"></i> Cards • Venmo • PayPal
                 </span>
@@ -543,7 +614,7 @@
                 </a>
 
                 <!-- PayPal ID Copy Card -->
-                <div class="bg-white p-3 rounded-xl border border-slate-300 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5 shadow-inner">
+                <div class="bg-white p-3 rounded-xl border border-slate-300 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shadow-inner">
                   <div class="min-w-0">
                     <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">Official PayPal ID:</span>
                     <span id="paypalRecipient" class="font-mono font-bold text-xs sm:text-sm text-blue-950 truncate select-all block">S5PAN9B85U28J</span>
@@ -615,7 +686,7 @@
                 Need an Official IRS Tax Deduction Receipt, Form W-9, or Reimbursement?
               </h4>
               <p class="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-                If you already sent a contribution via Zelle, PayPal, or Check—or purchased supplies out-of-pocket—submit your transaction details to receive a signed, formal IRS tax acknowledgment letter PDF delivered directly to your inbox.
+                If you already sent a contribution via Zelle, Dasvandh Network, PayPal, or Check—or purchased supplies out-of-pocket—submit your transaction details to receive a signed, formal IRS tax acknowledgment letter PDF delivered directly to your inbox.
               </p>
             </div>
           </div>
@@ -697,7 +768,7 @@
 
       <!-- Bilingual Closing Quote -->
       <p class="text-xs sm:text-sm text-blue-900 font-bold mb-6 tracking-wide bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200">
-        ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
+        <span lang="pa">ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ!</span> - STAY SAFE, BE RESPONSIBLE!
       </p>
 
       <!-- Quick Nav Links -->
@@ -723,26 +794,48 @@
     document.getElementById('current-year').innerText = new Date().getFullYear();
     lucide.createIcons();
 
+    const DVN_PROFILE_URL = 'https://dvn.org/organizations/sikh-rifle-and-pistol-association';
     let currentSelectedAmount = 50;
     let currentSelectedTierName = '100 Bilingual Safety Guides';
 
-    // Propagate chosen tier to PayPal URL, Zelle memo, and UI displays
-    function selectTier(amount, tierName, element) {
-      currentSelectedAmount = amount;
-      currentSelectedTierName = tierName;
+    function formatCurrencyAmount(val) {
+      const num = Number(val);
+      if (!Number.isFinite(num) || num <= 0) return '50';
+      const rounded = Math.round(num * 100) / 100;
+      return Number.isInteger(rounded) ? rounded.toLocaleString('en-US') : rounded.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
 
-      // Update active styling across cards
+    function formatUrlAmount(val) {
+      const num = Number(val);
+      if (!Number.isFinite(num) || num <= 0) return '50';
+      const rounded = Math.round(num * 100) / 100;
+      return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(2);
+    }
+
+    function resetAllTierCards() {
       const allCards = document.querySelectorAll('.tier-card');
       allCards.forEach(card => {
         card.setAttribute('aria-pressed', 'false');
         card.classList.remove('border-amber-500', 'ring-2', 'ring-amber-400/50', 'bg-gradient-to-b', 'from-amber-50/50', 'to-white');
         card.classList.add('border-slate-200');
         const badge = card.querySelector('.tier-badge');
-        if (badge && !card.dataset.tier.includes('Full Community')) {
-          badge.classList.remove('bg-amber-500', 'text-slate-950');
-          badge.classList.add('bg-blue-50', 'text-blue-900');
+        if (badge) {
+          badge.classList.remove('bg-amber-500', 'text-slate-950', 'border-amber-400', 'bg-blue-50', 'text-blue-900', 'border-blue-200', 'bg-blue-950', 'text-amber-400', 'border-slate-700');
+          if (card.dataset.amount === '1000') {
+            badge.classList.add('bg-blue-950', 'text-amber-400', 'border-slate-700');
+          } else {
+            badge.classList.add('bg-blue-50', 'text-blue-900', 'border-blue-200');
+          }
         }
       });
+    }
+
+    // Propagate chosen tier to PayPal URL, Zelle memo, Dasvandh Network button, and UI displays
+    function selectTier(amount, tierName, element) {
+      currentSelectedAmount = amount;
+      currentSelectedTierName = tierName;
+
+      resetAllTierCards();
 
       if (element) {
         element.setAttribute('aria-pressed', 'true');
@@ -750,7 +843,8 @@
         element.classList.add('border-amber-500', 'ring-2', 'ring-amber-400/50', 'bg-gradient-to-b', 'from-amber-50/50', 'to-white');
         const badge = element.querySelector('.tier-badge');
         if (badge) {
-          badge.classList.add('bg-amber-500', 'text-slate-950');
+          badge.classList.remove('bg-blue-50', 'text-blue-900', 'border-blue-200', 'bg-blue-950', 'text-amber-400', 'border-slate-700');
+          badge.classList.add('bg-amber-500', 'text-slate-950', 'border-amber-400');
         }
       }
 
@@ -764,47 +858,63 @@
     }
 
     function handleCustomAmount(val) {
-      const num = parseInt(val, 10);
-      if (num && num > 0) {
-        currentSelectedAmount = num;
-        currentSelectedTierName = `Custom Community Gift ($${num})`;
+      const trimmed = String(val || '').trim();
+      if (trimmed === '') {
+        const defaultCard = document.getElementById('defaultTierCard') || document.querySelector('.tier-card[data-amount="50"]');
+        selectTier(50, '100 Bilingual Safety Guides', defaultCard);
+        return;
+      }
 
-        // Remove highlight from predefined cards
-        document.querySelectorAll('.tier-card').forEach(c => {
-          c.setAttribute('aria-pressed', 'false');
-          c.classList.remove('border-amber-500', 'ring-2', 'ring-amber-400/50', 'bg-gradient-to-b', 'from-amber-50/50', 'to-white');
-          c.classList.add('border-slate-200');
-        });
+      const num = parseFloat(trimmed);
+      if (Number.isFinite(num) && num > 0) {
+        const rounded = Math.round(num * 100) / 100;
+        const formatted = formatCurrencyAmount(rounded);
+        currentSelectedAmount = rounded;
+        currentSelectedTierName = `Custom Community Gift ($${formatted})`;
 
+        resetAllTierCards();
         updatePropagatedValues();
       }
     }
 
     function updatePropagatedValues() {
+      const displayAmount = formatCurrencyAmount(currentSelectedAmount);
+      const urlAmount = formatUrlAmount(currentSelectedAmount);
+
       // 1. Update Sync Display Banner
       const syncBadge = document.getElementById('syncDisplayBadge');
       const syncName = document.getElementById('syncTierName');
-      if (syncBadge) syncBadge.innerText = `$${currentSelectedAmount}`;
+      if (syncBadge) syncBadge.innerText = `$${displayAmount}`;
       if (syncName) syncName.innerText = currentSelectedTierName;
 
       // 2. Propagate to PayPal (link query & button label)
       const paypalLink = document.getElementById('paypalDonateLink');
       const paypalText = document.getElementById('paypalBtnText');
       if (paypalLink) {
-        paypalLink.href = `https://www.paypal.com/donate?business=S5PAN9B85U28J&currency_code=USD&amount=${currentSelectedAmount}`;
+        paypalLink.href = `https://www.paypal.com/donate?business=S5PAN9B85U28J&currency_code=USD&amount=${encodeURIComponent(urlAmount)}`;
       }
       if (paypalText) {
-        paypalText.innerText = `Donate $${currentSelectedAmount} via PayPal Checkout`;
+        paypalText.innerText = `Donate $${displayAmount} via PayPal Checkout`;
       }
 
       // 3. Propagate to Zelle (amount display & suggested memo)
       const zelleAmount = document.getElementById('zelleSelectedAmountDisplay');
       const zelleMemo = document.getElementById('zelleMemoDisplay');
       if (zelleAmount) {
-        zelleAmount.innerText = `$${currentSelectedAmount}`;
+        zelleAmount.innerText = `$${displayAmount}`;
       }
       if (zelleMemo) {
-        zelleMemo.innerText = `SikhRPA Donation - $${currentSelectedAmount} (${currentSelectedTierName})`;
+        zelleMemo.innerText = `SikhRPA Donation - $${displayAmount} (${currentSelectedTierName})`;
+      }
+
+      // 4. Propagate to Dasvandh Network (amount display & live button label)
+      const dvnAmount = document.getElementById('dvnSelectedAmountDisplay');
+      const dvnText = document.getElementById('dvnBtnText');
+      if (dvnAmount) {
+        dvnAmount.innerText = `$${displayAmount}`;
+      }
+      if (dvnText) {
+        dvnText.innerText = `Donate $${displayAmount} via Dasvandh Network`;
       }
     }
 
@@ -856,6 +966,10 @@
     function copyZelleMemo() {
       const memoText = document.getElementById('zelleMemoDisplay').innerText.trim();
       copyToClipboard(memoText, document.getElementById('zelleMemoCopyText'), document.getElementById('zelleMemoCopyIcon'), 'Copy Memo');
+    }
+
+    function copyDvnLink() {
+      copyToClipboard(DVN_PROFILE_URL, document.getElementById('dvnCopyText'), document.getElementById('dvnCopyIcon'), 'Copy Link');
     }
 
     function copyPayPalRecipient() {

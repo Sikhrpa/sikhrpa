@@ -28,22 +28,16 @@ DATABASE_PATH = os.path.join(REPO_ROOT, "data", "handgun_database.json")
 # Standardized pixel density: 100 pixels = 1.0 inch
 PIXELS_PER_INCH = 100
 
-BROWSER_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-    "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+# Wikimedia Commons / API User-Agent policy compliant headers
+REQUEST_HEADERS = {
+    "User-Agent": "SikhRPA-AssetPipeline/1.0 (https://sikhrpa.org; president@sikhrpa.org) Python-urllib/3",
+    "Accept": "image/png,image/webp,image/jpeg,image/*,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
-    "Sec-Ch-Ua": '"Not/A)Brand";v="8", "Chromium";v="126"',
-    "Sec-Ch-Ua-Mobile": "?0",
-    "Sec-Ch-Ua-Platform": '"macOS"',
-    "Sec-Fetch-Dest": "image",
-    "Sec-Fetch-Mode": "no-cors",
-    "Sec-Fetch-Site": "cross-site",
-    "Referer": "https://www.google.com/"
 }
 
 def fetch_image_data(url: str) -> bytes:
     """
-    Downloads image bytes with full browser spoofing headers.
+    Downloads image bytes using a Wikimedia-compliant descriptive User-Agent.
     Supports optional SCRAPER_API_KEY environment variable if running via proxy.
     """
     scraper_key = os.environ.get("SCRAPER_API_KEY")
@@ -51,7 +45,7 @@ def fetch_image_data(url: str) -> bytes:
         encoded_target = urllib.parse.quote(url)
         url = f"http://api.scraperapi.com?api_key={scraper_key}&url={encoded_target}"
 
-    req = urllib.request.Request(url, headers=BROWSER_HEADERS)
+    req = urllib.request.Request(url, headers=REQUEST_HEADERS)
     with urllib.request.urlopen(req, timeout=25) as response:
         return response.read()
 

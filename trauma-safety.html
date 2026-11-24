@@ -20,8 +20,28 @@
   <meta name="keywords" content="Stop the bleed Punjabi, SikhRPA trauma safety, range IFAK checklist, tourniquet instructions Punjabi, California gun range first aid, bleeding control" />
   <meta name="theme-color" content="#0f172a" />
 
-  <!-- Favicon -->
+  <link rel="canonical" href="https://sikhrpa.org/trauma-safety" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sikhrpa.org/trauma-safety" />
+  <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
+  <meta property="og:title" content="Stop the Bleed & Range Emergency Trauma Guide | SikhRPA 501(c)(3)" />
+  <meta property="og:description" content="Official bilingual (English & Gurmukhi) emergency trauma and Stop the Bleed guide by SikhRPA. Master tourniquet application, wound packing, IFAK kit packing, and remote 911 range dispatch." />
+  <meta property="og:image" content="https://sikhrpa.org/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stop the Bleed & Range Emergency Trauma Guide | SikhRPA 501(c)(3)" />
+  <meta name="twitter:description" content="Official bilingual (English & Gurmukhi) emergency trauma and Stop the Bleed guide by SikhRPA. Master tourniquet application, wound packing, IFAK kit packing, and remote 911 range dispatch." />
+  <meta name="twitter:image" content="https://sikhrpa.org/og-card.png" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="srpa-logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -99,9 +119,9 @@
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
         <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
           <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
-          <span class="hidden xs:inline">Home</span>
+          <span class="hidden sm:inline">Home</span>
         </a>
-        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <span class="text-slate-300 hidden sm:inline" aria-hidden="true">|</span>
         <div class="flex items-center gap-2 min-w-0">
           <img 
             src="srpa-logo.png" 
@@ -134,7 +154,7 @@
         <button
           type="button"
           onclick="window.print()"
-          class="hidden sm:inline-flex px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 bg-white hover:bg-slate-100 text-slate-800 transition-colors items-center gap-1.5 shadow-2xs touch-target"
+          class="hidden sm:inline-flex px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 bg-white hover:bg-slate-100 text-slate-800 transition-colors items-center gap-1.5 shadow-sm touch-target"
           title="Print 1-Page Range Emergency Guide"
         >
           <i data-lucide="printer" class="w-3.5 h-3.5 text-slate-600"></i>
@@ -203,7 +223,7 @@
         Range Emergency Trauma & Stop the Bleed Guide
       </h1>
       
-      <p class="gurmukhi text-base sm:text-xl font-bold text-blue-950 mb-3">
+      <p class="gurmukhi text-base sm:text-xl font-bold text-blue-950 mb-3" lang="pa">
         ਰੇਂਜ ਸੁਰੱਖਿਆ, ਐਮਰਜੈਂਸੀ ਮੁੱਢਲੀ ਸਹਾਇਤਾ ਅਤੇ ਜਾਨ ਬਚਾਉਣ ਦੇ ਨਿਯਮ
       </p>
 
@@ -212,7 +232,7 @@
       </p>
 
       <!-- Trust Badges Strip -->
-      <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs text-slate-700 bg-white p-2.5 sm:px-5 sm:py-2.5 rounded-2xl border border-slate-200 shadow-2xs">
+      <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs text-slate-700 bg-white p-2.5 sm:px-5 sm:py-2.5 rounded-2xl border border-slate-200 shadow-sm">
         <span class="flex items-center gap-1 font-bold text-slate-900">
           <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> CoTCCC Guidelines
         </span>
@@ -221,7 +241,7 @@
           <i data-lucide="clock" class="w-3.5 h-3.5 text-rose-600"></i> Under 3-Min Intervention
         </span>
         <span class="text-slate-300">•</span>
-        <span class="text-amber-800 font-semibold">Bilingual (English & ਪੰਜਾਬੀ)</span>
+        <span class="text-amber-800 font-semibold">Bilingual (English & <span lang="pa">ਪੰਜਾਬੀ</span>)</span>
       </div>
     </div>
 
@@ -249,7 +269,7 @@
             <strong>Limitation of Liability:</strong> The Sikh Rifle and Pistol Association (SikhRPA), including its board of directors, officers, certified safety instructors, and volunteers, expressly disclaims all legal liability and responsibility for any injury, adverse outcome, complication, physical harm, or death arising directly or indirectly from the use, application, or misapplication of any techniques or supplies described herein. First-aid intervention is voluntary, and individuals are strongly encouraged to complete formal, in-person hands-on training through accredited organizations such as the American College of Surgeons (ACS) Stop the Bleed® program or the American Red Cross.
           </p>
 
-          <div class="pt-2 border-t border-amber-200/80 gurmukhi text-xs text-blue-950 font-semibold leading-snug">
+          <div class="pt-2 border-t border-amber-200/80 gurmukhi text-xs text-blue-950 font-semibold leading-snug" lang="pa">
             <strong>ਕਾਨੂੰਨੀ ਅਤੇ ਮੈਡੀਕਲ ਬੇਦਾਅਵਾ:</strong> ਇਹ ਸਮੱਗਰੀ ਕੇਵਲ ਆਮ ਜਾਣਕਾਰੀ ਅਤੇ ਸੁਰੱਖਿਆ ਜਾਗਰੂਕਤਾ ਲਈ ਹੈ ਅਤੇ ਇਸਨੂੰ ਡਾਕਟਰੀ ਸਲਾਹ ਨਹੀਂ ਮੰਨਿਆ ਜਾ ਸਕਦਾ। ਕਿਸੇ ਵੀ ਐਮਰਜੈਂਸੀ ਵਿੱਚ ਤੁਰੰਤ ੯੧੧ 'ਤੇ ਕਾਲ ਕਰੋ। ਸਿੱਖ ਰਾਈਫਲ ਅਤੇ ਪਿਸਤੌਲ ਐਸੋਸੀਏਸ਼ਨ (SikhRPA) ਜਾਂ ਇਸਦੇ ਸੇਵਾਦਾਰ ਇਨ੍ਹਾਂ ਤਕਨੀਕਾਂ ਦੀ ਵਰਤੋਂ ਕਾਰਨ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਨੁਕਸਾਨ ਜਾਂ ਹਾਦਸੇ ਲਈ ਕਾਨੂੰਨੀ ਤੌਰ 'ਤੇ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹੋਣਗੇ।
           </div>
         </div>
@@ -264,7 +284,7 @@
             1
           </div>
           <h3 class="font-extrabold text-slate-900 text-base mb-1">Ensure Safety & Call 911</h3>
-          <p class="gurmukhi text-xs font-bold text-rose-950 mb-2">ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਰੇਂਜ ਖਾਲੀ ਕਰੋ ਅਤੇ ੯੧੧ ਮਿਲਾਓ</p>
+          <p class="gurmukhi text-xs font-bold text-rose-950 mb-2" lang="pa">ਸਭ ਤੋਂ ਪਹਿਲਾਂ ਰੇਂਜ ਖਾਲੀ ਕਰੋ ਅਤੇ ੯੧੧ ਮਿਲਾਓ</p>
           <p class="text-xs text-slate-600 leading-relaxed">
             Call a loud <strong>"CEASE FIRE!"</strong>. Unload all firearms. Ensure the shooter and surroundings are safe before approaching the patient.
           </p>
@@ -281,7 +301,7 @@
             2
           </div>
           <h3 class="font-extrabold text-slate-900 text-base mb-1">Find the Source of Bleeding</h3>
-          <p class="gurmukhi text-xs font-bold text-amber-950 mb-2">ਖੂਨ ਵਹਿਣ ਵਾਲੀ ਥਾਂ ਦੀ ਜਾਂਚ ਕਰੋ</p>
+          <p class="gurmukhi text-xs font-bold text-amber-950 mb-2" lang="pa">ਖੂਨ ਵਹਿਣ ਵਾਲੀ ਥਾਂ ਦੀ ਜਾਂਚ ਕਰੋ</p>
           <p class="text-xs text-slate-600 leading-relaxed">
             Expose the wound. Cut or tear clothing. Identify arterial spurting, pooling blood, or clothing soaked in blood.
           </p>
@@ -298,7 +318,7 @@
             3
           </div>
           <h3 class="font-extrabold text-slate-900 text-base mb-1">Compress: Pressure or Tourniquet</h3>
-          <p class="gurmukhi text-xs font-bold text-blue-950 mb-2">ਦਬਾਓ: ਟੂਰਨੀਕੇਟ ਜਾਂ ਗੌਜ਼ ਨਾਲ ਪੈਕਿੰਗ</p>
+          <p class="gurmukhi text-xs font-bold text-blue-950 mb-2" lang="pa">ਦਬਾਓ: ਟੂਰਨੀਕੇਟ ਜਾਂ ਗੌਜ਼ ਨਾਲ ਪੈਕਿੰਗ</p>
           <p class="text-xs text-slate-600 leading-relaxed">
             Arms & legs: Apply a tourniquet <strong>2-3 inches above</strong> the wound. Neck, groin, armpit: Pack firmly with gauze and hold continuous bodyweight pressure.
           </p>
@@ -362,7 +382,7 @@
             <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
               Tourniquet Application (CAT Gen 7 / SOFTT-W)
             </h2>
-            <p class="gurmukhi text-sm font-bold text-rose-700">
+            <p class="gurmukhi text-sm font-bold text-rose-700" lang="pa">
               ਟੂਰਨੀਕੇਟ ਲਗਾਉਣ ਦੇ ੪ ਲਾਜ਼ਮੀ ਨਿਯਮ
             </p>
           </div>
@@ -378,7 +398,7 @@
               <p class="text-slate-600 leading-snug">
                 Place <strong>2–3 inches above the bleeding site</strong>. If in doubt or under extreme duress, place it "high and tight" on the limb (highest point on the arm or thigh).
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200" lang="pa">
                 ਜ਼ਖ਼ਮ ਤੋਂ ੨-੩ ਇੰਚ ਉੱਪਰ ਲਗਾਓ। ਜੇ ਸ਼ੱਕ ਹੋਵੇ, ਤਾਂ ਪੱਟ ਜਾਂ ਬਾਂਹ ਦੇ ਸਭ ਤੋਂ ਉੱਚੇ ਹਿੱਸੇ 'ਤੇ ਲਗਾਓ। ਕਦੇ ਵੀ ਗੋਡੇ ਜਾਂ ਕੂਹਣੀ ਦੇ ਜੋੜ ਉੱਤੇ ਨਾ ਲਗਾਓ।
               </p>
             </div>
@@ -388,7 +408,7 @@
               <p class="text-slate-600 leading-snug">
                 Pull the strap as tight as humanly possible before engaging the windlass rod. There should not be room to slide three fingers underneath.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200" lang="pa">
                 ਰੌਡ ਘੁਮਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਬੈਲਟ ਨੂੰ ਪੂਰੀ ਤਾਕਤ ਨਾਲ ਖਿੱਚ ਕੇ ਕੱਸੋ। ਢਿੱਲੀ ਬੈਲਟ ਕੰਮ ਨਹੀਂ ਕਰੇਗੀ।
               </p>
             </div>
@@ -398,7 +418,7 @@
               <p class="text-slate-600 leading-snug">
                 Twist until the bright red spurting completely stops and the distal pulse disappears. Lock the windlass in the clip. It will be painful; reassure the patient.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200" lang="pa">
                 ਰੌਡ ਨੂੰ ਉਦੋਂ ਤੱਕ ਘੁਮਾਓ ਜਦੋਂ ਤੱਕ ਖੂਨ ਵਹਿਣਾ ਬਿਲਕੁਲ ਬੰਦ ਨਾ ਹੋ ਜਾਵੇ। ਫਿਰ ਰੌਡ ਨੂੰ ਲਾਕ ਕਰੋ।
               </p>
             </div>
@@ -408,7 +428,7 @@
               <p class="text-slate-600 leading-snug">
                 Write the exact time (e.g. <code>T: 14:15</code>) on the white Velcro strap. <strong>NEVER loosen or take off a tourniquet</strong> once placed; only emergency physicians can safely remove it.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1.5 rounded border border-slate-200" lang="pa">
                 ਟੂਰਨੀਕੇਟ ਉੱਤੇ ਸਮਾਂ ਜ਼ਰੂਰ ਲਿਖੋ (ਜਿਵੇਂ 2:15 PM)। ਇਸਨੂੰ ਕਦੇ ਵੀ ਖੁਦ ਢਿੱਲਾ ਨਾ ਕਰੋ। ਸਿਰਫ਼ ਹਸਪਤਾਲ ਵਿੱਚ ਡਾਕਟਰ ਹੀ ਇਸਨੂੰ ਖੋਲ੍ਹਣਗੇ।
               </p>
             </div>
@@ -621,7 +641,7 @@
             <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
               Wound Packing (Groin, Armpits, & Neck Junctions)
             </h2>
-            <p class="gurmukhi text-sm font-bold text-rose-700">
+            <p class="gurmukhi text-sm font-bold text-rose-700" lang="pa">
               ਗਰਦਨ, ਬਗਲ ਅਤੇ ਪੱਟ ਦੇ ਜੋੜਾਂ ਵਿੱਚ ਗੌਜ਼ ਪੈਕਿੰਗ
             </p>
           </div>
@@ -641,7 +661,7 @@
               <p class="text-slate-600 leading-snug">
                 Use your finger to push gauze into the cavity directly against the ruptured artery. Do not just cover the top; fill the entire wound cavity tightly.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200" lang="pa">
                 ਗੌਜ਼ ਨੂੰ ਸਿਰਫ਼ ਜ਼ਖ਼ਮ ਦੇ ਉੱਪਰ ਨਾ ਰੱਖੋ। ਉਂਗਲਾਂ ਨਾਲ ਜ਼ਖ਼ਮ ਦੇ ਅੰਦਰ ਤੱਕ ਗੌਜ਼ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਭਰੋ ਤਾਂ ਜੋ ਨਾੜੀ 'ਤੇ ਸਿੱਧਾ ਦਬਾਅ ਪਵੇ।
               </p>
             </div>
@@ -651,7 +671,7 @@
               <p class="text-slate-600 leading-snug">
                 Once packed, lean your full bodyweight with both hands onto the wound. Hold continuous pressure for at least <strong>3 minutes</strong> for hemostatic gauze (QuikClot) or <strong>10 minutes</strong> for standard plain gauze.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200" lang="pa">
                 ਪੈਕ ਕਰਨ ਤੋਂ ਬਾਅਦ ਦੋਵਾਂ ਹੱਥਾਂ ਨਾਲ ਆਪਣੇ ਸਰੀਰ ਦਾ ਪੂਰਾ ਭਾਰ ਪਾ ਕੇ ਘੱਟੋ-ਘੱਟ ੩ ਤੋਂ ੫ ਮਿੰਟ ਤੱਕ ਬਿਨਾਂ ਹਿਲਾਏ ਦਬਾ ਕੇ ਰੱਖੋ।
               </p>
             </div>
@@ -664,7 +684,7 @@
               </span>
 
               <!-- Vector Graphic: Wound Packing Cross Section & Downward Bodyweight -->
-              <div class="bg-white rounded-xl p-3 mb-3 border border-amber-200 shadow-2xs">
+              <div class="bg-white rounded-xl p-3 mb-3 border border-amber-200 shadow-sm">
                 <svg viewBox="0 0 520 250" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomical Deep Wound Packing and Direct Bodyweight Pressure Cross Section">
                   <defs>
                     <!-- Skin & Soft Tissue Gradients -->
@@ -838,7 +858,7 @@
             <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
               Chest Seals for Torso Trauma
             </h2>
-            <p class="gurmukhi text-sm font-bold text-rose-700">
+            <p class="gurmukhi text-sm font-bold text-rose-700" lang="pa">
               ਛਾਤੀ ਦੇ ਜ਼ਖ਼ਮ ਅਤੇ ਚੈਸਟ ਸੀਲ (Tension Pneumothorax)
             </p>
           </div>
@@ -858,7 +878,7 @@
               <p class="text-slate-600 leading-snug">
                 Wipe away blood and sweat. Place a vented chest seal (HyFin or Halo) directly over the entry hole while the patient exhales. The one-way vent allows trapped air and blood to escape without letting air back in.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200" lang="pa">
                 ਖੂਨ ਪੂੰਝ ਕੇ ਜ਼ਖ਼ਮ 'ਤੇ ਵੈਂਟਡ ਚੈਸਟ ਸੀਲ ਲਗਾਓ। ਇਹ ਹਵਾ ਨੂੰ ਬਾਹਰ ਕੱਢਦੀ ਹੈ ਪਰ ਅੰਦਰ ਨਹੀਂ ਜਾਣ ਦਿੰਦੀ।
               </p>
             </div>
@@ -868,7 +888,7 @@
               <p class="text-slate-600 leading-snug">
                 Roll the patient onto their side and physically feel their back. If there is an exit wound, seal it with a second chest seal.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200" lang="pa">
                 ਮਰੀਜ਼ ਦੀ ਪਿੱਠ ਜ਼ਰੂਰ ਚੈੱਕ ਕਰੋ! ਜੇ ਗੋਲੀ ਪਾਰ ਹੋਈ ਹੈ, ਤਾਂ ਪਿੱਛੇ ਵੀ ਦੂਜੀ ਚੈਸਟ ਸੀਲ ਲਗਾਓ।
               </p>
             </div>
@@ -881,7 +901,7 @@
               </span>
 
               <!-- Vector Graphic: Vented Chest Seal Operation & Exit Wound Scan -->
-              <div class="bg-white rounded-xl p-3 mb-3 border border-blue-200 shadow-2xs">
+              <div class="bg-white rounded-xl p-3 mb-3 border border-blue-200 shadow-sm">
                 <svg viewBox="0 0 520 250" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One-Way Vented Chest Seal and Thoracic Cavity Valve Mechanism Diagram">
                   <defs>
                     <!-- Lung Tissue Shading -->
@@ -1004,7 +1024,7 @@
                 <p class="text-slate-600 leading-snug">
                   Gently peel back one corner of the chest seal for 3 seconds to allow trapped air and pressurized blood to escape, then reseal it.
                 </p>
-                <p class="gurmukhi text-[11px] text-blue-950 font-bold pt-1 border-t border-slate-100">
+                <p class="gurmukhi text-[11px] text-blue-950 font-bold pt-1 border-t border-slate-100" lang="pa">
                   ਜੇ ਸਾਹ ਲੈਣਾ ਔਖਾ ਹੋਵੇ, ਤਾਂ ਸੀਲ ਦਾ ਇੱਕ ਕੋਨਾ ੨-੩ ਸਕਿੰਟ ਲਈ ਚੁੱਕ ਕੇ ਹਵਾ ਬਾਹਰ ਕੱਢੋ ਅਤੇ ਦੁਬਾਰਾ ਚਿਪਕਾ ਦਿਓ।
                 </p>
               </div>
@@ -1023,7 +1043,7 @@
             <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">
               Hypothermia Prevention (The Lethal Triad)
             </h2>
-            <p class="gurmukhi text-sm font-bold text-rose-700">
+            <p class="gurmukhi text-sm font-bold text-rose-700" lang="pa">
               ਮਰੀਜ਼ ਦੇ ਸਰੀਰ ਦਾ ਤਾਪਮਾਨ ਬਣਾਈ ਰੱਖਣਾ (ਗਰਮੀ ਦੇਣਾ)
             </p>
           </div>
@@ -1043,7 +1063,7 @@
               <p class="text-slate-600 leading-snug">
                 Cold range concrete, dirt, or gravel leeches body heat through conduction. Slide a shooting mat, jacket, or blanket underneath the patient.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200" lang="pa">
                 ਮਰੀਜ਼ ਨੂੰ ਠੰਢੀ ਜ਼ਮੀਨ 'ਤੇ ਨਾ ਪਿਆ ਰਹਿਣ ਦਿਓ। ਹੇਠਾਂ ਕੋਈ ਜੈਕਟ, ਮੈਟ ਜਾਂ ਕੰਬਲ ਵਿਛਾਓ।
               </p>
             </div>
@@ -1053,7 +1073,7 @@
               <p class="text-slate-600 leading-snug">
                 Wrap the entire patient like a burrito in an emergency reflective foil blanket, even on hot 90°F summer range days.
               </p>
-              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200">
+              <p class="gurmukhi text-xs text-blue-950 font-bold bg-white p-1 rounded border border-slate-200" lang="pa">
                 ਭਾਵੇਂ ਗਰਮੀਆਂ ਦਾ ਮੌਸਮ ਹੋਵੇ, ਖੂਨ ਵਹਿਣ ਕਾਰਨ ਸਰੀਰ ਠੰਢਾ ਪੈ ਜਾਂਦਾ ਹੈ। ਮਰੀਜ਼ ਨੂੰ ਐਮਰਜੈਂਸੀ ਸ਼ੀਟ ਨਾਲ ਪੂਰੀ ਤਰ੍ਹਾਂ ਲਪੇਟੋ।
               </p>
             </div>
@@ -1066,7 +1086,7 @@
               </span>
 
               <!-- Vector Graphic: The Lethal Triad & Thermal Insulation -->
-              <div class="bg-white rounded-xl p-3 mb-3 border border-purple-200 shadow-2xs">
+              <div class="bg-white rounded-xl p-3 mb-3 border border-purple-200 shadow-sm">
                 <svg viewBox="0 0 520 250" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trauma Triad of Death Cycle and Ground Barrier Insulation Diagram">
                   <defs>
                     <!-- Mylar Foil Reflective Gradient -->
@@ -1192,7 +1212,7 @@
 
               <div class="space-y-2 text-xs">
                 <div class="p-2 bg-white rounded-lg border border-purple-200 flex items-center justify-between">
-                  <span class="font-bold text-slate-900">1. Hypothermia (ਠੰਢ)</span>
+                  <span class="font-bold text-slate-900">1. Hypothermia (<span lang="pa">ਠੰਢ</span>)</span>
                   <span class="text-rose-700 font-bold">Body temp &lt; 95°F</span>
                 </div>
                 <div class="p-2 bg-white rounded-lg border border-purple-200 flex items-center justify-between">
@@ -1223,7 +1243,7 @@
           <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">
             Interactive Range Bag IFAK Auditor
           </h2>
-          <p class="gurmukhi text-sm font-bold text-blue-950">
+          <p class="gurmukhi text-sm font-bold text-blue-950" lang="pa">
             ਰੇਂਜ ਬੈਗ ਟਰਾਮਾ ਕਿੱਟ ਚੈੱਕਲਿਸਟ (IFAK Checklist)
           </p>
         </div>
@@ -1261,7 +1281,7 @@
               1. CoTCCC-Approved Tourniquet (CAT Gen 7 or SOFTT-W)
             </strong>
             <span class="text-[11px] text-slate-500 block leading-tight">Must be authentic and staged out of plastic wrapping for 1-handed deployment.</span>
-            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਅਸਲੀ ਟੂਰਨੀਕੇਟ (ਪਲਾਸਟਿਕ ਤੋਂ ਬਾਹਰ ਕੱਢ ਕੇ ਰੱਖੋ)</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5" lang="pa">ਅਸਲੀ ਟੂਰਨੀਕੇਟ (ਪਲਾਸਟਿਕ ਤੋਂ ਬਾਹਰ ਕੱਢ ਕੇ ਰੱਖੋ)</span>
           </div>
         </label>
 
@@ -1276,7 +1296,7 @@
               2. Hemostatic Gauze (QuikClot or Combat Gauze)
             </strong>
             <span class="text-[11px] text-slate-500 block leading-tight">Z-folded kaolin-impregnated gauze for deep wound packing in groin or armpits.</span>
-            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਖੂਨ ਜਮਾਉਣ ਵਾਲੀ ਗੌਜ਼ (Z-Folded Gauze)</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5" lang="pa">ਖੂਨ ਜਮਾਉਣ ਵਾਲੀ ਗੌਜ਼ (Z-Folded Gauze)</span>
           </div>
         </label>
 
@@ -1291,7 +1311,7 @@
               3. Vented Chest Seals (Twin Pack for Entry & Exit)
             </strong>
             <span class="text-[11px] text-slate-500 block leading-tight">HyFin or Halo twin-pack with one-way vents to prevent lung collapse.</span>
-            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਚੈਸਟ ਸੀਲ ਜੋੜਾ (ਅੱਗੇ ਅਤੇ ਪਿੱਛੇ ਲਈ ੨ ਸੀਲਾਂ)</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5" lang="pa">ਚੈਸਟ ਸੀਲ ਜੋੜਾ (ਅੱਗੇ ਅਤੇ ਪਿੱਛੇ ਲਈ ੨ ਸੀਲਾਂ)</span>
           </div>
         </label>
 
@@ -1306,7 +1326,7 @@
               4. Pressure Dressing (Israeli Bandage / Emergency Bandage)
             </strong>
             <span class="text-[11px] text-slate-500 block leading-tight">4" or 6" elastic wrap with pressure bar to maintain 30+ lbs of direct pressure.</span>
-            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਪ੍ਰੈਸ਼ਰ ਪੱਟੀ (ਇਜ਼ਰਾਈਲੀ ਬੈਂਡੇਜ)</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5" lang="pa">ਪ੍ਰੈਸ਼ਰ ਪੱਟੀ (ਇਜ਼ਰਾਈਲੀ ਬੈਂਡੇਜ)</span>
           </div>
         </label>
 
@@ -1321,7 +1341,7 @@
               5. Heavy-Duty Trauma Shears (7.25")
             </strong>
             <span class="text-[11px] text-slate-500 block leading-tight">To rapidly cut through heavy canvas, tactical denim, boots, and winter jackets.</span>
-            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਮੋਟੇ ਕੱਪੜੇ ਕੱਟਣ ਵਾਲੀ ਮੈਡੀਕਲ ਕੈਂਚੀ</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5" lang="pa">ਮੋਟੇ ਕੱਪੜੇ ਕੱਟਣ ਵਾਲੀ ਮੈਡੀਕਲ ਕੈਂਚੀ</span>
           </div>
         </label>
 
@@ -1336,7 +1356,7 @@
               6. Mylar Foil Space Blanket & Nitrile Gloves (2 Pairs)
             </strong>
             <span class="text-[11px] text-slate-500 block leading-tight">Retains 90% body heat to prevent shock, and heavy-duty nitrile gloves for bloodborne protection.</span>
-            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5">ਸਿਲਵਰ ਐਮਰਜੈਂਸੀ ਸ਼ੀਟ ਅਤੇ ਸੁਰੱਖਿਅਤ ਦਸਤਾਨੇ</span>
+            <span class="gurmukhi text-[11px] text-blue-900 font-bold block mt-0.5" lang="pa">ਸਿਲਵਰ ਐਮਰਜੈਂਸੀ ਸ਼ੀਟ ਅਤੇ ਸੁਰੱਖਿਅਤ ਦਸਤਾਨੇ</span>
           </div>
         </label>
 
@@ -1361,7 +1381,7 @@
           <h2 class="text-xl sm:text-2xl font-extrabold text-white">
             Emergency 911 Remote Range Script Generator
           </h2>
-          <p class="gurmukhi text-sm font-bold text-amber-300">
+          <p class="gurmukhi text-sm font-bold text-amber-300" lang="pa">
             ਦੂਰ-ਦੁਰਾਡੇ ਰੇਂਜਾਂ 'ਤੇ ਐਮਰਜੈਂਸੀ ੯੧੧ ਕਾਲ ਕਰਨ ਦਾ ਤਰੀਕਾ
           </p>
         </div>
@@ -1482,7 +1502,7 @@
           <h4 class="font-extrabold text-slate-950 text-base sm:text-lg leading-snug">
             Does Your Gurdwara or Community Center Have a Wall-Mounted Bleeding Control Kit?
           </h4>
-          <p class="gurmukhi text-xs sm:text-sm font-bold text-blue-950">
+          <p class="gurmukhi text-xs sm:text-sm font-bold text-blue-950" lang="pa">
             ਗੁਰਦੁਆਰਾ ਸਾਹਿਬ ਵਿੱਚ ਐਮਰਜੈਂਸੀ ਬਲੀਡਿੰਗ ਕੰਟਰੋਲ ਕਿੱਟ ਲਗਾਉਣ ਲਈ ਸਹਾਇਤਾ
           </p>
           <p class="text-xs text-slate-600 max-w-2xl leading-relaxed">
@@ -1582,7 +1602,7 @@
 
       if (checkedCount === total) {
         scoreText.className = 'font-mono text-lg font-black text-emerald-600';
-        banner.className = 'p-4 rounded-xl bg-emerald-100 border-2 border-emerald-400 text-xs text-emerald-950 flex items-center justify-between gap-3 shadow-2xs';
+        banner.className = 'p-4 rounded-xl bg-emerald-100 border-2 border-emerald-400 text-xs text-emerald-950 flex items-center justify-between gap-3 shadow-sm';
         message.innerHTML = '<strong>CoTCCC Grade: Fully Combat-Ready Range IFAK!</strong> You have all 6 core components to control massive hemorrhage and prevent tension pneumothorax.';
       } else if (checkedCount >= 4) {
         scoreText.className = 'font-mono text-lg font-black text-amber-600';
@@ -1616,9 +1636,14 @@
 
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          const lat = position.coords.latitude.toFixed(5);
-          const lng = position.coords.longitude.toFixed(5);
-          coordsInput.value = `${lat}° N, ${lng}° W (±${Math.round(position.coords.accuracy)}m)`;
+          const rawLat = position.coords.latitude;
+          const rawLng = position.coords.longitude;
+          const latDir = rawLat >= 0 ? 'N' : 'S';
+          const lngDir = rawLng >= 0 ? 'E' : 'W';
+          const latAbs = Math.abs(rawLat).toFixed(5);
+          const lngAbs = Math.abs(rawLng).toFixed(5);
+          const accuracy = Math.round(position.coords.accuracy);
+          coordsInput.value = `${rawLat.toFixed(5)}, ${rawLng.toFixed(5)} (${latAbs}° ${latDir}, ${lngAbs}° ${lngDir}, ±${accuracy}m)`;
           btn.disabled = false;
           btn.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Coordinates Acquired</span>';
           lucide.createIcons();
