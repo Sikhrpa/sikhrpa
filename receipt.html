@@ -20,8 +20,28 @@
   <meta name="keywords" content="SikhRPA tax receipt, 501c3 donation receipt, SikhRPA reimbursement, corporate match receipt, EIN 42-2595402" />
   <meta name="theme-color" content="#0f172a" />
 
-  <!-- Favicon -->
+  <link rel="canonical" href="https://sikhrpa.org/receipt" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sikhrpa.org/receipt" />
+  <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
+  <meta property="og:title" content="Donation Receipt & Reimbursement Request | SikhRPA 501(c)(3)" />
+  <meta property="og:description" content="Request formal IRS § 170(f)(8) tax deduction receipts, corporate match documentation, or authorized volunteer expense reimbursements." />
+  <meta property="og:image" content="https://sikhrpa.org/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Donation Receipt & Reimbursement Request | SikhRPA 501(c)(3)" />
+  <meta name="twitter:description" content="Official portal for IRS § 170 tax deduction receipts and volunteer expense reimbursements." />
+  <meta name="twitter:image" content="https://sikhrpa.org/og-card.png" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="srpa-logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -78,9 +98,9 @@
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
         <a href="./" class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors p-1.5 rounded-lg hover:bg-slate-100 touch-target" title="Return to SikhRPA Homepage">
           <i data-lucide="arrow-left" class="w-4 h-4 text-amber-600 shrink-0"></i>
-          <span class="hidden xs:inline">Home</span>
+          <span class="hidden sm:inline">Home</span>
         </a>
-        <span class="text-slate-300 hidden xs:inline" aria-hidden="true">|</span>
+        <span class="text-slate-300 hidden sm:inline" aria-hidden="true">|</span>
         <div class="flex items-center gap-2 min-w-0">
           <img 
             src="srpa-logo.png" 
@@ -179,7 +199,7 @@
       </p>
 
       <!-- Trust Badges Strip -->
-      <div class="mt-4 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-slate-600 bg-white p-2 sm:px-4 sm:py-2 rounded-2xl border border-slate-200 shadow-2xs">
+      <div class="mt-4 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-slate-600 bg-white p-2 sm:px-4 sm:py-2 rounded-2xl border border-slate-200 shadow-sm">
         <span class="flex items-center gap-1 font-bold text-slate-900">
           <i data-lucide="award" class="w-3.5 h-3.5 text-emerald-600"></i> EIN: 42-2595402
         </span>
@@ -217,7 +237,7 @@
                   class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-amber-500"
                 />
               </div>
-              <span class="text-[11px] text-slate-600 leading-tight">For direct contributions via Zelle, PayPal, Check, or Cash.</span>
+              <span class="text-[11px] text-slate-600 leading-tight">For direct contributions via Zelle, Dasvandh Network, PayPal, Check, or Cash.</span>
             </label>
 
             <label class="p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 flex flex-col justify-between cursor-pointer group radio-card transition-all" id="typeLabelOutPocketTax">
@@ -379,6 +399,7 @@
                 class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-900 bg-white text-slate-800"
               >
                 <option value="Zelle (sikhrpa)">Zelle® (sikhrpa)</option>
+                <option value="Dasvandh Network (dvn.org)">Dasvandh Network (dvn.org)</option>
                 <option value="PayPal (#S5PAN9B85U28J)">PayPal (#S5PAN9B85U28J)</option>
                 <option value="Personal / Cashier Check">Personal / Cashier Check</option>
                 <option value="Out-of-Pocket (Donated as Tax Deduction)">Out-of-Pocket Expense (Donated as Tax Deduction)</option>
@@ -442,7 +463,7 @@
               onclick="document.getElementById('receiptAttachment').click()"
               class="border-2 border-dashed border-slate-300 hover:border-amber-400 bg-slate-50 hover:bg-amber-50/30 rounded-2xl p-5 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-2 group"
             >
-              <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:text-amber-600 flex items-center justify-center shadow-2xs transition-colors">
+              <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 text-slate-500 group-hover:text-amber-600 flex items-center justify-center shadow-sm transition-colors">
                 <i data-lucide="upload-cloud" class="w-5 h-5"></i>
               </div>
               <div class="space-y-0.5">
@@ -508,7 +529,7 @@
           </p>
         </div>
 
-        <div class="p-3.5 bg-white border border-emerald-200 rounded-xl text-left max-w-md mx-auto text-xs space-y-1 text-slate-700 shadow-2xs font-mono">
+        <div class="p-3.5 bg-white border border-emerald-200 rounded-xl text-left max-w-md mx-auto text-xs space-y-1 text-slate-700 shadow-sm font-mono">
           <p><strong class="text-slate-900 font-sans">Entity:</strong> Sikh Rifle and Pistol Association</p>
           <p><strong class="text-slate-900 font-sans">Federal Tax EIN:</strong> 42-2595402</p>
           <p><strong class="text-slate-900 font-sans">Tax Status:</strong> 501(c)(3) Public Charity</p>
@@ -543,7 +564,7 @@
 
       <div class="grid sm:grid-cols-3 gap-4 text-xs">
         
-        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-2xs">
+        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-sm">
           <h3 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 text-blue-950">
             <i data-lucide="file-text" class="w-4 h-4 text-amber-600 shrink-0"></i>
             IRS § 170 Tax Substantiation
@@ -553,7 +574,7 @@
           </p>
         </div>
 
-        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-2xs">
+        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-sm">
           <h3 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 text-blue-950">
             <i data-lucide="refresh-cw" class="w-4 h-4 text-amber-600 shrink-0"></i>
             Out-of-Pocket: Deduct or Reimburse?
@@ -563,7 +584,7 @@
           </p>
         </div>
 
-        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-2xs">
+        <div class="p-4 bg-white border border-slate-200 rounded-xl space-y-1.5 shadow-sm">
           <h3 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 text-blue-950">
             <i data-lucide="building" class="w-4 h-4 text-amber-600 shrink-0"></i>
             Corporate Matching
@@ -619,14 +640,22 @@
     }
 
     let attachedFilePayload = null;
+    const ALLOWED_FILE_TYPES = new Set(['image/png', 'image/jpeg', 'image/webp', 'application/pdf']);
 
-    function handleFileSelection(e) {
-      const file = e.target.files[0];
+    function processSelectedFile(file) {
       if (!file) return;
+
+      const fileNameLower = (file.name || '').toLowerCase();
+      const hasAllowedExt = /\.(png|jpe?g|webp|pdf)$/.test(fileNameLower);
+      if (file.type && !ALLOWED_FILE_TYPES.has(file.type) && !hasAllowedExt) {
+        alert("Unsupported file format. Please upload a PDF, PNG, JPG, or WebP file.");
+        return;
+      }
 
       if (file.size > 10 * 1024 * 1024) {
         alert("File exceeds maximum allowed size of 10MB. Please select a smaller file or compressed PDF.");
-        e.target.value = '';
+        const fileInput = document.getElementById('receiptAttachment');
+        if (fileInput) fileInput.value = '';
         return;
       }
 
@@ -645,6 +674,54 @@
         lucide.createIcons();
       };
       reader.readAsDataURL(file);
+    }
+
+    function handleFileSelection(e) {
+      const file = e.target.files && e.target.files[0];
+      if (file) processSelectedFile(file);
+    }
+
+    function initUploadDropzone() {
+      const dropzone = document.getElementById('uploadDropzone');
+      if (!dropzone) return;
+
+      const setActive = (active) => {
+        if (active) {
+          dropzone.classList.add('border-amber-500', 'bg-amber-50/70', 'ring-2', 'ring-amber-400/50');
+          dropzone.classList.remove('border-slate-300', 'bg-slate-50');
+        } else {
+          dropzone.classList.remove('border-amber-500', 'bg-amber-50/70', 'ring-2', 'ring-amber-400/50');
+          dropzone.classList.add('border-slate-300', 'bg-slate-50');
+        }
+      };
+
+      ['dragenter', 'dragover'].forEach(evtName => {
+        dropzone.addEventListener(evtName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setActive(true);
+        });
+      });
+
+      ['dragleave', 'dragend'].forEach(evtName => {
+        dropzone.addEventListener(evtName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (!dropzone.contains(e.relatedTarget)) {
+            setActive(false);
+          }
+        });
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setActive(false);
+        const files = e.dataTransfer && e.dataTransfer.files;
+        if (files && files.length > 0) {
+          processSelectedFile(files[0]);
+        }
+      });
     }
 
     function clearSelectedFile(e) {
@@ -710,6 +787,13 @@
       const statusMsg = document.getElementById('formStatusMsg');
       const successCard = document.getElementById('submissionSuccessCard');
 
+      if (!navigator.onLine) {
+        statusMsg.className = 'text-xs text-center font-semibold mt-2 text-rose-700 bg-rose-50 border border-rose-200 rounded-xl p-3';
+        statusMsg.innerText = 'You appear to be offline. Please reconnect to the internet and try submitting again.';
+        statusMsg.classList.remove('hidden');
+        return;
+      }
+
       const formData = new FormData(form);
       const payload = {
         event_type: 'receipt_reimbursement_request',
@@ -747,10 +831,10 @@
         window.scrollTo({ top: form.offsetTop - 50, behavior: 'smooth' });
 
       } catch (err) {
-        console.warn('Webhook transmission notice:', err);
-        form.classList.add('hidden');
-        successCard.classList.remove('hidden');
-        lucide.createIcons();
+        console.warn('Webhook transmission error:', err);
+        statusMsg.className = 'text-xs text-center font-semibold mt-2 text-rose-700 bg-rose-50 border border-rose-200 rounded-xl p-3';
+        statusMsg.innerText = 'Network error: Unable to submit your request right now. Please check your connection and try again, or email receipts@sikhrpa.org directly.';
+        statusMsg.classList.remove('hidden');
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i data-lucide="send" class="w-4 h-4 text-amber-400"></i><span>Submit Request</span>';
@@ -770,6 +854,7 @@
       const today = new Date().toISOString().split('T')[0];
       const dateEl = document.getElementById('txDate');
       if (dateEl) dateEl.value = today;
+      initUploadDropzone();
     });
   </script>
 </body>

@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="noindex, nofollow" />
   <title>SikhRPA Treasury & Receipt Admin Portal</title>
 
-  <!-- Favicon -->
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="srpa-logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -141,7 +144,7 @@
 
       <div class="flex items-center gap-2 sm:gap-3">
         <!-- Active Officer Role Badge -->
-        <div id="activeOfficerBadge" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold shadow-2xs">
+        <div id="activeOfficerBadge" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-blue-50 border border-blue-200 text-blue-950 text-xs font-bold shadow-sm">
           <i data-lucide="user-check" class="w-3.5 h-3.5 text-amber-600"></i>
           <span id="activeOfficerTitle">Officer</span>
         </div>
@@ -337,7 +340,7 @@
             href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="px-3 py-1.5 bg-white border border-blue-300 hover:bg-blue-100 text-blue-900 font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-2xs touch-target"
+            class="px-3 py-1.5 bg-white border border-blue-300 hover:bg-blue-100 text-blue-900 font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-sm touch-target"
           >
             <span>View Document</span>
             <i data-lucide="external-link" class="w-3 h-3"></i>
@@ -462,7 +465,7 @@
             href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="px-3 py-1.5 bg-white border border-purple-300 hover:bg-purple-100 text-purple-900 font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-2xs touch-target"
+            class="px-3 py-1.5 bg-white border border-purple-300 hover:bg-purple-100 text-purple-900 font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-sm touch-target"
           >
             <span>View Receipt</span>
             <i data-lucide="external-link" class="w-3 h-3"></i>
@@ -592,6 +595,42 @@
 
     lucide.createIcons();
 
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function sanitizeHttpUrl(rawUrl) {
+      if (!rawUrl || typeof rawUrl !== 'string') return null;
+      const trimmed = rawUrl.trim();
+      if (!trimmed || trimmed === 'None') return null;
+      try {
+        const parsed = new URL(trimmed);
+        if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+          return parsed.href;
+        }
+      } catch (e) {
+        return null;
+      }
+      return null;
+    }
+
+    function generateSecureSixDigitId() {
+      const range = 900000; // 100000..999999
+      const maxUnbiased = Math.floor(0x100000000 / range) * range;
+      const buf = new Uint32Array(1);
+      let val;
+      do {
+        crypto.getRandomValues(buf);
+        val = buf[0];
+      } while (val >= maxUnbiased);
+      return String(100000 + (val % range));
+    }
+
     // Setup network online / offline listeners
     window.addEventListener('offline', () => {
       const banner = document.getElementById('offlineNoticeBanner');
@@ -641,9 +680,10 @@
         err.classList.add('hidden');
 
         const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
 
-        if (json.status === 'success') {
+        if (json.status === 'success' && json.officer) {
           currentOfficer = {
             username: username,
             password: password,
@@ -660,6 +700,7 @@
       } catch (errCatch) {
         try {
           const fallbackRes = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=get_requests&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+          if (!fallbackRes.ok) throw new Error(`HTTP ${fallbackRes.status}`);
           const fallbackJson = await fallbackRes.json();
           if (fallbackJson.status === 'success') {
             currentOfficer = {
@@ -704,9 +745,10 @@
       try {
         if (refreshBtn) refreshBtn.innerHTML = '<span>Loading...</span>';
         const res = await fetch(`${GOOGLE_SHEETS_WEBHOOK_URL}?action=get_requests&username=${encodeURIComponent(currentOfficer.username)}&password=${encodeURIComponent(currentOfficer.password)}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
         if (json.status === 'success') {
-          submissions = json.data || [];
+          submissions = Array.isArray(json.data) ? json.data : [];
           renderSubmissions();
           updateStats();
           showToast('Data refreshed successfully from Google Sheets.');
@@ -748,9 +790,10 @@
       let totalVolume = 0;
 
       submissions.forEach(item => {
+        if (!item || typeof item !== 'object') return;
         const amt = parseFloat(item.amount) || 0;
         totalVolume += amt;
-        const status = (item.status || '').toLowerCase();
+        const status = String(item.status || '').toLowerCase();
         if (status.includes('pending')) pending++;
         if (status.includes('emailed') || status.includes('approved')) emailed++;
         if (status.includes('reimbursed')) reimbursed++;
@@ -767,17 +810,25 @@
       tbody.innerHTML = '';
 
       const filtered = submissions.filter(item => {
+        if (!item || typeof item !== 'object') return false;
+        const statusStr = String(item.status || '');
+        const reqTypeStr = String(item.request_type || '');
+        const fullNameStr = String(item.full_name || '');
+        const emailStr = String(item.email || '');
+        const refStr = String(item.reference_number || '');
+        const notesStr = String(item.notes || '');
+
         const matchesFilter = currentFilter === 'all' || 
-          (currentFilter === 'Pending Review' && item.status.includes('Pending')) ||
-          (currentFilter === 'Tax Receipt' && item.request_type.includes('Receipt')) ||
-          (currentFilter === 'Reimbursement' && item.request_type.includes('Reimbursement')) ||
-          (currentFilter === 'Rejected' && item.status.includes('Rejected'));
+          (currentFilter === 'Pending Review' && statusStr.includes('Pending')) ||
+          (currentFilter === 'Tax Receipt' && reqTypeStr.includes('Receipt')) ||
+          (currentFilter === 'Reimbursement' && reqTypeStr.includes('Reimbursement')) ||
+          (currentFilter === 'Rejected' && statusStr.includes('Rejected'));
 
         const matchesSearch = !searchQuery || 
-          (item.full_name && item.full_name.toLowerCase().includes(searchQuery)) ||
-          (item.email && item.email.toLowerCase().includes(searchQuery)) ||
-          (item.reference_number && item.reference_number.toLowerCase().includes(searchQuery)) ||
-          (item.notes && item.notes.toLowerCase().includes(searchQuery));
+          fullNameStr.toLowerCase().includes(searchQuery) ||
+          emailStr.toLowerCase().includes(searchQuery) ||
+          refStr.toLowerCase().includes(searchQuery) ||
+          notesStr.toLowerCase().includes(searchQuery);
 
         return matchesFilter && matchesSearch;
       });
@@ -797,45 +848,55 @@
         const tr = document.createElement('tr');
         tr.className = 'hover:bg-slate-50 transition-colors';
 
-        let badgeClass = 'bg-slate-100 text-slate-700 border-slate-300';
-        if (item.status.includes('Pending')) badgeClass = 'bg-amber-100 text-amber-800 border-amber-300';
-        if (item.status.includes('Approved') || item.status.includes('Emailed')) badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
-        if (item.status.includes('Reimbursed')) badgeClass = 'bg-purple-100 text-purple-800 border-purple-300';
-        if (item.status.includes('Rejected')) badgeClass = 'bg-rose-100 text-rose-800 border-rose-300';
+        const statusStr = String(item.status || 'Unknown');
+        const reqTypeStr = String(item.request_type || 'Unknown');
+        const safeRowIndex = Number.parseInt(item.row_index, 10);
+        const hasValidRow = Number.isInteger(safeRowIndex);
 
-        const isReimbursement = item.request_type.includes('Reimbursement Requested');
-        const isRejected = item.status.includes('Rejected');
+        let badgeClass = 'bg-slate-100 text-slate-700 border-slate-300';
+        if (statusStr.includes('Pending')) badgeClass = 'bg-amber-100 text-amber-800 border-amber-300';
+        if (statusStr.includes('Approved') || statusStr.includes('Emailed')) badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+        if (statusStr.includes('Reimbursed')) badgeClass = 'bg-purple-100 text-purple-800 border-purple-300';
+        if (statusStr.includes('Rejected')) badgeClass = 'bg-rose-100 text-rose-800 border-rose-300';
+
+        const isReimbursement = reqTypeStr.includes('Reimbursement Requested');
+        const isRejected = statusStr.includes('Rejected');
+        const safeAttachmentUrl = sanitizeHttpUrl(item.attachment_url);
+        const safePhone = item.phone && String(item.phone) !== 'None provided' ? escapeHtml(item.phone) : '';
+        const safeNotes = escapeHtml(item.notes || 'None');
+        const safeRef = escapeHtml(item.reference_number || 'None');
+        const safeAmount = Number.isFinite(parseFloat(item.amount)) ? parseFloat(item.amount).toFixed(2) : '0.00';
 
         tr.innerHTML = `
           <td class="px-4 py-3 whitespace-nowrap">
-            <span class="font-bold text-slate-900 block">${item.transaction_date || 'N/A'}</span>
-            <span class="text-[10px] text-slate-400 font-mono block">Row #${item.row_index}</span>
+            <span class="font-bold text-slate-900 block">${escapeHtml(item.transaction_date || 'N/A')}</span>
+            <span class="text-[10px] text-slate-400 font-mono block">Row #${hasValidRow ? safeRowIndex : 'N/A'}</span>
           </td>
 
           <td class="px-4 py-3">
-            <strong class="text-slate-900 block">${item.full_name}</strong>
-            <span class="text-slate-500 text-[11px] block">${item.email}</span>
-            ${item.phone && item.phone !== 'None provided' ? `<span class="text-[10px] text-slate-400">${item.phone}</span>` : ''}
+            <strong class="text-slate-900 block">${escapeHtml(item.full_name || 'Unknown')}</strong>
+            <span class="text-slate-500 text-[11px] block">${escapeHtml(item.email || 'No email')}</span>
+            ${safePhone ? `<span class="text-[10px] text-slate-400">${safePhone}</span>` : ''}
           </td>
 
           <td class="px-4 py-3">
-            <span class="font-semibold text-slate-800 block text-[11px]">${item.request_type}</span>
-            <span class="text-[10px] text-blue-900 font-mono">${item.payment_channel}</span>
+            <span class="font-semibold text-slate-800 block text-[11px]">${escapeHtml(reqTypeStr)}</span>
+            <span class="text-[10px] text-blue-900 font-mono">${escapeHtml(item.payment_channel || 'N/A')}</span>
           </td>
 
           <td class="px-4 py-3 whitespace-nowrap font-extrabold text-slate-900 text-sm">
-            $${parseFloat(item.amount || 0).toFixed(2)}
+            $${safeAmount}
           </td>
 
           <td class="px-4 py-3 max-w-xs">
-            <span class="text-slate-700 text-[11px] block truncate" title="${item.notes}">${item.notes || 'None'}</span>
-            <span class="text-[10px] text-slate-400 font-mono block truncate">Ref: ${item.reference_number || 'None'}</span>
-            ${item.attachment_url && item.attachment_url !== 'None' && item.attachment_url.startsWith('http') ? `
+            <span class="text-slate-700 text-[11px] block truncate" title="${safeNotes}">${safeNotes}</span>
+            <span class="text-[10px] text-slate-400 font-mono block truncate">Ref: ${safeRef}</span>
+            ${safeAttachmentUrl ? `
               <a 
-                href="${item.attachment_url}" 
+                href="${escapeHtml(safeAttachmentUrl)}" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="inline-flex items-center gap-1 text-[10px] font-bold text-blue-900 hover:text-blue-950 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-md border border-blue-200 mt-1 shadow-2xs transition-colors touch-target"
+                class="inline-flex items-center gap-1 text-[10px] font-bold text-blue-900 hover:text-blue-950 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-md border border-blue-200 mt-1 shadow-sm transition-colors touch-target"
                 title="Open uploaded file in new tab"
               >
                 <i data-lucide="paperclip" class="w-3 h-3 text-amber-600"></i>
@@ -847,19 +908,19 @@
 
           <td class="px-4 py-3 whitespace-nowrap">
             <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border ${badgeClass}">
-              ${item.status}
+              ${escapeHtml(statusStr)}
             </span>
           </td>
 
           <td class="px-4 py-3 whitespace-nowrap text-right space-x-1">
             ${isRejected ? `
               <span class="text-slate-400 italic text-[11px]">Rejected</span>
-            ` : `
+            ` : hasValidRow ? `
               ${isReimbursement ? `
                 <button 
                   type="button" 
-                  onclick="openReimburseModal(${item.row_index})" 
-                  class="px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-[11px] inline-flex items-center justify-center gap-1 shadow-2xs cursor-pointer touch-target"
+                  onclick="openReimburseModal(${safeRowIndex})" 
+                  class="px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-[11px] inline-flex items-center justify-center gap-1 shadow-sm cursor-pointer touch-target"
                 >
                   <i data-lucide="badge-dollar-sign" class="w-3.5 h-3.5"></i>
                   <span>Pay Out</span>
@@ -867,8 +928,8 @@
               ` : `
                 <button 
                   type="button" 
-                  onclick="openReceiptModal(${item.row_index})" 
-                  class="px-3 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-[11px] inline-flex items-center justify-center gap-1 shadow-2xs cursor-pointer touch-target"
+                  onclick="openReceiptModal(${safeRowIndex})" 
+                  class="px-3 py-2 bg-blue-900 hover:bg-blue-800 text-white rounded-lg font-bold text-[11px] inline-flex items-center justify-center gap-1 shadow-sm cursor-pointer touch-target"
                 >
                   <i data-lucide="file-check" class="w-3.5 h-3.5 text-amber-400"></i>
                   <span>Email PDF Receipt</span>
@@ -876,14 +937,14 @@
               `}
               <button 
                 type="button" 
-                onclick="openRejectModal(${item.row_index})" 
+                onclick="openRejectModal(${safeRowIndex})" 
                 class="px-2.5 py-2 bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-700 border border-slate-300 hover:border-rose-300 rounded-lg font-bold text-[11px] inline-flex items-center justify-center gap-1 transition-colors cursor-pointer touch-target"
                 title="Reject Request"
               >
                 <i data-lucide="x" class="w-3.5 h-3.5 text-rose-500"></i>
                 <span class="hidden sm:inline">Reject</span>
               </button>
-            `}
+            ` : ''}
           </td>
         `;
 
@@ -894,26 +955,28 @@
     }
 
     function openReceiptModal(rowIndex) {
-      const item = submissions.find(s => s.row_index === rowIndex);
+      const item = submissions.find(s => Number.parseInt(s.row_index, 10) === rowIndex);
       if (!item) return;
 
       document.getElementById('modalRowIndex').value = rowIndex;
-      document.getElementById('modalDonorName').innerText = item.full_name;
-      document.getElementById('modalDonorEmail').innerText = item.email;
-      document.getElementById('modalAmount').innerText = `$${parseFloat(item.amount || 0).toFixed(2)}`;
-      document.getElementById('modalTxDate').innerText = item.transaction_date;
+      document.getElementById('modalDonorName').innerText = item.full_name || 'Unknown';
+      document.getElementById('modalDonorEmail').innerText = item.email || 'No email';
+      document.getElementById('modalAmount').innerText = `$${(parseFloat(item.amount) || 0).toFixed(2)}`;
+      document.getElementById('modalTxDate').innerText = item.transaction_date || 'N/A';
 
       const attachSection = document.getElementById('modalAttachmentSection');
       const attachLink = document.getElementById('modalAttachmentLink');
-      if (item.attachment_url && item.attachment_url !== 'None' && item.attachment_url.startsWith('http')) {
-        attachLink.href = item.attachment_url;
+      const safeAttachmentUrl = sanitizeHttpUrl(item.attachment_url);
+      if (safeAttachmentUrl) {
+        attachLink.href = safeAttachmentUrl;
         attachSection.classList.remove('hidden');
       } else {
+        attachLink.href = '#';
         attachSection.classList.add('hidden');
       }
 
       const year = new Date().getFullYear();
-      const randomId = Math.floor(1000 + Math.random() * 9000);
+      const randomId = generateSecureSixDigitId();
       document.getElementById('modalReceiptNumber').value = `SRPA-${year}-${randomId}`;
 
       const defaultSigner = currentOfficer 
@@ -931,21 +994,23 @@
     }
 
     function openReimburseModal(rowIndex) {
-      const item = submissions.find(s => s.row_index === rowIndex);
+      const item = submissions.find(s => Number.parseInt(s.row_index, 10) === rowIndex);
       if (!item) return;
 
       document.getElementById('reimburseRowIndex').value = rowIndex;
-      document.getElementById('reimburseDonorName').innerText = item.full_name;
-      document.getElementById('reimburseAmount').innerText = `$${parseFloat(item.amount || 0).toFixed(2)}`;
-      document.getElementById('reimburseEmail').innerText = item.email;
+      document.getElementById('reimburseDonorName').innerText = item.full_name || 'Unknown';
+      document.getElementById('reimburseAmount').innerText = `$${(parseFloat(item.amount) || 0).toFixed(2)}`;
+      document.getElementById('reimburseEmail').innerText = item.email || 'No email';
       document.getElementById('reimbursePayoutRef').value = '';
 
       const attachSection = document.getElementById('reimburseAttachmentSection');
       const attachLink = document.getElementById('reimburseAttachmentLink');
-      if (item.attachment_url && item.attachment_url !== 'None' && item.attachment_url.startsWith('http')) {
-        attachLink.href = item.attachment_url;
+      const safeAttachmentUrl = sanitizeHttpUrl(item.attachment_url);
+      if (safeAttachmentUrl) {
+        attachLink.href = safeAttachmentUrl;
         attachSection.classList.remove('hidden');
       } else {
+        attachLink.href = '#';
         attachSection.classList.add('hidden');
       }
 
@@ -958,13 +1023,13 @@
     }
 
     function openRejectModal(rowIndex) {
-      const item = submissions.find(s => s.row_index === rowIndex);
+      const item = submissions.find(s => Number.parseInt(s.row_index, 10) === rowIndex);
       if (!item) return;
 
       document.getElementById('rejectRowIndex').value = rowIndex;
-      document.getElementById('rejectDonorName').innerText = item.full_name;
-      document.getElementById('rejectAmount').innerText = `$${parseFloat(item.amount || 0).toFixed(2)}`;
-      document.getElementById('rejectType').innerText = item.request_type;
+      document.getElementById('rejectDonorName').innerText = item.full_name || 'Unknown';
+      document.getElementById('rejectAmount').innerText = `$${(parseFloat(item.amount) || 0).toFixed(2)}`;
+      document.getElementById('rejectType').innerText = item.request_type || 'Unknown';
       document.getElementById('rejectReason').value = '';
       document.getElementById('rejectNotifyCheckbox').checked = true;
 
@@ -983,7 +1048,8 @@
       const notify = document.getElementById('rejectNotifyCheckbox').checked;
       const btn = document.getElementById('rejectSubmitBtn');
 
-      const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
+      const parsedRowIndex = parseInt(rowIndex, 10);
+      const item = submissions.find(s => Number.parseInt(s.row_index, 10) === parsedRowIndex);
       if (!item || !currentOfficer) return;
 
       if (!navigator.onLine) {
@@ -999,7 +1065,7 @@
           action: 'reject_request',
           username: currentOfficer.username,
           password: currentOfficer.password,
-          row_index: parseInt(rowIndex, 10),
+          row_index: parsedRowIndex,
           reason: reason,
           notify_requester: notify,
           requester_name: item.full_name,
@@ -1014,13 +1080,21 @@
           body: JSON.stringify(payload)
         });
 
-        closeRejectModal();
-        item.status = `Rejected by ${currentOfficer.title} - ${reason}`;
-        renderSubmissions();
-        updateStats();
-        showToast(`Request rejected by ${currentOfficer.title}.`);
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
+        const resJson = await res.json();
+        if (resJson && resJson.status === 'success') {
+          closeRejectModal();
+          item.status = `Rejected by ${currentOfficer.title} - ${reason}`;
+          renderSubmissions();
+          updateStats();
+          showToast(`Request rejected by ${currentOfficer.title}.`);
+        } else {
+          showToast(`Error: ${(resJson && resJson.message) || 'Failed to reject request.'}`, true);
+        }
       } catch (err) {
-        closeRejectModal();
         showToast('Network error: Unable to update rejection status. Check connection.', true);
       } finally {
         btn.disabled = false;
@@ -1037,7 +1111,8 @@
       const note = document.getElementById('modalCustomNote').value;
       const btn = document.getElementById('modalDispatchBtn');
 
-      const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
+      const parsedRowIndex = parseInt(rowIndex, 10);
+      const item = submissions.find(s => Number.parseInt(s.row_index, 10) === parsedRowIndex);
       if (!item || !currentOfficer) return;
 
       if (!navigator.onLine) {
@@ -1053,7 +1128,7 @@
           action: 'approve_receipt',
           username: currentOfficer.username,
           password: currentOfficer.password,
-          row_index: parseInt(rowIndex, 10),
+          row_index: parsedRowIndex,
           receipt_number: receiptNo,
           donor_name: item.full_name,
           donor_email: item.email,
@@ -1071,19 +1146,22 @@
           body: JSON.stringify(payload)
         });
 
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
         const resJson = await res.json();
-        if (resJson.status === 'success') {
+        if (resJson && resJson.status === 'success') {
           closeReceiptModal();
           item.status = `Approved & Emailed (#${receiptNo}) by ${currentOfficer.title}`;
           renderSubmissions();
           updateStats();
           showToast(`Official IRS Receipt PDF generated and emailed by ${currentOfficer.title}!`);
         } else {
-          showToast(`Error: ${resJson.message || 'Failed to dispatch receipt.'}`, true);
+          showToast(`Error: ${(resJson && resJson.message) || 'Failed to dispatch receipt.'}`, true);
         }
       } catch (err) {
-        showToast('Network timeout: Verify sent folder in Gmail or check connection.', true);
-        closeReceiptModal();
+        showToast('Network error: Unable to confirm PDF dispatch. Verify sent folder in Gmail or check connection.', true);
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i><span>Generate PDF & Email Donor</span>';
@@ -1097,7 +1175,8 @@
       const payoutRef = document.getElementById('reimbursePayoutRef').value;
       const btn = document.getElementById('reimburseSubmitBtn');
 
-      const item = submissions.find(s => s.row_index === parseInt(rowIndex, 10));
+      const parsedRowIndex = parseInt(rowIndex, 10);
+      const item = submissions.find(s => Number.parseInt(s.row_index, 10) === parsedRowIndex);
       if (!item || !currentOfficer) return;
 
       if (!navigator.onLine) {
@@ -1113,7 +1192,7 @@
           action: 'approve_reimbursement',
           username: currentOfficer.username,
           password: currentOfficer.password,
-          row_index: parseInt(rowIndex, 10),
+          row_index: parsedRowIndex,
           payout_reference: payoutRef,
           requester_name: item.full_name,
           requester_email: item.email,
@@ -1126,13 +1205,21 @@
           body: JSON.stringify(payload)
         });
 
-        closeReimburseModal();
-        item.status = `Reimbursed (${payoutRef}) by ${currentOfficer.title}`;
-        renderSubmissions();
-        updateStats();
-        showToast(`Reimbursement recorded and confirmation emailed by ${currentOfficer.title}!`);
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
+        const resJson = await res.json();
+        if (resJson && resJson.status === 'success') {
+          closeReimburseModal();
+          item.status = `Reimbursed (${payoutRef}) by ${currentOfficer.title}`;
+          renderSubmissions();
+          updateStats();
+          showToast(`Reimbursement recorded and confirmation emailed by ${currentOfficer.title}!`);
+        } else {
+          showToast(`Error: ${(resJson && resJson.message) || 'Failed to record reimbursement.'}`, true);
+        }
       } catch (err) {
-        closeReimburseModal();
         showToast('Network error: Unable to record payout. Check connection.', true);
       } finally {
         btn.disabled = false;

@@ -22,16 +22,61 @@
   <meta name="author" content="Sikh Rifle and Pistol Association" />
   <meta name="theme-color" content="#0f172a" />
 
+  <link rel="canonical" href="https://sikhrpa.org/" />
+
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sikhrpa.org/" />
   <meta property="og:site_name" content="Sikh Rifle and Pistol Association" />
   <meta property="og:title" content="Sikh Rifle and Pistol Association | 501(c)(3) Firearm Safety" />
   <meta property="og:description" content="Dedicated exclusively to public firearm safety education, safe handling, California statutory compliance, and responsible marksmanship." />
-  <meta property="og:image" content="srpa-logo.png" />
+  <meta property="og:image" content="https://sikhrpa.org/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <!-- Favicon -->
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sikh Rifle and Pistol Association | 501(c)(3) Firearm Safety" />
+  <meta name="twitter:description" content="Dedicated exclusively to public firearm safety education, safe handling, California statutory compliance, and responsible marksmanship." />
+  <meta name="twitter:image" content="https://sikhrpa.org/og-card.png" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "nonprofitStatus": "https://schema.org/Nonprofit501c3",
+    "name": "Sikh Rifle and Pistol Association",
+    "alternateName": "SikhRPA",
+    "legalName": "Sikh Rifle and Pistol Association",
+    "taxID": "42-2595402",
+    "url": "https://sikhrpa.org",
+    "logo": "https://sikhrpa.org/srpa-logo.png",
+    "description": "California 501(c)(3) nonprofit public benefit corporation dedicated exclusively to public firearm safety education, safe handling, California statutory compliance, and responsible marksmanship.",
+    "sameAs": [
+      "https://www.instagram.com/sikhrpa/",
+      "https://dvn.org/organizations/sikh-rifle-and-pistol-association"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1075 Mohawk St",
+      "addressLocality": "South Lake Tahoe",
+      "addressRegion": "CA",
+      "postalCode": "96150",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "president@sikhrpa.org",
+      "contactType": "Public Inquiries & Education"
+    }
+  }
+  </script>
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="srpa-logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -254,7 +299,7 @@
     <!-- Mobile Navigation Drawer -->
     <div 
       id="mobileMenuDrawer" 
-      class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
+      class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur px-4 pt-3 pb-4 space-y-2 shadow-lg transition-all"
       aria-label="Mobile Navigation Menu"
     >
       <a href="zero-optics" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-blue-950 bg-blue-50 border border-blue-200">
@@ -302,9 +347,9 @@
       <a href="news" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-900 transition-colors">
         <span class="flex items-center gap-2">
           <i data-lucide="newspaper" class="w-5 h-5 text-amber-600"></i>
-          Daily Legal & Regulatory Watch
+          California Legal & Regulatory Watch
         </span>
-        <span class="text-xs bg-emerald-100 text-emerald-900 font-semibold px-2 py-0.5 rounded-full">Daily</span>
+        <span class="text-xs bg-emerald-100 text-emerald-900 font-semibold px-2 py-0.5 rounded-full">Bi-Weekly</span>
       </a>
       <a href="donate" onclick="closeMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-bold text-amber-900 bg-amber-50 border border-amber-200">
         <span class="flex items-center gap-2">
@@ -385,7 +430,7 @@
       </div>
     </section>
 
-    <!-- Paired Core Tools: FSC Practice Quiz & Daily Legal Watch Teaser -->
+    <!-- Paired Core Tools: FSC Practice Quiz & Bi-Weekly Legal Watch Teaser -->
     <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 no-print space-y-4">
       
       <!-- Tool 1: FSC Practice Test Banner -->
@@ -398,7 +443,7 @@
             <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400 mb-1">
               <span>Free Community Resource</span> • <span>30 Questions & Analytics</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold tracking-tight">CA Firearm Safety Certificate (FSC) Practice Test</h3>
+            <h2 class="text-xl sm:text-2xl font-bold tracking-tight">CA Firearm Safety Certificate (FSC) Practice Test</h2>
             <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-xl leading-relaxed">
               Test your knowledge of California safe storage mandates, firearm handling rules, and state penal codes with our free, instant-feedback practice exam.
             </p>
@@ -413,7 +458,7 @@
         </a>
       </div>
 
-      <!-- Tool 2: Dynamic Daily Legal Watch CTA Teaser Widget (Mobile-Hardened) -->
+      <!-- Tool 2: Dynamic Legal Watch CTA Teaser Widget (Mobile-Hardened) -->
       <div class="bg-white rounded-2xl p-4 sm:p-6 border-2 border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 overflow-hidden w-full max-w-full">
         <div class="flex items-start gap-3 sm:gap-3.5 w-full min-w-0 flex-1">
           <div class="p-2 sm:p-2.5 bg-blue-50 text-blue-900 rounded-xl border border-blue-200 shrink-0 mt-0.5">
@@ -422,16 +467,16 @@
           <div class="min-w-0 flex-1 overflow-hidden">
             <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1.5">
               <span class="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 px-2 py-0.5 rounded shrink-0">
-                Daily Legal Watch
+                Legal Watch
               </span>
               <div class="inline-flex items-center gap-1.5 text-[11px] text-slate-500 font-medium min-w-0 max-w-full">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-                <span class="truncate">Verified: <strong id="teaserLastUpdated" class="text-slate-700">Loading daily updates...</strong></span>
+                <span class="truncate">Verified: <strong id="teaserLastUpdated" class="text-slate-700">Loading latest update...</strong></span>
               </div>
             </div>
-            <h4 id="teaserHeadline" class="font-bold text-sm sm:text-base text-slate-900 leading-snug break-words line-clamp-2">
+            <h2 id="teaserHeadline" class="font-bold text-sm sm:text-base text-slate-900 leading-snug break-words line-clamp-2">
               California Firearms Regulatory & Legislative Briefing
-            </h4>
+            </h2>
             <p id="teaserSummary" class="text-xs text-slate-600 mt-1 leading-relaxed break-words line-clamp-2">
               Automated public intelligence tracking chaptered bills, court stays, and CA DOJ compliance advisories.
             </p>
@@ -522,7 +567,7 @@
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-3">
               Never accept someone's word that a firearm is unloaded. Personally check the chamber and magazine well every time you pick up or handle any firearm.
             </p>
-            <p class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
+            <p lang="pa" class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
               ਹਮੇਸ਼ਾ ਇਹ ਮੰਨ ਕੇ ਚੱਲੋ ਕਿ ਹਥਿਆਰ ਲੋਡ ਹੈ।
             </p>
           </div>
@@ -535,7 +580,7 @@
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-3">
               Maintain strict muzzle discipline at all times. Keep the barrel pointed downrange or in an indisputably safe direction.
             </p>
-            <p class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
+            <p lang="pa" class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
               ਬੈਰਲ ਦਾ ਮੂੰਹ ਹਮੇਸ਼ਾ ਸੁਰੱਖਿਅਤ ਦਿਸ਼ਾ ਵੱਲ ਰੱਖੋ।
             </p>
           </div>
@@ -548,7 +593,7 @@
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-3">
               Rest your index finger along the frame outside the trigger guard until your sights are on target and you have made the conscious decision to shoot.
             </p>
-            <p class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
+            <p lang="pa" class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
               ਟਰਿੱਗਰ 'ਤੇ ਉਂਗਲ ਉਦੋਂ ਹੀ ਰੱਖੋ ਜਦੋਂ ਨਿਸ਼ਾਨਾ ਪੂਰਾ ਹੋਵੇ।
             </p>
           </div>
@@ -561,7 +606,7 @@
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-3">
               Projectiles penetrate walls and barriers. Always confirm a solid, reliable backstop before initiating fire.
             </p>
-            <p class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
+            <p lang="pa" class="text-xs font-semibold text-blue-950 bg-blue-100/60 p-2.5 rounded-lg border border-blue-200/80">
               ਆਪਣੇ ਨਿਸ਼ਾਨੇ ਅਤੇ ਉਸਦੇ ਪਿੱਛੇ ਦੀ ਜਗ੍ਹਾ ਦਾ ਧਿਆਨ ਰੱਖੋ।
             </p>
           </div>
@@ -703,7 +748,7 @@
                 </span>
                 <i data-lucide="external-link" class="w-5 h-5 text-slate-400"></i>
               </div>
-              <h4 class="font-bold text-slate-900 text-base mb-2">CA DOJ Bureau of Firearms</h4>
+              <h3 class="font-bold text-slate-900 text-base mb-2">CA DOJ Bureau of Firearms</h3>
               <p class="text-slate-700 text-xs leading-relaxed mb-4">
                 Access official state guidelines, updates on California firearm regulations, licensing requirements, safe storage statutes, and dealer information directly via the California Department of Justice.
               </p>
@@ -727,7 +772,7 @@
                 </span>
                 <span class="text-xs font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded border border-amber-300">Updated</span>
               </div>
-              <h4 class="font-bold text-slate-900 text-base mb-2">Firearm Safety Certificate (FSC)</h4>
+              <h3 class="font-bold text-slate-900 text-base mb-2">Firearm Safety Certificate (FSC)</h3>
               <p class="text-slate-700 text-xs leading-relaxed mb-4">
                 California law requires individuals to obtain an FSC prior to acquiring a firearm. Review official study materials, practice online, and verify testing exemptions.
               </p>
@@ -775,9 +820,9 @@
               <i data-lucide="shield-alert" class="w-5 h-5 text-amber-600"></i>
             </div>
             <div class="min-w-0 flex-1">
-              <h4 class="font-bold text-sm text-slate-900 break-words">California Statutory & Legal Intelligence Watch</h4>
+              <h2 class="font-bold text-sm text-slate-900 break-words">California Statutory & Legal Intelligence Watch</h2>
               <p class="text-xs text-slate-600 mt-0.5 break-words line-clamp-2 sm:line-clamp-none">
-                Automated daily digest covering chaptered bills, court stays, and compliance notices.
+                Bi-weekly Legal Watch digest covering chaptered bills, court stays, and compliance notices.
               </p>
             </div>
           </div>
@@ -834,7 +879,7 @@
         <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
           Educational Dispatch
         </span>
-        <h3 class="text-2xl sm:text-3xl font-extrabold mt-3">Stay Informed on Safety & CA Law</h3>
+        <h2 class="text-2xl sm:text-3xl font-extrabold mt-3">Stay Informed on Safety & CA Law</h2>
         <p class="text-slate-300 text-xs sm:text-sm mt-2 max-w-lg mx-auto">
           Subscribe to receive occasional alerts on newly chaptered California firearm laws, safe storage seminars, and educational clinics.
         </p>
@@ -874,7 +919,7 @@
       </p>
 
       <p class="text-xs sm:text-sm text-blue-900 font-bold mb-6 tracking-wide bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200">
-        ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ! - STAY SAFE, BE RESPONSIBLE!
+        <span lang="pa">ਸੁਰੱਖਿਅਤ ਰਹੋ, ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ!</span> - STAY SAFE, BE RESPONSIBLE!
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-semibold text-slate-600 mb-6">
@@ -890,7 +935,7 @@
         <span aria-hidden="true">•</span>
         <a href="trauma-safety" class="hover:text-rose-700 p-1">Trauma & Stop the Bleed</a>
         <span aria-hidden="true">•</span>
-        <a href="news" class="hover:text-blue-900 p-1">Daily Legal Watch</a>
+        <a href="news" class="hover:text-blue-900 p-1">Legal Watch</a>
         <span aria-hidden="true">•</span>
         <a href="heritage" class="hover:text-blue-900 p-1">Martial Heritage</a>
         <span aria-hidden="true">•</span>
@@ -939,14 +984,18 @@
       closeIcon.classList.add('hidden');
     }
 
-    // Lightweight News Teaser Fetcher for Homepage Banner
+    // Lightweight News Teaser Fetcher for Homepage Banner (news-latest.json with fallback to news.json)
     async function loadNewsTeaser() {
       const updatedSpan = document.getElementById('teaserLastUpdated');
       const headlineEl = document.getElementById('teaserHeadline');
       const summaryEl = document.getElementById('teaserSummary');
 
       try {
-        const res = await fetch('data/news.json?t=' + Date.now());
+        const cacheBust = Date.now();
+        let res = await fetch('data/news-latest.json?t=' + cacheBust);
+        if (!res.ok) {
+          res = await fetch('data/news.json?t=' + cacheBust);
+        }
         if (!res.ok) throw new Error('Teaser unavailable');
         
         const data = await res.json();
@@ -960,7 +1009,7 @@
           if (summaryEl && latest.summary) summaryEl.innerText = latest.summary;
         }
       } catch (err) {
-        if (updatedSpan) updatedSpan.innerText = 'Daily Digest Active';
+        if (updatedSpan) updatedSpan.innerText = 'Bi-Weekly Legal Watch Active';
       }
     }
 
@@ -976,6 +1025,14 @@
         if (msg) {
           msg.className = 'text-xs text-rose-400 font-semibold mt-2 text-center';
           msg.innerText = 'Please enter a valid email address.';
+        }
+        return;
+      }
+
+      if (!navigator.onLine) {
+        if (msg) {
+          msg.className = 'text-xs text-rose-400 font-semibold mt-2 text-center';
+          msg.innerText = 'You appear to be offline. Please reconnect to the internet and try again.';
         }
         return;
       }
@@ -1001,9 +1058,10 @@
         }
         if (input) input.value = '';
       } catch (err) {
+        console.warn('Newsletter submission error:', err);
         if (msg) {
-          msg.className = 'text-xs text-emerald-400 font-semibold mt-2 text-center';
-          msg.innerText = 'Thank you for subscribing to SikhRPA educational updates!';
+          msg.className = 'text-xs text-rose-400 font-semibold mt-2 text-center';
+          msg.innerText = 'Network error: Unable to subscribe right now. Please check your connection and try again.';
         }
       } finally {
         if (submitBtn) {
