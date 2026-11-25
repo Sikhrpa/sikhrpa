@@ -19,6 +19,7 @@ Our mission is to provide rigorous public education on firearm safety, proper ha
 ├── zero-optics.html             # Interactive optics zeroing click calculator & shot group plotter
 ├── shot-diagnosis.html          # Interactive 8-sector pistol shot diagnostic & dry-fire drill guide
 ├── trauma-safety.html           # Bilingual "Stop the Bleed" & Range Emergency Trauma Guide
+├── range-ppe.html               # Dastar-friendly Ear & Eye Protection guide, setup builder & vetted gear links
 ├── heritage.html                # Historical & philosophical roots: Miri-Piri & Sant-Sipahi doctrine
 ├── news.html                    # Permanent archive tracking CA legislation, DOJ notices & court rulings
 ├── donate.html                  # Tax-deductible 501(c)(3) portal (Zelle, Dasvandh Network & PayPal)
