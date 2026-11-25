@@ -49,6 +49,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sikhrpa.org/range-ppe</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sikhrpa.org/heritage</loc>
     <lastmod>2026-11-24</lastmod>
     <changefreq>yearly</changefreq>
