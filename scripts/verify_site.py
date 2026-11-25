@@ -59,6 +59,7 @@ def main():
         "data/news.json",
         "data/news-latest.json",
         "data/ppe-products.json",
+        "data/range-gear.json",
         "data/handgun_database.json",
         "data/handgun_manifest.json",
     ]:
@@ -69,23 +70,35 @@ def main():
         except Exception as exc:
             check(False, f"Invalid JSON {jf}: {exc}")
 
-    # Validate PPE catalog schema & URLs
-    try:
-        ppe = json.load(open("data/ppe-products.json", encoding="utf-8"))
-        prods = ppe.get("products", [])
-        check(len(prods) >= 10, f"data/ppe-products.json has {len(prods)} products")
-        bad_ppe_urls = []
-        for p in prods:
-            for k in ("official_url", "affiliate_url"):
-                val = (p.get(k) or "").strip()
-                if val and not val.startswith("https://"):
-                    bad_ppe_urls.append(f"{p.get('id')}.{k}={val}")
-            img = (p.get("image_url") or "").strip()
-            if img and not (img.startswith("https://") or img.startswith("assets/ppe/")):
-                bad_ppe_urls.append(f"{p.get('id')}.image_url={img}")
-        check(len(bad_ppe_urls) == 0, f"data/ppe-products.json URLs valid ({bad_ppe_urls})")
-    except Exception as exc:
-        check(False, f"data/ppe-products.json validation failed: {exc}")
+    # Validate PPE & Range Gear catalog schemas & URLs
+    for cat_file, min_count, local_prefix in [
+        ("data/ppe-products.json", 10, "assets/ppe/"),
+        ("data/range-gear.json", 15, "assets/gear/"),
+    ]:
+        try:
+            cat = json.load(open(cat_file, encoding="utf-8"))
+            prods = cat.get("products", [])
+            check(len(prods) >= min_count, f"{cat_file} has {len(prods)} products")
+            bad_urls = []
+            direct_violations = []
+            for p in prods:
+                for k in ("official_url", "affiliate_url"):
+                    val = (p.get(k) or "").strip()
+                    if val and not val.startswith("https://"):
+                        bad_urls.append(f"{p.get('id')}.{k}={val}")
+                img = (p.get("image_url") or "").strip()
+                if img and not (img.startswith("https://") or img.startswith(local_prefix)):
+                    bad_urls.append(f"{p.get('id')}.image_url={img}")
+                if p.get("direct_only") and (
+                    (p.get("amazon_asin") or "").strip()
+                    or (p.get("amazon_search_query") or "").strip()
+                    or (p.get("affiliate_url") or "").strip()
+                ):
+                    direct_violations.append(p.get("id"))
+            check(len(bad_urls) == 0, f"{cat_file} URLs valid ({bad_urls})")
+            check(len(direct_violations) == 0, f"{cat_file} direct_only items have no affiliate routing ({direct_violations})")
+        except Exception as exc:
+            check(False, f"{cat_file} validation failed: {exc}")
 
     latest_size = os.path.getsize("data/news-latest.json")
     check(latest_size < 2048, f"data/news-latest.json < 2 KB ({latest_size} bytes)")
@@ -195,9 +208,10 @@ def main():
     check('<meta name="robots" content="noindex, nofollow"' in adm, "admin.html has noindex, nofollow")
     check("Math.random" not in adm and "crypto.getRandomValues" in adm, "admin.html uses CSPRNG receipt IDs")
 
-    # 8. JavaScript syntax checks (scripts/update_news.js + all inline <script> blocks)
-    js_check = subprocess.run(["node", "--check", "scripts/update_news.js"], capture_output=True, text=True)
-    check(js_check.returncode == 0, f"scripts/update_news.js syntax valid ({js_check.stderr.strip()})")
+    # 8. JavaScript syntax checks (scripts/update_news.js, assets/gear-shelf.js + all inline <script> blocks)
+    for js_file in ["scripts/update_news.js", "assets/gear-shelf.js"]:
+        js_check = subprocess.run(["node", "--check", js_file], capture_output=True, text=True)
+        check(js_check.returncode == 0, f"{js_file} syntax valid ({js_check.stderr.strip()})")
 
     inline_js_validator = r"""
 const fs = require('fs');

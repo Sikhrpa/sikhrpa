@@ -20,6 +20,7 @@ Our mission is to provide rigorous public education on firearm safety, proper ha
 ├── shot-diagnosis.html          # Interactive 8-sector pistol shot diagnostic & dry-fire drill guide
 ├── trauma-safety.html           # Bilingual "Stop the Bleed" & Range Emergency Trauma Guide
 ├── range-ppe.html               # Dastar-friendly Ear & Eye Protection guide, setup builder & vetted gear links
+├── safe-storage.html            # CA Safe Storage, Vehicle Transport Checker & Vetted Range Gear Directory
 ├── heritage.html                # Historical & philosophical roots: Miri-Piri & Sant-Sipahi doctrine
 ├── news.html                    # Permanent archive tracking CA legislation, DOJ notices & court rulings
 ├── donate.html                  # Tax-deductible 501(c)(3) portal (Zelle, Dasvandh Network & PayPal)
@@ -33,7 +34,8 @@ Our mission is to provide rigorous public education on firearm safety, proper ha
 ├── favicon.ico                  # Multi-resolution browser favicon
 ├── apple-touch-icon.png         # 180x180 iOS home screen icon
 ├── assets/
-│   └── styles.css               # Prebuilt minified Tailwind CSS v3 stylesheet (~10 KB gzipped)
+│   ├── styles.css               # Prebuilt minified Tailwind CSS v3 stylesheet (~10 KB gzipped)
+│   └── gear-shelf.js            # Shared XSS-safe renderer for safe-storage catalog & contextual guide kits
 ├── src/
 │   └── input.css                # Tailwind CSS source entrypoint
 ├── tailwind.config.js           # Tailwind v3 configuration & custom brand colors
@@ -41,7 +43,8 @@ Our mission is to provide rigorous public education on firearm safety, proper ha
 ├── data/
 │   ├── news.json                # Automated California Legal Watch permanent archive
 │   ├── news-latest.json         # Lightweight (<2 KB) latest dispatch payload for index.html teaser
-│   └── ppe-products.json        # Ear & eye PPE catalog (1-line affiliate tag + authorized image slots)
+│   ├── ppe-products.json        # Ear & eye PPE catalog (Amazon Associates tag + official manufacturer images)
+│   └── range-gear.json          # Safes, range bags, ammo cans, bench tools & direct-only CoTCCC IFAK catalog
 ├── scripts/
 │   ├── update_news.js           # Hardened Gemini Search Grounding Legal Watch updater (dedup + URL checks)
 │   ├── verify_site.py           # Automated JSON/XML/HTML/JS/Tailwind/accessibility verification suite
