@@ -40,11 +40,13 @@ Our mission is to provide rigorous public education on firearm safety, proper ha
 ├── package.json                 # CSS build (`npm run build:css`) & verification (`npm run verify`) scripts
 ├── data/
 │   ├── news.json                # Automated California Legal Watch permanent archive
-│   └── news-latest.json         # Lightweight (<2 KB) latest dispatch payload for index.html teaser
+│   ├── news-latest.json         # Lightweight (<2 KB) latest dispatch payload for index.html teaser
+│   └── ppe-products.json        # Ear & eye PPE catalog (1-line affiliate tag + authorized image slots)
 ├── scripts/
 │   ├── update_news.js           # Hardened Gemini Search Grounding Legal Watch updater (dedup + URL checks)
 │   ├── verify_site.py           # Automated JSON/XML/HTML/JS/Tailwind/accessibility verification suite
 │   ├── apps_script_auth_upgrade.gs # Reference Google Apps Script POST auth & HMAC session token handler
+│   ├── PPE_AFFILIATE_SETUP.md   # Officer guide for Amazon Associates, AvantLink/CJ & press-kit images
 │   └── process_handgun_assets.py# Handgun silhouette scrubbing & 100 px/in scale calibration pipeline
 └── .github/
     └── workflows/

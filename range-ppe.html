@@ -636,317 +636,28 @@
           </div>
         </div>
 
-        <!-- Zero-Affiliate Transparency Note -->
-        <div class="mb-6 bg-blue-50/80 border border-blue-200 rounded-xl p-3.5 flex items-start gap-3 text-xs text-blue-950">
+        <!-- Dynamic Transparency / Affiliate Disclosure Banner -->
+        <div id="affiliateDisclosureBanner" class="mb-6 bg-blue-50/80 border border-blue-200 rounded-xl p-3.5 flex items-start gap-3 text-xs text-blue-950">
           <i data-lucide="info" class="w-4 h-4 text-blue-900 shrink-0 mt-0.5"></i>
-          <p class="leading-relaxed">
-            <strong>100% Independent Nonprofit Recommendations:</strong> SikhRPA earns zero affiliate commissions and accepts no manufacturer sponsorships. Every button below links directly to the official manufacturer product page so you can verify exact NRR / ANSI ratings and purchase from any authorized retailer.
+          <p id="affiliateDisclosureText" class="leading-relaxed">
+            <strong>100% Independent Nonprofit Recommendations:</strong> SikhRPA selects gear strictly on safety, fit, and community feedback. Every product card links to official manufacturer specifications so you can verify exact NRR and ANSI Z87.1+ ratings.
           </p>
         </div>
 
         <!-- Category Filter Tabs -->
         <div class="flex flex-wrap gap-2 mb-6 no-print" role="tablist" aria-label="Filter Gear by Category">
-          <button type="button" data-cat="all" onclick="filterGear('all')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">All Gear (15)</button>
-          <button type="button" data-cat="passive-inear" onclick="filterGear('passive-inear')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">Foam &amp; Custom Plugs (4)</button>
-          <button type="button" data-cat="electronic-inear" onclick="filterGear('electronic-inear')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">Electronic In-Ear (5)</button>
-          <button type="button" data-cat="neckband" onclick="filterGear('neckband')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">Neckband Muffs &amp; Gel Pads (2)</button>
-          <button type="button" data-cat="eyewear" onclick="filterGear('eyewear')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">Eye Protection &amp; Rx (4)</button>
+          <button type="button" data-cat="all" onclick="filterGear('all')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">All Gear (<span data-count="all">16</span>)</button>
+          <button type="button" data-cat="passive-inear" onclick="filterGear('passive-inear')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">Foam &amp; Custom Plugs (<span data-count="passive-inear">4</span>)</button>
+          <button type="button" data-cat="electronic-inear" onclick="filterGear('electronic-inear')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">Electronic In-Ear (<span data-count="electronic-inear">5</span>)</button>
+          <button type="button" data-cat="neckband" onclick="filterGear('neckband')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">Neckband Muffs &amp; Gel Pads (<span data-count="neckband">2</span>)</button>
+          <button type="button" data-cat="eyewear" onclick="filterGear('eyewear')" class="gear-tab px-3.5 py-2 rounded-xl border-2 text-xs font-bold transition-all touch-target">Eye Protection &amp; Rx (<span data-count="eyewear">5</span>)</button>
         </div>
 
-        <!-- Product Grid -->
-        <div id="gearGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-          <!-- 1. 3M E-A-Rsoft FX -->
-          <article data-cat="passive-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-900 border border-emerald-200">NRR 33 dB</span>
-                <span class="text-xs font-bold text-slate-500">$ • Bulk Foam</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">3M E-A-Rsoft FX Foam Earplugs</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Zero Dastar / Patka Contact</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                3M's highest-rated soft slow-recovery polyurethane foam plugs with a bell shape and flared end for easy removal. Ideal as a standalone layer under a full Dastar or as an inner layer when doubling up.
-              </p>
-            </div>
-            <a href="https://www.3m.com/3M/en_US/p/d/b00017634/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official 3M Product Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 2. Mack's Ultra Soft -->
-          <article data-cat="passive-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-900 border border-emerald-200">NRR 33 dB</span>
-                <span class="text-xs font-bold text-slate-500">$ • Soft Foam</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">Mack's Ultra Soft Foam Earplugs</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Zero Dastar / Patka Contact</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Ultra-low-pressure foam rated to the maximum NRR 33 dB. Comfortable for long 2–3 hour classes if firmer industrial plugs cause ear-canal fatigue, and stocked at nearly every California pharmacy.
-              </p>
-            </div>
-            <a href="https://www.macksearplugs.com/product/ultra-soft-foam-ear-plugs/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official Mack's Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 3. Decibullz Custom Molded -->
-          <article data-cat="passive-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-900 border border-emerald-200">NRR 31 dB</span>
-                <span class="text-xs font-bold text-slate-500">$ • DIY Custom</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">Decibullz Custom Molded Earplugs</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Zero Dastar Contact • Reusable</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Boil-and-shape thermoplastic earpieces that lock into your exact ear contour in 5 minutes (and can be re-molded anytime). Eliminates foam-insertion guesswork while keeping a flush profile.
-              </p>
-            </div>
-            <a href="https://decibullz.com/products/custom-molded-earplugs-31db-nrr" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official Decibullz Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 4. SureFire EP4 -->
-          <article data-cat="passive-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-blue-100 text-blue-900 border border-blue-200">NRR 24 dB</span>
-                <span class="text-xs font-bold text-slate-500">$ • Filtered Reusable</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">SureFire EP4 Sonic Defenders Plus</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Low-Profile • Great Under Muffs</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Triple-flanged reusable polymer plugs with EarLock retention rings and hinged filter caps. Close the caps for full 24 dB NRR outdoors or pair under neckband muffs indoors without batteries.
-              </p>
-            </div>
-            <a href="https://www.surefire.com/ep4-sonic-defenders-plus/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official SureFire Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 5. ISOtunes Sport ADVANCE BT -->
-          <article data-cat="electronic-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-100 text-amber-950 border border-amber-300">NRR 26 dB • Active</span>
-                <span class="text-xs font-bold text-slate-500">$$ • Electronic</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">ISOtunes Sport ADVANCE BT</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Zero Dastar Contact • Neck Tether</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                In-ear electronic shooting earbuds with Tactical Sound Control (85 dB safe pass-through so you hear RSO commands), IP67 sweat/dust resistance, and a neck tether so you can't drop a bud.
-              </p>
-            </div>
-            <a href="https://isotunes.com/products/advance-bt" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official ISOtunes Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 6. ISOtunes Sport CALIBER BT -->
-          <article data-cat="electronic-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-100 text-amber-950 border border-amber-300">NRR 25 dB • Active</span>
-                <span class="text-xs font-bold text-slate-500">$$ • True Wireless</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">ISOtunes Sport CALIBER BT</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Zero Dastar Contact • Cordless</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Completely wireless shooting earbuds with a pocket charging case, waterproof build, and foam eartips rated to NRR 25 dB. Clean, zero-bulk option for rifles, shotguns, and outdoor clinics.
-              </p>
-            </div>
-            <a href="https://isotunessport.com/products/caliber" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official ISOtunes Sport Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 7. Walker's Disrupter -->
-          <article data-cat="electronic-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-100 text-amber-950 border border-amber-300">NRR 24 dB • Active</span>
-                <span class="text-xs font-bold text-slate-500">$$ • True Wireless</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">Walker's Disrupter Bluetooth Earbuds</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Zero Dastar Contact • USB-C Case</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                True-wireless range earbuds with 360° directional microphones, rapid impulse suppression, and three sizes of noise-reducing foam tips (use the foam tips—not silicone—on the firing line).
-              </p>
-            </div>
-            <a href="https://www.walkersgameear.com/disrupter-noise-canceling-bluetooth/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official Walker's Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 8. 3M PELTOR EEP-100 -->
-          <article data-cat="electronic-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-900 border border-emerald-200">NRR 23–30 dB • Active</span>
-                <span class="text-xs font-bold text-slate-500">$$$ • Pro Grade</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">3M PELTOR EEP-100 Electronic Earplugs</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Zero Dastar Contact • High NRR</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Industrial/range workhorse with simple one-button volume control, 16-hour battery, and IP54 weather resistance. Reaches <strong>NRR 30 dB</strong> when paired with 3M Skull Screw foam communication tips.
-              </p>
-            </div>
-            <a href="https://www.3m.com/3M/en_US/p/d/v100765196/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official 3M PELTOR Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 9. OTTO NoizeBarrier Micro -->
-          <article data-cat="electronic-inear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-900 border border-emerald-200">Up to 28 dB NRR • Active</span>
-                <span class="text-xs font-bold text-slate-500">$$$$ • Gold Standard</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">OTTO NoizeBarrier Micro</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Zero Dastar Contact • Instructor Pick</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Widely regarded by instructors and competitive shooters as the clearest electronic in-ear protection available—compresses gunshots up to 40 dB impulse without harsh audio clipping, with superb sound localization.
-              </p>
-            </div>
-            <a href="https://www.otto-comm.com/noizebarriermicro" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official OTTO Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 10. Sordin Supreme Pro-X Neckband -->
-          <article data-cat="neckband" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-blue-100 text-blue-900 border border-blue-200">Neckband • Active</span>
-                <span class="text-xs font-bold text-slate-500">$$$ • Swedish Made</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">Sordin Supreme Pro-X (Neckband)</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Patka / Ears-Exposed Keski</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Top-rated behind-the-head electronic earmuffs with slim beveled cups for rifle cheek weld, IP67 waterproof mics, natural SordinHEAR2 audio, and factory silicone gel pad option. Superb for doubling up indoors.
-              </p>
-            </div>
-            <a href="https://sordin.com/products/sordin-supreme-pro-x" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official Sordin Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 11. NoiseFighters Sightlines Gel Pads -->
-          <article data-cat="neckband" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-100 text-amber-950 border border-amber-300">Glasses Relief Cut</span>
-                <span class="text-xs font-bold text-slate-500">$$ • Muff Upgrade</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">NoiseFighters Sightlines Gel Ear Pads</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Upgrades Peltor / Howard Leight Muffs</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Veteran-designed silicone gel cushions featuring patented relief channels for eyeglass temples. Prevents headaches and preserves an airtight acoustic seal when wearing glasses under earmuffs.
-              </p>
-            </div>
-            <a href="https://noisefighters.com/products/sightlines1" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official NoiseFighters Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 12. ESS Crossbow Suppressor -->
-          <article data-cat="eyewear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-blue-100 text-blue-900 border border-blue-200">Z87.1+ &amp; MIL-PRF-32432</span>
-                <span class="text-xs font-bold text-slate-500">$$ • Thin Temples</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">ESS Crossbow Suppressor</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Ultra-Thin Z-Bend Temples • Rx Insert</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Purpose-built with wafer-thin temple arms that slide effortlessly along a Dastar and under earmuff cushions without hot spots. U.S. military APEL approved with dedicated anti-fog ClearZone lenses.
-              </p>
-            </div>
-            <a href="https://esseyepro.com/en_us/ballistic-eyeshields/crossbow-suppressor" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official ESS EyePro Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 13. Wiley X Saber Advanced -->
-          <article data-cat="eyewear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-blue-100 text-blue-900 border border-blue-200">Z87.1+ &amp; MIL-PRF-32432</span>
-                <span class="text-xs font-bold text-slate-500">$$ • 3-Lens Kit</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">Wiley X Saber Advanced (3-Lens Kit)</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Slim Adjustable Temples • Rx Insert</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Includes Clear, Smoke Grey, and Light Rust ballistic shields in one kit so you're covered for indoor bays and bright California outdoor ranges. Features adjustable nosepiece and Rx-carrier compatibility.
-              </p>
-            </div>
-            <a href="https://www.wileyx.com/products/saber-advanced-308" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official Wiley X Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 14. 3M SecureFit 400 -->
-          <article data-cat="eyewear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-900 border border-emerald-200">ANSI Z87.1+</span>
-                <span class="text-xs font-bold text-slate-500">$ • Best Value</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">3M SecureFit 400 Safety Glasses</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Flat Flexible Temples • Anti-Fog Option</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Featherweight wraparound glasses with flat Pressure Diffusion Temples that self-adjust cleanly along a Dastar without pinching. Great budget starter pair and spare set for guests (look for Scotchgard Anti-Fog).
-              </p>
-            </div>
-            <a href="https://www.3m.com/3M/en_US/eye-protection-us/products/secure-fit-eyewear/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-              <span>View Official 3M SecureFit Page</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-amber-400"></i>
-            </a>
-          </article>
-
-          <!-- 15. Prescription & OTG Options (Zenni + NoCry) -->
-          <article data-cat="eyewear" class="gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-blue-900 transition-all print-card">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-purple-100 text-purple-900 border border-purple-200">ANSI Z87+ Rx &amp; OTG</span>
-                <span class="text-xs font-bold text-slate-500">$–$$ • Prescription</span>
-              </div>
-              <h3 class="font-extrabold text-slate-900 text-base">Zenni ANSI Z87+ Rx &amp; NoCry OverSpecs</h3>
-              <p class="text-[11px] font-bold text-blue-900 mt-1">Fit: Dedicated Rx or Over-Your-Glasses</p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Order dedicated Z87+ prescription safety frames (polycarbonate/Trivex with side shields) from Zenni for regular range trips, or keep NoCry OverSpecs OTG shields in your bag for occasional use over regular glasses.
-              </p>
-            </div>
-            <div class="mt-4 grid grid-cols-2 gap-2">
-              <a href="https://www.zennioptical.com/b/safety-glasses" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1 px-2.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target">
-                <span>Zenni Z87+ Rx</span>
-                <i data-lucide="external-link" class="w-3 h-3 text-amber-400"></i>
-              </a>
-              <a href="https://nocry.com/collections/over-glasses" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1 px-2.5 py-2.5 rounded-xl bg-blue-900 hover:bg-blue-950 text-white text-xs font-bold transition-colors touch-target">
-                <span>NoCry OTG</span>
-                <i data-lucide="external-link" class="w-3 h-3 text-amber-400"></i>
-              </a>
-            </div>
-          </article>
-
+        <!-- Product Grid (rendered from data/ppe-products.json) -->
+        <div id="gearGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" aria-live="polite">
+          <div class="col-span-full text-center py-10 text-xs font-semibold text-slate-500 bg-slate-50 rounded-2xl border border-slate-200">
+            Loading vetted ear &amp; eye protection catalog...
+          </div>
         </div>
       </div>
     </section>
@@ -1071,24 +782,293 @@
     const state = {
       headwear: 'dastar-covered',
       env: 'indoor',
-      vision: 'non-rx'
+      vision: 'non-rx',
+      activeCategory: 'all'
     };
 
-    const PRODUCTS = {
-      earsoft: { name: '3M E-A-Rsoft FX (NRR 33)', url: 'https://www.3m.com/3M/en_US/p/d/b00017634/' },
-      macks: { name: "Mack's Ultra Soft (NRR 33)", url: 'https://www.macksearplugs.com/product/ultra-soft-foam-ear-plugs/' },
-      decibullz: { name: 'Decibullz Custom (NRR 31)', url: 'https://decibullz.com/products/custom-molded-earplugs-31db-nrr' },
-      eep100: { name: '3M PELTOR EEP-100 (up to 30 dB)', url: 'https://www.3m.com/3M/en_US/p/d/v100765196/' },
-      isotunesAdv: { name: 'ISOtunes Sport ADVANCE BT', url: 'https://isotunes.com/products/advance-bt' },
-      otto: { name: 'OTTO NoizeBarrier Micro', url: 'https://www.otto-comm.com/noizebarriermicro' },
-      sordin: { name: 'Sordin Supreme Pro-X Neckband', url: 'https://sordin.com/products/sordin-supreme-pro-x' },
-      sightlines: { name: 'NoiseFighters Sightlines Gel Pads', url: 'https://noisefighters.com/products/sightlines1' },
-      ess: { name: 'ESS Crossbow Suppressor', url: 'https://esseyepro.com/en_us/ballistic-eyeshields/crossbow-suppressor' },
-      wileyx: { name: 'Wiley X Saber Advanced', url: 'https://www.wileyx.com/products/saber-advanced-308' },
-      securefit: { name: '3M SecureFit 400', url: 'https://www.3m.com/3M/en_US/eye-protection-us/products/secure-fit-eyewear/' },
-      zenni: { name: 'Zenni ANSI Z87+ Rx', url: 'https://www.zennioptical.com/b/safety-glasses' },
-      nocry: { name: 'NoCry OverSpecs OTG', url: 'https://nocry.com/collections/over-glasses' }
+    let catalogConfig = {
+      amazon_tag: '',
+      enable_amazon_search_fallback: true,
+      amazon_disclosure: 'As an Amazon Associate I earn from qualifying purchases.',
+      nonprofit_disclosure: "Some links below are affiliate links. Qualifying purchases help fund SikhRPA's free California 501(c)(3) firearm safety education programs at no extra cost to you."
     };
+    let catalogProducts = [];
+    let productsById = {};
+
+    // Strict URL allowlist helpers (defense-in-depth)
+    function safeExternalUrl(raw) {
+      if (typeof raw !== 'string' || !raw.trim()) return '';
+      try {
+        const u = new URL(raw.trim());
+        return u.protocol === 'https:' ? u.href : '';
+      } catch (e) {
+        return '';
+      }
+    }
+
+    function safeImageUrl(raw) {
+      if (typeof raw !== 'string' || !raw.trim()) return '';
+      const trimmed = raw.trim();
+      if (/^assets\/ppe\/[A-Za-z0-9._-]+\.(?:png|jpe?g|webp|avif)$/i.test(trimmed)) {
+        return trimmed;
+      }
+      return safeExternalUrl(trimmed);
+    }
+
+    function resolveAffiliateLink(product) {
+      const customAff = safeExternalUrl(product.affiliate_url);
+      if (customAff) {
+        return {
+          url: customAff,
+          label: product.affiliate_label || 'Shop Authorized Partner',
+          isAmazon: false
+        };
+      }
+      const tag = (catalogConfig.amazon_tag || '').trim();
+      if (!tag) return null;
+
+      const asin = (product.amazon_asin || '').trim();
+      if (/^[A-Z0-9]{10}$/i.test(asin)) {
+        return {
+          url: 'https://www.amazon.com/dp/' + encodeURIComponent(asin) + '?tag=' + encodeURIComponent(tag),
+          label: 'Check Price on Amazon',
+          isAmazon: true
+        };
+      }
+      const query = (product.amazon_search_query || '').trim();
+      if (catalogConfig.enable_amazon_search_fallback && query) {
+        return {
+          url: 'https://www.amazon.com/s?k=' + encodeURIComponent(query) + '&tag=' + encodeURIComponent(tag),
+          label: 'Check Price on Amazon',
+          isAmazon: true
+        };
+      }
+      return null;
+    }
+
+    // Constant, self-contained technical SVG silhouettes used cleanly until authorized
+    // affiliate feed or press-kit image_url values are configured in data/ppe-products.json.
+    const GEAR_ILLUSTRATIONS = {
+      'foam-plugs': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M72 34 C72 22 98 22 98 34 L104 92 C105 99 98 104 85 104 C72 104 65 99 66 92 Z" fill="#f59e0b" stroke="#0f172a" stroke-width="2.5"/><path d="M142 34 C142 22 168 22 168 34 L174 92 C175 99 168 104 155 104 C142 104 135 99 136 92 Z" fill="#f59e0b" stroke="#0f172a" stroke-width="2.5"/><path d="M78 44 Q85 40 92 44 M148 44 Q155 40 162 44" stroke="#fef3c7" stroke-width="2.5"/><rect x="52" y="110" width="136" height="5" rx="2.5" fill="#e2e8f0"/></g></svg>',
+      'custom-plugs': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M56 54 C56 30 96 24 106 46 C112 60 100 94 78 96 C62 98 54 78 56 54 Z" fill="#1e3a8a" stroke="#0f172a" stroke-width="2.5"/><circle cx="82" cy="62" r="12" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><path d="M184 54 C184 30 144 24 134 46 C128 60 140 94 162 96 C178 98 186 78 184 54 Z" fill="#1e3a8a" stroke="#0f172a" stroke-width="2.5"/><circle cx="158" cy="62" r="12" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><rect x="52" y="110" width="136" height="5" rx="2.5" fill="#e2e8f0"/></g></svg>',
+      'flanged-plugs': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="72" cy="64" r="24" fill="#e2e8f0" stroke="#0f172a" stroke-width="2.5"/><path d="M90 64 L120 64 M98 50 L98 78 M108 53 L108 75 M117 56 L117 72" stroke="#1e3a8a" stroke-width="4"/><circle cx="168" cy="64" r="24" fill="#e2e8f0" stroke="#0f172a" stroke-width="2.5"/><path d="M150 64 L128 64 M142 50 L142 78 M132 53 L132 75" stroke="#1e3a8a" stroke-width="4"/><circle cx="72" cy="64" r="7" fill="#f59e0b"/><circle cx="168" cy="64" r="7" fill="#f59e0b"/></g></svg>',
+      'tethered-buds': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M74 60 C74 108 166 108 166 60" stroke="#0f172a" stroke-width="3.5" stroke-dasharray="1 0"/><rect x="104" y="88" width="32" height="12" rx="6" fill="#1e3a8a" stroke="#0f172a" stroke-width="2"/><rect x="60" y="34" width="24" height="30" rx="10" fill="#0f172a"/><ellipse cx="55" cy="49" rx="8" ry="12" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><rect x="156" y="34" width="24" height="30" rx="10" fill="#0f172a"/><ellipse cx="185" cy="49" rx="8" ry="12" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><circle cx="72" cy="46" r="3" fill="#10b981"/><circle cx="168" cy="46" r="3" fill="#10b981"/></g></svg>',
+      'wireless-buds': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="84" y="54" width="72" height="52" rx="14" fill="#0f172a" stroke="#334155" stroke-width="2.5"/><path d="M84 74 L156 74" stroke="#475569" stroke-width="2"/><circle cx="120" cy="88" r="3.5" fill="#10b981"/><rect x="52" y="26" width="24" height="32" rx="10" fill="#1e3a8a" stroke="#0f172a" stroke-width="2.2"/><ellipse cx="47" cy="42" rx="7" ry="11" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/><rect x="164" y="26" width="24" height="32" rx="10" fill="#1e3a8a" stroke="#0f172a" stroke-width="2.2"/><ellipse cx="193" cy="42" rx="7" ry="11" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/></g></svg>',
+      'neckband-muffs': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M70 76 C70 116 170 116 170 76" stroke="#334155" stroke-width="5"/><path d="M76 54 C96 28 144 28 164 54" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="5 4"/><rect x="46" y="34" width="32" height="52" rx="15" fill="#0f172a" stroke="#0f172a" stroke-width="2.5"/><rect x="74" y="40" width="8" height="40" rx="4" fill="#f59e0b"/><rect x="162" y="34" width="32" height="52" rx="15" fill="#0f172a" stroke="#0f172a" stroke-width="2.5"/><rect x="158" y="40" width="8" height="40" rx="4" fill="#f59e0b"/><circle cx="62" cy="54" r="4" fill="#38bdf8"/><circle cx="178" cy="54" r="4" fill="#38bdf8"/></g></svg>',
+      'gel-pads': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="84" cy="64" rx="30" ry="42" fill="#0f172a" stroke="#1e3a8a" stroke-width="3"/><ellipse cx="84" cy="64" rx="15" ry="25" fill="#f8fafc"/><path d="M54 44 L70 48" stroke="#f59e0b" stroke-width="4.5"/><ellipse cx="156" cy="64" rx="30" ry="42" fill="#0f172a" stroke="#1e3a8a" stroke-width="3"/><ellipse cx="156" cy="64" rx="15" ry="25" fill="#f8fafc"/><path d="M186 44 L170 48" stroke="#f59e0b" stroke-width="4.5"/></g></svg>',
+      'ballistic-shield': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M36 50 L62 42 L178 42 L204 50" stroke="#0f172a" stroke-width="3.5"/><path d="M56 44 C56 44 58 84 86 84 C104 84 112 68 120 68 C128 68 136 84 154 84 C182 84 184 44 184 44 Z" fill="#dbeafe" fill-opacity="0.75" stroke="#1e3a8a" stroke-width="2.5"/><path d="M72 52 L92 74 M142 52 L162 74" stroke="#ffffff" stroke-width="2.5" opacity="0.8"/><path d="M36 50 L18 66 M204 50 L222 66" stroke="#f59e0b" stroke-width="3"/></g></svg>',
+      'rx-glasses': '<svg viewBox="0 0 240 130" class="w-40 h-24" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="48" y="42" width="58" height="42" rx="10" fill="#ede9fe" stroke="#1e3a8a" stroke-width="3"/><rect x="134" y="42" width="58" height="42" rx="10" fill="#ede9fe" stroke="#1e3a8a" stroke-width="3"/><path d="M106 58 Q120 50 134 58" stroke="#0f172a" stroke-width="3"/><path d="M48 52 L24 62 M192 52 L216 62" stroke="#0f172a" stroke-width="3"/><path d="M48 48 L40 54 L40 76 L48 80 M192 48 L200 54 L200 76 L192 80" fill="#cbd5e1" stroke="#475569" stroke-width="2"/></g></svg>'
+    };
+
+    const BADGE_CLASSES = {
+      emerald: 'bg-emerald-100 text-emerald-900 border-emerald-200',
+      blue: 'bg-blue-100 text-blue-900 border-blue-200',
+      amber: 'bg-amber-100 text-amber-950 border-amber-300',
+      purple: 'bg-purple-100 text-purple-900 border-purple-200'
+    };
+
+    function mountIllustration(container, key) {
+      const svgMarkup = GEAR_ILLUSTRATIONS[key] || GEAR_ILLUSTRATIONS['foam-plugs'];
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(svgMarkup, 'image/svg+xml');
+      const svgEl = doc.documentElement;
+      if (svgEl && svgEl.tagName.toLowerCase() === 'svg') {
+        container.appendChild(document.importNode(svgEl, true));
+      }
+    }
+
+    function updateDisclosureBanner() {
+      const banner = document.getElementById('affiliateDisclosureBanner');
+      const textEl = document.getElementById('affiliateDisclosureText');
+      if (!banner || !textEl) return;
+
+      const hasAmazonTag = Boolean((catalogConfig.amazon_tag || '').trim());
+      const hasCustomAff = catalogProducts.some(p => Boolean(safeExternalUrl(p.affiliate_url)));
+
+      textEl.textContent = '';
+      if (hasAmazonTag || hasCustomAff) {
+        banner.className = 'mb-6 bg-amber-50 border border-amber-300 rounded-xl p-3.5 flex items-start gap-3 text-xs text-amber-950';
+        const strong = document.createElement('strong');
+        strong.textContent = 'Affiliate & Nonprofit Disclosure: ';
+        textEl.appendChild(strong);
+
+        const parts = [];
+        if (hasAmazonTag && catalogConfig.amazon_disclosure) {
+          parts.push(catalogConfig.amazon_disclosure);
+        }
+        if (catalogConfig.nonprofit_disclosure) {
+          parts.push(catalogConfig.nonprofit_disclosure);
+        }
+        textEl.appendChild(document.createTextNode(parts.join(' ')));
+      } else {
+        banner.className = 'mb-6 bg-blue-50/80 border border-blue-200 rounded-xl p-3.5 flex items-start gap-3 text-xs text-blue-950';
+        const strong = document.createElement('strong');
+        strong.textContent = '100% Independent Nonprofit Recommendations: ';
+        textEl.appendChild(strong);
+        textEl.appendChild(document.createTextNode('SikhRPA selects gear strictly on safety, Dastar/Patka fit, and real-world reliability. Every card links to official manufacturer specifications so you can verify exact NRR and ANSI Z87.1+ ratings.'));
+      }
+    }
+
+    function renderGearCatalog() {
+      const grid = document.getElementById('gearGrid');
+      if (!grid) return;
+      grid.textContent = '';
+
+      // Update filter counts
+      const counts = { all: catalogProducts.length };
+      catalogProducts.forEach(p => {
+        counts[p.category] = (counts[p.category] || 0) + 1;
+      });
+      document.querySelectorAll('[data-count]').forEach(el => {
+        const key = el.dataset.count;
+        el.textContent = String(counts[key] || 0);
+      });
+
+      catalogProducts.forEach(p => {
+        const card = document.createElement('article');
+        card.dataset.cat = p.category;
+        card.className = 'gear-card bg-slate-50 border-2 border-slate-200 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-blue-900 transition-all print-card';
+
+        // Top Visual Media Header (authorized affiliate/press-kit image with SVG fallback)
+        const mediaWrap = document.createElement('div');
+        mediaWrap.className = 'relative h-44 bg-white border-b border-slate-200 flex items-center justify-center p-4 overflow-hidden';
+
+        const safeImg = safeImageUrl(p.image_url);
+        if (safeImg) {
+          const img = document.createElement('img');
+          img.src = safeImg;
+          img.alt = p.image_alt || p.name;
+          img.width = 380;
+          img.height = 176;
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          img.className = 'max-h-36 w-auto max-w-full object-contain';
+          img.addEventListener('error', () => {
+            img.remove();
+            mountIllustration(mediaWrap, p.illustration);
+          });
+          mediaWrap.appendChild(img);
+        } else {
+          mountIllustration(mediaWrap, p.illustration);
+        }
+
+        // Brand pill top-left + rating badge top-right on media frame
+        const brandBadge = document.createElement('span');
+        brandBadge.className = 'absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-slate-900/90 text-white text-[10px] font-extrabold uppercase tracking-wider';
+        brandBadge.textContent = p.brand;
+        mediaWrap.appendChild(brandBadge);
+
+        const ratingBadge = document.createElement('span');
+        ratingBadge.className = 'absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold border ' + (BADGE_CLASSES[p.badge_tone] || BADGE_CLASSES.blue);
+        ratingBadge.textContent = p.rating_badge;
+        mediaWrap.appendChild(ratingBadge);
+
+        if (safeImg && p.image_credit) {
+          const credit = document.createElement('span');
+          credit.className = 'absolute bottom-1.5 right-2.5 text-[10px] text-slate-400';
+          credit.textContent = p.image_credit;
+          mediaWrap.appendChild(credit);
+        }
+
+        card.appendChild(mediaWrap);
+
+        // Card Body
+        const body = document.createElement('div');
+        body.className = 'p-5 flex-1 flex flex-col justify-between';
+
+        const info = document.createElement('div');
+        const metaRow = document.createElement('div');
+        metaRow.className = 'flex items-center justify-between gap-2 mb-1.5';
+        const fit = document.createElement('span');
+        fit.className = 'text-[11px] font-bold text-blue-900';
+        fit.textContent = 'Fit: ' + p.fit_note;
+        const tier = document.createElement('span');
+        tier.className = 'text-[11px] font-bold text-slate-500 shrink-0';
+        tier.textContent = p.price_tier;
+        metaRow.appendChild(fit);
+        metaRow.appendChild(tier);
+
+        const h3 = document.createElement('h3');
+        h3.className = 'font-extrabold text-slate-900 text-base leading-snug';
+        h3.textContent = p.name;
+
+        const desc = document.createElement('p');
+        desc.className = 'text-xs text-slate-600 mt-2 leading-relaxed';
+        desc.textContent = p.summary;
+
+        info.appendChild(metaRow);
+        info.appendChild(h3);
+        info.appendChild(desc);
+        body.appendChild(info);
+
+        // Action Buttons (Affiliate primary if configured + Official Specs)
+        const actions = document.createElement('div');
+        actions.className = 'mt-4 space-y-2';
+
+        const aff = resolveAffiliateLink(p);
+        const officialHref = safeExternalUrl(p.official_url);
+
+        if (aff) {
+          const affBtn = document.createElement('a');
+          affBtn.href = aff.url;
+          affBtn.target = '_blank';
+          affBtn.rel = 'sponsored noopener noreferrer';
+          affBtn.className = 'inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold transition-colors shadow-sm touch-target';
+          affBtn.textContent = aff.label + ' ↗';
+          actions.appendChild(affBtn);
+
+          if (officialHref) {
+            const specBtn = document.createElement('a');
+            specBtn.href = officialHref;
+            specBtn.target = '_blank';
+            specBtn.rel = 'noopener noreferrer';
+            specBtn.className = 'inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-bold transition-colors';
+            specBtn.textContent = (p.official_label || 'Official Specs') + ' ↗';
+            actions.appendChild(specBtn);
+          }
+        } else if (officialHref) {
+          const specBtn = document.createElement('a');
+          specBtn.href = officialHref;
+          specBtn.target = '_blank';
+          specBtn.rel = 'noopener noreferrer';
+          specBtn.className = 'inline-flex items-center justify-center gap-1.5 w-full px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-900 text-white text-xs font-bold transition-colors touch-target';
+          specBtn.textContent = 'View ' + (p.official_label || 'Official Page') + ' ↗';
+          actions.appendChild(specBtn);
+        }
+
+        body.appendChild(actions);
+        card.appendChild(body);
+        grid.appendChild(card);
+      });
+
+      filterGear(state.activeCategory);
+    }
+
+    async function loadCatalog() {
+      try {
+        const res = await fetch('data/ppe-products.json');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (data && data.affiliate_config) {
+          catalogConfig = Object.assign({}, catalogConfig, data.affiliate_config);
+        }
+        catalogProducts = Array.isArray(data.products) ? data.products : [];
+        productsById = {};
+        catalogProducts.forEach(p => { productsById[p.id] = p; });
+        updateDisclosureBanner();
+        renderGearCatalog();
+        updateRecommender();
+      } catch (err) {
+        const grid = document.getElementById('gearGrid');
+        if (grid) {
+          grid.textContent = '';
+          const msg = document.createElement('div');
+          msg.className = 'col-span-full text-center py-8 px-4 text-xs font-semibold text-rose-800 bg-rose-50 rounded-2xl border border-rose-200';
+          msg.textContent = 'Unable to load the gear catalog right now. Please refresh the page or check your internet connection.';
+          grid.appendChild(msg);
+        }
+      }
+    }
 
     function setChoice(group, val) {
       state[group] = val;
@@ -1219,14 +1199,17 @@
       const linksEl = document.getElementById('recLinks');
       linksEl.textContent = '';
       [...new Set(linkKeys)].forEach(key => {
-        const p = PRODUCTS[key];
+        const p = productsById[key];
         if (!p) return;
+        const aff = resolveAffiliateLink(p);
+        const targetHref = aff ? aff.url : safeExternalUrl(p.official_url);
+        if (!targetHref) return;
         const a = document.createElement('a');
-        a.href = p.url;
+        a.href = targetHref;
         a.target = '_blank';
-        a.rel = 'noopener noreferrer';
+        a.rel = aff ? 'sponsored noopener noreferrer' : 'noopener noreferrer';
         a.className = 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-blue-900 hover:text-white text-slate-800 border border-slate-300 text-xs font-bold transition-colors';
-        a.textContent = p.name + ' ↗';
+        a.textContent = (p.short_name || p.name) + ' ↗';
         linksEl.appendChild(a);
       });
     }
@@ -1293,6 +1276,7 @@
 
     // Gear directory category filter
     function filterGear(cat) {
+      state.activeCategory = cat;
       document.querySelectorAll('.gear-tab').forEach(btn => {
         const active = btn.dataset.cat === cat;
         btn.classList.toggle('bg-blue-900', active);
@@ -1385,6 +1369,7 @@
       selectCaliber('9mm');
       filterGear('all');
       loadChecklist();
+      loadCatalog();
     });
   </script>
 </body>

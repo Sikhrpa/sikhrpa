@@ -58,6 +58,7 @@ def main():
     for jf in [
         "data/news.json",
         "data/news-latest.json",
+        "data/ppe-products.json",
         "data/handgun_database.json",
         "data/handgun_manifest.json",
     ]:
@@ -67,6 +68,24 @@ def main():
             check(True, f"Valid JSON: {jf}")
         except Exception as exc:
             check(False, f"Invalid JSON {jf}: {exc}")
+
+    # Validate PPE catalog schema & URLs
+    try:
+        ppe = json.load(open("data/ppe-products.json", encoding="utf-8"))
+        prods = ppe.get("products", [])
+        check(len(prods) >= 10, f"data/ppe-products.json has {len(prods)} products")
+        bad_ppe_urls = []
+        for p in prods:
+            for k in ("official_url", "affiliate_url"):
+                val = (p.get(k) or "").strip()
+                if val and not val.startswith("https://"):
+                    bad_ppe_urls.append(f"{p.get('id')}.{k}={val}")
+            img = (p.get("image_url") or "").strip()
+            if img and not (img.startswith("https://") or img.startswith("assets/ppe/")):
+                bad_ppe_urls.append(f"{p.get('id')}.image_url={img}")
+        check(len(bad_ppe_urls) == 0, f"data/ppe-products.json URLs valid ({bad_ppe_urls})")
+    except Exception as exc:
+        check(False, f"data/ppe-products.json validation failed: {exc}")
 
     latest_size = os.path.getsize("data/news-latest.json")
     check(latest_size < 2048, f"data/news-latest.json < 2 KB ({latest_size} bytes)")
