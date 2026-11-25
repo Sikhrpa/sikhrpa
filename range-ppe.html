@@ -933,6 +933,19 @@
         const mediaWrap = document.createElement('div');
         mediaWrap.className = 'relative h-44 bg-white border-b border-slate-200 flex items-center justify-center p-4 overflow-hidden';
 
+        const aff = resolveAffiliateLink(p);
+        const officialHref = safeExternalUrl(p.official_url);
+        const primaryHref = aff ? aff.url : officialHref;
+
+        const mediaTarget = primaryHref ? document.createElement('a') : document.createElement('div');
+        mediaTarget.className = 'w-full h-full flex items-center justify-center pt-5 pb-2';
+        if (primaryHref) {
+          mediaTarget.href = primaryHref;
+          mediaTarget.target = '_blank';
+          mediaTarget.rel = aff ? 'sponsored noopener noreferrer' : 'noopener noreferrer';
+          mediaTarget.setAttribute('aria-label', (aff ? aff.label + ': ' : 'View ') + p.name);
+        }
+
         const safeImg = safeImageUrl(p.image_url);
         if (safeImg) {
           const img = document.createElement('img');
@@ -942,30 +955,32 @@
           img.height = 176;
           img.loading = 'lazy';
           img.decoding = 'async';
-          img.className = 'max-h-36 w-auto max-w-full object-contain';
+          img.referrerPolicy = 'no-referrer';
+          img.className = 'max-h-32 w-auto max-w-full object-contain transition-transform duration-300 hover:scale-105';
           img.addEventListener('error', () => {
             img.remove();
-            mountIllustration(mediaWrap, p.illustration);
+            mountIllustration(mediaTarget, p.illustration);
           });
-          mediaWrap.appendChild(img);
+          mediaTarget.appendChild(img);
         } else {
-          mountIllustration(mediaWrap, p.illustration);
+          mountIllustration(mediaTarget, p.illustration);
         }
+        mediaWrap.appendChild(mediaTarget);
 
         // Brand pill top-left + rating badge top-right on media frame
         const brandBadge = document.createElement('span');
-        brandBadge.className = 'absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-slate-900/90 text-white text-[10px] font-extrabold uppercase tracking-wider';
+        brandBadge.className = 'pointer-events-none absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-slate-900/90 text-white text-[10px] font-extrabold uppercase tracking-wider';
         brandBadge.textContent = p.brand;
         mediaWrap.appendChild(brandBadge);
 
         const ratingBadge = document.createElement('span');
-        ratingBadge.className = 'absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold border ' + (BADGE_CLASSES[p.badge_tone] || BADGE_CLASSES.blue);
+        ratingBadge.className = 'pointer-events-none absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold border ' + (BADGE_CLASSES[p.badge_tone] || BADGE_CLASSES.blue);
         ratingBadge.textContent = p.rating_badge;
         mediaWrap.appendChild(ratingBadge);
 
         if (safeImg && p.image_credit) {
           const credit = document.createElement('span');
-          credit.className = 'absolute bottom-1.5 right-2.5 text-[10px] text-slate-400';
+          credit.className = 'pointer-events-none absolute bottom-1 right-2.5 text-[10px] text-slate-400 bg-white/80 px-1 rounded';
           credit.textContent = p.image_credit;
           mediaWrap.appendChild(credit);
         }
@@ -1004,9 +1019,6 @@
         // Action Buttons (Affiliate primary if configured + Official Specs)
         const actions = document.createElement('div');
         actions.className = 'mt-4 space-y-2';
-
-        const aff = resolveAffiliateLink(p);
-        const officialHref = safeExternalUrl(p.official_url);
 
         if (aff) {
           const affBtn = document.createElement('a');

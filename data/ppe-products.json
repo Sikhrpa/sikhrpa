@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "updated": "2026-11-25",
   "affiliate_config": {
     "amazon_tag": "sikhrpa01-20",
@@ -25,9 +25,9 @@
       "amazon_search_query": "3M E-A-Rsoft FX 312-1261 earplugs NRR 33",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://multimedia.3m.com/mws/media/675250J/e-a-rsoft-fx-earplugs.jpg?width=506",
       "image_alt": "3M E-A-Rsoft FX bell-shaped NRR 33 dB foam earplugs",
-      "image_credit": "",
+      "image_credit": "Image: 3M",
       "illustration": "foam-plugs"
     },
     {
@@ -47,9 +47,9 @@
       "amazon_search_query": "Mack's Ultra Soft Foam Earplugs 33dB NRR",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://www.macksearplugs.com/wp-content/uploads/2015/11/92-10pair-2025.jpg",
       "image_alt": "Mack's Ultra Soft NRR 33 dB foam earplugs",
-      "image_credit": "",
+      "image_credit": "Image: Mack's",
       "illustration": "foam-plugs"
     },
     {
@@ -69,9 +69,9 @@
       "amazon_search_query": "Decibullz Custom Molded Earplugs 31dB NRR",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://decibullz.com/cdn/shop/files/Decibullz_2023_AMZ_BLK_MAINPRODUCTTILE.webp?v=1762506602&width=800",
       "image_alt": "Decibullz thermoplastic custom molded NRR 31 dB earplugs",
-      "image_credit": "",
+      "image_credit": "Image: Decibullz",
       "illustration": "custom-plugs"
     },
     {
@@ -91,9 +91,9 @@
       "amazon_search_query": "SureFire EP4 Sonic Defenders Plus filtered earplugs",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://cdn11.bigcommerce.com/s-fecqh2764q/images/stencil/380x380/products/831/514/EP4-BK-PAIR__81151.1616781271.jpg?c=2",
       "image_alt": "SureFire EP4 Sonic Defenders Plus triple-flanged earplugs",
-      "image_credit": "",
+      "image_credit": "Image: SureFire",
       "illustration": "flanged-plugs"
     },
     {
@@ -113,9 +113,9 @@
       "amazon_search_query": "ISOtunes Sport ADVANCE BT shooting earbuds NRR 26",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://isotunes.com/cdn/shop/files/ISOtunes_Sport_ADVANCE_BT_Electronic_Ear_Pro_for_shooting_2000x.png?v=1717693017",
       "image_alt": "ISOtunes Sport ADVANCE BT tethered electronic shooting earbuds",
-      "image_credit": "",
+      "image_credit": "Image: ISOtunes",
       "illustration": "tethered-buds"
     },
     {
@@ -135,9 +135,9 @@
       "amazon_search_query": "ISOtunes Sport CALIBER BT true wireless shooting earbuds",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://isotunes.com/cdn/shop/files/ISOtunes_Sport_CALIBER_BT_Electronic_Ear_Pro_for_Shooting_2000x.png?v=1717692935",
       "image_alt": "ISOtunes Sport CALIBER BT true wireless shooting earbuds",
-      "image_credit": "",
+      "image_credit": "Image: ISOtunes",
       "illustration": "wireless-buds"
     },
     {
@@ -157,9 +157,9 @@
       "amazon_search_query": "Walker's Disrupter Bluetooth shooting earbuds",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://www.walkersgameear.com/wp-content/uploads/2024/06/Disrupter-Bluetooth-Ear-Buds-3__81447.1718031770.1280.1280.jpg",
       "image_alt": "Walker's Disrupter true wireless electronic range earbuds",
-      "image_credit": "",
+      "image_credit": "Image: Walker's",
       "illustration": "wireless-buds"
     },
     {
@@ -179,9 +179,9 @@
       "amazon_search_query": "3M PELTOR EEP-100 electronic earplug kit",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://multimedia.3m.com/mws/media/1571625J/3m-peltor-eep-100-two-eaplugs-ii-jpg.jpg?width=506",
       "image_alt": "3M PELTOR EEP-100 rechargeable electronic earplugs with charging case",
-      "image_credit": "",
+      "image_credit": "Image: 3M PELTOR",
       "illustration": "wireless-buds"
     },
     {
@@ -201,9 +201,9 @@
       "amazon_search_query": "OTTO NoizeBarrier Micro electronic earplugs",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://www.otto-comm.com/-/media/products/communication-product-images-and-collateral-only/Headsets-and-Earplugs/NoizeBarrier-Product-Line/NoizeBarrier-Micro/noize-barrier-earplugs_open-case-1000.ashx",
       "image_alt": "OTTO NoizeBarrier Micro rechargeable electronic earplugs",
-      "image_credit": "",
+      "image_credit": "Image: OTTO",
       "illustration": "wireless-buds"
     },
     {
@@ -223,9 +223,9 @@
       "amazon_search_query": "Sordin Supreme Pro-X Neckband gel electronic earmuffs",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://sordin.com/cdn/shop/files/1500px_prox-foam-textileblack-heroleft.png?v=1760088063&width=800",
       "image_alt": "Sordin Supreme Pro-X behind-the-head neckband electronic earmuffs",
-      "image_credit": "",
+      "image_credit": "Image: Sordin",
       "illustration": "neckband-muffs"
     },
     {
@@ -245,9 +245,9 @@
       "amazon_search_query": "NoiseFighters Sightlines gel ear pads",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://noisefighters.com/cdn/shop/files/Sightlines_compatible_hundreds_headsets_300x300.jpg?v=1717823952",
       "image_alt": "NoiseFighters Sightlines silicone gel ear pads with glasses relief cuts",
-      "image_credit": "",
+      "image_credit": "Image: NoiseFighters",
       "illustration": "gel-pads"
     },
     {
@@ -267,9 +267,9 @@
       "amazon_search_query": "ESS Crossbow Suppressor ballistic shooting glasses",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://esseyepro.com/media/catalog/product/cache/ab552a4acc224b181c1f8a82b2083627/s/u/suppressor_clear.png",
       "image_alt": "ESS Crossbow Suppressor thin-temple ballistic shooting glasses",
-      "image_credit": "",
+      "image_credit": "Image: ESS EyePro",
       "illustration": "ballistic-shield"
     },
     {
@@ -289,9 +289,9 @@
       "amazon_search_query": "Wiley X Saber Advanced 308 3 lens shooting glasses",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://www.wileyx.com/cdn/shop/files/Saber-Advanced-308-Propped-Photography-Front-View.jpg?v=1793135476&width=800",
       "image_alt": "Wiley X Saber Advanced ballistic shooting glasses with 3 interchangeable lenses",
-      "image_credit": "",
+      "image_credit": "Image: Wiley X",
       "illustration": "ballistic-shield"
     },
     {
@@ -311,9 +311,9 @@
       "amazon_search_query": "3M SecureFit 400 clear anti-fog safety glasses Z87+",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://multimedia.3m.com/mws/media/889318J/3m-securefit-400-series-protective-eyewear-sf401af-clear-af-lens.jpg?width=506",
       "image_alt": "3M SecureFit 400 clear ANSI Z87.1+ safety glasses",
-      "image_credit": "",
+      "image_credit": "Image: 3M",
       "illustration": "ballistic-shield"
     },
     {
@@ -333,9 +333,9 @@
       "amazon_search_query": "",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://static.zennioptical.com/production/products/general/74/91/749121-eyeglasses-front-view.jpg",
       "image_alt": "Zenni Optical ANSI Z87+ prescription safety glasses with side shields",
-      "image_credit": "",
+      "image_credit": "Image: Zenni Optical",
       "illustration": "rx-glasses"
     },
     {
@@ -355,9 +355,9 @@
       "amazon_search_query": "NoCry OverSpecs over the glasses safety glasses Z87",
       "affiliate_url": "",
       "affiliate_label": "",
-      "image_url": "",
+      "image_url": "https://nocry.com/cdn/shop/files/519OverSpecs-ShopifyCompressedImage1.2-187385_a6376017-94eb-4efc-903f-dfa175138c6f.jpg?v=1721177059&width=600",
       "image_alt": "NoCry OverSpecs ANSI Z87.1+ over-the-glasses safety eyewear",
-      "image_credit": "",
+      "image_credit": "Image: NoCry",
       "illustration": "rx-glasses"
     }
   ]
