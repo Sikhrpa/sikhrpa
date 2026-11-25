@@ -186,7 +186,17 @@ def main():
             )
             check("favicon.ico" in txt and "apple-touch-icon.png" in txt, f"{f}: has favicon & apple-touch-icon")
 
-    # 6. JSON-LD validation on index.html & donate.html
+    # 6. JSON-LD validation across all pages + NGO schema checks on index.html & donate.html
+    for f in html_files:
+        txt = open(f, encoding="utf-8").read()
+        blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', txt, re.S)
+        for idx, raw_ld in enumerate(blocks, 1):
+            try:
+                ld = json.loads(raw_ld)
+                check(ld.get("@context") == "https://schema.org", f"{f}: JSON-LD #{idx} valid schema.org")
+            except Exception as exc:
+                check(False, f"{f}: Invalid JSON-LD #{idx}: {exc}")
+
     for f in ["index.html", "donate.html"]:
         txt = open(f, encoding="utf-8").read()
         m = re.search(r'<script type="application/ld\+json">(.*?)</script>', txt, re.S)
@@ -208,8 +218,8 @@ def main():
     check('<meta name="robots" content="noindex, nofollow"' in adm, "admin.html has noindex, nofollow")
     check("Math.random" not in adm and "crypto.getRandomValues" in adm, "admin.html uses CSPRNG receipt IDs")
 
-    # 8. JavaScript syntax checks (scripts/update_news.js, assets/gear-shelf.js + all inline <script> blocks)
-    for js_file in ["scripts/update_news.js", "assets/gear-shelf.js"]:
+    # 8. JavaScript syntax checks (scripts/update_news.js, assets/gear-shelf.js, assets/share-tool.js + inline scripts)
+    for js_file in ["scripts/update_news.js", "assets/gear-shelf.js", "assets/share-tool.js"]:
         js_check = subprocess.run(["node", "--check", js_file], capture_output=True, text=True)
         check(js_check.returncode == 0, f"{js_file} syntax valid ({js_check.stderr.strip()})")
 

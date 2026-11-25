@@ -35,7 +35,8 @@ Our mission is to provide rigorous public education on firearm safety, proper ha
 ├── apple-touch-icon.png         # 180x180 iOS home screen icon
 ├── assets/
 │   ├── styles.css               # Prebuilt minified Tailwind CSS v3 stylesheet (~10 KB gzipped)
-│   └── gear-shelf.js            # Shared XSS-safe renderer for safe-storage catalog & contextual guide kits
+│   ├── gear-shelf.js            # Shared XSS-safe renderer for safe-storage catalog & contextual guide kits
+│   └── share-tool.js            # Shared XSS-safe Copy Link / Web Share / Reddit / WhatsApp guide share bar
 ├── src/
 │   └── input.css                # Tailwind CSS source entrypoint
 ├── tailwind.config.js           # Tailwind v3 configuration & custom brand colors
