@@ -405,8 +405,20 @@
         return icon;
       }
 
+      function safeImageUrl(raw) {
+        if (!raw || typeof raw !== 'string') return null;
+        try {
+          const parsed = new URL(raw);
+          if (parsed.protocol === 'https:') return parsed.href;
+        } catch (e) {
+          return null;
+        }
+        return null;
+      }
+
       function buildDealCard(deal, config) {
         const url = resolveAmazonUrl(deal, config);
+        const imgUrl = safeImageUrl(deal.image_url);
 
         const card = document.createElement('article');
         card.className =
@@ -446,6 +458,43 @@
 
         header.appendChild(left);
         header.appendChild(disc);
+
+        // Optional official manufacturer product photo frame
+        let mediaFrame = null;
+        if (imgUrl) {
+          mediaFrame = url ? document.createElement('a') : document.createElement('div');
+          mediaFrame.className =
+            'relative h-44 border-b border-slate-200 bg-white flex items-center justify-center p-4 overflow-hidden' +
+            (url ? ' block group focus:outline-none' : '');
+          if (url) {
+            mediaFrame.href = url;
+            mediaFrame.target = '_blank';
+            mediaFrame.rel = 'sponsored noopener noreferrer';
+            mediaFrame.setAttribute('aria-label', 'View ' + deal.name + ' on Amazon');
+          }
+          const img = document.createElement('img');
+          img.src = imgUrl;
+          img.alt = deal.name;
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          img.referrerPolicy = 'no-referrer';
+          img.className =
+            'max-h-full max-w-full object-contain transition-transform duration-200 group-hover:scale-105';
+          img.addEventListener('error', function () {
+            if (mediaFrame && mediaFrame.parentNode) {
+              mediaFrame.parentNode.removeChild(mediaFrame);
+            }
+          });
+          mediaFrame.appendChild(img);
+
+          if (deal.image_credit) {
+            const credit = document.createElement('span');
+            credit.className =
+              'absolute bottom-2 right-2 text-[10px] font-semibold text-slate-500 bg-white/90 px-2 py-0.5 rounded-md border border-slate-200';
+            credit.textContent = deal.image_credit;
+            mediaFrame.appendChild(credit);
+          }
+        }
 
         // Body
         const body = document.createElement('div');
@@ -493,6 +542,7 @@
         body.appendChild(top);
         body.appendChild(actions);
         card.appendChild(header);
+        if (mediaFrame) card.appendChild(mediaFrame);
         card.appendChild(body);
         return card;
       }
