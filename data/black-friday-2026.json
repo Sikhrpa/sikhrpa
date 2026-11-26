@@ -16,6 +16,20 @@
   ],
   "deals": [
     {
+      "id": "osight-se-rmsc",
+      "name": "OSIGHT SE Enclosed Reflex Sight (RMSc Footprint)",
+      "brand": "OSIGHT",
+      "category": "preparedness",
+      "discount_badge": "20% OFF",
+      "low_badge": "Black Friday Optic Deal",
+      "badge_tone": "rose",
+      "icon": "crosshair",
+      "verified_note": "Verified Nov 25 • Black Friday Deal (Subcompact RMSc)",
+      "summary": "Fully enclosed emitter optic for subcompact RMSc-cut slides with 2 MOA dot + 32 MOA circle multi-reticle, parallax-free aspherical lens, IPX7 waterproofing, motion activation, and a side-loading CR1620 battery so you never lose zero during battery swaps.",
+      "amazon_asin": "B0FV8PM98L",
+      "amazon_search_query": "OSIGHT SE enclosed RMSc reflex sight"
+    },
+    {
       "id": "ring-doorbell-2k",
       "name": "Ring Battery Doorbell 2K (2026 Release)",
       "brand": "Ring",
