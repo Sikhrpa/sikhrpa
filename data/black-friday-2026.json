@@ -1,6 +1,6 @@
 {
-  "version": "2026.11.25",
-  "verified_date": "November 25, 2026",
+  "version": "2026.11.26",
+  "verified_date": "November 26, 2026",
   "affiliate_config": {
     "amazon_tag": "sikhrpa01-20",
     "enable_amazon_search_fallback": true,
@@ -8,11 +8,26 @@
     "nonprofit_disclosure": "Every qualifying purchase helps fund SikhRPA's free California 501(c)(3) firearm safety education workshops and free CA DOJ cable locks at no extra cost to you."
   },
   "categories": [
-    { "id": "all", "label": "All Verified Deals" },
-    { "id": "security", "label": "Home Security & Locks" },
-    { "id": "tools", "label": "Flashlights & Multitools" },
-    { "id": "preparedness", "label": "Range & Emergency Prep" },
-    { "id": "bonus", "label": "Bonus All-Time Lows" }
+    {
+      "id": "all",
+      "label": "All Verified Deals"
+    },
+    {
+      "id": "security",
+      "label": "Home Security & Locks"
+    },
+    {
+      "id": "tools",
+      "label": "Flashlights & Multitools"
+    },
+    {
+      "id": "preparedness",
+      "label": "Range & Emergency Prep"
+    },
+    {
+      "id": "bonus",
+      "label": "Bonus All-Time Lows"
+    }
   ],
   "deals": [
     {
@@ -59,7 +74,9 @@
       "verified_note": "Verified Nov 25 • PCMag & CNET",
       "summary": "Wire-free 2K head-to-toe front-door monitoring with 6x digital zoom and two-way talk. Dropped to its lowest recorded Amazon price for Black Friday.",
       "amazon_asin": "",
-      "amazon_search_query": "Ring Battery Doorbell 2K 2026 release"
+      "amazon_search_query": "Ring Battery Doorbell 2K 2026 release",
+      "image_url": "assets/deals/ring-doorbell-2k.jpg",
+      "image_credit": "Image: Ring"
     },
     {
       "id": "ultraloq-bolt-fingerprint",
@@ -73,7 +90,9 @@
       "verified_note": "Verified Nov 25 • PCMag Editors' Choice",
       "summary": "Built-in Wi-Fi smart deadbolt supporting up to 100 fingerprints and 50 custom/temporary PIN codes — works with Apple Home, Alexa, and Google Home.",
       "amazon_asin": "",
-      "amazon_search_query": "Ultraloq Bolt Fingerprint Wi-Fi Smart Lock"
+      "amazon_search_query": "Ultraloq Bolt Fingerprint Wi-Fi Smart Lock",
+      "image_url": "assets/deals/ultraloq-bolt-fingerprint.jpg",
+      "image_credit": "Image: Ultraloq"
     },
     {
       "id": "ring-floodlight-2k",
@@ -87,7 +106,9 @@
       "verified_note": "Verified Nov 25 • PCMag & Forbes Vetted",
       "summary": "Combines dual 2,000-lumen motion-activated driveway floodlights with 2K surveillance and two-way talk at half off MSRP.",
       "amazon_asin": "",
-      "amazon_search_query": "Ring Floodlight Cam 2K Wired"
+      "amazon_search_query": "Ring Floodlight Cam 2K Wired",
+      "image_url": "assets/deals/ring-floodlight-2k.jpg",
+      "image_credit": "Image: Ring"
     },
     {
       "id": "eufy-solocam-s340",
@@ -101,7 +122,9 @@
       "verified_note": "Verified Nov 25 • PCMag Editors' Choice",
       "summary": "Dual-lens 3K outdoor pan-and-tilt security camera with an attached solar panel and built-in local storage — zero monthly subscription fees.",
       "amazon_asin": "",
-      "amazon_search_query": "eufy SoloCam S340 Wireless Outdoor Security Camera"
+      "amazon_search_query": "eufy SoloCam S340 Wireless Outdoor Security Camera",
+      "image_url": "assets/deals/eufy-solocam-s340.jpg",
+      "image_credit": "Image: eufy Security"
     },
     {
       "id": "eufycam-s330-4kit",
@@ -115,7 +138,9 @@
       "verified_note": "Verified Nov 25 • PCMag",
       "summary": "Four 4K wire-free solar cameras with expandable local HomeBase 3 storage and zero required monthly cloud fees — ideal for full perimeter coverage.",
       "amazon_asin": "",
-      "amazon_search_query": "eufyCam 3 S330 4-Cam Kit HomeBase 3"
+      "amazon_search_query": "eufyCam 3 S330 4-Cam Kit HomeBase 3",
+      "image_url": "assets/deals/eufycam-s330-4kit.jpg",
+      "image_credit": "Image: eufy Security"
     },
     {
       "id": "blink-outdoor-4-3cam",
@@ -129,7 +154,9 @@
       "verified_note": "Verified Nov 25 • PCMag",
       "summary": "Budget-friendly 3-camera wireless outdoor surveillance kit with two-year AA battery life and Sync Module included.",
       "amazon_asin": "",
-      "amazon_search_query": "Blink Outdoor 4 3-Camera System Sync Module"
+      "amazon_search_query": "Blink Outdoor 4 3-Camera System Sync Module",
+      "image_url": "assets/deals/blink-outdoor-4-3cam.jpg",
+      "image_credit": "Image: Blink"
     },
     {
       "id": "arlo-pan-tilt-2k",
@@ -143,7 +170,9 @@
       "verified_note": "Verified Nov 25 • PCMag Editors' Choice",
       "summary": "Sharp 2K indoor camera with 360-degree motorized pan and 180-degree tilt to monitor entryways, hallways, or safe rooms.",
       "amazon_asin": "",
-      "amazon_search_query": "Arlo Essential Pan Tilt Indoor Camera 2K"
+      "amazon_search_query": "Arlo Essential Pan Tilt Indoor Camera 2K",
+      "image_url": "assets/deals/arlo-pan-tilt-2k.jpg",
+      "image_credit": "Image: Arlo"
     },
     {
       "id": "apple-airtag-gen2",
@@ -157,7 +186,9 @@
       "verified_note": "Verified Nov 25 • USA Today & Gizmodo",
       "summary": "Tuck inside locked hard cases, range bags, luggage, or vehicle storage for instant Find My tracking while traveling.",
       "amazon_asin": "",
-      "amazon_search_query": "Apple AirTag 2nd Generation"
+      "amazon_search_query": "Apple AirTag 2nd Generation",
+      "image_url": "assets/deals/apple-airtag-gen2.jpg",
+      "image_credit": "Image: Apple"
     },
     {
       "id": "streamlight-microstream-usb",
@@ -171,7 +202,9 @@
       "verified_note": "Verified Nov 20 • CamelCamelCamel / SlashGear",
       "summary": "250-lumen USB-rechargeable aluminum pocket light (IPX4, 22,700+ Amazon reviews, 4.7 stars). Verified near its lowest Amazon price since 2020. Verify 'Sold by Amazon' to avoid counterfeits.",
       "amazon_asin": "",
-      "amazon_search_query": "Streamlight 66608 MicroStream USB Coyote"
+      "amazon_search_query": "Streamlight 66608 MicroStream USB Coyote",
+      "image_url": "assets/deals/streamlight-microstream-usb.jpg",
+      "image_credit": "Image: Streamlight"
     },
     {
       "id": "olight-imini-2",
@@ -185,7 +218,9 @@
       "verified_note": "Verified Nov 25 • Tom's Hardware",
       "summary": "Quick-release magnetic keychain light with built-in USB plug — instant illumination for unlocking safes or range bags in the dark.",
       "amazon_asin": "",
-      "amazon_search_query": "Olight Imini 2 EDC Rechargeable Keychain Flashlight"
+      "amazon_search_query": "Olight Imini 2 EDC Rechargeable Keychain Flashlight",
+      "image_url": "assets/deals/olight-imini-2.jpg",
+      "image_credit": "Image: Olight"
     },
     {
       "id": "olight-baton-ultra",
@@ -199,7 +234,9 @@
       "verified_note": "Verified Nov 25 • Outdoor Life",
       "summary": "Olight's official Amazon storefront Black Friday event marks down the Baton Ultra, Oclip 2 Pro clip light, and ArkPro flat EDC lights.",
       "amazon_asin": "",
-      "amazon_search_query": "Olight Baton Ultra flashlight"
+      "amazon_search_query": "Olight Baton Ultra flashlight",
+      "image_url": "assets/deals/olight-baton-ultra.jpg",
+      "image_credit": "Image: Olight"
     },
     {
       "id": "hoto-electric-screwdriver",
@@ -213,7 +250,9 @@
       "verified_note": "Verified Nov 20 • CamelCamelCamel / SlashGear",
       "summary": "Compact aluminum storage case with USB-C precision driver and Torx, hex, and Phillips S2 steel bits — handy for optics, electronics, and bench work.",
       "amazon_asin": "",
-      "amazon_search_query": "HOTO 25 piece electric precision screwdriver kit"
+      "amazon_search_query": "HOTO 25 piece electric precision screwdriver kit",
+      "image_url": "assets/deals/hoto-electric-screwdriver.jpg",
+      "image_credit": "Image: HOTO"
     },
     {
       "id": "leatherman-wave-plus",
@@ -227,7 +266,9 @@
       "verified_note": "Verified Nov 23 • Bob Vila",
       "summary": "Outside-accessible blades, pliers, replaceable wire cutters, scissors, and bit driver — a range-bag and truck staple that rarely drops 20%.",
       "amazon_asin": "",
-      "amazon_search_query": "Leatherman Wave Plus multitool"
+      "amazon_search_query": "Leatherman Wave Plus multitool",
+      "image_url": "assets/deals/leatherman-wave-plus.jpg",
+      "image_credit": "Image: Leatherman"
     },
     {
       "id": "leatherman-skeletool-cx",
@@ -241,7 +282,9 @@
       "verified_note": "Verified Nov 25 • Forbes Vetted & Outdoor Life",
       "summary": "Ultralight stainless-steel everyday multitool with 154CM blade, pliers, bit driver, and carabiner clip.",
       "amazon_asin": "",
-      "amazon_search_query": "Leatherman Skeletool CX multitool"
+      "amazon_search_query": "Leatherman Skeletool CX multitool",
+      "image_url": "assets/deals/leatherman-skeletool-cx.jpg",
+      "image_credit": "Image: Leatherman"
     },
     {
       "id": "roxon-spark-cm1349",
@@ -255,7 +298,9 @@
       "verified_note": "Verified Nov 20 • CamelCamelCamel / SlashGear",
       "summary": "Budget 14-in-1 camping & emergency multitool with built-in flint fire starter and whistle. Confirmed at its all-time lowest Amazon price.",
       "amazon_asin": "",
-      "amazon_search_query": "Roxon Spark CM1349 multitool"
+      "amazon_search_query": "Roxon Spark CM1349 multitool",
+      "image_url": "assets/deals/roxon-spark-cm1349.jpg",
+      "image_credit": "Image: Roxon"
     },
     {
       "id": "dewalt-20v-drill-impact",
@@ -269,7 +314,9 @@
       "verified_note": "Verified Nov 25 • Pew Pew Tactical",
       "summary": "Essential for bolting steel gun safes securely into floor studs or wall framing — nearly half off for Black Friday.",
       "amazon_asin": "",
-      "amazon_search_query": "DEWALT 20V Max cordless drill impact driver combo kit"
+      "amazon_search_query": "DEWALT 20V Max cordless drill impact driver combo kit",
+      "image_url": "assets/deals/dewalt-20v-drill-impact.jpg",
+      "image_credit": "Image: DEWALT"
     },
     {
       "id": "gooloo-a5-jump-starter",
@@ -283,7 +330,9 @@
       "verified_note": "Verified Nov 24 • IGN (check code 0QUQM446)",
       "summary": "All-in-one trunk emergency kit: 4,000A battery jump starter, cordless tire inflator, and 20,000mAh 45W USB-C power bank for range trips and road travel.",
       "amazon_asin": "",
-      "amazon_search_query": "GOOLOO A5 4000A Jump Starter Air Compressor"
+      "amazon_search_query": "GOOLOO A5 4000A Jump Starter Air Compressor",
+      "image_url": "assets/deals/gooloo-a5-jump-starter.jpg",
+      "image_credit": "Image: GOOLOO"
     },
     {
       "id": "energizer-48-pack",
@@ -297,7 +346,9 @@
       "verified_note": "Verified Nov 25 • Pew Pew Tactical",
       "summary": "Stock up on fresh alkaline batteries for electronic earmuffs, bedside lockboxes, flashlights, and emergency weather radios.",
       "amazon_asin": "",
-      "amazon_search_query": "Energizer AA AAA 48 pack batteries"
+      "amazon_search_query": "Energizer AA AAA 48 pack batteries",
+      "image_url": "assets/deals/energizer-48-pack.jpg",
+      "image_credit": "Image: Energizer"
     },
     {
       "id": "magpul-patrol-glove-2",
@@ -311,7 +362,9 @@
       "verified_note": "Verified Nov 25 • Pew Pew Tactical",
       "summary": "Goatskin palm and lightweight knuckle protection with touchscreen-compatible thumbs — durable outdoor range and utility gloves.",
       "amazon_asin": "",
-      "amazon_search_query": "Magpul Patrol Glove 2.0"
+      "amazon_search_query": "Magpul Patrol Glove 2.0",
+      "image_url": "assets/deals/magpul-patrol-glove-2.jpg",
+      "image_credit": "Image: Magpul"
     },
     {
       "id": "kershaw-bel-air-magnacut",
@@ -325,7 +378,9 @@
       "verified_note": "Verified Nov 25 • Outdoor Life Best Overall",
       "summary": "USA-made CPM MagnaCut steel everyday folder with smooth crossbar lock — priced significantly lower on Amazon than specialty retailers.",
       "amazon_asin": "",
-      "amazon_search_query": "Kershaw Bel Air MagnaCut"
+      "amazon_search_query": "Kershaw Bel Air MagnaCut",
+      "image_url": "assets/deals/kershaw-bel-air-magnacut.jpg",
+      "image_credit": "Image: Kershaw"
     },
     {
       "id": "midland-t51vp3-radios",
@@ -339,7 +394,9 @@
       "verified_note": "Verified Nov 25 • Pew Pew Tactical",
       "summary": "License-free FRS two-way radios with built-in NOAA emergency weather alerts and rechargeable battery packs — great for remote outdoor ranges and earthquake prep.",
       "amazon_asin": "",
-      "amazon_search_query": "Midland T51VP3 X-Talker two way radio"
+      "amazon_search_query": "Midland T51VP3 X-Talker two way radio",
+      "image_url": "assets/deals/midland-t51vp3-radios.jpg",
+      "image_credit": "Image: Midland"
     },
     {
       "id": "ugreen-nexode-145w",
@@ -353,7 +410,9 @@
       "verified_note": "Verified Nov 25 • CNN Underscored",
       "summary": "High-capacity 25,000mAh fast-charging battery pack that powers laptops, phones, and electronic ear pro away from outlets — lowest recorded Black Friday price.",
       "amazon_asin": "",
-      "amazon_search_query": "UGREEN Nexode 145W 25000mAh Power Bank"
+      "amazon_search_query": "UGREEN Nexode 145W 25000mAh Power Bank",
+      "image_url": "assets/deals/ugreen-nexode-145w.jpg",
+      "image_credit": "Image: UGREEN"
     },
     {
       "id": "ecoflow-anker-power-station",
@@ -367,7 +426,9 @@
       "verified_note": "Verified Nov 24–25 • Mashable & PC Guide",
       "summary": "Silent battery backup power for California PSPS outages, home essentials, and outdoor trips — major Black Friday markdowns across SOLIX and EcoFlow lines.",
       "amazon_asin": "",
-      "amazon_search_query": "Anker SOLIX portable power station black friday"
+      "amazon_search_query": "Anker SOLIX portable power station black friday",
+      "image_url": "assets/deals/ecoflow-anker-power-station.jpg",
+      "image_credit": "Image: Anker SOLIX"
     },
     {
       "id": "first-aid-300pc",
@@ -381,7 +442,9 @@
       "verified_note": "Verified Nov 25 • Pew Pew Tactical",
       "summary": "Great booboo kit for home, car, and minor range scrapes. Note: for severe bleeding trauma gear (CAT tourniquets), always buy direct from North American Rescue — never marketplaces.",
       "amazon_asin": "",
-      "amazon_search_query": "300 piece essential first aid kit"
+      "amazon_search_query": "300 piece essential first aid kit",
+      "image_url": "assets/deals/first-aid-300pc.jpg",
+      "image_credit": "Image: First Aid Only"
     },
     {
       "id": "airpods-pro-3",
@@ -395,7 +458,9 @@
       "verified_note": "Verified Nov 25 • CNET, PCMag & Gizmodo",
       "summary": "Dropped to their lowest Amazon price ever for Black Friday. (For everyday listening & travel — NOT NRR-rated for live-fire range use!)",
       "amazon_asin": "",
-      "amazon_search_query": "Apple AirPods Pro 3"
+      "amazon_search_query": "Apple AirPods Pro 3",
+      "image_url": "assets/deals/airpods-pro-3.jpg",
+      "image_credit": "Image: Apple"
     },
     {
       "id": "sony-wh1000xm6",
@@ -409,7 +474,9 @@
       "verified_note": "Verified Nov 25 • Forbes Vetted & Gizmodo",
       "summary": "Flagship everyday noise-canceling travel headphones at their lowest recorded Amazon price. (Not NRR-rated for shooting ranges.)",
       "amazon_asin": "",
-      "amazon_search_query": "Sony WH-1000XM6 headphones"
+      "amazon_search_query": "Sony WH-1000XM6 headphones",
+      "image_url": "assets/deals/sony-wh1000xm6.jpg",
+      "image_credit": "Image: Sony"
     },
     {
       "id": "kindle-paperwhite-2026",
@@ -423,7 +490,9 @@
       "verified_note": "Verified Nov 25 • Forbes Vetted & Mashable",
       "summary": "Glare-free waterproof e-reader at its lowest price of 2026 — one of Amazon's highest-demand holiday gifts.",
       "amazon_asin": "",
-      "amazon_search_query": "Amazon Kindle Paperwhite"
+      "amazon_search_query": "Amazon Kindle Paperwhite",
+      "image_url": "assets/deals/kindle-paperwhite-2026.jpg",
+      "image_credit": "Image: Amazon"
     },
     {
       "id": "yeti-roadie-15",
@@ -437,7 +506,9 @@
       "verified_note": "Verified Nov 25 • Tom's Guide & Mashable",
       "summary": "Rare Amazon Black Friday markdowns on best-selling YETI coolers and insulated tumblers — great for hot California outdoor range days.",
       "amazon_asin": "",
-      "amazon_search_query": "YETI Roadie 15 hard cooler"
+      "amazon_search_query": "YETI Roadie 15 hard cooler",
+      "image_url": "assets/deals/yeti-roadie-15.jpg",
+      "image_credit": "Image: YETI"
     }
   ]
 }
