@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html', './assets/gear-shelf.js'],
+  content: ['./*.html', './assets/gear-shelf.js', './assets/share-tool.js'],
   theme: {
     extend: {
       colors: {
