@@ -4,5 +4,7 @@ Disallow: /admin
 Disallow: /admin.html
 Disallow: /handgun-compare
 Disallow: /handgun-compare.html
+Disallow: /black-friday-2026
+Disallow: /black-friday-2026.html
 
 Sitemap: https://sikhrpa.org/sitemap.xml
