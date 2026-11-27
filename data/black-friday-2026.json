@@ -1,6 +1,6 @@
 {
-  "version": "2026.11.26",
-  "verified_date": "November 26, 2026",
+  "version": "2026.11.27",
+  "verified_date": "November 27, 2026",
   "affiliate_config": {
     "amazon_tag": "sikhrpa01-20",
     "enable_amazon_search_fallback": true,
@@ -30,6 +30,38 @@
     }
   ],
   "deals": [
+    {
+      "id": "olight-pl-mini-2",
+      "name": "OLIGHT PL-Mini 2 Valkyrie 600-Lumen Rechargeable Light",
+      "brand": "Olight",
+      "category": "tools",
+      "discount_badge": "40% OFF",
+      "low_badge": "Black Friday Low",
+      "badge_tone": "rose",
+      "icon": "flashlight",
+      "verified_note": "Verified Nov 27 • Black Friday Drop (Black & Desert Tan)",
+      "summary": "Ultra-compact 600-lumen rechargeable rail-mounted light with 100m beam throw, adjustable quick-release rail (fits GL & 1913 Picatinny), magnetic USB charging, IPX6 waterproofing, and a lightweight 2.56 oz aluminum body.",
+      "amazon_asin": "B07MS7G7RZ",
+      "amazon_search_query": "OLIGHT PL-Mini 2 Valkyrie 600 lumens",
+      "image_url": "assets/deals/olight-pl-mini-2.jpg",
+      "image_credit": "Image: Olight"
+    },
+    {
+      "id": "eufy-doorbell-e340",
+      "name": "eufy Security Video Doorbell E340 (2K Dual-Camera)",
+      "brand": "eufy Security",
+      "category": "security",
+      "discount_badge": "43% OFF",
+      "low_badge": "No Monthly Fees",
+      "badge_tone": "rose",
+      "icon": "video",
+      "verified_note": "Verified Nov 27 • Dual-Camera + Local Storage",
+      "summary": "Dual-camera 2K Full HD video doorbell (front visitor + downward package lens) with color night vision, quick-swap rechargeable battery or wired install, and built-in local storage with zero mandatory cloud subscription fees.",
+      "amazon_asin": "B0CD7NT4Y9",
+      "amazon_search_query": "eufy Security Video Doorbell E340 dual camera",
+      "image_url": "assets/deals/eufy-doorbell-e340.jpg",
+      "image_credit": "Image: eufy Security"
+    },
     {
       "id": "osight-se-rmsc",
       "name": "OSIGHT SE Enclosed Reflex Sight (RMSc Footprint)",
