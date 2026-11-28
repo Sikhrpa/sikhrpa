@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-24T23:38:33.215Z",
-  "updated_formatted": "November 24, 2026 • 3:38 PM PST",
+  "last_updated": "2026-11-28T08:18:20.800Z",
+  "updated_formatted": "November 28, 2026 • 12:18 AM PST",
   "items": [
     {
       "id": "daily-journal-scotus-firearms-california-limits",
@@ -118,6 +118,19 @@
       "community_takeaway": "Families encountering a domestic or emotional crisis can utilize voluntary local law enforcement storage programs to secure household firearms temporarily without forfeiting property rights.",
       "source_name": "California State Legislature",
       "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1974"
+    },
+    {
+      "id": "scotus-duncan-v-bonta-certiorari-hold",
+      "date": "2026-10-05",
+      "category": "Court Ruling",
+      "badge_status": "Pending Review",
+      "badge_color": "amber",
+      "headline": "U.S. Supreme Court Continues Procedural Hold on Duncan v. Bonta Large-Capacity Magazine Challenge",
+      "statute_or_case": "Duncan v. Bonta, No. 25-198; Cal. Penal Code § 32310",
+      "summary": "In its opening orders of the October 2026 Term, the U.S. Supreme Court maintained a procedural hold on the petition for certiorari in Duncan v. Bonta rather than acting on the merits. The hold keeps California's 10-round capacity restriction legally enforceable under Ninth Circuit en banc precedent while the high court considers pending Second Amendment challenges.",
+      "community_takeaway": "California firearm owners must keep in mind that purchasing, importing, manufacturing, or receiving magazines capable of holding more than 10 rounds remains prohibited under Penal Code § 32310 while the petition remains pending.",
+      "source_name": "Supreme Court of the United States",
+      "source_url": "https://firearmslaw.duke.edu/2026/10/scotus-gun-watch-10-5-2026/"
     },
     {
       "id": "the-reload-analysis-california-ab-1127-challenge",
